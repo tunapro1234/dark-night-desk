@@ -58,15 +58,70 @@ test('venues: synthetic fixture is listed with the public summary fields only', 
   await app.close();
 });
 
-test('venues: unreadable files are skipped', async () => {
+const validVenue = (id) => ({
+  id, name: 'Room', city: 'Exampleville', capacity_band: '100-250', calendar_source_url: 'https://example.org/cal',
+  read_at: '2026-10-01', closed_weekdays: [], shows: [], past_shows: [],
+});
+
+test('venues: unreadable, invalid and duplicate files are skipped', async () => {
   const dir = path.join(tmp, 'mixed');
   await mkdir(dir, { recursive: true });
-  await writeFile(path.join(dir, 'a.json'), '{"id":"a","name":"A"}');
+  await writeFile(path.join(dir, 'a.json'), JSON.stringify(validVenue('a')));
+  await writeFile(path.join(dir, 'a2.json'), JSON.stringify(validVenue('a')));
   await writeFile(path.join(dir, 'b.json'), '{not json');
   await writeFile(path.join(dir, 'c.json'), '{"name":"no id"}');
+  await writeFile(path.join(dir, 'd.json'), JSON.stringify({ ...validVenue('d'), closed_weekdays: [7] }));
   await writeFile(path.join(dir, 'notes.txt'), 'ignored');
   const app = await appWith({ VENUES_DIR: dir });
   assert.deepEqual((await app.inject('/api/venues')).json().map((v) => v.id), ['a']);
+  await app.close();
+});
+
+const FIXED_NOW = Date.parse('2026-10-11T23:30:00Z');
+
+async function calendarApp() {
+  return buildApp(
+    loadConfig({ DATA_DIR: path.join(tmp, 'var'), VENUES_DIR: 'test/fixtures/synthetic/venues' }),
+    { now: () => FIXED_NOW },
+  );
+}
+
+test('calendar: defaults to 60 nights from today (UTC) in the contract shape', async () => {
+  const app = await calendarApp();
+  const res = await app.inject('/api/venues/example-room/calendar');
+  assert.equal(res.statusCode, 200);
+  const cal = res.json();
+  assert.equal(cal.venue.id, 'example-room');
+  assert.equal(cal.from, '2026-10-11');
+  assert.equal(cal.to, '2026-12-09');
+  assert.equal(cal.nights.length, 60);
+  assert.deepEqual(cal.source, { url: 'https://example.org/calendar', read_at: '2026-10-11' });
+  assert.equal(cal.dark_count, cal.nights.filter((n) => n.status === 'dark').length);
+  assert.ok(cal.dark_count > 0);
+  for (const n of cal.nights) {
+    assert.match(n.status, /^(booked|dark|closed)$/);
+    if (n.status === 'booked') assert.match(n.show.headliner, /^Synthetic Act /);
+    else assert.equal(n.show, undefined);
+  }
+  assert.ok(cal.nights.filter((n) => n.status === 'closed').every((n) => new Date(`${n.date}T00:00:00Z`).getUTCDay() === 1));
+  await app.close();
+});
+
+test('calendar: from and days are honoured', async () => {
+  const app = await calendarApp();
+  const cal = (await app.inject('/api/venues/example-room/calendar?from=2026-11-02&days=7')).json();
+  assert.deepEqual(cal.nights.map((n) => n.status), ['closed', 'dark', 'dark', 'booked', 'dark', 'booked', 'dark']);
+  assert.equal(cal.to, '2026-11-08');
+  assert.equal(cal.dark_count, 4);
+  await app.close();
+});
+
+test('calendar: bad input is a 400, an unknown venue a 404', async () => {
+  const app = await calendarApp();
+  for (const q of ['from=2026-13-01', 'from=11/02/2026', 'days=0', 'days=121', 'days=abc', 'days=7.5']) {
+    assert.equal((await app.inject(`/api/venues/example-room/calendar?${q}`)).statusCode, 400, q);
+  }
+  assert.equal((await app.inject('/api/venues/nowhere/calendar')).statusCode, 404);
   await app.close();
 });
 

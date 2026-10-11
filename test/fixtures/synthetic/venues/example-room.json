@@ -5,6 +5,452 @@
   "city": "Exampleville",
   "capacity_band": "250-500",
   "calendar_source_url": "https://example.org/calendar",
-  "closed_weekdays": [1],
-  "shows": []
+  "read_at": "2026-10-11",
+  "closed_weekdays": [
+    1
+  ],
+  "shows": [
+    {
+      "date": "2026-10-13",
+      "headliner": "Synthetic Act 1",
+      "source_url": "https://example.org/shows/2026-10-13"
+    },
+    {
+      "date": "2026-10-15",
+      "headliner": "Synthetic Act 2",
+      "source_url": "https://example.org/shows/2026-10-15"
+    },
+    {
+      "date": "2026-10-16",
+      "headliner": "Synthetic Act 3",
+      "source_url": "https://example.org/shows/2026-10-16"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "Synthetic Act 4",
+      "source_url": "https://example.org/shows/2026-10-17"
+    },
+    {
+      "date": "2026-10-22",
+      "headliner": "Synthetic Act 5",
+      "source_url": "https://example.org/shows/2026-10-22"
+    },
+    {
+      "date": "2026-10-23",
+      "headliner": "Synthetic Act 6",
+      "source_url": "https://example.org/shows/2026-10-23"
+    },
+    {
+      "date": "2026-10-27",
+      "headliner": "Synthetic Act 8",
+      "source_url": "https://example.org/shows/2026-10-27"
+    },
+    {
+      "date": "2026-10-29",
+      "headliner": "Synthetic Act 9",
+      "source_url": "https://example.org/shows/2026-10-29"
+    },
+    {
+      "date": "2026-10-30",
+      "headliner": "Synthetic Act 10",
+      "source_url": "https://example.org/shows/2026-10-30"
+    },
+    {
+      "date": "2026-10-31",
+      "headliner": "Synthetic Act 11",
+      "source_url": "https://example.org/shows/2026-10-31"
+    },
+    {
+      "date": "2026-11-05",
+      "headliner": "Synthetic Act 12",
+      "source_url": "https://example.org/shows/2026-11-05"
+    },
+    {
+      "date": "2026-11-07",
+      "headliner": "Synthetic Act 2",
+      "source_url": "https://example.org/shows/2026-11-07"
+    },
+    {
+      "date": "2026-11-10",
+      "headliner": "Synthetic Act 3",
+      "source_url": "https://example.org/shows/2026-11-10"
+    },
+    {
+      "date": "2026-11-12",
+      "headliner": "Synthetic Act 4",
+      "source_url": "https://example.org/shows/2026-11-12"
+    },
+    {
+      "date": "2026-11-13",
+      "headliner": "Synthetic Act 5",
+      "source_url": "https://example.org/shows/2026-11-13"
+    },
+    {
+      "date": "2026-11-14",
+      "headliner": "Synthetic Act 6",
+      "source_url": "https://example.org/shows/2026-11-14"
+    },
+    {
+      "date": "2026-11-19",
+      "headliner": "Synthetic Act 7",
+      "source_url": "https://example.org/shows/2026-11-19"
+    },
+    {
+      "date": "2026-11-20",
+      "headliner": "Synthetic Act 8",
+      "source_url": "https://example.org/shows/2026-11-20"
+    },
+    {
+      "date": "2026-11-24",
+      "headliner": "Synthetic Act 10",
+      "source_url": "https://example.org/shows/2026-11-24"
+    },
+    {
+      "date": "2026-11-26",
+      "headliner": "Synthetic Act 11",
+      "source_url": "https://example.org/shows/2026-11-26"
+    },
+    {
+      "date": "2026-11-27",
+      "headliner": "Synthetic Act 12",
+      "source_url": "https://example.org/shows/2026-11-27"
+    },
+    {
+      "date": "2026-11-28",
+      "headliner": "Synthetic Act 1",
+      "source_url": "https://example.org/shows/2026-11-28"
+    },
+    {
+      "date": "2026-12-03",
+      "headliner": "Synthetic Act 2",
+      "source_url": "https://example.org/shows/2026-12-03"
+    },
+    {
+      "date": "2026-12-04",
+      "headliner": "Synthetic Act 3",
+      "source_url": "https://example.org/shows/2026-12-04"
+    },
+    {
+      "date": "2026-12-05",
+      "headliner": "Synthetic Act 4",
+      "source_url": "https://example.org/shows/2026-12-05"
+    },
+    {
+      "date": "2026-12-08",
+      "headliner": "Synthetic Act 5",
+      "source_url": "https://example.org/shows/2026-12-08"
+    },
+    {
+      "date": "2026-12-10",
+      "headliner": "Synthetic Act 6",
+      "source_url": "https://example.org/shows/2026-12-10"
+    },
+    {
+      "date": "2026-12-11",
+      "headliner": "Synthetic Act 7",
+      "source_url": "https://example.org/shows/2026-12-11"
+    },
+    {
+      "date": "2026-12-17",
+      "headliner": "Synthetic Act 9",
+      "source_url": "https://example.org/shows/2026-12-17"
+    },
+    {
+      "date": "2026-12-18",
+      "headliner": "Synthetic Act 10",
+      "source_url": "https://example.org/shows/2026-12-18"
+    },
+    {
+      "date": "2026-12-19",
+      "headliner": "Synthetic Act 11",
+      "source_url": "https://example.org/shows/2026-12-19"
+    },
+    {
+      "date": "2026-12-22",
+      "headliner": "Synthetic Act 12",
+      "source_url": "https://example.org/shows/2026-12-22"
+    },
+    {
+      "date": "2026-12-24",
+      "headliner": "Synthetic Act 1",
+      "source_url": "https://example.org/shows/2026-12-24"
+    },
+    {
+      "date": "2026-12-25",
+      "headliner": "Synthetic Act 2",
+      "source_url": "https://example.org/shows/2026-12-25"
+    },
+    {
+      "date": "2026-12-26",
+      "headliner": "Synthetic Act 3",
+      "source_url": "https://example.org/shows/2026-12-26"
+    },
+    {
+      "date": "2026-12-31",
+      "headliner": "Synthetic Act 4",
+      "source_url": "https://example.org/shows/2026-12-31"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-07-02",
+      "headliner": "Synthetic Act 101",
+      "source_url": "https://example.org/shows/2026-07-02"
+    },
+    {
+      "date": "2026-07-03",
+      "headliner": "Synthetic Act 102",
+      "source_url": "https://example.org/shows/2026-07-03"
+    },
+    {
+      "date": "2026-07-04",
+      "headliner": "Synthetic Act 103",
+      "source_url": "https://example.org/shows/2026-07-04"
+    },
+    {
+      "date": "2026-07-07",
+      "headliner": "Synthetic Act 104",
+      "source_url": "https://example.org/shows/2026-07-07"
+    },
+    {
+      "date": "2026-07-09",
+      "headliner": "Synthetic Act 105",
+      "source_url": "https://example.org/shows/2026-07-09"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "Synthetic Act 106",
+      "source_url": "https://example.org/shows/2026-07-10"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "Synthetic Act 101",
+      "source_url": "https://example.org/shows/2026-07-11"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "Synthetic Act 102",
+      "source_url": "https://example.org/shows/2026-07-16"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "Synthetic Act 103",
+      "source_url": "https://example.org/shows/2026-07-17"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "Synthetic Act 104",
+      "source_url": "https://example.org/shows/2026-07-18"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "Synthetic Act 105",
+      "source_url": "https://example.org/shows/2026-07-21"
+    },
+    {
+      "date": "2026-07-23",
+      "headliner": "Synthetic Act 106",
+      "source_url": "https://example.org/shows/2026-07-23"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "Synthetic Act 101",
+      "source_url": "https://example.org/shows/2026-07-24"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "Synthetic Act 102",
+      "source_url": "https://example.org/shows/2026-07-25"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "Synthetic Act 103",
+      "source_url": "https://example.org/shows/2026-07-30"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "Synthetic Act 104",
+      "source_url": "https://example.org/shows/2026-07-31"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "Synthetic Act 105",
+      "source_url": "https://example.org/shows/2026-08-01"
+    },
+    {
+      "date": "2026-08-04",
+      "headliner": "Synthetic Act 106",
+      "source_url": "https://example.org/shows/2026-08-04"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "Synthetic Act 101",
+      "source_url": "https://example.org/shows/2026-08-06"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "Synthetic Act 102",
+      "source_url": "https://example.org/shows/2026-08-07"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "Synthetic Act 103",
+      "source_url": "https://example.org/shows/2026-08-08"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "Synthetic Act 104",
+      "source_url": "https://example.org/shows/2026-08-13"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "Synthetic Act 105",
+      "source_url": "https://example.org/shows/2026-08-14"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "Synthetic Act 106",
+      "source_url": "https://example.org/shows/2026-08-15"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "Synthetic Act 101",
+      "source_url": "https://example.org/shows/2026-08-18"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "Synthetic Act 102",
+      "source_url": "https://example.org/shows/2026-08-20"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "Synthetic Act 103",
+      "source_url": "https://example.org/shows/2026-08-21"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "Synthetic Act 104",
+      "source_url": "https://example.org/shows/2026-08-22"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "Synthetic Act 105",
+      "source_url": "https://example.org/shows/2026-08-27"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "Synthetic Act 106",
+      "source_url": "https://example.org/shows/2026-08-28"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "Synthetic Act 101",
+      "source_url": "https://example.org/shows/2026-08-29"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "Synthetic Act 102",
+      "source_url": "https://example.org/shows/2026-09-01"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "Synthetic Act 103",
+      "source_url": "https://example.org/shows/2026-09-03"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "Synthetic Act 104",
+      "source_url": "https://example.org/shows/2026-09-04"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "Synthetic Act 105",
+      "source_url": "https://example.org/shows/2026-09-05"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "Synthetic Act 106",
+      "source_url": "https://example.org/shows/2026-09-10"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "Synthetic Act 101",
+      "source_url": "https://example.org/shows/2026-09-11"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "Synthetic Act 102",
+      "source_url": "https://example.org/shows/2026-09-12"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "Synthetic Act 103",
+      "source_url": "https://example.org/shows/2026-09-15"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Synthetic Act 104",
+      "source_url": "https://example.org/shows/2026-09-17"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "Synthetic Act 105",
+      "source_url": "https://example.org/shows/2026-09-18"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Synthetic Act 106",
+      "source_url": "https://example.org/shows/2026-09-19"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "Synthetic Act 101",
+      "source_url": "https://example.org/shows/2026-09-24"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "Synthetic Act 102",
+      "source_url": "https://example.org/shows/2026-09-25"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "Synthetic Act 103",
+      "source_url": "https://example.org/shows/2026-09-26"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "Synthetic Act 104",
+      "source_url": "https://example.org/shows/2026-09-29"
+    },
+    {
+      "date": "2026-10-01",
+      "headliner": "Synthetic Act 105",
+      "source_url": "https://example.org/shows/2026-10-01"
+    },
+    {
+      "date": "2026-10-02",
+      "headliner": "Synthetic Act 106",
+      "source_url": "https://example.org/shows/2026-10-02"
+    },
+    {
+      "date": "2026-10-03",
+      "headliner": "Synthetic Act 101",
+      "source_url": "https://example.org/shows/2026-10-03"
+    },
+    {
+      "date": "2026-10-08",
+      "headliner": "Synthetic Act 102",
+      "source_url": "https://example.org/shows/2026-10-08"
+    },
+    {
+      "date": "2026-10-09",
+      "headliner": "Synthetic Act 103",
+      "source_url": "https://example.org/shows/2026-10-09"
+    },
+    {
+      "date": "2026-10-10",
+      "headliner": "Synthetic Act 104",
+      "source_url": "https://example.org/shows/2026-10-10"
+    }
+  ]
 }

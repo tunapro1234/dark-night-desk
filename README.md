@@ -37,6 +37,29 @@ as a labelled scripted plan. All settings are environment variables read in `ser
 
 The server refuses to start on an invalid setting and prints what is wrong.
 
+## Venues and dark nights
+
+Each venue is one JSON file in `VENUES_DIR` (schema checked by `server/calendar/venues.js`; a file that fails is skipped and logged):
+
+```json
+{
+  "id": "example-room", "name": "Example Room", "city": "Exampleville", "capacity_band": "250-500",
+  "calendar_source_url": "https://example.org/calendar", "read_at": "2026-10-11",
+  "closed_weekdays": [1],
+  "shows":      [{ "date": "2026-10-13", "headliner": "Synthetic Act 1", "source_url": "https://example.org/shows/2026-10-13" }],
+  "past_shows": [{ "date": "2026-07-02", "headliner": "Synthetic Act 101", "source_url": "https://example.org/shows/2026-07-02" }]
+}
+```
+
+`closed_weekdays` uses 0 = Sunday. `shows` is the upcoming program read from the public calendar, `past_shows` is the room's own past
+program (the only source for "this room's crowd"). `test/fixtures/synthetic/venues/example-room.json` is a hand-written test venue
+(`"_synthetic": true`, made-up city and acts).
+
+`GET /api/venues/:id/calendar?from=YYYY-MM-DD&days=60` returns every night in the window as `booked` (a show is listed),
+`closed` (a weekday the room is always shut; not counted as empty) or `dark` (open weekday, nothing booked), plus `dark_count`
+and the calendar source. `from` defaults to today and all date math is done in UTC, so the server time zone never shifts a night.
+`days` is 1 to 120.
+
 ## Qloo adapter
 
 `server/qloo/` talks to `https://hackathon.api.qloo.com` with GET requests and the `X-Api-Key` header. Before a request
