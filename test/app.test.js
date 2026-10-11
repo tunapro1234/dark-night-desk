@@ -137,3 +137,38 @@ test('serves the static page at /', async () => {
   assert.match(res.body, /fill the nights your venue sits empty/);
   await app.close();
 });
+
+test('serves the page script and stylesheet, with no outside scripts', async () => {
+  const app = await appWith({});
+  const page = (await app.inject('/')).body;
+  assert.doesNotMatch(page, /<script[^>]+src="https?:\/\//);
+  const js = await app.inject('/app.js');
+  assert.equal(js.statusCode, 200);
+  assert.match(js.headers['content-type'], /javascript/);
+  for (const label of ['Agent: live (Claude)', 'recorded run from', 'Agent: scripted plan (no LLM)', 'Qloo: live', 'Qloo: not connected']) {
+    assert.ok(js.body.includes(label), `app.js lacks the mode label "${label}"`);
+  }
+  const css = await app.inject('/style.css');
+  assert.equal(css.statusCode, 200);
+  assert.match(css.body, /@media \(max-width/);
+  for (const body of [page, js.body, css.body]) assert.doesNotMatch(body, /[^\x00-\x7F]/, 'web files stay ASCII');
+  await app.close();
+});
+
+test('backtest: not-run until a summary exists, then the summary totals', async () => {
+  const dataDir = path.join(tmp, 'bt');
+  let app = await appWith({ DATA_DIR: dataDir });
+  assert.deepEqual((await app.inject('/api/backtest')).json(), { status: 'not-run' });
+  await app.close();
+
+  await mkdir(path.join(dataDir, 'backtest'), { recursive: true });
+  await writeFile(path.join(dataDir, 'backtest', 'summary.json'), 'not json');
+  app = await appWith({ DATA_DIR: dataDir });
+  assert.equal((await app.inject('/api/backtest')).json().status, 'not-run');
+  await app.close();
+
+  await writeFile(path.join(dataDir, 'backtest', 'summary.json'), JSON.stringify({ status: 'pilot', rooms: 3 }));
+  app = await appWith({ DATA_DIR: dataDir });
+  assert.deepEqual((await app.inject('/api/backtest')).json(), { status: 'pilot', rooms: 3 });
+  await app.close();
+});

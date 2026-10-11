@@ -145,6 +145,17 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
     }
   });
 
+  // Totals only (BACKTEST.md). The back-test script writes DATA_DIR/backtest/summary.json; until then the answer is "not-run".
+  app.get('/api/backtest', async () => {
+    try {
+      const summary = JSON.parse(await readFile(path.join(config.dataDir, 'backtest', 'summary.json'), 'utf8'));
+      if (summary && (summary.status === 'pilot' || summary.status === 'full')) return summary;
+    } catch {
+      // no summary yet
+    }
+    return { status: 'not-run' };
+  });
+
   await app.register(fastifyStatic, { root: path.join(REPO_ROOT, 'web') });
 
   return app;

@@ -4,20 +4,156 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dark Night Desk</title>
-  <style>
-    :root { color-scheme: light dark; --bg: #f6f4ef; --fg: #1b1a17; --muted: #6b665c; }
-    @media (prefers-color-scheme: dark) { :root { --bg: #141311; --fg: #ece8df; --muted: #9b958a; } }
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--fg);
-      font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; padding: 0 16px; }
-    h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.25rem); letter-spacing: -0.02em; }
-    p { margin: 0.5rem 0 0; color: var(--muted); }
-  </style>
+  <meta name="description" content="Dark Night Desk finds the nights your venue sits empty and drafts a five-act shortlist for each one.">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
 </head>
 <body>
-  <main>
-    <h1>Dark Night Desk</h1>
-    <p>fill the nights your venue sits empty</p>
-    <p id="status">Status: in development</p>
+  <a class="skip" href="#main">Skip to the calendar</a>
+
+  <header class="top">
+    <div class="brand">
+      <h1>Dark Night Desk</h1>
+      <p class="tagline">fill the nights your venue sits empty</p>
+    </div>
+    <ul class="badges" aria-label="How this page is running">
+      <li><span class="badge" id="badge-agent" data-mode="">Agent: checking</span></li>
+      <li><span class="badge" id="badge-qloo" data-mode="">Qloo: checking</span></li>
+      <li><button type="button" class="badge badge-link" id="badge-backtest" aria-haspopup="dialog">Back-test: checking</button></li>
+    </ul>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="calendar" aria-labelledby="dark-count">
+      <div class="venue-row">
+        <label for="venue">Venue</label>
+        <select id="venue" disabled><option>Loading venues</option></select>
+        <span class="venue-meta" id="venue-meta"></span>
+      </div>
+
+      <h2 class="big" id="dark-count">Reading the calendar</h2>
+      <p class="sub" id="dark-sub">nights your venue sits empty on its public calendar</p>
+
+      <div class="strip-wrap">
+        <ol class="strip" id="strip" aria-label="Next 60 nights"></ol>
+      </div>
+
+      <div class="strip-foot">
+        <ul class="legend" aria-label="Legend">
+          <li><span class="sq sq-dark" aria-hidden="true"></span> dark night: pick one</li>
+          <li><span class="sq sq-booked" aria-hidden="true"></span> booked</li>
+          <li><span class="sq sq-closed" aria-hidden="true"></span> closed that weekday</li>
+        </ul>
+        <a class="chip" id="source-chip" href="#" target="_blank" rel="noopener" hidden></a>
+      </div>
+
+      <div class="notice" id="calendar-notice" role="status" hidden></div>
+    </section>
+
+    <div class="work">
+      <section class="night" id="night" aria-labelledby="night-title">
+        <div class="empty" id="night-empty">
+          <h2 id="night-title">Pick a dark night</h2>
+          <p>Choose one of the dark squares above. The Desk reads this room's past shows and lines up five acts who played the city this season.</p>
+        </div>
+
+        <div class="progress" id="progress" hidden>
+          <h2 class="progress-title" id="progress-title">Working on it</h2>
+          <ol class="steps" id="steps" aria-live="polite"></ol>
+        </div>
+
+        <div class="fail" id="fail" role="alert" hidden>
+          <h2 id="fail-title">That did not work</h2>
+          <p id="fail-text"></p>
+          <button type="button" class="btn" id="retry">Try again</button>
+        </div>
+
+        <article class="poster" id="poster" hidden tabindex="-1" aria-labelledby="poster-date">
+          <p class="poster-venue" id="poster-venue"></p>
+          <h2 class="poster-date" id="poster-date"></h2>
+          <ol class="lineup" id="lineup"></ol>
+          <div class="also" id="also" hidden>
+            <h3>This room's crowd also loves</h3>
+            <ul id="also-list"></ul>
+          </div>
+          <p class="fit">Sized to fit a room your size (popularity is a rough stand-in for draw; we have no ticket data).</p>
+          <div class="poster-actions">
+            <button type="button" class="btn btn-primary" id="draft-offer" aria-haspopup="dialog">Draft offer</button>
+            <button type="button" class="btn" id="why-night">why?</button>
+          </div>
+          <p class="fallback-note" id="fallback-note" hidden></p>
+        </article>
+      </section>
+
+      <aside class="why" id="why" hidden aria-labelledby="why-title" tabindex="-1">
+        <div class="why-head">
+          <h2 id="why-title">why?</h2>
+          <button type="button" class="btn btn-small" id="why-close" aria-label="Close the why? panel">Close</button>
+        </div>
+
+        <section class="why-block" id="why-act" hidden>
+          <h3 id="why-act-title"></h3>
+          <p class="method" id="why-method"></p>
+          <div id="why-bars"></div>
+        </section>
+
+        <section class="why-block">
+          <h3>Switch off a past show</h3>
+          <p class="hint">Each chip is a past show at this room. Switch one off and the Desk ranks the same pool again without it.</p>
+          <div class="chips" id="why-chips" role="group" aria-label="Past shows used for this night"></div>
+          <p class="ablate-out" id="ablate-out" role="status"></p>
+          <ol class="ablate-list" id="ablate-list"></ol>
+        </section>
+
+        <section class="why-block" id="why-also" hidden>
+          <h3>How the "also loves" row is measured</h3>
+          <div id="why-also-body"></div>
+        </section>
+
+        <section class="why-block">
+          <h3>Pool and room</h3>
+          <div id="why-pool"></div>
+        </section>
+
+        <section class="why-block">
+          <h3>Qloo requests</h3>
+          <p class="hint">Every request this plan made, with the key left out.</p>
+          <div class="calls" id="why-calls"></div>
+        </section>
+
+        <section class="why-block" id="why-left" hidden>
+          <h3>What was left out, and why</h3>
+          <ul id="why-left-list"></ul>
+        </section>
+      </aside>
+    </div>
   </main>
+
+  <dialog class="offer" id="offer" aria-labelledby="offer-title">
+    <form method="dialog" class="offer-inner">
+      <p class="not-sent"><strong>Not sent. Copy it to your own email.</strong></p>
+      <h2 id="offer-title">Note to the artist's booking agent</h2>
+      <p class="offer-to" id="offer-to"></p>
+      <label for="offer-subject">Subject</label>
+      <input id="offer-subject" readonly>
+      <label for="offer-body">Note</label>
+      <textarea id="offer-body" rows="14" readonly></textarea>
+      <div class="offer-actions">
+        <button type="button" class="btn btn-primary" id="offer-copy">Copy</button>
+        <span class="copy-status" id="copy-status" role="status"></span>
+        <button class="btn" value="close">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="offer" id="backtest" aria-labelledby="backtest-title">
+    <form method="dialog" class="offer-inner">
+      <h2 id="backtest-title">Back-test</h2>
+      <div id="backtest-body"></div>
+      <div class="offer-actions"><button class="btn" value="close">Close</button></div>
+    </form>
+  </dialog>
+
+  <noscript><p class="notice">Dark Night Desk needs JavaScript to read the calendar.</p></noscript>
 </body>
 </html>
