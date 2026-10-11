@@ -1,0 +1,28 @@
+{
+  "_synthetic": true,
+  "_note": "Hand-written synthetic shape, not Qloo data. Field layout follows the public docs and is re-checked against a live response on key day.",
+  "results": {
+    "tags": [
+      {
+        "id": "synthetic-tag-genre-a",
+        "name": "Synthetic Genre A",
+        "type": "urn:tag:genre:music"
+      },
+      {
+        "id": "synthetic-tag-genre-b",
+        "name": "Synthetic Genre B",
+        "type": "urn:tag:genre:music"
+      },
+      {
+        "id": "synthetic-tag-genre-c",
+        "name": "Synthetic Genre C",
+        "type": "urn:tag:genre:music"
+      },
+      {
+        "id": "synthetic-tag-audience-1",
+        "name": "Synthetic Audience One",
+        "type": "urn:tag:audience"
+      }
+    ]
+  }
+}

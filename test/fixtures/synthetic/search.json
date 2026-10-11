@@ -1,0 +1,158 @@
+{
+  "_synthetic": true,
+  "_note": "Hand-written synthetic shape, not Qloo data. Field layout follows the public docs and is re-checked against a live response on key day.",
+  "results": [
+    {
+      "name": "Synthetic Act 1",
+      "entity_id": "synthetic-artist-1",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.65
+    },
+    {
+      "name": "Synthetic Act 2",
+      "entity_id": "synthetic-artist-2",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.4
+    },
+    {
+      "name": "Synthetic Act 3",
+      "entity_id": "synthetic-artist-3",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.75
+    },
+    {
+      "name": "Synthetic Act 4",
+      "entity_id": "synthetic-artist-4",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.5
+    },
+    {
+      "name": "Synthetic Act 5",
+      "entity_id": "synthetic-artist-5",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.85
+    },
+    {
+      "name": "Synthetic Act 6",
+      "entity_id": "synthetic-artist-6",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.6
+    },
+    {
+      "name": "Synthetic Act 7",
+      "entity_id": "synthetic-artist-7",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.35
+    },
+    {
+      "name": "Synthetic Act 8",
+      "entity_id": "synthetic-artist-8",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.7
+    },
+    {
+      "name": "Synthetic Act 9",
+      "entity_id": "synthetic-artist-9",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.45
+    },
+    {
+      "name": "Synthetic Act 10",
+      "entity_id": "synthetic-artist-10",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.8
+    },
+    {
+      "name": "Synthetic Act 11",
+      "entity_id": "synthetic-artist-11",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.55
+    },
+    {
+      "name": "Synthetic Act 12",
+      "entity_id": "synthetic-artist-12",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.3
+    },
+    {
+      "name": "Synthetic Act 101",
+      "entity_id": "synthetic-artist-101",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.45
+    },
+    {
+      "name": "Synthetic Act 102",
+      "entity_id": "synthetic-artist-102",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.5
+    },
+    {
+      "name": "Synthetic Act 103",
+      "entity_id": "synthetic-artist-103",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.55
+    },
+    {
+      "name": "Synthetic Act 104",
+      "entity_id": "synthetic-artist-104",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.6
+    },
+    {
+      "name": "Synthetic Act 105",
+      "entity_id": "synthetic-artist-105",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.65
+    },
+    {
+      "name": "Synthetic Act 106",
+      "entity_id": "synthetic-artist-106",
+      "types": [
+        "urn:entity:artist"
+      ],
+      "popularity": 0.7
+    },
+    {
+      "name": "Example Room",
+      "entity_id": "synthetic-place-room",
+      "types": [
+        "urn:entity:place"
+      ],
+      "popularity": 0.35
+    }
+  ]
+}

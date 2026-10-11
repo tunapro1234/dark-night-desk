@@ -37,6 +37,20 @@ as a labelled scripted plan. All settings are environment variables read in `ser
 
 The server refuses to start on an invalid setting and prints what is wrong.
 
+## Qloo adapter
+
+`server/qloo/` talks to `https://hackathon.api.qloo.com` with GET requests and the `X-Api-Key` header. Before a request
+goes out, `validate.js` checks every `/v2/insights` parameter against the entity type, because Qloo silently ignores a
+parameter that does not apply (for example `filter.location.radius` on artists). Responses are cached in
+`DATA_DIR/qloo-cache.sqlite` and never stored in this repo. Test fixtures in `test/fixtures/synthetic/` are hand-made
+shapes with made-up ids, marked `"_synthetic": true`.
+
+Key-day check (30 probes, writes only counts to `DATA_DIR/keyday-summary.json`):
+
+```sh
+QLOO_API_KEY=... node scripts/keyday.js data/dev/room-a.json data/dev/room-b.json --placebo data/dev/other-city.json
+```
+
 ## License
 
 MIT

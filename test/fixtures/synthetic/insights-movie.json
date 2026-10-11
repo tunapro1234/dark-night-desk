@@ -1,0 +1,111 @@
+{
+  "_synthetic": true,
+  "_note": "Hand-written synthetic shape, not Qloo data. Field layout follows the public docs and is re-checked against a live response on key day.",
+  "success": true,
+  "results": {
+    "entities": [
+      {
+        "name": "Synthetic Film 1",
+        "entity_id": "synthetic-movie-1",
+        "type": "urn:entity",
+        "subtype": "urn:entity:movie",
+        "popularity": 0.83,
+        "query": {
+          "affinity": 0.83
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-movie-category-2",
+            "name": "Synthetic Film Category 2",
+            "type": "urn:tag:category:movie"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Film 2",
+        "entity_id": "synthetic-movie-2",
+        "type": "urn:entity",
+        "subtype": "urn:entity:movie",
+        "popularity": 0.76,
+        "query": {
+          "affinity": 0.78
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-movie-category-3",
+            "name": "Synthetic Film Category 3",
+            "type": "urn:tag:category:movie"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Film 3",
+        "entity_id": "synthetic-movie-3",
+        "type": "urn:entity",
+        "subtype": "urn:entity:movie",
+        "popularity": 0.69,
+        "query": {
+          "affinity": 0.73
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-movie-category-1",
+            "name": "Synthetic Film Category 1",
+            "type": "urn:tag:category:movie"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Film 4",
+        "entity_id": "synthetic-movie-4",
+        "type": "urn:entity",
+        "subtype": "urn:entity:movie",
+        "popularity": 0.62,
+        "query": {
+          "affinity": 0.68
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-movie-category-2",
+            "name": "Synthetic Film Category 2",
+            "type": "urn:tag:category:movie"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Film 5",
+        "entity_id": "synthetic-movie-5",
+        "type": "urn:entity",
+        "subtype": "urn:entity:movie",
+        "popularity": 0.55,
+        "query": {
+          "affinity": 0.63
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-movie-category-3",
+            "name": "Synthetic Film Category 3",
+            "type": "urn:tag:category:movie"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Film 6",
+        "entity_id": "synthetic-movie-6",
+        "type": "urn:entity",
+        "subtype": "urn:entity:movie",
+        "popularity": 0.48,
+        "query": {
+          "affinity": 0.58
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-movie-category-1",
+            "name": "Synthetic Film Category 1",
+            "type": "urn:tag:category:movie"
+          }
+        ]
+      }
+    ]
+  }
+}

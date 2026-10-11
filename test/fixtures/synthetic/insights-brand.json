@@ -1,0 +1,111 @@
+{
+  "_synthetic": true,
+  "_note": "Hand-written synthetic shape, not Qloo data. Field layout follows the public docs and is re-checked against a live response on key day.",
+  "success": true,
+  "results": {
+    "entities": [
+      {
+        "name": "Synthetic Brand 1",
+        "entity_id": "synthetic-brand-1",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.83,
+        "query": {
+          "affinity": 0.83
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-2",
+            "name": "Synthetic Brand Category 2",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 2",
+        "entity_id": "synthetic-brand-2",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.76,
+        "query": {
+          "affinity": 0.78
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-3",
+            "name": "Synthetic Brand Category 3",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 3",
+        "entity_id": "synthetic-brand-3",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.69,
+        "query": {
+          "affinity": 0.73
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-1",
+            "name": "Synthetic Brand Category 1",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 4",
+        "entity_id": "synthetic-brand-4",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.62,
+        "query": {
+          "affinity": 0.68
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-2",
+            "name": "Synthetic Brand Category 2",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 5",
+        "entity_id": "synthetic-brand-5",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.55,
+        "query": {
+          "affinity": 0.63
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-3",
+            "name": "Synthetic Brand Category 3",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 6",
+        "entity_id": "synthetic-brand-6",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.48,
+        "query": {
+          "affinity": 0.58
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-1",
+            "name": "Synthetic Brand Category 1",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      }
+    ]
+  }
+}

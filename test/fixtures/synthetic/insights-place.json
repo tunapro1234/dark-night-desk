@@ -1,0 +1,153 @@
+{
+  "_synthetic": true,
+  "_note": "Hand-written synthetic shape, not Qloo data. Field layout follows the public docs and is re-checked against a live response on key day.",
+  "success": true,
+  "results": {
+    "entities": [
+      {
+        "name": "Synthetic Place 1",
+        "entity_id": "synthetic-place-1",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.83,
+        "query": {
+          "affinity": 0.83
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-2",
+            "name": "Synthetic Place Category 2",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.001,
+          "lon": -0.001
+        },
+        "properties": {
+          "address": "1 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 2",
+        "entity_id": "synthetic-place-2",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.76,
+        "query": {
+          "affinity": 0.78
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-3",
+            "name": "Synthetic Place Category 3",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.002,
+          "lon": -0.002
+        },
+        "properties": {
+          "address": "2 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 3",
+        "entity_id": "synthetic-place-3",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.69,
+        "query": {
+          "affinity": 0.73
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-1",
+            "name": "Synthetic Place Category 1",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.003,
+          "lon": -0.003
+        },
+        "properties": {
+          "address": "3 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 4",
+        "entity_id": "synthetic-place-4",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.62,
+        "query": {
+          "affinity": 0.68
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-2",
+            "name": "Synthetic Place Category 2",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.004,
+          "lon": -0.004
+        },
+        "properties": {
+          "address": "4 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 5",
+        "entity_id": "synthetic-place-5",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.55,
+        "query": {
+          "affinity": 0.63
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-3",
+            "name": "Synthetic Place Category 3",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.005,
+          "lon": -0.005
+        },
+        "properties": {
+          "address": "5 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 6",
+        "entity_id": "synthetic-place-6",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.48,
+        "query": {
+          "affinity": 0.58
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-1",
+            "name": "Synthetic Place Category 1",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.006,
+          "lon": -0.006
+        },
+        "properties": {
+          "address": "6 Example Street, Exampleville"
+        }
+      }
+    ]
+  }
+}

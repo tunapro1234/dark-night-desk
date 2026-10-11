@@ -1,0 +1,213 @@
+{
+  "_synthetic": true,
+  "_note": "Hand-written synthetic shape, not Qloo data. Field layout follows the public docs and is re-checked against a live response on key day.",
+  "success": true,
+  "results": {
+    "entities": [
+      {
+        "name": "Synthetic Act 1",
+        "entity_id": "synthetic-artist-1",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.65,
+        "query": {
+          "affinity": 0.91
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-genre-b",
+            "name": "Synthetic Genre B",
+            "type": "urn:tag:genre:music"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Act 2",
+        "entity_id": "synthetic-artist-2",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.4,
+        "query": {
+          "affinity": 0.87
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-genre-c",
+            "name": "Synthetic Genre C",
+            "type": "urn:tag:genre:music"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Act 3",
+        "entity_id": "synthetic-artist-3",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.75,
+        "query": {
+          "affinity": 0.83
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-genre-a",
+            "name": "Synthetic Genre A",
+            "type": "urn:tag:genre:music"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Act 4",
+        "entity_id": "synthetic-artist-4",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.5,
+        "query": {
+          "affinity": 0.79
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-genre-b",
+            "name": "Synthetic Genre B",
+            "type": "urn:tag:genre:music"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Act 5",
+        "entity_id": "synthetic-artist-5",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.85,
+        "query": {
+          "affinity": 0.75
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-genre-c",
+            "name": "Synthetic Genre C",
+            "type": "urn:tag:genre:music"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Act 6",
+        "entity_id": "synthetic-artist-6",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.6,
+        "query": {
+          "affinity": 0.71
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-genre-a",
+            "name": "Synthetic Genre A",
+            "type": "urn:tag:genre:music"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Act 7",
+        "entity_id": "synthetic-artist-7",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.35,
+        "query": {
+          "affinity": 0.67
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-genre-b",
+            "name": "Synthetic Genre B",
+            "type": "urn:tag:genre:music"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Act 8",
+        "entity_id": "synthetic-artist-8",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.7,
+        "query": {
+          "affinity": 0.63
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-genre-c",
+            "name": "Synthetic Genre C",
+            "type": "urn:tag:genre:music"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Act 9",
+        "entity_id": "synthetic-artist-9",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.45,
+        "query": {
+          "affinity": 0.59
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-genre-a",
+            "name": "Synthetic Genre A",
+            "type": "urn:tag:genre:music"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Act 10",
+        "entity_id": "synthetic-artist-10",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.8,
+        "query": {
+          "affinity": 0.55
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-genre-b",
+            "name": "Synthetic Genre B",
+            "type": "urn:tag:genre:music"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Act 11",
+        "entity_id": "synthetic-artist-11",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.55,
+        "query": {
+          "affinity": 0.51
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-genre-c",
+            "name": "Synthetic Genre C",
+            "type": "urn:tag:genre:music"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Act 12",
+        "entity_id": "synthetic-artist-12",
+        "type": "urn:entity",
+        "subtype": "urn:entity:artist",
+        "popularity": 0.3,
+        "query": {
+          "affinity": 0.47
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-genre-a",
+            "name": "Synthetic Genre A",
+            "type": "urn:tag:genre:music"
+          }
+        ]
+      }
+    ]
+  }
+}
