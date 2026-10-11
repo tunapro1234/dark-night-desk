@@ -97,8 +97,8 @@ main:focus { outline: none; }
 /* Today and earlier nights are too late to plan: shown, never clickable. */
 .sq-today, .sq-past { background: var(--panel); color: var(--muted); border: 1px dashed var(--line); }
 .sq-is-today { outline: 2px solid var(--gold); outline-offset: 1px; }
-.sq .t { position: absolute; top: 3px; right: 3px; font-weight: 700; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.02em; }
-.sq .m + .t { top: auto; bottom: 2px; }
+.sq .t { position: absolute; top: 3px; left: 3px; right: 2px; overflow: hidden; font-weight: 700; font-size: 0.6rem; line-height: 1;
+  white-space: nowrap; }
 
 .strip-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; margin-top: 12px; }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; color: var(--muted); font-size: 0.88rem; }
@@ -232,6 +232,7 @@ code.params { display: block; white-space: pre-wrap; overflow-wrap: anywhere; }
   .site-foot { padding: 0 16px 28px; }
   .strip { grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 4px; }
   .sq { min-height: 30px; }
+  .sq .t { left: 2px; font-size: 0.5rem; letter-spacing: -0.01em; }
   .poster { padding: 22px 16px 18px; }
   .why { padding: 16px; }
   th:nth-child(2), td:nth-child(2) { min-width: 180px; }

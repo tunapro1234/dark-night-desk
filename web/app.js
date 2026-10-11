@@ -123,6 +123,7 @@ function showCalendarNotice(text) {
 
 // The room picked on first load when the server has it; otherwise the first venue in the list.
 const DEFAULT_VENUE = 'fa-fine-line';
+const WINDOW_NIGHTS = 60;
 
 async function loadCalendar(venueId) {
   state.venueId = venueId;
@@ -135,7 +136,8 @@ async function loadCalendar(venueId) {
   const v = state.venues.find((x) => x.id === venueId);
   $('venue-meta').textContent = v ? `${v.city} \u00b7 room for about ${v.capacity_band}` : '';
   try {
-    const cal = await getJSON(`/api/venues/${encodeURIComponent(venueId)}/calendar?days=60`);
+    // Today plus the next 60 nights: today is shown (too late to plan), the 60 nights from tomorrow are the window.
+    const cal = await getJSON(`/api/venues/${encodeURIComponent(venueId)}/calendar?days=${WINDOW_NIGHTS + 1}`);
     if (state.venueId !== venueId) return;
     state.calendar = cal;
     renderCalendar(cal);
@@ -165,7 +167,8 @@ function renderCalendar(cal) {
   const strip = $('strip');
   const items = cal.nights.map((night, i) => {
     const d = parseDay(night.date);
-    const showMonth = i === 0 || d.getUTCDate() === 1;
+    // Today's cell carries the "today" tag where the month label would sit, so the month moves to the next cell.
+    const showMonth = !night.today && (i === 0 || d.getUTCDate() === 1 || cal.nights[i - 1]?.today);
     const label = h('span', { class: 'd', 'aria-hidden': 'true' }, String(d.getUTCDate()));
     const month = showMonth ? h('span', { class: 'm', 'aria-hidden': 'true' }, MONTHS[d.getUTCMonth()]) : null;
     const todayTag = night.today ? h('span', { class: 't', 'aria-hidden': 'true' }, 'today') : null;

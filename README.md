@@ -239,8 +239,9 @@ added the same day before any Qloo call. The copy here is unchanged. The code fo
 
 Plain HTML, CSS and browser JavaScript, served by the same server. No framework, no build step, no outside scripts or fonts.
 
-- **First screen:** Fine Line, or the first venue. One big line ("N dark nights in the next 59 days", counted from tomorrow), the
-  60-night strip (dark nights are the dark squares, arrow keys move between them; today is marked "today" and cannot be picked),
+- **First screen:** Fine Line, or the first venue. One big line ("N dark nights in the next 60 days": the 60 nights from tomorrow),
+  the strip of today plus those 60 nights (`?days=61`; dark nights are the dark squares, arrow keys move between them; today is
+  tagged "today" where the month label would sit and cannot be picked),
   and a chip linking the venue's public calendar with its read date.
 - **A dark night:** the agent's steps stream in, then the poster card: the date (`THU NOV 12`), five acts, one sentence each,
   and the "This room's crowd also loves" row in plain words (category, "shows up more here than at the city's average room",

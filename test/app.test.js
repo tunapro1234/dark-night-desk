@@ -132,6 +132,18 @@ test('calendar: today is shown and labelled but is not a dark night; earlier emp
   await app.close();
 });
 
+test('calendar: the page asks for today plus 60 nights, and the 60 nights from tomorrow hold every dark night', async () => {
+  const app = await calendarApp();
+  const cal = (await app.inject('/api/venues/example-room/calendar?days=61')).json();
+  assert.equal(cal.nights.length, 61);
+  assert.equal(cal.nights[0].today, true);
+  const ahead = cal.nights.filter((n) => !n.today);
+  assert.equal(ahead.length, 60);
+  assert.equal(ahead[0].date, '2026-10-12');
+  assert.equal(cal.dark_count, ahead.filter((n) => n.status === 'dark').length);
+  await app.close();
+});
+
 test('calendar: from and days are honoured', async () => {
   const app = await calendarApp();
   const cal = (await app.inject('/api/venues/example-room/calendar?from=2026-11-02&days=7')).json();
