@@ -162,3 +162,9 @@ Canceled or postponed flags are set from the title or slug only. Rows are kept, 
 - Result: 38 of 38 rows matched on all three. One request per row, 2.6 seconds apart.
 - Room capacity and operator for the three test rooms come from First Avenue's own announcement (https://first-avenue.com/first-avenue-purchasing-fine-line/): "First Avenue owns and operates the 250-capacity 7th St Entry, the 350-capacity Turf Club, the 650-capacity Fine Line".
 - Terms of use: no terms page was found on first-avenue.com (the only policy link returned 404). robots.txt allows this reading. In total about 105 page requests were made to first-avenue.com, spaced out. If First Avenue objects, the data is removed.
+
+## Correction (11 Oct 2026, before any Qloo call)
+- First Avenue marks some postponed shows only with a "postponed" badge on the list row, not in the title or URL. The first pass flagged canceled/postponed from the title and URL only.
+- All cached list pages were searched for the badge: 6 rows carry it. 3 were already flagged; 3 were not and are now `canceled=1`:
+  Fine Line 2026-04-19 (COLD), Turf Club 2026-04-26 (Barns Courtney), First Avenue 2026-07-14 (Juvenile). Each was confirmed as "POSTPONED" on its own event page.
+- Effect: two S1 signal rows and one pool row are dropped. No test-period row of a test room changed.
