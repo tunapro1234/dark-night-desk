@@ -1,0 +1,10 @@
+{
+  "_synthetic": true,
+  "id": "example-room",
+  "name": "Example Room",
+  "city": "Exampleville",
+  "capacity_band": "250-500",
+  "calendar_source_url": "https://example.org/calendar",
+  "closed_weekdays": [1],
+  "shows": []
+}

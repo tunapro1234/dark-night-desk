@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dark Night Desk</title>
+  <style>
+    :root { color-scheme: light dark; --bg: #f6f4ef; --fg: #1b1a17; --muted: #6b665c; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #141311; --fg: #ece8df; --muted: #9b958a; } }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--fg);
+      font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; padding: 0 16px; }
+    h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.25rem); letter-spacing: -0.02em; }
+    p { margin: 0.5rem 0 0; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Dark Night Desk</h1>
+    <p>fill the nights your venue sits empty</p>
+    <p id="status">Status: in development</p>
+  </main>
+</body>
+</html>
