@@ -93,6 +93,15 @@ Key-day check (30 probes, writes only counts to `DATA_DIR/keyday-summary.json`):
 QLOO_API_KEY=... node scripts/keyday.js data/dev/room-a.json data/dev/room-b.json --placebo data/dev/other-city.json
 ```
 
+## Spend caps and the IP limit (`server/budget/`)
+
+- Every Claude response is booked from its `usage` block into `DATA_DIR/budget.sqlite`: uncached input and output at
+  `CLAUDE_PRICE_IN_PER_MTOK` / `CLAUDE_PRICE_OUT_PER_MTOK`, cache writes at 1.25x input (2x for 1-hour writes), cache reads at 0.1x.
+- When the day's spend (UTC day) reaches `DAILY_USD_CAP` or the total reaches `TOTAL_USD_CAP`, no live call is made: the agent
+  falls back to a recorded run, or to the scripted plan when none exists. `/api/health` shows the ledger.
+- Each plan request counts against its IP; past `IP_DAILY_LIMIT` per UTC day the same fallback applies. `X-Forwarded-For` is read
+  only when the connection comes from loopback (nginx on the same host). The ledger keeps a salted hash of the address, for the current day only.
+
 ## License
 
 MIT

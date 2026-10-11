@@ -6,6 +6,7 @@ import fastifyStatic from '@fastify/static';
 import { REPO_ROOT, effectiveAgentMode, effectiveQlooMode } from './config.js';
 import { nightsFor, todayISO } from './calendar/nights.js';
 import { isISODate, loadVenues, venueSummary } from './calendar/venues.js';
+import { budgetPath, createBudget } from './budget/budget.js';
 
 const CALENDAR_MAX_DAYS = 120;
 
@@ -21,24 +22,31 @@ async function hasRecordedRuns(dataDir) {
 
 /**
  * @param {ReturnType<import('./config.js').loadConfig>} config
- * @param {{ logger?: boolean | object, now?: () => number }} [opts] `now` fixes "today" in tests.
+ * @param {{ logger?: boolean | object, now?: () => number, budget?: ReturnType<typeof createBudget> }} [opts]
+ *   `now` fixes "today" in tests; `budget` replaces the on-disk ledger in DATA_DIR.
  */
-export async function buildApp(config, { logger = false, now = Date.now } = {}) {
+export async function buildApp(config, { logger = false, now = Date.now, budget } = {}) {
   const app = Fastify({ logger });
+  if (!budget) {
+    budget = createBudget({
+      dbPath: budgetPath(config.dataDir),
+      dailyCap: config.budget.dailyUsdCap,
+      totalCap: config.budget.totalUsdCap,
+      ipLimit: config.budget.ipDailyLimit,
+      prices: { inPerMTok: config.anthropic.priceInPerMTok, outPerMTok: config.anthropic.priceOutPerMTok },
+      now,
+    });
+    app.addHook('onClose', async () => budget.close());
+  }
+  app.decorate('budget', budget);
 
-  app.get('/api/health', async () => ({
-    ok: true,
-    qloo: effectiveQlooMode(config),
-    agent: effectiveAgentMode(config, { hasRecordedRuns: await hasRecordedRuns(config.dataDir) }),
-    // Spend tracking is not wired yet; nothing has been spent because no live call exists.
-    budget: {
-      day_usd: 0,
-      total_usd: 0,
-      day_cap: config.budget.dailyUsdCap,
-      total_cap: config.budget.totalUsdCap,
-    },
-    version: pkg.version,
-  }));
+  app.get('/api/health', async () => {
+    const recorded = await hasRecordedRuns(config.dataDir);
+    let agent = effectiveAgentMode(config, { hasRecordedRuns: recorded });
+    // A spent cap means no live calls until the next UTC day (or ever, for the total cap).
+    if (agent === 'live' && !budget.canSpend().ok) agent = recorded ? 'recorded' : 'scripted';
+    return { ok: true, qloo: effectiveQlooMode(config), agent, budget: budget.snapshot(), version: pkg.version };
+  });
 
   const venues = () =>
     loadVenues(config.venuesDir, {
