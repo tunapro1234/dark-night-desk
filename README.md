@@ -85,7 +85,8 @@ Each venue is one JSON file in `VENUES_DIR` (schema checked by `server/calendar/
 
 `data/venues/` (the default `VENUES_DIR`) holds the demo market: the 15 rooms listed on First Avenue's calendar (the Minneapolis market, all filed under city "Minneapolis"), read on 11 Oct 2026
 from First Avenue's public calendar pages (GET only, a few requests at least 2.5 seconds apart). Each file keeps the next 60 days
-as `shows` and the last 90 days as `past_shows`; postponed shows were skipped. Titles are kept as the calendar printed them. The
+as `shows` and the last 90 days as `past_shows`; postponed shows were skipped. Titles are kept as the calendar printed them (letters outside ASCII are
+stored as JSON `\uXXXX` escapes, so the files are plain ASCII and parse to the same text). The
 page opens on Fine Line when it is present, otherwise on the first venue.
 
 `closed_weekdays` uses 0 = Sunday. `shows` is the upcoming program read from the public calendar, `past_shows` is the room's own past
