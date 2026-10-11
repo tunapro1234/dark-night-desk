@@ -161,6 +161,45 @@ function readFixture(dir, name) {
   return data;
 }
 
+// Deterministic pseudo-affinity in [0, 1) for a (result, signal) pair, so that fixture rankings move when the signal moves.
+function pairWeight(a, b) {
+  let h = 0x811c9dc5;
+  for (const ch of `${a}|${b}`) h = Math.imul(h ^ ch.charCodeAt(0), 0x01000193);
+  // murmur3 finalizer: ids that differ only in the last character must still land far apart
+  h = Math.imul(h ^ (h >>> 16), 0x85ebca6b);
+  h = Math.imul(h ^ (h >>> 13), 0xc2b2ae35);
+  return ((h ^ (h >>> 16)) >>> 0) / 2 ** 32;
+}
+
+/**
+ * Re-score fixture entities against the request's signal: 20% file affinity, 80% mean cubed pair weight with the signal ids
+ * (cubed so that one strong pair dominates, which makes leave-one-out and ablation move the order).
+ * With feature.explainability the per-signal shares are derived from the same weights, so they always name the request's
+ * own signal entities. Without a signal the file order and values are kept.
+ */
+function signalShaped(entities, params, explain) {
+  const signal = [...(ids(params['signal.interests.entities']) ?? []), ...(ids(params['signal.interests.tags']) ?? [])];
+  if (!signal.length) return entities;
+  const round = (x) => Math.round(x * 10_000) / 10_000;
+  const scored = entities.map((e) => {
+    const w = signal.map((sid) => [sid, pairWeight(e.entity_id, sid) ** 3]);
+    const mean = w.reduce((t, [, x]) => t + x, 0) / w.length;
+    const query = { ...e.query, affinity: round(0.2 * (e.query?.affinity ?? 0.5) + 0.8 * mean) };
+    const entitySignal = ids(params['signal.interests.entities']);
+    if (explain && entitySignal) {
+      const own = w.filter(([sid]) => entitySignal.has(sid));
+      const sum = own.reduce((t, [, x]) => t + x, 0) || 1;
+      query.explainability = {
+        'signal.interests.entities': own.map(([sid, x]) => ({ entity_id: sid, score: round(x / sum) })).sort((a, b) => b.score - a.score),
+      };
+    } else {
+      delete query.explainability;
+    }
+    return { ...e, query };
+  });
+  return scored.sort((a, b) => b.query.affinity - a.query.affinity);
+}
+
 const ids = (v) => (v === undefined ? undefined : new Set(String(v).split(',').map((s) => s.trim()).filter(Boolean)));
 
 function fixtureResponse(dir, endpoint, params) {
@@ -185,7 +224,7 @@ function fixtureResponse(dir, endpoint, params) {
   const data =
     (explain && readFixture(dir, `insights-${type}-explainability.json`)) ||
     readFixture(dir, `insights-${type}.json`) || { _synthetic: true, results: { entities: [] } };
-  let entities = entitiesOf(data);
+  let entities = signalShaped(entitiesOf(data), params, explain);
   const only = ids(params['filter.results.entities']);
   const exclude = ids(params['filter.exclude.entities']);
   if (only) entities = entities.filter((e) => only.has(e.entity_id));

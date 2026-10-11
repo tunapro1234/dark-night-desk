@@ -107,6 +107,6 @@ test('validateVenue reports each schema problem', () => {
 test('loadVenues reads the synthetic directory', async () => {
   const skipped = [];
   const venues = await loadVenues(FIXTURE_DIR, { onSkip: (f, r) => skipped.push([f, r]) });
-  assert.deepEqual(venues.map((v) => v.id), ['example-room']);
+  assert.deepEqual(venues.map((v) => v.id), ['example-room', 'other-hall']);
   assert.deepEqual(skipped, []);
 });

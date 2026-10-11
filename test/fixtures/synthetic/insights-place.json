@@ -9,14 +9,14 @@
         "entity_id": "synthetic-place-1",
         "type": "urn:entity",
         "subtype": "urn:entity:place",
-        "popularity": 0.83,
+        "popularity": 0.925,
         "query": {
-          "affinity": 0.83
+          "affinity": 0.88
         },
         "tags": [
           {
-            "tag_id": "synthetic-tag-place-category-2",
-            "name": "Synthetic Place Category 2",
+            "tag_id": "synthetic-tag-place-category-4",
+            "name": "Synthetic Place Category 4",
             "type": "urn:tag:category:place"
           }
         ],
@@ -33,14 +33,14 @@
         "entity_id": "synthetic-place-2",
         "type": "urn:entity",
         "subtype": "urn:entity:place",
-        "popularity": 0.76,
+        "popularity": 0.9,
         "query": {
-          "affinity": 0.78
+          "affinity": 0.86
         },
         "tags": [
           {
-            "tag_id": "synthetic-tag-place-category-3",
-            "name": "Synthetic Place Category 3",
+            "tag_id": "synthetic-tag-place-category-2",
+            "name": "Synthetic Place Category 2",
             "type": "urn:tag:category:place"
           }
         ],
@@ -57,14 +57,14 @@
         "entity_id": "synthetic-place-3",
         "type": "urn:entity",
         "subtype": "urn:entity:place",
-        "popularity": 0.69,
+        "popularity": 0.875,
         "query": {
-          "affinity": 0.73
+          "affinity": 0.84
         },
         "tags": [
           {
-            "tag_id": "synthetic-tag-place-category-1",
-            "name": "Synthetic Place Category 1",
+            "tag_id": "synthetic-tag-place-category-5",
+            "name": "Synthetic Place Category 5",
             "type": "urn:tag:category:place"
           }
         ],
@@ -81,14 +81,14 @@
         "entity_id": "synthetic-place-4",
         "type": "urn:entity",
         "subtype": "urn:entity:place",
-        "popularity": 0.62,
+        "popularity": 0.85,
         "query": {
-          "affinity": 0.68
+          "affinity": 0.82
         },
         "tags": [
           {
-            "tag_id": "synthetic-tag-place-category-2",
-            "name": "Synthetic Place Category 2",
+            "tag_id": "synthetic-tag-place-category-3",
+            "name": "Synthetic Place Category 3",
             "type": "urn:tag:category:place"
           }
         ],
@@ -105,14 +105,14 @@
         "entity_id": "synthetic-place-5",
         "type": "urn:entity",
         "subtype": "urn:entity:place",
-        "popularity": 0.55,
+        "popularity": 0.825,
         "query": {
-          "affinity": 0.63
+          "affinity": 0.8
         },
         "tags": [
           {
-            "tag_id": "synthetic-tag-place-category-3",
-            "name": "Synthetic Place Category 3",
+            "tag_id": "synthetic-tag-place-category-1",
+            "name": "Synthetic Place Category 1",
             "type": "urn:tag:category:place"
           }
         ],
@@ -129,14 +129,14 @@
         "entity_id": "synthetic-place-6",
         "type": "urn:entity",
         "subtype": "urn:entity:place",
-        "popularity": 0.48,
+        "popularity": 0.8,
         "query": {
-          "affinity": 0.58
+          "affinity": 0.78
         },
         "tags": [
           {
-            "tag_id": "synthetic-tag-place-category-1",
-            "name": "Synthetic Place Category 1",
+            "tag_id": "synthetic-tag-place-category-4",
+            "name": "Synthetic Place Category 4",
             "type": "urn:tag:category:place"
           }
         ],
@@ -146,6 +146,582 @@
         },
         "properties": {
           "address": "6 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 7",
+        "entity_id": "synthetic-place-7",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.775,
+        "query": {
+          "affinity": 0.76
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-2",
+            "name": "Synthetic Place Category 2",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.007,
+          "lon": -0.007
+        },
+        "properties": {
+          "address": "7 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 8",
+        "entity_id": "synthetic-place-8",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.75,
+        "query": {
+          "affinity": 0.74
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-5",
+            "name": "Synthetic Place Category 5",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.008,
+          "lon": -0.008
+        },
+        "properties": {
+          "address": "8 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 9",
+        "entity_id": "synthetic-place-9",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.725,
+        "query": {
+          "affinity": 0.72
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-3",
+            "name": "Synthetic Place Category 3",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.009000000000000001,
+          "lon": -0.009000000000000001
+        },
+        "properties": {
+          "address": "9 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 10",
+        "entity_id": "synthetic-place-10",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.7,
+        "query": {
+          "affinity": 0.7
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-1",
+            "name": "Synthetic Place Category 1",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.01,
+          "lon": -0.01
+        },
+        "properties": {
+          "address": "10 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 11",
+        "entity_id": "synthetic-place-11",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.675,
+        "query": {
+          "affinity": 0.68
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-4",
+            "name": "Synthetic Place Category 4",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.011,
+          "lon": -0.011
+        },
+        "properties": {
+          "address": "11 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 12",
+        "entity_id": "synthetic-place-12",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.65,
+        "query": {
+          "affinity": 0.66
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-2",
+            "name": "Synthetic Place Category 2",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.012,
+          "lon": -0.012
+        },
+        "properties": {
+          "address": "12 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 13",
+        "entity_id": "synthetic-place-13",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.625,
+        "query": {
+          "affinity": 0.64
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-5",
+            "name": "Synthetic Place Category 5",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.013000000000000001,
+          "lon": -0.013000000000000001
+        },
+        "properties": {
+          "address": "13 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 14",
+        "entity_id": "synthetic-place-14",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.6,
+        "query": {
+          "affinity": 0.62
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-3",
+            "name": "Synthetic Place Category 3",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.014,
+          "lon": -0.014
+        },
+        "properties": {
+          "address": "14 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 15",
+        "entity_id": "synthetic-place-15",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.575,
+        "query": {
+          "affinity": 0.6
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-1",
+            "name": "Synthetic Place Category 1",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.015,
+          "lon": -0.015
+        },
+        "properties": {
+          "address": "15 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 16",
+        "entity_id": "synthetic-place-16",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.55,
+        "query": {
+          "affinity": 0.58
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-4",
+            "name": "Synthetic Place Category 4",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.016,
+          "lon": -0.016
+        },
+        "properties": {
+          "address": "16 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 17",
+        "entity_id": "synthetic-place-17",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.525,
+        "query": {
+          "affinity": 0.56
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-2",
+            "name": "Synthetic Place Category 2",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.017,
+          "lon": -0.017
+        },
+        "properties": {
+          "address": "17 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 18",
+        "entity_id": "synthetic-place-18",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.5,
+        "query": {
+          "affinity": 0.54
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-5",
+            "name": "Synthetic Place Category 5",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.018000000000000002,
+          "lon": -0.018000000000000002
+        },
+        "properties": {
+          "address": "18 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 19",
+        "entity_id": "synthetic-place-19",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.475,
+        "query": {
+          "affinity": 0.52
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-3",
+            "name": "Synthetic Place Category 3",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.019,
+          "lon": -0.019
+        },
+        "properties": {
+          "address": "19 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 20",
+        "entity_id": "synthetic-place-20",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.45,
+        "query": {
+          "affinity": 0.5
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-1",
+            "name": "Synthetic Place Category 1",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.02,
+          "lon": -0.02
+        },
+        "properties": {
+          "address": "20 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 21",
+        "entity_id": "synthetic-place-21",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.425,
+        "query": {
+          "affinity": 0.48
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-4",
+            "name": "Synthetic Place Category 4",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.021,
+          "lon": -0.021
+        },
+        "properties": {
+          "address": "21 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 22",
+        "entity_id": "synthetic-place-22",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.4,
+        "query": {
+          "affinity": 0.46
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-2",
+            "name": "Synthetic Place Category 2",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.022,
+          "lon": -0.022
+        },
+        "properties": {
+          "address": "22 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 23",
+        "entity_id": "synthetic-place-23",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.375,
+        "query": {
+          "affinity": 0.44
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-5",
+            "name": "Synthetic Place Category 5",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.023,
+          "lon": -0.023
+        },
+        "properties": {
+          "address": "23 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 24",
+        "entity_id": "synthetic-place-24",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.35,
+        "query": {
+          "affinity": 0.42
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-3",
+            "name": "Synthetic Place Category 3",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.024,
+          "lon": -0.024
+        },
+        "properties": {
+          "address": "24 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 25",
+        "entity_id": "synthetic-place-25",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.325,
+        "query": {
+          "affinity": 0.4
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-1",
+            "name": "Synthetic Place Category 1",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.025,
+          "lon": -0.025
+        },
+        "properties": {
+          "address": "25 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 26",
+        "entity_id": "synthetic-place-26",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.3,
+        "query": {
+          "affinity": 0.38
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-4",
+            "name": "Synthetic Place Category 4",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.026000000000000002,
+          "lon": -0.026000000000000002
+        },
+        "properties": {
+          "address": "26 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 27",
+        "entity_id": "synthetic-place-27",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.275,
+        "query": {
+          "affinity": 0.36
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-2",
+            "name": "Synthetic Place Category 2",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.027,
+          "lon": -0.027
+        },
+        "properties": {
+          "address": "27 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 28",
+        "entity_id": "synthetic-place-28",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.25,
+        "query": {
+          "affinity": 0.34
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-5",
+            "name": "Synthetic Place Category 5",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.028,
+          "lon": -0.028
+        },
+        "properties": {
+          "address": "28 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 29",
+        "entity_id": "synthetic-place-29",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.225,
+        "query": {
+          "affinity": 0.32
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-3",
+            "name": "Synthetic Place Category 3",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.029,
+          "lon": -0.029
+        },
+        "properties": {
+          "address": "29 Example Street, Exampleville"
+        }
+      },
+      {
+        "name": "Synthetic Place 30",
+        "entity_id": "synthetic-place-30",
+        "type": "urn:entity",
+        "subtype": "urn:entity:place",
+        "popularity": 0.2,
+        "query": {
+          "affinity": 0.3
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-place-category-1",
+            "name": "Synthetic Place Category 1",
+            "type": "urn:tag:category:place"
+          }
+        ],
+        "location": {
+          "lat": 0.03,
+          "lon": -0.03
+        },
+        "properties": {
+          "address": "30 Example Street, Exampleville"
         }
       }
     ]

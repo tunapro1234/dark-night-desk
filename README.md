@@ -60,6 +60,25 @@ program (the only source for "this room's crowd"). `test/fixtures/synthetic/venu
 and the calendar source. `from` defaults to today and all date math is done in UTC, so the server time zone never shifts a night.
 `days` is 1 to 120.
 
+## Ranking core (`server/rank/`, no LLM)
+
+- **Pool** (`pool.js`): headliners who played other rooms in the same city from 90 days before to 60 days after the night
+  ("acts who played <city> this season"; the back-test uses the Monday-to-Sunday week instead). Acts from the room's own past program are
+  left out. Names resolve with `/search` only when the top artist result has the same normalized name (whole title, then the part before
+  "with", "feat." and similar). Anything else is counted: `needs_input` keeps the top 3 candidates, `unresolved` is dropped.
+- **Rankers** (`rank.js`): `rankPool` (the room's past headliners as the taste signal), `rankByPopularity` (a rough stand-in for draw;
+  we have no ticket data) and `rankByTags` (genre tags only). Each first asks `/v2/insights` once with `filter.results.entities` = the pool;
+  if that is empty or fails it asks once with `take=200` and keeps the pool members found. `method` says which path ran.
+- **Why this act** (`contributions`): per-signal shares from `feature.explainability` when the response has them, otherwise leave-one-out
+  (one cached call per past show with that show removed; the share is the score drop).
+- **Ablation** (`ablate.js`): switch off past shows, rank again, report the new top 5 and how many of 5 changed.
+- **Also loves** (`lift.js`): film, place and brand categories, asked with the room's signal and with a neutral signal (the same number of past
+  headliners from each sample room in the city). Shown as category plus lift range: the category's share of the top 10 and top 20 results,
+  room minus city. Raw affinity is never shown.
+
+In tests the Qloo client runs in fixture mode: hand-written synthetic files, re-scored from a hash of the signal ids so that rankings,
+ablation and lift react to the signal. Those numbers mean nothing outside the tests.
+
 ## Qloo adapter
 
 `server/qloo/` talks to `https://hackathon.api.qloo.com` with GET requests and the `X-Api-Key` header. Before a request

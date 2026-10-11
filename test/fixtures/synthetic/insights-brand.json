@@ -9,9 +9,26 @@
         "entity_id": "synthetic-brand-1",
         "type": "urn:entity",
         "subtype": "urn:entity:brand",
-        "popularity": 0.83,
+        "popularity": 0.925,
         "query": {
-          "affinity": 0.83
+          "affinity": 0.88
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-4",
+            "name": "Synthetic Brand Category 4",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 2",
+        "entity_id": "synthetic-brand-2",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.9,
+        "query": {
+          "affinity": 0.86
         },
         "tags": [
           {
@@ -22,13 +39,30 @@
         ]
       },
       {
-        "name": "Synthetic Brand 2",
-        "entity_id": "synthetic-brand-2",
+        "name": "Synthetic Brand 3",
+        "entity_id": "synthetic-brand-3",
         "type": "urn:entity",
         "subtype": "urn:entity:brand",
-        "popularity": 0.76,
+        "popularity": 0.875,
         "query": {
-          "affinity": 0.78
+          "affinity": 0.84
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-5",
+            "name": "Synthetic Brand Category 5",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 4",
+        "entity_id": "synthetic-brand-4",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.85,
+        "query": {
+          "affinity": 0.82
         },
         "tags": [
           {
@@ -39,13 +73,13 @@
         ]
       },
       {
-        "name": "Synthetic Brand 3",
-        "entity_id": "synthetic-brand-3",
+        "name": "Synthetic Brand 5",
+        "entity_id": "synthetic-brand-5",
         "type": "urn:entity",
         "subtype": "urn:entity:brand",
-        "popularity": 0.69,
+        "popularity": 0.825,
         "query": {
-          "affinity": 0.73
+          "affinity": 0.8
         },
         "tags": [
           {
@@ -56,13 +90,30 @@
         ]
       },
       {
-        "name": "Synthetic Brand 4",
-        "entity_id": "synthetic-brand-4",
+        "name": "Synthetic Brand 6",
+        "entity_id": "synthetic-brand-6",
         "type": "urn:entity",
         "subtype": "urn:entity:brand",
-        "popularity": 0.62,
+        "popularity": 0.8,
         "query": {
-          "affinity": 0.68
+          "affinity": 0.78
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-4",
+            "name": "Synthetic Brand Category 4",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 7",
+        "entity_id": "synthetic-brand-7",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.775,
+        "query": {
+          "affinity": 0.76
         },
         "tags": [
           {
@@ -73,13 +124,30 @@
         ]
       },
       {
-        "name": "Synthetic Brand 5",
-        "entity_id": "synthetic-brand-5",
+        "name": "Synthetic Brand 8",
+        "entity_id": "synthetic-brand-8",
         "type": "urn:entity",
         "subtype": "urn:entity:brand",
-        "popularity": 0.55,
+        "popularity": 0.75,
         "query": {
-          "affinity": 0.63
+          "affinity": 0.74
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-5",
+            "name": "Synthetic Brand Category 5",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 9",
+        "entity_id": "synthetic-brand-9",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.725,
+        "query": {
+          "affinity": 0.72
         },
         "tags": [
           {
@@ -90,13 +158,353 @@
         ]
       },
       {
-        "name": "Synthetic Brand 6",
-        "entity_id": "synthetic-brand-6",
+        "name": "Synthetic Brand 10",
+        "entity_id": "synthetic-brand-10",
         "type": "urn:entity",
         "subtype": "urn:entity:brand",
-        "popularity": 0.48,
+        "popularity": 0.7,
+        "query": {
+          "affinity": 0.7
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-1",
+            "name": "Synthetic Brand Category 1",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 11",
+        "entity_id": "synthetic-brand-11",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.675,
+        "query": {
+          "affinity": 0.68
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-4",
+            "name": "Synthetic Brand Category 4",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 12",
+        "entity_id": "synthetic-brand-12",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.65,
+        "query": {
+          "affinity": 0.66
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-2",
+            "name": "Synthetic Brand Category 2",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 13",
+        "entity_id": "synthetic-brand-13",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.625,
+        "query": {
+          "affinity": 0.64
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-5",
+            "name": "Synthetic Brand Category 5",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 14",
+        "entity_id": "synthetic-brand-14",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.6,
+        "query": {
+          "affinity": 0.62
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-3",
+            "name": "Synthetic Brand Category 3",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 15",
+        "entity_id": "synthetic-brand-15",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.575,
+        "query": {
+          "affinity": 0.6
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-1",
+            "name": "Synthetic Brand Category 1",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 16",
+        "entity_id": "synthetic-brand-16",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.55,
         "query": {
           "affinity": 0.58
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-4",
+            "name": "Synthetic Brand Category 4",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 17",
+        "entity_id": "synthetic-brand-17",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.525,
+        "query": {
+          "affinity": 0.56
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-2",
+            "name": "Synthetic Brand Category 2",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 18",
+        "entity_id": "synthetic-brand-18",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.5,
+        "query": {
+          "affinity": 0.54
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-5",
+            "name": "Synthetic Brand Category 5",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 19",
+        "entity_id": "synthetic-brand-19",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.475,
+        "query": {
+          "affinity": 0.52
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-3",
+            "name": "Synthetic Brand Category 3",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 20",
+        "entity_id": "synthetic-brand-20",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.45,
+        "query": {
+          "affinity": 0.5
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-1",
+            "name": "Synthetic Brand Category 1",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 21",
+        "entity_id": "synthetic-brand-21",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.425,
+        "query": {
+          "affinity": 0.48
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-4",
+            "name": "Synthetic Brand Category 4",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 22",
+        "entity_id": "synthetic-brand-22",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.4,
+        "query": {
+          "affinity": 0.46
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-2",
+            "name": "Synthetic Brand Category 2",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 23",
+        "entity_id": "synthetic-brand-23",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.375,
+        "query": {
+          "affinity": 0.44
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-5",
+            "name": "Synthetic Brand Category 5",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 24",
+        "entity_id": "synthetic-brand-24",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.35,
+        "query": {
+          "affinity": 0.42
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-3",
+            "name": "Synthetic Brand Category 3",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 25",
+        "entity_id": "synthetic-brand-25",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.325,
+        "query": {
+          "affinity": 0.4
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-1",
+            "name": "Synthetic Brand Category 1",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 26",
+        "entity_id": "synthetic-brand-26",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.3,
+        "query": {
+          "affinity": 0.38
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-4",
+            "name": "Synthetic Brand Category 4",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 27",
+        "entity_id": "synthetic-brand-27",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.275,
+        "query": {
+          "affinity": 0.36
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-2",
+            "name": "Synthetic Brand Category 2",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 28",
+        "entity_id": "synthetic-brand-28",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.25,
+        "query": {
+          "affinity": 0.34
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-5",
+            "name": "Synthetic Brand Category 5",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 29",
+        "entity_id": "synthetic-brand-29",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.225,
+        "query": {
+          "affinity": 0.32
+        },
+        "tags": [
+          {
+            "tag_id": "synthetic-tag-brand-category-3",
+            "name": "Synthetic Brand Category 3",
+            "type": "urn:tag:category:brand"
+          }
+        ]
+      },
+      {
+        "name": "Synthetic Brand 30",
+        "entity_id": "synthetic-brand-30",
+        "type": "urn:entity",
+        "subtype": "urn:entity:brand",
+        "popularity": 0.2,
+        "query": {
+          "affinity": 0.3
         },
         "tags": [
           {

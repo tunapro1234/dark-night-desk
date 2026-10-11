@@ -54,6 +54,9 @@ test('venues: synthetic fixture is listed with the public summary fields only', 
   assert.deepEqual((await app.inject('/api/venues')).json(), [{
     id: 'example-room', name: 'Example Room', city: 'Exampleville', capacity_band: '250-500',
     calendar_source_url: 'https://example.org/calendar',
+  }, {
+    id: 'other-hall', name: 'Other Hall', city: 'Exampleville', capacity_band: '500-800',
+    calendar_source_url: 'https://example.org/other-hall/calendar',
   }]);
   await app.close();
 });
