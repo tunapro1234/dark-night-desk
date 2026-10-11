@@ -91,4 +91,10 @@ labelled "pilot (N = 3 rooms, n = … shows)", with intervals, and the pitch res
 - No personal data. Venues and touring acts are public entities, and only billing names are used.
 
 ## Amendments
-(none yet)
+1. **11 Oct 2026, before any Qloo call. Pool window.** A dry run with no Qloo call counted 7 to 34 distinct show titles per Monday-to-Sunday week
+   (most weeks 13 to 21) before the headliner rule. After name resolution and removing the room's own S1 headliners, many shows would fall under the
+   minimum pool of 10 for reasons unrelated to taste. The pool for a show on date *d* is now the resolved headliners of every archive show in **the week of *d*,
+   the week before and the week after** (21 days, Monday to Sunday), with the same exclusions. The archive data ends on 30 Sep 2026, so windows are cut there;
+   the number of shows whose window is cut is reported. No result of any ranker was seen before this change.
+2. **11 Oct 2026, before any Qloo call. Ranker L sampling.** If the Claude model used for L does not accept a `temperature` setting, L runs once with the
+   model's default sampling, and the run log records which setting applied. Its result is then one draw, not a deterministic answer, and is labelled so.

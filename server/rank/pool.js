@@ -101,18 +101,35 @@ export async function resolveNames(client, titles, { concurrency = 4 } = {}) {
   return { resolved, needs_input, unresolved, calls };
 }
 
+const mondayOf = (dateISO) => addDays(dateISO, -((new Date(`${dateISO}T00:00:00Z`).getUTCDay() + 6) % 7));
+
 /**
- * Date window for the pool. `week`: the Monday-to-Sunday week of the date (back-test unit).
+ * Date window for the pool. `week`: the Monday-to-Sunday week of the date (a narrow product option).
  * `season`: 90 days before to 60 days after the date (product mode, "acts who played <city> this season").
+ * The back-test uses `backtestWindow` instead.
  */
 export function poolWindow(dateISO, mode = 'season') {
   if (mode === 'week') {
-    const dow = new Date(`${dateISO}T00:00:00Z`).getUTCDay();
-    const from = addDays(dateISO, -((dow + 6) % 7));
+    const from = mondayOf(dateISO);
     return { mode, from, to: addDays(from, 6) };
   }
   if (mode === 'season') return { mode, from: addDays(dateISO, -SEASON_BEFORE_DAYS), to: addDays(dateISO, SEASON_AFTER_DAYS) };
   throw new RangeError(`unknown pool window "${mode}"`);
+}
+
+/** Last date of the back-test archive (BACKTEST.md: S2 ends 30 Sep 2026). */
+export const BACKTEST_ARCHIVE_END = '2026-09-30';
+
+/**
+ * Back-test pool window (BACKTEST.md Amendment 1): the Monday-to-Sunday week of the date, the week before and the week
+ * after (21 days). The archive ends on BACKTEST_ARCHIVE_END, so a window that runs past it is cut there and says so.
+ * @returns {{ from: string, to: string, cut: boolean }}
+ */
+export function backtestWindow(dateISO) {
+  const monday = mondayOf(dateISO);
+  const from = addDays(monday, -7);
+  const to = addDays(monday, 13);
+  return to > BACKTEST_ARCHIVE_END ? { from, to: BACKTEST_ARCHIVE_END, cut: true } : { from, to, cut: false };
 }
 
 const sameCity = (a, b) => normalizeName(a) !== '' && normalizeName(a) === normalizeName(b);

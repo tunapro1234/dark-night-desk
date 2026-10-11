@@ -598,7 +598,7 @@ function renderBacktest(bt) {
   const iv = (m) => (m ? `${fmt(m.mean)} (${fmt(m.lo)} to ${fmt(m.hi)})` : '?');
   const rows = Object.entries(bt.rankers ?? {}).map(([name, r]) =>
     h('tr', {},
-      h('th', { scope: 'row' }, RANKER_WORDS[name] ?? name.replace(/^placebo:/, 'Placebo: ')),
+      h('th', { scope: 'row' }, `${RANKER_WORDS[name] ?? name.replace(/^placebo:/, 'Placebo: ')}${r.draw ? ` (${r.draw})` : ''}`),
       r.status === 'run'
         ? [h('td', {}, iv(r.mrr)), h('td', {}, iv(r.hit_at_5))]
         : [h('td', { colspan: '2', class: 'hint' }, `not run: ${r.reason ?? ''}`)]));
@@ -616,6 +616,9 @@ function renderBacktest(bt) {
     diffs.length ? h('p', {}, 'Differences in MRR:') : null,
     diffs.length ? h('ul', {}, diffs) : null,
     h('p', { class: 'hint' }, `${bt.interval?.method ?? ''}. ${bt.interval?.caveat ?? ''}`),
+    bt.pool_window
+      ? h('p', { class: 'hint' }, `Pool: acts from a ${bt.pool_window.days}-day window around each show; ${bt.pool_window.cut_shows} shows had their window cut at the end of the data (30 Sep).`)
+      : null,
   );
 }
 

@@ -101,7 +101,7 @@ and the calendar source. `from` defaults to today and all date math is done in U
 ## Ranking core (`server/rank/`, no LLM)
 
 - **Pool** (`pool.js`): headliners who played other rooms in the same city from 90 days before to 60 days after the night
-  ("acts who played <city> this season"; the back-test uses the Monday-to-Sunday week instead). Acts from the room's own past program are
+  ("acts who played <city> this season"; the back-test uses its own 21-day window, see below). Acts from the room's own past program are
   left out. Names resolve with `/search` only when the top artist result has the same normalized name (whole title, then the part before
   "with", "feat." and similar). Anything else is counted: `needs_input` keeps the top 3 candidates, `unresolved` is dropped.
 - **Rankers** (`rank.js`): `rankPool` (the room's past headliners as the taste signal), `rankByPopularity` (a rough stand-in for draw;
@@ -162,12 +162,14 @@ QLOO_API_KEY=... node scripts/keyday.js data/dev/room-a.json data/dev/room-b.jso
 
 ## Back-test (`server/backtest/`, `scripts/backtest.js`)
 
-`BACKTEST.md` is the pre-registered protocol, copied unchanged from the version frozen on 11 Oct 2026 (planning repo commit
-`cb8ede1`). The code follows it; it does not change it. Data: `data/backtest/venues.csv`, `shows.csv` and `sources.md`.
+`BACKTEST.md` is the pre-registered protocol, frozen on 11 Oct 2026 (planning repo commit `cb8ede1`), with Amendments 1 and 2
+added the same day before any Qloo call. The copy here is unchanged. The code follows it; it does not change it. Data: `data/backtest/venues.csv`, `shows.csv` and `sources.md`.
 
 - **Unit:** one S2 show (1 Jul to 30 Sep 2026) at a test room. **Positive:** its headliner under the headliner rule (`headliner.js`:
   whole title, then the part before the first listed separator, exact normalized match, no fuzzy matching). **Pool:** resolved
-  headliners of every archive show in the same Monday-to-Sunday week, minus the room's S1 headliners. Dropped shows are counted by
+  headliners of every archive show in the show's 21-day window (`backtestWindow` in `server/rank/pool.js`: its Monday-to-Sunday week,
+  the week before and the week after), minus the room's S1 headliners. The archive ends on 30 Sep 2026, so late windows are cut
+  there; the output counts the shows whose window was cut, and how many of them fell under the minimum pool. Dropped shows are counted by
   reason: canceled, unresolved, repeat headliner, pool under 10.
 - **Rankers:** Q (the room's S1 headliners as the taste signal), P (Qloo popularity only: a rough stand-in for draw; we have no ticket
   data), T (the 5 most frequent genre tags), L (Claude only, no Qloo; run only with a key and room in the spend caps, otherwise
@@ -180,10 +182,12 @@ QLOO_API_KEY=... node scripts/keyday.js data/dev/room-a.json data/dev/room-b.jso
   rooms it resamples rooms. Paired intervals for Q-P, Q-T, Q-L and Q minus each placebo.
 - **Claim rule** in code: status `full` only with 8+ rooms, 300+ shows, and the Q-P and every Q-placebo interval clear of zero.
   Otherwise `pilot`, labelled "pilot (N = 3 rooms, n = ... shows)".
-- **L sampling:** the protocol asks for temperature 0, but current Claude models reject sampling parameters, so L runs at the
-  model's default and the output says so.
-- **Running it:** `node scripts/backtest.js --dry-run` counts shows and weekly pool candidates with no Qloo call
-  (`results/backtest-dryrun.json`). `node scripts/backtest.js --split test --restrict filter` is the single test run: it writes
+- **L sampling** (Amendment 2): L asks for temperature 0. If the model answers that with HTTP 400, the request is sent once more
+  without it and the rest of the run uses the model's default sampling. The log then says "sampling: default (temperature not
+  accepted)" and the L result is labelled "single draw".
+- **Running it:** `node scripts/backtest.js --dry-run` counts shows and pool candidates per 21-day window with no Qloo call
+  (`results/backtest-dryrun.json`: 176 test shows before drops, 14 windows with 41 to 79 distinct titles each before the headliner
+  rule, 2 windows and 26 shows cut at 30 Sep). `node scripts/backtest.js --split test --restrict filter` is the single test run: it writes
   `results/backtest-test.json` (totals and per-room numbers only, no Qloo response, no artist list) and `results/backtest-test.log`
   (counts and codes). `DATA_DIR/backtest-test.lock` refuses a second run. There is no dev split.
 - `GET /api/backtest` returns `results/backtest-test.json`, or `{status: "not-run"}`.

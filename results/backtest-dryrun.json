@@ -1,6 +1,7 @@
 {
   "kind": "dry-run",
-  "note": "No Qloo call. Pool candidates are distinct archive show titles per week before the headliner rule, so the real pools are smaller.",
+  "protocol": "BACKTEST.md with Amendments 1-2 (11 Oct 2026)",
+  "note": "No Qloo call. Pool candidates are distinct archive show titles in each window before the headliner rule, so the real pools are smaller.",
   "periods": {
     "S1": {
       "from": "2026-04-01",
@@ -175,22 +176,114 @@
   ],
   "test_shows_before_drops": 176,
   "canceled_test_shows": 1,
-  "pool_candidates_by_week": {
-    "2026-06-29": 7,
-    "2026-07-06": 19,
-    "2026-07-13": 20,
-    "2026-07-20": 19,
-    "2026-07-27": 18,
-    "2026-08-03": 18,
-    "2026-08-10": 21,
-    "2026-08-17": 17,
-    "2026-08-24": 13,
-    "2026-08-31": 16,
-    "2026-09-07": 16,
-    "2026-09-14": 29,
-    "2026-09-21": 34,
-    "2026-09-28": 7
+  "window_days": 21,
+  "window_rule": "the show's Monday-to-Sunday week, the week before and the week after, cut at the archive end (2026-09-30)",
+  "pool_candidates_by_window": [
+    {
+      "from": "2026-06-22",
+      "to": "2026-07-12",
+      "cut": false,
+      "candidates": 47,
+      "test_shows": 4
+    },
+    {
+      "from": "2026-06-29",
+      "to": "2026-07-19",
+      "cut": false,
+      "candidates": 46,
+      "test_shows": 11
+    },
+    {
+      "from": "2026-07-06",
+      "to": "2026-07-26",
+      "cut": false,
+      "candidates": 58,
+      "test_shows": 16
+    },
+    {
+      "from": "2026-07-13",
+      "to": "2026-08-02",
+      "cut": false,
+      "candidates": 57,
+      "test_shows": 12
+    },
+    {
+      "from": "2026-07-20",
+      "to": "2026-08-09",
+      "cut": false,
+      "candidates": 55,
+      "test_shows": 13
+    },
+    {
+      "from": "2026-07-27",
+      "to": "2026-08-16",
+      "cut": false,
+      "candidates": 57,
+      "test_shows": 12
+    },
+    {
+      "from": "2026-08-03",
+      "to": "2026-08-23",
+      "cut": false,
+      "candidates": 56,
+      "test_shows": 13
+    },
+    {
+      "from": "2026-08-10",
+      "to": "2026-08-30",
+      "cut": false,
+      "candidates": 51,
+      "test_shows": 12
+    },
+    {
+      "from": "2026-08-17",
+      "to": "2026-09-06",
+      "cut": false,
+      "candidates": 46,
+      "test_shows": 11
+    },
+    {
+      "from": "2026-08-24",
+      "to": "2026-09-13",
+      "cut": false,
+      "candidates": 45,
+      "test_shows": 14
+    },
+    {
+      "from": "2026-08-31",
+      "to": "2026-09-20",
+      "cut": false,
+      "candidates": 61,
+      "test_shows": 14
+    },
+    {
+      "from": "2026-09-07",
+      "to": "2026-09-27",
+      "cut": false,
+      "candidates": 79,
+      "test_shows": 18
+    },
+    {
+      "from": "2026-09-14",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 70,
+      "test_shows": 20
+    },
+    {
+      "from": "2026-09-21",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 41,
+      "test_shows": 6
+    }
+  ],
+  "candidates_range": {
+    "min": 41,
+    "max": 79
   },
-  "weeks_below_min_pool_before_resolution": 2,
+  "windows_cut": 2,
+  "test_shows_with_cut_window": 26,
+  "windows_below_min_pool_before_resolution": 0,
   "min_pool": 10
 }

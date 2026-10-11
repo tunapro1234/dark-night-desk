@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Back-test runner for BACKTEST.md (frozen protocol; this script follows it and changes nothing in it).
+// Back-test runner for BACKTEST.md (frozen protocol with Amendments 1-2; this script follows it and changes nothing in it).
+// Pools use the 21-day window of each show (its week, the week before and the week after, cut at 2026-09-30).
 // Usage:
 //   node scripts/backtest.js --dry-run                         counts only, no Qloo call -> results/backtest-dryrun.json
 //   node scripts/backtest.js --split test --restrict filter    the single test run -> results/backtest-test.json + .log
@@ -7,7 +8,9 @@
 // entities, otherwise "take500". The test split runs once: DATA_DIR/backtest-test.lock is written when it starts and a
 // second run is refused. A run that stops on a Qloo error before any metric is computed removes its lock and logs the stop.
 // Rankers: Q (taste), P (popularity), T (genre tags), L (Claude only, when a key and budget exist; otherwise "not run"),
-// R (random, analytic), the placebo rooms' signals, and the venue-entity variant.
+// R (random, analytic), the placebo rooms' signals, and the venue-entity variant. L asks for temperature 0; if the model
+// refuses it, L runs at the default sampling, the log says "sampling: default (temperature not accepted)" and the result
+// is labelled a single draw.
 // Options: --data <dir> (default data/backtest), --out <dir> (default results), --seed <int>, --reps <int>.
 // Exit codes: 0 done, 1 usage/config/data error, 2 refused (lock or no Qloo key), 3 run stopped.
 import { appendFileSync, existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
@@ -76,7 +79,10 @@ export async function main(argv = process.argv.slice(2), env = process.env, prin
   if (args.dryRun) {
     const summary = dryRun(data);
     writeJson(path.join(args.out, 'backtest-dryrun.json'), summary);
-    print(`dry run: ${summary.test_shows_before_drops} test shows before drops, ${summary.weeks_below_min_pool_before_resolution} weeks under ${summary.min_pool} candidates`);
+    print(
+      `dry run: ${summary.test_shows_before_drops} test shows before drops, ${summary.pool_candidates_by_window.length} windows of ${summary.window_days} days, ` +
+        `${summary.windows_below_min_pool_before_resolution} under ${summary.min_pool} candidates, ${summary.windows_cut} cut at the archive end`,
+    );
     return 0;
   }
 
@@ -113,7 +119,7 @@ export async function main(argv = process.argv.slice(2), env = process.env, prin
       prices: { inPerMTok: config.anthropic.priceInPerMTok, outPerMTok: config.anthropic.priceOutPerMTok },
     });
     const spend = budget.canSpend();
-    if (spend.ok) llm = createLlmRanker({ anthropic: createAnthropic(config.anthropic.apiKey), model: config.anthropic.model, budget });
+    if (spend.ok) llm = createLlmRanker({ anthropic: createAnthropic(config.anthropic.apiKey), model: config.anthropic.model, budget, log });
     else llmSkipReason = `the Claude spend cap is used up (${spend.reason})`;
   }
   log({ event: 'llm', run: Boolean(llm), reason: llm ? null : llmSkipReason });

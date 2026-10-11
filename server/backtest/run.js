@@ -1,7 +1,9 @@
 // Back-test run, as BACKTEST.md describes it. Unit = one S2 show at a test room. Pool = resolved headliners of every archive
-// show (test and pool rooms, any size) in the same Monday-to-Sunday week, minus the room's S1 headliners; fewer than 10 drops it.
+// show (test and pool rooms, any size) in the 21-day window of the show (its Monday-to-Sunday week, the week before and the
+// week after, cut at 30 Sep 2026: Amendment 1), minus the room's S1 headliners; fewer than 10 drops it.
 // Output holds only totals and per-room summary numbers: no Qloo response, no artist score, no artist list.
-import { S1, S2, periodOf, weekOf } from './data.js';
+import { S1, S2, periodOf } from './data.js';
+import { backtestWindow } from '../rank/pool.js';
 import { resolveHeadliner } from './headliner.js';
 import {
   CLAIM_SENTENCE, claimRule, clusterBootstrap, clusterBootstrapDiff, hitAt, percentileRank, randomExpectation,
@@ -13,6 +15,7 @@ export const DEFAULT_SEED = 20261011;
 export const DEFAULT_REPS = 2000;
 export const MIN_POOL = 10;
 export const HIT_K = 5;
+export const WINDOW_DAYS = 21;
 export const DROP_REASONS = Object.freeze(['canceled', 'unresolved', 'repeat_headliner', 'small_pool']);
 const ARCHIVE_ROLES = new Set(['test', 'pool']);
 
@@ -48,9 +51,10 @@ function countingClient(client) {
 }
 
 const showsBy = (shows, pred) => shows.filter((s) => s.canceled === '0' && pred(s));
+const windowKey = (w) => `${w.from}..${w.to}`;
 
 /**
- * Counts that need no Qloo call: shows per room and period, canceled rows, and archive titles per week of the test period.
+ * Counts that need no Qloo call: shows per room and period, canceled rows, and archive titles per pool window of the test period.
  * @param {{ venues: object[], shows: object[] }} data
  */
 export function dryRun({ venues, shows }) {
@@ -60,24 +64,36 @@ export function dryRun({ venues, shows }) {
     return { venue_id: v.venue_id, role: v.role, S1: count('S1', '0'), S2: count('S2', '0'), canceled: { S1: count('S1', '1'), S2: count('S2', '1') } };
   });
   const archive = new Set(venues.filter((v) => ARCHIVE_ROLES.has(v.role)).map((v) => v.venue_id));
-  const weeks = {};
-  for (const s of showsBy(shows, (x) => archive.has(x.venue_id))) {
-    const w = weekOf(s.date);
-    (weeks[w] ??= new Set()).add(s.title.trim().toLowerCase());
+  const archiveShows = showsBy(shows, (x) => archive.has(x.venue_id));
+  const testRooms = new Set(venues.filter((v) => v.role === 'test').map((v) => v.venue_id));
+  const testShows = showsBy(shows, (s) => periodOf(s.date) === 'S2' && testRooms.has(s.venue_id));
+  const windows = new Map();
+  for (const s of testShows) {
+    const w = backtestWindow(s.date);
+    const key = windowKey(w);
+    if (!windows.has(key)) {
+      const titles = new Set(archiveShows.filter((x) => x.date >= w.from && x.date <= w.to).map((x) => x.title.trim().toLowerCase()));
+      windows.set(key, { ...w, candidates: titles.size, test_shows: 0 });
+    }
+    windows.get(key).test_shows++;
   }
-  const testWeeks = new Set(
-    shows.filter((s) => s.canceled === '0' && periodOf(s.date) === 'S2' && venues.find((v) => v.venue_id === s.venue_id)?.role === 'test').map((s) => weekOf(s.date)),
-  );
-  const perWeek = Object.fromEntries([...testWeeks].sort().map((w) => [w, weeks[w]?.size ?? 0]));
+  const perWindow = [...windows.values()].sort((a, b) => (a.from < b.from ? -1 : 1));
+  const sizes = perWindow.map((w) => w.candidates);
   return {
     kind: 'dry-run',
-    note: 'No Qloo call. Pool candidates are distinct archive show titles per week before the headliner rule, so the real pools are smaller.',
+    protocol: 'BACKTEST.md with Amendments 1-2 (11 Oct 2026)',
+    note: 'No Qloo call. Pool candidates are distinct archive show titles in each window before the headliner rule, so the real pools are smaller.',
     periods: { S1, S2 },
     rooms,
     test_shows_before_drops: rooms.filter((r) => r.role === 'test').reduce((t, r) => t + r.S2, 0),
     canceled_test_shows: rooms.filter((r) => r.role === 'test').reduce((t, r) => t + r.canceled.S2, 0),
-    pool_candidates_by_week: perWeek,
-    weeks_below_min_pool_before_resolution: Object.values(perWeek).filter((n) => n < MIN_POOL).length,
+    window_days: WINDOW_DAYS,
+    window_rule: "the show's Monday-to-Sunday week, the week before and the week after, cut at the archive end (2026-09-30)",
+    pool_candidates_by_window: perWindow,
+    candidates_range: sizes.length ? { min: Math.min(...sizes), max: Math.max(...sizes) } : null,
+    windows_cut: perWindow.filter((w) => w.cut).length,
+    test_shows_with_cut_window: perWindow.filter((w) => w.cut).reduce((t, w) => t + w.test_shows, 0),
+    windows_below_min_pool_before_resolution: perWindow.filter((w) => w.candidates < MIN_POOL).length,
     min_pool: MIN_POOL,
   };
 }
@@ -123,14 +139,21 @@ export async function runBacktest({
     }
     return [...out.values()];
   };
-  const weekPool = new Map();
-  for (const s of showsBy(shows, (x) => archive.has(x.venue_id))) {
-    const e = resolved.get(s.title);
-    if (!e) continue;
-    const w = weekOf(s.date);
-    if (!weekPool.has(w)) weekPool.set(w, new Map());
-    if (!weekPool.get(w).has(e.entity_id)) weekPool.get(w).set(e.entity_id, e);
-  }
+  const archiveShows = showsBy(shows, (x) => archive.has(x.venue_id));
+  const windowPools = new Map(); // window key -> Map(entity_id -> entity), built once per window
+  const windowPool = (w) => {
+    const key = windowKey(w);
+    if (!windowPools.has(key)) {
+      const pool = new Map();
+      for (const s of archiveShows) {
+        if (s.date < w.from || s.date > w.to) continue;
+        const e = resolved.get(s.title);
+        if (e && !pool.has(e.entity_id)) pool.set(e.entity_id, e);
+      }
+      windowPools.set(key, pool);
+    }
+    return windowPools.get(key);
+  };
 
   // 2. Units and drops, per test room.
   const placeboSignals = placebos.map((p) => ({ venue_id: p.venue_id, ids: s1Headliners(p.venue_id).map((e) => e.entity_id) }));
@@ -141,6 +164,7 @@ export async function runBacktest({
     const drops = Object.fromEntries(DROP_REASONS.map((r) => [r, 0]));
     drops.canceled = shows.filter((s) => s.venue_id === v.venue_id && periodOf(s.date) === 'S2' && s.canceled === '1').length;
     const units = [];
+    const cut = { reached_pool: 0, small_pool: 0, units: 0 }; // shows whose window was cut at the archive end
     for (const s of showsBy(shows, (x) => x.venue_id === v.venue_id && periodOf(x.date) === 'S2')) {
       const positive = resolved.get(s.title);
       if (!positive) {
@@ -151,30 +175,33 @@ export async function runBacktest({
         drops.repeat_headliner++;
         continue;
       }
-      const week = weekOf(s.date);
-      const pool = poolOrder([...(weekPool.get(week)?.values() ?? [])].filter((e) => !signalIds.has(e.entity_id)));
+      const win = backtestWindow(s.date);
+      const pool = poolOrder([...windowPool(win).values()].filter((e) => !signalIds.has(e.entity_id)));
+      if (win.cut) cut.reached_pool++;
       if (pool.length < MIN_POOL) {
         drops.small_pool++;
+        if (win.cut) cut.small_pool++;
         continue;
       }
-      units.push({ week, positive: positive.entity_id, pool });
+      if (win.cut) cut.units++;
+      units.push({ window: windowKey(win), positive: positive.entity_id, pool });
     }
-    rooms.push({ venue: v, signal, drops, units });
-    log({ event: 'units', venue_id: v.venue_id, signal: signal.length, units: units.length, drops });
+    rooms.push({ venue: v, signal, drops, units, cut });
+    log({ event: 'units', venue_id: v.venue_id, signal: signal.length, units: units.length, drops, cut_windows: cut });
   }
 
-  // 3. Rank. A room and week share one pool, so each ranking is computed once per (room, week).
+  // 3. Rank. Shows of a room in the same week share one window and one pool, so each ranking is computed once per (room, window).
   const llmState = { status: llm ? 'run' : 'not run', reason: llm ? null : llmSkipReason, usd: 0, incomplete_answers: 0 };
   for (const room of rooms) {
     const signalIds = room.signal.map((e) => e.entity_id);
     room.tags = signalIds.length ? await topGenreTags(client, room.signal) : [];
     room.venueEntity = await resolveVenueEntity(client, room.venue.name);
-    const byWeek = new Map();
-    for (const u of room.units) if (!byWeek.has(u.week)) byWeek.set(u.week, u.pool);
+    const byWindow = new Map();
+    for (const u of room.units) if (!byWindow.has(u.window)) byWindow.set(u.window, u.pool);
     room.rankings = new Map();
-    await mapLimit([...byWeek], concurrency, async ([week, pool]) => {
+    await mapLimit([...byWindow], concurrency, async ([win, pool]) => {
       const rk = {};
-      const where = `${room.venue.venue_id} ${week}`;
+      const where = `${room.venue.venue_id} ${win}`;
       rk.Q = signalIds.length ? await rankBySignal(client, { pool, entityIds: signalIds, restrict, what: `Q ${where}` }) : null;
       rk.P = rankByPopularity(pool);
       rk.T = room.tags.length ? await rankBySignal(client, { pool, tagIds: room.tags, restrict, what: `T ${where}` }) : null;
@@ -184,13 +211,13 @@ export async function runBacktest({
       for (const p of placeboSignals) {
         rk[`placebo:${p.venue_id}`] = p.ids.length ? await rankBySignal(client, { pool, entityIds: p.ids, restrict, what: `placebo ${where}` }) : null;
       }
-      room.rankings.set(week, rk);
+      room.rankings.set(win, rk);
     });
     if (llm && llmState.status === 'run') {
-      for (const [week, pool] of byWeek) {
+      for (const [win, pool] of byWindow) {
         try {
           const r = await llm.rank({ signalNames: room.signal.map((e) => e.name), poolNames: pool.map((e) => e.name) });
-          room.rankings.get(week).L = r.order.map((i) => pool[i].entity_id);
+          room.rankings.get(win).L = r.order.map((i) => pool[i].entity_id);
           llmState.usd += r.usd ?? 0;
           if (!r.complete) llmState.incomplete_answers++;
         } catch (err) {
@@ -202,7 +229,7 @@ export async function runBacktest({
         }
       }
     }
-    log({ event: 'ranked', venue_id: room.venue.venue_id, weeks: byWeek.size, tags: room.tags.length, venue_entity: Boolean(room.venueEntity), qloo: { ...client.stats } });
+    log({ event: 'ranked', venue_id: room.venue.venue_id, windows: byWindow.size, tags: room.tags.length, venue_entity: Boolean(room.venueEntity), qloo: { ...client.stats } });
   }
 
   // 4. Metrics per show, grouped by room.
@@ -215,7 +242,7 @@ export async function runBacktest({
     const id = room.venue.venue_id;
     if (!room.units.length) continue;
     for (const u of room.units) {
-      const rk = room.rankings.get(u.week);
+      const rk = room.rankings.get(u.window);
       for (const name of rankerNames) {
         const order = name === 'L' && llmState.status !== 'run' ? null : rk[name];
         if (!order) {
@@ -262,7 +289,11 @@ export async function runBacktest({
       rr_iqr: spread(Object.values(v.rr).flat()).iqr.map((x) => round(x)),
     };
   }
-  if (rankers.L.status === 'run') Object.assign(rankers.L, { model: llm.model, sampling: llm.sampling, usd: round(llmState.usd, 4), incomplete_answers: llmState.incomplete_answers });
+  if (rankers.L.status === 'run') {
+    Object.assign(rankers.L, { model: llm.model, sampling: llm.sampling, usd: round(llmState.usd, 4), incomplete_answers: llmState.incomplete_answers });
+    // Amendment 2: without temperature 0 the L numbers are one draw of the model, not a deterministic answer.
+    if (llm.draw) rankers.L.draw = llm.draw;
+  }
   if (rankers.R.status === 'run') rankers.R.note = 'analytic expectation for each pool size';
   if (rankers.Qvenue.status === 'run') rankers.Qvenue.note = "Q with the room's own place entity added: a leakage size, never the headline number";
 
@@ -278,18 +309,26 @@ export async function runBacktest({
 
   const qMinusPlacebo = Object.fromEntries(placeboSignals.map((p) => [p.venue_id, differences[`Q-placebo:${p.venue_id}`]]));
   const claim = claimRule({ rooms: N, shows: n, qMinusP: differences['Q-P'], qMinusPlacebo });
+  const sumCut = (k) => rooms.reduce((t, x) => t + x.cut[k], 0);
   const dropped = Object.fromEntries(DROP_REASONS.map((r) => [r, rooms.reduce((t, x) => t + x.drops[r], 0)]));
 
   return {
     status: claim.status,
     label: `${claim.status} (N = ${N} rooms, n = ${n} shows)`,
-    protocol: 'BACKTEST.md (frozen 11 Oct 2026)',
+    protocol: 'BACKTEST.md (frozen 11 Oct 2026) with Amendments 1-2',
     split: 'test',
     run_at: new Date(now()).toISOString(),
     rooms: N,
     shows: n,
     periods: { S1, S2 },
     pool_restriction: restrict === 'filter' ? 'filter.results.entities' : 'take=500, pool members kept',
+    pool_window: {
+      days: WINDOW_DAYS,
+      rule: "the show's Monday-to-Sunday week, the week before and the week after, cut at the archive end (2026-09-30)",
+      cut_shows: sumCut('reached_pool'),
+      cut_shows_dropped_small_pool: sumCut('small_pool'),
+      cut_shows_scored: sumCut('units'),
+    },
     interval: {
       method: byRooms ? 'bootstrap over rooms' : 'bootstrap of shows within each room, room counts kept, rooms weighted equally',
       level: 0.95,

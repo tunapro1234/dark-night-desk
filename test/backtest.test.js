@@ -12,7 +12,8 @@ import {
 import { resolveHeadliner, splitAtSeparator } from '../server/backtest/headliner.js';
 import { checkData, parseCsv, periodOf, weekOf } from '../server/backtest/data.js';
 import { orderByScore, rankBySignal, topGenreTags } from '../server/backtest/rankers.js';
-import { parseOrder } from '../server/backtest/llm.js';
+import { SAMPLING_DEFAULT, SAMPLING_T0, SINGLE_DRAW, createLlmRanker, parseOrder } from '../server/backtest/llm.js';
+import { backtestWindow } from '../server/rank/pool.js';
 import { dryRun, runBacktest } from '../server/backtest/run.js';
 import { LOCK_NAME, main, parseArgs } from '../scripts/backtest.js';
 
@@ -159,7 +160,7 @@ const VENUES_CSV = [
   'hall-p,Synthetic Room P,Exampleville,pool,,,,,',
 ].join('\n');
 
-function showsCsv() {
+function showsCsv({ late = false } = {}) {
   const rows = ['venue_id,room,date,title,canceled,source_url,list_page_url,fetched_at,compiled_by'];
   const add = (venue, date, title, canceled = 0) => rows.push(`${venue},x,${date},${title},${canceled},https://example.org/${rows.length},,2026-10-11T00:00:00Z,test`);
   // S1 signals
@@ -178,6 +179,12 @@ function showsCsv() {
   // week of Mon 2026-07-20: too few acts
   add('room-b', '2026-07-21', 'Synthetic Act 20');
   add('hall-p', '2026-07-22', 'Synthetic Act 21');
+  if (late) {
+    // Tue 2026-09-29: its window runs 09-21 to 10-11 and is cut at the archive end (09-30)
+    add('room-b', '2026-09-29', 'Synthetic Act 5');
+    for (let n = 30; n <= 39; n++) add('hall-p', '2026-09-30', `Synthetic Act ${n}`);
+    for (let n = 40; n <= 44; n++) add('hall-p', '2026-10-02', `Synthetic Act ${n}`); // after the cut: never in the pool
+  }
   return rows.join('\n');
 }
 
@@ -188,7 +195,7 @@ async function syntheticDir(name) {
   await writeFile(path.join(dir, 'shows.csv'), showsCsv());
   return dir;
 }
-const syntheticData = () => checkData({ venues: parseCsv(VENUES_CSV), shows: parseCsv(showsCsv()) });
+const syntheticData = (opts) => checkData({ venues: parseCsv(VENUES_CSV), shows: parseCsv(showsCsv(opts)) });
 
 // ---------- rankers ----------
 test('rankers: score order, ties and unscored members keep pool order', () => {
@@ -228,14 +235,44 @@ test('L ranker answer parsing: last integer array, unknown and repeated numbers 
   assert.deepEqual(parseOrder('no list', 2), { order: [0, 1], complete: false });
 });
 
+// ---------- pool window (Amendment 1) ----------
+test('pool window: the week of the date plus the week before and after, 21 days, cut at 2026-09-30', () => {
+  assert.deepEqual(backtestWindow('2026-07-15'), { from: '2026-07-06', to: '2026-07-26', cut: false });
+  assert.deepEqual(backtestWindow('2026-07-13'), { from: '2026-07-06', to: '2026-07-26', cut: false }); // Monday
+  assert.deepEqual(backtestWindow('2026-07-19'), { from: '2026-07-06', to: '2026-07-26', cut: false }); // Sunday
+  assert.deepEqual(backtestWindow('2026-07-01'), { from: '2026-06-22', to: '2026-07-12', cut: false }); // reaches into S1
+  assert.deepEqual(backtestWindow('2026-09-20'), { from: '2026-09-07', to: '2026-09-27', cut: false });
+  assert.deepEqual(backtestWindow('2026-09-21'), { from: '2026-09-14', to: '2026-09-30', cut: true });
+  assert.deepEqual(backtestWindow('2026-09-29'), { from: '2026-09-21', to: '2026-09-30', cut: true });
+});
+
 // ---------- run ----------
-test('dry run counts shows and weekly candidates without any Qloo call', () => {
+test('dry run counts shows and candidates per 21-day window without any Qloo call', () => {
   const d = dryRun(syntheticData());
   assert.equal(d.test_shows_before_drops, 6);
   assert.equal(d.canceled_test_shows, 1);
-  assert.equal(d.pool_candidates_by_week['2026-07-06'], 15);
-  assert.equal(d.pool_candidates_by_week['2026-07-20'], 2);
-  assert.equal(d.weeks_below_min_pool_before_resolution, 1);
+  assert.equal(d.window_days, 21);
+  assert.deepEqual(d.pool_candidates_by_window, [
+    { from: '2026-06-29', to: '2026-07-19', cut: false, candidates: 15, test_shows: 5 },
+    { from: '2026-07-13', to: '2026-08-02', cut: false, candidates: 2, test_shows: 1 },
+  ]);
+  assert.equal(d.windows_below_min_pool_before_resolution, 1);
+  assert.equal(d.windows_cut, 0);
+  const late = dryRun(syntheticData({ late: true }));
+  assert.deepEqual(late.pool_candidates_by_window.at(-1), { from: '2026-09-21', to: '2026-09-30', cut: true, candidates: 11, test_shows: 1 });
+  assert.equal(late.windows_cut, 1);
+  assert.equal(late.test_shows_with_cut_window, 1);
+});
+
+test('run: a window cut at the archive end is counted and leaves later shows out of the pool', async () => {
+  const out = await runBacktest({ client: fakeClient(), data: syntheticData({ late: true }), restrict: 'filter', reps: 200, now: () => 0 });
+  assert.equal(out.pool_window.days, 21);
+  assert.equal(out.pool_window.cut_shows, 1);
+  assert.equal(out.pool_window.cut_shows_scored, 1);
+  assert.equal(out.pool_window.cut_shows_dropped_small_pool, 0);
+  const b = out.per_room.find((r) => r.venue_id === 'room-b');
+  assert.equal(b.shows, 2);
+  assert.equal(b.pool_size.min, 11); // acts 30-39 and act 5; the 2 Oct shows are past the cut
 });
 
 test('run: units, every drop counted by reason, pilot label, totals only in the output', async () => {
@@ -258,6 +295,7 @@ test('run: units, every drop counted by reason, pilot label, totals only in the 
   assert.deepEqual(out.differences['Q-L'], { status: 'not run' });
   assert.equal(out.claim.used, false);
   assert.match(out.interval.caveat, /too narrow/);
+  assert.deepEqual([out.pool_window.days, out.pool_window.cut_shows], [21, 0]);
   // the room's own place entity goes only into the variant
   const qCalls = c.calls.filter((x) => x.endpoint === '/v2/insights' && x.params['signal.interests.entities']);
   assert.ok(qCalls.some((x) => x.params['signal.interests.entities'].includes('synthetic-place-A')));
@@ -292,6 +330,59 @@ test('run: L runs with a key and budget; a spend cap part-way drops L entirely',
   const cut = await runBacktest({ client: fakeClient(), data: syntheticData(), restrict: 'take500', llm: llm(1), reps: 200 });
   assert.equal(cut.rankers.L.status, 'not run');
   assert.match(cut.rankers.L.reason, /part-way/);
+});
+
+// ---------- L sampling (Amendment 2) ----------
+function standInClaude({ rejectTemperature }) {
+  const requests = [];
+  return {
+    requests,
+    messages: {
+      async create(body) {
+        requests.push(body);
+        if (rejectTemperature && 'temperature' in body) throw Object.assign(new Error('temperature is not supported'), { status: 400 });
+        return { content: [{ type: 'text', text: '[2, 1]' }], usage: { input_tokens: 10, output_tokens: 5 } };
+      },
+    },
+  };
+}
+const openBudget = () => ({ canSpend: () => ({ ok: true }), record: () => ({ usd: 0.001 }) });
+
+test('L sampling: temperature 0 when the model accepts it', async () => {
+  const anthropic = standInClaude({ rejectTemperature: false });
+  const events = [];
+  const l = createLlmRanker({ anthropic, model: 'stand-in', budget: openBudget(), log: (e) => events.push(e) });
+  assert.deepEqual((await l.rank({ signalNames: ['a'], poolNames: ['x', 'y'] })).order, [1, 0]);
+  await l.rank({ signalNames: ['a'], poolNames: ['x', 'y'] });
+  assert.deepEqual(anthropic.requests.map((r) => r.temperature), [0, 0]);
+  assert.equal(l.sampling, SAMPLING_T0);
+  assert.equal(l.draw, null);
+  assert.deepEqual(events, [{ event: 'llm_sampling', sampling: 'sampling: temperature 0', draw: null }]);
+});
+
+test('L sampling: a 400 on temperature retries once at the default, logs it and labels a single draw', async () => {
+  const anthropic = standInClaude({ rejectTemperature: true });
+  const events = [];
+  const l = createLlmRanker({ anthropic, model: 'stand-in', budget: openBudget(), log: (e) => events.push(e) });
+  assert.deepEqual((await l.rank({ signalNames: ['a'], poolNames: ['x', 'y'] })).order, [1, 0]);
+  await l.rank({ signalNames: ['a'], poolNames: ['x', 'y'] });
+  // first request with temperature, its retry without, then never again
+  assert.deepEqual(anthropic.requests.map((r) => 'temperature' in r), [true, false, false]);
+  assert.equal(l.sampling, SAMPLING_DEFAULT);
+  assert.equal(l.draw, SINGLE_DRAW);
+  assert.deepEqual(events, [{ event: 'llm_sampling', sampling: 'sampling: default (temperature not accepted)', draw: 'single draw' }]);
+
+  const out = await runBacktest({ client: fakeClient(), data: syntheticData(), restrict: 'filter', llm: createLlmRanker({ anthropic: standInClaude({ rejectTemperature: true }), model: 'stand-in', budget: openBudget() }), reps: 200 });
+  assert.equal(out.rankers.L.status, 'run');
+  assert.equal(out.rankers.L.sampling, SAMPLING_DEFAULT);
+  assert.equal(out.rankers.L.draw, 'single draw');
+});
+
+test('L sampling: other failures are not retried', async () => {
+  const anthropic = { messages: { create: async () => { throw Object.assign(new Error('overloaded'), { status: 529 }); } } };
+  const l = createLlmRanker({ anthropic, model: 'stand-in', budget: openBudget() });
+  await assert.rejects(l.rank({ signalNames: ['a'], poolNames: ['x'] }), /HTTP 529/);
+  assert.equal(l.sampling, SAMPLING_T0);
 });
 
 test('run: a Qloo error stops the run instead of being scored', async () => {
