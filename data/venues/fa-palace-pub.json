@@ -1,0 +1,17 @@
+{
+  "id": "fa-palace-pub",
+  "name": "Palace Pub",
+  "city": "Minneapolis",
+  "capacity_band": "unknown",
+  "calendar_source_url": "https://first-avenue.com/shows/",
+  "read_at": "2026-10-11T18:54:39Z",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-11-10",
+      "headliner": "Sex Science Happy Hour with Dr. Kristen Mark",
+      "source_url": "https://first-avenue.com/event/2026-11-sex-science-happy-hour/"
+    }
+  ],
+  "past_shows": []
+}

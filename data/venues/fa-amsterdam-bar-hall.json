@@ -1,0 +1,98 @@
+{
+  "id": "fa-amsterdam-bar-hall",
+  "name": "Amsterdam Bar & Hall",
+  "city": "Minneapolis",
+  "capacity_band": "unknown",
+  "calendar_source_url": "https://first-avenue.com/shows/",
+  "read_at": "2026-10-11T18:54:39Z",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-10-12",
+      "headliner": "Asha Banks",
+      "source_url": "https://first-avenue.com/event/2026-10-asha-banks/"
+    },
+    {
+      "date": "2026-10-27",
+      "headliner": "Greg Freeman",
+      "source_url": "https://first-avenue.com/event/2026-10-greg-freeman/"
+    },
+    {
+      "date": "2026-10-29",
+      "headliner": "Akeem Ali",
+      "source_url": "https://first-avenue.com/event/2026-10-akeem-ali/"
+    },
+    {
+      "date": "2026-10-30",
+      "headliner": "New Constellations",
+      "source_url": "https://first-avenue.com/event/2026-10-new-constellations/"
+    },
+    {
+      "date": "2026-11-01",
+      "headliner": "Donny Benét",
+      "source_url": "https://first-avenue.com/event/2026-11-donny-benet/"
+    },
+    {
+      "date": "2026-11-06",
+      "headliner": "Static Dress",
+      "source_url": "https://first-avenue.com/event/2026-11-static-dress/"
+    },
+    {
+      "date": "2026-11-08",
+      "headliner": "Maddie Zahm",
+      "source_url": "https://first-avenue.com/event/2026-11-maddie-zahm/"
+    },
+    {
+      "date": "2026-11-13",
+      "headliner": "Improvement Movement",
+      "source_url": "https://first-avenue.com/event/2026-11-improvement-movement/"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-08-21",
+      "headliner": "Jay Webb",
+      "source_url": "https://first-avenue.com/event/2026-08-jay-webb/"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Kevin Atwater",
+      "source_url": "https://first-avenue.com/event/2026-09-kevin-atwater/"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "Atlus",
+      "source_url": "https://first-avenue.com/event/2026-09-atlus/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "LØLØ",
+      "source_url": "https://first-avenue.com/event/2026-09-lolo/"
+    },
+    {
+      "date": "2026-10-01",
+      "headliner": "KiNG MALA",
+      "source_url": "https://first-avenue.com/event/2026-10-king-mala/"
+    },
+    {
+      "date": "2026-10-02",
+      "headliner": "Edgehill",
+      "source_url": "https://first-avenue.com/event/2026-10-edgehill/"
+    },
+    {
+      "date": "2026-10-04",
+      "headliner": "Zolita",
+      "source_url": "https://first-avenue.com/event/2026-10-zolita/"
+    },
+    {
+      "date": "2026-10-08",
+      "headliner": "Red Leather",
+      "source_url": "https://first-avenue.com/event/2026-10-red-leather/"
+    },
+    {
+      "date": "2026-10-09",
+      "headliner": "Katie Pruitt",
+      "source_url": "https://first-avenue.com/event/2026-10-katie-pruitt/"
+    }
+  ]
+}

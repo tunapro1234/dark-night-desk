@@ -1,0 +1,633 @@
+{
+  "id": "fa-7th-st-entry",
+  "name": "7th St Entry",
+  "city": "Minneapolis",
+  "capacity_band": "200-400",
+  "calendar_source_url": "https://first-avenue.com/shows/",
+  "read_at": "2026-10-11T18:54:39Z",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-10-11",
+      "headliner": "Karina Rykman",
+      "source_url": "https://first-avenue.com/event/2026-10-karina-rykman/"
+    },
+    {
+      "date": "2026-10-13",
+      "headliner": "Silly Goose",
+      "source_url": "https://first-avenue.com/event/2026-10-silly-goose/"
+    },
+    {
+      "date": "2026-10-14",
+      "headliner": "First to Eleven",
+      "source_url": "https://first-avenue.com/event/2026-10-first-to-eleven/"
+    },
+    {
+      "date": "2026-10-15",
+      "headliner": "Emily Bjorke",
+      "source_url": "https://first-avenue.com/event/2026-10-emily-bjorke/"
+    },
+    {
+      "date": "2026-10-16",
+      "headliner": "Telescreens",
+      "source_url": "https://first-avenue.com/event/2026-10-telescreens/"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "Sophie Truax",
+      "source_url": "https://first-avenue.com/event/2026-10-sophie-truax/"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "Interlay",
+      "source_url": "https://first-avenue.com/event/2026-10-interlay/"
+    },
+    {
+      "date": "2026-10-18",
+      "headliner": "WILL DEMPSEY",
+      "source_url": "https://first-avenue.com/event/2026-10-will-dempsey/"
+    },
+    {
+      "date": "2026-10-19",
+      "headliner": "RAV",
+      "source_url": "https://first-avenue.com/event/2026-10-rav/"
+    },
+    {
+      "date": "2026-10-20",
+      "headliner": "Hillhaven",
+      "source_url": "https://first-avenue.com/event/2026-10-hillhaven/"
+    },
+    {
+      "date": "2026-10-22",
+      "headliner": "Mati",
+      "source_url": "https://first-avenue.com/event/2026-10-mati/"
+    },
+    {
+      "date": "2026-10-23",
+      "headliner": "IAN SWEET",
+      "source_url": "https://first-avenue.com/event/2026-10-ian-sweet/"
+    },
+    {
+      "date": "2026-10-24",
+      "headliner": "DICE",
+      "source_url": "https://first-avenue.com/event/2026-10-dice/"
+    },
+    {
+      "date": "2026-10-25",
+      "headliner": "Wishy",
+      "source_url": "https://first-avenue.com/event/2026-10-wishy/"
+    },
+    {
+      "date": "2026-10-26",
+      "headliner": "Delicate Steve",
+      "source_url": "https://first-avenue.com/event/2026-10-delicate-steve/"
+    },
+    {
+      "date": "2026-10-27",
+      "headliner": "Yana",
+      "source_url": "https://first-avenue.com/event/2026-10-yana/"
+    },
+    {
+      "date": "2026-10-28",
+      "headliner": "gavn!",
+      "source_url": "https://first-avenue.com/event/2026-10-gavn/"
+    },
+    {
+      "date": "2026-10-30",
+      "headliner": "Count Spookula",
+      "source_url": "https://first-avenue.com/event/2026-10-count-spookula/"
+    },
+    {
+      "date": "2026-10-31",
+      "headliner": "MARIS",
+      "source_url": "https://first-avenue.com/event/2026-10-maris/"
+    },
+    {
+      "date": "2026-10-31",
+      "headliner": "INTERNET KIDS Hyperpop Dance Party",
+      "source_url": "https://first-avenue.com/event/2026-10-internet-kids-hyperpop-dance-party/"
+    },
+    {
+      "date": "2026-11-01",
+      "headliner": "REZN",
+      "source_url": "https://first-avenue.com/event/2026-11-rezn/"
+    },
+    {
+      "date": "2026-11-02",
+      "headliner": "Diles que no me maten",
+      "source_url": "https://first-avenue.com/event/2026-11-diles-que-no-me-maten/"
+    },
+    {
+      "date": "2026-11-03",
+      "headliner": "Post Sex Nachos",
+      "source_url": "https://first-avenue.com/event/2026-11-post-sex-nachos/"
+    },
+    {
+      "date": "2026-11-04",
+      "headliner": "Weatherday",
+      "source_url": "https://first-avenue.com/event/2026-11-weatherday/"
+    },
+    {
+      "date": "2026-11-05",
+      "headliner": "lily blue",
+      "source_url": "https://first-avenue.com/event/2026-11-lily-blue/"
+    },
+    {
+      "date": "2026-11-06",
+      "headliner": "Dent May",
+      "source_url": "https://first-avenue.com/event/2026-11-dent-may/"
+    },
+    {
+      "date": "2026-11-07",
+      "headliner": "The Animeros",
+      "source_url": "https://first-avenue.com/event/2026-11-the-animeros/"
+    },
+    {
+      "date": "2026-11-08",
+      "headliner": "Six Foot Blonde",
+      "source_url": "https://first-avenue.com/event/2026-11-six-foot-blonde/"
+    },
+    {
+      "date": "2026-11-09",
+      "headliner": "Ninth Key",
+      "source_url": "https://first-avenue.com/event/2026-11-ninth-key/"
+    },
+    {
+      "date": "2026-11-10",
+      "headliner": "mary in the junkyard",
+      "source_url": "https://first-avenue.com/event/2026-11-mary-in-the-junkyard/"
+    },
+    {
+      "date": "2026-11-11",
+      "headliner": "Pretty Sick",
+      "source_url": "https://first-avenue.com/event/2026-11-pretty-sick/"
+    },
+    {
+      "date": "2026-11-12",
+      "headliner": "Tyler Ballgame",
+      "source_url": "https://first-avenue.com/event/2026-11-tyler-ballgame/"
+    },
+    {
+      "date": "2026-11-13",
+      "headliner": "Francis of Delirium",
+      "source_url": "https://first-avenue.com/event/2026-11-francis-of-delirium/"
+    },
+    {
+      "date": "2026-11-14",
+      "headliner": "LUCY (Cooper B. Handy)",
+      "source_url": "https://first-avenue.com/event/2026-11-lucy-cooper-b-handy/"
+    },
+    {
+      "date": "2026-11-15",
+      "headliner": "Ha Ha Tonka",
+      "source_url": "https://first-avenue.com/event/2026-11-ha-ha-tonka/"
+    },
+    {
+      "date": "2026-11-18",
+      "headliner": "Packaging",
+      "source_url": "https://first-avenue.com/event/2026-11-packaging/"
+    },
+    {
+      "date": "2026-11-19",
+      "headliner": "Geordie Kieffer",
+      "source_url": "https://first-avenue.com/event/2026-11-geordie-kieffer/"
+    },
+    {
+      "date": "2026-11-20",
+      "headliner": "Kelsey Hart",
+      "source_url": "https://first-avenue.com/event/2026-11-kelsey-hart/"
+    },
+    {
+      "date": "2026-11-21",
+      "headliner": "Jady",
+      "source_url": "https://first-avenue.com/event/2026-11-jady/"
+    },
+    {
+      "date": "2026-11-22",
+      "headliner": "The Kilans",
+      "source_url": "https://first-avenue.com/event/2026-11-the-kilans/"
+    },
+    {
+      "date": "2026-11-24",
+      "headliner": "MASTO",
+      "source_url": "https://first-avenue.com/event/2026-11-masto/"
+    },
+    {
+      "date": "2026-11-25",
+      "headliner": "Whiskey Rock ‘n’ Roll Club presents Andy Holmaas’ 40th Birthday Party",
+      "source_url": "https://first-avenue.com/event/2026-11-andy-holmaas-birthday/"
+    },
+    {
+      "date": "2026-11-27",
+      "headliner": "C*nt O'Clock",
+      "source_url": "https://first-avenue.com/event/2026-11-cnt-oclock/"
+    },
+    {
+      "date": "2026-11-28",
+      "headliner": "MAKR AN ERIS",
+      "source_url": "https://first-avenue.com/event/2026-11-makr-an-eris/"
+    },
+    {
+      "date": "2026-11-30",
+      "headliner": "Daisy Grenade",
+      "source_url": "https://first-avenue.com/event/2026-11-daisy-grenade/"
+    },
+    {
+      "date": "2026-12-02",
+      "headliner": "sahn",
+      "source_url": "https://first-avenue.com/event/2026-12-sahn/"
+    },
+    {
+      "date": "2026-12-03",
+      "headliner": "HUNNY BEAR",
+      "source_url": "https://first-avenue.com/event/2026-12-hunny-bear/"
+    },
+    {
+      "date": "2026-12-05",
+      "headliner": "Tuffie, Virga and berzica",
+      "source_url": "https://first-avenue.com/event/2026-12-tuffie-virga-berzica/"
+    },
+    {
+      "date": "2026-12-06",
+      "headliner": "Josie Edwards",
+      "source_url": "https://first-avenue.com/event/2026-12-josie-edwards/"
+    },
+    {
+      "date": "2026-12-09",
+      "headliner": "Chris Simpson (of Mineral)",
+      "source_url": "https://first-avenue.com/event/2026-12-chris-simpson-of-mineral/"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-07-13",
+      "headliner": "Wells Ferrari",
+      "source_url": "https://first-avenue.com/event/2026-07-wells-ferrari/"
+    },
+    {
+      "date": "2026-07-15",
+      "headliner": "The Body",
+      "source_url": "https://first-avenue.com/event/2026-07-the-body/"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "Wax and DJ Hoppa",
+      "source_url": "https://first-avenue.com/event/2026-07-wax-and-dj-hoppa/"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "ford. ( Live )",
+      "source_url": "https://first-avenue.com/event/2026-07-ford-live/"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "Cas Haley",
+      "source_url": "https://first-avenue.com/event/2026-07-cas-haley/"
+    },
+    {
+      "date": "2026-07-19",
+      "headliner": "Mike Love ( solo )",
+      "source_url": "https://first-avenue.com/event/2026-07-mike-love-solo/"
+    },
+    {
+      "date": "2026-07-20",
+      "headliner": "Kevian Kraemer",
+      "source_url": "https://first-avenue.com/event/2026-07-kevian-kraemer/"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "Alex Lahey ( Solo )",
+      "source_url": "https://first-avenue.com/event/2026-07-alex-lahey/"
+    },
+    {
+      "date": "2026-07-22",
+      "headliner": "The Family Crest",
+      "source_url": "https://first-avenue.com/event/2026-07-the-family-crest/"
+    },
+    {
+      "date": "2026-07-23",
+      "headliner": "Harvey Street",
+      "source_url": "https://first-avenue.com/event/2026-07-harvey-street/"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "Kill Bill the Rapper",
+      "source_url": "https://first-avenue.com/event/2026-07-kill-bill-the-rapper/"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "Blu & Exile",
+      "source_url": "https://first-avenue.com/event/2026-07-blu-and-exile/"
+    },
+    {
+      "date": "2026-07-27",
+      "headliner": "LSD and the Search for God",
+      "source_url": "https://first-avenue.com/event/2026-07-lsd-and-the-search-for-god/"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "Good Boy Daisy",
+      "source_url": "https://first-avenue.com/event/2026-07-good-boy-daisy/"
+    },
+    {
+      "date": "2026-07-29",
+      "headliner": "Fever Field",
+      "source_url": "https://first-avenue.com/event/2026-07-fever-field/"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "Hayden Blount",
+      "source_url": "https://first-avenue.com/event/2026-07-hayden-blount/"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "Vacation Manor",
+      "source_url": "https://first-avenue.com/event/2026-07-vacation-manor/"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "League Two",
+      "source_url": "https://first-avenue.com/event/2026-08-league-two/"
+    },
+    {
+      "date": "2026-08-02",
+      "headliner": "Brotherkenzie",
+      "source_url": "https://first-avenue.com/event/2026-08-brotherkenzie/"
+    },
+    {
+      "date": "2026-08-03",
+      "headliner": "Cruz Beckham and The Breakers",
+      "source_url": "https://first-avenue.com/event/2026-08-cruz-beckham-and-the-breakers/"
+    },
+    {
+      "date": "2026-08-04",
+      "headliner": "Will Swinton",
+      "source_url": "https://first-avenue.com/event/2026-08-will-swinton/"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "Noeline Hofmann",
+      "source_url": "https://first-avenue.com/event/2026-08-noeline-hofmann/"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "Sophie Hiroko",
+      "source_url": "https://first-avenue.com/event/2026-08-sophie-hiroko/"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "The Penny Peaches",
+      "source_url": "https://first-avenue.com/event/2026-08-the-penny-peaches/"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "DWLLRS",
+      "source_url": "https://first-avenue.com/event/2026-08-dwllrs/"
+    },
+    {
+      "date": "2026-08-10",
+      "headliner": "Blimey and Tommy Oeffling and The B-Team",
+      "source_url": "https://first-avenue.com/event/2026-08-tommy-oeffling/"
+    },
+    {
+      "date": "2026-08-12",
+      "headliner": "Riff Wood",
+      "source_url": "https://first-avenue.com/event/2026-08-riff-wood/"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "Casket Cassette",
+      "source_url": "https://first-avenue.com/event/2026-08-casket-cassette/"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "JAKI BLUE",
+      "source_url": "https://first-avenue.com/event/2026-08-jaki-blue/"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "An Evening with Bob Oxblood, Twin Citizen, and more",
+      "source_url": "https://first-avenue.com/event/2026-08-bob-oxblood-twin-citizen/"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "American Vanity",
+      "source_url": "https://first-avenue.com/event/2026-08-american-vanity/"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "Squeaky Feet",
+      "source_url": "https://first-avenue.com/event/2026-08-squeaky-feet/"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "anni xo",
+      "source_url": "https://first-avenue.com/event/2026-08-anni-xo/"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "FINICK",
+      "source_url": "https://first-avenue.com/event/2026-08-finick/"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "Value Select",
+      "source_url": "https://first-avenue.com/event/2026-08-value-select/"
+    },
+    {
+      "date": "2026-08-26",
+      "headliner": "New Diplomat",
+      "source_url": "https://first-avenue.com/event/2026-08-new-diplomat/"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "Slow Magic",
+      "source_url": "https://first-avenue.com/event/2026-08-slow-magic/"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "12th House Sun",
+      "source_url": "https://first-avenue.com/event/2026-08-12th-house-sun/"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "Ben Chapman",
+      "source_url": "https://first-avenue.com/event/2026-08-ben-chapman/"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "Steel Beans",
+      "source_url": "https://first-avenue.com/event/2026-09-steel-beans/"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "clovers daughter",
+      "source_url": "https://first-avenue.com/event/2026-09-clovers-daughter/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "PIVOT ⏤ The Party",
+      "source_url": "https://first-avenue.com/event/2026-09-pivot/"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "greek",
+      "source_url": "https://first-avenue.com/event/2026-09-greek/"
+    },
+    {
+      "date": "2026-09-08",
+      "headliner": "Macseal and Ben Quad",
+      "source_url": "https://first-avenue.com/event/2026-09-macseal-and-ben-quad/"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "Saint Harison",
+      "source_url": "https://first-avenue.com/event/2026-09-saint-harison/"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "Big Big Brain!",
+      "source_url": "https://first-avenue.com/event/2026-09-big-big-brain/"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "Vwillz",
+      "source_url": "https://first-avenue.com/event/2026-09-vwillz/"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "Mini Trees",
+      "source_url": "https://first-avenue.com/event/2026-09-mini-trees/"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "Emma Harner",
+      "source_url": "https://first-avenue.com/event/2026-09-emma-harner/"
+    },
+    {
+      "date": "2026-09-14",
+      "headliner": "The Barbarians Of California",
+      "source_url": "https://first-avenue.com/event/2026-09-the-barbarians-of-california/"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "BLÜ EYES",
+      "source_url": "https://first-avenue.com/event/2026-09-blu-eyes/"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "JMSN",
+      "source_url": "https://first-avenue.com/event/2026-09-jmsn/"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Crimson Glory",
+      "source_url": "https://first-avenue.com/event/2026-09-crimson-glory/"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "Joe Jordan",
+      "source_url": "https://first-avenue.com/event/2026-09-joe-jordan/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Your Arms Are My Cocoon",
+      "source_url": "https://first-avenue.com/event/2026-09-your-arms-are-my-cocoon/"
+    },
+    {
+      "date": "2026-09-20",
+      "headliner": "The Takes",
+      "source_url": "https://first-avenue.com/event/2026-09-the-takes/"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "ivri",
+      "source_url": "https://first-avenue.com/event/2026-09-ivri/"
+    },
+    {
+      "date": "2026-09-23",
+      "headliner": "Soda Blonde",
+      "source_url": "https://first-avenue.com/event/2026-09-soda-blonde/"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "MT Jones",
+      "source_url": "https://first-avenue.com/event/2026-09-mt-jones/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "Unsane",
+      "source_url": "https://first-avenue.com/event/2026-09-unsane/"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "Evening Elephants",
+      "source_url": "https://first-avenue.com/event/2026-09-evening-elephants/"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "Stephen Dawes",
+      "source_url": "https://first-avenue.com/event/2026-09-stephen-dawes/"
+    },
+    {
+      "date": "2026-09-28",
+      "headliner": "BASIC: Chris Forsyth, Douglas McCombs, Mikel Patrick Avery and DPAD",
+      "source_url": "https://first-avenue.com/event/2026-09-basic/"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "Bayonne",
+      "source_url": "https://first-avenue.com/event/2026-09-bayonne/"
+    },
+    {
+      "date": "2026-09-30",
+      "headliner": "Cain Culto",
+      "source_url": "https://first-avenue.com/event/2026-09-cain-culto/"
+    },
+    {
+      "date": "2026-10-01",
+      "headliner": "Owen Riegling",
+      "source_url": "https://first-avenue.com/event/2026-10-owen-riegling/"
+    },
+    {
+      "date": "2026-10-02",
+      "headliner": "Cardinal Bloom",
+      "source_url": "https://first-avenue.com/event/2026-10-cardinal-bloom/"
+    },
+    {
+      "date": "2026-10-03",
+      "headliner": "Love Spells",
+      "source_url": "https://first-avenue.com/event/2026-10-love-spells/"
+    },
+    {
+      "date": "2026-10-04",
+      "headliner": "Kennedy Ryon",
+      "source_url": "https://first-avenue.com/event/2026-10-kennedy-ryon/"
+    },
+    {
+      "date": "2026-10-06",
+      "headliner": "Elizabeth Nichols",
+      "source_url": "https://first-avenue.com/event/2026-10-elizabeth-nichols/"
+    },
+    {
+      "date": "2026-10-07",
+      "headliner": "The Bright Light Social Hour",
+      "source_url": "https://first-avenue.com/event/2026-10-the-bright-light-social-hour/"
+    },
+    {
+      "date": "2026-10-08",
+      "headliner": "Dana and Alden",
+      "source_url": "https://first-avenue.com/event/2026-10-dana-and-alden/"
+    },
+    {
+      "date": "2026-10-09",
+      "headliner": "Bebe Stockwell",
+      "source_url": "https://first-avenue.com/event/2026-10-bebe-stockwell/"
+    },
+    {
+      "date": "2026-10-10",
+      "headliner": "Robert Ellis",
+      "source_url": "https://first-avenue.com/event/2026-10-robert-ellis/"
+    }
+  ]
+}

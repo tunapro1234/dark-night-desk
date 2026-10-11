@@ -1,0 +1,193 @@
+{
+  "id": "fa-the-fitzgerald-theater",
+  "name": "The Fitzgerald Theater",
+  "city": "Minneapolis",
+  "capacity_band": "unknown",
+  "calendar_source_url": "https://first-avenue.com/shows/",
+  "read_at": "2026-10-11T18:54:39Z",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-10-16",
+      "headliner": "The Bob Weir Celebration ⏤ The Big Wu performs Bob Weir & The Grateful Dead",
+      "source_url": "https://first-avenue.com/event/2026-10-bob-weir-celebration-the-big-wu/"
+    },
+    {
+      "date": "2026-10-18",
+      "headliner": "OFF BOOK ⏤ THE IMPROVISED MUSICAL",
+      "source_url": "https://first-avenue.com/event/2026-10-off-book-the-improvised-musical/"
+    },
+    {
+      "date": "2026-10-21",
+      "headliner": "The Moth Twin Cities GrandSLAM Championship",
+      "source_url": "https://first-avenue.com/event/2026-10-the-moth/"
+    },
+    {
+      "date": "2026-10-23",
+      "headliner": "jeremy messersmith",
+      "source_url": "https://first-avenue.com/event/2026-10-jeremy-messersmith-fri/"
+    },
+    {
+      "date": "2026-10-24",
+      "headliner": "jeremy messersmith",
+      "source_url": "https://first-avenue.com/event/2026-10-jeremy-messersmith/"
+    },
+    {
+      "date": "2026-10-25",
+      "headliner": "Randy Feltface",
+      "source_url": "https://first-avenue.com/event/2026-10-randy-feltface/"
+    },
+    {
+      "date": "2026-10-31",
+      "headliner": "Twin Cities Ballet presents Phantom of the Opera",
+      "source_url": "https://first-avenue.com/event/2026-10-phantom-of-the-opera-early/"
+    },
+    {
+      "date": "2026-10-31",
+      "headliner": "Twin Cities Ballet presents Phantom of the Opera",
+      "source_url": "https://first-avenue.com/event/2026-10-phantom-of-the-opera-late/"
+    },
+    {
+      "date": "2026-11-01",
+      "headliner": "Twin Cities Ballet presents Phantom of the Opera",
+      "source_url": "https://first-avenue.com/event/2026-11-phantom-of-the-opera/"
+    },
+    {
+      "date": "2026-11-03",
+      "headliner": "Rodrigo y Gabriela",
+      "source_url": "https://first-avenue.com/event/2026-11-rodrigo-y-gabriela/"
+    },
+    {
+      "date": "2026-11-04",
+      "headliner": "From the team that brought you Come See Me in the Good Light Andrea Gibson's Love Letter from the Afterlife",
+      "source_url": "https://first-avenue.com/event/2026-11-andrea-gibsons-love-letter-from-the-afterlife/"
+    },
+    {
+      "date": "2026-11-12",
+      "headliner": "Lee Lue The Musical",
+      "source_url": "https://first-avenue.com/event/2026-11-lee-lue-the-musical-thu/"
+    },
+    {
+      "date": "2026-11-13",
+      "headliner": "Lee Lue The Musical",
+      "source_url": "https://first-avenue.com/event/2026-11-lee-lue-the-musical-fri/"
+    },
+    {
+      "date": "2026-11-14",
+      "headliner": "Lee Lue The Musical",
+      "source_url": "https://first-avenue.com/event/2026-11-lee-lue-the-musical-sat-matinee/"
+    },
+    {
+      "date": "2026-11-14",
+      "headliner": "Lee Lue The Musical",
+      "source_url": "https://first-avenue.com/event/2026-11-lee-lue-the-musical-sat-evening/"
+    },
+    {
+      "date": "2026-11-15",
+      "headliner": "Tell Me Lies — A Tribute to Fleetwood Mac",
+      "source_url": "https://first-avenue.com/event/2026-11-tell-me-lies-a-tribute-to-fleetwood-mac/"
+    },
+    {
+      "date": "2026-11-18",
+      "headliner": "Twin Peaks: A Conversation With The Stars",
+      "source_url": "https://first-avenue.com/event/2026-11-twin-peaks-conversation/"
+    },
+    {
+      "date": "2026-11-22",
+      "headliner": "From the team that brought you Come See Me in the Good Light Andrea Gibson's Love Letter from the Afterlife",
+      "source_url": "https://first-avenue.com/event/2026-11-andrea-gibsons-love-letter-from-the-afterlife-sun/"
+    },
+    {
+      "date": "2026-11-28",
+      "headliner": "Josh Blue",
+      "source_url": "https://first-avenue.com/event/2026-11-josh-blue/"
+    },
+    {
+      "date": "2026-12-08",
+      "headliner": "The 47th Annual John Lennon Tribute ft. Curtiss A with a little help from his friends",
+      "source_url": "https://first-avenue.com/event/2026-12-john-lennon-tribute/"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-07-19",
+      "headliner": "Killer Queen – A Tribute to Queen",
+      "source_url": "https://first-avenue.com/event/2026-07-killer-queen/"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "The Many Over The Money Rally with Elizabeth Warren and Peggy Flanagan",
+      "source_url": "https://first-avenue.com/event/2026-07-elizabeth-warren-peggy-flanagan-rally/"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "Circle Jerks x Repo Man ⏤ Film Screening & Live Performance",
+      "source_url": "https://first-avenue.com/event/2026-08-circle-jerks-x-repo-man/"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "Mr. Keillor's Birthday Show",
+      "source_url": "https://first-avenue.com/event/2026-08-mr-keillors-birthday-show/"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "Paula Poundstone",
+      "source_url": "https://first-avenue.com/event/2026-09-paula-poundstone/"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "An Evening with Kevin Smith",
+      "source_url": "https://first-avenue.com/event/2026-09-kevin-smith/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Gary Clark Jr.",
+      "source_url": "https://first-avenue.com/event/2026-09-gary-clark-jr/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "Now Clap! Bob The Drag Queen's on Tour",
+      "source_url": "https://first-avenue.com/event/2026-09-bob-the-drag-queen/"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "Chelsea Wolfe",
+      "source_url": "https://first-avenue.com/event/2026-09-chelsea-wolfe/"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "Crashing Out Live",
+      "source_url": "https://first-avenue.com/event/2026-09-crashing-out-live/"
+    },
+    {
+      "date": "2026-10-01",
+      "headliner": "The Great Northern",
+      "source_url": "https://first-avenue.com/event/2026-10-the-great-northern-10th-anniversary-preview/"
+    },
+    {
+      "date": "2026-10-02",
+      "headliner": "Mamma Mania — The American Tribute to ABBA",
+      "source_url": "https://first-avenue.com/event/2026-10-mamma-mania/"
+    },
+    {
+      "date": "2026-10-03",
+      "headliner": "An Evening With They Might Be Giants",
+      "source_url": "https://first-avenue.com/event/2026-10-they-might-be-giants-sat/"
+    },
+    {
+      "date": "2026-10-04",
+      "headliner": "An Evening With They Might Be Giants",
+      "source_url": "https://first-avenue.com/event/2026-10-they-might-be-giants-sun/"
+    },
+    {
+      "date": "2026-10-06",
+      "headliner": "Jim Henson’s Labyrinth: In Concert",
+      "source_url": "https://first-avenue.com/event/2026-10-jim-hensons-labyrinth/"
+    },
+    {
+      "date": "2026-10-08",
+      "headliner": "ZOSO — The Ultimate LED ZEPPELIN Experience",
+      "source_url": "https://first-avenue.com/event/2026-10-zoso/"
+    }
+  ]
+}

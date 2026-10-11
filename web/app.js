@@ -121,6 +121,9 @@ function showCalendarNotice(text) {
   n.hidden = !text;
 }
 
+// The room picked on first load when the server has it; otherwise the first venue in the list.
+const DEFAULT_VENUE = 'fa-fine-line';
+
 async function loadCalendar(venueId) {
   state.venueId = venueId;
   state.calendar = null;
@@ -666,7 +669,9 @@ async function start() {
   }
   select.replaceChildren(...venues.map((v) => h('option', { value: v.id }, v.name)));
   select.disabled = venues.length < 2;
-  await loadCalendar(venues[0].id);
+  const first = venues.find((v) => v.id === DEFAULT_VENUE) ?? venues[0];
+  select.value = first.id;
+  await loadCalendar(first.id);
 }
 
 start();

@@ -1,0 +1,123 @@
+{
+  "id": "fa-palace-theatre",
+  "name": "Palace Theatre",
+  "city": "Minneapolis",
+  "capacity_band": "unknown",
+  "calendar_source_url": "https://first-avenue.com/shows/",
+  "read_at": "2026-10-11T18:54:39Z",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-10-11",
+      "headliner": "MUNA",
+      "source_url": "https://first-avenue.com/event/2026-10-muna/"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "Big Head Todd and the Monsters",
+      "source_url": "https://first-avenue.com/event/2026-10-big-head-todd-and-the-monsters/"
+    },
+    {
+      "date": "2026-10-18",
+      "headliner": "Lenny Pearce",
+      "source_url": "https://first-avenue.com/event/2026-10-lenny-pearce/"
+    },
+    {
+      "date": "2026-10-22",
+      "headliner": "Sammy Rae & The Friends",
+      "source_url": "https://first-avenue.com/event/2026-10-sammy-rae-the-friends/"
+    },
+    {
+      "date": "2026-10-23",
+      "headliner": "Ryan Bingham and The Texas Gentlemen",
+      "source_url": "https://first-avenue.com/event/2026-10-ryan-bingham-and-the-texas-gentlemen/"
+    },
+    {
+      "date": "2026-10-27",
+      "headliner": "The Dresden Dolls",
+      "source_url": "https://first-avenue.com/event/2026-10-the-dresden-dolls/"
+    },
+    {
+      "date": "2026-10-28",
+      "headliner": "Dweezil Zappa",
+      "source_url": "https://first-avenue.com/event/2026-10-dweezil-zappa/"
+    },
+    {
+      "date": "2026-10-30",
+      "headliner": "The Tallest Man On Earth",
+      "source_url": "https://first-avenue.com/event/2026-10-the-tallest-man-on-earth/"
+    },
+    {
+      "date": "2026-11-07",
+      "headliner": "Joy Oladokun",
+      "source_url": "https://first-avenue.com/event/2026-11-joy-oladokun/"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-07-21",
+      "headliner": "Pavement",
+      "source_url": "https://first-avenue.com/event/2026-07-pavement/"
+    },
+    {
+      "date": "2026-08-03",
+      "headliner": "Suki Waterhouse",
+      "source_url": "https://first-avenue.com/event/2026-08-suki-waterhouse/"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "OSFNA 30th Anniversary Celebration Concert",
+      "source_url": "https://first-avenue.com/event/2026-08-osfna-30th-anniversary/"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "Modest Mouse",
+      "source_url": "https://first-avenue.com/event/2026-08-modest-mouse/"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "Brandon Flowers",
+      "source_url": "https://first-avenue.com/event/2026-09-brandon-flowers/"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "Liz Phair",
+      "source_url": "https://first-avenue.com/event/2026-09-liz-phair/"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "Beth Hart",
+      "source_url": "https://first-avenue.com/event/2026-09-beth-hart/"
+    },
+    {
+      "date": "2026-10-01",
+      "headliner": "DJ Shadow",
+      "source_url": "https://first-avenue.com/event/2026-10-dj-shadow/"
+    },
+    {
+      "date": "2026-10-02",
+      "headliner": "Mon Rovîa",
+      "source_url": "https://first-avenue.com/event/2026-10-mon-rovia/"
+    },
+    {
+      "date": "2026-10-03",
+      "headliner": "Mastodon",
+      "source_url": "https://first-avenue.com/event/2026-10-mastodon/"
+    },
+    {
+      "date": "2026-10-06",
+      "headliner": "sunn O)))",
+      "source_url": "https://first-avenue.com/event/2026-10-sunn-o/"
+    },
+    {
+      "date": "2026-10-09",
+      "headliner": "UB40",
+      "source_url": "https://first-avenue.com/event/2026-10-ub40/"
+    },
+    {
+      "date": "2026-10-10",
+      "headliner": "Snail Mail and Soccer Mommy",
+      "source_url": "https://first-avenue.com/event/2026-10-snail-mail-and-soccer-mommy/"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "fa-pryes-stage-at-schilling-amphitheater-at-the-west-end",
+  "name": "Pryes Stage at Schilling Amphitheater at the West End",
+  "city": "Minneapolis",
+  "capacity_band": "unknown",
+  "calendar_source_url": "https://first-avenue.com/shows/",
+  "read_at": "2026-10-11T18:54:39Z",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-09-04",
+      "headliner": "First Avenue Goes to the Fair",
+      "source_url": "https://first-avenue.com/event/2026-09-first-avenue-goes-to-the-fair-fri/"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "First Avenue Goes to the Fair",
+      "source_url": "https://first-avenue.com/event/2026-09-first-avenue-goes-to-the-fair-sat/"
+    }
+  ]
+}

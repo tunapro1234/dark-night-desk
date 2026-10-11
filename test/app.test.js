@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
+import { mkdtemp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { loadConfig } from '../server/config.js';
@@ -23,6 +23,15 @@ test('health without keys: Qloo not connected, scripted agent, default caps', as
   assert.equal(body.agent, 'scripted');
   assert.deepEqual(body.budget, { day_usd: 0, total_usd: 0, day_cap: 2, total_cap: 30 });
   assert.equal(typeof body.version, 'string');
+  await app.close();
+});
+
+test('health reports the package.json version and whole seconds of uptime', async () => {
+  const pkg = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));
+  const app = await appWith({});
+  const body = (await app.inject('/api/health')).json();
+  assert.equal(body.version, pkg.version);
+  assert.ok(Number.isInteger(body.uptime) && body.uptime >= 0);
   await app.close();
 });
 

@@ -59,7 +59,8 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
     let agent = effectiveAgentMode(config, { hasRecordedRuns: recorded });
     // A spent cap means no live calls until the next UTC day (or ever, for the total cap).
     if (agent === 'live' && !budget.canSpend().ok) agent = recorded ? 'recorded' : 'scripted';
-    return { ok: true, qloo: effectiveQlooMode(config), agent, budget: budget.snapshot(), version: pkg.version };
+    // version comes from package.json; uptime is whole seconds since the process started.
+    return { ok: true, qloo: effectiveQlooMode(config), agent, budget: budget.snapshot(), version: pkg.version, uptime: Math.floor(process.uptime()) };
   });
 
   const venues = () =>

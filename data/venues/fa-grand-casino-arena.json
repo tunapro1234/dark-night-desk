@@ -1,0 +1,17 @@
+{
+  "id": "fa-grand-casino-arena",
+  "name": "Grand Casino Arena",
+  "city": "Minneapolis",
+  "capacity_band": "unknown",
+  "calendar_source_url": "https://first-avenue.com/shows/",
+  "read_at": "2026-10-11T18:54:39Z",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-09-17",
+      "headliner": "Phoebe Bridgers",
+      "source_url": "https://first-avenue.com/event/2026-09-phoebe-bridgers/"
+    }
+  ]
+}

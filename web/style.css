@@ -71,6 +71,8 @@ button, select, input, textarea { font: inherit; color: inherit; }
 
 main { max-width: 1160px; margin: 0 auto; padding: 20px 24px 48px; }
 main:focus { outline: none; }
+.site-foot { max-width: 1160px; margin: 0 auto; padding: 0 24px 32px; color: var(--muted); font-size: 0.85rem; }
+.site-foot p { margin: 0; border-top: 1px solid var(--line); padding-top: 12px; }
 
 /* ---------- calendar ---------- */
 .venue-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
@@ -215,6 +217,7 @@ code.params { display: block; white-space: pre-wrap; overflow-wrap: anywhere; }
 @media (max-width: 640px) {
   .top { padding: 14px 16px 10px; }
   main { padding: 16px 16px 40px; }
+  .site-foot { padding: 0 16px 28px; }
   .strip { grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 4px; }
   .sq { min-height: 30px; }
   .poster { padding: 22px 16px 18px; }

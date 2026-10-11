@@ -1,0 +1,28 @@
+{
+  "id": "fa-state-theatre",
+  "name": "State Theatre",
+  "city": "Minneapolis",
+  "capacity_band": "unknown",
+  "calendar_source_url": "https://first-avenue.com/shows/",
+  "read_at": "2026-10-11T18:54:39Z",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-10-14",
+      "headliner": "Robert Plant with Saving Grace and Suzi Dian",
+      "source_url": "https://first-avenue.com/event/2026-10-robert-plant-saving-grace/"
+    },
+    {
+      "date": "2026-11-21",
+      "headliner": "The Jayhawks",
+      "source_url": "https://first-avenue.com/event/2026-11-the-jayhawks/"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-08-14",
+      "headliner": "Mat Kearney",
+      "source_url": "https://first-avenue.com/event/2026-08-mat-kearney/"
+    }
+  ]
+}

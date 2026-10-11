@@ -1,0 +1,468 @@
+{
+  "id": "fa-turf-club",
+  "name": "Turf Club",
+  "city": "Minneapolis",
+  "capacity_band": "200-400",
+  "calendar_source_url": "https://first-avenue.com/shows/",
+  "read_at": "2026-10-11T18:54:39Z",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-10-12",
+      "headliner": "Acid Mothers Temple",
+      "source_url": "https://first-avenue.com/event/2026-10-acid-mothers-temple/"
+    },
+    {
+      "date": "2026-10-14",
+      "headliner": "SLIFT",
+      "source_url": "https://first-avenue.com/event/2026-10-slift/"
+    },
+    {
+      "date": "2026-10-16",
+      "headliner": "Arcwelder",
+      "source_url": "https://first-avenue.com/event/2026-10-arcwelder/"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "The Lowest Pair",
+      "source_url": "https://first-avenue.com/event/2026-10-the-lowest-pair/"
+    },
+    {
+      "date": "2026-10-20",
+      "headliner": "We Are Scientists",
+      "source_url": "https://first-avenue.com/event/2026-10-we-are-scientists/"
+    },
+    {
+      "date": "2026-10-22",
+      "headliner": "One Liner Madness",
+      "source_url": "https://first-avenue.com/event/2026-10-one-liner-madness/"
+    },
+    {
+      "date": "2026-10-23",
+      "headliner": "In Her Own Words and Every Avenue",
+      "source_url": "https://first-avenue.com/event/2026-10-in-her-own-words-and-every-avenue/"
+    },
+    {
+      "date": "2026-10-24",
+      "headliner": "Gilla Band",
+      "source_url": "https://first-avenue.com/event/2026-10-gilla-band/"
+    },
+    {
+      "date": "2026-10-25",
+      "headliner": "American Aquarium",
+      "source_url": "https://first-avenue.com/event/2026-10-american-aquarium/"
+    },
+    {
+      "date": "2026-10-28",
+      "headliner": "Sweeping Promises",
+      "source_url": "https://first-avenue.com/event/2026-10-sweeping-promises/"
+    },
+    {
+      "date": "2026-10-29",
+      "headliner": "FORBIDDEN",
+      "source_url": "https://first-avenue.com/event/2026-10-forbidden/"
+    },
+    {
+      "date": "2026-10-30",
+      "headliner": "Skalloween with Space Monkey Mafia",
+      "source_url": "https://first-avenue.com/event/2026-10-skalloween-with-space-monkey-mafia/"
+    },
+    {
+      "date": "2026-10-31",
+      "headliner": "Halloween with McNasty Brass Band",
+      "source_url": "https://first-avenue.com/event/2026-10-mcnasty-brass-band/"
+    },
+    {
+      "date": "2026-11-03",
+      "headliner": "BLITZKID",
+      "source_url": "https://first-avenue.com/event/2026-11-blitzkid/"
+    },
+    {
+      "date": "2026-11-06",
+      "headliner": "Levi Bloom",
+      "source_url": "https://first-avenue.com/event/2026-11-levi-bloom/"
+    },
+    {
+      "date": "2026-11-07",
+      "headliner": "Last Nite ⏤ An Indie Sleaze Dance Party",
+      "source_url": "https://first-avenue.com/event/2026-11-last-nite-an-indie-sleaze-dance-party/"
+    },
+    {
+      "date": "2026-11-11",
+      "headliner": "Fruition",
+      "source_url": "https://first-avenue.com/event/2026-11-fruition/"
+    },
+    {
+      "date": "2026-11-12",
+      "headliner": "Tired Eyes — Neil Young and Crazy Horse Tribute Band",
+      "source_url": "https://first-avenue.com/event/2026-11-tired-eyes-neil-young-and-crazy-horse-tribute/"
+    },
+    {
+      "date": "2026-11-13",
+      "headliner": "The Suburbs",
+      "source_url": "https://first-avenue.com/event/2026-11-the-suburbs-fri/"
+    },
+    {
+      "date": "2026-11-14",
+      "headliner": "The Suburbs",
+      "source_url": "https://first-avenue.com/event/2026-11-the-suburbs-sat/"
+    },
+    {
+      "date": "2026-11-17",
+      "headliner": "Nicole Atkins",
+      "source_url": "https://first-avenue.com/event/2026-11-nicole-atkins/"
+    },
+    {
+      "date": "2026-11-18",
+      "headliner": "GHOSTWOMAN",
+      "source_url": "https://first-avenue.com/event/2026-11-ghostwoman/"
+    },
+    {
+      "date": "2026-11-20",
+      "headliner": "Them Coulee Boys",
+      "source_url": "https://first-avenue.com/event/2026-11-them-coulee-boys/"
+    },
+    {
+      "date": "2026-11-21",
+      "headliner": "Erik Koskinen Band",
+      "source_url": "https://first-avenue.com/event/2026-11-erik-koskinen-band/"
+    },
+    {
+      "date": "2026-11-22",
+      "headliner": "The Mainliners",
+      "source_url": "https://first-avenue.com/event/2026-11-the-mainliners/"
+    },
+    {
+      "date": "2026-11-23",
+      "headliner": "Devil Master",
+      "source_url": "https://first-avenue.com/event/2026-11-devil-master/"
+    },
+    {
+      "date": "2026-11-25",
+      "headliner": "Cole Diamond’s Twangsgiving ft. Tropical Depression ( Alan Jackson Tribute )",
+      "source_url": "https://first-avenue.com/event/2026-11-cole-diamonds-twangsgiving/"
+    },
+    {
+      "date": "2026-11-27",
+      "headliner": "World’s Forgotten Boys (Stooges Tribute ft. members of Impaler, Dumpster Juice, Extermination Day)",
+      "source_url": "https://first-avenue.com/event/2026-11-worlds-forgotten-boys/"
+    },
+    {
+      "date": "2026-12-02",
+      "headliner": "ABOUT MY FRIEND",
+      "source_url": "https://first-avenue.com/event/2026-12-about-my-friend/"
+    },
+    {
+      "date": "2026-12-03",
+      "headliner": "Joe Pug",
+      "source_url": "https://first-avenue.com/event/2026-12-joe-pug/"
+    },
+    {
+      "date": "2026-12-10",
+      "headliner": "The Steel Wheels",
+      "source_url": "https://first-avenue.com/event/2026-12-the-steel-wheels/"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-07-15",
+      "headliner": "Pearl & the Oysters",
+      "source_url": "https://first-avenue.com/event/2026-07-pearl-and-the-oysters/"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "New Fashioned Honky Tonk",
+      "source_url": "https://first-avenue.com/event/2026-07-new-fashioned-honky-tonk/"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "Man Man",
+      "source_url": "https://first-avenue.com/event/2026-07-man-man/"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "Minnesota Yacht Club Official Afterparty ft. The Black Keys Record Hang",
+      "source_url": "https://first-avenue.com/event/2026-07-mn-yacht-club-afterparty/"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "Drivin N Cryin",
+      "source_url": "https://first-avenue.com/event/2026-07-drivin-n-cryin/"
+    },
+    {
+      "date": "2026-07-19",
+      "headliner": "Billy Allen + The Pollies",
+      "source_url": "https://first-avenue.com/event/2026-07-billy-allen-the-pollies/"
+    },
+    {
+      "date": "2026-07-22",
+      "headliner": "mc chris",
+      "source_url": "https://first-avenue.com/event/2026-07-mc-chris/"
+    },
+    {
+      "date": "2026-07-23",
+      "headliner": "Rattle and Hum (A U2 Tribute Band) and Kars 4 Skids (The Cars Tribute)",
+      "source_url": "https://first-avenue.com/event/2026-07-rattle-and-hum-and-kars-4-skids-tributes/"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "Birthday Suits",
+      "source_url": "https://first-avenue.com/event/2026-07-birthday-suits/"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "House of Heavy: Nu Metal + Metalcore Night",
+      "source_url": "https://first-avenue.com/event/2026-07-house-of-heavy/"
+    },
+    {
+      "date": "2026-07-29",
+      "headliner": "Space Monkey Mafia and Left on Tenth",
+      "source_url": "https://first-avenue.com/event/2026-07-space-monkey-mafia-and-left-on-tenth/"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "A Thousand Horses",
+      "source_url": "https://first-avenue.com/event/2026-07-a-thousand-horses/"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "Bronwyn Keith-Hynes",
+      "source_url": "https://first-avenue.com/event/2026-08-bronwyn-keith-hynes/"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "Triple Threat Tribute Night",
+      "source_url": "https://first-avenue.com/event/2026-08-triple-threat-tribute-night/"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "Reese Glover",
+      "source_url": "https://first-avenue.com/event/2026-08-reese-glover/"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "Dale Watson and His Lone Stars",
+      "source_url": "https://first-avenue.com/event/2026-08-dale-watson-and-his-lone-stars/"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "Jerry Day ⏤ Celebrating The Grateful Dead",
+      "source_url": "https://first-avenue.com/event/2026-08-jerry-day/"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "Van Glow Light Show and HEAVY present American Cream, Good Doom, and Shadow Hex",
+      "source_url": "https://first-avenue.com/event/2026-08-american-cream-and-shadow-hex/"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "Megasound",
+      "source_url": "https://first-avenue.com/event/2026-08-megasound/"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "Emily Nenni and Buffalo Nichols",
+      "source_url": "https://first-avenue.com/event/2026-08-emily-nenni-buffalo-nichols/"
+    },
+    {
+      "date": "2026-08-19",
+      "headliner": "Meltt",
+      "source_url": "https://first-avenue.com/event/2026-08-meltt/"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "Raynes",
+      "source_url": "https://first-avenue.com/event/2026-08-raynes/"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "Bonus Joy ⏤ A New Comedy Variety Show",
+      "source_url": "https://first-avenue.com/event/2026-08-bonus-joy-comedy-variety/"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "David Huckfelt & The Unarmed Forces",
+      "source_url": "https://first-avenue.com/event/2026-08-david-huckfelt-the-unarmed-forces/"
+    },
+    {
+      "date": "2026-08-25",
+      "headliner": "Nitzer Ebb",
+      "source_url": "https://first-avenue.com/event/2026-08-nitzer-ebb/"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "Trish Toledo",
+      "source_url": "https://first-avenue.com/event/2026-08-trish-toledo/"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "A Tribute to Shania Twain",
+      "source_url": "https://first-avenue.com/event/2026-08-shania-twain-tribute/"
+    },
+    {
+      "date": "2026-08-31",
+      "headliner": "MikelParis of O.A.R.",
+      "source_url": "https://first-avenue.com/event/2026-08-mikelparis-of-o-a-r/"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "Clung Tight",
+      "source_url": "https://first-avenue.com/event/2026-09-clung-tight/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "R.I.Y.L. LIVE! with Adam Voith and special guest Curtis Sittenfeld",
+      "source_url": "https://first-avenue.com/event/2026-09-riyl-live-w-adam-voith/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "Danny Worsnop and Tyler Rich",
+      "source_url": "https://first-avenue.com/event/2026-09-danny-worsnop-and-tyler-rich/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "Red Desert",
+      "source_url": "https://first-avenue.com/event/2026-09-red-desert/"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "Robert Lester Folsom",
+      "source_url": "https://first-avenue.com/event/2026-09-robert-lester-folsom/"
+    },
+    {
+      "date": "2026-09-08",
+      "headliner": "Steven Hyden in Conversation with Steve Gorman",
+      "source_url": "https://first-avenue.com/event/2026-09-steven-hyden-in-conversation-with-steve-gorman/"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "Kiernan and Luke Callen",
+      "source_url": "https://first-avenue.com/event/2026-09-kiernan-and-luke-callen/"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "Dean Johnson",
+      "source_url": "https://first-avenue.com/event/2026-09-dean-johnson/"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "sapphic factory: queer joy party",
+      "source_url": "https://first-avenue.com/event/2026-09-sapphic-factory-queer-joy-party/"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "The Wilder Blue",
+      "source_url": "https://first-avenue.com/event/2026-09-the-wilder-blue/"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "BAILEN",
+      "source_url": "https://first-avenue.com/event/2026-09-bailen/"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "Bombargo",
+      "source_url": "https://first-avenue.com/event/2026-09-bombargo/"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Gable Price and Friends",
+      "source_url": "https://first-avenue.com/event/2026-09-gable-price-and-friends/"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "The Bros. Landreth",
+      "source_url": "https://first-avenue.com/event/2026-09-the-bros-landreth/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Chanel Beads",
+      "source_url": "https://first-avenue.com/event/2026-09-chanel-beads/"
+    },
+    {
+      "date": "2026-09-21",
+      "headliner": "Pallbearer",
+      "source_url": "https://first-avenue.com/event/2026-09-pallbearer/"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "An Evening With... Theo Katzman",
+      "source_url": "https://first-avenue.com/event/2026-09-theo-katzman/"
+    },
+    {
+      "date": "2026-09-23",
+      "headliner": "Briscoe",
+      "source_url": "https://first-avenue.com/event/2026-09-briscoe/"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "Anna Graves",
+      "source_url": "https://first-avenue.com/event/2026-09-anna-graves/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "F. Scott Fitzgerald Birthday Party ⏤ A Roaring ‘20s Party ft. Southside Aces and The Riffin’ Trio",
+      "source_url": "https://first-avenue.com/event/2026-09-f-scott-fitzgerald-birthday-party/"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "Nick Hakim",
+      "source_url": "https://first-avenue.com/event/2026-09-nick-hakim/"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "Two Runner",
+      "source_url": "https://first-avenue.com/event/2027-09-two-runner/"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "King 810",
+      "source_url": "https://first-avenue.com/event/2026-09-king-810/"
+    },
+    {
+      "date": "2026-10-01",
+      "headliner": "Kyle Gordon",
+      "source_url": "https://first-avenue.com/event/2026-10-kyle-gordon/"
+    },
+    {
+      "date": "2026-10-02",
+      "headliner": "Automatic",
+      "source_url": "https://first-avenue.com/event/2026-10-automatic/"
+    },
+    {
+      "date": "2026-10-03",
+      "headliner": "Midway Music & Arts Fest ft. Pullstring, Keep for Cheap, Ryan Traster, and Sawtooth Witch",
+      "source_url": "https://first-avenue.com/event/2026-10-midway-music-arts-fest/"
+    },
+    {
+      "date": "2026-10-04",
+      "headliner": "An Evening with The Dream Syndicate",
+      "source_url": "https://first-avenue.com/event/2026-10-the-dream-syndicate/"
+    },
+    {
+      "date": "2026-10-06",
+      "headliner": "Chasing Abbey",
+      "source_url": "https://first-avenue.com/event/2026-10-chasing-abbey/"
+    },
+    {
+      "date": "2026-10-07",
+      "headliner": "Chris Housman",
+      "source_url": "https://first-avenue.com/event/2026-10-chris-housman/"
+    },
+    {
+      "date": "2026-10-08",
+      "headliner": "Deerhoof",
+      "source_url": "https://first-avenue.com/event/2026-10-deerhoof/"
+    },
+    {
+      "date": "2026-10-09",
+      "headliner": "LEAP",
+      "source_url": "https://first-avenue.com/event/2026-10-leap/"
+    },
+    {
+      "date": "2026-10-10",
+      "headliner": "Roger Clyne & The Peacemakers",
+      "source_url": "https://first-avenue.com/event/2026-10-roger-clyne-the-peacemakers/"
+    }
+  ]
+}

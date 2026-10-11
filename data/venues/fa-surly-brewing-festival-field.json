@@ -1,0 +1,32 @@
+{
+  "id": "fa-surly-brewing-festival-field",
+  "name": "Surly Brewing Festival Field",
+  "city": "Minneapolis",
+  "capacity_band": "unknown",
+  "calendar_source_url": "https://first-avenue.com/shows/",
+  "read_at": "2026-10-11T18:54:39Z",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-08-06",
+      "headliner": "Young the Giant",
+      "source_url": "https://first-avenue.com/event/2026-08-young-the-giant/"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "Big Thief",
+      "source_url": "https://first-avenue.com/event/2026-08-big-thief/"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "Alabama Shakes",
+      "source_url": "https://first-avenue.com/event/2026-08-alabama-shakes-fri/"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "Alabama Shakes",
+      "source_url": "https://first-avenue.com/event/2026-08-alabama-shakes-sat/"
+    }
+  ]
+}

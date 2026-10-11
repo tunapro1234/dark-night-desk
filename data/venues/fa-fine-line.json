@@ -1,0 +1,498 @@
+{
+  "id": "fa-fine-line",
+  "name": "Fine Line",
+  "city": "Minneapolis",
+  "capacity_band": "400-700",
+  "calendar_source_url": "https://first-avenue.com/shows/",
+  "read_at": "2026-10-11T18:54:39Z",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-10-11",
+      "headliner": "Sawyer Hill",
+      "source_url": "https://first-avenue.com/event/2026-10-sawyer-hill/"
+    },
+    {
+      "date": "2026-10-12",
+      "headliner": "Holywatr",
+      "source_url": "https://first-avenue.com/event/2026-10-holywatr/"
+    },
+    {
+      "date": "2026-10-14",
+      "headliner": "Armand Hammer",
+      "source_url": "https://first-avenue.com/event/2026-10-armand-hammer/"
+    },
+    {
+      "date": "2026-10-15",
+      "headliner": "Friko",
+      "source_url": "https://first-avenue.com/event/2026-10-friko/"
+    },
+    {
+      "date": "2026-10-16",
+      "headliner": "heavens to betsy",
+      "source_url": "https://first-avenue.com/event/2026-10-heavens-to-betsy/"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "Blake Whiten",
+      "source_url": "https://first-avenue.com/event/2026-10-blake-whiten/"
+    },
+    {
+      "date": "2026-10-18",
+      "headliner": "Kidd G",
+      "source_url": "https://first-avenue.com/event/2026-10-kidd-g/"
+    },
+    {
+      "date": "2026-10-19",
+      "headliner": "The Army, The Navy",
+      "source_url": "https://first-avenue.com/event/2026-10-the-army-the-navy/"
+    },
+    {
+      "date": "2026-10-20",
+      "headliner": "Twin Cities Jewish Film Festival presents Noga",
+      "source_url": "https://first-avenue.com/event/2026-10-twin-cities-jewish-film-festival-noga/"
+    },
+    {
+      "date": "2026-10-21",
+      "headliner": "The Jack Wharff Band",
+      "source_url": "https://first-avenue.com/event/2026-10-the-jack-wharff-band/"
+    },
+    {
+      "date": "2026-10-22",
+      "headliner": "Fruit Bats",
+      "source_url": "https://first-avenue.com/event/2026-10-fruit-bats/"
+    },
+    {
+      "date": "2026-10-23",
+      "headliner": "Tank and The Bangas",
+      "source_url": "https://first-avenue.com/event/2026-10-tank-and-the-bangas/"
+    },
+    {
+      "date": "2026-10-24",
+      "headliner": "Duane Betts & Palmetto Motel",
+      "source_url": "https://first-avenue.com/event/2026-10-duane-betts-palmetto-motel/"
+    },
+    {
+      "date": "2026-10-25",
+      "headliner": "Shawn James",
+      "source_url": "https://first-avenue.com/event/2026-10-shawn-james/"
+    },
+    {
+      "date": "2026-10-26",
+      "headliner": "Plini",
+      "source_url": "https://first-avenue.com/event/2026-10-plini/"
+    },
+    {
+      "date": "2026-10-28",
+      "headliner": "Winyah",
+      "source_url": "https://first-avenue.com/event/2026-10-winyah/"
+    },
+    {
+      "date": "2026-10-30",
+      "headliner": "Phillip Phillips",
+      "source_url": "https://first-avenue.com/event/2026-10-phillip-phillips/"
+    },
+    {
+      "date": "2026-10-31",
+      "headliner": "Quarter Life Crisis ⏤ Emoween",
+      "source_url": "https://first-avenue.com/event/2026-10-quarter-life-crisis-emoween/"
+    },
+    {
+      "date": "2026-11-02",
+      "headliner": "George Clanton",
+      "source_url": "https://first-avenue.com/event/2026-11-george-clanton/"
+    },
+    {
+      "date": "2026-11-03",
+      "headliner": "L7",
+      "source_url": "https://first-avenue.com/event/2026-11-l7/"
+    },
+    {
+      "date": "2026-11-04",
+      "headliner": "The Bends",
+      "source_url": "https://first-avenue.com/event/2026-11-the-bends/"
+    },
+    {
+      "date": "2026-11-05",
+      "headliner": "Sophie Hunter",
+      "source_url": "https://first-avenue.com/event/2026-11-sophie-hunter/"
+    },
+    {
+      "date": "2026-11-06",
+      "headliner": "The Weeknd Night",
+      "source_url": "https://first-avenue.com/event/2026-11-the-weeknd-night/"
+    },
+    {
+      "date": "2026-11-07",
+      "headliner": "Alyssa Grace",
+      "source_url": "https://first-avenue.com/event/2026-11-alyssa-grace/"
+    },
+    {
+      "date": "2026-11-08",
+      "headliner": "Eivør",
+      "source_url": "https://first-avenue.com/event/2026-11-eivor/"
+    },
+    {
+      "date": "2026-11-12",
+      "headliner": "Hovvdy",
+      "source_url": "https://first-avenue.com/event/2026-11-hovvdy/"
+    },
+    {
+      "date": "2026-11-13",
+      "headliner": "Humbird",
+      "source_url": "https://first-avenue.com/event/2026-11-humbird/"
+    },
+    {
+      "date": "2026-11-14",
+      "headliner": "almost monday",
+      "source_url": "https://first-avenue.com/event/2026-11-almost-monday/"
+    },
+    {
+      "date": "2026-11-16",
+      "headliner": "Ethan Regan",
+      "source_url": "https://first-avenue.com/event/2026-11-ethan-regan/"
+    },
+    {
+      "date": "2026-11-18",
+      "headliner": "Squirrel Flower",
+      "source_url": "https://first-avenue.com/event/2026-11-squirrel-flower/"
+    },
+    {
+      "date": "2026-11-20",
+      "headliner": "Michael Jackson Night",
+      "source_url": "https://first-avenue.com/event/2026-11-michael-jackson-night/"
+    },
+    {
+      "date": "2026-11-21",
+      "headliner": "Michigander",
+      "source_url": "https://first-avenue.com/event/2026-11-michigander/"
+    },
+    {
+      "date": "2026-11-22",
+      "headliner": "Mountain Grass Unit",
+      "source_url": "https://first-avenue.com/event/2026-11-mountain-grass-unit/"
+    },
+    {
+      "date": "2026-11-24",
+      "headliner": "Venna",
+      "source_url": "https://first-avenue.com/event/2026-11-venna/"
+    },
+    {
+      "date": "2026-11-27",
+      "headliner": "2Dead Boyz x The Underachievers",
+      "source_url": "https://first-avenue.com/event/2026-11-2dead-boyz-x-the-underachievers/"
+    },
+    {
+      "date": "2026-11-28",
+      "headliner": "Chrissy Chlapecka",
+      "source_url": "https://first-avenue.com/event/2026-11-chrissy-chlapecka/"
+    },
+    {
+      "date": "2026-11-29",
+      "headliner": "Father Of Peace",
+      "source_url": "https://first-avenue.com/event/2026-11-father-of-peace/"
+    },
+    {
+      "date": "2026-11-30",
+      "headliner": "Yaelokre",
+      "source_url": "https://first-avenue.com/event/2026-11-yaelokre/"
+    },
+    {
+      "date": "2026-12-02",
+      "headliner": "Tiny Habits",
+      "source_url": "https://first-avenue.com/event/2026-12-tiny-habits/"
+    },
+    {
+      "date": "2026-12-03",
+      "headliner": "Pokey LaFarge",
+      "source_url": "https://first-avenue.com/event/2026-12-pokey-lafarge/"
+    },
+    {
+      "date": "2026-12-04",
+      "headliner": "DANCE… 4 U: Slayyyter X Charli XCX Night",
+      "source_url": "https://first-avenue.com/event/2026-12-dance-4-u-slayyyter-x-charli-xcx-night/"
+    },
+    {
+      "date": "2026-12-10",
+      "headliner": "Amtrac",
+      "source_url": "https://first-avenue.com/event/2026-12-amtrac/"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-07-15",
+      "headliner": "Nick Lowe and Los Straitjackets",
+      "source_url": "https://first-avenue.com/event/2026-07-nick-lowe-los-straitjackets/"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "Wavves",
+      "source_url": "https://first-avenue.com/event/2026-07-wavves/"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "RaveQuest",
+      "source_url": "https://first-avenue.com/event/2026-07-ravequest/"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "SOS: The Recession Pop Party",
+      "source_url": "https://first-avenue.com/event/2026-07-sos-the-recession-pop-party/"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "One Direction Night",
+      "source_url": "https://first-avenue.com/event/2026-07-one-direction-night/"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "GoldFish",
+      "source_url": "https://first-avenue.com/event/2026-07-goldfish/"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "An Evening with Jukebox the Ghost",
+      "source_url": "https://first-avenue.com/event/2026-07-jukebox-the-ghost/"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "Tyler Braden",
+      "source_url": "https://first-avenue.com/event/2026-07-tyler-braden/"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "Faouzia",
+      "source_url": "https://first-avenue.com/event/2026-08-faouzia/"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "Sapphic ONE-derland",
+      "source_url": "https://first-avenue.com/event/2026-08-sapphic-one-derland/"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "Broadway Rave",
+      "source_url": "https://first-avenue.com/event/2026-08-broadway-rave/"
+    },
+    {
+      "date": "2026-08-12",
+      "headliner": "Willow Avalon",
+      "source_url": "https://first-avenue.com/event/2026-08-willow-avalon/"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "Gimme Gimme Disco",
+      "source_url": "https://first-avenue.com/event/2026-08-gimme-gimme-disco/"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "NDVST presents DEBÍ TIRAR MÁS FIESTAS",
+      "source_url": "https://first-avenue.com/event/2026-08-bad-bunny-party/"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "Loe Shimmy",
+      "source_url": "https://first-avenue.com/event/2026-08-loe-shimmy/"
+    },
+    {
+      "date": "2026-08-19",
+      "headliner": "Kill Lincoln, JER, Bad Operation, and The Best of the Worst",
+      "source_url": "https://first-avenue.com/event/2026-08-kill-lincoln-jer-bad-operation/"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "WILLIS",
+      "source_url": "https://first-avenue.com/event/2026-08-willis/"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "Bieber Night",
+      "source_url": "https://first-avenue.com/event/2026-08-bieber-night/"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "Pajama Rave",
+      "source_url": "https://first-avenue.com/event/2026-08-pajama-rave/"
+    },
+    {
+      "date": "2026-08-25",
+      "headliner": "Mo Lowda & The Humble",
+      "source_url": "https://first-avenue.com/event/2026-08-mo-lowda-the-humble/"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "Nino Paid",
+      "source_url": "https://first-avenue.com/event/2026-08-nino-paid/"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "Internet Kids ⏤ Hyperpop Dance Party ft. PiNKII and Robopup",
+      "source_url": "https://first-avenue.com/event/2026-08-internet-kids/"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "Pond",
+      "source_url": "https://first-avenue.com/event/2026-08-pond/"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "Ugly Kid Joe",
+      "source_url": "https://first-avenue.com/event/2026-09-ugly-kid-joe/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "Black Marble",
+      "source_url": "https://first-avenue.com/event/2026-09-black-marble/"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "Next Level KPOP Rave ft. Velocipey",
+      "source_url": "https://first-avenue.com/event/2026-09-next-level-kpop-rave/"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "Mustard Service",
+      "source_url": "https://first-avenue.com/event/2026-09-mustard-service/"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "Margaret Glaspy",
+      "source_url": "https://first-avenue.com/event/2026-09-margaret-glaspy/"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "Emo Nite",
+      "source_url": "https://first-avenue.com/event/2026-09-emo-nite/"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "Ceremony",
+      "source_url": "https://first-avenue.com/event/2026-09-ceremony/"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "Altın Gün",
+      "source_url": "https://first-avenue.com/event/2026-09-altin-gun/"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "The Charlatans UK",
+      "source_url": "https://first-avenue.com/event/2026-09-the-charlatans-uk/"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Yard Act",
+      "source_url": "https://first-avenue.com/event/2026-09-yard-act/"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "Carly Pearce",
+      "source_url": "https://first-avenue.com/event/2026-09-carly-pearce-fri/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Carly Pearce",
+      "source_url": "https://first-avenue.com/event/2026-09-carly-pearce-sat/"
+    },
+    {
+      "date": "2026-09-20",
+      "headliner": "Show Me The Body",
+      "source_url": "https://first-avenue.com/event/2026-09-show-me-the-body/"
+    },
+    {
+      "date": "2026-09-21",
+      "headliner": "Icon For Hire",
+      "source_url": "https://first-avenue.com/event/2026-09-icon-for-hire/"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "josh conway",
+      "source_url": "https://first-avenue.com/event/2026-09-josh-conway/"
+    },
+    {
+      "date": "2026-09-23",
+      "headliner": "Chaparelle",
+      "source_url": "https://first-avenue.com/event/2026-09-chaparelle/"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "Kota the Friend",
+      "source_url": "https://first-avenue.com/event/2026-09-kota-the-friend/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "Dua Saleh",
+      "source_url": "https://first-avenue.com/event/2026-09-dua-saleh/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "CRIMEWAVE: A GOTH, POST-PUNK & DARKWAVE PARTY",
+      "source_url": "https://first-avenue.com/event/2026-09-crimewave/"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "Bahamas",
+      "source_url": "https://first-avenue.com/event/2026-09-bahamas/"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "Culture Wars",
+      "source_url": "https://first-avenue.com/event/2026-09-culture-wars/"
+    },
+    {
+      "date": "2026-09-30",
+      "headliner": "Jervis Campbell",
+      "source_url": "https://first-avenue.com/event/2026-09-jervis-campbell/"
+    },
+    {
+      "date": "2026-10-01",
+      "headliner": "Alana Springsteen",
+      "source_url": "https://first-avenue.com/event/2026-10-alana-springsteen/"
+    },
+    {
+      "date": "2026-10-02",
+      "headliner": "SOS: The Recession Pop Party",
+      "source_url": "https://first-avenue.com/event/2026-10-sos-the-recession-pop-party/"
+    },
+    {
+      "date": "2026-10-03",
+      "headliner": "Stephen Day",
+      "source_url": "https://first-avenue.com/event/2026-10-stephen-day/"
+    },
+    {
+      "date": "2026-10-04",
+      "headliner": "Militarie Gun",
+      "source_url": "https://first-avenue.com/event/2026-10-militarie-gun/"
+    },
+    {
+      "date": "2026-10-05",
+      "headliner": "Cheekface",
+      "source_url": "https://first-avenue.com/event/2026-10-cheekface/"
+    },
+    {
+      "date": "2026-10-06",
+      "headliner": "Tricky",
+      "source_url": "https://first-avenue.com/event/2026-10-tricky/"
+    },
+    {
+      "date": "2026-10-07",
+      "headliner": "Failure",
+      "source_url": "https://first-avenue.com/event/2026-10-failure/"
+    },
+    {
+      "date": "2026-10-08",
+      "headliner": "Lilith Max, Amélie Farren, Rabbitology",
+      "source_url": "https://first-avenue.com/event/2026-10-amelie-farren-lilith-max-rabbitology/"
+    },
+    {
+      "date": "2026-10-09",
+      "headliner": "Sweet Pill",
+      "source_url": "https://first-avenue.com/event/2026-10-sweet-pill/"
+    },
+    {
+      "date": "2026-10-10",
+      "headliner": "It's A 2000s Party",
+      "source_url": "https://first-avenue.com/event/2026-10-its-a-2000s-party-minneapolis/"
+    }
+  ]
+}

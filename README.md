@@ -7,7 +7,9 @@ finds those nights, and helps the booker fill them.
 
 Status: in development
 
-## Run
+Venue calendars are read from each venue's public website. Dark Night Desk is not affiliated with any venue or artist.
+
+## Run locally
 
 Requires Node 22 or newer.
 
@@ -18,7 +20,9 @@ npm test
 ```
 
 Without `QLOO_API_KEY` the server starts with Qloo shown as "not connected". Without `ANTHROPIC_API_KEY` the agent runs
-as a labelled scripted plan. All settings are environment variables read in `server/config.js`:
+as a labelled scripted plan. To try it with keys, export them in your own shell for that run
+(`QLOO_API_KEY=... ANTHROPIC_API_KEY=... npm start`); never write them into a file inside the repo.
+All settings are environment variables read in `server/config.js`:
 
 | Variable | Default | Meaning |
 |---|---|---|
@@ -37,6 +41,34 @@ as a labelled scripted plan. All settings are environment variables read in `ser
 
 The server refuses to start on an invalid setting and prints what is wrong.
 
+`GET /api/health` reports the modes, the spend ledger, `version` (from `package.json`) and `uptime` (whole seconds since the
+process started).
+
+## Deploy (systemd)
+
+`deploy/dark-night-desk.service` runs the server as a systemd service. The repo does not install or start it; on the server:
+
+```sh
+sudo cp deploy/dark-night-desk.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now dark-night-desk
+curl -s http://127.0.0.1:3020/api/health
+journalctl -u dark-night-desk -f
+```
+
+- `npm install --omit=dev` in the working directory first. Edit `WorkingDirectory`, `EnvironmentFile`, `ReadWritePaths` and
+  the node path in `ExecStart` if the checkout lives somewhere else.
+- The unit sets `HOST=127.0.0.1`, `PORT=3020` and `NODE_ENV=production`. The server only listens on loopback; a reverse proxy
+  on the same host (for example nginx) serves it to the outside and passes `X-Forwarded-For`, which the IP limit reads.
+- **Keys live only in the server's environment file** named by `EnvironmentFile=` (mode 600, outside the repo), one
+  `NAME=value` per line: `QLOO_API_KEY`, `ANTHROPIC_API_KEY`, and any setting from the table above. No key is in the repo,
+  in the unit file, in the browser or in the logs.
+- Limits: `Nice=10`, `MemoryMax=512M`, `Restart=on-failure`, `NoNewPrivileges`, `PrivateTmp`, `ProtectSystem=full`.
+  `ReadWritePaths` names only `DATA_DIR` (`./var` by default: Qloo cache, spend ledger, recorded runs). If the environment file
+  sets another `DATA_DIR`, change `ReadWritePaths` to match.
+- The daily and total Claude caps (`DAILY_USD_CAP`, `TOTAL_USD_CAP`) and `IP_DAILY_LIMIT` hold on the public server too: when one
+  is reached the page keeps working with a recorded run or the scripted plan, and says so.
+
 ## Venues and dark nights
 
 Each venue is one JSON file in `VENUES_DIR` (schema checked by `server/calendar/venues.js`; a file that fails is skipped and logged):
@@ -50,6 +82,11 @@ Each venue is one JSON file in `VENUES_DIR` (schema checked by `server/calendar/
   "past_shows": [{ "date": "2026-07-02", "headliner": "Synthetic Act 101", "source_url": "https://example.org/shows/2026-07-02" }]
 }
 ```
+
+`data/venues/` (the default `VENUES_DIR`) holds the demo market: the 15 rooms listed on First Avenue's calendar (the Minneapolis market, all filed under city "Minneapolis"), read on 11 Oct 2026
+from First Avenue's public calendar pages (GET only, a few requests at least 2.5 seconds apart). Each file keeps the next 60 days
+as `shows` and the last 90 days as `past_shows`; postponed shows were skipped. Titles are kept as the calendar printed them. The
+page opens on Fine Line when it is present, otherwise on the first venue.
 
 `closed_weekdays` uses 0 = Sunday. `shows` is the upcoming program read from the public calendar, `past_shows` is the room's own past
 program (the only source for "this room's crowd"). `test/fixtures/synthetic/venues/example-room.json` is a hand-written test venue

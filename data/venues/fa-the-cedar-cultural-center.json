@@ -1,0 +1,52 @@
+{
+  "id": "fa-the-cedar-cultural-center",
+  "name": "The Cedar Cultural Center",
+  "city": "Minneapolis",
+  "capacity_band": "unknown",
+  "calendar_source_url": "https://first-avenue.com/shows/",
+  "read_at": "2026-10-11T18:54:39Z",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-07-23",
+      "headliner": "Wild Child",
+      "source_url": "https://first-avenue.com/event/2026-07-wild-child/"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "Cinema Therapy LIVE!",
+      "source_url": "https://first-avenue.com/event/2026-08-cinema-therapy-live/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Aldous Harding",
+      "source_url": "https://first-avenue.com/event/2026-09-aldous-harding/"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "Croz Boyce (Avey Tare and Geologist of Animal Collective)",
+      "source_url": "https://first-avenue.com/event/2026-09-croz-boyce/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "Perfect Person Live",
+      "source_url": "https://first-avenue.com/event/2026-09-perfect-person-live/"
+    },
+    {
+      "date": "2026-10-06",
+      "headliner": "National Park After Dark",
+      "source_url": "https://first-avenue.com/event/2026-10-national-park-after-dark/"
+    },
+    {
+      "date": "2026-10-07",
+      "headliner": "ALIZA KELLY’S HAUNTED TEA PARTY",
+      "source_url": "https://first-avenue.com/event/2026-10-aliza-kellys-haunted-tea-party/"
+    },
+    {
+      "date": "2026-10-10",
+      "headliner": "SYML",
+      "source_url": "https://first-avenue.com/event/2026-10-syml/"
+    }
+  ]
+}
