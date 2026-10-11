@@ -1,0 +1,17 @@
+venue_id,name,city,role,capacity,capacity_source,operator,operator_source,calendar_source
+fa-7th-st-entry,7th St Entry,Minneapolis,test,250,https://first-avenue.com/first-avenue-purchasing-fine-line/,First Avenue (independent),https://first-avenue.com/first-avenue-purchasing-fine-line/,https://first-avenue.com/shows/?orderby=past_shows
+fa-fine-line,Fine Line,Minneapolis,test,650,https://first-avenue.com/first-avenue-purchasing-fine-line/,First Avenue (independent),https://first-avenue.com/first-avenue-purchasing-fine-line/,https://first-avenue.com/shows/?orderby=past_shows
+fa-turf-club,Turf Club,Saint Paul,test,350,https://first-avenue.com/first-avenue-purchasing-fine-line/,First Avenue (independent),https://first-avenue.com/first-avenue-purchasing-fine-line/,https://first-avenue.com/shows/?orderby=past_shows
+black-cat-dc,Black Cat,"Washington, DC",placebo,800 (Mainstage),"https://en.wikipedia.org/wiki/Black_Cat_(Washington,_D.C.,_nightclub)",Founded 1993 by Dante Ferrando with investors; current owner not verified,"https://en.wikipedia.org/wiki/Black_Cat_(Washington,_D.C.,_nightclub)",https://www.blackcatdc.com/schedule.html
+hideout-chicago,Hideout,Chicago,placebo,,not verified,Teri O'Brien (ownership transferred March 2026),https://www.hideoutchicago.com/announcement,https://www.hideoutchicago.com/shows
+fa-amsterdam-bar-hall,Amsterdam Bar & Hall,Minneapolis-Saint Paul area (not verified per room),pool,,not verified,,not verified,https://first-avenue.com/shows/?orderby=past_shows
+fa-armory,Armory,Minneapolis-Saint Paul area (not verified per room),pool,,not verified,,not verified,https://first-avenue.com/shows/?orderby=past_shows
+fa-first-avenue,First Avenue,Minneapolis-Saint Paul area (not verified per room),pool,,not verified,,not verified,https://first-avenue.com/shows/?orderby=past_shows
+fa-grand-casino-arena,Grand Casino Arena,Minneapolis-Saint Paul area (not verified per room),pool,,not verified,,not verified,https://first-avenue.com/shows/?orderby=past_shows
+fa-orpheum-theatre,Orpheum Theatre,Minneapolis-Saint Paul area (not verified per room),pool,,not verified,,not verified,https://first-avenue.com/shows/?orderby=past_shows
+fa-palace-theatre,Palace Theatre,Minneapolis-Saint Paul area (not verified per room),pool,,not verified,,not verified,https://first-avenue.com/shows/?orderby=past_shows
+fa-pryes-stage-at-schilling-amphitheater-at-the-west-end,Pryes Stage at Schilling Amphitheater at the West End,Minneapolis-Saint Paul area (not verified per room),pool,,not verified,,not verified,https://first-avenue.com/shows/?orderby=past_shows
+fa-state-theatre,State Theatre,Minneapolis-Saint Paul area (not verified per room),pool,,not verified,,not verified,https://first-avenue.com/shows/?orderby=past_shows
+fa-surly-brewing-festival-field,Surly Brewing Festival Field,Minneapolis-Saint Paul area (not verified per room),pool,,not verified,,not verified,https://first-avenue.com/shows/?orderby=past_shows
+fa-the-cedar-cultural-center,The Cedar Cultural Center,Minneapolis-Saint Paul area (not verified per room),pool,,not verified,,not verified,https://first-avenue.com/shows/?orderby=past_shows
+fa-the-fitzgerald-theater,The Fitzgerald Theater,Minneapolis-Saint Paul area (not verified per room),pool,,not verified,,not verified,https://first-avenue.com/shows/?orderby=past_shows

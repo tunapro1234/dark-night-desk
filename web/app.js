@@ -589,14 +589,41 @@ function renderBacktest(bt) {
     );
     return;
   }
-  const rooms = bt.rooms ?? bt.n_rooms;
-  badge.textContent = `Back-tested on ${rooms ?? '?'} rooms${bt.status === 'pilot' ? ' (pilot)' : ''} \u00b7 why?`;
-  const facts = Object.entries(bt).filter(([k, v]) => k !== 'status' && (typeof v === 'number' || typeof v === 'string'));
+  const rooms = bt.rooms ?? '?';
+  badge.textContent = `Back-tested on ${rooms} rooms${bt.status === 'pilot' ? ' (pilot)' : ''} \u00b7 why?`;
+  const fmt = (x) => (typeof x === 'number' ? x.toFixed(3) : '?');
+  const iv = (m) => (m ? `${fmt(m.mean)} (${fmt(m.lo)} to ${fmt(m.hi)})` : '?');
+  const rows = Object.entries(bt.rankers ?? {}).map(([name, r]) =>
+    h('tr', {},
+      h('th', { scope: 'row' }, RANKER_WORDS[name] ?? name.replace(/^placebo:/, 'Placebo: ')),
+      r.status === 'run'
+        ? [h('td', {}, iv(r.mrr)), h('td', {}, iv(r.hit_at_5))]
+        : [h('td', { colspan: '2', class: 'hint' }, `not run: ${r.reason ?? ''}`)]));
+  const diffs = Object.entries(bt.differences ?? {}).map(([k, d]) => h('li', {}, `${k}: ${d.status === 'not run' ? 'not run' : iv(d)}`));
   body.replaceChildren(
-    h('p', {}, bt.status === 'pilot' ? `Pilot back-test on ${rooms ?? '?'} rooms. Too few rooms for a general claim; read it as a first check.` : `Back-test on ${rooms ?? '?'} rooms.`),
-    h('dl', { class: 'facts' }, facts.flatMap(([k, v]) => [h('dt', {}, k.replace(/_/g, ' ')), h('dd', {}, String(v))])),
+    h('p', {}, h('strong', {}, bt.label ?? `${bt.status} (N = ${rooms} rooms)`)),
+    h('p', { class: 'hint' }, bt.status === 'pilot'
+      ? 'A pilot: too few rooms for a general claim, so the claim sentence is not used. Published as it came out.'
+      : 'Every condition of the pre-registered claim rule held.'),
+    h('p', { class: 'hint' }, bt.metric_note ?? ''),
+    h('div', { class: 'table-wrap' },
+      h('table', {},
+        h('thead', {}, h('tr', {}, h('th', { scope: 'col' }, 'Ranker'), h('th', { scope: 'col' }, 'MRR (95% interval)'), h('th', { scope: 'col' }, 'Hit in top 5'))),
+        h('tbody', {}, rows))),
+    diffs.length ? h('p', {}, 'Differences in MRR:') : null,
+    diffs.length ? h('ul', {}, diffs) : null,
+    h('p', { class: 'hint' }, `${bt.interval?.method ?? ''}. ${bt.interval?.caveat ?? ''}`),
   );
 }
+
+const RANKER_WORDS = {
+  Q: "Q: this room's crowd (Qloo taste)",
+  P: 'P: popularity (rough stand-in for draw; no ticket data)',
+  T: 'T: genre tags only',
+  L: 'L: LLM only, no Qloo',
+  R: 'R: random',
+  Qvenue: 'Q with the room itself in the signal (leakage check)',
+};
 
 // ---------- start ----------
 async function start() {

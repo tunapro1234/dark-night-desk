@@ -1,0 +1,196 @@
+{
+  "kind": "dry-run",
+  "note": "No Qloo call. Pool candidates are distinct archive show titles per week before the headliner rule, so the real pools are smaller.",
+  "periods": {
+    "S1": {
+      "from": "2026-04-01",
+      "to": "2026-06-30"
+    },
+    "S2": {
+      "from": "2026-07-01",
+      "to": "2026-09-30"
+    }
+  },
+  "rooms": [
+    {
+      "venue_id": "fa-7th-st-entry",
+      "role": "test",
+      "S1": 77,
+      "S2": 74,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      }
+    },
+    {
+      "venue_id": "fa-fine-line",
+      "role": "test",
+      "S1": 61,
+      "S2": 48,
+      "canceled": {
+        "S1": 1,
+        "S2": 0
+      }
+    },
+    {
+      "venue_id": "fa-turf-club",
+      "role": "test",
+      "S1": 62,
+      "S2": 54,
+      "canceled": {
+        "S1": 0,
+        "S2": 1
+      }
+    },
+    {
+      "venue_id": "black-cat-dc",
+      "role": "placebo",
+      "S1": 58,
+      "S2": 0,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      }
+    },
+    {
+      "venue_id": "hideout-chicago",
+      "role": "placebo",
+      "S1": 100,
+      "S2": 0,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      }
+    },
+    {
+      "venue_id": "fa-amsterdam-bar-hall",
+      "role": "pool",
+      "S1": 15,
+      "S2": 4,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      }
+    },
+    {
+      "venue_id": "fa-armory",
+      "role": "pool",
+      "S1": 0,
+      "S2": 2,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      }
+    },
+    {
+      "venue_id": "fa-first-avenue",
+      "role": "pool",
+      "S1": 51,
+      "S2": 46,
+      "canceled": {
+        "S1": 0,
+        "S2": 1
+      }
+    },
+    {
+      "venue_id": "fa-grand-casino-arena",
+      "role": "pool",
+      "S1": 0,
+      "S2": 1,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      }
+    },
+    {
+      "venue_id": "fa-orpheum-theatre",
+      "role": "pool",
+      "S1": 1,
+      "S2": 0,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      }
+    },
+    {
+      "venue_id": "fa-palace-theatre",
+      "role": "pool",
+      "S1": 11,
+      "S2": 8,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      }
+    },
+    {
+      "venue_id": "fa-pryes-stage-at-schilling-amphitheater-at-the-west-end",
+      "role": "pool",
+      "S1": 0,
+      "S2": 2,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      }
+    },
+    {
+      "venue_id": "fa-state-theatre",
+      "role": "pool",
+      "S1": 2,
+      "S2": 1,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      }
+    },
+    {
+      "venue_id": "fa-surly-brewing-festival-field",
+      "role": "pool",
+      "S1": 1,
+      "S2": 4,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      }
+    },
+    {
+      "venue_id": "fa-the-cedar-cultural-center",
+      "role": "pool",
+      "S1": 3,
+      "S2": 5,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      }
+    },
+    {
+      "venue_id": "fa-the-fitzgerald-theater",
+      "role": "pool",
+      "S1": 17,
+      "S2": 12,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      }
+    }
+  ],
+  "test_shows_before_drops": 176,
+  "canceled_test_shows": 1,
+  "pool_candidates_by_week": {
+    "2026-06-29": 7,
+    "2026-07-06": 19,
+    "2026-07-13": 20,
+    "2026-07-20": 19,
+    "2026-07-27": 18,
+    "2026-08-03": 18,
+    "2026-08-10": 21,
+    "2026-08-17": 17,
+    "2026-08-24": 13,
+    "2026-08-31": 16,
+    "2026-09-07": 16,
+    "2026-09-14": 29,
+    "2026-09-21": 34,
+    "2026-09-28": 7
+  },
+  "weeks_below_min_pool_before_resolution": 2,
+  "min_pool": 10
+}

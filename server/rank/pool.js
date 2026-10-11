@@ -13,7 +13,7 @@ const SEPARATORS = [' ft. ', ' feat. ', ' featuring ', ' with ', ' w/ ', ' + ', 
 export function normalizeName(name) {
   return String(name ?? '')
     .normalize('NFKD')
-    .replace(/[̀-ͯ]/g, '')
+    .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .replace(/[^\p{L}\p{N}\s]/gu, ' ')
     .replace(/\s+/g, ' ')

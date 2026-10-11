@@ -28,7 +28,7 @@ const sentAll = (calls) => calls.every((c) => c.sent !== false);
 
 test('normalizeName follows the back-test rule', () => {
   assert.equal(normalizeName('  The  Synthetic Act 1! '), 'synthetic act 1');
-  assert.equal(normalizeName('Café Ensemble'), 'cafe ensemble');
+  assert.equal(normalizeName('Caf\u00e9 Ensemble'), 'cafe ensemble');
   assert.equal(normalizeName('Theory Band'), 'theory band');
 });
 

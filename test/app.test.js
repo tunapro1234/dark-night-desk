@@ -155,20 +155,21 @@ test('serves the page script and stylesheet, with no outside scripts', async () 
   await app.close();
 });
 
-test('backtest: not-run until a summary exists, then the summary totals', async () => {
-  const dataDir = path.join(tmp, 'bt');
-  let app = await appWith({ DATA_DIR: dataDir });
+test('backtest: not-run until the test run has written its summary, then the summary', async () => {
+  const file = path.join(tmp, 'bt', 'backtest-test.json');
+  const withFile = () => buildApp(loadConfig({ DATA_DIR: path.join(tmp, 'var'), VENUES_DIR: path.join(tmp, 'none') }), { backtestFile: file });
+  let app = await withFile();
   assert.deepEqual((await app.inject('/api/backtest')).json(), { status: 'not-run' });
   await app.close();
 
-  await mkdir(path.join(dataDir, 'backtest'), { recursive: true });
-  await writeFile(path.join(dataDir, 'backtest', 'summary.json'), 'not json');
-  app = await appWith({ DATA_DIR: dataDir });
+  await mkdir(path.dirname(file), { recursive: true });
+  await writeFile(file, 'not json');
+  app = await withFile();
   assert.equal((await app.inject('/api/backtest')).json().status, 'not-run');
   await app.close();
 
-  await writeFile(path.join(dataDir, 'backtest', 'summary.json'), JSON.stringify({ status: 'pilot', rooms: 3 }));
-  app = await appWith({ DATA_DIR: dataDir });
-  assert.deepEqual((await app.inject('/api/backtest')).json(), { status: 'pilot', rooms: 3 });
+  await writeFile(file, JSON.stringify({ status: 'pilot', label: 'pilot (N = 3 rooms, n = 9 shows)', rooms: 3 }));
+  app = await withFile();
+  assert.deepEqual((await app.inject('/api/backtest')).json(), { status: 'pilot', label: 'pilot (N = 3 rooms, n = 9 shows)', rooms: 3 });
   await app.close();
 });

@@ -122,6 +122,34 @@ QLOO_API_KEY=... node scripts/keyday.js data/dev/room-a.json data/dev/room-b.jso
 - Each plan request counts against its IP; past `IP_DAILY_LIMIT` per UTC day the same fallback applies. `X-Forwarded-For` is read
   only when the connection comes from loopback (nginx on the same host). The ledger keeps a salted hash of the address, for the current day only.
 
+## Back-test (`server/backtest/`, `scripts/backtest.js`)
+
+`BACKTEST.md` is the pre-registered protocol, copied unchanged from the version frozen on 11 Oct 2026 (planning repo commit
+`cb8ede1`). The code follows it; it does not change it. Data: `data/backtest/venues.csv`, `shows.csv` and `sources.md`.
+
+- **Unit:** one S2 show (1 Jul to 30 Sep 2026) at a test room. **Positive:** its headliner under the headliner rule (`headliner.js`:
+  whole title, then the part before the first listed separator, exact normalized match, no fuzzy matching). **Pool:** resolved
+  headliners of every archive show in the same Monday-to-Sunday week, minus the room's S1 headliners. Dropped shows are counted by
+  reason: canceled, unresolved, repeat headliner, pool under 10.
+- **Rankers:** Q (the room's S1 headliners as the taste signal), P (Qloo popularity only: a rough stand-in for draw; we have no ticket
+  data), T (the 5 most frequent genre tags), L (Claude only, no Qloo; run only with a key and room in the spend caps, otherwise
+  "not run"), R (random, analytic). Also each placebo room's signal on the same pools, and Q with the room's own place entity added
+  (a leakage size, never the headline number).
+- **Fixed choices:** one pool restriction for the whole run (`--restrict filter` or `take500`, decided by the key-day test), no
+  popularity limit, equal weights. The product's 0.9 popularity ceiling for small rooms is a product choice and is not used here.
+- **Metrics** (`metrics.js`): reciprocal rank, hit@5, percentile rank; rooms weigh equally. With fewer than 8 rooms the 95% interval
+  resamples shows within each room (2,000 resamples, fixed seed), and the output says these intervals are too narrow. With 8 or more
+  rooms it resamples rooms. Paired intervals for Q-P, Q-T, Q-L and Q minus each placebo.
+- **Claim rule** in code: status `full` only with 8+ rooms, 300+ shows, and the Q-P and every Q-placebo interval clear of zero.
+  Otherwise `pilot`, labelled "pilot (N = 3 rooms, n = ... shows)".
+- **L sampling:** the protocol asks for temperature 0, but current Claude models reject sampling parameters, so L runs at the
+  model's default and the output says so.
+- **Running it:** `node scripts/backtest.js --dry-run` counts shows and weekly pool candidates with no Qloo call
+  (`results/backtest-dryrun.json`). `node scripts/backtest.js --split test --restrict filter` is the single test run: it writes
+  `results/backtest-test.json` (totals and per-room numbers only, no Qloo response, no artist list) and `results/backtest-test.log`
+  (counts and codes). `DATA_DIR/backtest-test.lock` refuses a second run. There is no dev split.
+- `GET /api/backtest` returns `results/backtest-test.json`, or `{status: "not-run"}`.
+
 ## Web page (`web/`)
 
 Plain HTML, CSS and browser JavaScript, served by the same server. No framework, no build step, no outside scripts or fonts.
@@ -137,8 +165,8 @@ Plain HTML, CSS and browser JavaScript, served by the same server. No framework,
 - **Mode badges** are always on screen: "Agent: live (Claude)", "Agent: recorded run from <date>", "Agent: scripted plan (no LLM)",
   and "Qloo: live" or "Qloo: not connected". Without a Qloo key the page shows the calendar and an explanation, never a list.
   In test mode (`QLOO_MODE=fixture`) the badge reads "Qloo: synthetic test data".
-- **Back-test badge** reads `GET /api/backtest`: "Back-test: not run yet" until `DATA_DIR/backtest/summary.json` exists
-  (written by the back-test script, totals only), then "Back-tested on N rooms".
+- **Back-test badge** reads `GET /api/backtest`: "Back-test: not run yet" until `results/backtest-test.json` exists,
+  then "Back-tested on N rooms" with the label and intervals behind it.
 
 ## License
 

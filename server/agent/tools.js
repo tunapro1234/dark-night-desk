@@ -14,8 +14,8 @@ const SIGNAL_LIMIT = 40;
 const RANKED_SHOWN = 15;
 const POOL_SHOWN = 60;
 const SMALL_ROOM_MAX = 1000;
-// Popularity ceiling for rooms up to SMALL_ROOM_MAX: a 300-cap room does not get an arena headliner. The back-test picks
-// the final value among 0.9 / 0.8 / 0.7; 0.9 is the loosest of them.
+// Popularity ceiling for rooms up to SMALL_ROOM_MAX: a 300-cap room does not get an arena headliner. This is a product
+// choice only: the back-test (BACKTEST.md, "Fixed choices") applies no popularity limit and tunes nothing.
 export const SMALL_ROOM_POPULARITY_MAX = 0.9;
 
 const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];

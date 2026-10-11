@@ -13,6 +13,7 @@ import { createAnthropic } from './agent/loop.js';
 import { PlanError, runAblate, runPlan } from './agent/plan.js';
 
 const CALENDAR_MAX_DAYS = 120;
+export const BACKTEST_FILE = path.join(REPO_ROOT, 'results', 'backtest-test.json');
 
 const pkg = JSON.parse(await readFile(path.join(REPO_ROOT, 'package.json'), 'utf8'));
 
@@ -29,9 +30,10 @@ async function hasRecordedRuns(dataDir) {
  * @param {{ logger?: boolean | object, now?: () => number, budget?: ReturnType<typeof createBudget>,
  *   qloo?: ReturnType<typeof createQlooClient>, anthropic?: () => { messages: { create: Function } } }} [opts]
  *   `now` fixes "today" in tests; `budget` replaces the on-disk ledger in DATA_DIR; `qloo` replaces the Qloo client;
- *   `anthropic` replaces the Claude client factory (tests use a stand-in, never the real API).
+ *   `anthropic` replaces the Claude client factory (tests use a stand-in, never the real API);
+ *   `backtestFile` replaces results/backtest-test.json.
  */
-export async function buildApp(config, { logger = false, now = Date.now, budget, qloo, anthropic } = {}) {
+export async function buildApp(config, { logger = false, now = Date.now, budget, qloo, anthropic, backtestFile = BACKTEST_FILE } = {}) {
   const app = Fastify({ logger });
   if (!qloo) {
     const cache = createQlooCache({ dbPath: cachePath(config.dataDir), now });
@@ -145,10 +147,10 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
     }
   });
 
-  // Totals only (BACKTEST.md). The back-test script writes DATA_DIR/backtest/summary.json; until then the answer is "not-run".
+  // Totals only (BACKTEST.md). scripts/backtest.js writes results/backtest-test.json once; until then the answer is "not-run".
   app.get('/api/backtest', async () => {
     try {
-      const summary = JSON.parse(await readFile(path.join(config.dataDir, 'backtest', 'summary.json'), 'utf8'));
+      const summary = JSON.parse(await readFile(backtestFile, 'utf8'));
       if (summary && (summary.status === 'pilot' || summary.status === 'full')) return summary;
     } catch {
       // no summary yet
