@@ -15,13 +15,15 @@ test.after(() => rm(tmp, { recursive: true, force: true }));
 
 const VENUES_DIR = 'test/fixtures/synthetic/venues';
 const FROM = '2026-11-01';
+// "Today" for every app in this file, so the November nights stay in the future whenever the tests run.
+const TEST_NOW = () => Date.parse('2026-10-11T12:00:00Z');
 let n = 0;
 const freshDir = () => path.join(tmp, `var-${++n}`);
 
 async function appWith(env = {}, opts = {}) {
   const config = loadConfig({ NODE_ENV: 'test', QLOO_MODE: 'fixture', DATA_DIR: freshDir(), VENUES_DIR, ...env });
   const budget = opts.budget ?? createBudget({ dailyCap: 2, totalCap: 30, ipLimit: 20, prices: { inPerMTok: 2, outPerMTok: 10 } });
-  const app = await buildApp(config, { budget, ...opts });
+  const app = await buildApp(config, { budget, now: TEST_NOW, ...opts });
   return { app, config, budget };
 }
 
@@ -82,6 +84,10 @@ test('validator: the offer note keeps the blank guarantee and has no money, tick
   assert.equal(note('Hi. We can pay $ well.\nGuarantee: ___').ok, false);
   assert.equal(note('Hi. Tickets will move.\nGuarantee: ___').ok, false);
   assert.equal(note("Hi, could you pass this to the act's manager?\nGuarantee: ___").ok, false);
+  assert.equal(note('Our crowd came for A and B. X sits right between them.\nGuarantee: ___').ok, true);
+  const yours = note('Your crowd came for A and B. X sits right between them.\nGuarantee: ___');
+  assert.equal(yours.ok, false);
+  assert.match(yours.errors.join(' '), /our crowd/);
 });
 
 // ---- tool helpers ----
@@ -95,6 +101,9 @@ test('tools: the seven named tools exist, and every definition has a schema', ()
 test('why sentence and room sizing', () => {
   assert.equal(whySentence('X', [{ name: 'A' }, { name: 'B' }]), 'Your crowd came for A and B. X sits right between them.');
   assert.equal(whySentence('X', [{ name: 'A' }]), 'Your crowd came for A. X draws on the same taste.');
+  assert.equal(whySentence('X', [{ name: 'A' }, { name: 'B' }], { voice: 'our' }), 'Our crowd came for A and B. X sits right between them.');
+  assert.equal(whySentence('X', [{ name: 'A' }], { voice: 'our' }), 'Our crowd came for A. X draws on the same taste.');
+  assert.equal(whySentence('X', [], { voice: 'our' }), "X ranks high against our room's past program.");
   assert.equal(popularityMaxFor('250-500'), 0.9);
   assert.equal(popularityMaxFor('1500-3000'), undefined);
   assert.equal(popularityMaxFor('unknown'), undefined);
@@ -106,6 +115,8 @@ test('system prompt carries the domain rules', () => {
   assert.match(p, /booking agent/);
   assert.match(p, /Guarantee: ___/);
   assert.match(p, /no ticket data/);
+  assert.match(p, /speaks for the room: "Our crowd came for A and B/);
+  assert.match(p, /Never "Your crowd" in the note/);
 });
 
 // ---- /api/plan, scripted ----
@@ -136,6 +147,21 @@ test('plan (scripted): SSE steps, five acts with reasons and evidence, note to t
   assert.equal(r.offer_note.sent, false);
   assert.match(r.offer_note.body, /Guarantee: ___/);
   assert.equal(r.offer_note.entity_id, r.shortlist[0].entity_id);
+  // The note speaks for the room to the booking agent; the card lines above speak to the booker.
+  assert.match(r.offer_note.body, /^Our crowd came for .+ and .+\. .+ sits right between them\.$/m);
+  assert.doesNotMatch(r.offer_note.body, /Your crowd/);
+  // One note per shortlisted act, in shortlist order; the first is the same note as offer_note.
+  assert.deepEqual(r.offer_notes.map((n) => n.entity_id), r.shortlist.map((x) => x.entity_id));
+  assert.equal(r.offer_notes[0].body, r.offer_note.body);
+  for (const [i, n] of r.offer_notes.entries()) {
+    assert.equal(n.to, "artist's booking agent");
+    assert.equal(n.sent, false);
+    assert.equal(n.name, r.shortlist[i].name);
+    assert.ok(n.subject.includes(r.shortlist[i].name));
+    assert.match(n.body, /Guarantee: ___/);
+    assert.match(n.body, /^Our crowd came for /m);
+    assert.deepEqual(validateAgentOutput({ shortlist: [r.shortlist[i]], offer_note: n }, [r]).errors.filter((e) => /offer_note/.test(e)), []);
+  }
   assert.ok(r.calls.length > 0);
   for (const c of r.calls) assert.deepEqual(Object.keys(c).sort(), ['cache', 'endpoint', 'ms', 'params_masked']);
   assert.doesNotMatch(JSON.stringify(r), /affinity|touring nearby/i);
@@ -148,6 +174,11 @@ test('plan: input errors come back as JSON before any stream', async () => {
   assert.equal((await plan(app, { venue_id: 'example-room', date: '04/11/2026' })).res.statusCode, 400);
   assert.equal((await plan(app, { date: '2026-11-04' })).res.statusCode, 400);
   assert.equal((await plan(app, { venue_id: 'example-room', date: '2026-11-02' })).res.statusCode, 409, 'closed Monday');
+  const today = await plan(app, { venue_id: 'example-room', date: '2026-10-11' });
+  assert.equal(today.res.statusCode, 409, 'today is too late to plan');
+  assert.match(today.res.json().error, /today; plans start from tomorrow/);
+  assert.equal((await plan(app, { venue_id: 'example-room', date: '2026-10-07' })).res.statusCode, 409, 'past night');
+  assert.equal((await app.inject({ method: 'POST', url: '/api/ablate', payload: { venue_id: 'example-room', date: '2026-10-11', remove: [] } })).statusCode, 409);
   await app.close();
 });
 
@@ -258,6 +289,9 @@ test('live: tool loop, one rejected answer, then an accepted one; usage booked, 
   assert.equal(r.also_loves.length, 1);
   assert.equal(r.offer_note.to, "artist's booking agent");
   assert.equal(r.offer_note.sent, false);
+  assert.match(r.offer_note.body, /^Our crowd came for /m);
+  assert.equal(r.offer_notes.length, 5);
+  assert.equal(r.offer_notes[0].body, r.offer_note.body);
   assert.equal(r.llm.turns, 4);
   assert.equal(r.llm.usage.input_tokens, 4000);
   assert.equal(budget.snapshot().day_usd, 4 * (1000 * 2 + 200 * 10) / 1e6);

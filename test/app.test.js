@@ -111,11 +111,24 @@ test('calendar: defaults to 60 nights from today (UTC) in the contract shape', a
   assert.equal(cal.dark_count, cal.nights.filter((n) => n.status === 'dark').length);
   assert.ok(cal.dark_count > 0);
   for (const n of cal.nights) {
-    assert.match(n.status, /^(booked|dark|closed)$/);
+    assert.match(n.status, /^(booked|dark|closed|today)$/);
     if (n.status === 'booked') assert.match(n.show.headliner, /^Synthetic Act /);
     else assert.equal(n.show, undefined);
   }
   assert.ok(cal.nights.filter((n) => n.status === 'closed').every((n) => new Date(`${n.date}T00:00:00Z`).getUTCDay() === 1));
+  await app.close();
+});
+
+test('calendar: today is shown and labelled but is not a dark night; earlier empty nights are past', async () => {
+  const app = await calendarApp();
+  const cal = (await app.inject('/api/venues/example-room/calendar')).json();
+  assert.deepEqual(cal.nights[0], { date: '2026-10-11', status: 'today', today: true });
+  assert.equal(cal.nights.filter((n) => n.today).length, 1);
+  assert.equal(cal.dark_count, cal.nights.filter((n) => n.status === 'dark').length);
+  assert.ok(cal.nights.filter((n) => n.status === 'dark').every((n) => n.date > '2026-10-11'));
+  const back = (await app.inject('/api/venues/example-room/calendar?from=2026-10-05&days=10')).json();
+  assert.deepEqual(back.nights.map((n) => n.status), ['closed', 'past', 'past', 'booked', 'booked', 'booked', 'today', 'closed', 'booked', 'dark']);
+  assert.equal(back.dark_count, 1);
   await app.close();
 });
 

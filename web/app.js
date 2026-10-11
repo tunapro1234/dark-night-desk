@@ -149,7 +149,8 @@ async function loadCalendar(venueId) {
 
 function renderCalendar(cal) {
   const n = cal.dark_count;
-  const days = cal.nights.length;
+  // Dark nights are counted from tomorrow: today's night is too late to book.
+  const days = cal.nights.filter((x) => !x.today && x.status !== 'past').length;
   $('dark-count').textContent = n === 0 ? `No dark nights in the next ${days} days` : `${n} dark night${n === 1 ? '' : 's'} in the next ${days} days`;
   $('dark-sub').textContent =
     n === 0 ? 'every open night on this public calendar already has a show' : 'nights your venue sits empty on its public calendar';
@@ -167,6 +168,7 @@ function renderCalendar(cal) {
     const showMonth = i === 0 || d.getUTCDate() === 1;
     const label = h('span', { class: 'd', 'aria-hidden': 'true' }, String(d.getUTCDate()));
     const month = showMonth ? h('span', { class: 'm', 'aria-hidden': 'true' }, MONTHS[d.getUTCMonth()]) : null;
+    const todayTag = night.today ? h('span', { class: 't', 'aria-hidden': 'true' }, 'today') : null;
     if (night.status === 'dark') {
       return h('li', {},
         h('button', {
@@ -174,9 +176,15 @@ function renderCalendar(cal) {
           'aria-label': `${shortDay(night.date)}, dark night`, onclick: () => pickNight(night.date),
         }, month, label));
     }
-    const what = night.status === 'booked' ? `booked: ${night.show?.headliner ?? 'a show'}` : 'closed that weekday';
+    const what = {
+      booked: `booked: ${night.show?.headliner ?? 'a show'}`,
+      closed: 'closed that weekday',
+      today: 'nothing booked, too late to plan',
+      past: 'already past',
+    }[night.status] ?? night.status;
+    const said = `${night.today ? 'Today, ' : ''}${shortDay(night.date)}, ${what}`;
     return h('li', {},
-      h('span', { class: `sq sq-${night.status}`, role: 'img', title: `${shortDay(night.date)}, ${what}`, 'aria-label': `${shortDay(night.date)}, ${what}` }, month, label));
+      h('span', { class: `sq sq-${night.status}${night.today ? ' sq-is-today' : ''}`, role: 'img', title: said, 'aria-label': said }, month, todayTag, label));
   });
   strip.replaceChildren(...items);
   const first = strip.querySelector('.sq-dark');
@@ -347,7 +355,13 @@ function renderResult(r) {
         h('button', {
           type: 'button', class: 'why-link', 'aria-label': `why? ${act.name}`,
           onclick: (e) => openWhy(act.entity_id, e.currentTarget),
-        }, 'why?')),
+        }, 'why?'),
+        offerFor(r, act.entity_id)
+          ? [' ', h('button', {
+              type: 'button', class: 'why-link offer-link', 'aria-haspopup': 'dialog', 'aria-label': `Draft offer to ${act.name}'s booking agent`,
+              onclick: () => openOffer(act.entity_id),
+            }, 'draft offer')]
+          : null),
     ));
   if (!lineup.length) lineup.push(h('li', { class: 'act' }, h('p', { class: 'act-why' }, 'No act in this pool fits this room.')));
   $('lineup').replaceChildren(...lineup);
@@ -361,14 +375,14 @@ function renderResult(r) {
             h('span', { class: 'also-type' }, TYPE_WORDS[row.type] ?? row.type),
             ' ',
             h('span', { class: 'also-cat' }, row.category),
-            h('span', { class: 'also-lift' }, ` above the city's average room (lift ${fmtLift(row.lift_range[0])} to ${fmtLift(row.lift_range[1])})`),
+            h('span', { class: 'also-lift' }, ": shows up more here than at the city's average room"),
             ' ',
             h('button', { type: 'button', class: 'why-link', onclick: (e) => openWhy(null, e.currentTarget, `also-${i}`) }, 'source'),
           ))
       : [h('li', { class: 'also-none' }, "Nothing stands out against the city's average room for this crowd.")]),
   );
 
-  $('draft-offer').hidden = !r.offer_note;
+  $('draft-offer').hidden = !offerNotes(r).length;
   const fb = (r.fallbacks ?? []).filter(isAgentFallback);
   const note = $('fallback-note');
   note.hidden = !fb.length;
@@ -379,14 +393,35 @@ function renderResult(r) {
 }
 
 // ---------- offer note ----------
-function openOffer() {
-  const note = state.result?.offer_note;
+// One note per shortlisted act (`offer_notes`); older recorded runs carry only `offer_note`, for the first pick.
+const offerNotes = (r) => (r?.offer_notes?.length ? r.offer_notes : r?.offer_note ? [r.offer_note] : []);
+const offerFor = (r, entityId) => offerNotes(r).find((n) => n.entity_id === entityId) ?? null;
+
+function fillOffer(entityId) {
+  const r = state.result;
+  const note = offerFor(r, entityId) ?? offerNotes(r)[0];
   if (!note) return;
-  const act = state.result.shortlist.find((a) => a.entity_id === note.entity_id);
-  $('offer-to').textContent = `To: ${act?.name ?? 'the artist'}'s booking agent`;
+  const act = r.shortlist.find((a) => a.entity_id === note.entity_id);
+  $('offer-act').value = note.entity_id;
+  $('offer-to').textContent = `To: ${act?.name ?? note.name ?? 'the artist'}'s booking agent`;
   $('offer-subject').value = note.subject ?? '';
   $('offer-body').value = note.body ?? '';
   $('copy-status').textContent = '';
+}
+
+/** Open the note for one act; with no act given, the first pick. The picker in the dialog switches between acts. */
+function openOffer(entityId) {
+  const notes = offerNotes(state.result);
+  if (!notes.length) return;
+  const picker = $('offer-act');
+  picker.replaceChildren(
+    ...notes.map((n) => {
+      const act = state.result.shortlist.find((a) => a.entity_id === n.entity_id);
+      return h('option', { value: n.entity_id }, `${act?.rank ?? ''}. ${act?.name ?? n.name ?? 'Unnamed act'}`);
+    }),
+  );
+  $('offer-act-row').hidden = notes.length < 2;
+  fillOffer(typeof entityId === 'string' ? entityId : notes[0].entity_id);
   $('offer').showModal();
   $('offer-copy').focus();
 }
@@ -635,7 +670,8 @@ const RANKER_WORDS = {
 async function start() {
   $('strip').addEventListener('keydown', onStripKey);
   $('retry').addEventListener('click', () => state.date && pickNight(state.date));
-  $('draft-offer').addEventListener('click', openOffer);
+  $('draft-offer').addEventListener('click', () => openOffer());
+  $('offer-act').addEventListener('change', (e) => fillOffer(e.currentTarget.value));
   $('offer-copy').addEventListener('click', copyOffer);
   $('why-night').addEventListener('click', (e) => openWhy(state.result?.shortlist?.[0]?.entity_id ?? null, e.currentTarget));
   $('why-close').addEventListener('click', () => closeWhy());

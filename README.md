@@ -96,7 +96,9 @@ program (the only source for "this room's crowd"). `test/fixtures/synthetic/venu
 `GET /api/venues/:id/calendar?from=YYYY-MM-DD&days=60` returns every night in the window as `booked` (a show is listed),
 `closed` (a weekday the room is always shut; not counted as empty) or `dark` (open weekday, nothing booked), plus `dark_count`
 and the calendar source. `from` defaults to today and all date math is done in UTC, so the server time zone never shifts a night.
-`days` is 1 to 120.
+`days` is 1 to 120. Today's night carries `today: true`; with nothing booked its status is `today`, and empty nights before today
+are `past`. Both are too late to book, so dark nights (and `dark_count`) start tomorrow, and `/api/plan` and `/api/ablate`
+answer 409 for today or a past date.
 
 ## Calendar refresh
 
@@ -185,7 +187,10 @@ QLOO_API_KEY=... node scripts/keyday.js data/dev/room-a.json data/dev/room-b.jso
   number in the text must appear in a tool output. The offer note keeps "Guarantee: ___" blank and has no money, ticket or
   manager wording. A rejected answer gets one more try with the errors; a second rejection ends in the scripted plan, with the
   reason in `fallbacks`.
-- **Offer note**: addressed to the artist's booking agent, `sent: false` always. The page only offers "Copy".
+- **Offer note**: addressed to the artist's booking agent, `sent: false` always. The page only offers "Copy". It speaks for the
+  room ("Our crowd came for A and B. X sits right between them."), while the card's lines speak to the booker ("Your crowd
+  came for ..."); the validator rejects "your crowd" in a note. `offer_note` is the note for the first pick; `offer_notes` holds
+  one note per shortlisted act (the agent's own note for its act, the `draft_offer` template for the others).
 - Without a Qloo key `/api/plan` sends a single `error` event (`qloo_not_connected`): nothing is ranked.
 - Tests drive the live loop with a stand-in for the Messages API; they never call Claude.
 
@@ -234,17 +239,21 @@ added the same day before any Qloo call. The copy here is unchanged. The code fo
 
 Plain HTML, CSS and browser JavaScript, served by the same server. No framework, no build step, no outside scripts or fonts.
 
-- **First screen:** the first venue is picked. One big line ("N dark nights in the next 60 days"), the 60-night strip (dark
-  nights are the dark squares, arrow keys move between them), and a chip linking the venue's public calendar with its read date.
+- **First screen:** Fine Line, or the first venue. One big line ("N dark nights in the next 59 days", counted from tomorrow), the
+  60-night strip (dark nights are the dark squares, arrow keys move between them; today is marked "today" and cannot be picked),
+  and a chip linking the venue's public calendar with its read date.
 - **A dark night:** the agent's steps stream in, then the poster card: the date (`THU NOV 12`), five acts, one sentence each,
-  and the "This room's crowd also loves" row (category, lift range against the city's average room, source).
-- **Draft offer** opens the note with "Not sent. Copy it to your own email." on top and a Copy button. Nothing is sent.
+  and the "This room's crowd also loves" row in plain words (category, "shows up more here than at the city's average room",
+  source). The lift numbers are only in the why? panel.
+- **Draft offer** opens the note with "Not sent. Copy it to your own email." on top and a Copy button. Nothing is sent. The
+  dialog has an act picker (first pick by default), and each act on the card has its own "draft offer" link.
 - **why?** opens the evidence panel: contribution bars (explainability or leave-one-out), past-show chips that re-rank through
   `/api/ablate` ("2 of 5 changed"), the also-loves measurement, the pool, and every Qloo request with the key left out, its time
   and cache hit or miss. Shares and other technical terms appear only here.
 - **Mode badges** are always on screen: "Agent: live (Claude)", "Agent: recorded run from <date>", "Agent: scripted plan (no LLM)",
   and "Qloo: live" or "Qloo: not connected". Without a Qloo key the page shows the calendar and an explanation, never a list.
-  In test mode (`QLOO_MODE=fixture`) the badge reads "Qloo: synthetic test data".
+  In test mode (`QLOO_MODE=fixture`) the badge reads "Qloo: synthetic test data". On a phone the three badges share one row in
+  smaller type, each label wrapping inside its badge.
 - **Back-test badge** reads `GET /api/backtest`: "Back-test: not run yet" until `results/backtest-test.json` exists,
   then "Back-tested on N rooms" with the label and intervals behind it.
 

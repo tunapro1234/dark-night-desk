@@ -94,6 +94,11 @@ main:focus { outline: none; }
 .sq-booked { background: var(--booked); color: var(--fg); }
 .sq-closed { background: repeating-linear-gradient(135deg, transparent 0 4px, var(--line) 4px 5px), var(--closed);
   color: var(--muted); border-color: var(--line); }
+/* Today and earlier nights are too late to plan: shown, never clickable. */
+.sq-today, .sq-past { background: var(--panel); color: var(--muted); border: 1px dashed var(--line); }
+.sq-is-today { outline: 2px solid var(--gold); outline-offset: 1px; }
+.sq .t { position: absolute; top: 3px; right: 3px; font-weight: 700; font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.02em; }
+.sq .m + .t { top: auto; bottom: 2px; }
 
 .strip-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; margin-top: 12px; }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; color: var(--muted); font-size: 0.88rem; }
@@ -203,6 +208,9 @@ code.params { display: block; white-space: pre-wrap; overflow-wrap: anywhere; }
 .offer h2 { margin: 4px 0 0; font-size: 1.2rem; }
 .not-sent { margin: 0; padding: 8px 12px; border-radius: 8px; background: var(--dark-night); color: var(--dark-night-fg); }
 .offer-to { margin: 0 0 6px; color: var(--muted); }
+.offer-act-row { display: flex; align-items: center; gap: 10px; margin: 2px 0 4px; }
+.offer-act-row[hidden] { display: none; }
+.offer-act-row select { flex: 1; min-width: 0; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--fg); }
 .offer label { font-weight: 600; font-size: 0.9rem; }
 .offer input, .offer textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); }
 .offer textarea { font: 0.92rem/1.45 var(--font); resize: vertical; }
@@ -216,6 +224,10 @@ code.params { display: block; white-space: pre-wrap; overflow-wrap: anywhere; }
 /* ---------- small screens: one column ---------- */
 @media (max-width: 640px) {
   .top { padding: 14px 16px 10px; }
+  /* The three mode badges stay on one row; long labels wrap inside their badge in smaller type. */
+  .badges { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; width: 100%; }
+  .badge { display: block; height: 100%; padding: 3px 6px; border-radius: 8px; font-size: 0.7rem; line-height: 1.25;
+    white-space: normal; text-align: center; overflow-wrap: anywhere; }
   main { padding: 16px 16px 40px; }
   .site-foot { padding: 0 16px 28px; }
   .strip { grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 4px; }

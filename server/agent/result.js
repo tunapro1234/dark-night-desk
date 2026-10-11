@@ -1,6 +1,6 @@
 // Builds the /api/plan result from a session and the agent's final answer. Names, ranks, evidence and lift ranges always
 // come from the tool outputs; the agent contributes only its choice of acts and the wording it was allowed to write.
-import { OFFER_TO, SHORTLIST_SIZE } from './tools.js';
+import { OFFER_TO, SHORTLIST_SIZE, offerNote } from './tools.js';
 import { topN } from '../rank/rank.js';
 
 /** Acts the final answer may shortlist: the scored part of the ranking. */
@@ -46,6 +46,15 @@ export function assembleResult(session, final, mode, extra = {}) {
     : null;
 
   const calendar = session.state.calendar;
+  // One note per shortlisted act, so the booker can write to any of them. The agent's own note is kept for its act;
+  // the others come from the same template as draft_offer (no LLM). `offer_note` stays the first pick's note.
+  const offer_notes = shortlist.map((act) => {
+    if (offer_note && offer_note.entity_id === act.entity_id) return { ...offer_note, name: act.name };
+    if (!calendar || !act.name) return null;
+    const draftFor = offerNote({ venue: calendar.venue, day: calendar.night.day, act: { entity_id: act.entity_id, name: act.name }, contributors: act.evidence.contributions });
+    return { ...draftFor, name: act.name };
+  }).filter(Boolean);
+
   const pool = session.state.pool;
   return {
     mode,
@@ -54,6 +63,7 @@ export function assembleResult(session, final, mode, extra = {}) {
     shortlist,
     also_loves: picked,
     offer_note,
+    offer_notes,
     pool: pool ? { city: pool.city, window: pool.window, rooms: pool.rooms, counts: pool.counts, method: session.state.ranking?.method } : null,
     signal: session.state.signal ? { size: session.state.signal.signal.length, counts: session.state.signal.counts } : null,
     steps: [...session.steps],

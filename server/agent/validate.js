@@ -6,6 +6,7 @@ const OFFER_FORBIDDEN = [
   { re: /[$\u00a3\u20ac\u00a5]/, why: 'a currency amount' },
   { re: /\b(tickets?|fees?|presales?|sell[- ]?outs?|sold)\b/i, why: 'a ticket or fee estimate' },
   { re: /\b(manager|management)\b/i, why: 'a manager instead of the booking agent' },
+  { re: /\byour crowd\b/i, why: '"your crowd"; the note speaks for the room ("our crowd")' },
 ];
 
 /** Every value under an `entity_id` key, anywhere in the tree. */

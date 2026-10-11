@@ -23,9 +23,12 @@ export function todayISO(now = Date.now()) {
  * @param {{ closed_weekdays?: number[], shows?: object[], past_shows?: object[] }} venue
  * @param {string} fromISO first night, YYYY-MM-DD
  * @param {number} days number of nights, 1..MAX_DAYS
- * @returns {{ from: string, to: string, nights: { date: string, status: 'booked' | 'dark' | 'closed', show?: { headliner: string, source_url: string } }[], dark_count: number }}
+ * @param {{ today?: string }} [opts] with `today`, an empty night on that date is `today` and earlier empty nights are
+ *   `past`: too late to book, so neither is a dark night and neither counts in `dark_count`. Today's night carries `today: true`.
+ * @returns {{ from: string, to: string, nights: { date: string, status: 'booked' | 'dark' | 'closed' | 'today' | 'past', today?: true,
+ *   show?: { headliner: string, source_url: string } }[], dark_count: number }}
  */
-export function nightsFor(venue, fromISO, days) {
+export function nightsFor(venue, fromISO, days, { today } = {}) {
   if (!isISODate(fromISO)) throw new RangeError(`from must be a YYYY-MM-DD date, got "${fromISO}"`);
   if (!Number.isInteger(days) || days < 1 || days > MAX_DAYS) throw new RangeError(`days must be an integer between 1 and ${MAX_DAYS}`);
 
@@ -41,15 +44,23 @@ export function nightsFor(venue, fromISO, days) {
   for (let i = 0; i < days; i++) {
     const date = addDays(fromISO, i);
     const show = showOn.get(date);
+    const isToday = today !== undefined && date === today;
+    let night;
     if (show) {
       // A one-off show on a usual closing day still counts as booked.
-      nights.push({ date, status: 'booked', show });
+      night = { date, status: 'booked', show };
     } else if (closed.has(toDate(date).getUTCDay())) {
-      nights.push({ date, status: 'closed' });
+      night = { date, status: 'closed' };
+    } else if (isToday) {
+      night = { date, status: 'today' };
+    } else if (today !== undefined && date < today) {
+      night = { date, status: 'past' };
     } else {
-      nights.push({ date, status: 'dark' });
+      night = { date, status: 'dark' };
       dark++;
     }
+    if (isToday) night.today = true;
+    nights.push(night);
   }
   return { from: fromISO, to: nights[nights.length - 1].date, nights, dark_count: dark };
 }

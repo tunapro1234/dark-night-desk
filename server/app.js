@@ -82,7 +82,7 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
     if (!venue) return reply.code(404).send({ error: 'unknown venue' });
     return {
       venue: venueSummary(venue),
-      ...nightsFor(venue, from, days),
+      ...nightsFor(venue, from, days, { today: todayISO(now()) }),
       source: { url: venue.calendar_source_url, read_at: venue.read_at },
     };
   });
@@ -95,7 +95,10 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
     const all = await venues();
     const venue = all.find((v) => v.id === venueId);
     if (!venue) return void reply.code(404).send({ error: 'unknown venue' });
-    const status = nightsFor(venue, date, 1).nights[0].status;
+    const status = nightsFor(venue, date, 1, { today: todayISO(now()) }).nights[0].status;
+    if (status === 'today' || status === 'past') {
+      return void reply.code(409).send({ error: `${date} is ${status === 'today' ? 'today' : 'in the past'}; plans start from tomorrow` });
+    }
     if (status !== 'dark') return void reply.code(409).send({ error: `${date} is not a dark night at ${venue.name} (${status})` });
     return { venues: all, venue, date };
   }

@@ -43,6 +43,7 @@
           <li><span class="sq sq-dark" aria-hidden="true"></span> dark night: pick one</li>
           <li><span class="sq sq-booked" aria-hidden="true"></span> booked</li>
           <li><span class="sq sq-closed" aria-hidden="true"></span> closed that weekday</li>
+          <li><span class="sq sq-today" aria-hidden="true"></span> today: too late to plan, dark nights start tomorrow</li>
         </ul>
         <a class="chip" id="source-chip" href="#" target="_blank" rel="noopener" hidden></a>
       </div>
@@ -137,6 +138,10 @@
     <form method="dialog" class="offer-inner">
       <p class="not-sent"><strong>Not sent. Copy it to your own email.</strong></p>
       <h2 id="offer-title">Note to the artist's booking agent</h2>
+      <div class="offer-act-row" id="offer-act-row">
+        <label for="offer-act">Act</label>
+        <select id="offer-act"></select>
+      </div>
       <p class="offer-to" id="offer-to"></p>
       <label for="offer-subject">Subject</label>
       <input id="offer-subject" readonly>

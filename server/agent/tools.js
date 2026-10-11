@@ -35,15 +35,48 @@ export function popularityMaxFor(capacityBand) {
 }
 
 /**
- * The one-sentence reason under each act. A and B are the two past shows that contribute most to the act's score.
+ * The one-sentence reason for an act. A and B are the two past shows that contribute most to the act's score.
+ * The poster card speaks to the booker ("Your crowd came for ..."); the offer note speaks for the room to the
+ * artist's booking agent ("Our crowd came for ...").
  * @param {string} act
  * @param {{ name: string }[]} contributors most important first
+ * @param {{ voice?: 'your' | 'our' }} [opts]
  */
-export function whySentence(act, contributors) {
+export function whySentence(act, contributors, { voice = 'your' } = {}) {
+  const crowd = voice === 'our' ? 'Our crowd' : 'Your crowd';
   const [a, b] = contributors.map((c) => c.name).filter(Boolean);
-  if (a && b) return `Your crowd came for ${a} and ${b}. ${act} sits right between them.`;
-  if (a) return `Your crowd came for ${a}. ${act} draws on the same taste.`;
-  return `${act} ranks high against this room's past program.`;
+  if (a && b) return `${crowd} came for ${a} and ${b}. ${act} sits right between them.`;
+  if (a) return `${crowd} came for ${a}. ${act} draws on the same taste.`;
+  return voice === 'our' ? `${act} ranks high against our room's past program.` : `${act} ranks high against this room's past program.`;
+}
+
+/**
+ * The note to an act's booking agent for one night. Never sent; no fee, ticket or capacity estimate, a blank guarantee.
+ * @param {{ venue: { name: string, city: string, capacity_band: string }, day: string, act: { entity_id: string, name: string },
+ *   contributors?: { name: string }[] }} args
+ */
+export function offerNote({ venue, day, act, contributors = [] }) {
+  return {
+    to: OFFER_TO,
+    entity_id: act.entity_id,
+    subject: `Date inquiry: ${act.name} at ${venue.name}, ${day}`,
+    body: [
+      'Hi,',
+      '',
+      `We have ${day} open at ${venue.name} in ${venue.city} and would like to talk about ${act.name} for that night.`,
+      '',
+      whySentence(act.name, contributors, { voice: 'our' }),
+      '',
+      `Room: ${venue.name}, ${venue.city} (capacity band ${venue.capacity_band})`,
+      `Date: ${day}`,
+      'Guarantee: ___',
+      '',
+      'If the date works, could you let us know the routing and what you would need from us?',
+      '',
+      'Thanks,',
+    ].join('\n'),
+    sent: false,
+  };
 }
 
 /**
@@ -169,7 +202,10 @@ const IMPL = {
     const names = nameIndex(s);
     const acts = targets.map((id) => {
       const contribs = (r.contributions[id] ?? []).filter((c) => c.share > 0).map((c) => ({ entity_id: c.entity_id, name: names.get(c.entity_id) ?? null, share: c.share }));
-      return { entity_id: id, name: names.get(id) ?? null, method: r.method, contributions: contribs, suggested_why: whySentence(names.get(id) ?? 'This act', contribs) };
+      return { entity_id: id, name: names.get(id) ?? null, method: r.method, contributions: contribs,
+        suggested_why: whySentence(names.get(id) ?? 'This act', contribs),
+        suggested_offer_line: whySentence(names.get(id) ?? 'This act', contribs, { voice: 'our' }),
+      };
     });
     s.state.explained = { ...(s.state.explained ?? {}), ...Object.fromEntries(acts.map((a) => [a.entity_id, a])) };
     return { method: r.method, ...(r.note ? { note: r.note } : {}), acts };
@@ -219,31 +255,10 @@ const IMPL = {
     const act = ranking.results.find((x) => x.entity_id === entity_id && x.score !== null);
     if (!act) throw new ToolError('unknown_entity', 'draft_offer needs an act from the ranked pool');
     if (!s.state.explained?.[entity_id]) await runTool(s, 'explain', { entity_ids: [entity_id] });
-    const why = s.state.explained[entity_id].suggested_why;
     step(s, `Drafting a note to ${act.name}'s booking agent`);
-    const v = calendar.venue;
-    const day = calendar.night.day;
-    const note = {
-      to: OFFER_TO,
-      entity_id,
-      subject: `Date inquiry: ${act.name} at ${v.name}, ${day}`,
-      body: [
-        'Hi,',
-        '',
-        `We have ${day} open at ${v.name} in ${v.city} and would like to talk about ${act.name} for that night.`,
-        '',
-        why,
-        '',
-        `Room: ${v.name}, ${v.city} (capacity band ${v.capacity_band})`,
-        `Date: ${day}`,
-        'Guarantee: ___',
-        '',
-        'If the date works, could you let us know the routing and what you would need from us?',
-        '',
-        'Thanks,',
-      ].join('\n'),
-      sent: false,
-    };
+    const note = offerNote({
+      venue: calendar.venue, day: calendar.night.day, act: { entity_id, name: act.name }, contributors: s.state.explained?.[entity_id]?.contributions ?? [],
+    });
     s.state.offer = note;
     return note;
   },

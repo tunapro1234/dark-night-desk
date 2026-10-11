@@ -68,6 +68,8 @@ export function systemPrompt(session) {
     `- The pool is "acts who played ${city} this season". Do not say an act is touring nearby.`,
     '- Popularity is a rough stand-in for draw; we have no ticket data.',
     "- The offer note goes to the artist's booking agent, keeps the line \"Guarantee: ___\" blank, and is never sent.",
+    '  It speaks for the room: "Our crowd came for A and B. X sits right between them." (explain gives it as',
+    '  suggested_offer_line). Never "Your crowd" in the note; that wording is only for the shortlist lines to the booker.',
     '- Plain English, no jargon such as "signal", "affinity" or ids in the text.',
   ].join('\n');
 }
