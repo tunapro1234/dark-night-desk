@@ -3,7 +3,7 @@
 
 const NUMBER_IN_TEXT = /\d+(?:\.\d+)?%?/g;
 const OFFER_FORBIDDEN = [
-  { re: /[$£€¥]/, why: 'a currency amount' },
+  { re: /[$\u00a3\u20ac\u00a5]/, why: 'a currency amount' },
   { re: /\b(tickets?|fees?|presales?|sell[- ]?outs?|sold)\b/i, why: 'a ticket or fee estimate' },
   { re: /\b(manager|management)\b/i, why: 'a manager instead of the booking agent' },
 ];
