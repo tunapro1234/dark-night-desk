@@ -93,6 +93,26 @@ Key-day check (30 probes, writes only counts to `DATA_DIR/keyday-summary.json`):
 QLOO_API_KEY=... node scripts/keyday.js data/dev/room-a.json data/dev/room-b.json --placebo data/dev/other-city.json
 ```
 
+## Agent (`server/agent/`)
+
+`POST /api/plan {venue_id, date}` streams Server-Sent Events: `step` (`{label}` in plain English), then one `result` or `error`.
+`POST /api/ablate {venue_id, date, remove:[entity_id]}` re-ranks with those past shows switched off and returns `{shortlist, changed, of: 5}`.
+
+- **Tools** (`tools.js`): `read_calendar`, `resolve_entities`, `build_pool`, `rank_pool`, `explain`, `ablate`, `also_loves`,
+  `draft_offer`. Every mode calls the same tools; each output is kept in the session log.
+- **Modes**, in this order under `AGENT_MODE=auto`:
+  - `live`: Claude (`CLAUDE_MODEL`) runs the tool loop (`loop.js`, at most 8 turns) and answers through a `submit_plan` tool.
+    Needs a key, room in the spend caps and in the IP limit. Each successful live run is saved to `DATA_DIR/recorded/`.
+  - `recorded`: replays the saved live run for the same room and night, labelled with its date.
+  - `scripted`: the same tools in a fixed order, text from templates, no LLM. Labelled "scripted plan (no LLM)".
+- **Validator** (`validate.js`): every shortlisted `entity_id` must come from a tool output (and from the ranked pool), and every
+  number in the text must appear in a tool output. The offer note keeps "Guarantee: ___" blank and has no money, ticket or
+  manager wording. A rejected answer gets one more try with the errors; a second rejection ends in the scripted plan, with the
+  reason in `fallbacks`.
+- **Offer note**: addressed to the artist's booking agent, `sent: false` always. The page only offers "Copy".
+- Without a Qloo key `/api/plan` sends a single `error` event (`qloo_not_connected`): nothing is ranked.
+- Tests drive the live loop with a stand-in for the Messages API; they never call Claude.
+
 ## Spend caps and the IP limit (`server/budget/`)
 
 - Every Claude response is booked from its `usage` block into `DATA_DIR/budget.sqlite`: uncached input and output at
