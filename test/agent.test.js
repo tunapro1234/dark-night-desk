@@ -278,7 +278,8 @@ test('live: tool loop, one rejected answer, then an accepted one; usage booked, 
   const r = resultOf((await plan(app, { venue_id: 'example-room', date: night })).events);
   assert.deepEqual(r.mode, { agent: 'live', qloo: 'fixture' });
   assert.equal(fake.calls.length, 4);
-  assert.equal(fake.calls[0].model, 'claude-sonnet-5-5');
+  assert.equal(fake.calls[0].model, 'claude-haiku-5-5');
+  assert.deepEqual(fake.calls[0].cache_control, { type: 'ephemeral' });
   assert.deepEqual(fake.calls[0].thinking, { type: 'adaptive' });
   assert.ok(fake.calls[0].tools.some((t) => t.name === 'submit_plan'));
   const rejection = fake.calls[3].messages.at(-1).content.find((b) => b.is_error);

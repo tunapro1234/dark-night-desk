@@ -59,7 +59,7 @@ export function createLlmRanker({ anthropic, model, budget, log = () => {} }) {
     async rank({ signalNames, poolNames }) {
       const spend = budget.canSpend();
       if (!spend.ok) throw new BacktestError('spend_cap', `the Claude spend cap was reached (${spend.reason})`);
-      const body = { model, max_tokens: MAX_TOKENS, system: L_SYSTEM, messages: [{ role: 'user', content: lPrompt(signalNames, poolNames) }] };
+      const body = { model, max_tokens: MAX_TOKENS, system: L_SYSTEM, cache_control: { type: 'ephemeral' }, messages: [{ role: 'user', content: lPrompt(signalNames, poolNames) }] };
       const send = () => anthropic.messages.create(temperature ? { ...body, temperature: 0 } : body);
       let res;
       try {

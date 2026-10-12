@@ -47,10 +47,10 @@ test('daily cap blocks live calls until the next UTC day; snapshot follows', () 
   assert.deepEqual(b.canSpend(), { ok: true, reason: null });
   assert.deepEqual(b.record({ input_tokens: 600_000, output_tokens: 100_000 }), { usd: 2.2 });
   assert.deepEqual(b.canSpend(), { ok: false, reason: 'daily_cap' });
-  assert.deepEqual(b.snapshot(), { day_usd: 2.2, total_usd: 2.2, day_cap: 2, total_cap: 30 });
+  assert.deepEqual(b.snapshot(), { day_usd: 2.2, total_usd: 2.2, day_cap: 2, total_cap: 30, month_usd: 2.2, month_cap: null });
   t = Date.parse('2026-10-16T00:00:30Z');
   assert.equal(b.canSpend().ok, true);
-  assert.deepEqual(b.snapshot(), { day_usd: 0, total_usd: 2.2, day_cap: 2, total_cap: 30 });
+  assert.deepEqual(b.snapshot(), { day_usd: 0, total_usd: 2.2, day_cap: 2, total_cap: 30, month_usd: 2.2, month_cap: null });
   b.close();
 });
 
@@ -62,6 +62,36 @@ test('total cap blocks live calls for good', () => {
   b.record({ input_tokens: 750_000 }); // 1.5, total 3
   t += 86_400_000;
   assert.deepEqual(b.canSpend(), { ok: false, reason: 'total_cap' });
+  b.close();
+});
+
+test('usageCost: a prompt over the long-context threshold uses the long rate', () => {
+  const prices = { inPerMTok: 0.1, outPerMTok: 0.5, long: { inPerMTok: 0.5, outPerMTok: 2.5, aboveTokens: 100_000 } };
+  assert.equal(usageCost({ input_tokens: 100_000, output_tokens: 1_000_000 }, prices).usd, 0.01 + 0.5);
+  assert.equal(usageCost({ input_tokens: 50_000, cache_read_input_tokens: 60_000, output_tokens: 1_000_000 }, prices).usd,
+    (50_000 + 60_000 * 0.1) * 0.5 / 1e6 + 2.5);
+});
+
+test('monthly cap blocks live calls until the next UTC month; snapshot follows', () => {
+  let t = Date.parse('2026-10-30T12:00:00Z');
+  const b = make({ monthlyCap: 3, now: () => t });
+  b.record({ input_tokens: 750_000 }); // 1.5
+  t = Date.parse('2026-10-31T12:00:00Z');
+  b.record({ input_tokens: 750_000 }); // 1.5, month 3
+  assert.deepEqual(b.canSpend(), { ok: false, reason: 'monthly_cap' });
+  assert.deepEqual(b.snapshot(), { day_usd: 1.5, total_usd: 3, day_cap: 2, total_cap: 30, month_usd: 3, month_cap: 3 });
+  t = Date.parse('2026-11-01T00:00:30Z');
+  assert.deepEqual(b.canSpend(), { ok: true, reason: null });
+  assert.equal(b.snapshot().month_usd, 0);
+  b.close();
+});
+
+test('key last day: live calls stop after it (UTC), before any cap', () => {
+  let t = Date.parse('2026-11-11T23:59:00Z');
+  const b = make({ keyLastDay: '2026-11-11', now: () => t });
+  assert.equal(b.canSpend().ok, true);
+  t = Date.parse('2026-11-12T00:00:30Z');
+  assert.deepEqual(b.canSpend(), { ok: false, reason: 'key_expired' });
   b.close();
 });
 
@@ -122,7 +152,7 @@ test('health returns the ledger snapshot and drops a live agent once the cap is 
   assert.equal((await app.inject('/api/health')).json().agent, 'live');
   budget.record({ input_tokens: 500_000, output_tokens: 20_000 });
   const body = (await app.inject('/api/health')).json();
-  assert.deepEqual(body.budget, { day_usd: 1.2, total_usd: 1.2, day_cap: 2, total_cap: 30 });
+  assert.deepEqual(body.budget, { day_usd: 1.2, total_usd: 1.2, day_cap: 2, total_cap: 30, month_usd: 1.2, month_cap: null });
   budget.record({ input_tokens: 500_000 });
   assert.equal((await app.inject('/api/health')).json().agent, 'scripted');
   await app.close();

@@ -16,7 +16,7 @@
 import { appendFileSync, existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { ConfigError, REPO_ROOT, loadConfig } from '../server/config.js';
+import { ConfigError, REPO_ROOT, budgetOptions, loadConfig } from '../server/config.js';
 import { budgetPath, createBudget } from '../server/budget/budget.js';
 import { cachePath, createQlooCache } from '../server/qloo/cache.js';
 import { createQlooClient } from '../server/qloo/client.js';
@@ -111,13 +111,7 @@ export async function main(argv = process.argv.slice(2), env = process.env, prin
   let llm = null;
   let llmSkipReason = 'no Claude key before the test run';
   if (config.anthropic.apiKey) {
-    budget = createBudget({
-      dbPath: budgetPath(config.dataDir),
-      dailyCap: config.budget.dailyUsdCap,
-      totalCap: config.budget.totalUsdCap,
-      ipLimit: config.budget.ipDailyLimit,
-      prices: { inPerMTok: config.anthropic.priceInPerMTok, outPerMTok: config.anthropic.priceOutPerMTok },
-    });
+    budget = createBudget({ dbPath: budgetPath(config.dataDir), ...budgetOptions(config) });
     const spend = budget.canSpend();
     if (spend.ok) llm = createLlmRanker({ anthropic: createAnthropic(config.anthropic.apiKey), model: config.anthropic.model, budget, log });
     else llmSkipReason = `the Claude spend cap is used up (${spend.reason})`;

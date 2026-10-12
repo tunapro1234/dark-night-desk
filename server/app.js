@@ -3,7 +3,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import Fastify from 'fastify';
 import fastifyStatic from '@fastify/static';
-import { REPO_ROOT, effectiveAgentMode, effectiveQlooMode } from './config.js';
+import { REPO_ROOT, budgetOptions, effectiveAgentMode, effectiveQlooMode } from './config.js';
 import { nightsFor, todayISO } from './calendar/nights.js';
 import { isISODate, loadVenues, venueSummary } from './calendar/venues.js';
 import { budgetPath, clientIp, createBudget } from './budget/budget.js';
@@ -42,14 +42,7 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
   }
   anthropic ??= () => createAnthropic(config.anthropic.apiKey);
   if (!budget) {
-    budget = createBudget({
-      dbPath: budgetPath(config.dataDir),
-      dailyCap: config.budget.dailyUsdCap,
-      totalCap: config.budget.totalUsdCap,
-      ipLimit: config.budget.ipDailyLimit,
-      prices: { inPerMTok: config.anthropic.priceInPerMTok, outPerMTok: config.anthropic.priceOutPerMTok },
-      now,
-    });
+    budget = createBudget({ dbPath: budgetPath(config.dataDir), ...budgetOptions(config), now });
     app.addHook('onClose', async () => budget.close());
   }
   app.decorate('budget', budget);

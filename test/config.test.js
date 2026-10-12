@@ -22,22 +22,46 @@ test('defaults match the documented contract', () => {
   assert.equal(c.qloo.baseUrl, 'https://hackathon.api.qloo.com');
   assert.equal(c.qloo.mode, 'live');
   assert.equal(c.qloo.apiKey, undefined);
-  assert.equal(c.anthropic.model, 'claude-sonnet-5-5');
-  assert.equal(c.anthropic.priceInPerMTok, 2);
-  assert.equal(c.anthropic.priceOutPerMTok, 10);
+  assert.equal(c.anthropic.model, 'claude-haiku-5-5');
+  assert.equal(c.anthropic.priceInPerMTok, 0.1);
+  assert.equal(c.anthropic.priceOutPerMTok, 0.5);
+  assert.equal(c.anthropic.longPriceInPerMTok, 0.5);
+  assert.equal(c.anthropic.longPriceOutPerMTok, 2.5);
+  assert.equal(c.anthropic.longPromptTokens, 100_000);
+  assert.equal(c.anthropic.keyLastDay, undefined);
   assert.equal(c.agentMode, 'auto');
-  assert.deepEqual(c.budget, { dailyUsdCap: 2, totalUsdCap: 30, ipDailyLimit: 20 });
+  assert.deepEqual(c.budget, { dailyUsdCap: 2, totalUsdCap: 30, monthlyUsdCap: 12, ipDailyLimit: 20 });
+});
+
+test('ANTHROPIC_API_KEY_FILE: key read from the file, env wins, unreadable file means no key', async () => {
+  const { mkdtemp, writeFile, rm } = await import('node:fs/promises');
+  const os = await import('node:os');
+  const dir = await mkdtemp(path.join(os.tmpdir(), 'dnd-cfg-'));
+  try {
+    const file = path.join(dir, 'k');
+    await writeFile(file, 'from-file\n');
+    assert.equal(loadConfig({ ANTHROPIC_API_KEY_FILE: file }).anthropic.apiKey, 'from-file');
+    assert.equal(loadConfig({ ANTHROPIC_API_KEY_FILE: file, ANTHROPIC_API_KEY: 'from-env' }).anthropic.apiKey, 'from-env');
+    assert.equal(loadConfig({ ANTHROPIC_API_KEY_FILE: path.join(dir, 'missing') }).anthropic.apiKey, undefined);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
+test('ANTHROPIC_KEY_LAST_DAY must be a date', () => {
+  assert.equal(loadConfig({ ANTHROPIC_KEY_LAST_DAY: '2026-11-11' }).anthropic.keyLastDay, '2026-11-11');
+  assert.throws(() => loadConfig({ ANTHROPIC_KEY_LAST_DAY: 'Nov 11' }), ConfigError);
 });
 
 test('environment overrides are parsed', () => {
   const c = loadConfig({
     PORT: '4100', DATA_DIR: '/tmp/dnd-data', VENUES_DIR: 'test/fixtures', DAILY_USD_CAP: '1.5',
-    TOTAL_USD_CAP: '10', IP_DAILY_LIMIT: '5', AGENT_MODE: 'scripted', CLAUDE_MODEL: 'claude-opus-5-5',
+    TOTAL_USD_CAP: '10', MONTHLY_USD_CAP: '4', IP_DAILY_LIMIT: '5', AGENT_MODE: 'scripted', CLAUDE_MODEL: 'claude-opus-5-5',
   });
   assert.equal(c.port, 4100);
   assert.equal(c.dataDir, '/tmp/dnd-data');
   assert.equal(c.venuesDir, path.join(REPO_ROOT, 'test/fixtures'));
-  assert.deepEqual(c.budget, { dailyUsdCap: 1.5, totalUsdCap: 10, ipDailyLimit: 5 });
+  assert.deepEqual(c.budget, { dailyUsdCap: 1.5, totalUsdCap: 10, monthlyUsdCap: 4, ipDailyLimit: 5 });
   assert.equal(c.agentMode, 'scripted');
   assert.equal(c.anthropic.model, 'claude-opus-5-5');
 });

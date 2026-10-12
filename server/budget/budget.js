@@ -24,7 +24,8 @@ const tokens = (v) => (Number.isFinite(Number(v)) && Number(v) > 0 ? Number(v) :
  * When `cache_creation` splits writes by TTL, each part gets its own rate; any unsplit rest is billed as a 5-minute write.
  * @param {{ input_tokens?: number, output_tokens?: number, cache_creation_input_tokens?: number,
  *   cache_read_input_tokens?: number, cache_creation?: { ephemeral_5m_input_tokens?: number, ephemeral_1h_input_tokens?: number } }} usage
- * @param {{ inPerMTok: number, outPerMTok: number, cache?: Partial<typeof CACHE_MULTIPLIERS> }} prices
+ * @param {{ inPerMTok: number, outPerMTok: number, cache?: Partial<typeof CACHE_MULTIPLIERS>,
+ *   long?: { inPerMTok: number, outPerMTok: number, aboveTokens: number } }} prices
  */
 export function usageCost(usage, prices) {
   const m = { ...CACHE_MULTIPLIERS, ...(prices.cache ?? {}) };
@@ -37,18 +38,21 @@ export function usageCost(usage, prices) {
   const writeTotal = Math.max(tokens(u.cache_creation_input_tokens), w1h + w5mSplit);
   const w5m = writeTotal - w1h;
   const inputEquivalent = input + w5m * m.write5m + w1h * m.write1h + read * m.read;
+  // A prompt (uncached input plus cache writes and reads) over the long-context threshold is billed at the long rate.
+  const rate = prices.long && input + writeTotal + read > prices.long.aboveTokens ? prices.long : prices;
   return {
-    usd: round((inputEquivalent * prices.inPerMTok + output * prices.outPerMTok) / 1e6),
+    usd: round((inputEquivalent * rate.inPerMTok + output * rate.outPerMTok) / 1e6),
     tokens: { input, output, cache_write: writeTotal, cache_read: read },
   };
 }
 
 /**
- * @param {{ dbPath?: string, dailyCap: number, totalCap: number, ipLimit: number,
- *   prices: { inPerMTok: number, outPerMTok: number, cache?: Partial<typeof CACHE_MULTIPLIERS> }, now?: () => number }} opts
- *   dbPath ":memory:" (default) or a file path. `now` fixes the clock in tests.
+ * @param {{ dbPath?: string, dailyCap: number, totalCap: number, monthlyCap?: number, ipLimit: number, keyLastDay?: string,
+ *   prices: Parameters<typeof usageCost>[1], now?: () => number }} opts
+ *   dbPath ":memory:" (default) or a file path. `monthlyCap` applies per UTC calendar month (no cap when absent).
+ *   `keyLastDay` (YYYY-MM-DD, UTC) is the last day the Claude key may be used. `now` fixes the clock in tests.
  */
-export function createBudget({ dbPath = ':memory:', dailyCap, totalCap, ipLimit, prices, now = Date.now }) {
+export function createBudget({ dbPath = ':memory:', dailyCap, totalCap, monthlyCap = Infinity, ipLimit, keyLastDay, prices, now = Date.now }) {
   if (dbPath !== ':memory:') mkdirSync(path.dirname(dbPath), { recursive: true });
   const db = new DatabaseSync(dbPath);
   db.exec(`
@@ -79,6 +83,7 @@ export function createBudget({ dbPath = ':memory:', dailyCap, totalCap, ipLimit,
   );
   const daySum = db.prepare('SELECT COALESCE(SUM(usd), 0) AS usd FROM spend WHERE day = ?');
   const totalSum = db.prepare('SELECT COALESCE(SUM(usd), 0) AS usd FROM spend');
+  const monthSum = db.prepare('SELECT COALESCE(SUM(usd), 0) AS usd FROM spend WHERE substr(day, 1, 7) = ?');
   const hit = db.prepare(
     'INSERT INTO ip_hits (day, ip_hash, count) VALUES (?, ?, 1) ON CONFLICT(day, ip_hash) DO UPDATE SET count = count + 1 RETURNING count',
   );
@@ -86,16 +91,20 @@ export function createBudget({ dbPath = ':memory:', dailyCap, totalCap, ipLimit,
 
   const ipHash = (ip) => createHash('sha256').update(`${salt}:${String(ip ?? '').trim().toLowerCase()}`).digest('hex');
   const totals = () => {
-    const day = Number(daySum.get(dayOf(now())).usd);
+    const today = dayOf(now());
+    const day = Number(daySum.get(today).usd);
+    const month = Number(monthSum.get(today.slice(0, 7)).usd);
     const total = Number(totalSum.get().usd);
-    return { day, total };
+    return { day, month, total };
   };
 
   return {
-    /** Live Claude calls are allowed only while both the daily and the total cap have room. */
+    /** Live Claude calls are allowed only while the key is in date and the daily, monthly and total caps have room. */
     canSpend() {
-      const { day, total } = totals();
+      if (keyLastDay && dayOf(now()) > keyLastDay) return { ok: false, reason: 'key_expired' };
+      const { day, month, total } = totals();
       if (total >= totalCap) return { ok: false, reason: 'total_cap' };
+      if (month >= monthlyCap) return { ok: false, reason: 'monthly_cap' };
       if (day >= dailyCap) return { ok: false, reason: 'daily_cap' };
       return { ok: true, reason: null };
     },
@@ -114,8 +123,11 @@ export function createBudget({ dbPath = ':memory:', dailyCap, totalCap, ipLimit,
       return { ok: count <= ipLimit, count };
     },
     snapshot() {
-      const { day, total } = totals();
-      return { day_usd: round(day), total_usd: round(total), day_cap: dailyCap, total_cap: totalCap };
+      const { day, month, total } = totals();
+      return {
+        day_usd: round(day), total_usd: round(total), day_cap: dailyCap, total_cap: totalCap,
+        month_usd: round(month), month_cap: Number.isFinite(monthlyCap) ? monthlyCap : null,
+      };
     },
     close() {
       db.close();

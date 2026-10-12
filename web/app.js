@@ -83,6 +83,8 @@ function setBadges(agent, qloo, recordedAt) {
 const FALLBACK_WORDS = {
   daily_cap: "today's spend cap for Claude is used up",
   total_cap: 'the total spend cap for Claude is used up',
+  monthly_cap: "this month's spend cap for Claude is used up",
+  key_expired: 'the Claude key for this demo has expired',
   ip_daily_limit: "this address has used today's live runs",
   rejected: "Claude's answer did not pass the name and number check twice",
   llm_error: 'the Claude request failed',

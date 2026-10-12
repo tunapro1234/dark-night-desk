@@ -33,11 +33,14 @@ All settings are environment variables read in `server/config.js`:
 | `QLOO_BASE_URL` | `https://hackathon.api.qloo.com` | no other host is accepted |
 | `QLOO_MODE` | `live` | `fixture` is allowed only with `NODE_ENV=test` |
 | `ANTHROPIC_API_KEY` | none | enables the live agent |
-| `CLAUDE_MODEL` | `claude-sonnet-5-5` | |
+| `ANTHROPIC_API_KEY_FILE` | none | read the key from this file instead (used when `ANTHROPIC_API_KEY` is unset; an unreadable file means no key) |
+| `ANTHROPIC_KEY_LAST_DAY` | none | `YYYY-MM-DD` (UTC); after this day no live Claude call is made |
+| `CLAUDE_MODEL` | `claude-haiku-5-5` | |
 | `AGENT_MODE` | `auto` | `auto`, `live`, `recorded` or `scripted` |
-| `DAILY_USD_CAP` / `TOTAL_USD_CAP` | `2` / `30` | Claude spend caps |
+| `DAILY_USD_CAP` / `MONTHLY_USD_CAP` / `TOTAL_USD_CAP` | `2` / `12` / `30` | Claude spend caps (UTC day, UTC calendar month, all time) |
 | `IP_DAILY_LIMIT` | `20` | plan requests per IP per day |
-| `CLAUDE_PRICE_IN_PER_MTOK` / `CLAUDE_PRICE_OUT_PER_MTOK` | `2` / `10` | USD per million tokens, for the spend counter |
+| `CLAUDE_PRICE_IN_PER_MTOK` / `CLAUDE_PRICE_OUT_PER_MTOK` | `0.1` / `0.5` | USD per million tokens, for the spend counter (Haiku 5.5) |
+| `CLAUDE_LONG_PRICE_IN_PER_MTOK` / `CLAUDE_LONG_PRICE_OUT_PER_MTOK` | `0.5` / `2.5` | the same for a prompt over `CLAUDE_LONG_PROMPT_TOKENS` (`100000`) |
 
 The server refuses to start on an invalid setting and prints what is wrong.
 
@@ -61,12 +64,12 @@ journalctl -u dark-night-desk -f
 - The unit sets `HOST=127.0.0.1`, `PORT=3020` and `NODE_ENV=production`. The server only listens on loopback; a reverse proxy
   on the same host (for example nginx) serves it to the outside and passes `X-Forwarded-For`, which the IP limit reads.
 - **Keys live only in the server's environment file** named by `EnvironmentFile=` (mode 600, outside the repo), one
-  `NAME=value` per line: `QLOO_API_KEY`, `ANTHROPIC_API_KEY`, and any setting from the table above. No key is in the repo,
+  `NAME=value` per line: `QLOO_API_KEY`, `ANTHROPIC_API_KEY` (or `ANTHROPIC_API_KEY_FILE`, a path to a mode 600 file), and any setting from the table above. No key is in the repo,
   in the unit file, in the browser or in the logs.
 - Limits: `Nice=10`, `MemoryMax=512M`, `Restart=on-failure`, `NoNewPrivileges`, `PrivateTmp`, `ProtectSystem=full`.
   `ReadWritePaths` names only `DATA_DIR` (`./var` by default: Qloo cache, spend ledger, recorded runs). If the environment file
   sets another `DATA_DIR`, change `ReadWritePaths` to match.
-- The daily and total Claude caps (`DAILY_USD_CAP`, `TOTAL_USD_CAP`) and `IP_DAILY_LIMIT` hold on the public server too: when one
+- The daily, monthly and total Claude caps (`DAILY_USD_CAP`, `MONTHLY_USD_CAP`, `TOTAL_USD_CAP`) and `IP_DAILY_LIMIT` hold on the public server too: when one
   is reached the page keeps working with a recorded run or the scripted plan, and says so.
 
 ## Venues and dark nights
@@ -198,7 +201,10 @@ QLOO_API_KEY=... node scripts/keyday.js data/dev/room-a.json data/dev/room-b.jso
 
 - Every Claude response is booked from its `usage` block into `DATA_DIR/budget.sqlite`: uncached input and output at
   `CLAUDE_PRICE_IN_PER_MTOK` / `CLAUDE_PRICE_OUT_PER_MTOK`, cache writes at 1.25x input (2x for 1-hour writes), cache reads at 0.1x.
-- When the day's spend (UTC day) reaches `DAILY_USD_CAP` or the total reaches `TOTAL_USD_CAP`, no live call is made: the agent
+  A prompt over `CLAUDE_LONG_PROMPT_TOKENS` (uncached input plus cache writes and reads) is billed at the long-context prices.
+- Both Claude calls (the agent loop and back-test ranker L) set top-level `cache_control`, so the repeated prefix is read from cache.
+- When the day's spend (UTC day) reaches `DAILY_USD_CAP`, the month's (UTC calendar month) reaches `MONTHLY_USD_CAP`, the total
+  reaches `TOTAL_USD_CAP`, or the day is past `ANTHROPIC_KEY_LAST_DAY`, no live call is made: the agent
   falls back to a recorded run, or to the scripted plan when none exists. `/api/health` shows the ledger.
 - Each plan request counts against its IP; past `IP_DAILY_LIMIT` per UTC day the same fallback applies. `X-Forwarded-For` is read
   only when the connection comes from loopback (nginx on the same host). The ledger keeps a salted hash of the address, for the current day only.

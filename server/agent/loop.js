@@ -101,7 +101,10 @@ export async function runLive({ anthropic, model, session, budget, maxTurns = MA
     turns++;
     let response;
     try {
-      response = await anthropic.messages.create({ model, max_tokens: MAX_TOKENS, system, tools, thinking: { type: 'adaptive' }, messages });
+      // Top-level cache_control caches the growing prefix (tools, system, earlier turns) from one turn to the next.
+      response = await anthropic.messages.create({
+        model, max_tokens: MAX_TOKENS, system, tools, thinking: { type: 'adaptive' }, cache_control: { type: 'ephemeral' }, messages,
+      });
     } catch (err) {
       return out({ error: { code: 'llm_error', message: `Claude request failed${err?.status ? ` (HTTP ${err.status})` : ''}` } });
     }
