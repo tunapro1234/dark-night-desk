@@ -49,7 +49,8 @@ process started).
 
 ## Deploy (systemd)
 
-`deploy/dark-night-desk.service` runs the server as a systemd service. The repo does not install or start it; on the server:
+`deploy/dark-night-desk.service` runs the server as a systemd service. Its paths are examples (checkout in `/opt/dark-night-desk`,
+env file in `/etc/dark-night-desk/dnd.env`); edit them before installing. The repo does not install or start it; on the server:
 
 ```sh
 sudo cp deploy/dark-night-desk.service /etc/systemd/system/

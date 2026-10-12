@@ -3,6 +3,7 @@
 #   cp deploy/dark-night-desk-refresh.service deploy/dark-night-desk-refresh.timer /etc/systemd/system/
 #   systemctl daemon-reload && systemctl enable --now dark-night-desk-refresh.timer
 # The running server reads venue files on every request, so it needs no restart after a refresh.
+# The paths below are examples matching deploy/dark-night-desk.service; change them to yours.
 [Unit]
 Description=Dark Night Desk calendar refresh (First Avenue month pages)
 After=network-online.target
@@ -10,12 +11,12 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-WorkingDirectory=/srv/lighthouse/hackathon-coz/projeler/devpost-qloo-agentic/kod/dark-night-desk
+WorkingDirectory=/opt/dark-night-desk
 # Node 22 or newer; change the path if node lives elsewhere (`which node`).
 ExecStart=/usr/bin/node scripts/refresh-venues.js
 Environment=NODE_ENV=production
 # Same file as the server, so VENUES_DIR and DATA_DIR match; the refresh itself needs no key.
-EnvironmentFile=/srv/lighthouse/hackathon-coz/projeler/devpost-qloo-agentic/secrets/dnd.env
+EnvironmentFile=/etc/dark-night-desk/dnd.env
 Nice=15
 IOSchedulingClass=idle
 MemoryMax=256M
@@ -24,4 +25,4 @@ NoNewPrivileges=true
 PrivateTmp=true
 ProtectSystem=full
 # Writes VENUES_DIR (venue files) and DATA_DIR/raw-calendar (raw pages); keep these equal to dnd.env if it moves them.
-ReadWritePaths=/srv/lighthouse/hackathon-coz/projeler/devpost-qloo-agentic/kod/dark-night-desk/data/venues -/srv/lighthouse/hackathon-coz/projeler/devpost-qloo-agentic/kod/dark-night-desk/var
+ReadWritePaths=/opt/dark-night-desk/data/venues -/opt/dark-night-desk/var

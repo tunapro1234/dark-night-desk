@@ -1,6 +1,7 @@
 # Dark Night Desk as a systemd service. Not installed by the repo; to install:
 #   cp deploy/dark-night-desk.service /etc/systemd/system/ && systemctl daemon-reload && systemctl enable --now dark-night-desk
 # Keys (QLOO_API_KEY, ANTHROPIC_API_KEY) live only in the EnvironmentFile on the server, never in this repo.
+# The paths below are examples (checkout in /opt/dark-night-desk, env file in /etc/dark-night-desk); change them to yours.
 # The server listens on loopback only; a reverse proxy on the same host serves it to the outside.
 [Unit]
 Description=Dark Night Desk (fill the nights your venue sits empty)
@@ -9,11 +10,11 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-WorkingDirectory=/srv/lighthouse/hackathon-coz/projeler/devpost-qloo-agentic/kod/dark-night-desk
+WorkingDirectory=/opt/dark-night-desk
 # Node 22 or newer; change the path if node lives elsewhere (`which node`).
 ExecStart=/usr/bin/node server/index.js
 Environment=HOST=127.0.0.1 PORT=3020 NODE_ENV=production
-EnvironmentFile=/srv/lighthouse/hackathon-coz/projeler/devpost-qloo-agentic/secrets/dnd.env
+EnvironmentFile=/etc/dark-night-desk/dnd.env
 Restart=on-failure
 RestartSec=5
 Nice=10
@@ -24,7 +25,7 @@ PrivateTmp=true
 ProtectSystem=full
 # The only directory the service writes is DATA_DIR (Qloo cache, spend ledger, recorded runs); the default is ./var.
 # Keep this path equal to DATA_DIR if dnd.env sets another one. The leading "-" lets the first start create it.
-ReadWritePaths=-/srv/lighthouse/hackathon-coz/projeler/devpost-qloo-agentic/kod/dark-night-desk/var
+ReadWritePaths=-/opt/dark-night-desk/var
 
 [Install]
 WantedBy=multi-user.target
