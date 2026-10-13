@@ -46,6 +46,10 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
     app.addHook('onClose', async () => budget.close());
   }
   app.decorate('budget', budget);
+  // The public demo stays out of search results. Set on the raw response so the SSE route's writeHead keeps it too.
+  app.addHook('onRequest', async (req, reply) => {
+    reply.raw.setHeader('x-robots-tag', 'noindex, nofollow');
+  });
 
   app.get('/api/health', async () => {
     const recorded = await hasRecordedRuns(config.dataDir);

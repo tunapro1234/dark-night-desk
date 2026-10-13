@@ -207,3 +207,15 @@ test('backtest: not-run until the test run has written its summary, then the sum
   assert.deepEqual((await app.inject('/api/backtest')).json(), { status: 'pilot', label: 'pilot (N = 3 rooms, n = 9 shows)', rooms: 3 });
   await app.close();
 });
+
+test('every response carries noindex: API, static page and its meta tag', async () => {
+  const app = await appWith({});
+  const api = await app.inject('/api/health');
+  assert.equal(api.headers['x-robots-tag'], 'noindex, nofollow');
+  const page = await app.inject('/');
+  assert.equal(page.statusCode, 200);
+  assert.equal(page.headers['x-robots-tag'], 'noindex, nofollow');
+  assert.match(page.body, /<meta name="robots" content="noindex, nofollow">/);
+  assert.equal((await app.inject('/no-such-file')).headers['x-robots-tag'], 'noindex, nofollow');
+  await app.close();
+});
