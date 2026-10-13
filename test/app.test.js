@@ -219,3 +219,13 @@ test('every response carries noindex: API, static page and its meta tag', async 
   assert.equal((await app.inject('/no-such-file')).headers['x-robots-tag'], 'noindex, nofollow');
   await app.close();
 });
+
+test('robots.txt disallows every path', async () => {
+  const app = await appWith({});
+  const res = await app.inject('/robots.txt');
+  assert.equal(res.statusCode, 200);
+  assert.match(res.headers['content-type'], /^text\/plain/);
+  assert.equal(res.body, 'User-agent: *\nDisallow: /\n');
+  assert.equal(res.headers['x-robots-tag'], 'noindex, nofollow');
+  await app.close();
+});
