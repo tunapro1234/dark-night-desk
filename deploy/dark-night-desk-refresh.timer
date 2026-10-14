@@ -3,8 +3,8 @@
 Description=Weekly Dark Night Desk calendar refresh
 
 [Timer]
-# Monday 06:30 in the server's local time zone, plus up to 20 minutes of random delay.
-OnCalendar=Mon *-*-* 06:30:00
+# Sunday 21:30 in the server's local time zone, plus up to 20 minutes of random delay.
+OnCalendar=Sun *-*-* 21:30:00
 RandomizedDelaySec=20m
 # A run missed while the machine was off starts at the next boot.
 Persistent=true

@@ -129,7 +129,7 @@ node scripts/refresh-venues.js             # read and rewrite the venue files
 - The server reads the venue files on every request, so `/api/venues` and the calendar show new data without a restart.
 
 `deploy/dark-night-desk-refresh.service` (oneshot, `Nice=15`, same `WorkingDirectory` and `EnvironmentFile` as the server) and
-`deploy/dark-night-desk-refresh.timer` (Mondays 06:30 server time, up to 20 minutes random delay, `Persistent=true`) run it
+`deploy/dark-night-desk-refresh.timer` (Sundays 21:30 server time, up to 20 minutes random delay, `Persistent=true`) run it
 weekly. The repo does not install them; on the server:
 
 ```sh
