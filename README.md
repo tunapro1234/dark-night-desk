@@ -314,9 +314,11 @@ Plain HTML, CSS and browser JavaScript, served by the same server. No framework,
   follow robots.txt, at least 2.5 seconds apart. Dark Night Desk is not affiliated with First Avenue or any venue or artist.
 - **Internet Archive Wayback Machine** (`web.archive.org`): the 2026 listings of the back-test's placebo rooms come from its snapshots.
   Thank you to the Internet Archive.
-- No terms-of-use page was found on first-avenue.com (its only policy link returned 404), and none was identified on the two placebo
-  venues' sites, so their use terms are not verified; we have not asked the venues. If a venue objects, its data is removed. Only
-  billing names, dates and links are kept; `data/backtest/sources.md` lists the source pages and the checks.
+- **Terms of use not verified.** No terms-of-use page was found on first-avenue.com (its only policy link returned 404), and none was
+  identified on the sites of the Hideout (Chicago) and Black Cat (Washington, DC), the back-test's placebo rooms. The terms of use of
+  First Avenue, the Hideout and Black Cat are therefore **not verified**, and we have not asked the venues. If a venue or a rights holder
+  asks us to remove its data, we will remove it from this repository right away. Only billing names, dates and links are kept;
+  `data/backtest/sources.md` lists the source pages and the checks.
 - **Qloo Insights API** (hackathon access) for taste data. Responses stay in a server-side cache and are never stored in this repo.
 - **Anthropic API** (Claude Haiku 5.5) for the live agent. Open-source parts: Fastify, `@fastify/static`, `@anthropic-ai/sdk`.
 
@@ -331,9 +333,8 @@ Plain HTML, CSS and browser JavaScript, served by the same server. No framework,
 
 ## How this was built
 
-Built during the hackathon by a student team; the first commit is from 11 October 2026. Most of the code, the data compilation and the
-text were produced by AI coding agents (Claude) working under the team's direction. The calendar data was read from public pages as
-described above; no Qloo response, key or personal data is in this repository.
+Built by our three-person student team. AI coding agents wrote much of the code under our direction; we set the questions, the
+pre-registration and the acceptance tests, and reviewed the results. First commit: 11 Oct 2026.
 
 ## License
 
