@@ -229,7 +229,7 @@ QLOO_API_KEY=... node scripts/keyday.js data/dev/room-a.json data/dev/room-b.jso
 ## Back-test (`server/backtest/`, `scripts/backtest.js`)
 
 `BACKTEST.md` is the pre-registered protocol, frozen on 11 Oct 2026 (planning repo commit `cb8ede1`), with Amendments 1 and 2
-added the same day before any Qloo call. The copy here is unchanged. The code follows it; it does not change it. Data: `data/backtest/venues.csv`, `shows.csv` and `sources.md`.
+added the same day and Amendment 3 on 14 Oct, all before any Qloo call. The copy here matches the planning repo's. The code follows it; it does not change it. Data: `data/backtest/venues.csv`, `shows.csv` and `sources.md`.
 
 - **Unit:** one S2 show (1 Jul to 30 Sep 2026) at a test room. **Positive:** its headliner under the headliner rule (`headliner.js`:
   whole title, then the part before the first listed separator, exact normalized match, no fuzzy matching). **Pool:** resolved
@@ -246,7 +246,8 @@ added the same day before any Qloo call. The copy here is unchanged. The code fo
 - **Metrics** (`metrics.js`): reciprocal rank, hit@5, percentile rank; rooms weigh equally. With fewer than 8 rooms the 95% interval
   resamples shows within each room (2,000 resamples, fixed seed), and the output says these intervals are too narrow. With 8 or more
   rooms it resamples rooms. Paired intervals for Q-P, Q-T, Q-L and Q minus each placebo.
-- **Claim rule** in code: status `full` only with 8+ rooms, 300+ shows, and the Q-P and every Q-placebo interval clear of zero.
+- **Claim rule** in code: status `full` only with 8+ rooms, 300+ shows, and the lower bound of the Q-P and of every Q-placebo interval
+  above zero (Amendment 3: an interval wholly below zero is a loss, not a pass).
   Otherwise `pilot`, labelled "pilot (N = 3 rooms, n = ... shows)".
 - **L sampling** (Amendment 2): L asks for temperature 0. If the model answers that with HTTP 400, the request is sent once more
   without it and the rest of the run uses the model's default sampling. The log then says "sampling: default (temperature not

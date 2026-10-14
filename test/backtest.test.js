@@ -75,7 +75,7 @@ test('metrics: paired differences are zero for identical rankers and need lined-
   assert.throws(() => stratifiedBootstrapDiff(a, { v1: [1], v2: [0.2] }), /line up/);
 });
 
-test('claim rule: full only with 8+ rooms, 300+ shows and both intervals clear of zero', () => {
+test('claim rule: full only with 8+ rooms, 300+ shows and both intervals above zero', () => {
   const good = { lo: 0.01, hi: 0.2 };
   const zero = { lo: -0.01, hi: 0.2 };
   assert.equal(claimRule({ rooms: 3, shows: 176, qMinusP: good, qMinusPlacebo: { a: good } }).status, 'pilot');
@@ -83,9 +83,14 @@ test('claim rule: full only with 8+ rooms, 300+ shows and both intervals clear o
   assert.equal(claimRule({ rooms: 8, shows: 300, qMinusP: zero, qMinusPlacebo: { a: good } }).status, 'pilot');
   assert.equal(claimRule({ rooms: 8, shows: 300, qMinusP: good, qMinusPlacebo: { a: good, b: zero } }).status, 'pilot');
   assert.equal(claimRule({ rooms: 8, shows: 300, qMinusP: good, qMinusPlacebo: {} }).status, 'pilot');
-  const ok = claimRule({ rooms: 8, shows: 300, qMinusP: good, qMinusPlacebo: { a: good, b: { lo: -0.3, hi: -0.1 } } });
+  // A clear loss also excludes 0, but it is a loss: it never allows the sentence.
+  const loss = { lo: -0.3, hi: -0.1 };
+  assert.equal(claimRule({ rooms: 8, shows: 300, qMinusP: loss, qMinusPlacebo: { a: good } }).status, 'pilot');
+  assert.equal(claimRule({ rooms: 8, shows: 300, qMinusP: good, qMinusPlacebo: { a: good, b: loss } }).status, 'pilot');
+  const ok = claimRule({ rooms: 8, shows: 300, qMinusP: good, qMinusPlacebo: { a: good, b: { lo: 0.05, hi: 0.3 } } });
   assert.equal(ok.status, 'full');
   assert.equal(ok.used, true);
+  assert.deepEqual(Object.keys(ok.checks), ['rooms_and_shows', 'q_minus_p_above_0', 'q_minus_placebo_above_0']);
 });
 
 // ---------- headliner rule ----------

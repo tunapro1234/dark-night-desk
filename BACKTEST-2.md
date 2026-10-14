@@ -75,4 +75,51 @@ If Q − P holds but Q − placebo does not, we report that the gain looks like 
 - No Qloo response data in this repository. Qloo responses stay in a private server-side cache; the repo holds only aggregate and per-room numbers.
 
 ## Amendments
-(none)
+All of these are dated 14 Oct 2026. They were written before `venues.csv` was committed, before any show list was compiled and before any
+Qloo call. While scouting, we saw candidate venues' pages, including act names, stage names, date formats and rough counts of listed titles.
+We looked nothing up in Qloo and rated no act for fit. No ranker has been run and no result of any kind exists. An outside review of a first
+draft of this section (same day) shaped the wording below.
+`data/backtest2/candidates.md`, committed before `venues.csv`, lists every scouted candidate venue with its eligibility under the registered
+text and under these amendments. The claim rule's thresholds are unchanged. Amendments 1, 10 and 11 make the rule stricter; amendment 1 also
+changes signals and room weights, which may help or hurt Q.
+The Study 2 runner (metro pools, clusters, per-room placebo with seed 2) is not written yet: `server/backtest/run.js` is Study 1's. It is
+written, with tests on synthetic data, and committed before compiling.
+
+1. **Stages and operators.** A stage is its own room only if the source gives it in a separate field or filter, not only in title text. Each
+   such room has its own S1 headliners and test shows and must meet coverage (§4) by itself. A stage that fails coverage is not a test room,
+   but its shows stay in the metro pool. Rows held at another building are dropped (reason `off-site`). Operator means the owner or the
+   company that books the shows; either one joins rooms into a **cluster**. N in the claim rule and the 20 cap count clusters. MRR averages
+   rooms within a cluster, then clusters with equal weight, and the bootstrap draws clusters. §5 needs an eligible venue in another cluster.
+   A placebo room comes from another metro and another cluster.
+2. **Structured performer field.** Where the source publishes a structured performer field (schema.org `performer` in the page, or a performer
+   or artist field in the site's own events feed), the headliner rule queries in this order, and the first exact match wins: (1) the first
+   performer that is a person or group and whose normalized name is not the venue's or the operator's; (2) the whole title; (3) the title before
+   its first separator. The step is recorded as `performer`, `title` or `split`. Without such a field the rule is Study 1's, unchanged.
+3. **Local date.** A show's date is its start date in the venue's local time zone (the IANA zone is recorded in `venues.csv`). Start means the
+   show time, or the doors time if that is all the source gives. A start between 00:01 and 04:59 belongs to the previous night. A start of
+   exactly 00:00, or a date-only value, counts as no time given, and the listed date is used. Feeds that give UTC times are converted first.
+4. **Non-music and untitled rows.** Words are matched after the headliner rule's normalization, as whole words: karaoke, trivia, quiz, open mic,
+   open-mic, bingo, comedy, film screening, movie night, private event, closed, market, workshop, class, watch party. For coverage (§4), a row
+   with an empty title or one of these words does not count. In the run, a row is dropped as `untitled` if its title is empty, and as
+   `non-music` only if the word lies outside the name the headliner rule resolved. Dropped rows stay in `shows.csv` with a `drop_reason`
+   column, so the 10% second pass can check them.
+5. **P2, "draw fits the room" (descriptive).** P2 ranks the pool by the distance between an act's Qloo popularity and the median popularity of
+   the room's resolved S1 headliners, smallest first; ties go to the more popular act, and acts tied on both keep pool order. Acts with no
+   popularity value go to the bottom in pool order, as in P. It uses P's data and needs no extra call. MRR(P2) and Q − P2 are reported with the
+   same intervals, next to Q − P. P2 is not a condition of the claim rule. "Q beats P2" means the lower bound of the Q − P2 interval is above 0;
+   if it does not, the write-up says so beside any result. The share of tied P2 scores is reported.
+6. **Comparisons with L.** A sentence that Q beat Claude alone (L) is written only if the lower bound of the 95% room-bootstrap interval for
+   Q − L is above 0, and it is a separate sentence from the claim. For every ranker, the median of Qloo's popularity value over its top 5,
+   across all test shows, is reported (descriptive).
+7. **Same-room acts in the pool.** Per room, the median count of pool acts booked at the same room in the window is reported, and separately
+   the count for the same cluster. Descriptive only; the pool rule is unchanged.
+8. **Secondary splits (descriptive, never claimed).** MRR for Q, P and P2 split by (a) room size: capacity is the largest figure the venue or
+   operator publishes for that room, recorded in `venues.csv` before compiling; at most 650 versus larger (650 is the largest Study 1 room);
+   a room with no published figure is "size unknown", left out of the split and counted; (b) weekday, Monday to Wednesday versus Thursday to
+   Sunday. The `/search` resolution rate is also reported by room size.
+9. **Expert answers.** We are asking two researchers and one booker about the pool and the room profile. Any variant an answer could switch on
+   is written here with its exact definition before the Qloo key arrives; an answer can only switch on a variant already written, and every
+   variant switched on is reported whatever its result. None is written yet.
+10. **Direction of "excludes 0".** In the claim rule, "excludes 0" means the lower bound of the interval is above 0 (Study 1 Amendment 3).
+11. **Study 1 rooms.** §6 also excludes Hideout (Chicago) and Black Cat (Washington, DC), Study 1's placebo rooms, whose 2026 listings are
+    already in Study 1's data.

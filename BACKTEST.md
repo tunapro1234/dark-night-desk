@@ -98,3 +98,7 @@ labelled "pilot (N = 3 rooms, n = … shows)", with intervals, and the pitch res
    the number of shows whose window is cut is reported. No result of any ranker was seen before this change.
 2. **11 Oct 2026, before any Qloo call. Ranker L sampling.** If the Claude model used for L does not accept a `temperature` setting, L runs once with the
    model's default sampling, and the run log records which setting applied. Its result is then one draw, not a deterministic answer, and is labelled so.
+3. **14 Oct 2026, before any Qloo call. Direction of "excludes 0".** In the claim rule, "the 95% interval ... excludes 0" means its lower bound is
+   above 0. An interval wholly below 0 also excludes 0, but it means Q lost, and it never allows the sentence. The code had accepted both
+   (`claimRule` in `server/backtest/metrics.js`); an outside review found it, and the code now checks the lower bound. This only makes the rule
+   stricter; the thresholds are unchanged. No ranker has been run.

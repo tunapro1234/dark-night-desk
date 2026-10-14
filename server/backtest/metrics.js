@@ -137,7 +137,9 @@ export const CLAIM_MIN_SHOWS = 300;
 export const CLAIM_SENTENCE =
   "On real nights at N independent venues, ranking by the room's own crowd put the actual headliner higher than popularity alone did";
 
-const excludesZero = (iv) => Boolean(iv) && Number.isFinite(iv.lo) && Number.isFinite(iv.hi) && (iv.lo > 0 || iv.hi < 0);
+// "Excludes 0" in the claim rule means Q wins: the lower bound is above 0 (BACKTEST.md Amendment 3). An interval wholly below 0
+// also excludes 0, but it is a loss and never allows the sentence.
+const aboveZero = (iv) => Boolean(iv) && Number.isFinite(iv.lo) && Number.isFinite(iv.hi) && iv.lo > 0;
 
 /**
  * BACKTEST.md "Claim rule": the sentence is used only if every condition holds. Otherwise the result is a pilot.
@@ -147,8 +149,8 @@ export function claimRule({ rooms, shows, qMinusP, qMinusPlacebo = {} }) {
   const placebos = Object.values(qMinusPlacebo);
   const checks = {
     rooms_and_shows: rooms >= CLAIM_MIN_ROOMS && shows >= CLAIM_MIN_SHOWS,
-    q_minus_p_excludes_0: excludesZero(qMinusP),
-    q_minus_placebo_excludes_0: placebos.length > 0 && placebos.every(excludesZero),
+    q_minus_p_above_0: aboveZero(qMinusP),
+    q_minus_placebo_above_0: placebos.length > 0 && placebos.every(aboveZero),
   };
   const used = Object.values(checks).every(Boolean);
   return { used, status: used ? 'full' : 'pilot', checks };
