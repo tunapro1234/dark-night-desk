@@ -177,3 +177,58 @@ written, with tests on synthetic data, and committed before compiling.
     - **V3, no acts from large rooms.** For test rooms with a published capacity of at most 650, the pool also leaves out every act whose
       counted shows in the window are all at rooms with a published capacity of 1,500 or more. Acts with any show at a smaller room, or at
       a room with no published figure, stay. The positive always stays, since it played the test room. Other test rooms are unchanged.
+14. **Eligibility readings (15 Oct 2026).** Written after the first eligibility check (54 scouted venues), before the remaining scouted
+    venues are checked, before `venues.csv` is committed, before any show list is compiled and before any Qloo call. The text above leaves
+    some words open, and they are read as below. Each reading rests on the text's own words or on a published definition, not on how many
+    clusters it leaves. `data/backtest2/candidates.md` gives each venue's verdict, and the last item reports the literal reading of
+    Amendment 1 beside the result.
+    - **Operator (§1, Amendment 1).** "The company that books the shows" is the house booker: the company the venue names as its booker,
+      or a single company that presents more than half of the room's counted S1 and S2 shows. The definite article and "the shows" point
+      to the one company that programmes the room's calendar, not to every company that presents a night. An outside promoter that
+      presents fewer shows joins no cluster and does not decide §1. "Owned or operated by" includes a shared stake: a company in which Live
+      Nation or AEG holds a disclosed 50% or more counts as Live Nation or AEG, because a holder of half the shares cannot be outvoted.
+    - **Public evidence (§1).** §1 asks for public evidence. It passes when public sources (venue site, operator site, press, company
+      records) name no Live Nation or AEG owner or house booker and the venue's own booking contact and ticketing show none. An owner that
+      no public source names is recorded as not identified.
+    - **Terms (§3).** §3 asks whether the terms forbid automated reading or reuse. Terms that forbid copying, reproducing or republishing
+      the site's content, or that license it for personal viewing only, forbid reuse of the listings or leave it unclear, so the venue is
+      not used. A bare notice ("©", "All rights reserved") states ownership and forbids nothing, so it is not terms; any text on the site
+      that forbids copying or reuse, or limits use to personal viewing, is, whether or not there is a terms page.
+    - **Platform terms (§3).** A site-builder or ticket platform's terms count as the site's terms when their own text reaches people who
+      visit a site the platform hosts for a customer. If they do, or if that is unclear, and they forbid automated reading or reuse, the
+      venue is not used. This reading excluded the Fatsoma-built sites: Fatsoma's "Website" takes in other URLs through which it provides
+      its service, and its clause 5.1.6 forbids copying content. It also excludes sites built on Squarespace and on Wix. Squarespace's
+      terms define the Services openly ("including without limitation"), call the visitors of a customer's site users of the Services,
+      and forbid access "by any means other than our publicly supported interfaces (for example, scraping, spidering or crawling)"
+      (Acceptable Use Policy 1.6). Wix's Terms of Use (last revised 9 Jul 2026) forbid access to "User Content", the content of its
+      customers' sites, "through any means or technology (e.g. scraping and crawling), other than our publicly supported interfaces", and
+      no sentence leaves those sites to their own terms; that they call the sites' visitors "End Users" does not settle whether the ban
+      reaches them. Weebly's terms "apply solely to the Service" and say that access to the sites it hosts "is governed by the terms
+      applicable to such third party site", so they do not count.
+    - **Bot checks (§3).** robots.txt rules are not a form of access authorization (RFC 9309); a bot check is the site's own answer to
+      automated access. A bot check or a 403 in front of a site's show listings therefore means the site does not want them read
+      automatically, and reading the same listings through another open path, such as an events feed or web.archive.org, would defeat
+      its purpose. Such a venue is not used, whatever robots.txt and the terms say. We never try to get past a bot check or a 403.
+    - **City (§5).** The city in §5 is the pool's "metro area". In the US it is the metropolitan statistical area as delineated by the
+      Office of Management and Budget (Bulletin 23-01, July 2023): a core urban area with the counties tied to it by commuting, the area a
+      room's audience lives and travels in. Combined statistical areas, which join metro areas with weaker commuting ties, are not used;
+      under them, Lawrence would join Kansas City and Ann Arbor would join Detroit. Elsewhere it is the national statistics office's
+      metropolitan area (Statistics Canada's census metropolitan area, the Australian Bureau of Statistics' Greater Capital City
+      Statistical Area) or, where there is none, the OECD and EU functional urban area, which is built on commuting in the same way. The
+      metro is named by its core city.
+    - **Rooms (Amendment 1).** In Amendment 1's words, a room is given "in a separate field or filter, not only in title text". A room
+      named in a field of its own, other than the title, is therefore a room, even when that field also holds other text. A filter counts
+      only if it can place the S1 and S2 rows. Rows of a split venue whose room is not given go to one pool room of the same building, so
+      they feed the metro pool but no room's S1 headliners. A row given two rooms goes to the first one listed.
+    - **Pool-only venues.** §5 and Amendment 12 make every eligible venue feed its metro pool, so a venue whose rooms meet coverage only
+      together is listed with role `pool`, also in a metro with no test room.
+    - **Literal reading of Amendment 1, reported beside the result.** Read literally, "the company that books the shows" takes in every
+      company that presents a show. When compiling, the company that a show's own page or listing names as presenting it ("presents",
+      "presented by") is recorded in a `presented_by` column of `shows.csv`, empty if none is named. Beside the main result, the run reports
+      the study under the literal reading: every company named as presenting a counted S1 or S2 show at a room is an operator of that
+      room, rooms that share an operator form one cluster, §1 and §5 are applied again, and the number of clusters left and the claim
+      rule's intervals on them are reported. This is descriptive: it cannot make or block the claim, and the result is written with it
+      in the same section. The runner is extended for it, with tests on synthetic data, before compiling.
+    The §1 and §5 readings and the room reading settle what the text left open; the §3 readings make it stricter. Pages already read from
+    venues excluded under §3 are not used for anything else. With fewer clusters the intervals are wider; the claim rule's thresholds are
+    unchanged.
