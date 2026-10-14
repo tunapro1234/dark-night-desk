@@ -1,6 +1,6 @@
-// Night-by-night status of a venue: booked (a show is listed), closed (a weekday the room is always shut)
-// or dark (open weekday with nothing booked). All date math is in UTC on plain YYYY-MM-DD strings,
-// so the server's time zone never shifts a night.
+// Night-by-night status of a venue: booked (a show is listed), closed (a weekday the room is always shut),
+// dark (open weekday with nothing listed) or unlisted (past the last date the calendar was read for, so nothing can be
+// said yet). All date math is in UTC on plain YYYY-MM-DD strings, so the server's time zone never shifts a night.
 import { isISODate } from './venues.js';
 
 export const MAX_DAYS = 366;
@@ -23,12 +23,14 @@ export function todayISO(now = Date.now()) {
  * @param {{ closed_weekdays?: number[], shows?: object[], past_shows?: object[] }} venue
  * @param {string} fromISO first night, YYYY-MM-DD
  * @param {number} days number of nights, 1..MAX_DAYS
- * @param {{ today?: string }} [opts] with `today`, an empty night on that date is `today` and earlier empty nights are
- *   `past`: too late to book, so neither is a dark night and neither counts in `dark_count`. Today's night carries `today: true`.
- * @returns {{ from: string, to: string, nights: { date: string, status: 'booked' | 'dark' | 'closed' | 'today' | 'past', today?: true,
+ * @param {{ today?: string, listedUntil?: string | null }} [opts] with `today`, an empty night on that date is `today` and
+ *   earlier empty nights are `past`: too late to book, so neither is a dark night and neither counts in `dark_count`.
+ *   Today's night carries `today: true`. With `listedUntil`, an empty open night after that date is `unlisted`, not dark:
+ *   the calendar was not read that far.
+ * @returns {{ from: string, to: string, nights: { date: string, status: 'booked' | 'dark' | 'closed' | 'today' | 'past' | 'unlisted', today?: true,
  *   show?: { headliner: string, source_url: string } }[], dark_count: number }}
  */
-export function nightsFor(venue, fromISO, days, { today } = {}) {
+export function nightsFor(venue, fromISO, days, { today, listedUntil } = {}) {
   if (!isISODate(fromISO)) throw new RangeError(`from must be a YYYY-MM-DD date, got "${fromISO}"`);
   if (!Number.isInteger(days) || days < 1 || days > MAX_DAYS) throw new RangeError(`days must be an integer between 1 and ${MAX_DAYS}`);
 
@@ -55,6 +57,8 @@ export function nightsFor(venue, fromISO, days, { today } = {}) {
       night = { date, status: 'today' };
     } else if (today !== undefined && date < today) {
       night = { date, status: 'past' };
+    } else if (listedUntil && date > listedUntil) {
+      night = { date, status: 'unlisted' };
     } else {
       night = { date, status: 'dark' };
       dark++;

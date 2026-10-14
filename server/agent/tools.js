@@ -2,7 +2,7 @@
 // Qloo calls. Each tool returns plain JSON; the session keeps every output (the validator checks the final answer
 // against them), every Qloo call and every fallback. A tool that needs an earlier step runs it first.
 import { nightsFor } from '../calendar/nights.js';
-import { venueSummary } from '../calendar/venues.js';
+import { listedUntil, venueSummary } from '../calendar/venues.js';
 import { ablate } from '../rank/ablate.js';
 import { alsoLoves, neutralSignal } from '../rank/lift.js';
 import { buildPool, buildSignal, normalizeName } from '../rank/pool.js';
@@ -81,10 +81,11 @@ export function offerNote({ venue, day, act, contributors = [] }) {
 
 /**
  * @param {{ qloo: ReturnType<import('../qloo/client.js').createQlooClient>, venues: object[], venue: object, date: string,
- *   emit?: (label: string) => void }} args `emit` receives the plain-English step labels.
+ *   today?: string, emit?: (label: string) => void }} args `emit` receives the plain-English step labels.
+ *   `today` (live product) anchors the pool to the last 90 days and leaves out acts already booked into town.
  */
-export function createSession({ qloo, venues, venue, date, emit = () => {} }) {
-  return { qloo, venues, venue, date, emit, log: [], calls: [], fallbacks: [], steps: [], state: {} };
+export function createSession({ qloo, venues, venue, date, today, emit = () => {} }) {
+  return { qloo, venues, venue, date, today, emit, log: [], calls: [], fallbacks: [], steps: [], state: {} };
 }
 
 /** Outputs only: the agent's own inputs never count as a source for its numbers or ids. */
@@ -123,7 +124,7 @@ class ToolError extends Error {
 
 const IMPL = {
   async read_calendar(s) {
-    const night = nightsFor(s.venue, s.date, 1).nights[0];
+    const night = nightsFor(s.venue, s.date, 1, { today: s.today, listedUntil: listedUntil(s.venue) }).nights[0];
     const past = (s.venue.past_shows ?? [])
       .filter((x) => x.date < s.date)
       .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
@@ -148,10 +149,18 @@ const IMPL = {
     return { signal: r.signal, counts: r.counts, needs_input: r.needs_input, unresolved: r.unresolved.map((u) => u.name) };
   },
 
-  async build_pool(s, { window = 'season' } = {}) {
+  async build_pool(s) {
     const signal = await need(s, 'signal');
-    step(s, window === 'week' ? `Keeping it to acts who played ${s.venue.city} that week` : `Keeping it to acts who played ${s.venue.city} this season`);
-    const r = take(s, await buildPool(s.qloo, { venue: s.venue, venues: s.venues, date: s.date, window, excludeIds: signal.signal.map((x) => x.entity_id) }));
+    step(
+      s,
+      s.today !== undefined
+        ? `Keeping it to acts who played ${s.venue.city} in the last 90 days, with no date announced in town`
+        : `Keeping it to acts who played ${s.venue.city} this season`,
+    );
+    const r = take(
+      s,
+      await buildPool(s.qloo, { venue: s.venue, venues: s.venues, date: s.date, today: s.today, excludeIds: signal.signal.map((x) => x.entity_id) }),
+    );
     s.state.pool = r;
     s.state.ranking = undefined;
     s.state.explained = undefined;
@@ -292,8 +301,9 @@ export const TOOL_DEFS = Object.freeze([
   { name: 'resolve_entities', description: "Match the room's past headliners to taste-graph artists. Ambiguous names are listed under needs_input, not guessed.", input_schema: noInput },
   {
     name: 'build_pool',
-    description: 'Build the closed pool: headliners who played other rooms in the same city this season (90 days before to 60 days after the night). Acts from this room\'s own past program are left out.',
-    input_schema: { type: 'object', properties: { window: { type: 'string', enum: ['season', 'week'] } }, additionalProperties: false },
+    description:
+      "Build the closed pool: headliners who played other rooms in the same city in the last 90 days. Acts from this room's own past program, and acts with a show already announced in the city from today on, are left out.",
+    input_schema: noInput,
   },
   { name: 'rank_pool', description: "Rank the pool against the room's past headliners, sized to the room. Returns the ranked acts; only these may be shortlisted.", input_schema: noInput },
   {

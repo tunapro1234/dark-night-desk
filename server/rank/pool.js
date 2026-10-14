@@ -105,7 +105,8 @@ const mondayOf = (dateISO) => addDays(dateISO, -((new Date(`${dateISO}T00:00:00Z
 
 /**
  * Date window for the pool. `week`: the Monday-to-Sunday week of the date (a narrow product option).
- * `season`: 90 days before to 60 days after the date (product mode, "acts who played <city> this season").
+ * `season`: 90 days before to 60 days after the date ("acts who played <city> this season").
+ * The live product passes `today` to `buildPool`, which narrows the season to the 90 days before today.
  * The back-test uses `backtestWindow` instead.
  */
 export function poolWindow(dateISO, mode = 'season') {
@@ -168,14 +169,24 @@ export async function buildSignal(client, venue, { before, limit = 40 } = {}) {
  * @param {{ venue: object, venues: object[], date: string, window?: 'season' | 'week', excludeIds?: string[] }} args
  *   `venues` is every known venue; only other rooms in the venue's city feed the pool.
  *   `excludeIds` (usually the room's resolved signal) are removed after resolution as well.
+ *   `today` (live product): the season becomes the 90 days before today, and any act with a show listed in the city
+ *   from today on (another room or this one) is left out: it is already booked into town.
  */
-export async function buildPool(client, { venue, venues, date, window = 'season', excludeIds = [] }) {
-  const win = poolWindow(date, window);
+export async function buildPool(client, { venue, venues, date, window = 'season', excludeIds = [], today }) {
+  let win = poolWindow(date, window);
+  if (today !== undefined && window === 'season') win = { mode: window, from: addDays(today, -SEASON_BEFORE_DAYS), to: addDays(today, -1) };
   const others = venues.filter((v) => v.id !== venue.id && sameCity(v.city, venue.city));
   const ownPast = new Set((venue.past_shows ?? []).map((s) => normalizeName(s.headliner)));
+  const bookedAhead = new Set();
+  if (today !== undefined) {
+    for (const v of [venue, ...others]) {
+      for (const s of v.shows ?? []) if (s?.headliner && s.date >= today) bookedAhead.add(normalizeName(s.headliner));
+    }
+  }
 
   const plays = new Map(); // normalized name -> { name, played: [{ venue_id, date }] }
   const excludedNames = new Set();
+  const bookedNames = new Set();
   for (const v of others) {
     for (const s of programOf(v)) {
       if (!s?.headliner || s.date < win.from || s.date > win.to) continue;
@@ -183,6 +194,10 @@ export async function buildPool(client, { venue, venues, date, window = 'season'
       if (!k) continue;
       if (ownPast.has(k)) {
         excludedNames.add(k);
+        continue;
+      }
+      if (bookedAhead.has(k)) {
+        bookedNames.add(k);
         continue;
       }
       if (!plays.has(k)) plays.set(k, { name: s.headliner, played: [] });
@@ -217,6 +232,7 @@ export async function buildPool(client, { venue, venues, date, window = 'season'
       needs_input: r.needs_input.length,
       unresolved: r.unresolved.length,
       excluded_own_past: excludedNames.size + excludedIds,
+      excluded_booked_ahead: bookedNames.size,
       pool: pool.length,
     },
     needs_input: r.needs_input,

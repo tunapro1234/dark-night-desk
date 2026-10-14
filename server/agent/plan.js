@@ -53,7 +53,7 @@ async function saveRecorded(dataDir, run) {
  *   emit?: (label: string) => void, anthropic?: () => { messages: { create: Function } }, now?: () => number }} args
  *   `anthropic` is a factory, called only when the run is live.
  */
-export async function runPlan({ config, budget, qloo, qlooMode, venues, venue, date, ip, emit = () => {}, anthropic, now = Date.now }) {
+export async function runPlan({ config, budget, qloo, qlooMode, venues, venue, date, today, ip, emit = () => {}, anthropic, now = Date.now }) {
   const recorded = await findRecorded(config.dataDir, venue.id, date);
   const base = effectiveAgentMode(config, { hasRecordedRuns: Boolean(recorded) });
   const decided = planMode(base, budget, { ip, hasRecordedRuns: Boolean(recorded) });
@@ -69,7 +69,7 @@ export async function runPlan({ config, budget, qloo, qlooMode, venues, venue, d
   }
 
   if (decided.agent === 'live') {
-    const session = createSession({ qloo, venues, venue, date, emit });
+    const session = createSession({ qloo, venues, venue, date, today, emit });
     const live = await runLive({ anthropic: anthropic(), model: config.anthropic.model, session, budget });
     const llm = { model: config.anthropic.model, turns: live.turns, usage: live.usage };
     if (live.final) {
@@ -80,7 +80,7 @@ export async function runPlan({ config, budget, qloo, qlooMode, venues, venue, d
     fallbacks.push({ step: 'agent', reason: live.error.code, detail: live.error.errors ?? live.error.message, used: 'scripted plan' });
   }
 
-  const session = createSession({ qloo, venues, venue, date, emit });
+  const session = createSession({ qloo, venues, venue, date, today, emit });
   session.fallbacks.push(...fallbacks);
   const scripted = await runScripted(session);
   if (scripted.error) throw new PlanError(scripted.error.code, scripted.error.message);
@@ -94,8 +94,8 @@ export async function runPlan({ config, budget, qloo, qlooMode, venues, venue, d
  * @returns {Promise<{ shortlist: object[], changed: number, of: number, removed: object[], ignored: string[], method: string,
  *   calls: object[], error?: object }>}
  */
-export async function runAblate({ qloo, venues, venue, date, remove }) {
-  const session = createSession({ qloo, venues, venue, date });
+export async function runAblate({ qloo, venues, venue, date, today, remove }) {
+  const session = createSession({ qloo, venues, venue, date, today });
   const ranked = await runTool(session, 'rank_pool');
   if (ranked.error) throw new PlanError(ranked.error.code, ranked.error.message);
   const out = await runTool(session, 'ablate', { remove });

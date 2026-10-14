@@ -128,7 +128,9 @@ test('plan (scripted): SSE steps, five acts with reasons and evidence, note to t
   assert.match(res.headers['content-type'], /^text\/event-stream/);
   const steps = events.filter((e) => e.event === 'step').map((e) => e.data.label);
   assert.match(steps[0], /^Reading your last \d+ shows$/);
-  for (const s of ['Finding acts your crowd also loves', 'Keeping it to acts who played Exampleville this season', 'Sizing to your room']) assert.ok(steps.includes(s), s);
+  for (const s of ['Finding acts your crowd also loves', 'Keeping it to acts who played Exampleville in the last 90 days, with no date announced in town', 'Sizing to your room']) {
+    assert.ok(steps.includes(s), s);
+  }
   const r = resultOf(events);
   assert.deepEqual(r.mode, { agent: 'scripted', qloo: 'fixture' });
   assert.equal(r.night.date, night);

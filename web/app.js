@@ -146,18 +146,19 @@ async function loadCalendar(venueId) {
   } catch (err) {
     if (state.venueId !== venueId) return;
     $('dark-count').textContent = 'The calendar could not be read';
-    $('dark-sub').textContent = 'nights your venue sits empty on its public calendar';
+    $('dark-sub').textContent = 'open nights with no show announced on the public calendar';
     showCalendarNotice(`${err.message}. Reload the page to try again.`);
   }
 }
 
 function renderCalendar(cal) {
   const n = cal.dark_count;
-  // Dark nights are counted from tomorrow: today's night is too late to book.
-  const days = cal.nights.filter((x) => !x.today && x.status !== 'past').length;
+  // Dark nights are counted from tomorrow (today's night is too late to book) up to the last date the calendar was read for.
+  const days = cal.nights.filter((x) => !x.today && x.status !== 'past' && x.status !== 'unlisted').length;
   $('dark-count').textContent = n === 0 ? `No dark nights in the next ${days} days` : `${n} dark night${n === 1 ? '' : 's'} in the next ${days} days`;
   $('dark-sub').textContent =
-    n === 0 ? 'every open night on this public calendar already has a show' : 'nights your venue sits empty on its public calendar';
+    n === 0 ? 'every open night on this public calendar already has a show announced' : 'open nights with no show announced on the public calendar';
+  $('legend-unlisted').hidden = !cal.nights.some((x) => x.status === 'unlisted');
 
   const chip = $('source-chip');
   if (cal.source?.url) {
@@ -182,10 +183,11 @@ function renderCalendar(cal) {
         }, month, label));
     }
     const what = {
-      booked: `booked: ${night.show?.headliner ?? 'a show'}`,
+      booked: `show announced: ${night.show?.headliner ?? 'a show'}`,
       closed: 'closed that weekday',
       today: 'nothing booked, too late to plan',
       past: 'already past',
+      unlisted: 'past the last date the calendar was read for',
     }[night.status] ?? night.status;
     const said = `${night.today ? 'Today, ' : ''}${shortDay(night.date)}, ${what}`;
     return h('li', {},
@@ -520,6 +522,7 @@ function renderPool(r) {
     const c = p.counts ?? {};
     out.push(h('p', {}, `Acts who played ${p.city} this season (${p.window?.from ?? '?'} to ${p.window?.to ?? '?'}) at ${p.rooms?.length ?? 0} other room${p.rooms?.length === 1 ? '' : 's'}: ${c.pool ?? 0} in the pool.`));
     if (c.excluded_own_past) out.push(h('p', {}, `${c.excluded_own_past} left out because they already played this room.`));
+    if (c.excluded_booked_ahead) out.push(h('p', {}, `${c.excluded_booked_ahead} left out because a ${p.city} date of theirs is already announced.`));
     if (c.needs_input || c.unresolved) out.push(h('p', {}, `${c.needs_input ?? 0} names were ambiguous and ${c.unresolved ?? 0} were not found; neither is guessed.`));
     out.push(h('p', { class: 'hint' }, `Ranking method: ${p.method ?? 'unknown'}.`));
   }

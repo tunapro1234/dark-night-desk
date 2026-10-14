@@ -162,6 +162,37 @@ test('calendar: bad input is a 400, an unknown venue a 404', async () => {
   await app.close();
 });
 
+test('rooms with a partial source listing are not offered; nights past listed_until are unlisted', async () => {
+  const dir = path.join(tmp, 'listing');
+  await mkdir(dir, { recursive: true });
+  await writeFile(path.join(dir, 'full.json'), JSON.stringify({ ...validVenue('full'), listed_until: '2026-10-20' }));
+  await writeFile(path.join(dir, 'partner.json'), JSON.stringify({ ...validVenue('partner'), listing_complete: false }));
+  await writeFile(path.join(dir, 'flagged.json'), JSON.stringify({ ...validVenue('flagged'), listing_complete: true }));
+  const app = await buildApp(loadConfig({ DATA_DIR: path.join(tmp, 'var'), VENUES_DIR: dir }), { now: () => FIXED_NOW });
+  try {
+    assert.deepEqual((await app.inject('/api/venues')).json().map((v) => v.id).sort(), ['flagged', 'full']);
+    const hidden = await app.inject('/api/venues/partner/calendar');
+    assert.equal(hidden.statusCode, 404);
+    assert.match(hidden.json().error, /lists only some of its shows/);
+    const plan = (venue_id, date) => app.inject({ method: 'POST', url: '/api/plan', payload: { venue_id, date } });
+    assert.equal((await plan('partner', '2026-10-14')).statusCode, 404);
+
+    const cal = (await app.inject('/api/venues/full/calendar?days=15')).json();
+    assert.deepEqual(cal.nights.map((n) => n.status), [
+      'today', 'dark', 'dark', 'dark', 'dark', 'dark', 'dark', 'dark', 'dark', 'dark',
+      'unlisted', 'unlisted', 'unlisted', 'unlisted', 'unlisted',
+    ]);
+    assert.equal(cal.dark_count, 9);
+    const late = await plan('full', '2026-10-21');
+    assert.equal(late.statusCode, 409);
+    assert.match(late.json().error, /after 2026-10-20, the last date/);
+    const ablate = await app.inject({ method: 'POST', url: '/api/ablate', payload: { venue_id: 'full', date: '2026-10-21', remove: [] } });
+    assert.equal(ablate.statusCode, 409);
+  } finally {
+    await app.close();
+  }
+});
+
 test('serves the static page at /', async () => {
   const app = await appWith({});
   const res = await app.inject('/');

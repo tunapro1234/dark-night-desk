@@ -66,6 +66,7 @@ export function systemPrompt(session) {
     '  past shows explain lists first for that act.',
     '- Never write a number that is not in a tool output. No fee, ticket, attendance or capacity estimates.',
     `- The pool is "acts who played ${city} this season". Do not say an act is touring nearby.`,
+    `  Acts with a show already announced in ${city} are left out of it; do not suggest booking an act around another date.`,
     '- Popularity is a rough stand-in for draw; we have no ticket data.',
     "- The offer note goes to the artist's booking agent, keeps the line \"Guarantee: ___\" blank, and is never sent.",
     '  It speaks for the room: "Our crowd came for A and B. X sits right between them." (explain gives it as',

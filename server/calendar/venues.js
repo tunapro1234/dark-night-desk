@@ -9,6 +9,10 @@
 //   closed_weekdays: [1],                     0 = Sunday ... 6 = Saturday; days the room is always shut
 //   shows:      [{ date: "YYYY-MM-DD", headliner, source_url }],   upcoming program
 //   past_shows: [{ date: "YYYY-MM-DD", headliner, source_url }],   past program (the room's own crowd)
+//   listing_complete?: false                  the source lists only some of this room's shows (a partner room on a
+//                                             promoter's calendar): its shows feed other rooms' pools, but the room
+//                                             is not offered for planning. Absent means true.
+//   listed_until?: "YYYY-MM-DD"               last date the source was read for; later nights are not listed yet
 //   _synthetic?: true                         hand-written test venue, never real data
 // }
 import { readdir, readFile } from 'node:fs/promises';
@@ -72,6 +76,8 @@ export function validateVenue(venue) {
   }
   checkShows(errors, 'shows', venue.shows);
   checkShows(errors, 'past_shows', venue.past_shows);
+  if (venue.listing_complete !== undefined && typeof venue.listing_complete !== 'boolean') errors.push('listing_complete, when present, must be true or false');
+  if (venue.listed_until !== undefined && !isISODate(venue.listed_until)) errors.push('listed_until, when present, must be a YYYY-MM-DD date');
   if (venue._synthetic !== undefined && venue._synthetic !== true) errors.push('_synthetic, when present, must be true');
   return { ok: errors.length === 0, errors };
 }
@@ -115,6 +121,12 @@ export async function loadVenues(dir, { onSkip = () => {} } = {}) {
   }
   return venues;
 }
+
+/** True when the room can be planned: its calendar source lists all of its public shows. */
+export const isPlannable = (venue) => venue?.listing_complete !== false;
+
+/** Last date the calendar source was read for, or null when the file does not say. */
+export const listedUntil = (venue) => (isISODate(venue?.listed_until) ? venue.listed_until : null);
 
 /** Public summary of a venue, as served by GET /api/venues. */
 export function venueSummary(venue) {

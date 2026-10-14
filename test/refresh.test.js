@@ -9,7 +9,7 @@ import { decodeEntities, htmlText, isCanceled, listedShowCount, parseMonthPage }
 import { robotsVerdict } from '../server/calendar/robots.js';
 import { validateVenue } from '../server/calendar/venues.js';
 import {
-  asciiJson, buildVenues, main, MIN_GAP_MS, monthsToRead, refreshVenues, roomId, USER_AGENT,
+  asciiJson, buildVenues, COMPLETE_ROOMS, main, MIN_GAP_MS, monthsToRead, refreshVenues, roomId, USER_AGENT,
 } from '../scripts/refresh-venues.js';
 
 const HTML_DIR = path.join(REPO_ROOT, 'test', 'fixtures', 'synthetic', 'html');
@@ -99,7 +99,14 @@ test('buildVenues: windows, canceled rows skipped, existing file name and capaci
     ['fa-room-a-old-name.json', false], ['fa-synthetic-gone-room.json', false], ['fa-synthetic-new-room.json', true],
   ]);
   const [a, gone, fresh] = built.map((b) => b.venue);
-  assert.deepEqual(Object.keys(a), ['id', 'name', 'city', 'capacity_band', 'calendar_source_url', 'read_at', 'closed_weekdays', 'shows', 'past_shows', 'locality']);
+  assert.deepEqual(Object.keys(a), [
+    'id', 'name', 'city', 'capacity_band', 'calendar_source_url', 'read_at', 'closed_weekdays', 'shows', 'past_shows', 'locality',
+    'listing_complete', 'listed_until',
+  ]);
+  for (const v of [a, gone, fresh]) {
+    assert.equal(v.listing_complete, false);
+    assert.equal(v.listed_until, '2026-12-31');
+  }
   assert.equal(a.capacity_band, '200-400');
   assert.equal(a.city, 'Synthville');
   assert.deepEqual(a.closed_weekdays, [1]);
@@ -111,6 +118,23 @@ test('buildVenues: windows, canceled rows skipped, existing file name and capaci
   assert.equal(fresh.city, 'Minneapolis');
   assert.deepEqual(fresh.closed_weekdays, []);
   for (const b of built) assert.deepEqual(validateVenue(b.venue), { ok: true, errors: [] });
+});
+
+test('buildVenues: only the rooms in COMPLETE_ROOMS are marked listing_complete, whatever the old file said', () => {
+  const complete = [...COMPLETE_ROOMS][0];
+  const rows = [
+    { date: '2026-11-03', room: complete, title: 'Synthetic Act 1', source_url: 'https://calendar.example.test/event/1/', canceled: false },
+    { date: '2026-11-04', room: 'Synthetic Room A', title: 'Synthetic Act 2', source_url: 'https://calendar.example.test/event/2/', canceled: false },
+  ];
+  const existing = new Map([
+    ['synthetic room a', { file: 'fa-synthetic-room-a.json', venue: { id: 'fa-synthetic-room-a', name: 'Synthetic Room A', listing_complete: true, listed_until: '2026-01-01' } }],
+  ]);
+  const built = buildVenues(rows, existing, { today: '2026-11-01', readAt: '2026-11-01T06:30:00Z' });
+  const byName = new Map(built.map((b) => [b.venue.name, b.venue]));
+  assert.equal(byName.get(complete).listing_complete, true);
+  assert.equal(byName.get('Synthetic Room A').listing_complete, false);
+  assert.equal(byName.get('Synthetic Room A').listed_until, '2026-12-31');
+  assert.deepEqual([...COMPLETE_ROOMS].sort(), ['7th st entry', 'fine line', 'first avenue', 'turf club']);
 });
 
 /** A fake site: robots.txt plus one synthetic month page per start_date, on a fake clock. */

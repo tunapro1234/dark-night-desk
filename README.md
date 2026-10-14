@@ -3,7 +3,7 @@
 fill the nights your venue sits empty
 
 A dark night is a night the venue stays closed because nothing is booked. Dark Night Desk reads a venue's public calendar,
-finds those nights, and helps the booker fill them.
+finds the open nights with no show announced, and helps the booker fill them.
 
 Status: in development
 
@@ -81,7 +81,7 @@ Each venue is one JSON file in `VENUES_DIR` (schema checked by `server/calendar/
 {
   "id": "example-room", "name": "Example Room", "city": "Exampleville", "capacity_band": "250-500",
   "calendar_source_url": "https://example.org/calendar", "read_at": "2026-10-11",
-  "closed_weekdays": [1],
+  "closed_weekdays": [1], "listing_complete": true, "listed_until": "2026-12-10",
   "shows":      [{ "date": "2026-10-13", "headliner": "Synthetic Act 1", "source_url": "https://example.org/shows/2026-10-13" }],
   "past_shows": [{ "date": "2026-07-02", "headliner": "Synthetic Act 101", "source_url": "https://example.org/shows/2026-07-02" }]
 }
@@ -97,12 +97,19 @@ page opens on Fine Line when it is present, otherwise on the first venue.
 program (the only source for "this room's crowd"). `test/fixtures/synthetic/venues/example-room.json` is a hand-written test venue
 (`"_synthetic": true`, made-up city and acts).
 
+Two optional fields keep the calendar honest. `listing_complete: false` marks a room whose source lists only some of its shows:
+First Avenue's calendar carries every show at its own four club rooms (First Avenue, 7th St Entry, Turf Club, Fine Line), but at
+the theaters and partner rooms it lists only the shows First Avenue presents, so an empty night there is not an empty room.
+Those 11 rooms still feed the city pool, but `GET /api/venues` leaves them out and their calendar and plan routes answer 404.
+`listed_until` is the last date the source was read for; nights after it are `unlisted`, not dark.
+
 `GET /api/venues/:id/calendar?from=YYYY-MM-DD&days=60` returns every night in the window as `booked` (a show is listed),
-`closed` (a weekday the room is always shut; not counted as empty) or `dark` (open weekday, nothing booked), plus `dark_count`
+`closed` (a weekday the room is always shut; not counted as empty), `unlisted` (after `listed_until`; nothing is known yet,
+not counted as empty) or `dark` (open weekday, no show announced), plus `dark_count`
 and the calendar source. `from` defaults to today and all date math is done in UTC, so the server time zone never shifts a night.
 `days` is 1 to 120. Today's night carries `today: true`; with nothing booked its status is `today`, and empty nights before today
 are `past`. Both are too late to book, so dark nights (and `dark_count`) start tomorrow, and `/api/plan` and `/api/ablate`
-answer 409 for today or a past date.
+answer 409 for today, a past date or an `unlisted` night.
 
 ## Calendar refresh
 
@@ -121,7 +128,8 @@ node scripts/refresh-venues.js             # read and rewrite the venue files
   from the day marker before each row. Rows marked canceled or postponed (by title, link or status badge) are skipped.
 - Each room becomes `fa-<room-slug>.json`. Existing file names, `capacity_band`, `city` and `closed_weekdays` are kept; a new
   room gets `capacity_band: "unknown"`. `shows` is today to today plus 60 days, `past_shows` is the 90 days before today,
-  `read_at` is the time of the run. A room the calendar no longer lists keeps its file with empty lists.
+  `read_at` is the time of the run, `listed_until` is today plus 60 days, and `listing_complete` is true only for the four
+  rooms in `COMPLETE_ROOMS`. A room the calendar no longer lists keeps its file with empty lists.
 - All or nothing: any failed page stops the run before a write. Every file is checked against the venue schema, written to a
   temporary name and renamed into place. Raw pages are kept only in `DATA_DIR/raw-calendar/`, never in the repo. Test venues
   (`_synthetic`) and other files in `VENUES_DIR` are left alone.
@@ -144,8 +152,10 @@ Parser tests use only hand-written synthetic pages (`test/fixtures/synthetic/htm
 
 ## Ranking core (`server/rank/`, no LLM)
 
-- **Pool** (`pool.js`): headliners who played other rooms in the same city from 90 days before to 60 days after the night
-  ("acts who played <city> this season"; the back-test uses its own 21-day window, see below). Acts from the room's own past program are
+- **Pool** (`pool.js`): headliners who played other rooms in the same city ("acts who played <city> this season"). The live product
+  passes `today`: the window is the 90 days before today, and any act with a show announced in the city from today on (at another room
+  or this one) is left out and counted as `excluded_booked_ahead`, since it is already booked into town. Without `today` the window is
+  90 days before to 60 days after the night; the back-test uses its own 21-day window, see below. Acts from the room's own past program are
   left out. Names resolve with `/search` only when the top artist result has the same normalized name (whole title, then the part before
   "with", "feat." and similar). Anything else is counted: `needs_input` keeps the top 3 candidates, `unresolved` is dropped.
 - **Rankers** (`rank.js`): `rankPool` (the room's past headliners as the taste signal), `rankByPopularity` (a rough stand-in for draw;
@@ -246,7 +256,8 @@ added the same day before any Qloo call. The copy here is unchanged. The code fo
 
 Plain HTML, CSS and browser JavaScript, served by the same server. No framework, no build step, no outside scripts or fonts.
 
-- **First screen:** Fine Line, or the first venue. One big line ("N dark nights in the next 60 days": the 60 nights from tomorrow),
+- **First screen:** Fine Line, or the first venue. One big line ("N dark nights in the next 60 days": the nights from tomorrow up to
+  `listed_until`, so the count can drop below 60 late in the week; later nights show as "not read yet"),
   the strip of today plus those 60 nights (`?days=61`; dark nights are the dark squares, arrow keys move between them; today is
   tagged "today" where the month label would sit and cannot be picked),
   and a chip linking the venue's public calendar with its read date.

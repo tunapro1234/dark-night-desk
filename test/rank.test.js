@@ -97,6 +97,21 @@ test('buildPool: week window keeps only that week\'s headliners', async () => {
   assert.deepEqual(week.pool.map((p) => p.played.map((x) => x.date)).flat().sort(), ['2026-11-06', '2026-11-07']);
 });
 
+test('buildPool with today: the 90 days before today, minus acts already booked into town', async () => {
+  const show = (date, n) => ({ date, headliner: `Synthetic Act ${n}`, source_url: `https://example.org/${n}-${date}` });
+  const host = { ...room, shows: [show('2026-11-20', 3)] };
+  const other = { ...hall, id: 'test-hall', shows: [show('2026-11-10', 2)],
+    past_shows: [show('2026-10-01', 1), show('2026-10-02', 2), show('2026-10-03', 3), show('2026-07-01', 4)] };
+  const r = await buildPool(fixtureClient(), { venue: host, venues: [host, other], date: '2026-11-15', today: '2026-11-01' });
+  assert.deepEqual(r.window, { mode: 'season', from: '2026-08-03', to: '2026-10-31' });
+  assert.deepEqual(r.pool.map((p) => p.entity_id), ['synthetic-artist-1'], 'act 2 is booked at the other room, act 3 here, act 4 is too old');
+  assert.equal(r.counts.excluded_booked_ahead, 2);
+  // Without today the old season window stays and nothing is left out for being booked ahead.
+  const old = await buildPool(fixtureClient(), { venue: host, venues: [host, other], date: '2026-11-15' });
+  assert.equal(old.counts.excluded_booked_ahead, 0);
+  assert.deepEqual(old.pool.map((p) => p.entity_id).sort(), ['synthetic-artist-1', 'synthetic-artist-2', 'synthetic-artist-3']);
+});
+
 test('buildPool counts unresolved and ambiguous names', async () => {
   const odd = { ...hall, id: 'odd-hall', shows: [
     { date: NIGHT, headliner: 'Nobody We Know', source_url: 'https://example.org/1' },

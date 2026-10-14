@@ -23,6 +23,10 @@ export const CALENDAR_URL = `${SITE}/shows/`;
 export const MIN_GAP_MS = 2500;
 export const PAST_DAYS = 90;
 export const AHEAD_DAYS = 60;
+// First Avenue's own club rooms: the FA calendar lists their whole public program. Every other room on that calendar
+// (theaters, partner clubs) also books shows FA does not present, so its empty nights there are not empty rooms.
+// Those rooms still feed the city pool, but they are not offered for planning (listing_complete: false).
+export const COMPLETE_ROOMS = new Set(['first avenue', '7th st entry', 'turf club', 'fine line']);
 const DEFAULT_CITY = 'Minneapolis';
 const REQUEST_TIMEOUT_MS = 30_000;
 
@@ -124,8 +128,20 @@ export function buildVenues(rows, existing, { today, readAt }) {
   for (const [nameKey, room] of rooms) {
     const prior = existing.get(nameKey);
     const id = prior ? prior.file.replace(/\.json$/, '') : roomId(room.name);
-    const { id: _i, name: _n, city, capacity_band, calendar_source_url: _c, read_at: _r, closed_weekdays, shows: _s, past_shows: _p, ...extra } =
-      prior?.venue ?? {};
+    const {
+      id: _i,
+      name: _n,
+      city,
+      capacity_band,
+      calendar_source_url: _c,
+      read_at: _r,
+      closed_weekdays,
+      shows: _s,
+      past_shows: _p,
+      listing_complete: _lc,
+      listed_until: _lu,
+      ...extra
+    } = prior?.venue ?? {};
     const sorted = [...room.rows].sort(byDate);
     out.push({
       file: `${id}.json`,
@@ -141,6 +157,8 @@ export function buildVenues(rows, existing, { today, readAt }) {
         shows: sorted.filter((r) => r.date >= showsFrom && r.date <= showsTo).map(show),
         past_shows: sorted.filter((r) => r.date >= pastFrom && r.date <= pastTo).map(show),
         ...extra,
+        listing_complete: COMPLETE_ROOMS.has(nameKey),
+        listed_until: showsTo,
       },
     });
   }

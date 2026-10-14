@@ -5,7 +5,7 @@ import Fastify from 'fastify';
 import fastifyStatic from '@fastify/static';
 import { REPO_ROOT, budgetOptions, effectiveAgentMode, effectiveQlooMode } from './config.js';
 import { nightsFor, todayISO } from './calendar/nights.js';
-import { isISODate, loadVenues, venueSummary } from './calendar/venues.js';
+import { isISODate, isPlannable, listedUntil, loadVenues, venueSummary } from './calendar/venues.js';
 import { budgetPath, clientIp, createBudget } from './budget/budget.js';
 import { createQlooClient } from './qloo/client.js';
 import { cachePath, createQlooCache } from './qloo/cache.js';
@@ -65,7 +65,10 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
       onSkip: (file, reason) => app.log.warn({ file: path.basename(file), reason }, 'skipped venue file'),
     });
 
-  app.get('/api/venues', async () => (await venues()).map(venueSummary));
+  // Rooms whose source lists only some of their shows stay in the city pool but are not offered for planning.
+  const NOT_PLANNABLE = 'this room is not offered: its public calendar lists only some of its shows';
+
+  app.get('/api/venues', async () => (await venues()).filter(isPlannable).map(venueSummary));
 
   app.get('/api/venues/:id/calendar', async (req, reply) => {
     const from = req.query.from ?? todayISO(now());
@@ -77,9 +80,10 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
     }
     const venue = (await venues()).find((v) => v.id === req.params.id);
     if (!venue) return reply.code(404).send({ error: 'unknown venue' });
+    if (!isPlannable(venue)) return reply.code(404).send({ error: NOT_PLANNABLE });
     return {
       venue: venueSummary(venue),
-      ...nightsFor(venue, from, days, { today: todayISO(now()) }),
+      ...nightsFor(venue, from, days, { today: todayISO(now()), listedUntil: listedUntil(venue) }),
       source: { url: venue.calendar_source_url, read_at: venue.read_at },
     };
   });
@@ -92,12 +96,17 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
     const all = await venues();
     const venue = all.find((v) => v.id === venueId);
     if (!venue) return void reply.code(404).send({ error: 'unknown venue' });
-    const status = nightsFor(venue, date, 1, { today: todayISO(now()) }).nights[0].status;
+    if (!isPlannable(venue)) return void reply.code(404).send({ error: NOT_PLANNABLE });
+    const today = todayISO(now());
+    const status = nightsFor(venue, date, 1, { today, listedUntil: listedUntil(venue) }).nights[0].status;
     if (status === 'today' || status === 'past') {
       return void reply.code(409).send({ error: `${date} is ${status === 'today' ? 'today' : 'in the past'}; plans start from tomorrow` });
     }
+    if (status === 'unlisted') {
+      return void reply.code(409).send({ error: `${date} is after ${listedUntil(venue)}, the last date ${venue.name}'s calendar was read for` });
+    }
     if (status !== 'dark') return void reply.code(409).send({ error: `${date} is not a dark night at ${venue.name} (${status})` });
-    return { venues: all, venue, date };
+    return { venues: all, venue, date, today };
   }
 
   const qlooMode = effectiveQlooMode(config);

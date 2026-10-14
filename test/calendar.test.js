@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { REPO_ROOT } from '../server/config.js';
 import { addDays, nightsFor, todayISO } from '../server/calendar/nights.js';
-import { isISODate, loadVenues, validateVenue } from '../server/calendar/venues.js';
+import { isISODate, isPlannable, listedUntil, loadVenues, validateVenue } from '../server/calendar/venues.js';
 
 const FIXTURE_DIR = path.join(REPO_ROOT, 'test', 'fixtures', 'synthetic', 'venues');
 const room = JSON.parse(readFileSync(path.join(FIXTURE_DIR, 'example-room.json'), 'utf8'));
@@ -36,6 +36,22 @@ test('nightsFor: a show on a usual closing day is booked, past shows count as bo
     past_shows: [{ date: '2026-10-28', headliner: 'Synthetic Act D', source_url: 'https://example.org/d' }] };
   assert.equal(nightsFor(v, '2026-11-02', 1).nights[0].status, 'booked');
   assert.equal(nightsFor(v, '2026-10-28', 1).nights[0].status, 'booked');
+});
+
+test('nightsFor: empty open nights after listedUntil are unlisted, not dark', () => {
+  const r = nightsFor(venue, '2026-11-02', 7, { listedUntil: '2026-11-05' });
+  assert.deepEqual(r.nights.map((n) => [n.date, n.status]), [
+    ['2026-11-02', 'closed'], ['2026-11-03', 'booked'], ['2026-11-04', 'dark'], ['2026-11-05', 'booked'],
+    ['2026-11-06', 'unlisted'], ['2026-11-07', 'unlisted'], ['2026-11-08', 'unlisted'],
+  ]);
+  assert.equal(r.dark_count, 1);
+  // A listed show or a closing weekday still wins after the horizon; null or absent means no horizon.
+  const late = { closed_weekdays: [1], shows: [{ date: '2026-11-07', headliner: 'Synthetic Act E', source_url: 'https://example.org/e' }] };
+  assert.deepEqual(nightsFor(late, '2026-11-07', 3, { listedUntil: '2026-11-01' }).nights.map((n) => n.status), ['booked', 'unlisted', 'closed']);
+  assert.equal(nightsFor(venue, '2026-11-02', 7, { listedUntil: null }).dark_count, 4);
+  // today and past come before unlisted.
+  assert.deepEqual(nightsFor(venue, '2026-11-06', 3, { today: '2026-11-07', listedUntil: '2026-11-01' }).nights.map((n) => n.status),
+    ['past', 'today', 'unlisted']);
 });
 
 test('nightsFor: crosses month, year and leap-day boundaries', () => {
@@ -102,6 +118,19 @@ test('validateVenue reports each schema problem', () => {
   }
   assert.equal(validateVenue([]).ok, false);
   assert.equal(validateVenue({ ...room, read_at: '2026-10-11T08:00:00Z' }).ok, true);
+});
+
+test('listing_complete and listed_until: optional, checked when present', () => {
+  assert.equal(validateVenue({ ...room, listing_complete: false, listed_until: '2026-12-10' }).ok, true);
+  const { ok, errors } = validateVenue({ ...room, listing_complete: 'no', listed_until: '2026-12-32' });
+  assert.equal(ok, false);
+  assert.ok(errors.some((e) => /listing_complete/.test(e)), JSON.stringify(errors));
+  assert.ok(errors.some((e) => /listed_until/.test(e)), JSON.stringify(errors));
+  assert.equal(isPlannable(room), true);
+  assert.equal(isPlannable({ ...room, listing_complete: true }), true);
+  assert.equal(isPlannable({ ...room, listing_complete: false }), false);
+  assert.equal(listedUntil(room), null);
+  assert.equal(listedUntil({ ...room, listed_until: '2026-12-10' }), '2026-12-10');
 });
 
 test('loadVenues reads the synthetic directory', async () => {
