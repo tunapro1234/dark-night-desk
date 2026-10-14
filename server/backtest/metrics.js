@@ -155,3 +155,53 @@ export function claimRule({ rooms, shows, qMinusP, qMinusPlacebo = {} }) {
   const used = Object.values(checks).every(Boolean);
   return { used, status: used ? 'full' : 'pilot', checks };
 }
+
+// ---------- Study 2 (BACKTEST-2.md Amendment 1): rooms inside clusters ----------
+// Values stay grouped by room; clusterOf maps a room to its cluster. A cluster's value is the mean of its room means,
+// and clusters count with equal weight.
+
+/** { cluster: [mean of its room means] }, the form clusterBootstrap draws from when it should draw clusters. */
+export function clusterMeans(valuesByRoom, clusterOf) {
+  const rooms = new Map();
+  for (const r of roomsOf(valuesByRoom)) {
+    const c = clusterOf(r);
+    if (!rooms.has(c)) rooms.set(c, []);
+    rooms.get(c).push(mean(valuesByRoom[r]));
+  }
+  return Object.fromEntries([...rooms].map(([c, means]) => [c, [mean(means)]]));
+}
+
+/** Bootstrap over clusters: draw clusters with replacement, each keeping its mean of room means. */
+export const clusterBootstrap2 = (valuesByRoom, clusterOf, opts) => clusterBootstrap(clusterMeans(valuesByRoom, clusterOf), opts);
+export const clusterBootstrap2Diff = (aByRoom, bByRoom, clusterOf, opts) => clusterBootstrap2(pairedDifferences(aByRoom, bByRoom), clusterOf, opts);
+
+/**
+ * Shows resampled within each room (too narrow: shows in a room are not independent), then room means averaged per cluster,
+ * then clusters with equal weight.
+ */
+export function nestedStratifiedBootstrap(valuesByRoom, clusterOf, { reps = 2000, seed = 1 } = {}) {
+  const rooms = roomsOf(valuesByRoom);
+  if (!rooms.length) return { mean: NaN, lo: NaN, hi: NaN };
+  const clusters = [...new Set(rooms.map(clusterOf))].sort();
+  const members = clusters.map((c) => rooms.filter((r) => clusterOf(r) === c));
+  const point = mean(members.map((rs) => mean(rs.map((r) => mean(valuesByRoom[r])))));
+  const rand = seededRandom(seed);
+  const stats = [];
+  for (let b = 0; b < reps; b++) {
+    let t = 0;
+    for (const rs of members) {
+      let ct = 0;
+      for (const r of rs) {
+        const v = valuesByRoom[r];
+        let s = 0;
+        for (let i = 0; i < v.length; i++) s += v[Math.floor(rand() * v.length)];
+        ct += s / v.length;
+      }
+      t += ct / rs.length;
+    }
+    stats.push(t / members.length);
+  }
+  return interval(point, stats);
+}
+export const nestedStratifiedBootstrapDiff = (aByRoom, bByRoom, clusterOf, opts) =>
+  nestedStratifiedBootstrap(pairedDifferences(aByRoom, bByRoom), clusterOf, opts);

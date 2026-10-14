@@ -123,3 +123,57 @@ written, with tests on synthetic data, and committed before compiling.
 10. **Direction of "excludes 0".** In the claim rule, "excludes 0" means the lower bound of the interval is above 0 (Study 1 Amendment 3).
 11. **Study 1 rooms.** §6 also excludes Hideout (Chicago) and Black Cat (Washington, DC), Study 1's placebo rooms, whose 2026 listings are
     already in Study 1's data.
+12. **Runner choices (14 Oct 2026, later the same night).** The Study 2 runner is now written, tested on synthetic data only and committed
+    (`server/backtest/study2.js`, `study2-data.js`, `scripts/backtest2.js`). An outside review of the runner found choices the text above does
+    not fix. They are fixed here, still before `venues.csv` is committed, before any show list is compiled and before any Qloo call.
+    - **No signal.** A test room with no resolved S1 headliner has no signal: its S2 shows are dropped (reason `no_signal`) and it is never
+      a placebo. Without this, one such room would stop Q and the placebo for the whole study.
+    - **Placebo.** The test rooms, in `venues.csv` order after the cap, are shuffled once with seed 2. A test room's candidates are the rooms
+      after it in that order, wrapping round, in another metro and another cluster; the first is its assigned placebo. For each window,
+      the placebo signal is that room's S1 headliners minus the window's pool, as Q's signal never overlaps the pool either. If nothing is
+      left, the next candidate is used. The number of windows that moved to another candidate, and of acts removed, is reported. If a
+      window has no candidate left, the placebo is not run and the claim sentence cannot be used.
+    - **Cap.** The 20-cluster cap counts clusters that hold a test room, in `venues.csv` order. Test rooms of later clusters become pool
+      rooms. Every listed venue feeds its metro pool and counts for §5.
+    - **Venue and coverage.** A venue is the rooms that share a `building` in `venues.csv` (one room if it is empty). Coverage (§4,
+      Amendment 4) is counted on `shows.csv`: rows not canceled, not off-site, with a title and with none of the Amendment 4 words. A room
+      is a test room if and only if it meets coverage by itself, and a venue is eligible if its rooms together meet it. The run refuses
+      to start if `venues.csv` disagrees with these counts; the file is then corrected, with the reason in `sources.md`.
+    - **One unit per act and night.** A room's S2 rows with the same night and the same resolved headliner (a repeated listing, or early
+      and late sets) count once; the rest are dropped (reason `duplicate`).
+    - **Dropped rows.** Rows dropped as canceled, off-site, untitled or non-music leave the pool and the S1 signal as well as the test.
+      An act whose only S1 row at the room was dropped is therefore not a repeat booking.
+    - **Midnight.** A start written as exactly 00:00 with `Z` or an offset counts as a date with no time (Amendment 3), and its written
+      date is used: feeds write date-only values that way. Impossible dates are rejected.
+    - **Separator.** "Its first separator" (Amendment 2) means the first separator in Study 1's list order that occurs in the title, as in
+      Study 1.
+    - **Performer field.** "Person or group" means the entries the source types as a person or a group (schema.org `Person`,
+      `MusicGroup` or `PerformingGroup`, or the feed's own artist or performer field). The venue's building name is skipped, like the
+      venue's and the operator's.
+    - **Popularity.** P and P2 use the popularity value in the resolving `/search` result, as in Study 1. The shares of positives and of
+      pool members without a value are reported. P2's target is the median over the S1 headliners that have a value.
+    - **Rankers on part of the sample.** T, P2 and the venue variant are reported over the rooms where they are defined (a room with no
+      genre tag, no popularity target or no place entity is left out), with the room count; Q − T and Q − P2 use those rooms only. Q, P,
+      the placebo and L must cover every tested room, or they are reported as not run.
+    - **Smaller choices.** The `/search` resolution rate by size (Amendment 8) counts test rooms' S1 and S2 rows only. "Outside the
+      resolved name" (Amendment 4) means the title with the first whole-word occurrence of the resolved name taken out. The top-5
+      popularity median (Amendment 6) pools all test shows. Same-room counts (Amendment 7) leave out the show's own headliner. The splits
+      (Amendment 8) are point MRRs, weighted by cluster like the headline. Cut windows are counted.
+    - **Run discipline.** The test run accepts only bootstrap seed 1 and 2,000 resamples. Its log records the commit and the SHA-256 of
+      both data files.
+13. **Expert-answer variants (Amendment 9).** Three questions went out on 14 Oct 2026 (two researchers, one booker). These are the only
+    variants an answer can switch on. A variant is switched on only if an answer recommends it in substance; the answer (quoted with
+    permission, otherwise paraphrased) and the decision go into `sources.md` before the run, and the variant's code and synthetic tests
+    are committed before the run. A switched-on variant is computed in the same single run and reported beside the headline, with the
+    same intervals and drop counts, whatever its result. It never replaces the headline and is never a condition of the claim rule. If
+    the headline's Q − P or Q − placebo lower bound is above 0 and the variant's is not, the write-up says so next to the claim sentence.
+    - **V1, acts already seen in the city.** The pool also leaves out every act that headlined a counted S1 show at any listed venue of
+      the metro (the room's own S1 headliners are already out). A test show whose headliner is such an act is dropped (reason
+      `metro_repeat`). Windows whose pool falls under 10 are dropped as in the headline.
+    - **V2, recent shows weigh more.** The room's S1 headliners are split by show date into older (1 Apr to 15 May 2026) and recent
+      (16 May to 30 Jun 2026); an act with shows in both halves counts as recent. Each half ranks the pool as Q does. An act's score is
+      (2 × its recent affinity + its older affinity) / 3, a missing affinity counting as 0; acts with no affinity in either half go to
+      the bottom in pool order, and ties keep pool order. If one half is empty, the other half alone is used. The placebo is not changed.
+    - **V3, no acts from large rooms.** For test rooms with a published capacity of at most 650, the pool also leaves out every act whose
+      counted shows in the window are all at rooms with a published capacity of 1,500 or more. Acts with any show at a smaller room, or at
+      a room with no published figure, stay. The positive always stays, since it played the test room. Other test rooms are unchanged.
