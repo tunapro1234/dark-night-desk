@@ -5,6 +5,11 @@ fill the nights your venue sits empty
 A dark night is a night the venue stays closed because nothing is booked. Dark Night Desk reads a venue's public calendar,
 finds the open nights with no show announced, and helps the booker fill them.
 
+At three of First Avenue's club rooms in the Twin Cities (7th St Entry, Fine Line, Turf Club), 181 of 549 nights from 1 April to
+30 September 2026 had no show listed on the public calendar; 123 of those were Monday to Wednesday. Counted by
+`node scripts/nothing-listed.js` from `data/backtest/shows.csv` (canceled rows left out). Private hires do not appear on a public calendar, so this counts nights with
+nothing listed, not nights the room was shut.
+
 Status: in development
 
 Venue calendars are read from each venue's public website. Dark Night Desk is not affiliated with any venue or artist.

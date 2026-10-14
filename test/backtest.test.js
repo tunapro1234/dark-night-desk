@@ -16,6 +16,7 @@ import { SAMPLING_DEFAULT, SAMPLING_T0, SINGLE_DRAW, createLlmRanker, parseOrder
 import { backtestWindow } from '../server/rank/pool.js';
 import { dryRun, runBacktest } from '../server/backtest/run.js';
 import { LOCK_NAME, main, parseArgs } from '../scripts/backtest.js';
+import { nothingListed } from '../scripts/nothing-listed.js';
 
 const tmp = await mkdtemp(path.join(os.tmpdir(), 'dnd-bt-'));
 test.after(() => rm(tmp, { recursive: true, force: true }));
@@ -428,4 +429,18 @@ test('cli: without a Qloo key the test run is refused and no lock is written', a
   assert.equal(await main(['--restrict', 'filter', '--data', data, '--out', path.join(tmp, 'nokey-out')], { DATA_DIR: dataDir }, (l) => lines.push(l)), 2);
   assert.match(lines.at(-1), /QLOO_API_KEY/);
   assert.ok(!existsSync(path.join(dataDir, LOCK_NAME)));
+});
+
+test('nothing-listed: counts nights with no listed show per room, canceled rows do not count, Monday to Wednesday split', () => {
+  const rows = [
+    { venue_id: 'room-a', date: '2026-11-02', canceled: '0' },
+    { venue_id: 'room-a', date: '2026-11-03', canceled: '1' },
+    { venue_id: 'room-b', date: '2026-11-08', canceled: '0' },
+    { venue_id: 'room-c', date: '2026-11-04', canceled: '0' },
+  ];
+  const r = nothingListed(rows, { rooms: ['room-a', 'room-b'], from: '2026-11-02', to: '2026-11-08' });
+  assert.equal(r.nights, 14);
+  assert.deepEqual(r.rooms, { 'room-a': { nothing_listed: 6, mon_to_wed: 2 }, 'room-b': { nothing_listed: 6, mon_to_wed: 3 } });
+  assert.equal(r.nothing_listed, 12);
+  assert.equal(r.mon_to_wed, 5);
 });
