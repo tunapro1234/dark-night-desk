@@ -19,9 +19,10 @@ Venue calendars are read from each venue's public website. Dark Night Desk is no
 Requires Node 22 or newer.
 
 ```sh
-npm install
+git clone <this repo> && cd dark-night-desk
+npm ci             # exact versions from package-lock.json
+npm test           # synthetic fixtures only: no key, no network
 npm start          # http://127.0.0.1:3020
-npm test
 ```
 
 Without `QLOO_API_KEY` the server starts with Qloo shown as "not connected". Without `ANTHROPIC_API_KEY` the agent runs
@@ -280,6 +281,58 @@ Plain HTML, CSS and browser JavaScript, served by the same server. No framework,
   smaller type, each label wrapping inside its badge.
 - **Back-test badge** reads `GET /api/backtest`: "Back-test: not run yet" until `results/backtest-test.json` exists,
   then "Back-tested on N rooms" with the label and intervals behind it.
+
+## Limitations
+
+- **A public calendar is not the room's diary.** Private hires, holds and shows announced late never reach it, so a dark night here is a night
+  with no show announced, and the problem number counts nights with nothing listed, not nights the room was shut.
+- **One market.** The demo covers the four First Avenue club rooms in Minneapolis and St Paul. Other rooms on that calendar list only the shows
+  First Avenue presents; they feed the pool but cannot be planned.
+- **The pool is not availability.** "Acts who played <city> in the last 90 days, with no date announced in town" says nothing about routing,
+  fees, radius clauses or whether an act is free that night. The booker still asks the agent.
+- **The crowd is read only from the room's past headliners,** with equal weights. There is no audience, ticket or demographic data, by design.
+- **Name matching is strict.** A headliner counts only when Qloo `/search` returns the same normalized name; ambiguous names are listed and
+  left out, so small acts with common names drop out more often.
+- **The back-test measures the ranking, not the agent.** It checks where Qloo's taste ranking puts the act a room actually booked. The Claude
+  agent's wording and choices around that ranking are not scored. Study 1 is a pilot (3 rooms); Study 2 claims nothing unless its
+  pre-registered thresholds are met (`BACKTEST-2.md`).
+- **Popularity is a rough stand-in for draw;** we have no ticket data.
+
+## Notes for the Qloo team
+
+- A `/v2/insights` parameter that does not apply to the entity type is ignored without an error, so a wrong filter returns a plausible but
+  unfiltered list. We check parameters against the type before sending (`server/qloo/validate.js`); a warning field in the response would
+  catch this for every team.
+- The supply side seems open: a venue's own past program describes its crowd with no personal data, and turns Qloo's artist graph into a
+  booking question ("who fits this room?"). We found no Qloo page that covers it.
+- After the key arrives we will add the `/search` exact-match rate for small-room headliners here, split by room size.
+
+## Data sources and credits
+
+- **First Avenue's public calendar** (`first-avenue.com/shows/`, and its past-shows pages for the back-test), read with GET requests that
+  follow robots.txt, at least 2.5 seconds apart. Dark Night Desk is not affiliated with First Avenue or any venue or artist.
+- **Internet Archive Wayback Machine** (`web.archive.org`): the 2026 listings of the back-test's placebo rooms come from its snapshots.
+  Thank you to the Internet Archive.
+- No terms-of-use page was found on first-avenue.com (its only policy link returned 404), and none was identified on the two placebo
+  venues' sites, so their use terms are not verified; we have not asked the venues. If a venue objects, its data is removed. Only
+  billing names, dates and links are kept; `data/backtest/sources.md` lists the source pages and the checks.
+- **Qloo Insights API** (hackathon access) for taste data. Responses stay in a server-side cache and are never stored in this repo.
+- **Anthropic API** (Claude Haiku 5.5) for the live agent. Open-source parts: Fastify, `@fastify/static`, `@anthropic-ai/sdk`.
+
+## Related work
+
+- Localify (Turnbull and colleagues, RecSys 2023 demo) recommends local artists to listeners, starting from artist-to-artist similarity.
+  Dark Night Desk also starts from artist-to-artist similarity, but its user is the room's booker and its signal is the room's own past program.
+- Willemsen and Liang (MuRS 2025) tailored a live concert program to the music profiles of the people attending. Here the "group" is a room's
+  booking history, with no personal data.
+- Opendate's Smart Suggestions (September 2026) ranks artists who drew well at comparable venues. Dark Night Desk ranks by taste similarity to
+  the room's past program and checks that ranking against what rooms actually booked.
+
+## How this was built
+
+Built during the hackathon by a student team; the first commit is from 11 October 2026. Most of the code, the data compilation and the
+text were produced by AI coding agents (Claude) working under the team's direction. The calendar data was read from public pages as
+described above; no Qloo response, key or personal data is in this repository.
 
 ## License
 
