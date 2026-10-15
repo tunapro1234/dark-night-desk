@@ -1,4 +1,4 @@
-// Study 2 run, as BACKTEST-2.md (registered 14 Oct 2026) and its Amendments 1-13 describe it (no Amendment 13 variant is switched on yet). Study 1 (run.js) is not used here.
+// Study 2 run, as BACKTEST-2.md (registered 14 Oct 2026) and its Amendments 1-14 describe it (no Amendment 13 variant is switched on yet). Study 1 (run.js) is not used here.
 // Unit = one S2 show at a test room. Pool = resolved headliners of every counted show at the eligible venues of the same metro
 // in the show's 21-day window (cut at 30 Sep 2026), minus the room's S1 headliners; fewer than 10 drops it.
 // Rooms sit in clusters (same owner or booking company): MRR averages rooms within a cluster, then clusters with equal weight,
@@ -14,11 +14,11 @@ import {
 } from './metrics.js';
 import { BacktestError, poolOrder, rankByPopularity, rankBySignal, resolveVenueEntity, topGenreTags } from './rankers.js';
 import {
-  MIN_COVERAGE, PLACEBO_SEED, SIZE_SPLIT, checkSample, coverageProblems, nonMusicOutside, nonMusicWords, parsePerformers,
-  performerCandidate, placeboChains, roomCoverage, sizeGroup, weekdayGroup,
+  MIN_COVERAGE, PLACEBO_SEED, SIZE_SPLIT, checkSample, coverageProblems, literalReading, nonMusicOutside, nonMusicWords,
+  parsePerformers, performerCandidate, placeboChains, roomCoverage, sizeGroup, weekdayGroup,
 } from './study2-data.js';
 
-export const PROTOCOL2 = 'BACKTEST-2.md (registered 14 Oct 2026) with Amendments 1-13 (no Amendment 13 variant switched on)';
+export const PROTOCOL2 = 'BACKTEST-2.md (registered 14 Oct 2026) with Amendments 1-14 (no Amendment 13 variant switched on)';
 export const DEFAULT_SEED2 = 1;
 export const DEFAULT_REPS2 = 2000;
 export const MIN_POOL = 10;
@@ -655,5 +655,42 @@ export async function runStudy2({
     }),
     same_room_note: 'Amendment 7, descriptive: pool acts other than the show\'s own headliner with a counted show at the same room (or the same cluster) in the window',
     qloo: { ...client.stats },
+  };
+}
+
+export const LITERAL_NOTE =
+  'Amendment 14: the literal reading of Amendment 1 (every company named as presenting a counted S1 or S2 show is an operator of the room). Descriptive only, beside the main result; never part of the claim.';
+
+/**
+ * Amendment 14, last item: the study again on the clusters the literal reading leaves, with the same client, seed and
+ * resamples and no LLM ranker. Reports the clusters left and the claim rule's intervals; a reading that leaves no test room or
+ * no placebo room is reported as not run. Qloo errors are thrown, as in runStudy2.
+ * @param {{ data: object, lnAeg: string[] | null }} args data is the output of checkData2; the rest goes to runStudy2
+ */
+export async function literalStudy2({ data, lnAeg, ...rest }) {
+  if (!lnAeg) return { status: 'not run', reason: 'ln-aeg.csv is missing', note: LITERAL_NOTE };
+  const { data: literal, report } = literalReading(data, lnAeg);
+  if (!literal) return { status: 'not run', reason: report.reason, report, note: LITERAL_NOTE };
+  let out;
+  try {
+    out = await runStudy2({ ...rest, data: literal, llm: null, llmSkipReason: 'the literal reading runs without the LLM ranker' });
+  } catch (err) {
+    // A reading with every test room in one metro has no placebo room (placeboChains throws a plain Error).
+    if (err instanceof BacktestError && !['no_test_rooms', 'coverage'].includes(err.code)) throw err;
+    return { status: 'not run', reason: err.message, report, note: LITERAL_NOTE };
+  }
+  const pick = (names) => Object.fromEntries(names.map((k) => [k, out.differences[k] ?? { status: 'not run' }]));
+  return {
+    status: 'run',
+    label: out.label,
+    clusters: out.clusters,
+    rooms: out.rooms,
+    shows: out.shows,
+    report,
+    mrr: Object.fromEntries(['Q', 'P', 'placebo'].map((k) => [k, out.rankers[k]?.mrr ?? null])),
+    differences: pick(['Q-P', 'Q-placebo']),
+    claim_checks: out.claim.checks,
+    interval_caveat: out.interval.caveat,
+    note: LITERAL_NOTE,
   };
 }

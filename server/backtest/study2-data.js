@@ -1,4 +1,4 @@
-// Study 2 input (BACKTEST-2.md with Amendments 1-13): data/backtest2/venues.csv and shows.csv. Pure functions, no Qloo.
+// Study 2 input (BACKTEST-2.md with Amendments 1-14): data/backtest2/venues.csv, shows.csv and ln-aeg.csv. Pure functions, no Qloo.
 // venues.csv: venue_id, name, operator, cluster, metro, tz, capacity, role, building, calendar_source
 //   role is "test" (the room meets coverage by itself) or "pool" (a stage below coverage in an eligible venue: its shows feed
 //   the metro pool). building names the venue a room belongs to; empty means a one-room venue (Amendment 12).
@@ -8,7 +8,10 @@
 //   start is the source's value: a date, a local date-time, or a date-time with an offset or Z. date is the local night
 //   (localNight below) and is checked against start. performers is a JSON array of the structured performer field's
 //   person or group names in source order, or empty (Amendment 2). drop_reason is empty or "off-site" (Amendment 1);
-//   "untitled" and "non-music" are decided by the run (Amendment 4).
+//   "untitled" and "non-music" are decided by the run (Amendment 4). An optional presented_by column (Amendment 14) is a JSON
+//   array of the companies the show's own page or listing names as presenting it, or empty.
+// ln-aeg.csv (Amendment 14, literal reading): name, group, source_url. Every name form under which a Live Nation or AEG
+//   company (or one with a disclosed 50% or larger Live Nation or AEG stake) appears in presented_by; group is live-nation or aeg.
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { normalizeName } from '../rank/pool.js';
@@ -123,19 +126,25 @@ export function nonMusicOutside(title, matchedQuery) {
   return nonMusicWords(outside);
 }
 
-/** Performer names from the shows.csv field: a JSON array of strings, or empty. */
-export function parsePerformers(field) {
+/** A shows.csv name field: a JSON array of strings, or empty. */
+function parseNameList(field, what) {
   const f = String(field ?? '').trim();
   if (!f) return [];
   let v;
   try {
     v = JSON.parse(f);
   } catch {
-    throw new RangeError('performers must be a JSON array of names or empty');
+    throw new RangeError(`${what} must be a JSON array of names or empty`);
   }
-  if (!Array.isArray(v) || !v.every((x) => typeof x === 'string')) throw new RangeError('performers must be a JSON array of names or empty');
+  if (!Array.isArray(v) || !v.every((x) => typeof x === 'string')) throw new RangeError(`${what} must be a JSON array of names or empty`);
   return v.map((x) => x.trim()).filter(Boolean);
 }
+
+/** Performer names from the shows.csv field. */
+export const parsePerformers = (field) => parseNameList(field, 'performers');
+
+/** Presenting companies from the optional presented_by field (Amendment 14). */
+export const parsePresenters = (field) => parseNameList(field, 'presented_by');
 
 /** Amendment 2, step 1: the first performer whose normalized name is not the venue's or the operator's (the field already holds only persons and groups). */
 export function performerCandidate(performers, venue) {
@@ -182,6 +191,7 @@ export function checkData2({ venues, shows }) {
     if (!COMPILE_DROPS.includes(s.drop_reason ?? '')) throw new Error(`${at}: drop_reason must be empty or off-site`);
     try {
       parsePerformers(s.performers);
+      parsePresenters(s.presented_by);
     } catch (err) {
       throw new Error(`${at}: ${err.message}`);
     }
@@ -295,9 +305,105 @@ export function weekdayGroup(date) {
   return d >= 1 && d <= 3 ? 'mon_wed' : 'thu_sun';
 }
 
-/** Read and check data/backtest2 (or another folder with the same two files). */
+export const LN_AEG_GROUPS = Object.freeze(['live-nation', 'aeg']);
+
+/** Check ln-aeg.csv rows and return the names (Amendment 14). */
+export function checkLnAeg(rows) {
+  return rows.map((r, i) => {
+    const at = `ln-aeg.csv row ${i + 2}`;
+    if (!normalizeName(r.name)) throw new Error(`${at}: name is required`);
+    if (!LN_AEG_GROUPS.includes(r.group)) throw new Error(`${at}: group must be one of ${LN_AEG_GROUPS.join(', ')}`);
+    if (!/^https?:\/\//.test(r.source_url ?? '')) throw new Error(`${at}: source_url must be a public http(s) address`);
+    return r.name;
+  });
+}
+
+/**
+ * Amendment 14, last item: the literal reading of Amendment 1, reported beside the result and never part of the claim.
+ * Every company named in presented_by on a counted S1 or S2 row (§4 with Amendment 4) is an operator of that room, and rooms
+ * that share an operator or a cluster form one cluster. §1 again: a venue with a Live Nation or AEG name (lnAeg, matched after
+ * normalization) among the operators of any of its rooms leaves with all its rooms. §5 again, until nothing changes: a venue
+ * with a test room and no room of another cluster in its metro leaves with all its rooms, and clusters are formed again from
+ * the rooms left. The cap and the other checks are applied again by checkData2.
+ * @param {{ venues: object[], shows: object[] }} data output of checkData2 (rooms the cap made pool rooms are test rooms again)
+ * @param {string[]} lnAeg names from ln-aeg.csv
+ * @returns {{ data: object | null, report: object }} data is null when no test room is left
+ */
+export function literalReading({ venues, shows }, lnAeg) {
+  const listed = venues.map(({ capped, ...v }) => (capped ? { ...v, role: 'test' } : v));
+  const clustersOf = (vs) => new Set(vs.filter((v) => v.role === 'test').map((v) => v.cluster)).size;
+  const operators = new Map(listed.map((v) => [v.venue_id, new Set()]));
+  for (const s of shows) {
+    if (!periodOf(s.date) || s.canceled !== '0' || s.drop_reason === 'off-site' || !countsForCoverage(s.title)) continue;
+    for (const p of parsePresenters(s.presented_by)) if (normalizeName(p)) operators.get(s.venue_id)?.add(normalizeName(p));
+  }
+  const banned = new Set(lnAeg.map(normalizeName).filter(Boolean));
+  const lnVenues = new Set(listed.filter((v) => [...operators.get(v.venue_id)].some((p) => banned.has(p))).map(venueKey));
+  let kept = listed.filter((v) => !lnVenues.has(venueKey(v)));
+  const droppedS1 = listed.filter((v) => lnVenues.has(venueKey(v))).map((v) => v.venue_id);
+  const droppedS5 = [];
+
+  // Clusters from the rooms left: union-find over listed clusters and presenting companies.
+  const regroup = (rooms) => {
+    const parent = new Map();
+    const find = (x) => {
+      if (!parent.has(x)) parent.set(x, x);
+      while (parent.get(x) !== x) {
+        parent.set(x, parent.get(parent.get(x)));
+        x = parent.get(x);
+      }
+      return x;
+    };
+    for (const v of rooms) for (const p of operators.get(v.venue_id)) parent.set(find(`p:${p}`), find(`c:${v.cluster}`));
+    const name = new Map();
+    for (const v of rooms) if (!name.has(find(`c:${v.cluster}`))) name.set(find(`c:${v.cluster}`), v.cluster);
+    return rooms.map((v) => ({ ...v, cluster: name.get(find(`c:${v.cluster}`)) }));
+  };
+  let grouped = regroup(kept);
+  // Clusters the presenters joined, before §5 removes any room.
+  const listedCluster = new Map(listed.map((v) => [v.venue_id, v.cluster]));
+  const merged = [];
+  const members = new Map();
+  for (const v of grouped) members.set(v.cluster, [...(members.get(v.cluster) ?? []), v]);
+  for (const [cluster, rooms] of members) {
+    const listedClusters = new Set(rooms.map((v) => listedCluster.get(v.venue_id)));
+    if (listedClusters.size < 2) continue;
+    const shared = [...new Set(rooms.flatMap((v) => [...operators.get(v.venue_id)]))].filter(
+      (p) => new Set(rooms.filter((v) => operators.get(v.venue_id).has(p)).map((v) => listedCluster.get(v.venue_id))).size > 1,
+    );
+    merged.push({ cluster, listed_clusters: [...listedClusters], rooms: rooms.map((v) => v.venue_id), shared_presenters: shared.length });
+  }
+  for (;;) {
+    const failing = new Set(
+      grouped.filter((v) => v.role === 'test' && !grouped.some((o) => o.metro === v.metro && o.cluster !== v.cluster)).map(venueKey),
+    );
+    if (!failing.size) break;
+    droppedS5.push(...kept.filter((v) => failing.has(venueKey(v))).map((v) => v.venue_id));
+    kept = kept.filter((v) => !failing.has(venueKey(v)));
+    grouped = regroup(kept);
+  }
+  const report = {
+    clusters_listed: clustersOf(listed),
+    rooms_with_presenters: [...operators.values()].filter((x) => x.size > 0).length,
+    merged,
+    dropped_s1: droppedS1,
+    dropped_s5: droppedS5,
+  };
+  if (!grouped.some((v) => v.role === 'test')) return { data: null, report: { ...report, clusters: 0, reason: 'no test room is left under the literal reading' } };
+  const ids = new Set(grouped.map((v) => v.venue_id));
+  const data = checkData2({ venues: grouped, shows: shows.filter((s) => ids.has(s.venue_id)).map(({ row, ...s }) => s) });
+  return { data, report: { ...report, clusters: clustersOf(data.venues), capped: data.capped } };
+}
+
+/** Read and check data/backtest2 (or another folder with the same files). lnAeg is null when ln-aeg.csv is missing. */
 export async function loadStudy2Data(dir) {
   const venues = parseCsv(await readFile(path.join(dir, 'venues.csv'), 'utf8'));
   const shows = parseCsv(await readFile(path.join(dir, 'shows.csv'), 'utf8'));
-  return checkData2({ venues, shows });
+  let lnAeg = null;
+  try {
+    lnAeg = checkLnAeg(parseCsv(await readFile(path.join(dir, 'ln-aeg.csv'), 'utf8')));
+  } catch (err) {
+    if (err.code !== 'ENOENT') throw err;
+  }
+  return { ...checkData2({ venues, shows }), lnAeg };
 }

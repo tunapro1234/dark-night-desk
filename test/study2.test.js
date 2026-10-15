@@ -1,4 +1,4 @@
-// Study 2 tests (BACKTEST-2.md with Amendments 1-13). Synthetic data only: rows are generated here, Qloo is a hand-written stand-in.
+// Study 2 tests (BACKTEST-2.md with Amendments 1-14). Synthetic data only: rows are generated here, Qloo is a hand-written stand-in.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
@@ -8,10 +8,10 @@ import path from 'node:path';
 import { parseCsv } from '../server/backtest/data.js';
 import { clusterBootstrap2, clusterMeans, nestedStratifiedBootstrap } from '../server/backtest/metrics.js';
 import {
-  MAX_CLUSTERS, assignPlacebos, checkData2, checkSample, countsForCoverage, coverageProblems, localNight, nonMusicOutside,
-  nonMusicWords, parsePerformers, performerCandidate, placeboChains, sizeGroup, weekdayGroup,
+  MAX_CLUSTERS, assignPlacebos, checkData2, checkLnAeg, checkSample, countsForCoverage, coverageProblems, literalReading, localNight,
+  nonMusicOutside, nonMusicWords, parsePerformers, parsePresenters, performerCandidate, placeboChains, sizeGroup, weekdayGroup,
 } from '../server/backtest/study2-data.js';
-import { dryRun2, rankByPopularityFit, resolveHeadliner2, runStudy2 } from '../server/backtest/study2.js';
+import { dryRun2, literalStudy2, rankByPopularityFit, resolveHeadliner2, runStudy2 } from '../server/backtest/study2.js';
 import { LOCK_NAME2, main2, parseArgs2 } from '../scripts/backtest2.js';
 
 const tmp = await mkdtemp(path.join(os.tmpdir(), 'dnd-bt2-'));
@@ -529,6 +529,121 @@ test('big world: Q beats P but not the placebo, and the write-up says the gain i
   assert.match(out.gain_reading, /general taste-graph structure/);
 });
 
+// ---------- literal reading (Amendment 14) ----------
+const LIT_VENUES = [
+  'venue_id,name,operator,cluster,metro,tz,capacity,role,building,calendar_source',
+  'x-room1,Synthetic X1,Operator X1,c-x1,Xville,America/New_York,,test,,',
+  'x-room2,Synthetic X2,Operator X2,c-x2,Xville,America/New_York,,test,,',
+  'x-hall,Synthetic X Hall,Operator X3,c-x3,Xville,America/New_York,,pool,,',
+  'y-room1,Synthetic Y1,Operator Y1,c-y1,Yville,America/Chicago,,test,,',
+  'y-room2,Synthetic Y2,Operator Y2,c-y2,Yville,America/Chicago,,test,,',
+  'z-room1,Synthetic Z1,Operator Z1,c-z1,Zville,America/Denver,,test,Synthetic Building,',
+  'z-room2,Synthetic Z2,Operator Z1,c-z1,Zville,America/Denver,,pool,Synthetic Building,',
+  'z-room3,Synthetic Z3,Operator Z3,c-z3,Zville,America/Denver,,test,,',
+].join('\n');
+const LIT_TZ = { x: 'America/New_York', y: 'America/Chicago', z: 'America/Denver' };
+function literalShows(extra = () => {}) {
+  const rows = ['venue_id,start,date,title,performers,canceled,drop_reason,source_url,fetched_at,compiled_by,checked_by,presented_by'];
+  const add = (venue, start, title, presentedBy = [], { canceled = 0, drop = '' } = {}) =>
+    rows.push(
+      [venue, start, localNight(start, LIT_TZ[venue[0]]), title, '', String(canceled), drop, `https://example.org/${rows.length}`, '2026-10-15', 'test', '', presentedBy.length ? JSON.stringify(presentedBy) : '']
+        .map(csvField)
+        .join(','),
+    );
+  for (const v of ['x-room1', 'x-room2', 'x-hall', 'y-room1', 'y-room2', 'z-room1', 'z-room2', 'z-room3']) {
+    add(v, '2026-05-05T20:00', `Synthetic Act ${v} S1`);
+    add(v, '2026-08-05T20:00', `Synthetic Act ${v} S2`);
+  }
+  add('y-room1', '2026-05-06T20:00', 'Synthetic Act 201', ['Shared Promotions']);
+  add('y-room2', '2026-08-06T20:00', 'Synthetic Act 202', ['shared promotions!']); // same company after normalization
+  add('x-room2', '2026-05-07T20:00', 'Synthetic Act 203', ['Synthetic Nation Clubs']);
+  add('z-room2', '2026-08-07T20:00', 'Synthetic Act 204', ['Building Owner Group']);
+  // presenters on rows that do not count make no operator: canceled, off-site, untitled, non-music, outside S1 and S2
+  add('z-room1', '2026-05-08T20:00', 'Synthetic Act 205', ['Edge Presents'], { canceled: 1 });
+  add('z-room1', '2026-05-09T20:00', 'Synthetic Act 206', ['Edge Presents'], { drop: 'off-site' });
+  add('z-room1', '2026-05-10T20:00', '', ['Edge Presents']);
+  add('z-room1', '2026-05-11T20:00', 'Comedy Night', ['Edge Presents']);
+  add('z-room1', '2026-10-05T20:00', 'Synthetic Act 207', ['Edge Presents']);
+  add('z-room3', '2026-05-12T20:00', 'Synthetic Act 208', ['Edge Presents']);
+  extra(add);
+  return rows.join('\n');
+}
+const literalData = (extra) => checkData2({ venues: parseCsv(LIT_VENUES), shows: parseCsv(literalShows(extra)) });
+
+test('literal reading: presented_by and ln-aeg.csv are checked', () => {
+  assert.deepEqual(parsePresenters(''), []);
+  assert.deepEqual(parsePresenters('[" Synthetic Presents "]'), ['Synthetic Presents']);
+  const bad = literalShows().replace('"[""Shared Promotions""]"', 'Shared Promotions');
+  assert.throws(() => checkData2({ venues: parseCsv(LIT_VENUES), shows: parseCsv(bad) }), /row \d+: presented_by must be a JSON array/);
+  assert.deepEqual(checkLnAeg([{ name: 'Synthetic Nation Clubs', group: 'live-nation', source_url: 'https://example.org/a' }]), ['Synthetic Nation Clubs']);
+  assert.throws(() => checkLnAeg([{ name: 'X', group: 'other', source_url: 'https://example.org/a' }]), /row 2: group/);
+  assert.throws(() => checkLnAeg([{ name: 'X', group: 'aeg', source_url: '' }]), /source_url/);
+  assert.throws(() => checkLnAeg([{ name: ' ', group: 'aeg', source_url: 'https://example.org/a' }]), /name is required/);
+});
+
+test('literal reading: a shared presenter joins clusters, §5 drops a metro left with one, an LN/AEG presenter drops the venue', () => {
+  const { data, report } = literalReading(literalData(), ['Synthetic Nation Clubs']);
+  assert.equal(report.clusters_listed, 6);
+  assert.equal(report.rooms_with_presenters, 5);
+  assert.deepEqual(report.merged, [{ cluster: 'c-y1', listed_clusters: ['c-y1', 'c-y2'], rooms: ['y-room1', 'y-room2'], shared_presenters: 1 }]);
+  assert.deepEqual(report.dropped_s1, ['x-room2']);
+  assert.deepEqual(report.dropped_s5, ['y-room1', 'y-room2']);
+  assert.equal(report.clusters, 3);
+  assert.deepEqual(data.venues.map((v) => v.venue_id), ['x-room1', 'x-hall', 'z-room1', 'z-room2', 'z-room3']);
+  assert.ok(data.shows.every((s) => !['x-room2', 'y-room1', 'y-room2'].includes(s.venue_id)));
+  // Edge Presents is on counted rows of z-room3 only, so z-room1 keeps its own cluster
+  assert.deepEqual(new Set(data.venues.map((v) => v.cluster)), new Set(['c-x1', 'c-x3', 'c-z1', 'c-z3']));
+});
+
+test('literal reading: §1 drops every room of a building, then §5 drops the room left alone in its metro', () => {
+  const { data, report } = literalReading(literalData(), ['Synthetic Nation Clubs', 'building owner group']);
+  assert.deepEqual(report.dropped_s1, ['x-room2', 'z-room1', 'z-room2']);
+  assert.deepEqual(report.dropped_s5, ['y-room1', 'y-room2', 'z-room3']);
+  assert.equal(report.clusters, 1);
+  assert.deepEqual(data.venues.map((v) => v.venue_id), ['x-room1', 'x-hall']);
+  const again = literalReading(literalData(), ['Synthetic Nation Clubs', 'Building Owner Group', 'Nobody Presents']);
+  assert.deepEqual(again.report, report, 'a name that presents no counted show changes nothing');
+});
+
+test('literal reading: without presented_by nothing changes; capped rooms are test rooms again', () => {
+  const base = syntheticData();
+  const { data, report } = literalReading(base, []);
+  assert.deepEqual([report.merged, report.dropped_s1, report.dropped_s5, report.rooms_with_presenters], [[], [], [], 0]);
+  assert.equal(report.clusters, report.clusters_listed);
+  assert.deepEqual(data.venues.map((v) => [v.venue_id, v.cluster, v.role]), base.venues.map((v) => [v.venue_id, v.cluster, v.role]));
+  const capped = { ...base, venues: base.venues.map((v) => (v.venue_id === 'room-b' ? { ...v, role: 'pool', capped: true } : v)) };
+  const back = literalReading(capped, []);
+  assert.equal(back.data.venues.find((v) => v.venue_id === 'room-b').role, 'test');
+  assert.equal(back.report.clusters_listed, 2);
+});
+
+test('literal reading: the run reports clusters and intervals beside the result, or says why it did not run', async () => {
+  const missing = await literalStudy2({ data: syntheticData(), lnAeg: null });
+  assert.deepEqual([missing.status, missing.reason], ['not run', 'ln-aeg.csv is missing']);
+  const out = await literalStudy2({ client: fakeClient(), data: syntheticData(), lnAeg: [], restrict: 'filter', reps: 200, now: () => 0, minCoverage: 0 });
+  assert.equal(out.status, 'run');
+  assert.equal(out.clusters, 2);
+  assert.match(out.label, /\(N = 2 clusters/);
+  assert.ok('lo' in out.differences['Q-P'] || out.differences['Q-P'].status === 'not run');
+  assert.equal(typeof out.claim_checks.q_minus_p_above_0, 'boolean');
+  assert.match(out.note, /never part of the claim/);
+  // one metro left: no placebo room, so not run (and no Qloo call before that)
+  let calls = 0;
+  const counting = { search: async () => (calls++, { status: 'error', error: { code: 'x' } }), insights: async () => (calls++, { status: 'error', error: { code: 'x' } }) };
+  const one = await literalStudy2({ client: counting, data: literalData(), lnAeg: ['Synthetic Nation Clubs', 'Building Owner Group'], restrict: 'filter', minCoverage: 0 });
+  assert.equal(one.status, 'not run');
+  assert.match(one.reason, /no placebo room/);
+  assert.equal(calls, 0);
+  const lastRoom = literalData((add) => add('x-room1', '2026-08-08T20:00', 'Synthetic Act 209', ['Synthetic Nation Clubs']));
+  const empty = await literalStudy2({ data: lastRoom, lnAeg: ['Synthetic Nation Clubs', 'Building Owner Group'], restrict: 'filter' });
+  assert.deepEqual([empty.status, empty.reason, empty.report.clusters], ['not run', 'no test room is left under the literal reading', 0]);
+  // Qloo errors are not swallowed
+  await assert.rejects(
+    literalStudy2({ client: fakeClient({ failOn: 'Synthetic Act 5' }), data: syntheticData(), lnAeg: [], restrict: 'filter', minCoverage: 0 }),
+    /headliner search failed/,
+  );
+});
+
 // ---------- cli ----------
 test('cli: options are checked', () => {
   assert.throws(() => parseArgs2([]), /--restrict/);
@@ -543,6 +658,7 @@ async function bigDir(name) {
   await mkdir(dir, { recursive: true });
   await writeFile(path.join(dir, 'venues.csv'), big.venues);
   await writeFile(path.join(dir, 'shows.csv'), big.shows);
+  await writeFile(path.join(dir, 'ln-aeg.csv'), 'name,group,source_url\n');
   return dir;
 }
 
@@ -558,6 +674,10 @@ test('cli: the test run refuses another seed or resample count, and data whose r
   const small = await syntheticDir('cli2-small-refuse');
   assert.equal(await main2(['--restrict', 'filter', '--data', small], live, print), 1);
   assert.match(lines.at(-1), /roles do not match shows\.csv[\s\S]*room-a/);
+  const noList = await bigDir('cli2-no-ln-aeg');
+  await rm(path.join(noList, 'ln-aeg.csv'));
+  assert.equal(await main2(['--restrict', 'filter', '--data', noList], live, print), 1);
+  assert.match(lines.at(-1), /ln-aeg\.csv is missing[\s\S]*Amendment 14/);
   assert.ok(!existsSync(path.join(dataDir, LOCK_NAME2)), 'no lock before the checks pass');
 });
 
@@ -568,7 +688,10 @@ test('cli: dry run and check sample need no key; one test run in fixture mode, t
   const lines = [];
   const print = (l) => lines.push(l);
   assert.equal(await main2(['--dry-run', '--data', data, '--out', out], { DATA_DIR: dataDir }, print), 0, lines.join('\n'));
-  assert.ok(existsSync(path.join(out, 'backtest2-dryrun.json')));
+  const dry = JSON.parse(readFileSync(path.join(out, 'backtest2-dryrun.json'), 'utf8'));
+  assert.equal(dry.literal_reading.status, 'counted');
+  assert.equal(dry.literal_reading.clusters, dry.clusters, 'no presented_by column: the literal reading keeps every cluster');
+  assert.match(lines.at(-1), /literal reading: \d+ clusters/);
   assert.equal(await main2(['--check-sample', '--data', data, '--out', out], { DATA_DIR: dataDir }, print), 0);
   const sample = JSON.parse(readFileSync(path.join(out, 'backtest2-check-sample.json'), 'utf8'));
   assert.equal(sample.shows_csv_lines.length, Math.ceil(sample.of_rows / 10));
@@ -581,10 +704,16 @@ test('cli: dry run and check sample need no key; one test run in fixture mode, t
   assert.equal(await main2(['--restrict', 'filter', '--data', data, '--out', out, '--reps', '200'], env, print), 0, lines.join('\n'));
   const summary = JSON.parse(readFileSync(path.join(out, 'backtest2-test.json'), 'utf8'));
   assert.match(summary.label, /^(pilot 2|study 2|full) \(N = \d+ clusters, \d+ rooms, n = \d+ shows\)$/);
+  assert.equal(summary.literal_reading.status, 'run');
+  assert.equal(summary.literal_reading.clusters, summary.clusters);
+  assert.ok(summary.literal_reading.differences['Q-P'] && summary.literal_reading.differences['Q-placebo']);
+  assert.match(lines.at(-1), /literal reading \(Amendment 14\)/);
   const log = readFileSync(path.join(out, 'backtest2-test.log'), 'utf8');
   assert.match(log, /"event":"done"/);
   const start = JSON.parse(log.split('\n')[0]);
   assert.match(start.data_sha256['shows.csv'], /^[0-9a-f]{64}$/);
+  assert.match(start.data_sha256['ln-aeg.csv'], /^[0-9a-f]{64}$/);
+  assert.match(log, /"reading":"literal","event":"done"/);
   assert.ok('commit' in start && 'dirty' in start);
   assert.doesNotMatch(log + JSON.stringify(summary), /synthetic-artist|Synthetic Act/);
   assert.ok(existsSync(path.join(dataDir, LOCK_NAME2)));
