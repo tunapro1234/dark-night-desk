@@ -26,7 +26,7 @@ import { createQlooClient } from '../server/qloo/client.js';
 import { createAnthropic } from '../server/agent/loop.js';
 import { createLlmRanker } from '../server/backtest/llm.js';
 import { RESTRICTIONS } from '../server/backtest/rankers.js';
-import { checkSample, coverageProblems, literalReading, loadStudy2Data } from '../server/backtest/study2-data.js';
+import { checkSample, coverageProblems, houseBookers, literalReading, loadStudy2Data } from '../server/backtest/study2-data.js';
 import { DEFAULT_REPS2, DEFAULT_SEED2, LITERAL_NOTE, dryRun2, literalStudy2, runStudy2 } from '../server/backtest/study2.js';
 
 export const LOCK_NAME2 = 'backtest2-test.lock';
@@ -101,6 +101,12 @@ export async function main2(argv = process.argv.slice(2), env = process.env, pri
     let summary;
     try {
       summary = dryRun2(data);
+      const bookers = houseBookers(data.venues, data.shows);
+      summary.house_bookers = {
+        rule: 'Amendment 14: a company that presents more than half of a room\'s counted S1 and S2 shows is its house booker and must be its listed operator',
+        rooms: bookers,
+        not_operator: bookers.filter((b) => !b.matches_operator).map((b) => b.venue_id),
+      };
       summary.literal_reading = data.lnAeg
         ? { status: 'counted', ...literalReading(data, data.lnAeg).report, note: LITERAL_NOTE }
         : { status: 'not run', reason: 'ln-aeg.csv is missing', note: LITERAL_NOTE };
@@ -112,7 +118,7 @@ export async function main2(argv = process.argv.slice(2), env = process.env, pri
     print(
       `dry run: ${summary.clusters} clusters, ${summary.test_rooms} test rooms, ${summary.test_rows_S2_live} live S2 test rows, ` +
         `${summary.pool_candidates_by_window.length} metro windows, ${summary.windows_below_min_pool_before_resolution} under ${summary.min_pool} candidates, ` +
-        `${summary.coverage_problems.length} coverage problems; literal reading: ` +
+        `${summary.coverage_problems.length} coverage problems, ${summary.house_bookers.not_operator.length} rooms whose majority presenter is not the operator; literal reading: ` +
         (summary.literal_reading.status === 'counted' ? `${summary.literal_reading.clusters} clusters` : summary.literal_reading.reason),
     );
     return 0;

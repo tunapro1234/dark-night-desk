@@ -8,7 +8,7 @@ import path from 'node:path';
 import { parseCsv } from '../server/backtest/data.js';
 import { clusterBootstrap2, clusterMeans, nestedStratifiedBootstrap } from '../server/backtest/metrics.js';
 import {
-  MAX_CLUSTERS, assignPlacebos, checkData2, checkLnAeg, checkSample, countsForCoverage, coverageProblems, literalReading, localNight,
+  MAX_CLUSTERS, assignPlacebos, checkData2, checkLnAeg, checkSample, countsForCoverage, coverageProblems, houseBookers, literalReading, localNight,
   nonMusicOutside, nonMusicWords, parsePerformers, parsePresenters, performerCandidate, placeboChains, sizeGroup, weekdayGroup,
 } from '../server/backtest/study2-data.js';
 import { dryRun2, literalStudy2, rankByPopularityFit, resolveHeadliner2, runStudy2 } from '../server/backtest/study2.js';
@@ -605,6 +605,27 @@ test('literal reading: §1 drops every room of a building, then §5 drops the ro
   assert.deepEqual(again.report, report, 'a name that presents no counted show changes nothing');
 });
 
+test('house bookers (Amendment 14): a presenter of more than half the counted shows must be the listed operator', () => {
+  const data = literalData((add) => {
+    add('x-room1', '2026-05-13T20:00', 'Synthetic Act 210', ['Operator X1']);
+    add('x-room1', '2026-08-13T20:00', 'Synthetic Act 211', ['operator x1', 'Edge Presents']);
+    add('x-room1', '2026-10-13T20:00', 'Synthetic Act 212', ['Operator X1']); // outside S1 and S2: not counted
+    for (let n = 0; n < 2; n++) add('x-hall', `2026-06-1${n}T20:00`, `Synthetic Act 22${n}`, ['Hall Partner']);
+    add('x-hall', '2026-06-20T20:00', 'Synthetic Act 230', ['Hall Partner'], { canceled: 1 });
+  });
+  // x-room1: 4 counted rows, Operator X1 on 2 (not more than half); x-hall: 4 counted, Hall Partner on 2; y-room1, y-room2 and
+  // z-room2: 3 counted, one presenter on 1. Then one more row each makes a majority.
+  assert.deepEqual(houseBookers(data.venues, data.shows), []);
+  const more = literalData((add) => {
+    for (const t of ['2026-05-13', '2026-08-13', '2026-08-14']) add('x-room1', `${t}T20:00`, `Synthetic Act ${t}`, ['Operator X1']);
+    for (const t of ['2026-06-10', '2026-06-11', '2026-06-12']) add('x-hall', `${t}T20:00`, `Synthetic Act ${t}`, ['Hall Partner']);
+  });
+  assert.deepEqual(houseBookers(more.venues, more.shows), [
+    { venue_id: 'x-room1', share: 0.6, matches_operator: true },
+    { venue_id: 'x-hall', share: 0.6, matches_operator: false },
+  ]);
+});
+
 test('literal reading: without presented_by nothing changes; capped rooms are test rooms again', () => {
   const base = syntheticData();
   const { data, report } = literalReading(base, []);
@@ -690,6 +711,7 @@ test('cli: dry run and check sample need no key; one test run in fixture mode, t
   assert.equal(await main2(['--dry-run', '--data', data, '--out', out], { DATA_DIR: dataDir }, print), 0, lines.join('\n'));
   const dry = JSON.parse(readFileSync(path.join(out, 'backtest2-dryrun.json'), 'utf8'));
   assert.equal(dry.literal_reading.status, 'counted');
+  assert.deepEqual(dry.house_bookers.not_operator, []);
   assert.equal(dry.literal_reading.clusters, dry.clusters, 'no presented_by column: the literal reading keeps every cluster');
   assert.match(lines.at(-1), /literal reading: \d+ clusters/);
   assert.equal(await main2(['--check-sample', '--data', data, '--out', out], { DATA_DIR: dataDir }, print), 0);

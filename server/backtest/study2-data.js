@@ -305,6 +305,29 @@ export function weekdayGroup(date) {
   return d >= 1 && d <= 3 ? 'mon_wed' : 'thu_sun';
 }
 
+/**
+ * Amendment 14, operator reading: a single company that presents more than half of a room's counted S1 and S2 shows is its
+ * house booker, so it must be the room's listed operator. Returns the rooms where a presenter passes half, with its share
+ * and whether it matches the operator (after normalization). Venue ids and shares only: names stay in shows.csv.
+ */
+export function houseBookers(venues, shows) {
+  const counted = new Map(venues.map((v) => [v.venue_id, { rows: 0, by: new Map() }]));
+  for (const s of shows) {
+    const c = counted.get(s.venue_id);
+    if (!c || !periodOf(s.date) || s.canceled !== '0' || s.drop_reason === 'off-site' || !countsForCoverage(s.title)) continue;
+    c.rows++;
+    for (const p of new Set(parsePresenters(s.presented_by).map(normalizeName).filter(Boolean))) c.by.set(p, (c.by.get(p) ?? 0) + 1);
+  }
+  const out = [];
+  for (const v of venues) {
+    const { rows, by } = counted.get(v.venue_id);
+    for (const [p, n] of by) {
+      if (n * 2 > rows) out.push({ venue_id: v.venue_id, share: Math.round((n / rows) * 1000) / 1000, matches_operator: p === normalizeName(v.operator) });
+    }
+  }
+  return out;
+}
+
 export const LN_AEG_GROUPS = Object.freeze(['live-nation', 'aeg']);
 
 /** Check ln-aeg.csv rows and return the names (Amendment 14). */
