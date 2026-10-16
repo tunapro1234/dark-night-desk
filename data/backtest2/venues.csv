@@ -1,0 +1,37 @@
+venue_id,name,operator,cluster,metro,tz,capacity,role,building,calendar_source
+atl-529,529,529,atl-529,Atlanta,America/New_York,,test,,https://529atlanta.com/wp-json/wp/v2/events
+atl-earl,The EARL,The EARL,atl-earl,Atlanta,America/New_York,,test,,https://web.archive.org/ copies of https://badearl.com/
+ber-badehaus,Badehaus,Badehaus Musik GmbH,ber-badehaus,Berlin,Europe/Berlin,450,test,,https://web.archive.org/ copies of https://badehaus-berlin.com/events/ and https://badehaus-berlin.com/
+ber-festsaal-biergarten,Biergarten,Neue Flutgraben Betriebsgesellschaft,ber-festsaal,Berlin,Europe/Berlin,,pool,Festsaal Kreuzberg,https://admin.festsaal-kreuzberg.de/api/v2/pages/
+ber-festsaal-gewaechshaus,Gewächshaus,Neue Flutgraben Betriebsgesellschaft,ber-festsaal,Berlin,Europe/Berlin,,pool,Festsaal Kreuzberg,https://admin.festsaal-kreuzberg.de/api/v2/pages/
+ber-festsaal-house,Festsaal Kreuzberg,Neue Flutgraben Betriebsgesellschaft,ber-festsaal,Berlin,Europe/Berlin,,pool,Festsaal Kreuzberg,https://admin.festsaal-kreuzberg.de/api/v2/pages/
+ber-festsaal-kaminzimmer,Kaminzimmer,Neue Flutgraben Betriebsgesellschaft,ber-festsaal,Berlin,Europe/Berlin,,pool,Festsaal Kreuzberg,https://admin.festsaal-kreuzberg.de/api/v2/pages/
+ber-festsaal-ostfluegel,Ostflügel,Neue Flutgraben Betriebsgesellschaft,ber-festsaal,Berlin,Europe/Berlin,,pool,Festsaal Kreuzberg,https://admin.festsaal-kreuzberg.de/api/v2/pages/
+ber-festsaal-saal,Festsaal,Neue Flutgraben Betriebsgesellschaft,ber-festsaal,Berlin,Europe/Berlin,1100,pool,Festsaal Kreuzberg,https://admin.festsaal-kreuzberg.de/api/v2/pages/
+bos-lizard,Lizard Lounge,Lizard Lounge,bos-lizard,Boston,America/New_York,100,test,,https://lizardloungeclub.com/wp-json/tribe/events/v1/events
+bos-passim,Club Passim,47 Palmer Inc.,bos-passim,Boston,America/New_York,,test,,https://web.archive.org/ copies of https://www.passim.org/live-music/
+bos-rockwell,The Rockwell,The Rockwell,bos-rockwell,Boston,America/New_York,203,test,,https://therockwell.org/wp-json/tribe/events/v1/events
+cph-pumpehuset,Pumpehuset,Pumpehuset,cph-pumpehuset,Copenhagen,Europe/Copenhagen,600,test,,https://pumpehuset.dk/koncerter/
+cph-vega-house,VEGA,VEGA,cph-vega,Copenhagen,Europe/Copenhagen,,pool,VEGA,https://web.archive.org/ copies of https://vega.dk/
+cph-vega-ideal,Ideal Bar,VEGA,cph-vega,Copenhagen,Europe/Copenhagen,,pool,VEGA,https://web.archive.org/ copies of https://vega.dk/
+cph-vega-lab,VEGA LAB,VEGA,cph-vega,Copenhagen,Europe/Copenhagen,,pool,VEGA,https://web.archive.org/ copies of https://vega.dk/
+cph-vega-lille,Lille VEGA,VEGA,cph-vega,Copenhagen,Europe/Copenhagen,,pool,VEGA,https://web.archive.org/ copies of https://vega.dk/
+cph-vega-store,Store VEGA,VEGA,cph-vega,Copenhagen,Europe/Copenhagen,,pool,VEGA,https://web.archive.org/ copies of https://vega.dk/
+lds-brudenell,Brudenell Social Club,Brudenell Social Club,lds-brudenell,Leeds,Europe/London,,test,,https://www.brudenellsocialclub.co.uk/archive/
+lds-wardrobe,The Wardrobe,Futuresound Group,lds-futuresound,Leeds,Europe/London,500,test,,https://www.thewardrobe.co.uk/event/
+man-castle,The Castle Hotel,The Castle Hotel,man-castle,Manchester,Europe/London,80,test,,https://thecastlehotel.info/events/?date=DD/MM/YYYY and https://web.archive.org/ copies of https://thecastlehotel.info/events/
+man-nightday,Night & Day Cafe,Night & Day Cafe,man-nightday,Manchester,Europe/London,,test,,https://nightnday.org/show-sitemap2.xml and https://web.archive.org/ copies of https://nightnday.org/listings/
+mke-cactus,Cactus Club,Cactus Club,mke-cactus,Milwaukee,America/Chicago,,test,,https://www.cactusclubmilwaukee.com/events/
+mke-linnemans,Linneman's Riverwest Inn,Linneman's Riverwest Inn,mke-linnemans,Milwaukee,America/Chicago,,test,,https://linnemans.com/wp-json/tribe/events/v1/events
+mtl-ministere,Le Ministère,Les Productions Le Ministère,mtl-ministere,Montreal,America/Toronto,,test,,https://leministere.ca/evenements/ event pages and web.archive.org copies of https://leministere.ca/evenements
+mtl-turbohaus,Turbo Haus,Turbo Haus,mtl-turbohaus,Montreal,America/Toronto,,test,,https://turbohaus.ca/calendrier/2026/4 to /2026/9
+sf-bottom,Bottom of the Hill,Bottom Of The Hill Inc.,sf-bottom,San Francisco,America/Los_Angeles,246,test,,https://web.archive.org/ copies of https://www.bottomofthehill.com/calendar.html
+sf-makeout,Make-Out Room,Make-Out Room,sf-makeout,San Francisco,America/Los_Angeles,,test,,https://www.makeoutroom.com/events/previous/
+tor-horseshoe,Horseshoe Tavern,Horseshoe Tavern,tor-horseshoe,Toronto,America/Toronto,,test,,https://web.archive.org/ copies of https://horseshoetavern.com/ and https://horseshoetavern.com/events
+tor-tranzac-house,Tranzac,Tranzac,tor-tranzac,Toronto,America/Toronto,,pool,Tranzac,https://tranzac.org/sitemap.xml event pages
+tor-tranzac-livingroom,Living Room,Tranzac,tor-tranzac,Toronto,America/Toronto,,pool,Tranzac,https://tranzac.org/sitemap.xml event pages
+tor-tranzac-mainhall,Main Hall,Tranzac,tor-tranzac,Toronto,America/Toronto,,pool,Tranzac,https://tranzac.org/sitemap.xml event pages
+tor-tranzac-southerncross,Southern Cross,Tranzac,tor-tranzac,Toronto,America/Toronto,,pool,Tranzac,https://tranzac.org/sitemap.xml event pages
+tor-tranzac-zinelibrary,Zine Library,Tranzac,tor-tranzac,Toronto,America/Toronto,,pool,Tranzac,https://tranzac.org/sitemap.xml event pages
+van-pearl,The Pearl,MODO-LIVE,modo-live,Vancouver,America/Vancouver,,test,,https://web.archive.org/ copies of https://thepearlvancouver.com/
+van-rickshaw,Rickshaw Theatre,Rickshaw Theatre,van-rickshaw,Vancouver,America/Vancouver,,test,,https://rickshawtheatre.com/wp-json/wp/v2/show_listings
