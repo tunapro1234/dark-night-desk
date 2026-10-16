@@ -8,7 +8,7 @@ import path from 'node:path';
 import { parseCsv } from '../server/backtest/data.js';
 import { clusterBootstrap2, clusterMeans, nestedStratifiedBootstrap } from '../server/backtest/metrics.js';
 import {
-  MAX_CLUSTERS, assignPlacebos, checkData2, checkLnAeg, checkSample, countsForCoverage, coverageProblems, houseBookers, literalReading, localNight,
+  MAX_CLUSTERS, assignPlacebos, checkData2, checkLnAeg, checkSample, countsForCoverage, coverageProblems, houseBookers, isUnplacedRoom, literalReading, localNight,
   nonMusicOutside, nonMusicWords, parsePerformers, parsePresenters, performerCandidate, placeboChains, sizeGroup, weekdayGroup,
 } from '../server/backtest/study2-data.js';
 import { dryRun2, literalStudy2, rankByPopularityFit, resolveHeadliner2, runStudy2 } from '../server/backtest/study2.js';
@@ -603,6 +603,24 @@ test('literal reading: §1 drops every room of a building, then §5 drops the ro
   assert.deepEqual(data.venues.map((v) => v.venue_id), ['x-room1', 'x-hall']);
   const again = literalReading(literalData(), ['Synthetic Nation Clubs', 'Building Owner Group', 'Nobody Presents']);
   assert.deepEqual(again.report, report, 'a name that presents no counted show changes nothing');
+});
+
+test('rooms (Amendment 14): the room named after its building holds rows with no room and stays a pool room whatever it counts', () => {
+  const venues = [
+    { venue_id: 'hall-main', name: 'Main', role: 'test', building: 'Synthetic Hall', metro: 'M' },
+    { venue_id: 'hall-house', name: 'Synthetic Hall', role: 'pool', building: 'Synthetic Hall', metro: 'M' },
+    { venue_id: 'lone', name: 'Synthetic Lone', role: 'test', building: '', metro: 'M' },
+  ];
+  assert.deepEqual(venues.map(isUnplacedRoom), [false, true, false]);
+  const shows = [];
+  for (const id of ['hall-main', 'hall-house', 'lone']) {
+    for (const date of ['2026-05-01', '2026-08-01']) {
+      for (let i = 0; i < 25; i++) shows.push({ venue_id: id, date, title: `Synthetic Act ${i}`, canceled: '0', drop_reason: '' });
+    }
+  }
+  assert.deepEqual(coverageProblems(venues, shows), []);
+  const wrong = venues.map((v) => (v.venue_id === 'hall-house' ? { ...v, role: 'test' } : v));
+  assert.match(coverageProblems(wrong, shows)[0], /hall-house holds the rows of Synthetic Hall whose room is not given/);
 });
 
 test('house bookers (Amendment 14): a presenter of more than half the counted shows must be the listed operator', () => {

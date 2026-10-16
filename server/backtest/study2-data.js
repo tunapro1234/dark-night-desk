@@ -223,8 +223,16 @@ export function roomCoverage(venues, shows) {
 }
 
 /**
+ * Amendment 14 (rooms): the rows of a split venue whose room the source does not give go to one pool room of the same building, the
+ * room named after the building. It feeds the metro pool but no room's S1 headliners, so it stays a pool room whatever it counts.
+ */
+export function isUnplacedRoom(v) {
+  return Boolean(v.building) && v.name === v.building;
+}
+
+/**
  * Amendment 12: the role column must agree with coverage counted on shows.csv. A test room meets coverage by itself; a pool
- * room does not (unless the cap made it a pool room); a venue's rooms together meet coverage, or the venue is not eligible
+ * room does not (unless the cap made it a pool room, or it holds a building's rows with no room); a venue's rooms together meet coverage, or the venue is not eligible
  * and must not be in the file. Returns the problems found; the test run refuses to start if there is any.
  */
 export function coverageProblems(venues, shows, min = MIN_COVERAGE) {
@@ -235,7 +243,8 @@ export function coverageProblems(venues, shows, min = MIN_COVERAGE) {
   for (const v of venues) {
     const c = cov.get(v.venue_id);
     if (v.role === 'test' && !meets(c)) problems.push(`test room ${v.venue_id} is below coverage on shows.csv (S1 ${c.S1}, S2 ${c.S2}; needs ${min} each)`);
-    if (v.role === 'pool' && !v.capped && meets(c)) problems.push(`pool room ${v.venue_id} meets coverage by itself, so it is a test room (Amendment 1)`);
+    if (v.role === 'pool' && !v.capped && !isUnplacedRoom(v) && meets(c)) problems.push(`pool room ${v.venue_id} meets coverage by itself, so it is a test room (Amendment 1)`);
+    if (v.role === 'test' && isUnplacedRoom(v)) problems.push(`room ${v.venue_id} holds the rows of ${v.building} whose room is not given, so it is a pool room (Amendment 14)`);
     const k = venueKey(v);
     const t = byVenue.get(k) ?? { S1: 0, S2: 0, rooms: [] };
     t.S1 += c.S1;
