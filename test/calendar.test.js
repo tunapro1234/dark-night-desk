@@ -5,7 +5,7 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { REPO_ROOT } from '../server/config.js';
 import { addDays, nightsFor, todayISO } from '../server/calendar/nights.js';
-import { isISODate, isPlannable, listedUntil, loadVenues, validateVenue } from '../server/calendar/venues.js';
+import { isISODate, isPlannable, listedUntil, loadVenues, validateVenue, venueSummary } from '../server/calendar/venues.js';
 
 const FIXTURE_DIR = path.join(REPO_ROOT, 'test', 'fixtures', 'synthetic', 'venues');
 const room = JSON.parse(readFileSync(path.join(FIXTURE_DIR, 'example-room.json'), 'utf8'));
@@ -138,4 +138,14 @@ test('loadVenues reads the synthetic directory', async () => {
   const venues = await loadVenues(FIXTURE_DIR, { onSkip: (f, r) => skipped.push([f, r]) });
   assert.deepEqual(venues.map((v) => v.id), ['example-room', 'other-hall']);
   assert.deepEqual(skipped, []);
+});
+
+test('locality: optional, shown where the room is; city stays the pool key', () => {
+  assert.equal(validateVenue(room).ok, true);
+  assert.equal('locality' in venueSummary(room), false);
+  const across = { ...room, locality: 'Synthetic Town' };
+  assert.equal(validateVenue(across).ok, true);
+  assert.equal(venueSummary(across).locality, 'Synthetic Town');
+  assert.equal(venueSummary(across).city, room.city);
+  assert.match(validateVenue({ ...room, locality: ' ' }).errors.join(' '), /locality/);
 });

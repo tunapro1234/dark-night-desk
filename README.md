@@ -93,7 +93,7 @@ Each venue is one JSON file in `VENUES_DIR` (schema checked by `server/calendar/
 }
 ```
 
-`data/venues/` (the default `VENUES_DIR`) holds the demo market: the 15 rooms listed on First Avenue's calendar (the Minneapolis market, all filed under city "Minneapolis"), read on 11 Oct 2026
+`data/venues/` (the default `VENUES_DIR`) holds the demo market: the 15 rooms listed on First Avenue's calendar (the Minneapolis market, all filed under city "Minneapolis", which is the pool key; Turf Club also carries `locality: "Saint Paul"`, which the page and the offer note show), read on 11 Oct 2026
 from First Avenue's public calendar pages (GET only, a few requests at least 2.5 seconds apart). Each file keeps the next 60 days
 as `shows` and the last 90 days as `past_shows`; postponed shows were skipped (`scripts/refresh-venues.js` rebuilds them, see Calendar refresh). Titles are kept as the calendar printed them (letters outside ASCII are
 stored as JSON `\uXXXX` escapes, so the files are plain ASCII and parse to the same text). The
@@ -132,7 +132,7 @@ node scripts/refresh-venues.js             # read and rewrite the venue files
   `robots.txt` sets a `Crawl-delay`). The first 403 or 429 stops the run.
 - `server/calendar/firstavenue.js` (`parseMonthPage`) turns a page into rows of date, room, title and event link. The date comes
   from the day marker before each row. Rows marked canceled or postponed (by title, link or status badge) are skipped.
-- Each room becomes `fa-<room-slug>.json`. Existing file names, `capacity_band`, `city` and `closed_weekdays` are kept; a new
+- Each room becomes `fa-<room-slug>.json`. Existing file names, `capacity_band`, `city`, `locality` and `closed_weekdays` are kept; a new
   room gets `capacity_band: "unknown"`. `shows` is today to today plus 60 days, `past_shows` is the 90 days before today,
   `read_at` is the time of the run, `listed_until` is today plus 60 days, and `listing_complete` is true only for the four
   rooms in `COMPLETE_ROOMS`. A room the calendar no longer lists keeps its file with empty lists.

@@ -2,7 +2,8 @@
 //
 // {
 //   id: "example-room",                       lowercase slug, unique across files
-//   name, city: string,
+//   name, city: string,                     city is the metro whose rooms share a pool ("Minneapolis" for the Twin Cities)
+//   locality?: string                         where the room is, when it differs from city ("Saint Paul"); shown on the page
 //   capacity_band: "250-500",                 free text band as published by the venue
 //   calendar_source_url: "https://...",       the public calendar page the data was read from
 //   read_at: "2026-10-11" | ISO date-time,    when that page was read
@@ -76,6 +77,7 @@ export function validateVenue(venue) {
   }
   checkShows(errors, 'shows', venue.shows);
   checkShows(errors, 'past_shows', venue.past_shows);
+  if (venue.locality !== undefined && !isText(venue.locality)) errors.push('locality, when present, must be a non-empty string');
   if (venue.listing_complete !== undefined && typeof venue.listing_complete !== 'boolean') errors.push('listing_complete, when present, must be true or false');
   if (venue.listed_until !== undefined && !isISODate(venue.listed_until)) errors.push('listed_until, when present, must be a YYYY-MM-DD date');
   if (venue._synthetic !== undefined && venue._synthetic !== true) errors.push('_synthetic, when present, must be true');
@@ -134,6 +136,7 @@ export function venueSummary(venue) {
     id: venue.id,
     name: venue.name,
     city: venue.city,
+    ...(isText(venue.locality) ? { locality: venue.locality } : {}),
     capacity_band: venue.capacity_band,
     calendar_source_url: venue.calendar_source_url,
   };

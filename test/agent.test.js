@@ -7,7 +7,7 @@ import { loadConfig } from '../server/config.js';
 import { buildApp } from '../server/app.js';
 import { createBudget } from '../server/budget/budget.js';
 import { MAX_TURNS, systemPrompt } from '../server/agent/loop.js';
-import { TOOL_DEFS, TOOL_NAMES, popularityMaxFor, whySentence } from '../server/agent/tools.js';
+import { TOOL_DEFS, TOOL_NAMES, offerNote, popularityMaxFor, whySentence } from '../server/agent/tools.js';
 import { validateAgentOutput } from '../server/agent/validate.js';
 
 const tmp = await mkdtemp(path.join(os.tmpdir(), 'dnd-agent-'));
@@ -380,4 +380,14 @@ test('recorded mode: an unreadable file in recorded/ is skipped', async () => {
   const [night] = await darkNights(app);
   assert.equal(resultOf((await plan(app, { venue_id: 'example-room', date: night })).events).mode.agent, 'scripted');
   await app.close();
+});
+
+test('offer note names the locality when the room has one, else the city', () => {
+  const act = { entity_id: 'synthetic-artist-1', name: 'Synthetic Act A' };
+  const venue = { name: 'Synthetic Room', city: 'Exampleville', capacity_band: '250-500' };
+  assert.match(offerNote({ venue, day: 'Tue Nov 10', act }).body, /Synthetic Room in Exampleville/);
+  const note = offerNote({ venue: { ...venue, locality: 'Synthetic Town' }, day: 'Tue Nov 10', act }).body;
+  assert.match(note, /Synthetic Room in Synthetic Town/);
+  assert.match(note, /Room: Synthetic Room, Synthetic Town \(capacity band 250-500\)/);
+  assert.doesNotMatch(note, /Exampleville/);
 });

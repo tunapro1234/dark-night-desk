@@ -52,10 +52,12 @@ export function whySentence(act, contributors, { voice = 'your' } = {}) {
 
 /**
  * The note to an act's booking agent for one night. Never sent; no fee, ticket or capacity estimate, a blank guarantee.
- * @param {{ venue: { name: string, city: string, capacity_band: string }, day: string, act: { entity_id: string, name: string },
+ * The note names where the room is (`locality`, else `city`).
+ * @param {{ venue: { name: string, city: string, locality?: string, capacity_band: string }, day: string, act: { entity_id: string, name: string },
  *   contributors?: { name: string }[] }} args
  */
 export function offerNote({ venue, day, act, contributors = [] }) {
+  const where = venue.locality || venue.city;
   return {
     to: OFFER_TO,
     entity_id: act.entity_id,
@@ -63,11 +65,11 @@ export function offerNote({ venue, day, act, contributors = [] }) {
     body: [
       'Hi,',
       '',
-      `We have ${day} open at ${venue.name} in ${venue.city} and would like to talk about ${act.name} for that night.`,
+      `We have ${day} open at ${venue.name} in ${where} and would like to talk about ${act.name} for that night.`,
       '',
       whySentence(act.name, contributors, { voice: 'our' }),
       '',
-      `Room: ${venue.name}, ${venue.city} (capacity band ${venue.capacity_band})`,
+      `Room: ${venue.name}, ${where} (capacity band ${venue.capacity_band})`,
       `Date: ${day}`,
       'Guarantee: ___',
       '',

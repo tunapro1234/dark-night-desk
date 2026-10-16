@@ -2,6 +2,7 @@
   "id": "fa-turf-club",
   "name": "Turf Club",
   "city": "Minneapolis",
+  "locality": "Saint Paul",
   "capacity_band": "200-400",
   "calendar_source_url": "https://first-avenue.com/shows/",
   "read_at": "2026-10-11T18:54:39Z",

@@ -136,7 +136,7 @@ async function loadCalendar(venueId) {
   $('source-chip').hidden = true;
   showCalendarNotice('');
   const v = state.venues.find((x) => x.id === venueId);
-  $('venue-meta').textContent = v ? `${v.city} \u00b7 room for about ${v.capacity_band}` : '';
+  $('venue-meta').textContent = v ? `${v.locality || v.city} \u00b7 room for about ${v.capacity_band}` : '';
   try {
     // Today plus the next 60 nights: today is shown (too late to plan), the 60 nights from tomorrow are the window.
     const cal = await getJSON(`/api/venues/${encodeURIComponent(venueId)}/calendar?days=${WINDOW_NIGHTS + 1}`);
@@ -351,7 +351,7 @@ function renderResult(r) {
   setBadges(r.mode?.agent, r.mode?.qloo, r.mode?.recorded_at);
   for (const li of $('steps').children) li.className = 'done';
 
-  $('poster-venue').textContent = r.venue ? `${r.venue.name} \u00b7 ${r.venue.city}` : '';
+  $('poster-venue').textContent = r.venue ? `${r.venue.name} \u00b7 ${r.venue.locality || r.venue.city}` : '';
   $('poster-date').textContent = posterDay(r.night.date);
 
   const lineup = (r.shortlist ?? []).map((act) =>
