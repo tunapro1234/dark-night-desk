@@ -10,6 +10,7 @@ robots results and the terms of use read for each site go into `data/backtest2/s
 (1 Apr-30 Jun 2026) and S2 (1 Jul-30 Sep 2026) at the local date (Amendment 3), after the Amendment 4 rules (canceled, off-site, untitled
 and non-music rows removed). A count marked ≥ is a lower bound: the rows confirmed on pages, where the source could not be read in full.
 These are pre-compile counts. The run counts again on `shows.csv` and refuses to start if a room's role disagrees (Amendment 12).
+The role corrections of 17 Oct 2026 (Result) use the compiled counts.
 Owners and bookers are named by company or role, never by private name.
 
 ## How the rules were read (fixed before compiling)
@@ -49,35 +50,48 @@ text's own words or on a published definition; Amendment 14 gives the reasons. B
    places past rows, so its rooms are split; so are Tranzac's (an event field) and Festsaal Kreuzberg's (a location field). Rows of a
    split venue with no room go to one pool room of the same building.
 8. **Pool-only venues.** A venue whose rooms meet coverage only together is listed with role `pool`, also in a metro with no test
-   room, because every eligible venue feeds its metro pool (VEGA, Tranzac, Festsaal Kreuzberg).
+   room, because every eligible venue feeds its metro pool (VEGA; Tranzac and Festsaal Kreuzberg until the 17 Oct role corrections).
 
 ## Result
-39 clusters hold a test room, in 16 metros. The 20-cluster cap of `BACKTEST-2.md` keeps the first 20 in `venues.csv` order, in 8
-metros. The test rooms of the other 19 clusters are pool rooms in the run (Amendment 12). Every listed venue still feeds its metro
+41 clusters hold a test room, in 16 metros. The 20-cluster cap of `BACKTEST-2.md` keeps the first 20 in `venues.csv` order, in 8
+metros. The test rooms of the other 21 clusters are pool rooms in the run (Amendment 12). The table includes the role corrections of
+17 Oct 2026, made on the compiled show lists (below). Every listed venue still feeds its metro
 pool and counts for §5.
 
 | Metro | Test rooms kept (one cluster each) | Test rooms capped (pool in the run) | Pool-only rooms |
 |---|---|---|---|
-| Amsterdam | Bitterzoet, OCCII | | Cinetol (3 rooms), Tolhuistuin (8 rooms) |
+| Amsterdam | Bitterzoet, Cinetol (Zaal), OCCII | | Cinetol (Etage, house room), Tolhuistuin (8 rooms) |
 | Atlanta | 529, The EARL | | |
-| Berlin | Badehaus, Privatclub, Urban Spree | | Festsaal Kreuzberg (6 rooms) |
-| Boston | Arts at the Armory (Performance Hall, ROOTED Cafe), The Burren (Back Room), Club Passim, Lizard Lounge, The Rockwell | | Arts at the Armory (B5 Lavender Room, house room), The Burren (Front Room) |
+| Berlin | Badehaus, Festsaal Kreuzberg (Festsaal), Privatclub, Urban Spree | | Festsaal Kreuzberg (Biergarten, Gewächshaus, Kaminzimmer, Ostflügel, house room) |
+| Boston | Arts at the Armory (Performance Hall, ROOTED Cafe), The Burren (Back Room), Club Passim, The Rockwell | | Arts at the Armory (B5 Lavender Room, house room), The Burren (Front Room) |
 | Bristol | The Louisiana | | Trinity Centre (5 rooms) |
 | Copenhagen | ALICE, Loppen, Pumpehuset | | VEGA (5 rooms) |
 | Leeds | Brudenell Social Club, The Wardrobe | | |
-| Manchester | The Castle Hotel, Night & Day Cafe | YES (The Pink Room, Basement) | YES (Roof Terrace, Bar, house room) |
+| Manchester | The Castle Hotel | Night & Day Cafe, YES (The Pink Room, Basement) | YES (Roof Terrace, Bar, house room) |
 | Milwaukee | | Cactus Club, Linneman's Riverwest Inn, The Pabst Theater | |
 | Montreal | | Le Ministère, Turbo Haus | |
 | Philadelphia | | MilkBoy Philadelphia, PhilaMOCA | |
 | Raleigh | | Kings, The Pour House | |
 | San Francisco | | Bottom of the Hill, Make-Out Room, Yoshi's | |
 | St. Louis | | Blue Strawberry, Off Broadway | |
-| Toronto | | Horseshoe Tavern | Tranzac (5 rooms) |
+| Toronto | | Horseshoe Tavern, Tranzac (Living Room, Main Hall, Southern Cross, Zine Library) | Tranzac (house room) |
 | Vancouver | | The Pearl, Rickshaw Theatre, Rio Theatre | |
 
 `venues.csv` lists the rooms by metro, then by `venue_id`. That order is fixed before compiling. The cap keeps the first 20 clusters
 with a test room in that order, and the order sets the seed-2 placebo chains (Amendment 12); both are derived again from the file if a
 role changes.
+
+**Roles corrected on the compiled show lists (17 Oct 2026).** The show lists of 22 of the 24 buildings with a live source were
+compiled in full on 17 Oct; Tranzac's is compiled except 1-15 April, and Lizard Lounge's could not be read (Amendment 12 checks
+every role against `shows.csv`). Six rooms listed as pool meet coverage by themselves and are
+test rooms: Cinetol's Zaal (74 / 57), Festsaal Kreuzberg's Festsaal (30 / 21) and Tranzac's Southern Cross (183 / 252), Living Room
+(46 / 57), Main Hall (30 / 26) and Zine Library (22 / 26). Tranzac's list still lacks 1-15 April (its sitemap starts on 16 April;
+those nights can come only from web.archive.org copies), and more rows can only raise these counts. Lizard Lounge is not used: on
+17 Oct its events feed answered with a 403 Cloudflare check page (reading 5), so it leaves; Boston keeps four other clusters. Cinetol
+and Festsaal Kreuzberg sort before the cut and enter it; The Castle Hotel is now the last kept cluster and Night & Day Cafe the first
+capped one. The cut still falls in Manchester, and the 8 metros are unchanged. The compiled counts of other rooms differ from the
+pre-compile counts in the tables (for example Rickshaw Theatre 40 / 29, The Pabst Theater 21 / 22, Trinity Centre 54 / 38 for the
+building); every one of them keeps its role.
 
 Ten checked venues, in nine metros, meet coverage (Cyprus Avenue and Mr Smalls only as pool-only venues) but fail §5, because their
 metro has no eligible venue of another cluster: Antone's Nightclub (Austin), Neurolux (Boise), Green Mill (Chicago), Cyprus Avenue
@@ -95,15 +109,13 @@ by thumbnail code alone are Pabst rows, and Kings has S1 21 with Kings and The P
 confirms or corrects each role (Amendment 12), with the reason in `sources.md`. A test room that falls short becomes pool if its
 venue's rooms still meet coverage together; otherwise the venue leaves, and if it was its metro's only other cluster, the metro's other
 venues fail §5 and leave too. If a kept cluster loses its only test room, the next capped cluster in file order comes in under the cap,
-`man-nowwave` (YES) first. The other way round, Cinetol's Zaal (the 17 event pages read place 15 rows in it and 1 in the Etage; the
-building has 81 / 58), Tolhuistuin's Club (16 / 5 on the copies read, 90 / 48 only if Paradiso's 74 / 43 rows with no room were placed
-there) and Trinity Centre's Main Hall (0 / 0 as
-placed, 47 / 32 only if the building-only labels were read as the Main Hall) may reach 20 / 20 on `shows.csv`; each would add a test
-cluster before the cut and push the last kept clusters out (Night & Day Cafe first, then The Castle Hotel). The house-room conflict
+`man-nightday` (Night & Day Cafe) first. The other way round, Tolhuistuin's Club (16 / 5 on the copies read, 90 / 48 only if Paradiso's 74 / 43 rows
+with no room were placed there) may reach 20 / 20 on `shows.csv`; it would add a test cluster before the cut and push The Castle Hotel
+out first. Cinetol's Zaal reached it on 17 Oct (74 / 57); Trinity Centre's Main Hall did not (0 / 0 on the compiled list). The house-room conflict
 with `coverageProblems` is resolved, not open: the room named after its building holds the rows with no room and stays a pool room
-whatever it counts (Amendment 14), as the runner does since commit ed27c6f, so Tolhuistuin's (85 / 45) and Trinity Centre's (47 / 32)
-house rooms add no test cluster. VEGA's, Tranzac's and Festsaal Kreuzberg's per-room counts are lower bounds, so their rooms are pool
-for now; a room that reaches 20 in both periods on `shows.csv` becomes a test room in the same way.
+whatever it counts (Amendment 14), as the runner does since commit ed27c6f, so Tolhuistuin's (85 / 45) and Trinity Centre's (47 / 32;
+49 / 34 compiled) house rooms add no test cluster. VEGA's per-room counts are lower bounds, so its rooms are pool for now; a room that reaches 20 in both
+periods on `shows.csv` becomes a test room in the same way, as Tranzac's and Festsaal Kreuzberg's did.
 
 **Where the check stopped (16-17 Oct 2026).** The queue was checked further on 16-17 Oct, after the 16 Oct stop: 29 venues were
 upheld, the others were settled, and 41 stay undecided, most because web.archive.org was stopped for good in the fetcher after its
@@ -111,13 +123,13 @@ second 429 on 17 Oct (Lido Berlin and Woodward Theater for other reasons; Whisky
 settled by more reads of their own event pages than the request cap allowed). They are listed after the tables. This was decided before any
 show list was compiled, before any Qloo call and without any fit rating. It is not neutral: the cap keeps clusters in file order, so
 an undecided venue in a metro that sorts before the cut could push out a later cluster once it is checked and paired. Before the cut
-(between Night & Day Cafe and YES, in Manchester) these are Center Stage (Atlanta); Lido Berlin and Cassiopeia (Berlin); Martyrs',
+(between The Castle Hotel and Night & Day Cafe, in Manchester) these are Center Stage (Atlanta); Lido Berlin and Cassiopeia (Berlin); Martyrs',
 Old Town School of Folk Music and Reggies (Chicago); Music Box Supper Club (Cleveland); Amager Bio & BETA (Copenhagen); Lost Lake
 Lounge (Denver); The Magic Bag (Detroit); SWG3 (Glasgow); The Lexington (London); and Whisky a Go Go (Los Angeles). In Chicago,
 Cleveland, Denver, Detroit, Glasgow, London and Los Angeles, a pass would also give §5 to a venue that is "not used" on §5 alone
 (Green Mill, Beachland Ballroom and Tavern, hi-dive, Cliff Bell's, Nice'n'Sleazy, The Underworld, Hotel Cafe); those partners need
 the 16 Oct readings checked again before they come back. Shank Hall (Milwaukee) and Ardmore Music Hall (Philadelphia) sort after this
-cut but before the cut of the literal reading (below). The undecided venues of Portland, San Francisco, Toronto and Washington sort
+cut but before the cut of the literal reading as estimated below (that estimate predates the 17 Oct role corrections). The undecided venues of Portland, San Francisco, Toronto and Washington sort
 after both cuts; in Washington any one of them would bring The Atlantis back. We record it here so that it can be weighed.
 
 **Literal reading of Amendment 1, estimated before compiling.** Amendment 14's last item reports the study beside the result with every
@@ -137,7 +149,10 @@ company named as presenting a counted show treated as an operator of the room. T
   assumes that 'Live Nation' and 'The Bowery Presents' are on `ln-aeg.csv`, which is not in the repository yet.
 
 If `shows.csv` confirms these in S1 or S2, 29 clusters hold a test room after §1 and §5. Applied again, the cap keeps 20 in 8 metros
-(Amsterdam, Berlin, Boston, Copenhagen, Manchester, Milwaukee, Montreal, Philadelphia); the venues of 14 of the main study's 20 clusters survive, as 13 clusters (Privatclub and Urban Spree join).
+(Amsterdam, Berlin, Boston, Copenhagen, Manchester, Milwaukee, Montreal, Philadelphia); the venues of 14 of the main study's 20 clusters survive, as 13 clusters (Privatclub and Urban Spree join). These figures predate the 17 Oct role corrections and no longer hold:
+Cinetol's Zaal and Festsaal Kreuzberg's Festsaal are now test rooms, and whether Cinetol joins Bitterzoet's cluster depends on
+'i.s.m. Paradiso', which the compiled list does not record as presenting. The runner reports the literal reading from `shows.csv`
+and `ln-aeg.csv`.
 Fewer remain if `presented_by` links more rooms (the presenters at Badehaus, Festsaal Kreuzberg, Pumpehuset, VEGA, the Manchester
 rooms, The Burren, the other Boston rooms, Raleigh and St. Louis have not been compared; Trinity Music, at Privatclub and Festsaal
 Kreuzberg, could join Berlin into one cluster, which would then fail §5) or names Live Nation or AEG at a room (§1). The claim rule's
@@ -161,7 +176,7 @@ Registered = §1-6 as first written. Amended = with Amendments 1-14 (binding). "
 | Denver | hi-dive | private owners, house booking | 61 / 58 | not used | not used | §5: the other Denver venue, Larimer Lounge, is out on §3. |
 | Denver | Larimer Lounge | a private owner (who also owns Globe Hall and Lost Lake Lounge), in-house booking team | Larimer Lounge room ≥73 / ≥50; Ski House and Treehouse about 26 / 15; Campground 5 / 14 | not used | not used | §3, platform terms: the site is built by Rockhouse Partners, an Etix company (reading 4). Counted on web.archive.org copies before that was found. |
 | Boston (Somerville) | The Rockwell | private family restaurant group, house booking | 121 / 73 | eligible | **test room** | Two S2 rows are marked canceled only in the site's list view, not in the feed. Many counted rows are theatre or comedy; the music category alone is about 39 / 32. |
-| Boston (Cambridge) | Lizard Lounge | private family group (with the restaurant upstairs), house booking | 59 / 57 | eligible | **test room** | "No Event Tonight" and closed-night rows (26 in each period) are not shows and are not counted. |
+| Boston (Cambridge) | Lizard Lounge | private family group (with the restaurant upstairs), house booking | 59 / 57 | eligible | not used | §3 (reading 5): on 17 Oct, when the show list was compiled, the events feed answered with a 403 Cloudflare check page; nothing was read another way. On 14 Oct the feed was open; "No Event Tonight" and closed-night rows (26 in each period) were not counted. |
 | Boston (Cambridge) | Club Passim | 47 Palmer Inc. (nonprofit, operating as Passim), house booking | ≥79 / ≥84 | eligible | **test room** | Counted on web.archive.org copies of its own calendar page; the live page lists coming shows only. "Passim Presents" shows in other buildings are not counted. Dropped at first while scouting for its size, which is not a §1-6 rule. |
 | Boston (Cambridge) | The Lilypad | private owner, house booking and rentals | 193 / 175 | not used | not used | §3, platform terms: the site is built on Squarespace (reading 4). |
 | Boston (Somerville) | Arts at the Armory | The Center for Arts at the Armory (non-profit) runs it in a city-owned building; booking through its own form, most nights rentals by outside groups, none presenting more than half | 107 / 97 in all; Performance Hall 54 / 47, ROOTED Cafe 53 / 49 | eligible | **test room** (Performance Hall, ROOTED Cafe) | Rooms from the Events Manager category field (reading 7); the B5 Lavender Room and the house room are pool. Many counted rows are dance socials, classes, comedy without the word and fairs, which the Amendment 4 words do not remove. Outside presenters include The Bowery Presents (4 + 2) and Live Nation (1 S1 row). |
@@ -214,7 +229,7 @@ Registered = §1-6 as first written. Amended = with Amendments 1-14 (binding). "
 | Montreal | Turbo Haus | private co-owner, house booking (many nights by local promoters) | 106 / 101 | eligible | **test room** | Its site is the venue's own build (all files from its own host); no site-builder platform. |
 | Montreal | Le Ministère | Les Productions Le Ministère, in-house programming; a rental hall where outside companies present most nights, none more than half. It likely shares an operations team with Club Soda (owned by L-A BE since 2023). | ≥31 / 21 | eligible | **test room** | S1 from web.archive.org copies of its own listing and its own event pages (1-23 Apr not covered), S2 from its own event pages. evenko (49% Live Nation) presents 1 of 21 S2 rows. Dropped while scouting for its programme, which is not a §1-6 rule. |
 | Montreal | Théâtre Fairmount | Neon Productions (local promoter; third-party sources), room rented or co-promoted per show | 37 / 21 | not used | not used | §3, platform terms: the site is built on Squarespace (reading 4). evenko (49% Live Nation) presents 3 of 37 S1 and 4 of 21 S2 rows. |
-| Toronto | Tranzac | member-run not-for-profit | ≥25 / ≥25 in all; Southern Cross ≥16 / ≥15, other rooms fewer | eligible | **pool only** | Rooms from each event's rooms field (reading 7). No room is shown at 20 / 20. |
+| Toronto | Tranzac | member-run not-for-profit | ≥25 / ≥25 in all; Southern Cross ≥16 / ≥15, other rooms fewer | eligible | **test rooms** (Southern Cross, Living Room, Main Hall, Zine Library) | Rooms from each event's rooms field (reading 7). Compiled 17 Oct (16 Apr-30 Sep): Southern Cross 183 / 252, Living Room 46 / 57, Main Hall 30 / 26, Zine Library 22 / 26, house room 4 / 7. |
 | Toronto | Horseshoe Tavern | private co-owners, house booking (an independent promoter presents a minority of nights) | ≥78 / ≥61 | eligible | **test room** | Counted on web.archive.org copies of its own pages; the live site lists coming shows only. Built on Webflow, whose terms do not decide it (reading 4). |
 | Vancouver | Rickshaw Theatre | private owner, house booking and hires | 55 / 33 | eligible | **test room** | MODO-LIVE presents some nights (see The Pearl). |
 | Vancouver | The Pearl | MODO-LIVE (independent promoter and operator, also owner of Lee's Palace in Toronto), owner and house presenter | ≥76 / ≥61 | eligible | **test room** | Counted on web.archive.org copies of its own home page. Its own cluster `modo-live`. |
@@ -254,7 +269,7 @@ Registered = §1-6 as first written. Amended = with Amendments 1-14 (binding). "
 | Amsterdam | Melkweg | Stichting Melkweg (foundation), house programming | 200 / 137 | not used | not used | §5: the other Amsterdam candidate, Paradiso, is not readable. §3 is also unclear: its visitor terms (VNPF, Art. 4) forbid copying from the programme. |
 | Amsterdam | Paradiso | | not counted | not used | not used | §3: robots.txt disallows ClaudeBot from the whole site. |
 | Amsterdam | Bitterzoet | a private owner; the venue rents itself out and books no bands itself, so there is no outside house booker | ≥33 / ≥20 | eligible | **test room** | S1 from four web.archive.org copies of its agenda, S2 from 20 own event pages; S2 is at the line. Paradiso presents a minority of nights. |
-| Amsterdam | Cinetol | Stichting Kunst- en Cultuurhuis Cinetol (foundation), house programming | 81 / 58 in all; Zaal ≥6 / ≥9, Etage ≥1 / 0 from 17 event pages | eligible | **pool only** | Rooms from each event page's LOCATION field (reading 7). Built on Webflow, which passes (reading 4). Paradiso is co-credited ('i.s.m.') on 8 counted rows. |
+| Amsterdam | Cinetol | Stichting Kunst- en Cultuurhuis Cinetol (foundation), house programming | 81 / 58 in all; Zaal ≥6 / ≥9, Etage ≥1 / 0 from 17 event pages | eligible | **test room** (Zaal) | Compiled 17 Oct: Zaal 74 / 57, Etage 2 / 0, house room 3 / 0. Rooms from each event page's LOCATION field (reading 7). Built on Webflow, which passes (reading 4). Paradiso is co-credited ('i.s.m.') on 8 counted rows. |
 | Amsterdam | OCCII | Stichting In It (non-profit foundation), house programming | 43 / 26 | eligible | **test room** | Exact, from its own 2026 archive. Read by meaning rather than by the title words, S2 would be 19. |
 | Amsterdam | Tolhuistuin | Stichting Tolhuistuin with THT Horeca BV and Stichting Paradiso; Paradiso is the house booker of the house room (117 of its 130 rows), Parallel of the Club | ≥171 / ≥91 in all; house room 85 / 45, IJzaal 33 / 11, Club 16 / 5, Tuin 12 / 18, other rooms fewer | eligible | **pool only** | Rooms from the agenda's location field (reading 7); counted on five web.archive.org copies. No named room reaches 20 / 20; the house room does, but it holds the rows with no room and stays pool (Amendment 14). |
 | Copenhagen | Pumpehuset | management-owned company in a municipal building, house booking | 20 / 20 | eligible | **test room** | One room (reading 7): Byhaven, its free outdoor stage at the same address, appears only in titles, the concert pages have no room field, and the location filter covers only the coming programme. At the line; the compile decides. |
@@ -262,7 +277,7 @@ Registered = §1-6 as first written. Amended = with Amendments 1-14 (binding). "
 | Copenhagen | ALICE | Fonden ALICE (foundation), house booking by its music group | 43 / 30 (≥28 / ≥23 confirmed on-site) | eligible | **test room** | From its own past-event month lists; off-site rows show only in the page text. KLANG Festival presents 7 of the 43 S1 rows. |
 | Copenhagen | Loppen | Musikforeningen Loppen (members' association), in-house booking | 34 / 21 | eligible | **test room** | From its own past-shows listing. S2 rests on the three Frigjort Festival nights, whose pages head the line-up 'Loppen'; read as off-site, S2 would be 18. |
 | Berlin | Hole44 | Channel Music GmbH | 39 / 16 | not used | not used | §4: S2. |
-| Berlin | Festsaal Kreuzberg | Neue Flutgraben Betriebsgesellschaft (operating company; promoters' association) | ≥24 / ≥30 in all; Festsaal ≥16 / ≥21 | eligible | **pool only** | Rooms from each event's location field (reading 7). No room is shown at 20 / 20. |
+| Berlin | Festsaal Kreuzberg | Neue Flutgraben Betriebsgesellschaft (operating company; promoters' association) | ≥24 / ≥30 in all; Festsaal ≥16 / ≥21 | eligible | **test room** (Festsaal) | Rooms from each event's location field (reading 7). Compiled 17 Oct from all 626 event pages: Festsaal 30 / 21, Biergarten 2 / 8, house room 6 / 1. |
 | Berlin | Badehaus | Badehaus Musik GmbH (owner and house booker); outside promoters present single shows | ≥90 / ≥34 | eligible | **test room** | Counted on web.archive.org copies of its own listing; 19 pub-quiz rows removed (Amendment 4). |
 | Berlin | Privatclub | Milchmädchen Musikkultur GmbH, house booking; outside promoters present most nights, none more than half (Trinity Music GmbH 21 of 127, Loft Concerts 7) | 83 / about 44 (≥21 confirmed on its event pages) | eligible | **test room** | Union of five web.archive.org copies of its own home page; 3 of 24 sampled S2 pages are now marked ABGESAGT. Served through Cloudflare as a CDN; no challenge was met. |
 | Berlin | Urban Spree | Urban Spree GmbH; no house booker (13 different promoters on 16 sampled pages, the largest with 3) | 36 / 27 | eligible | **test room** | On the 16 Oct queue; checked on 16 Oct 2026 UTC. Exact, from the Concerts filter of its own programme pages. Loft Concerts presents shows here and at Privatclub. |

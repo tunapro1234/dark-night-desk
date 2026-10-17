@@ -2,7 +2,7 @@ venue_id,name,operator,cluster,metro,tz,capacity,role,building,calendar_source
 ams-bitterzoet,Bitterzoet,Bitterzoet,ams-bitterzoet,Amsterdam,Europe/Amsterdam,,test,,https://www.bitterzoet.com/event/<slug>/ event pages (listed in https://www.bitterzoet.com/sitemap.xml) and https://web.archive.org/ copies of https://www.bitterzoet.com/agenda/
 ams-cinetol-etage,Etage,Stichting Kunst- en Cultuurhuis Cinetol,ams-cinetol,Amsterdam,Europe/Amsterdam,60,pool,Cinetol,https://www.cinetol.nl/archief (pages ?5bc40fc8_page=1..5) and its /events/ pages
 ams-cinetol-house,Cinetol,Stichting Kunst- en Cultuurhuis Cinetol,ams-cinetol,Amsterdam,Europe/Amsterdam,,pool,Cinetol,https://www.cinetol.nl/archief (pages ?5bc40fc8_page=1..5) and its /events/ pages
-ams-cinetol-zaal,Zaal,Stichting Kunst- en Cultuurhuis Cinetol,ams-cinetol,Amsterdam,Europe/Amsterdam,150,pool,Cinetol,https://www.cinetol.nl/archief (pages ?5bc40fc8_page=1..5) and its /events/ pages
+ams-cinetol-zaal,Zaal,Stichting Kunst- en Cultuurhuis Cinetol,ams-cinetol,Amsterdam,Europe/Amsterdam,150,test,Cinetol,https://www.cinetol.nl/archief (pages ?5bc40fc8_page=1..5) and its /events/ pages
 ams-occii,OCCII,Stichting In It,ams-occii,Amsterdam,Europe/Amsterdam,225,test,,https://occii.org/events-archive-2026/
 ams-tolhuistuin-club,Club,Stichting Tolhuistuin; Parallel (house booker of this room); Stichting Paradiso (named by the venue as organiser of the Club concerts),ams-tolhuistuin,Amsterdam,Europe/Amsterdam,,pool,Tolhuistuin,https://web.archive.org/ copies of https://tolhuistuin.nl/agenda
 ams-tolhuistuin-galerij,Galerij,Stichting Tolhuistuin,ams-tolhuistuin,Amsterdam,Europe/Amsterdam,,pool,Tolhuistuin,https://web.archive.org/ copies of https://tolhuistuin.nl/agenda
@@ -20,7 +20,7 @@ ber-festsaal-gewaechshaus,Gewächshaus,Neue Flutgraben Betriebsgesellschaft,ber-
 ber-festsaal-house,Festsaal Kreuzberg,Neue Flutgraben Betriebsgesellschaft,ber-festsaal,Berlin,Europe/Berlin,,pool,Festsaal Kreuzberg,https://admin.festsaal-kreuzberg.de/api/v2/pages/
 ber-festsaal-kaminzimmer,Kaminzimmer,Neue Flutgraben Betriebsgesellschaft,ber-festsaal,Berlin,Europe/Berlin,,pool,Festsaal Kreuzberg,https://admin.festsaal-kreuzberg.de/api/v2/pages/
 ber-festsaal-ostfluegel,Ostflügel,Neue Flutgraben Betriebsgesellschaft,ber-festsaal,Berlin,Europe/Berlin,,pool,Festsaal Kreuzberg,https://admin.festsaal-kreuzberg.de/api/v2/pages/
-ber-festsaal-saal,Festsaal,Neue Flutgraben Betriebsgesellschaft,ber-festsaal,Berlin,Europe/Berlin,1100,pool,Festsaal Kreuzberg,https://admin.festsaal-kreuzberg.de/api/v2/pages/
+ber-festsaal-saal,Festsaal,Neue Flutgraben Betriebsgesellschaft,ber-festsaal,Berlin,Europe/Berlin,1100,test,Festsaal Kreuzberg,https://admin.festsaal-kreuzberg.de/api/v2/pages/
 ber-privatclub,Privatclub,Milchmädchen Musikkultur GmbH,ber-privatclub,Berlin,Europe/Berlin,,test,,https://web.archive.org/ copies of https://privatclub-berlin.de/ and live https://privatclub-berlin.de/event/ pages
 ber-urbanspree,Urban Spree,Urban Spree GmbH,ber-urbanspree,Berlin,Europe/Berlin,,test,,https://www.urbanspree.com/program/concerts/
 bos-armory-b5,B5 Lavender Room,The Center for Arts at the Armory,bos-armory,Boston,America/New_York,,pool,Arts at the Armory,https://artsatthearmory.org/?mo=4&yr=2026 to ?mo=9&yr=2026 and /events/<slug>/ event pages
@@ -29,7 +29,6 @@ bos-armory-hall,Performance Hall,The Center for Arts at the Armory,bos-armory,Bo
 bos-armory-house,Arts at the Armory,The Center for Arts at the Armory,bos-armory,Boston,America/New_York,,pool,Arts at the Armory,https://artsatthearmory.org/?mo=4&yr=2026 to ?mo=9&yr=2026 and /events/<slug>/ event pages
 bos-burren-back,The Back Room,The Burren,bos-burren,Boston,America/New_York,,test,The Burren,https://web.archive.org/ copies of https://www.burren.com/music.html and https://burren.com/music.html
 bos-burren-front,The Front Room,The Burren,bos-burren,Boston,America/New_York,,pool,The Burren,https://web.archive.org/ copies of https://www.burren.com/music.html and https://burren.com/music.html
-bos-lizard,Lizard Lounge,Lizard Lounge,bos-lizard,Boston,America/New_York,100,test,,https://lizardloungeclub.com/wp-json/tribe/events/v1/events
 bos-passim,Club Passim,47 Palmer Inc.,bos-passim,Boston,America/New_York,,test,,https://web.archive.org/ copies of https://www.passim.org/live-music/
 bos-rockwell,The Rockwell,The Rockwell,bos-rockwell,Boston,America/New_York,203,test,,https://therockwell.org/wp-json/tribe/events/v1/events
 brs-louisiana,The Louisiana,The Louisiana,brs-louisiana,Bristol,Europe/London,140,test,,https://www.thelouisiana.net/events/2026/04 to /events/2026/09
@@ -71,10 +70,10 @@ stl-bluestrawberry,Blue Strawberry,Blue Strawberry,stl-bluestrawberry,St. Louis,
 stl-offbroadway,Off Broadway,Off Broadway,stl-offbroadway,St. Louis,America/Chicago,,test,,https://web.archive.org/ copy of https://www.offbroadwaystl.com/shows and the https://web.archive.org/ CDX index of its /shows/<slug> pages
 tor-horseshoe,Horseshoe Tavern,Horseshoe Tavern,tor-horseshoe,Toronto,America/Toronto,,test,,https://web.archive.org/ copies of https://horseshoetavern.com/ and https://horseshoetavern.com/events
 tor-tranzac-house,Tranzac,Tranzac,tor-tranzac,Toronto,America/Toronto,,pool,Tranzac,https://tranzac.org/sitemap.xml event pages
-tor-tranzac-livingroom,Living Room,Tranzac,tor-tranzac,Toronto,America/Toronto,,pool,Tranzac,https://tranzac.org/sitemap.xml event pages
-tor-tranzac-mainhall,Main Hall,Tranzac,tor-tranzac,Toronto,America/Toronto,,pool,Tranzac,https://tranzac.org/sitemap.xml event pages
-tor-tranzac-southerncross,Southern Cross,Tranzac,tor-tranzac,Toronto,America/Toronto,,pool,Tranzac,https://tranzac.org/sitemap.xml event pages
-tor-tranzac-zinelibrary,Zine Library,Tranzac,tor-tranzac,Toronto,America/Toronto,,pool,Tranzac,https://tranzac.org/sitemap.xml event pages
+tor-tranzac-livingroom,Living Room,Tranzac,tor-tranzac,Toronto,America/Toronto,,test,Tranzac,https://tranzac.org/sitemap.xml event pages
+tor-tranzac-mainhall,Main Hall,Tranzac,tor-tranzac,Toronto,America/Toronto,,test,Tranzac,https://tranzac.org/sitemap.xml event pages
+tor-tranzac-southerncross,Southern Cross,Tranzac,tor-tranzac,Toronto,America/Toronto,,test,Tranzac,https://tranzac.org/sitemap.xml event pages
+tor-tranzac-zinelibrary,Zine Library,Tranzac,tor-tranzac,Toronto,America/Toronto,,test,Tranzac,https://tranzac.org/sitemap.xml event pages
 van-pearl,The Pearl,MODO-LIVE,modo-live,Vancouver,America/Vancouver,,test,,https://web.archive.org/ copies of https://thepearlvancouver.com/
 van-rickshaw,Rickshaw Theatre,Rickshaw Theatre,van-rickshaw,Vancouver,America/Vancouver,,test,,https://rickshawtheatre.com/wp-json/wp/v2/show_listings
 van-rio,Rio Theatre,Rio Theatre,van-rio,Vancouver,America/Vancouver,409,test,,https://riotheatre.ca/wp-json/barker/v1/listings
