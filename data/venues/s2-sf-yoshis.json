@@ -1,0 +1,1182 @@
+{
+  "id": "s2-sf-yoshis",
+  "name": "Yoshi's",
+  "city": "San Francisco",
+  "capacity_band": "up to 310",
+  "calendar_source_url": "https://yoshis.com/",
+  "read_at": "2026-10-18T23:22:24Z",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-10-18",
+      "headliner": "DAMIEN ESCOBAR",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-19",
+      "headliner": "SHOSHANA BEAN",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-20",
+      "headliner": "TWIN PEAKS: CONVERSATION WITH THE STARS",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-21",
+      "headliner": "CLAY AIKEN",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-22",
+      "headliner": "TOMMY DAVIDSON",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-23",
+      "headliner": "MAYSA",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-24",
+      "headliner": "BUTTAH'S JOOK JOINT",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-24",
+      "headliner": "CHRISTIAN SANDS TRIO",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-25",
+      "headliner": "MARION MEADOWS",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-26",
+      "headliner": "LAURA ANGLADE",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-27",
+      "headliner": "DIRECT FROM SWEDEN: THE MUSIC OF ABBA",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-28",
+      "headliner": "DALEY",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-29",
+      "headliner": "GRACE KELLY",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-30",
+      "headliner": "RICK BRAUN",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-31",
+      "headliner": "HOUSE OF VELVET: HALLOWEEN (MUST BE 18+)",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-01",
+      "headliner": "JA RONN & FLOW: THAT 80s FLOW",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-02",
+      "headliner": "LEE RITENOUR",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-03",
+      "headliner": "LEE RITENOUR",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-04",
+      "headliner": "CHERRONDA G I'M EVERY WOMAN SHOW",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-05",
+      "headliner": "C\u00d3RDOBA",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-06",
+      "headliner": "DWELE",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-07",
+      "headliner": "DAN ASHLEY",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-08",
+      "headliner": "RUBEN STUDDARD",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-09",
+      "headliner": "A TRIBUTE TO GROVER WASHINGTON JR. FEAT KEVIN MOORE, ANGELO LUSTER, ASHLEY JEMISON AND ELDON T. JONES",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-10",
+      "headliner": "LAS LOMAS HIGH SCHOOL",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-11",
+      "headliner": "HERLIN RILEY",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-12",
+      "headliner": "JACKIEM JOYNER",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-13",
+      "headliner": "KRS-ONE",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-14",
+      "headliner": "DAY26",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-15",
+      "headliner": "BRIAN SIMPSON",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-17",
+      "headliner": "BRIAN CULBERTSON",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-18",
+      "headliner": "BRIAN CULBERTSON",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-19",
+      "headliner": "BRIAN CULBERTSON",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-20",
+      "headliner": "GERALD ALBRIGHT",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-21",
+      "headliner": "GERALD ALBRIGHT",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-22",
+      "headliner": "THE OZ NOY TRIO feat. DAVE WECKL",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-23",
+      "headliner": "BACK TO THE FUTURE THANKSGIVING CELEBRATION: FEAT LAWRENCE MATTHEWS AND DERRICK HALL & COMPANY",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-25",
+      "headliner": "IRISH CHRISTMAS IN AMERICA",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-27",
+      "headliner": "SHEILA E.",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-28",
+      "headliner": "SHEILA E.",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-11-29",
+      "headliner": "PAUL TAYLOR",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-02",
+      "headliner": "ISAIAH SHARKEY",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-03",
+      "headliner": "SYLVIA ANDERSON FEAT DARREL WALLS AND MUSIC DIRECTOR CARL WHEELER",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-04",
+      "headliner": "DEMOLA THE VIOLINIST",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-05",
+      "headliner": "DEMOLA THE VIOLINIST",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-06",
+      "headliner": "DEMOLA THE VIOLINIST",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-07",
+      "headliner": "THE JAMES HUNTER SIX - OFF THE FENCE TOUR",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-08",
+      "headliner": "SPANISH HARLEM ORCHESTRA",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-09",
+      "headliner": "SPANISH HARLEM ORCHESTRA",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-10",
+      "headliner": "DAVID BENOIT",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-11",
+      "headliner": "CON FUNK SHUN",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-12",
+      "headliner": "CON FUNK SHUN",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-13",
+      "headliner": "CON FUNK SHUN",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-14",
+      "headliner": "MIKE STERN BAND",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-15",
+      "headliner": "MIKE STERN BAND",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-16",
+      "headliner": "MELBA'S KITCHEN",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-17",
+      "headliner": "ROBERT GLASPER",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-18",
+      "headliner": "ROBERT GLASPER",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-19",
+      "headliner": "ROBERT GLASPER",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-20",
+      "headliner": "ROBERT GLASPER",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-22",
+      "headliner": "MINDI ABAIR CHRISTMAS SHOW",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-23",
+      "headliner": "NZURI SOUL: CHRISTMAS IN EGYPT IV - THE GIFT",
+      "source_url": "https://yoshis.com/"
+    },
+    {
+      "date": "2026-12-24",
+      "headliner": "ALVON JOHNSON",
+      "source_url": "https://yoshis.com/"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "HOWIE DAY",
+      "source_url": "https://web.archive.org/web/20260327054930id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "GOAPELE: 25th ANNIVERSARY, CLOSER TO MY DREAMS",
+      "source_url": "https://web.archive.org/web/20260327054930id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "GOAPELE END OF NIGHT MEET & GREET + EXCLUSIVE GIFT (SHOW TICKET NOT INCLUDED)",
+      "source_url": "https://web.archive.org/web/20260327054930id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-05",
+      "headliner": "FRED HAMMOND",
+      "source_url": "https://web.archive.org/web/20260327054930id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-06",
+      "headliner": "WEST COAST BLUES SOCIETY: WALK OF FAME FUNDRAISER",
+      "source_url": "https://web.archive.org/web/20260327054930id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "YUKO MABUCHI",
+      "source_url": "https://web.archive.org/web/20260327054930id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "ALEX BUGNON",
+      "source_url": "https://web.archive.org/web/20260327054930id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "THE SUGARHILL GANG",
+      "source_url": "https://web.archive.org/web/20260327054930id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "SOUL MECHANIX PRESENTS THE ISLEY BROTHERS TRIBUTE",
+      "source_url": "https://web.archive.org/web/20260411121636id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-12",
+      "headliner": "CARMEN LUNDY",
+      "source_url": "https://web.archive.org/web/20260411121636id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-13",
+      "headliner": "BERKELEY MIDDLE SCHOOLS JAZZ BANDS",
+      "source_url": "https://web.archive.org/web/20260411121636id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "BIG MIKE HART - THE MODERN CLASSIC EXPERIENCE",
+      "source_url": "https://web.archive.org/web/20260411121636id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "MIKO MARKS RESIDENCY",
+      "source_url": "https://web.archive.org/web/20260411121636id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "NZURI SOUL & THE QUEEN COLLECTIVE: DREAMGIRLS",
+      "source_url": "https://web.archive.org/web/20260411121636id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "KOFI B",
+      "source_url": "https://web.archive.org/web/20260411121636id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "RAHSAAN PATTERSON",
+      "source_url": "https://web.archive.org/web/20260411121636id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-19",
+      "headliner": "HANNIBAL THOMPSON",
+      "source_url": "https://web.archive.org/web/20260411121636id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-20",
+      "headliner": "BEN WENDEL",
+      "source_url": "https://web.archive.org/web/20260411121636id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "OAKLAND SCHOOL FOR THE ARTS",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "CAMPOLINDO & ACALANES HIGH SCHOOL",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "TWISTA WITH LIVE BAND",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "THE AYO BRAME EXPERIENCE",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "SUHAILA SALIMPOUR IN AL ZAMAN WITH FADI ISLAMBOULI",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-27",
+      "headliner": "BISHOP MANYWEATHER",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "PIEDMONT EAST BAY CHILDREN'S CHOIR",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-29",
+      "headliner": "SLOTH MOM: WHO'S THAT? JENNY & FRIENDS",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "KIM SCOTT",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "TERRACE MARTIN",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "DAZZ BAND",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "C\u00d3RDOBA",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-04",
+      "headliner": "BLACK PINE CIRCLE SCHOOL",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-05",
+      "headliner": "CINCO DE MAYO CELEBRATION w/ DRE RIVERS ENTERTAINMENT",
+      "source_url": "https://yoshis.com/events/sold-out/cinco-de-mayo-celebration-w-dre-rivers-entertainment/detail"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "PATRICK LANDEZA & SONS",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "SHALAMAR: HOWARD HEWETT, JEFFREY DANIEL, CAROLYN GRIFFEY",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "DANNY SERAPHINE",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "RAUL MID\u00d3N",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "GZA OF WU-TANG CLAN FEAT. PHUNKY NOMADS",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "THE BEST INTENTIONS",
+      "source_url": "https://web.archive.org/web/20260510145031id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-11",
+      "headliner": "ALBANY HIGH SCHOOL",
+      "source_url": "https://web.archive.org/web/20260510145031id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-12",
+      "headliner": "MICHAEL LINGTON",
+      "source_url": "https://web.archive.org/web/20260510145031id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-13",
+      "headliner": "LARRY VUCKOVICH ALL-STARS: HONOR 100TH ANNIVERSARY OF MILES DAVIS & JOHN COLTRANE",
+      "source_url": "https://web.archive.org/web/20260510145031id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "CONCORD HIGH SCHOOL JAZZ BAND",
+      "source_url": "https://web.archive.org/web/20260510145031id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "THE SERGIO MENDES BAND: 60 YEARS OF BRASIL '66, THE LEGACY LIVES",
+      "source_url": "https://web.archive.org/web/20260510145031id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "ELVIN BISHOP BIG FUN TRIO",
+      "source_url": "https://web.archive.org/web/20260510145031id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "PARIS ESCOVEDO",
+      "source_url": "https://web.archive.org/web/20260510145031id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-18",
+      "headliner": "HEAD ROYCE SCHOOL CARAVAN JAZZ ENSEMBLE",
+      "source_url": "https://web.archive.org/web/20260518235851id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "NORTHGATE HIGH SCHOOL",
+      "source_url": "https://web.archive.org/web/20260518235851id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-20",
+      "headliner": "KURT ROSENWINKEL",
+      "source_url": "https://web.archive.org/web/20260518235851id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "MIKO MARKS RESIDENCY W/ SPECIAL GUEST THE DYNAMIC MISS FAYE CAROL",
+      "source_url": "https://web.archive.org/web/20260518235851id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "KENNY LATTIMORE",
+      "source_url": "https://web.archive.org/web/20260327054930id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "PONCHO SANCHEZ",
+      "source_url": "https://web.archive.org/web/20260518235851id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "THEO CROKER",
+      "source_url": "https://web.archive.org/web/20260518235851id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-25",
+      "headliner": "KEVIN MOORE & CARL WHEELER",
+      "source_url": "https://web.archive.org/web/20260518235851id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-26",
+      "headliner": "JONATHAN LYTE - WHO'S THAT? LIVE",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "MIGUEL ZEN\u00d3N QUARTET",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "STELLA COLE",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "ERIC DARIUS",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-05-31",
+      "headliner": "THAT 70's FLOW: THE B-SIDE",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-01",
+      "headliner": "MAKE ME LAUGH MONDAY",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-02",
+      "headliner": "SMOOTH JAZZ ALLEY",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-03",
+      "headliner": "EL CERRITO HIGH SCHOOL JAZZ BANDS",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "LINDSEY WEBSTER",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "KEVIN ROSS",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "DOUG E. FRESH",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "JUJU'S BURLESQUE",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "KIM WATERS",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "ARTURO SANDOVAL",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-14",
+      "headliner": "MAC MALL W/ LIVE BAND",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-15",
+      "headliner": "JOEY ALEXANDER TRIO + LAURA ANGLADE",
+      "source_url": "https://web.archive.org/web/20260615232344id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-16",
+      "headliner": "PATTI AUSTIN",
+      "source_url": "https://web.archive.org/web/20260615232344id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "CHIEF ADJUAH",
+      "source_url": "https://web.archive.org/web/20260615232344id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "THE MANHATTANS FEAT. GERALD ALSTON",
+      "source_url": "https://web.archive.org/web/20260615232344id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "3TOB: FATHER'S DAY CELEBRATION",
+      "source_url": "https://web.archive.org/web/20260615232344id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-22",
+      "headliner": "THE STRING QUEENS",
+      "source_url": "https://web.archive.org/web/20260615232344id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-23",
+      "headliner": "FRAN BOOGIE: KARAOKE NIGHT",
+      "source_url": "https://web.archive.org/web/20260615232344id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-24",
+      "headliner": "ALVON JOHNSON",
+      "source_url": "https://web.archive.org/web/20260615232344id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-25",
+      "headliner": "80S KIDS",
+      "source_url": "https://web.archive.org/web/20260615232344id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "KEV CHOICE ENSEMBLE",
+      "source_url": "https://web.archive.org/web/20260615232344id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "KOTA THE FRIEND",
+      "source_url": "https://web.archive.org/web/20260615232344id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "SCARFACE W/ LIVE BAND",
+      "source_url": "https://web.archive.org/web/20260327054930id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "SLUM VILLAGE",
+      "source_url": "https://web.archive.org/web/20260615232344id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-29",
+      "headliner": "MIKO MARKS RESIDENCY W/ SPECIAL GUEST REE LA VIOLETTE, THE HOMEGIRL GRIOT",
+      "source_url": "https://web.archive.org/web/20260630061940id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-06-30",
+      "headliner": "JAZZ FUNK SOUL",
+      "source_url": "https://web.archive.org/web/20260630061940id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-02",
+      "headliner": "KINDRED THE FAMILY SOUL",
+      "source_url": "https://web.archive.org/web/20260630061940id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-03",
+      "headliner": "PATRON LATIN RHYTHMS",
+      "source_url": "https://web.archive.org/web/20260630061940id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "BLUES EXPLOSION FEAT. THE DYNAMIC MISS FAYE CAROL, FILLMORE SLIM, LADY BIANCA & ALVON JOHNSON",
+      "source_url": "https://web.archive.org/web/20260630061940id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-06",
+      "headliner": "MUSIC MONDAY INDIE NIGHT FEAT. RYAN ALLAY AND JORDYN DIEW",
+      "source_url": "https://web.archive.org/web/20260630061940id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-07",
+      "headliner": "LAZY LESTER BENEFIT FEAT. ELVIN BISHOP, RICK ESTRIN, KYLE ROWLAND, MARK HUMMEL, STEVE FREUND & MORE",
+      "source_url": "https://web.archive.org/web/20260630061940id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-08",
+      "headliner": "KARYN WHITE",
+      "source_url": "https://web.archive.org/web/20260422042625id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-08",
+      "headliner": "MARK CURRY",
+      "source_url": "https://web.archive.org/web/20260630061940id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-09",
+      "headliner": "KEAK DA SNEAK, 3X KRAZY W/ SPLASH BAKERY BAND & MORE",
+      "source_url": "https://web.archive.org/web/20260630061940id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "PETE ESCOVEDO ORCHESTRA: 91ST BIRTHDAY CELEBRATION!",
+      "source_url": "https://web.archive.org/web/20260710223402id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-13",
+      "headliner": "THE CHI-LITES FEAT. MARSHALL THOMPSON",
+      "source_url": "https://web.archive.org/web/20260710223402id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-15",
+      "headliner": "NZURI SOUL: A TRIBUTE TO THE MEN OF R&B",
+      "source_url": "https://web.archive.org/web/20260710223402id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "PETER WHITE",
+      "source_url": "https://web.archive.org/web/20260710223402id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "GREG ADAMS & EAST BAY SOUL",
+      "source_url": "https://web.archive.org/web/20260710223402id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-20",
+      "headliner": "MUSIC MONDAY - LOVE VIBES",
+      "source_url": "https://web.archive.org/web/20260710223402id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "RIC ALEXANDER",
+      "source_url": "https://web.archive.org/web/20260710223402id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-22",
+      "headliner": "CARL VERHEYEN",
+      "source_url": "https://web.archive.org/web/20260710223402id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-23",
+      "headliner": "AVERY*SUNSHINE",
+      "source_url": "https://web.archive.org/web/20260710223402id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "THE SPINNERS",
+      "source_url": "https://web.archive.org/web/20260710223402id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "MIKO MARKS RESIDENCY W/ SPECIAL GUEST TIFFANI MARIE (OF ARTELIA GREEN)",
+      "source_url": "https://web.archive.org/web/20260710223402id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-29",
+      "headliner": "JEFF KASHIWA WITH STEVE OLIVER",
+      "source_url": "https://web.archive.org/web/20260710223402id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "MUSIC MEDICINE: BENEFIT FOR OAKLAND'S CHILDREN'S HOSPITAL",
+      "source_url": "https://web.archive.org/web/20260710223402id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "RICHIE RICH: BACKSTAGE MEET & GREET + PHOTO OPPORTUNITY (SHOW TICKET NOT INCLUDED)",
+      "source_url": "https://web.archive.org/web/20260731180000id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "RICHIE RICH W/ LIVE BAND",
+      "source_url": "https://web.archive.org/web/20260731180000id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-03",
+      "headliner": "REBEL ROSE",
+      "source_url": "https://web.archive.org/web/20260731180000id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-04",
+      "headliner": "KD THE POET & FRIENDS W/ THE FULL HOUSE BAND",
+      "source_url": "https://web.archive.org/web/20260731180000id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-05",
+      "headliner": "MELBA MOORE PRE SHOW VIP EXPERIENCE (SHOW TICKET NOT INCLUDED)",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-05",
+      "headliner": "MELBA MOORE",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "TEDDY RILEY PRE SHOW VIP EXPERIENCE (SHOW TICKET NOT INCLUDED)",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "TEDDY RILEY",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "CASE PRE SHOW VIP EXPERIENCE (SHOW TICKET NOT INCLUDED)",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "CASE W/ LIVE BAND",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-10",
+      "headliner": "THE ROBERT CRAY BAND",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-11",
+      "headliner": "THE BLUES PROJECT",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-12",
+      "headliner": "ROTIMI WITH RED LOTUS & HOST PHOENYX ROSE",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "TRACIE SPENCER PRE SHOW VIP EXPERIENCE (SHOW TICKET NOT INCLUDED)",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "PEABO BRYSON",
+      "source_url": "https://web.archive.org/web/20260526203823id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "TRACIE SPENCER",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "GLENN JONES W/ A SPECIAL DEDICATION TO PEABO BRYSON",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "KEITH WASHINGTON W/A SPECIAL DEDICATION TO PEABO BRYSON",
+      "source_url": "https://web.archive.org/web/20260630061940id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "RBL POSSE VS RAPPIN' 4-TAY W/ LIVE BAND",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "J. HOLIDAY",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "CHRIS MITCHELL: BEGGIN FOR SAX",
+      "source_url": "https://web.archive.org/web/20260710223402id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "WORSHIP & HIP-HOP feat. LARRY AUSTIN, ANTHONY WASHINGTON, BROOKLYN FIELD, BENNY BLESSED & HOST PASTER MU",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-17",
+      "headliner": "AZURE MCCALL",
+      "source_url": "https://web.archive.org/web/20260805183732id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "THE STYLISTICS",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "NORMAN BROWN",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "KEYON HARROLD",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-24",
+      "headliner": "BERKELEY MT ZION 80TH ANNIVERSARY CELEBRATION",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-25",
+      "headliner": "KEIKO MATSUI",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "MIKO MARKS RESIDENCY W/ SPECIAL GUEST KIAZI MALONGA",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "RICHARD ELLIOT",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "SIMON PHILLIPS & PROTOCOL 6",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-08-31",
+      "headliner": "MARK HUMMEL'S BLUES ALL STARS W/ ANSON FUNDERBURGH & JUNIOR WATSON",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "HALEY REINHART",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "HALEY REINHART - POST SHOW MEET & GREET (SHOW TICKET NOT INCLUDED)",
+      "source_url": "https://yoshis.com/events/buy-tickets/haley-reinhart-post-show-meet-greet-show-ticket-not-included/detail"
+    },
+    {
+      "date": "2026-09-02",
+      "headliner": "AVERY WILSON PRE SHOW VIP EXPERIENCE (SHOW TICKET NOT INCLUDED)",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-02",
+      "headliner": "AVERY WILSON",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "SHEENA EASTON",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "KIRK WHALUM",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "SONS OF CHAMPLIN W/ BILL CHAMPLIN",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-07",
+      "headliner": "AIMEE NOLTE",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-08",
+      "headliner": "MATT SCHOFIELD TRIO",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "LISA FISCHER & ORRIN EVANS TRIO",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "DOMINIQUE FILS-AIM\u00c9",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "ANEESA STRINGS",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "ROSE ROYCE",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "KAMASI WASHINGTON",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "JOHN PIZZARELLI PRESENTS \"DEAR MR. BENNETT\u201d",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "BIG DADDY KANE",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "MOHINI DEY",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-21",
+      "headliner": "MUSIC MONDAY: THE THROWBACK SERIES",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "KARAOKE NIGHT AT YOSHI'S",
+      "source_url": "https://web.archive.org/web/20260818201224id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-23",
+      "headliner": "LYDIA PENSE & COLD BLOOD",
+      "source_url": "https://web.archive.org/web/20260924021408id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "WILD NIGHT: A VAN MORRISON TRIBUTE",
+      "source_url": "https://web.archive.org/web/20260924021408id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "SYLEENA JOHNSON",
+      "source_url": "https://web.archive.org/web/20260924021408id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "MARY JANE GIRLS",
+      "source_url": "https://web.archive.org/web/20260924021408id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "ISAIAH COLLIER: \u2018COLLIER PLAYS COLTRANE\u2019",
+      "source_url": "https://web.archive.org/web/20260924021408id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-28",
+      "headliner": "FRED WESLEY'S NEW JBS W/ MARTHA HIGH'S FUNKY DIVAS",
+      "source_url": "https://web.archive.org/web/20260924021408id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "SPYRO GYRA",
+      "source_url": "https://web.archive.org/web/20260924021408id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-01",
+      "headliner": "VINCENT INGALA",
+      "source_url": "https://web.archive.org/web/20260924021408id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-02",
+      "headliner": "THE CURTIS FAMILY C-NOTES",
+      "source_url": "https://web.archive.org/web/20260924021408id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-05",
+      "headliner": "EUGE GROOVE",
+      "source_url": "https://web.archive.org/web/20260924021408id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-07",
+      "headliner": "WILL DOWNING",
+      "source_url": "https://web.archive.org/web/20260924021408id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-09",
+      "headliner": "MUSIQ SOULCHILD",
+      "source_url": "https://web.archive.org/web/20260924021408id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-13",
+      "headliner": "ACOUSTIC ALCHEMY",
+      "source_url": "https://web.archive.org/web/20260924021408id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-14",
+      "headliner": "DOS SANTOS",
+      "source_url": "https://web.archive.org/web/20260924021408id_/https://yoshis.com/"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "DAMIEN ESCOBAR",
+      "source_url": "https://yoshis.com/"
+    }
+  ],
+  "listing_complete": true,
+  "listed_until": "2026-12-24",
+  "study2_venue_id": "sf-yoshis",
+  "imported_by": "scripts/import-venues.js"
+}

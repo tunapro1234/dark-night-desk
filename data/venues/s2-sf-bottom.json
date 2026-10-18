@@ -1,0 +1,825 @@
+{
+  "id": "s2-sf-bottom",
+  "name": "Bottom of the Hill",
+  "city": "San Francisco",
+  "capacity_band": "up to 246",
+  "calendar_source_url": "https://www.bottomofthehill.com/calendar.html",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "WAAX / Starzdust / Cut-Rate Druggist",
+      "source_url": "https://web.archive.org/web/20260320061114id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "Merce Lemon / Fust / Georgia Maq",
+      "source_url": "https://web.archive.org/web/20260320061114id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "Cece Coakley / Beatrix / Samantha Henson",
+      "source_url": "https://web.archive.org/web/20260320061114id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "Blackw\u00fclf / State Line Empire / D\u00fcmsurf",
+      "source_url": "https://web.archive.org/web/20260320061114id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-05",
+      "headliner": "LSD and the Search for God",
+      "source_url": "https://web.archive.org/web/20260320061114id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-06",
+      "headliner": "STOMACH BOOK / Girls Rituals",
+      "source_url": "https://web.archive.org/web/20260320061114id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-07",
+      "headliner": "Teleco / TBA / TBA",
+      "source_url": "https://web.archive.org/web/20260320061114id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "Ian Santillano / Hollow Minds / Paper Straw",
+      "source_url": "https://web.archive.org/web/20260320061114id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "Habibi / TBA",
+      "source_url": "https://web.archive.org/web/20260320061114id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "Mount Saint Elias / Ruby Ruby / Ephemerald",
+      "source_url": "https://web.archive.org/web/20260320061114id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "Slomosa / The Mainliners",
+      "source_url": "https://web.archive.org/web/20260320061114id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-12",
+      "headliner": "Angela LaFlamme & Co. / Bela Ruino / Allison Lovejoy",
+      "source_url": "https://web.archive.org/web/20260413102840id_/http://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "Homeboy Sandman / Coolzey / Sha Ray / Wolf Langis",
+      "source_url": "https://web.archive.org/web/20260413235250id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "Jarv / RDGLDGRN / Damn Skippy",
+      "source_url": "https://web.archive.org/web/20260413235250id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "The Jack Knives / Rudy Nu\u00f1o & The Broadcasters / Black Guy Fawkes",
+      "source_url": "https://web.archive.org/web/20260413235250id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "Mommy Mommy / Personal Space Man / Vertige",
+      "source_url": "https://web.archive.org/web/20260413235250id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "Community Music Center's Rock N Roll Education Celebration / \"The Stone Foxes\" / \"Sam Chase\" / \"Swiss Cheese Airline\" (CMC Youth Band) / \"Ten Dollar Cash Reward\" (CMC Adult Band) / All ticket proceeds benefit CMC's tuition assistance programs to make music education accessible to all in San Francisco.",
+      "source_url": "https://web.archive.org/web/20260413235250id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "Boot Juice / Cytrus / Michael Michael Motorcycle",
+      "source_url": "https://web.archive.org/web/20260413235250id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-19",
+      "headliner": "Sgt. Splendor / Crop Top",
+      "source_url": "https://web.archive.org/web/20260413235250id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-20",
+      "headliner": "The Dandy Lions / HIGHWINDS / Cape Fury",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "Young Fresh Fellows / The Rubinoos",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "Rickshaw Billie's Burger Patrol / American Sharks / George Crustanza",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "Evolfo / Hot Brother / Grooblen",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "Sure Sure / Matt Jaffe / Indigo Elephant",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "El Ten Eleven / Misandrist",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "Mission Chris / House Abandon / Grunge / The Riots",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "The Toxhards / Boris & The Joy",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-29",
+      "headliner": "Never Ending Fall / Capital Soir\u00e9e",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "Shayfer James / Katacombs",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "Everyone Asked About You / First Day Back",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "Ashes To Amber / Nature TV / Preschool",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "M.U.T.T. / Blue Zero / False Flowers",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-05",
+      "headliner": "Easy Honey / Jack Shields & The Mojave Rush / Sun Casino",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "FORAGER / Tom Conneely & Birds of Paradise / Janaki",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "Kehoe International / Uncle Sea Monster / Lady Starbeast",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "Water From Your Eyes / Sour Widows",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "The Devil in California / The Ghost Next Door / Bad Lemon",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "Bad Cop Bad Cop / Fast Friends / Build A Rocket",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-12",
+      "headliner": "Electric Six / Tragedy: All Metal Tribute to the Bee Gees & Beyond",
+      "source_url": "https://web.archive.org/web/20260420185205id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-13",
+      "headliner": "Anjimile / Perhapsy / Mayya",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "Jared Benjamin / Diana",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "Useless Eaters / TINA!!! / Johnny",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "Val Holly & the Wanderers / Pine Box Boys / Emery Villains",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "Rock On The Hill / featuring performances by elementary, / middle school, and high school students.",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-18",
+      "headliner": "High School Rock Band Showcase / \"Future Headliners\" / featuring bands from Bay Area schools.",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "Essenger / Echos / ADMO",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-20",
+      "headliner": "Bob Log III / Rock N Roll Adventure Kids / Top Secret Robot Alliance / Shama Lama",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "The Strange Ones / Addalemon / East Brothers",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "Foxtide / Hana Eid / Stanton",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "2026 US Air Guitar Championships / Part rock show. Part comedy act. Part spectacle. US Air Guitar allows ordinary people to become ridiculous rock stars.",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "Tragedy Andy / Omnigone / Get Lost Cassidy Frost",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-25",
+      "headliner": "UltraBomb / Peelander-Z / The Freak Accident",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-26",
+      "headliner": "Sloppy Seconds / Memphis Murder Men / Middle Aged Queers",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "Accessory / Facing",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "Supersuckers / Scott H. Biram / Hangtown",
+      "source_url": "https://web.archive.org/web/20260513221954id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "Chip Kinman & Band / Steakhouse / Temple Beautiful Band",
+      "source_url": "https://web.archive.org/web/20260529202445id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "Leanna Firestone / Abby Cates",
+      "source_url": "https://web.archive.org/web/20260529202445id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-05-31",
+      "headliner": "Half Rotten Goddess / Persephone / Rival Plague / Goblyn",
+      "source_url": "https://web.archive.org/web/20260529202445id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-02",
+      "headliner": "Sad Snack / Foolish Relics / friendship games",
+      "source_url": "https://web.archive.org/web/20260529202445id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-03",
+      "headliner": "For Horses / Outer Sunset / Davia Schendel",
+      "source_url": "https://web.archive.org/web/20260529202445id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "Sleepbomb / Hazzard's Cure / Ominess",
+      "source_url": "https://web.archive.org/web/20260529202445id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "Mikaela Davis / The Cormorants / Alex Koford",
+      "source_url": "https://web.archive.org/web/20260529202445id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "Jonathan Richman",
+      "source_url": "https://web.archive.org/web/20260606092547id_/http://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-07",
+      "headliner": "Jonathan Richman",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-08",
+      "headliner": "Witch Ripper / Lowcaster / Disastroid",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-09",
+      "headliner": "Jeff Rosenstock / Star 99",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "Jeff Rosenstock / Star 99",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "Moon Walker / Pretoria / Super Cassette",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "Lip Critic / Flatwounds / Bejalvin",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "Neil Hamburger / Sir Richard Bishop",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-14",
+      "headliner": "The Dwarves / The Pandoras / Screaming Bloody Marys / Sid Presley",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-15",
+      "headliner": "The Autocollants / Rob & Jay / Devoted Fans",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-16",
+      "headliner": "Messer Chups / 3LH / The Greasy Gills / Sid Presley",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-17",
+      "headliner": "TsuShiMaMiRe / Catnip / Lost Puppy Forever / Tokyo Beatniks",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "Every Move A Picture / Applesaucer / Fake Your Own Death",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-19",
+      "headliner": "Igor & the Red Elvises / The Dead Sailor Girls",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "Christian Mistress / The Lord Weird Slough Feg / Funeral Chant",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "Half Past Two / Chudson / Voluntary Hazing",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-23",
+      "headliner": "Dream Arenas / Glass Girl / Dalmatia",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-24",
+      "headliner": "Benny La Mar / Laurin Hunter / Max Fees",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-25",
+      "headliner": "Dark Meta Railroad / Plaster / Freak Nature Puppets",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "Mike Watt & the missingmen / Sister Double Happiness / Mayya",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "Cocker Power / Fantasy / Latitude",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "Cowboy Beauty Queen / Preschool / Spleens",
+      "source_url": "https://web.archive.org/web/20260608071658id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-06-30",
+      "headliner": "Buzzed Lightbeer / RABBIT / Bed Bug Guru",
+      "source_url": "https://web.archive.org/web/20260630083744id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-01",
+      "headliner": "Black Furies / Party Force / Class of '77",
+      "source_url": "https://web.archive.org/web/20260630083744id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-02",
+      "headliner": "Atomic Tide / Cut-Rate Druggist / Lethal Limits",
+      "source_url": "https://web.archive.org/web/20260630083744id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-03",
+      "headliner": "The Vesuvians / This Train Don't Stop / Tectonics / TheSelecterDJKirk",
+      "source_url": "https://web.archive.org/web/20260630083744id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "Destroyer / Modern Monsters / D\u00fcmsurf",
+      "source_url": "https://web.archive.org/web/20260630083744id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-09",
+      "headliner": "Ted Leo and the Pharmacists / Rip Room",
+      "source_url": "https://web.archive.org/web/20260709144123id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "Ted Leo and the Pharmacists / Pork Belly",
+      "source_url": "https://web.archive.org/web/20260709144123id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "Ted Leo and the Pharmacists / Local Bylaws",
+      "source_url": "https://web.archive.org/web/20260709144123id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-12",
+      "headliner": "Kelley Stoltz / Secret Family / Richard Tripps",
+      "source_url": "https://web.archive.org/web/20260709144123id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-14",
+      "headliner": "Floral / Gumby's Junk / Quarter Conscious",
+      "source_url": "https://web.archive.org/web/20260709144123id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-15",
+      "headliner": "Wife / Teenage Sex / Flounder / Triple Thousand / Toxic Rhelm",
+      "source_url": "https://web.archive.org/web/20260709144123id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "Sincere Engineer / Ways Away / SMUG LLC",
+      "source_url": "https://web.archive.org/web/20260709144123id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "My Dog Jack / Joe Kaplow / Rob Summerlin",
+      "source_url": "https://web.archive.org/web/20260709144123id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "The Good Luck Thrift Store Outfit / Noelle and the Deserters / Honey Run",
+      "source_url": "https://web.archive.org/web/20260709144123id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-22",
+      "headliner": "Pigeon Pit / Propolis / Pacing",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-23",
+      "headliner": "Bear vs Shark / awakebutstillinbed",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "Scissors For Lefty / My First Earthquake / Stefan Aronsen",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "Damage Party / The Boneless Ones / Barbara Manning",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "The Body / BIG BRAVE / Cel Genesis",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "Parts and Labor / Evicshen / HLLLYH",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "Jesse Malin / The Sam Chase (solo) / Tess Stevens (solo)",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-29",
+      "headliner": "Toro Y Moi",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "Dark Satellite / Alvie & the Breakfast Pigs / bloodsugar",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "The Woggles / Hot Laundry / The Gum Tree Girls",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "Cannons & Clouds / Build Us Airplanes / Noonmoon",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-02",
+      "headliner": "Unconditional Arms / No Lights / m\u00e1u",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-04",
+      "headliner": "Widowspeak / Dead Gowns",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-05",
+      "headliner": "Thunder Boys / The Pranks / Adam Faucett",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "Prewn / Whitney's Playland / The New Trust",
+      "source_url": "https://web.archive.org/web/20260719222244id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "Kid Congo and the Pink Monkey Birds / The Wind-Ups / Universal Beat",
+      "source_url": "https://web.archive.org/web/20260807230935id_/http://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "MC Chris / Mega Ran",
+      "source_url": "https://web.archive.org/web/20260807230935id_/http://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "Goof / Spurts / Suver",
+      "source_url": "https://web.archive.org/web/20260807230935id_/http://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-11",
+      "headliner": "Qualia / Cave Clove / See Night (solo)",
+      "source_url": "https://web.archive.org/web/20260811013216id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-12",
+      "headliner": "Thrown-Out Bones / Dear Banshee / Mitch Rocket",
+      "source_url": "https://web.archive.org/web/20260811013216id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "Caravan 222 / Country Risqu\u00e9 / The Ugly / Walkin' Love",
+      "source_url": "https://web.archive.org/web/20260811013216id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "Tijuana Panthers / Minus Numbers / Otoliths",
+      "source_url": "https://web.archive.org/web/20260811013216id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "Dillinger Four / Off With Their Heads / Middle Aged Queers",
+      "source_url": "https://web.archive.org/web/20260811013216id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "Dillinger Four / Off With Their Heads / Mermaid Island",
+      "source_url": "https://web.archive.org/web/20260811013216id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "Ida / Tara Jane O'Neil / Storey Littleton",
+      "source_url": "https://web.archive.org/web/20260811013216id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-19",
+      "headliner": "Silkworm / Nina Nastasia",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "Tony Molina / Galore / Paper Jam / Monster Treasure",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "The Aislers Set / Kids On a Crime Spree / Lightheaded / Wifey",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "Dear Nora / Jeanines / The Kitchenettes / Pillow Fight",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "The Umbrellas / Artsick / WUT / Remedy & Wren",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-25",
+      "headliner": "Brainstory / BOLERO! / Radio Veloso",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-26",
+      "headliner": "The Hot Takes / The DisRespectors / Neon Ships",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "Nerf Herder / Pulsars / Dog Party",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "Nerf Herder / Ridel High / The Kegels",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "Arnocorps / FleXx Bronco / The Memphis Murder Men",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-30",
+      "headliner": "Tom Kenny & the Hi Seas / Michael Michael Motorcycle / Cape Fury",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-08-31",
+      "headliner": "Summer Salt / Sab Star / Lace",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "Black Lips / Escape-ism / Carletta Sue Kay",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-02",
+      "headliner": "TBA / TBA / TBA / TBA",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "TBA / TBA / TBA / TBA",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "TBA / TBA / TBA / TBA",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "TBA / TBA / TBA / TBA",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "Helms Alee / Disastroid / Thornpusher",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-07",
+      "headliner": "Mad Caddies / Diesel Boy / Stay Out",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "The Kofy Brown Band / Skip The Needle / Black Gold Sun",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "Fartbarf / Diesel Dudes / Edgar",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "Bratmobile / The Okmonics",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "Bratmobile / A La Tata",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "Hex Pest / The Queen & I / The Pleasure Routine",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-14",
+      "headliner": "The Spits / The Fleshies / The Pranks / Fuzz",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "The Spits / The Fleshies / Garras Sucias / Fuzz",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "Unity / Quaaludes / Yeoubi / MOONHUNTI",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Unsane / CNTS / Facet",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "Steel Pole Bath Tub / Ovarian Trolley / Wife",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Spiritual Cramp / The She's / Judy",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-20",
+      "headliner": "Built Like Alaska / Talking Ghosts / Poor Image",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-23",
+      "headliner": "Cola / Artificial Go / Beafsteek",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "The Sam Chase & the Untraditional / Ginger Molasses",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "Face to Face / Get Dead / The Last Gang",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "Lagwagon / Dead to Me / Toy Guitar",
+      "source_url": "https://web.archive.org/web/20260820014859id_/https://www.bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "\"Cats, Claws, and Rock'n'Roll\" :: Remedy 7",
+      "source_url": "https://www.bottomofthehill.com/RSS.xml"
+    },
+    {
+      "date": "2026-09-28",
+      "headliner": "Stephan Jenkins / Emily Afton",
+      "source_url": "https://web.archive.org/web/20260928204739id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "The Quiet Men / Greg Hoy & the Boys / Fast & Vengefully",
+      "source_url": "https://web.archive.org/web/20260928204739id_/https://bottomofthehill.com/calendar.html"
+    },
+    {
+      "date": "2026-09-30",
+      "headliner": "Cult Strange / Vague Lanes / The Ink Bats",
+      "source_url": "https://web.archive.org/web/20260928204739id_/https://bottomofthehill.com/calendar.html"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "sf-bottom",
+  "imported_by": "scripts/import-venues.js"
+}

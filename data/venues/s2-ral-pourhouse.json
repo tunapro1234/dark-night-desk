@@ -1,0 +1,580 @@
+{
+  "id": "s2-ral-pourhouse",
+  "name": "The Pour House Music Hall & Record Shop",
+  "city": "Raleigh",
+  "capacity_band": "not published",
+  "calendar_source_url": "https://www.pourhouseraleigh.com/shows/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "Bywater Call w/ Daniel Anderson & The Heroic Dose",
+      "source_url": "https://www.pourhouseraleigh.com/shows/bywater-call-01-apr"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "Hustle Souls / Dr Bacon",
+      "source_url": "https://www.pourhouseraleigh.com/shows/hustle-souls-dr-bacon-02-apr"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "Misil Stereo con Tres Minutos: Tributo a Soda Stereo y Gustavo Cerati: After Party w/ Los Fabulous Cadillacs A La Carta",
+      "source_url": "https://www.pourhouseraleigh.com/shows/misil-stereo-con-tres-minutos-tributo-a-soda-stereo-y-gustavo-cerati-03-apr"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "Zack Mexico with Wax Habit, Furrows",
+      "source_url": "https://www.pourhouseraleigh.com/shows/zack-mexico-with-wax-furrows-04-apr"
+    },
+    {
+      "date": "2026-04-05",
+      "headliner": "Unleash The Night: A Latin Night of Post-Punk and Goth",
+      "source_url": "https://www.pourhouseraleigh.com/shows/unleash-the-night-a-latin-night-of-post-punk-and-goth-05-apr"
+    },
+    {
+      "date": "2026-04-06",
+      "headliner": "Grag Queen// Bright Light Bright Light",
+      "source_url": "https://www.pourhouseraleigh.com/shows/grag-queen-bright-light-bright-light-06-apr"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "Squeaky Feet",
+      "source_url": "https://www.pourhouseraleigh.com/shows/squeaky-feet-08-apr"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "MJT w/ Sweet Dream, Buzzard Company",
+      "source_url": "https://www.pourhouseraleigh.com/shows/mjt-09-apr"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "Road To Shakori: Duck w/ Free Whenever, Del Ward & The Leftovers",
+      "source_url": "https://www.pourhouseraleigh.com/shows/duck-funk-prayer-album-release-10-apr"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "Allison Eide w/ Jude Smith",
+      "source_url": "https://www.pourhouseraleigh.com/shows/allison-eide-w-jude-smith-11-apr"
+    },
+    {
+      "date": "2026-04-13",
+      "headliner": "Meredith Parks & Tomahawk Baby w/ Wild Coast (solo)",
+      "source_url": "https://www.pourhouseraleigh.com/shows/meredith-parks-tomahawk-baby-13-apr"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "Jackie Venson",
+      "source_url": "https://www.pourhouseraleigh.com/shows/jackie-venson-14-apr"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "Ally Venable",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-ally-venable-15-apr"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "The Toasters w/ Sound System Seven",
+      "source_url": "https://www.pourhouseraleigh.com/shows/toasters-16-apr"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "Dan Mangan and Nathan Evans Fox",
+      "source_url": "https://www.pourhouseraleigh.com/shows/dan-mangan-and-nathan-fox-17-apr"
+    },
+    {
+      "date": "2026-04-19",
+      "headliner": "BLACK TUSK / HOWLING GIANT w/ Bong Foot",
+      "source_url": "https://www.pourhouseraleigh.com/shows/black-tusk-howling-giant-19-apr"
+    },
+    {
+      "date": "2026-04-20",
+      "headliner": "Marbin",
+      "source_url": "https://www.pourhouseraleigh.com/shows/marbin-20-apr"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "The Sweet Lillies feat Melody Trucks",
+      "source_url": "https://www.pourhouseraleigh.com/shows/the-sweet-lillies-21-apr"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "The Newest Olympian (seated)",
+      "source_url": "https://www.pourhouseraleigh.com/shows/the-newest-olympian-seated-22-apr"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "Clarion w/ Forest, Bed",
+      "source_url": "https://www.pourhouseraleigh.com/shows/clarion-w-forest-bed-23-apr"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "Ebb & Flow: featuring Heather Victoria w/special guests - Pynk Mo$cato and Matt on Sax",
+      "source_url": "https://www.pourhouseraleigh.com/shows/ebb-flow-featuring-heather-victoria-w-special-guests-pynk-mo-cato-and-matt-on-sax-24-apr"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "C.Shreve the Professor & OC from NC with DJ Jet, Illpo & Frank THE Phre$h",
+      "source_url": "https://www.pourhouseraleigh.com/shows/c-shreve-the-professor-oc-from-nc-with-dj-jet-illpo-frank-the-phre-h-25-apr"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "Polyrhythmics",
+      "source_url": "https://www.pourhouseraleigh.com/shows/polyrhythmics-26-apr"
+    },
+    {
+      "date": "2026-04-27",
+      "headliner": "Valentin Prince w/ Autumn House, Chloe Ester",
+      "source_url": "https://www.pourhouseraleigh.com/shows/valentin-prince-w-autumn-house-chloe-ester-27-apr"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "Archaos with The Magpie, Erik Sugg & Thee Old Night",
+      "source_url": "https://www.pourhouseraleigh.com/shows/archaos-with-the-magpie-erik-sugg-thee-old-night-28-apr"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "Heavy Temple w/ Napalm Cruiser, Persistent Itch",
+      "source_url": "https://www.pourhouseraleigh.com/shows/heavy-temple-waxed-30-apr"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "Road To Shakori: Sugar Snap Peas with SMYA, Roku City",
+      "source_url": "https://www.pourhouseraleigh.com/shows/sugar-snap-peas-with-smya-roku-city-01-may"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "Parrotfish/Snorkeler",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-parrotfish-snorkeler-02-may"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "Shagwüf X BANGZZ w/ Car Crash Pool Party, AJena",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-shagwuf-x-bangzz-w-persimmon-car-crash-pool-party-03-may"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "Sessa",
+      "source_url": "https://web.archive.org/web/20260310071559id_/https://www.pourhouseraleigh.com/calendar"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "Madeline Goldstein w/ Posion Skull, Feyleux",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-madeline-goldstein-07-may"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "So Down",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-so-down-08-may"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "Live Dead & Brothers: An All-Star Celebration of Grateful Dead & Allman Brothers",
+      "source_url": "https://www.pourhouseraleigh.com/shows/live-dead-brothers-an-all-star-celebration-of-grateful-dead-allman-brothers-09-may"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "The Hip Snacks w/ Del Ward & The Leftovers",
+      "source_url": "https://www.pourhouseraleigh.com/shows/the-hip-snacks-10-may"
+    },
+    {
+      "date": "2026-05-12",
+      "headliner": "Lunchbox Hero  w/ Hex Files, Grrrizzly, Dumb Apologies",
+      "source_url": "https://www.pourhouseraleigh.com/shows/lunchbox-hero-w-hex-files-grrrizzly-dumb-apologies-12-may"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "The Wilson Springs Hotel w/ Buzzard Company",
+      "source_url": "https://www.pourhouseraleigh.com/shows/the-wilson-springs-hotel-14-may"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "Resurrection: A Goth Night",
+      "source_url": "https://www.pourhouseraleigh.com/shows/resurrection-a-goth-night-15-may"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "The Bleeding Hearts w/ The Temp Agency, Dead Rat Disco!",
+      "source_url": "https://www.pourhouseraleigh.com/shows/bleeding-hearts-w-the-temp-agency-dead-rat-disco-16-may"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "Square One EP Release: w/ Larry., Times Tables",
+      "source_url": "https://www.pourhouseraleigh.com/shows/square-one-ep-release-w-larry-times-tables-17-may"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "Dakota Proctor w/ Buck Swope, Crumb Catcher",
+      "source_url": "https://www.pourhouseraleigh.com/shows/dakota-proctor-w-buck-swope-crumb-catcher-21-may"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "ZoBury : A Tribute To Zoé and Enrique Bunbury",
+      "source_url": "https://www.pourhouseraleigh.com/shows/zobury-a-tribute-to-zoe-and-enrique-bunbury-22-may"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "Tómarúm",
+      "source_url": "https://www.pourhouseraleigh.com/shows/tomarum-w-gudsforladt-23-may"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "Camisole with Shred Flinstone, Cellar Dwellers",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-camisole-with-shred-flinstone-cellar-dwellers-24-may"
+    },
+    {
+      "date": "2026-05-26",
+      "headliner": "Rooting For You w/ Van Horton",
+      "source_url": "https://www.pourhouseraleigh.com/shows/rooting-for-you-w-van-horton-26-may"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "DRAWN & QUARTERED / OXYGEN DESTROYER",
+      "source_url": "https://www.pourhouseraleigh.com/shows/drawn-quartered-oxygen-destroyer-27-may"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "TsuShiMaMiRe w/ Mean Habit",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-tsushimamire-28-may"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "The Hourglass Kids w/ Domocile , Grocery Boy Jr.",
+      "source_url": "https://www.pourhouseraleigh.com/shows/the-hourglass-kids-w-grocery-boy-jr-29-may"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "The Band Solstice w/ The John Wood Band",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-the-band-solstice-w-the-john-wood-band-30-may"
+    },
+    {
+      "date": "2026-05-31",
+      "headliner": "John Hollier & the Rêverie w/ Drew Foust",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-john-hollier-the-reverie-31-may"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "Jack Stepanian w/ Lennon KC",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-jack-stepanian-04-jun"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "Kit Mckay Album Release: w/ The Rattletraps, Candi Jenkins",
+      "source_url": "https://www.pourhouseraleigh.com/shows/kit-mckay-album-release-w-candi-jenkins-05-jun"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "Yo Mama's Big Fat Booty Band w/ Duck",
+      "source_url": "https://www.pourhouseraleigh.com/shows/yo-mama-s-big-fat-booty-band-w-duck-06-jun"
+    },
+    {
+      "date": "2026-06-07",
+      "headliner": "Patrick Wolf",
+      "source_url": "https://www.pourhouseraleigh.com/shows/patrick-wolf-07-jun"
+    },
+    {
+      "date": "2026-06-09",
+      "headliner": "An Evening With: Shelby Stone",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-shelby-stone-09-jun"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "22 Strings w/ Santel Reid & Gennie Raybon, Ashley Robinson",
+      "source_url": "https://www.pourhouseraleigh.com/shows/22-strings-w-santel-reid-gennie-raybon-ashley-robinson-11-jun"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "Heated Rivalry Dance Party presented by Get Sad Y’all",
+      "source_url": "https://www.pourhouseraleigh.com/shows/heated-rivalry-dance-party-presented-by-get-sad-y-all-12-jun"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "It's Not The Clash: A Benefit For The ACLU",
+      "source_url": "https://www.pourhouseraleigh.com/shows/it-s-not-the-clash-a-benefit-for-the-aclu-13-jun"
+    },
+    {
+      "date": "2026-06-17",
+      "headliner": "Island Moons w/ Ski Team, Oso Optimo",
+      "source_url": "https://www.pourhouseraleigh.com/shows/island-moons-w-ski-team-17-jun"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "Dawson Wright w/ The Bird Dogs",
+      "source_url": "https://www.pourhouseraleigh.com/shows/jake-sutton-w-dawson-wright-18-jun"
+    },
+    {
+      "date": "2026-06-19",
+      "headliner": "Juneteenth Live: Donnie Deneil + Scrumptious w/ The Phoebes, Strangers Until Now",
+      "source_url": "https://www.pourhouseraleigh.com/shows/juneteenth-live-donnie-deneil-scrumptious-w-the-phoebes-strangers-until-now-19-jun"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "Left Cross w/ Serpentshrine, Vampyric Sword, Nganga.",
+      "source_url": "https://www.pourhouseraleigh.com/shows/left-cross-w-serpentshrine-vampyric-sword-nganga-20-jun"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "Domocile w/ Px3",
+      "source_url": "https://www.pourhouseraleigh.com/shows/domocile-21-jun"
+    },
+    {
+      "date": "2026-06-22",
+      "headliner": "Widowspeak w/ Thomas Dollbaum",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-widowspeak-w-thomas-dollbaum-22-jun"
+    },
+    {
+      "date": "2026-06-23",
+      "headliner": "Roger Clyne & The Peacemakers with support from: Ike Reilly Featuring Shane Reilly",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-roger-clynne-the-peacemakers-23-jun"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "The Woods Presents: Beyblade Rave THREE",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-the-woods-presents-beyblade-rave-three-26-jun"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "Goose Afterparty with Frute",
+      "source_url": "https://www.pourhouseraleigh.com/shows/goose-afterparty-with-frute-27-jun"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "The SoapGirls",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-the-soapgirls-28-jun"
+    },
+    {
+      "date": "2026-07-04",
+      "headliner": "Most Modern w/ A Darkened Room",
+      "source_url": "https://www.pourhouseraleigh.com/shows/most-modern-w-a-darkened-room-04-jul"
+    },
+    {
+      "date": "2026-07-09",
+      "headliner": "The Ries Brothers w/ Cam Brown (Of Good Nature)",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-the-ries-brothers-09-jul"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "Vastive",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-vastive-10-jul"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "Bedroom Division w/ Fifth Floor, Five Door Sedan",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-bedroom-division-w-fifth-floor-bedrumor-11-jul"
+    },
+    {
+      "date": "2026-07-14",
+      "headliner": "The Galentines",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-the-galentines-14-jul"
+    },
+    {
+      "date": "2026-07-15",
+      "headliner": "King Serpent w/ Booster Club, Field Day",
+      "source_url": "https://www.pourhouseraleigh.com/shows/king-serpent-w-booster-club-field-day-15-jul"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "Elephants Dancing! w/ Ashley Larue Band, Crucial Fiya",
+      "source_url": "https://www.pourhouseraleigh.com/shows/elephants-dancing-w-ashley-larue-band-crucial-fiya-16-jul"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "Phish Afterparty: with Kendall Street Company",
+      "source_url": "https://www.pourhouseraleigh.com/shows/phish-afterparty-with-kendall-street-company-17-jul"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "The Pietasters w/ Ruler",
+      "source_url": "https://www.pourhouseraleigh.com/shows/the-pietasters-18-jul"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "Renee Christine w/ Lizzie Lakes",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-renee-christine-21-jul"
+    },
+    {
+      "date": "2026-07-22",
+      "headliner": "Tunnel Vision w/ Capital Dub",
+      "source_url": "https://www.pourhouseraleigh.com/shows/tunnel-vision-22-jul"
+    },
+    {
+      "date": "2026-07-23",
+      "headliner": "American Vanity",
+      "source_url": "https://web.archive.org/web/20260521230407id_/https://www.pourhouseraleigh.com/calendar"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "Tributes to Pearl Jam & Rage Against The Machine: feat. Deep 6 & War Within A Breath",
+      "source_url": "https://www.pourhouseraleigh.com/shows/tributes-to-pearl-jam-rage-against-the-machine-feat-deep-6-war-within-a-breath-24-jul"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "Keith Allen w/ Royal Jelly",
+      "source_url": "https://www.pourhouseraleigh.com/shows/keith-allen-w-royal-jelly-25-jul"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "Oc3ans w/ Donnie Deneil & Scrumptious",
+      "source_url": "https://www.pourhouseraleigh.com/shows/oc3ans-26-jul"
+    },
+    {
+      "date": "2026-07-27",
+      "headliner": "Mundy w/ Shiloh The Messenger, Katie Blvd, Tesh, C. Shreve The Professor",
+      "source_url": "https://www.pourhouseraleigh.com/shows/mundy-w-shiloh-the-messenger-katie-blvd-tesh-c-shreve-the-professor-27-jul"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "Quinn Sullivan w/ Daniel Andeson & The Heroic Dose",
+      "source_url": "https://www.pourhouseraleigh.com/shows/quinn-sullivan-30-jul"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "The Big Sham: The Whom w/ Tributes to The Beatles, Alabama Shakes & The Kinks",
+      "source_url": "https://www.pourhouseraleigh.com/shows/big-sham-the-whom-w-tributes-to-the-beatles-king-giz-alabama-shakes-31-jul"
+    },
+    {
+      "date": "2026-08-02",
+      "headliner": "The Bleeding Hearts Sunday Funday Album Release: w/ The Blusterfields, The You're Gonna Die And Go To Hells",
+      "source_url": "https://www.pourhouseraleigh.com/shows/day-the-bleeding-hearts-sunday-funday-album-release-w-the-blusterfields-the-you-re-gonna-die-and-go-to-hells-02-aug"
+    },
+    {
+      "date": "2026-08-03",
+      "headliner": "The Briefs w/ The Sleevens, Paint Fumes",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-the-briefs-03-aug"
+    },
+    {
+      "date": "2026-08-05",
+      "headliner": "Crooked Diehl w/ Powell House, Burn The Breeze",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-crooked-diehl-w-powell-house-05-aug"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "Coey Redd w/ Kelsey Hickman",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-coey-redd-06-aug"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "Band Together & Cardinal Talent Group Live present: Young Gun Silver Fox - Band Together Silver Summer Homecoming Show",
+      "source_url": "https://www.pourhouseraleigh.com/shows/band-together-cardinal-talent-group-live-present-young-gun-silver-fox-band-together-silver-summer-homecoming-show-08-aug"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "76th Street w/ Tornsey",
+      "source_url": "https://www.pourhouseraleigh.com/shows/76th-street-w-tornsey-09-aug"
+    },
+    {
+      "date": "2026-08-12",
+      "headliner": "Rome Streetz - \"Sock It To My Pocket Tour\" - Also performing Fergie Baby and $ha Hef",
+      "source_url": "https://www.pourhouseraleigh.com/shows/rome-streetz-sock-it-to-my-pocket-tour-also-performing-fergie-baby-and-ha-hef-12-aug"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "Cordovas",
+      "source_url": "https://www.pourhouseraleigh.com/shows/cordovas-13-aug"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "TK Productions Presents: MavicMachine",
+      "source_url": "https://www.pourhouseraleigh.com/shows/tk-productions-presents-mavicmachine-15-aug"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "The Well x MOON DESTROYS",
+      "source_url": "https://www.pourhouseraleigh.com/shows/the-well-x-moon-destroys-23-aug"
+    },
+    {
+      "date": "2026-08-26",
+      "headliner": "The Hoots w/ Lake Chamberlain",
+      "source_url": "https://www.pourhouseraleigh.com/shows/the-hoots-w-lake-chamberlain-26-aug"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "Cygnus X-2 Plays Rush",
+      "source_url": "https://www.pourhouseraleigh.com/shows/cygnus-x-2-plays-rush-27-aug"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "Road To Shakori: Electro Lust w/ Domocile",
+      "source_url": "https://www.pourhouseraleigh.com/shows/electro-lust-w-domocile-28-aug"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "Petty Thieves: (Tom Petty) w/ Doobie Wah (Peter Frampton)",
+      "source_url": "https://www.pourhouseraleigh.com/shows/petty-thieves-a-tribute-to-tom-petty-29-aug"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "PROFANATICA w/ Cloak, Nocuous Lust",
+      "source_url": "https://www.pourhouseraleigh.com/shows/profanatica-w-cloak-01-sep"
+    },
+    {
+      "date": "2026-09-02",
+      "headliner": "Kash'd Out - Good Karma Summer Tour 2026 W/ RDGLDGRN",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-kash-d-out-good-karma-summer-tour-2026-w-rdgldgrn-02-sep"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "Sexy Nerds Party",
+      "source_url": "https://www.pourhouseraleigh.com/shows/sexy-nerds-party-04-sep"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "Infinity Dream w/ Strychnine Soul, Rotting Ways",
+      "source_url": "https://www.pourhouseraleigh.com/shows/infinity-dream-w-strychnine-soul-rotting-ways-05-sep"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "65 North Pickers X Radish",
+      "source_url": "https://www.pourhouseraleigh.com/shows/65-north-pickers-x-radish-06-sep"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "Chandler w/ TuffLuckKid",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-chandler-w-tuffluckkid-16-sep"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "El Ten Eleven w/ Tall Tall Trees",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-el-ten-eleven-18-sep"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Goodnight Texas w/ Jarrod Dickenson, The Sugar Hollows",
+      "source_url": "https://www.pourhouseraleigh.com/shows/18-goodnight-texas-w-the-sugar-hollows-19-sep"
+    },
+    {
+      "date": "2026-09-20",
+      "headliner": "DL Zene: After the Lesson featuring Lance Scott",
+      "source_url": "https://www.pourhouseraleigh.com/shows/dl-zene-after-the-lesson-20-sep"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "Chris Pierce",
+      "source_url": "https://www.pourhouseraleigh.com/shows/chris-pierce-24-sep"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "Caligula Blushed: A Tribute to The Smiths and Morrissey",
+      "source_url": "https://www.pourhouseraleigh.com/shows/caligula-blushed-a-tribute-to-the-smiths-and-morrissey-25-sep"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "PROMISCUOUS: A 2000's CLUB BANGERS THROWBACKS PARTY",
+      "source_url": "https://www.pourhouseraleigh.com/shows/promiscuous-a-2000-s-club-bangers-throwbacks-party-26-sep"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "SORRY FOR PARTY ROCKING (2010-2015 Pop & EDM All Night Long!)",
+      "source_url": "https://www.pourhouseraleigh.com/shows/sorry-for-party-rocking-2010-2015-pop-edm-all-night-long-26-sep"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "We Rise To Fall w/ Hemlock Theory, Ruler!",
+      "source_url": "https://www.pourhouseraleigh.com/shows/we-rise-to-fall-w-hemlock-theory-ruler-27-sep"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "ral-pourhouse",
+  "imported_by": "scripts/import-venues.js"
+}

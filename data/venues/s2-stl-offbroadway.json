@@ -1,0 +1,432 @@
+{
+  "id": "s2-stl-offbroadway",
+  "name": "Off Broadway",
+  "city": "St. Louis",
+  "capacity_band": "not published",
+  "calendar_source_url": "https://www.offbroadwaystl.com/shows",
+  "read_at": "2026-10-18T23:22:37Z",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-10-18",
+      "headliner": "Prostitute",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-10-21",
+      "headliner": "Michigander",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-10-23",
+      "headliner": "Squirrel Flower",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-10-24",
+      "headliner": "Emo Nite",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-10-25",
+      "headliner": "TANK AND THE BANGAS: THE LAST BALLOON TOUR 2026",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-10-27",
+      "headliner": "Galactic Empire",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-10-30",
+      "headliner": "The Paradox",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-10-31",
+      "headliner": "Halloween Cover Show : A Concert to Benefit 314 Oasis",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-11-04",
+      "headliner": "Margaret Glaspy",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-11-06",
+      "headliner": "Olive - Streak Of Ties Album Release Show Birthday Bash",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-11-07",
+      "headliner": "Starwolf",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-11-12",
+      "headliner": "Liana Flores",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-11-13",
+      "headliner": "Hiss Golden Messenger",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-11-14",
+      "headliner": "Joe Jenneman",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-11-15",
+      "headliner": "Improvement Movement : Your Perfect Real LIVE '26",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-11-16",
+      "headliner": "ADULT. / A Place To Bury Strangers",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-11-19",
+      "headliner": "Ethan Regan - Young Regan Tour",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-11-20",
+      "headliner": "They Are Gutting A Body Of Water",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-11-21",
+      "headliner": "Kingdom of Giants",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-11-24",
+      "headliner": "Oso Oso",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-11-27",
+      "headliner": "Ha Ha Tonka",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-11-28",
+      "headliner": "Harbour",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-12-02",
+      "headliner": "Daisy Grenade",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-12-05",
+      "headliner": "A Tribute To The Cure",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-12-11",
+      "headliner": "JigJam",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-05-16",
+      "headliner": "BENEFIT FOR COMMUNITY RADIO STL / FLYING HOUSE / MIKE MARTIN & THE STICKY KEYS / THE CJAYS",
+      "source_url": "https://web.archive.org/web/20260516230645id_/https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "1% PRODUCTIONS PRESENTS: IF NOT FOR ME, WINDWAKER, & COLORBLIND",
+      "source_url": "https://web.archive.org/web/20260516230645id_/https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "PORTRAYAL OF GUILT / STREET SECTS / TARANEH / MAN WITH ROPE",
+      "source_url": "https://web.archive.org/web/20260519133440id_/https://www.offbroadwaystl.com/shows/portrayal-of-guilt-street-sects-taraneh-19-may"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "ROCK NIGHT AT OFF BROADWAY",
+      "source_url": "https://web.archive.org/web/20260518115034id_/https://www.offbroadwaystl.com/shows/rock-night-at-off-broadway-23-may"
+    },
+    {
+      "date": "2026-05-26",
+      "headliner": "ROBERT LESTER FOLSOM / POSEY LULU",
+      "source_url": "https://web.archive.org/web/20260516230645id_/https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "JOSHUA RAY WALKER / CECILIA CASTLEMAN",
+      "source_url": "https://web.archive.org/web/20260516230645id_/https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "AMELIA DAY: THE EGO TRIP TOUR",
+      "source_url": "https://web.archive.org/web/20260516230645id_/https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "Jackie Venson",
+      "source_url": "https://web.archive.org/web/20260516230645id_/https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "Lunar Vacation",
+      "source_url": "https://web.archive.org/web/20260516230645id_/https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-06-03",
+      "headliner": "THE ARCADIAN WILD: THE BETTER STORIES TOUR",
+      "source_url": "https://web.archive.org/web/20260606104208id_/https://www.offbroadwaystl.com/shows/the-arcadian-wild-the-better-stories-tour-03-jun"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "VCTMS / MIRRORCELL / NAYSAYERS / HARDHANDED",
+      "source_url": "https://web.archive.org/web/20260514170851id_/https://www.offbroadwaystl.com/shows/vctms-mirrorcell-naysayers-hardhanded-04-jun"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "The Mall",
+      "source_url": "https://web.archive.org/web/20260513152104id_/https://www.offbroadwaystl.com/shows/the-mall-05-jun"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "Anvil - Pounding The Past 2026 Tour",
+      "source_url": "https://web.archive.org/web/20260516230645id_/https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-06-08",
+      "headliner": "BAD COP / BAD COP",
+      "source_url": "https://web.archive.org/web/20260606100244id_/https://www.offbroadwaystl.com/shows/bad-cop-bad-cop-pretty-bitter-08-jun"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "PUBLIC OPINION / SQUINT / RUSHMORE ACADEMY / CAUSE OF PAIN",
+      "source_url": "https://web.archive.org/web/20260518131347id_/https://www.offbroadwaystl.com/shows/public-opinion-squint-rushmore-academy-cause-of-pain-10-jun"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "LARGE SPOON ALBUM RELEASE / CREYSI & THEIR EP RELEASE / INNER CITY WITCHES / DISNEY KILLED THE EVERGLADES",
+      "source_url": "https://web.archive.org/web/20260514102131id_/https://www.offbroadwaystl.com/shows/large-spoon-album-release-creysi-their-ep-release-inner-city-witches-disney-killed-the-everglades-12-jun"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "THE HOLY FRIARS: CELEBRATING THE MUSIC OF GEORGE HARRISON",
+      "source_url": "https://web.archive.org/web/20260606111043id_/https://www.offbroadwaystl.com/shows/the-holy-friars-celebrating-the-music-of-george-harrison-13-jun"
+    },
+    {
+      "date": "2026-06-17",
+      "headliner": "CHRISSY CHLAPECKA",
+      "source_url": "https://web.archive.org/web/20260513162250id_/https://www.offbroadwaystl.com/shows/chrissy-chlapecka-17-jun"
+    },
+    {
+      "date": "2026-06-19",
+      "headliner": "BLEACH BALTA EP RELEASE / FUTURE NOTS / GOD / HOLOFOIL",
+      "source_url": "https://web.archive.org/web/20260521011518id_/https://www.offbroadwaystl.com/shows/bleach-balta-ep-release-future-nots-god-holofoil-19-jun"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "LITTLE IMAGE",
+      "source_url": "https://web.archive.org/web/20260606105717id_/https://www.offbroadwaystl.com/shows/little-image-20-jun"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "TRAVIS BOLT",
+      "source_url": "https://web.archive.org/web/20260516080522id_/https://www.offbroadwaystl.com/shows/travis-bolt-21-jun"
+    },
+    {
+      "date": "2026-06-24",
+      "headliner": "Kelsy Karter & The Heroines: The Pleasure Tour",
+      "source_url": "https://web.archive.org/web/20260606101937id_/https://www.offbroadwaystl.com/shows/kelsy-karter-the-heroines-the-pleasure-tour-24-jun"
+    },
+    {
+      "date": "2026-06-25",
+      "headliner": "Twangfest 27",
+      "source_url": "https://web.archive.org/web/20260516230645id_/https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-06-25",
+      "headliner": "Twangfest 27 - Day 1 (ClassicTwang)",
+      "source_url": "https://web.archive.org/web/20260606110623id_/https://www.offbroadwaystl.com/shows/twangfest-27-day-1-25-jun"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "Twangfest 27 - Day 2 (SoulTwang)",
+      "source_url": "https://web.archive.org/web/20260606103658id_/https://www.offbroadwaystl.com/shows/twangfest-27-day-2-26-jun"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "Twangfest 27 - Day 3 (IndieTwang)",
+      "source_url": "https://web.archive.org/web/20260606103634id_/https://www.offbroadwaystl.com/shows/twangfest-27-day-3-indietwang-27-jun"
+    },
+    {
+      "date": "2026-07-07",
+      "headliner": "SPARTA",
+      "source_url": "https://web.archive.org/web/20260513223054id_/https://www.offbroadwaystl.com/shows/sparta-07-jul"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "Tristen",
+      "source_url": "https://web.archive.org/web/20260606104550id_/https://www.offbroadwaystl.com/shows/tristen-10-jul"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "Four Degrees Colder \"Nothing To Do\" Album Release Show",
+      "source_url": "https://web.archive.org/web/20260606112029id_/https://www.offbroadwaystl.com/shows/four-degrees-colder-nothing-to-do-album-release-show-11-jul"
+    },
+    {
+      "date": "2026-07-15",
+      "headliner": "David Ramirez",
+      "source_url": "https://web.archive.org/web/20260518125728id_/https://www.offbroadwaystl.com/shows/david-ramirez-15-jul"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "Hamilton Leithauser - Summer 2026 Tour",
+      "source_url": "https://web.archive.org/web/20260606112006id_/https://www.offbroadwaystl.com/shows/hamilton-leithauser-summer-2026-tour-17-jul"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "PeelingFlesh",
+      "source_url": "https://web.archive.org/web/20260524000000id_/https://www.offbroadwaystl.com/shows/peelingflesh-18-jul"
+    },
+    {
+      "date": "2026-07-19",
+      "headliner": "Wavves",
+      "source_url": "https://web.archive.org/web/20260519064722id_/https://www.offbroadwaystl.com/shows/wavves-19-jul"
+    },
+    {
+      "date": "2026-07-20",
+      "headliner": "DYING WISH / GUILT TRIP / HOLDER / CONTENTION",
+      "source_url": "https://web.archive.org/web/20260513004442id_/https://www.offbroadwaystl.com/shows/dying-wish-guilt-trip-holder-contention-20-jul"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "BELMONT - PERFORMING 10 YEARS OF BETWEEN YOU AND ME / ALL IN UR HEAD / SPITE HOUSE / MAJOR LEAGUE",
+      "source_url": "https://web.archive.org/web/20260518115231id_/https://www.offbroadwaystl.com/shows/belmont-performing-10-years-of-between-you-and-me-all-in-ur-head-spite-house-major-league-21-jul"
+    },
+    {
+      "date": "2026-07-22",
+      "headliner": "Until I Wake",
+      "source_url": "https://web.archive.org/web/20260606110718id_/https://www.offbroadwaystl.com/shows/until-i-wake-22-jul"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "feeble little horse - bitknot tour",
+      "source_url": "https://web.archive.org/web/20260606112951id_/https://www.offbroadwaystl.com/shows/feeble-little-horse-bitknot-tour-26-jul"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "BIT BRIGADE PERFORMS \"MEGA MAN X\" LIVE / THOR AXE",
+      "source_url": "https://web.archive.org/web/20260513014209id_/https://www.offbroadwaystl.com/shows/bit-brigade-performs-mega-man-x-live-thor-axe-28-jul"
+    },
+    {
+      "date": "2026-07-29",
+      "headliner": "Snooper",
+      "source_url": "https://web.archive.org/web/20260606110025id_/https://www.offbroadwaystl.com/shows/snooper-29-jul"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "Big Sandy and His Fly Rite Boys",
+      "source_url": "https://web.archive.org/web/20260606104044id_/https://www.offbroadwaystl.com/shows/big-sandy-and-his-fly-rite-boys-31-jul"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "Hayden Blount - Right Off The Edge Tour",
+      "source_url": "https://web.archive.org/web/20260606102042id_/https://www.offbroadwaystl.com/shows/hayden-blount-01-aug"
+    },
+    {
+      "date": "2026-08-03",
+      "headliner": "ELLA RED: TOUR'S NOT REAL: PART 2 / ZOE KO",
+      "source_url": "https://web.archive.org/web/20260516105434id_/https://www.offbroadwaystl.com/shows/ella-red-tour-s-not-real-part-2-zoe-ko-03-aug"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "EAST NASH GRASS",
+      "source_url": "https://web.archive.org/web/20260517144714id_/https://www.offbroadwaystl.com/shows/east-nash-grass-06-aug"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "ASBURY PARK - THE MUSIC OF BRUCE SPRINGSTEEN",
+      "source_url": "https://web.archive.org/web/20260606102113id_/https://www.offbroadwaystl.com/shows/asbury-park-the-music-of-bruce-springsteen-08-aug"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "1% Productions Presents : Static Dress",
+      "source_url": "https://web.archive.org/web/20260603085648id_/https://www.offbroadwaystl.com/shows/static-dress-13-aug"
+    },
+    {
+      "date": "2026-08-17",
+      "headliner": "MILLKZY - EXTENSION OF YOU TOUR",
+      "source_url": "https://web.archive.org/web/20260606104330id_/https://www.offbroadwaystl.com/shows/millkzy-extension-of-you-tour-17-aug"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "Shinyribs",
+      "source_url": "https://web.archive.org/web/20260518115841id_/https://www.offbroadwaystl.com/shows/shinyribs-20-aug"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "GREG MENDEZ",
+      "source_url": "https://web.archive.org/web/20260606103743id_/https://www.offbroadwaystl.com/shows/greg-mendez-maria-bc-23-aug"
+    },
+    {
+      "date": "2026-09-08",
+      "headliner": "FRIKO - SOMETHING WORTH WAITING FOR: THE TOUR",
+      "source_url": "https://web.archive.org/web/20260606103805id_/https://www.offbroadwaystl.com/shows/friko-something-worth-waiting-for-the-tour-08-sep"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "Solya",
+      "source_url": "https://web.archive.org/web/20260606102206id_/https://www.offbroadwaystl.com/shows/solya-09-jun"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "1% Productions Presents: Emarosa",
+      "source_url": "https://web.archive.org/web/20260606102542id_/https://www.offbroadwaystl.com/shows/emarosa-17-sep"
+    },
+    {
+      "date": "2026-09-20",
+      "headliner": "Sam Greenfield",
+      "source_url": "https://web.archive.org/web/20260606105247id_/https://www.offbroadwaystl.com/shows/sam-greenfield-20-sep"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "ICON FOR HIRE: SCRIPTED 15 YEAR ANNIVERSARY TOUR",
+      "source_url": "https://web.archive.org/web/20260606112352id_/https://www.offbroadwaystl.com/shows/icon-for-hire-scripted-15-year-anniversary-tour-elijah-lauren-babic-25-sep"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "Devon Gilfillian - Time Will Tell Tour",
+      "source_url": "https://web.archive.org/web/20260606110347id_/https://www.offbroadwaystl.com/shows/devon-gilfillian-time-will-tell-tour-27-sep"
+    },
+    {
+      "date": "2026-10-14",
+      "headliner": "Jenna Davis",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-10-15",
+      "headliner": "TRIPPP",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-10-16",
+      "headliner": "In Her Own Words X Every Avenue - Perfectly Unfamiliar Tour",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "Freddy Vs Halloween V - Monster Prom!",
+      "source_url": "https://www.offbroadwaystl.com/shows"
+    }
+  ],
+  "listing_complete": true,
+  "listed_until": "2026-12-11",
+  "study2_venue_id": "stl-offbroadway",
+  "imported_by": "scripts/import-venues.js"
+}

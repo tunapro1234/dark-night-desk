@@ -1,0 +1,792 @@
+{
+  "id": "s2-ral-kings",
+  "name": "Kings",
+  "city": "Raleigh",
+  "capacity_band": "not published",
+  "calendar_source_url": "https://www.kingsraleigh.com/",
+  "read_at": "2026-10-18T23:22:31Z",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-10-18",
+      "headliner": "Mia Wilson",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-10-19",
+      "headliner": "Daisyhead",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-10-20",
+      "headliner": "Sub Rosa",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-10-20",
+      "headliner": "Ian McConnell",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-10-21",
+      "headliner": "Guerilla Toss",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-10-22",
+      "headliner": "The Fitzkee Brothers featuring Jaden Lehman",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-10-23",
+      "headliner": "Kawaii Rave!",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-10-23",
+      "headliner": "Kennedy Ryon – ‘The Can We Evolve?’ Tour 2026",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-10-24",
+      "headliner": "Porch Light – ‘Hush’ Tour",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-10-25",
+      "headliner": "Smidley",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-10-27",
+      "headliner": "Sub Rosa",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-10-28",
+      "headliner": "Pretty Crimes",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-10-29",
+      "headliner": "REDDHEDD: Halloween Edition",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-10-30",
+      "headliner": "Tobacco Road / Wim Tapley & The Cannons",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-10-31",
+      "headliner": "Hardcore Halloween: Kill The Dance Floor",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-11-03",
+      "headliner": "Will Overman & Vinnie Paolizzi",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-11-04",
+      "headliner": "Silly Goose – The ‘Set It Off’ Tour",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-11-06",
+      "headliner": "Broadslab",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-11-07",
+      "headliner": "Vaultboy – ‘Are You Ever Coming Back’ Tour",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-11-08",
+      "headliner": "LIVE EMO NIGHT: ‘The Best of Warped Tour’ Party",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-11-09",
+      "headliner": "Stinking Lizaveta",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-11-11",
+      "headliner": "John R. Miller",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-11-12",
+      "headliner": "Radiator Hospital",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-11-13",
+      "headliner": "Giles Corey",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-11-17",
+      "headliner": "Massa Nera",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-11-18",
+      "headliner": "The Queers",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-11-20",
+      "headliner": "‘The Last Waltz’ 50th Anniversary feat. Raleigh’s Finest Musicians",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-11-21",
+      "headliner": "Nuclear Tomb",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-12-03",
+      "headliner": "Porcelain",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-12-12",
+      "headliner": "Bit Brigade performs “The Legend of Zelda” + “Castlevania” + “Tetris” LIVE!",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-12-13",
+      "headliner": "The Casualties",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2027-01-15",
+      "headliner": "The Great Cover Up 2027 – Night 1",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2027-01-16",
+      "headliner": "The Great Cover Up 2027 – Night 2",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2027-01-29",
+      "headliner": "The Great Cover Up 2027 – Night 3",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2027-01-30",
+      "headliner": "The Great Cover Up 2027 – Night 4",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2027-02-12",
+      "headliner": "The Great Cover Up 2027 – Night 5",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2027-02-13",
+      "headliner": "The Great Cover Up 2027 – Night 6",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2027-02-16",
+      "headliner": "Youth Fountain",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2027-03-25",
+      "headliner": "Vlad Holiday",
+      "source_url": "https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2027-03-30",
+      "headliner": "Brooke Alexx – ‘Dream Girl’ Tour",
+      "source_url": "https://www.kingsraleigh.com/"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "Lala Lala",
+      "source_url": "https://www.kingsraleigh.com/shows/lala-lala/"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "Scarhaven",
+      "source_url": "https://www.kingsraleigh.com/shows/scarhaven/"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "The Great Cover Up 2026 – Make-Up Night!",
+      "source_url": "https://www.kingsraleigh.com/shows/the-great-cover-up-2026-make-up-night-2/"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "NO VISA feat. NATIVESUN & AMARJI KING",
+      "source_url": "https://www.kingsraleigh.com/shows/no-visa-feat-nativesun-amarji-king/"
+    },
+    {
+      "date": "2026-04-07",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260407021346id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "Lowheaven",
+      "source_url": "https://www.kingsraleigh.com/shows/lowheaven/"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "Boys Go To Jupiter – ‘Now You’re A Circle’ Tour",
+      "source_url": "https://www.kingsraleigh.com/shows/boys-go-to-jupiter/"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "rum.gold",
+      "source_url": "https://www.kingsraleigh.com/shows/rum-gold/"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "Barns Courtney – ‘Unplugged Solo Sessions’",
+      "source_url": "https://www.kingsraleigh.com/shows/barns-courtney/"
+    },
+    {
+      "date": "2026-04-12",
+      "headliner": "Zack Keim",
+      "source_url": "https://www.kingsraleigh.com/shows/zack-keim/"
+    },
+    {
+      "date": "2026-04-13",
+      "headliner": "The Belair Lip Bombs / dust",
+      "source_url": "https://www.kingsraleigh.com/shows/the-belair-lip-bombs-dust/"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "ADULT.",
+      "source_url": "https://www.kingsraleigh.com/shows/adult-2/"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260407021346id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "Couch Dog",
+      "source_url": "https://www.kingsraleigh.com/shows/couch-dog/"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "Happy Landing ‘Big Sun Tour’",
+      "source_url": "https://www.kingsraleigh.com/shows/happy-landing-big-sun-tour/"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "Holy Fuck",
+      "source_url": "https://www.kingsraleigh.com/shows/holy-fuck/"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "Youth Rock NC presents Rock Roulette",
+      "source_url": "https://www.kingsraleigh.com/shows/youth-rock-nc-presents-rock-roulette/"
+    },
+    {
+      "date": "2026-04-19",
+      "headliner": "Playboy Poppy – ‘Playas Only’ Tour",
+      "source_url": "https://www.kingsraleigh.com/shows/playboy-poppy-playas-only-tour/"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "King Tuff",
+      "source_url": "https://www.kingsraleigh.com/shows/king-tuff/"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260417125243id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "Pallbearer",
+      "source_url": "https://www.kingsraleigh.com/shows/pallbearer/"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "Emo Night Karaoke",
+      "source_url": "https://www.kingsraleigh.com/shows/emo-night-karaoke-3/"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "The Messthetics and James Brandon Lewis",
+      "source_url": "https://www.kingsraleigh.com/shows/the-messthetics-and-james-brandon-lewis-2/"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "TIMELESS: School of Rock Raleigh End-of-Season Showcase",
+      "source_url": "https://www.kingsraleigh.com/shows/timeless-school-of-rock-raleigh-end-of-season-showcase/"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "Wicca Phase Springs Eternal & The Mystery Mountain Band",
+      "source_url": "https://www.kingsraleigh.com/shows/wicca-phase-springs-eternal-the-mystery-mountain-band/"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260417125243id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "MEGA COLOSSUS: US Record Release Show",
+      "source_url": "https://www.kingsraleigh.com/shows/mega-colossus-us-record-release-show/"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "UNFILTERED: School of Rock Holly Springs End-of-Season Showcase",
+      "source_url": "https://www.kingsraleigh.com/shows/unfiltered-school-of-rock-holly-springs-end-of-season-showcase/"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "Galactic Empire",
+      "source_url": "https://www.kingsraleigh.com/shows/galactic-empire/"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "DAMAG3",
+      "source_url": "https://www.kingsraleigh.com/shows/damag3-2/"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "Button Masher",
+      "source_url": "https://www.kingsraleigh.com/shows/button-masher/"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "Cristina Vane",
+      "source_url": "https://www.kingsraleigh.com/shows/cristina-vane/"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "Bat Cave Burlesque presents The Hollywood Hex",
+      "source_url": "https://www.kingsraleigh.com/shows/the-hollywood-hex/"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "Overcome Fest IV – Night 1",
+      "source_url": "https://www.kingsraleigh.com/shows/overcome-fest-iv-night-1/"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260515224741id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "Kawaii Rave: Animazement Afterparty",
+      "source_url": "https://www.kingsraleigh.com/shows/kawaii-rave-animazement-afterparty/"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "Banff – ‘Flood’ EP Release Show",
+      "source_url": "https://www.kingsraleigh.com/shows/banff-flood-ep-release-show/"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "GASKET",
+      "source_url": "https://www.kingsraleigh.com/shows/gasket/"
+    },
+    {
+      "date": "2026-05-26",
+      "headliner": "Teens in Trouble",
+      "source_url": "https://www.kingsraleigh.com/shows/early-teens-in-trouble/"
+    },
+    {
+      "date": "2026-05-26",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260515224741id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "Aching Back Sunday",
+      "source_url": "https://www.kingsraleigh.com/shows/aching-back-sunday-2/"
+    },
+    {
+      "date": "2026-06-02",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260527065335id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-06-03",
+      "headliner": "Combust",
+      "source_url": "https://www.kingsraleigh.com/shows/combust-2/"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "Lots of Hands",
+      "source_url": "https://www.kingsraleigh.com/shows/lots-of-hands/"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "THE ARENA: Cross Dress to Impress – A Gendrf*ck Party",
+      "source_url": "https://www.kingsraleigh.com/shows/the-arena-cross-dress-to-impress-a-gendrfck-party/"
+    },
+    {
+      "date": "2026-06-07",
+      "headliner": "Holder",
+      "source_url": "https://www.kingsraleigh.com/shows/holder/"
+    },
+    {
+      "date": "2026-06-09",
+      "headliner": "Zero Tolerance",
+      "source_url": "https://www.kingsraleigh.com/shows/zero-tolerance/"
+    },
+    {
+      "date": "2026-06-09",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260609213334id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "GAG, HONEY! with Kevin Aviance",
+      "source_url": "https://www.kingsraleigh.com/shows/gag-honey-with-kevin-aviance/"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "Long Relief",
+      "source_url": "https://www.kingsraleigh.com/shows/long-relief-2/"
+    },
+    {
+      "date": "2026-06-14",
+      "headliner": "Thagomizer",
+      "source_url": "https://www.kingsraleigh.com/shows/thagomizer/"
+    },
+    {
+      "date": "2026-06-16",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260609213334id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-06-19",
+      "headliner": "Neem The Animist – Juneteenth Album Release Show",
+      "source_url": "https://www.kingsraleigh.com/shows/neem-the-animist-juneteenth-album-release-show/"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "Document One",
+      "source_url": "https://www.kingsraleigh.com/shows/document-one/"
+    },
+    {
+      "date": "2026-06-23",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260609213334id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-06-25",
+      "headliner": "Hustle Souls",
+      "source_url": "https://www.kingsraleigh.com/shows/hustle-souls/"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "Day Aches",
+      "source_url": "https://www.kingsraleigh.com/shows/early-day-aches/"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "Seven Teller: Red Hat Amphitheater Afterparty",
+      "source_url": "https://www.kingsraleigh.com/shows/late-seven-teller-red-hat-amphitheater-afterparty/"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "AZUL",
+      "source_url": "https://www.kingsraleigh.com/shows/azul/"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "Everything Yes",
+      "source_url": "https://www.kingsraleigh.com/shows/everything-yes/"
+    },
+    {
+      "date": "2026-07-02",
+      "headliner": "Moving Boxes",
+      "source_url": "https://www.kingsraleigh.com/shows/moving-boxes/"
+    },
+    {
+      "date": "2026-07-03",
+      "headliner": "DG the Artist",
+      "source_url": "https://www.kingsraleigh.com/shows/dg-the-artist/"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "INTERVALLUM",
+      "source_url": "https://www.kingsraleigh.com/shows/intervallum/"
+    },
+    {
+      "date": "2026-07-07",
+      "headliner": "away with words",
+      "source_url": "https://www.kingsraleigh.com/shows/away-with-words/"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "The Vanguard",
+      "source_url": "https://www.kingsraleigh.com/shows/the-vanguard/"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "blankstate.",
+      "source_url": "https://www.kingsraleigh.com/shows/blankstate/"
+    },
+    {
+      "date": "2026-07-14",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260712150840id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "DUEL",
+      "source_url": "https://www.kingsraleigh.com/shows/duel/"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "Lucky Feeling",
+      "source_url": "https://www.kingsraleigh.com/shows/lucky-feeling/"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "A 25th Anniversary Tribute to Jimmy Eat World’s ‘Bleed American’",
+      "source_url": "https://www.kingsraleigh.com/shows/a-25th-anniversary-tribute-to-jimmy-eat-worlds-bleed-american/"
+    },
+    {
+      "date": "2026-07-19",
+      "headliner": "Sugar Snap Peas",
+      "source_url": "https://www.kingsraleigh.com/shows/sugar-snap-peas/"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260712150840id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "M. Roomie",
+      "source_url": "https://www.kingsraleigh.com/shows/melodramatic/"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "90’s & 2000’s Throwback Night with Andrew Hypes",
+      "source_url": "https://www.kingsraleigh.com/shows/90s-2000s-throwback-night-with-andrew-hypes/"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "Puppeteers for Fears presents: Robopocalypse, The Musical!",
+      "source_url": "https://www.kingsraleigh.com/shows/puppeteers-for-fears-presents-robopocalypse-the-musical/"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "Anxious Arms",
+      "source_url": "https://www.kingsraleigh.com/shows/early-anxious-arms/"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260712150840id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "Döltz",
+      "source_url": "https://www.kingsraleigh.com/shows/doltz/"
+    },
+    {
+      "date": "2026-08-02",
+      "headliner": "Fly Anakin / Nickelus F",
+      "source_url": "https://www.kingsraleigh.com/shows/fly-anakin-nickelus-f/"
+    },
+    {
+      "date": "2026-08-04",
+      "headliner": "innlet – ‘The Willow Tree’ Tour",
+      "source_url": "https://www.kingsraleigh.com/shows/innlet-the-willow-tree-tour/"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "Survival Tactics",
+      "source_url": "https://www.kingsraleigh.com/shows/survival-tactics-2/"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "The Big Three Tour: Tributes to Metallica, Slayer, and Megadeth",
+      "source_url": "https://www.kingsraleigh.com/shows/the-big-three-tour-tributes-to-metallica-slayer-and-megadeth/"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "Barstool Rodeo: Celebrating the Life & Music of Michael Houser",
+      "source_url": "https://www.kingsraleigh.com/shows/barstool-rodeo-celebrating-the-life-music-of-michael-houser/"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "Smells Like Nirvana: MTV Unplugged Tribute Show",
+      "source_url": "https://www.kingsraleigh.com/shows/smells-like-nirvana-performs-mtv-unplugged/"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "Recessioncore Summer Party.",
+      "source_url": "https://www.kingsraleigh.com/shows/recessioncore-summer-party/"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "Royale Lynn",
+      "source_url": "https://www.kingsraleigh.com/shows/royale-lynn/"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "EMM",
+      "source_url": "https://www.kingsraleigh.com/shows/emm-2/"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260815023734id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "Sub Empty",
+      "source_url": "https://www.kingsraleigh.com/shows/sub-empty/"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "Flesh Carving",
+      "source_url": "https://www.kingsraleigh.com/shows/flesh-carving/"
+    },
+    {
+      "date": "2026-08-25",
+      "headliner": "Sub Rosa",
+      "source_url": "https://web.archive.org/web/20260815023734id_/https://www.kingsraleigh.com/"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "The Barons",
+      "source_url": "https://www.kingsraleigh.com/shows/the-barons/"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "Solya",
+      "source_url": "https://www.kingsraleigh.com/shows/solya/"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "An Aching Back Sunday Pop-Punk Party",
+      "source_url": "https://www.kingsraleigh.com/shows/an-aching-back-sunday-pop-punk-party/"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "The Gasoline Gypsies",
+      "source_url": "https://www.kingsraleigh.com/shows/the-gasoline-gypsies/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "22 Grief",
+      "source_url": "https://www.kingsraleigh.com/shows/22-grief/"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "Earther: Album Release & Farewell Show",
+      "source_url": "https://www.kingsraleigh.com/shows/earther-album-release-farewell-show/"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "Crud",
+      "source_url": "https://www.kingsraleigh.com/shows/crud/"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "Hopscotch Day Party: Sick Day",
+      "source_url": "https://www.kingsraleigh.com/shows/early-hopscotch-day-party-sick-day/"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "Hopscotch Music Festival 2026: Thursday Night",
+      "source_url": "https://www.kingsraleigh.com/shows/late-hopscotch-music-festival-2026-thursday-night/"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "Hopscotch Day Party: The Annual Ritual of Summoning",
+      "source_url": "https://www.kingsraleigh.com/shows/early-hopscotch-day-party-the-annual-ritual-of-summoning/"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "Hopscotch Music Festival 2026: Friday Night",
+      "source_url": "https://www.kingsraleigh.com/shows/late-hopscotch-music-festival-2026-friday-night/"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "Hopscotch Day Party: Kings Family Show",
+      "source_url": "https://www.kingsraleigh.com/shows/early-hopscotch-day-party-kings-family-show/"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "Hopscotch Music Festival 2026: Saturday Night",
+      "source_url": "https://www.kingsraleigh.com/shows/late-hopscotch-music-festival-2026-saturday-night/"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "Hopscotch Day Party: Burial Beer Sunday_Absolution Makers Market",
+      "source_url": "https://www.kingsraleigh.com/shows/hopscotch-day-party-burial-beer-sunday_absolution-makers-market/"
+    },
+    {
+      "date": "2026-09-14",
+      "headliner": "Black Marble",
+      "source_url": "https://www.kingsraleigh.com/shows/black-marble/"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "Max Fry",
+      "source_url": "https://www.kingsraleigh.com/shows/max-fry/"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Red Shahan",
+      "source_url": "https://www.kingsraleigh.com/shows/red-shahan/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "919 DAY 2026: Hardcore Showcase",
+      "source_url": "https://www.kingsraleigh.com/shows/919-day-2026/"
+    },
+    {
+      "date": "2026-09-20",
+      "headliner": "Pertinence",
+      "source_url": "https://www.kingsraleigh.com/shows/pertinence/"
+    },
+    {
+      "date": "2026-09-23",
+      "headliner": "Iron Lung",
+      "source_url": "https://www.kingsraleigh.com/shows/iron-lung/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "The VCG Label Showcase",
+      "source_url": "https://www.kingsraleigh.com/shows/the-vcg-label-showcase/"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "Late Night Gov’t Mule Afterparty",
+      "source_url": "https://www.kingsraleigh.com/shows/late-night-govt-mule-afterparty/"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "Turnstile (un)Official Afterparty",
+      "source_url": "https://www.kingsraleigh.com/shows/turnstile-unofficial-afterparty/"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "Hole Dweller",
+      "source_url": "https://www.kingsraleigh.com/"
+    }
+  ],
+  "listing_complete": false,
+  "listed_until": "2027-03-30",
+  "study2_venue_id": "ral-kings",
+  "imported_by": "scripts/import-venues.js"
+}

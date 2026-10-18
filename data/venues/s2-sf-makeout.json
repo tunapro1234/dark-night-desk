@@ -1,0 +1,1785 @@
+{
+  "id": "s2-sf-makeout",
+  "name": "Make-Out Room",
+  "city": "San Francisco",
+  "capacity_band": "not published",
+  "calendar_source_url": "https://www.makeoutroom.com/events/previous/",
+  "read_at": "2026-10-17",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "BFF.FM presents KARAOKE @ The Make Out Room BFF.fm DJs FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/15"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "The Honky Tonk Queen Tour '26 NOELLE & the Deserters + DOMINIQUE & the Diamonds",
+      "source_url": "https://www.makeoutroom.com/events/previous/15"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "DJ PAT MICHAEL ~ , SILVER RAVEN ELI COLE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/15"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "ABOUT LAST NIGHT: A One Night Stand Story Telling Series",
+      "source_url": "https://www.makeoutroom.com/events/previous/15"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "BOOM! ~ Friday Night Dance Party DJ 2shy-shy , DJ melt w/U",
+      "source_url": "https://www.makeoutroom.com/events/previous/15"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "KID AGAIN + MILDRED + MAX ABNER",
+      "source_url": "https://www.makeoutroom.com/events/previous/15"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/15"
+    },
+    {
+      "date": "2026-04-05",
+      "headliner": "MOTHER OF PEARL 2026 PAGEANT",
+      "source_url": "https://www.makeoutroom.com/events/previous/15"
+    },
+    {
+      "date": "2026-04-05",
+      "headliner": "CLUTCH the PEARLS: Drag Show w/ host Mira HOTTEST COOLEST",
+      "source_url": "https://www.makeoutroom.com/events/previous/15"
+    },
+    {
+      "date": "2026-04-05",
+      "headliner": "DIMENSIONS w/ DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/15"
+    },
+    {
+      "date": "2026-04-07",
+      "headliner": "DJ LOTTA NOTTA FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-07",
+      "headliner": "TECHNO TUESDAYS ~ w/ DJ David Anderson Kirk FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "GUAJIRON",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "LA DANSE ~ DJs TOM THUMP + WONWAY POSIBUL FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "PILLOW TALK ~ w/ DJ YERSTROOLY ~ FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "COOL as FUCK! DJs Kevin , Liam , & Raul FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "VINYLISSIMO ~ DJs Nino MSK & Lead Teddy",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "JAMES MASTRO + BOB HILLMAN",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-12",
+      "headliner": "BONGFATHER The PRETTY BOYS RIVAL PLAGUE +",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-12",
+      "headliner": "DIMENSIONS ~ DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "Happy Endings: Period Piece @laurenc.johnson @kafka.drag @omgkatmarie @a_fantasma_escritor @tropigalacticgirl",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "HAPPY ENDINGS",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "TECNOLOGIA FEFLO + EL MERO GUERO SONIDERO FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "BFF.FM KARAOKE The Make Out Room BFF.fm DJs FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "TEACHER'S LOUNGE ~ After School Special! DJ EARTH ANGEL DJ JUANCHII CODYTHASTHEHOMEY FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "TIMELESS REGGAE DANCEHALL DJs JAH YZER + KING I-VIER + TRUEVERSE",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "Heugel /Mitchell DEEP SPACE Unsound Eric DJ FOODCOURT",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "Mark Eitzel DJ FOODCOURT Parker T Gibbs Mr. FOODCOURT Isaiah Mitchell Earthless Warren Heugel Tussle Deep Space Eric Unsound (Eric Moffat) Mitchell and Heugel",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "CITY BEAT DJs Tom Thump + Centipede (Mophono)",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "DOUG HILSINGER CAROLEEN BEATTY , SUNNY HAIRE , STEVE PERRONE, DUSTIN JERMIER , BRUCE DUCHENEAUX",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-19",
+      "headliner": "UNICRONE + DEAD SAILOR GIRLS",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-19",
+      "headliner": "DIMENSIONS ~ DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/14"
+    },
+    {
+      "date": "2026-04-20",
+      "headliner": "CLOSED for the HOLIDAY! HAPPY 4/20!",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "JAZZ at the MAKE OUT ROOM! NO COVER,",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "Solo Organ",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "Brett Carson Quartet Brett Carson Kyle Bruckmann, Lorin Benedict Mat Muntz",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "Grex Karl Evangelista Rei Scampavia Cory Wright Robert Lopez",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "TECHNO TUESDAY ~ DJ JENNEE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "SOUL FINGER DJ Tonearm FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "CALITALO DISCO - DJ Nino Msk & Friends FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "P L A Y E R \u2018S L A Y O V E R @makeoutroomsf",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "STACKED @earthangel_1 PLUS @glamorous___glue",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "@brainsinthedrain @yerstrooly",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "ISABELLA ROSETTA and THE WAR on FUZZ DICIEMBRE GRIS",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "P L A Y E R \u2018S L A Y O V E R DJ YERSTROOLY CHADYLITIC CONVERTER + EARTH ANGEL + G MARKS FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "GRAVEDODGER + HAARDVARK + SOOTHSAYER ~",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "DISCO-PLASTIQUE ~ DJ 2shy-shy + DJ melt w/U",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "RECLINER + The ETIQUETTES ~",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s ~",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "SIRENS of the EAST AGNESS TWIN HAYATI + LOST GEMS",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "DIMENSIONS DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "Sad Bastard Club Josiah Flores Amy Fowler Katie Clay FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "SAD BASTARD CLUB TOM HEYMAN AMY FOWLER Latitude KATIE CLAY + JOSIAH FLORES ~ FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "FEVER DREAM \u2013 Cole Grey & Minus Man NO COVER",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-29",
+      "headliner": "The BOGUES + TIN SANDWICH + TBD",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-29",
+      "headliner": "CALITALO DISCO - DJ Nino Msk FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "CORE TASHA MALAN + CAROLINE WOLFSON + LISHA SESBASTIAN + LANA CAZ TIX $10",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "LETTUCE ROCK DJs GOLDIE + JIMMY + YERSTROOLY FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "ABOUT LAST NIGHT: A One Night Stand Story Telling Series",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "BOOM! ~ Friday Night Dance Party ~ DJ 2shy-shy , DJ melt w/U",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "DISCOS LATINOS DJ SONIDO FURIOSO DJ FEMMELECTRIC FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "MOTHER OF PEARL 2026 PAGEANT",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "@clutchthepearlssf @detourproductions.sf @churro_nomi",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "@_.alabaster._ \ud83e\udee7 @authenticskidmark \ud83e\udee7 @bettyiejayne \ud83e\udee7 @bratalie33 \ud83e\udee7 @iamtranslucent \ud83e\udee7 @manyhands_lightwerk \ud83e\udee7 @missbea_haven \ud83e\udee7 @sallylimonplease \ud83e\udee7 @sparklesdevine \ud83e\udee7 @thecultbaby",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "Make-Out Room",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "The People\u2019s Pearl congeniality award",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "http://detour.productions",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "@neonicreative @churro_nomi @demnine",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "CLUTCH the PEARLS: Drag Show w/ host Mira HOTTEST COOLEST",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "DIMENSIONS DJ 2NITE ~ FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/13"
+    },
+    {
+      "date": "2026-05-05",
+      "headliner": "DJ GLASSJACK",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-05",
+      "headliner": "BROWN HORSE MILDRED",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-05",
+      "headliner": "FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "BFF.FM KARAOKE The Make Out Room BFF.fm DJs FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "WRECKLESS ERIC TOM HEYMAN & The Moonlighters",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "QUE CHIMBA DJ EARTH ANGEL + PROFESITO ( ) + SPECIAL GUEST DJ FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "JENNY HANIVER + LIZZIE WATERS For Your Pain. For Your Pleasure",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "VINYLISSIMO ~ DJs Nino MSK & Lead Teddy",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "FANTASY + The SEAGULLS + The HAIRDRESSERS",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "El SUPERRITMO! DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "TRIKONE SILSILA STUDIO",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-12",
+      "headliner": "HAPPY ENDINGS",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-12",
+      "headliner": "TECNOLOGIA FEFLO + EL MERO GUERO SONIDERO FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-13",
+      "headliner": "Cuban Salsa Wednesday!",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-13",
+      "headliner": "GUAJIRON",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-13",
+      "headliner": "LA DANSE ~ DJs TOM THUMP + WONWAY POSIBUL FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "SOUL FINGER DJ Tonearm FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "PILLOW TALK ~ DJ YERSTROOLY + DJ VISHY ~ FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "TONY TYRONE SALES BUBBLE DAGGER",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "CITY BEAT DJs Tom Thump + Centipede (Mophono)",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "DJ EARTH ANGEL FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "El SUPERRITMO! DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "NOVIO ELECTRICO TTB Third Thursday Band FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "DIMENSIONS ~ DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/12"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "JAZZ at the MAKE OUT ROOM! NO COVER, Jazz at the Make-Out Room Monday Make-Out",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "The Holly Martins Lorin Benedict Kasey Knudsen Eric Vogler",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "Graham Viegut Ensemble Graham Viegut Gianna Caudillo Isabelle Waldner Kalb Ali Ziyad Julius Zimmerman Ryan Danley Angelica Mendoza",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "TECHNO TUESDAY ~ Frequencies in Bloom DJ JENNEE ~ FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-20",
+      "headliner": "BFF.FM KARAOKE @ The Make Out Room BFF.fm DJs FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "TEACHER'S LOUNGE DJ ELBOW GREASY + DJ JUANCHII FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "TIMELESS REGGAE DANCEHALL DJs JAH YZER + KING I-VIER + TRUEVERSE ~ FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "TRONA + LITTLE DARK ONE DJ SASQUATCH BORRACHO",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "DISCO-PLASTIQUE ~ DJ 2shy-shy + DJ melt w/U ALL VINYL",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "Rain Parade Willie Aron",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "Tom Heyman Kirk Swan DumpTruck",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "MAKE OUT ROOM RECORD SWAP! FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "RAIN PARADE + RUSS TOLMAN & The DAMN LUCKYS \" STRAY \"",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "GHOST CITY The REVELATOR",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-26",
+      "headliner": "SBC Maurice Tani Roger Kunkel",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-26",
+      "headliner": "SAD BASTARD CLUB TOM HEYMAN MAURICE TANI + ROGER KUNKEL FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-26",
+      "headliner": "FEVER DREAM Cole Grey & Minus Man NO COVER",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "CALITALO DISCO DJ LEAD TEDDY FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "DJ DART AJAX VINYL FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "P L A Y E R \u2018S L A Y O V E R DJ YERSTROOLY FREE Chadylitic Converter Earth Angel G Marks",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "ANDRE MIGUEL & The MOMENT + NOT YETIS FREE SHOW",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "FRIDAY I'M in LOVE ~ w/ DJ 2shy-shy + DJ melt w/U",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "DJ PULGA FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-05-31",
+      "headliner": "KELLEY STOLTZ w/ RYLI + the dates",
+      "source_url": "https://www.makeoutroom.com/events/previous/11"
+    },
+    {
+      "date": "2026-06-02",
+      "headliner": "DJ LOTTA NOTTA FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-02",
+      "headliner": "TECHNO TUESDAY DJ GLASSJACK FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-03",
+      "headliner": "BFF.FM KARAOKE @ The Make Out Room BFF.fm DJs FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "COLE BERLINER + JAS STADE + MAYYA Early tix",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "QUE CHIMBA ~ DJ EARTH ANGEL DJ BB CORA FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "ABOUT LAST NIGHT: A One Night Stand Story Telling Series",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "BOOM! DJ 2shy-shy + DJ melt w/U",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "[name withheld]'S Birthday Bash HARD SAME and FRIENDS DOUBLE DARE YA",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-07",
+      "headliner": "CLUTCH the PEARLS: Drag Show Mira HOTTEST COOLEST",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-07",
+      "headliner": "DIMENSIONS DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-09",
+      "headliner": "@fightingw0rds @zoeoyoung @neldanichole @cdanzig @supernaz_your_superfriend",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-09",
+      "headliner": "HAPPY ENDINGS",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-09",
+      "headliner": "TECNOLOGIA FEFLO + EL MERO GUERO SONIDERO DJ PRIMO FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "Andr\u00e9s Miguel Cervantes Pio Gabriel Katie Mae",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "LA DANSE ~ DJs TOM THUMP + WONWAY POSIBUL FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "ABOVE ME + FOGGY MEMORIES + BLACK THUMB + COOL as FUCK DJs",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "PILLOW TALK DJ YERSTROOLY FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "AL from Hell Fest Imprint Design , Night Flighters, Fuzz Attack , Short Dogs Grow",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "AL from Hell Fest DJ EMPRESS DJ YANGO + DJ ERIC LOVE",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "STARRY SKEMES + The MARIGOLD FOLD + ANGIE McLAUGHLIN",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "20 YEAR ANNIVERSARY PARTY! El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s ~",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-14",
+      "headliner": "DANGERVERSE + GLOW SCOUT + UNICRONE",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-14",
+      "headliner": "DIMENSIONS ~ DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/10"
+    },
+    {
+      "date": "2026-06-15",
+      "headliner": "SUPREME JOY TRUE COMPANION + OTOLITHS",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-16",
+      "headliner": "JAZZ at the MAKE OUT ROOM NO COVER Jazz at the Make-Out Room Karl Evangelista/Lewis Jordan Duo Ross Hammond Jon Bafus/Jas Stade",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-16",
+      "headliner": "TECHNO TUESDAY ~ DJ JEHNEE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-17",
+      "headliner": "BFF.FM KARAOKE @ The Make Out Room BFF.fm DJs FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "DJ DARTAJAX + Thee VEXED ONE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "TIMELESS REGGAE DANCEHALL DJs JAH YZER + KING I-VIER + TRUEVERSE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-19",
+      "headliner": "ELECTRIC ELECTRIC ~ DJ NINO FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-19",
+      "headliner": "CITY BEAT DJs Tom Thump + Centipede (Mophono)",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "TWIN BLOOM + SILVERSET + GLASSGIRL",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "BATTLE of the DAD-ROCK BANDS! THUNDERBLEED BLIND VENGEANCE NEON ANYWAY",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "DIMENSIONS ~ DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-23",
+      "headliner": "SAD BASTARD CLUB TOM HEYMAN ~ plus special guests TIM COHEN + SARAH BETHE NELSON FREE!",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-23",
+      "headliner": "TECHNO TUESDAY ~ DJ HUFFY NO COVER",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-24",
+      "headliner": "World Cup Watch Party Mexico vs Czechia TELEMUNDO Chulita Vinyl Club",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-24",
+      "headliner": "CALITALO DISCO - DJ Nino Msk FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-25",
+      "headliner": "The SOUL CLINIC DJ Souldog FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-25",
+      "headliner": "P L A Y E R \u2018S L A Y O V E R DJs YERSTROOLY CHADYLITIC CONVERTER EARTH ANGEL PAUL COSTUROS FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "DJ Am\u00e9n\u1ee5 Happy Hour FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "DISCO-PLASTIQUE ~ DJ 2shy-shy + DJ melt w/U ALL VINYL",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "DJ MATT DENAY ( bff.fm )~ Patrick Crowley, Egyptian Lover, Sylvester, Bobby O FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "RADIO INCOGNITO + GREG ASHLEY + EDITH'S HEAD Andy Human DJ CINDY G",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "DIMENSIONS DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/9"
+    },
+    {
+      "date": "2026-06-29",
+      "headliner": "MR. BUTTERFIELD + NOW + PLASTIC CANDLES",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-06-30",
+      "headliner": "SILVER SWOON + OLD CLOTHES, NEW OUTFIT",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-01",
+      "headliner": "BFF.FM KARAOKE @ The Make Out Room BFF.fm DJs FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-02",
+      "headliner": "LOOSE CONNECTION DJ Miller Genuine Daft FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-02",
+      "headliner": "DJ EARTH ANGEL FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-03",
+      "headliner": "Earth Girl Helen Brown + General Baby + Grace Sings Sludge",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-03",
+      "headliner": "BOOM! DJ 2shy-shy , DJ melt w/U",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-04",
+      "headliner": "Z+N BLACK THUMB + SMASHING TIMES TASTE",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-04",
+      "headliner": "ALL NIGHT DJ NUIT MODERNE del SUR DREAM BOAT ANNIE",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "SIT DOWN, DIVA",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "@churro_nomi + @b.terry",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "@kevintusojos \ud83e\ude91 @glamputee \ud83e\ude91 @ffuucchhssiiaa \ud83e\ude91 @itslisafrankenstein \ud83e\ude91 @kikikiraraaa \ud83e\ude91 @kalonji.0 \ud83e\ude91 @chingchi_yu \ud83e\ude91 @avasworrrld \ud83e\ude91 @fiercefatfemme",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "@stanleyfranksensation Del Medoff @keganmarling @smileypiley @d.aisy_n.ukes @theo4pres",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "@lesbfrank / @sydfranz",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "CLUTCH the PEARLS Mira HOTTEST COOLEST",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "DIMENSIONS DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-07",
+      "headliner": "DJ LOTTA NOTTA FREE ~",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-07",
+      "headliner": "TECHNO TUESDAY w/ DJ GLASSJACK FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-08",
+      "headliner": "GUAJIRON",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-08",
+      "headliner": "LA DANSE ~ DJs TOM THUMP + WONWAY POSIBUL FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-09",
+      "headliner": "PILLOW TALK ~ w/ DJ YERSTROOLY + VISHY FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "Orquestra Pacifico Tropical Mala Grena",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "VINYLISSIMO ~ DJs Nino MSK & Lead Teddy",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "VETIVER MARK EITZEL",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-12",
+      "headliner": "Mt. RUBIDOUX + MATTHEW EDWARDS TRIO",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-12",
+      "headliner": "DIMENSIONS ~ DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/8"
+    },
+    {
+      "date": "2026-07-14",
+      "headliner": "Happy Endings: Gettin\u2019 Around Mukethe Kawinzi @kimeehowley @sarahkmatsui Kurt Swartzmann @supernaz_your_superfriend",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-14",
+      "headliner": "HAPPY ENDINGS",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-14",
+      "headliner": "TECNOLOGIA EL MERO GUERO SONIDERO FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-15",
+      "headliner": "BFF.FM KARAOKE @ The Make Out Room BFF.fm DJs FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "LENNY KAYE GOIN' LOCAL Nuggets $20 adv",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "TIMELESS REGGAE DANCEHALL DJs JAH YZER + KING I-VIER + TRUEVERSE ~ FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "ECLECTIC ELECTRIC DJ NINO MSK all vinyl FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "CITY BEAT DJs Tom Thump + Centipede (Mophono)",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "MACERATOR Cancer & Capricorn Macerator (OMDR) Mark Sullivan @steakhouserock , @sobditch Lemur Universe @_desmond.shea Alex Oropeza @abrokenhorse",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "CANCER & CAPRICORN + MACERATOR",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-19",
+      "headliner": "PTYL vs DEMONCAST + CRASH DAVIDIAN + LOST GEMS",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-19",
+      "headliner": "DIMENSIONS DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "JAZZ at the MAKE OUT ROOM! NO COVER",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "Ai-Ai",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "Trio Saki Minamimoto , Lorin Benedict David Israel Katz",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "Marc Capelle + William Winant Marc Capelle William Winant",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "TECHNO TUESDAY ~ DJ JEHNEE ~ FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-22",
+      "headliner": "CALITALO DISCO DJ Nino Msk & Friends FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-23",
+      "headliner": "SWEET SENSATION Ochenta Maryzelle FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "OVARIAN TROLLEY + PORK BELLY ~",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "DISCO-PLASTIQUE ~ DJ 2shy-shy + DJ melt w/U ~",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "BALDUVIAN BEARS + BLEU GRAVE + EX-HEIR",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "VELVET UNDERGROUND UNBOUND : Richie Unterberger Peter Maravelis City Lights Books DJ tonearm",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "DIMENSIONS DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/7"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "James Finch Justin Frahm The Real Housewives of Willits Sad Bastard Club Make-Out Room",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "SAD BASTARD CLUB TOM HEYMAN + JAMES FINCH JUSTIN FRAHM ~ FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "DJ HUFFY NO COVER ~",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-07-29",
+      "headliner": "Make-Out Room Ruzxs Blqkasdc Josh Miller Thomas Ayres EDITH\u2019S HEAD Andy Human DJ JESSICA B",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-07-29",
+      "headliner": "BART DAVENPORT Russ Blackmar, Josh Miller & Tom Ayres EDITH'S HEAD Andy Human JESSICA B Eventbrite",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "MERELY MORTALS KEVITO y LOS BRAVOS + MIKKO JERVOSO advance tix here",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "COLD CUTS DJ JIMMY NO COVER",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "The LIGHTING SECTION The FRICKS + The HELLTONES",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "VINYLISSIMO ~ DJs Nino MSK & Lead Teddy",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "LATITUDE + NISHI INDIGO ELEPHANT",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-02",
+      "headliner": "CLUTCH the PEARLS Mira HOTTEST COOLEST",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-04",
+      "headliner": "DJ LOTTA NOTTA FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-04",
+      "headliner": "TECHNO TUESDAY DJ GLASSJACK FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-05",
+      "headliner": "ANAIS LUND ERIC SHEA",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-05",
+      "headliner": "BFF.FM presents KARAOKE @ The Make Out Room BFF.fm DJs FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "MUSHROOM + VICTOR KRUMMENACHER Casey Neill & Greg Lisher",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "DJ EARTH ANGEL and friends FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "ABOUT LAST NIGHT: A One Night Stand Story Telling Series",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "BOOM! ~ Friday Night Dance Party DJ 2shy-shy , DJ melt w/U",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "TECTONICS Make-Out Room",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "Balzac Prince Buster",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "Dan Martin & The Noma Rocksteady Band",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "TECTONICS + BALZAC + DAN MARTIN & The Noma Rocksteady Band",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "Fisherman Tiki Band & Dirty Carol Make-Out Room",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "The Fisherman Tiki Band",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "Broadway Sluts Martuni\u2019s Castro Theatre Sister Roma Peaches Christ Foxy Mary Hunky Jesus",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "FISHERMAN'S TIKI BAND DIRTY CAROL",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "DIMENSIONS ~ DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/6"
+    },
+    {
+      "date": "2026-08-11",
+      "headliner": "HAPPY ENDINGS",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-11",
+      "headliner": "TECNOLOGIA ~ DJ REBECCA + CARLA LYN + DJ RUMEROSA + DJ NATI FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-12",
+      "headliner": "GUAJIRON",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-12",
+      "headliner": "LA DANSE ~ DJs TOM THUMP + WONWAY POSIBUL FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "DJ LIQUITEX FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "PILLOW TALK DJ YERSTROOLY FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "Remembering Rudy Gomez",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "COOL as FUCK! DJs Kevin , Liam , & Raul FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "VINYLISSIMO ~ DJs Nino MSK & Lead Teddy DJ 7evenB",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "WOODPECKER DYNAMITE + HOLLY FRANCIS + CHESS ~",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "DJ Chopped T\u00ed",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "HALF CALF + DEAD DOG FARM + KILROY ROGERS",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "JAZZ at the MAKE OUT ROOM! NO COVER",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "Isabelle WK",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "Sung Kim",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "Infinite Monkeys Jaroba",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "TECHNO TUESDAY ~ DJ NINO MSK FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-19",
+      "headliner": "BFF.FM KARAOKE @ The Make Out Room BFF.fm FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "THREE DAY STUBBLE + MERCHANTS of the NEW BIZARRE",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "TIMELESS REGGAE DANCEHALL DJs JAH YZER + KING I-VIER + TRUEVERSE ~ FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "BFF.fm JAMES WAVEY + FOR HORSES DJ Liquitex",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "CITY BEAT ~ DJs Tom Thump + Centipede (Mophono)",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "PLANKTON WAT Danny Paul Grody Duo LODESTONES",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s ~",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "LEFTY ROSA MANPIG DANNY ALLEN",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "DJ CHOPPED T\u00ed FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/5"
+    },
+    {
+      "date": "2026-08-25",
+      "headliner": "Sad Bastard Club Amy LaVere & Will Sexton Dan Stuart Matlock Make-Out Room",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-08-25",
+      "headliner": "SAD BASTARD CLUB TOM HEYMAN Amy LaVere & Will Sexton Dan Stuart FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-08-25",
+      "headliner": "TECHNO TUESDAY ~ DJ NINO MSK FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-08-26",
+      "headliner": "DJ CHOPPED T\u00ed FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-08-26",
+      "headliner": "CALITALO DISCO - DJ Nino Msk FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "DJ LEAD TEDDY FREE ~",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "P L A Y E R \u2018S L A Y O V E R DJ YERSTROOLY CHADYLITIC CONVERTER + TROUBLEMAN FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "DOLLY FOREVER DJ DOLL MOTHER Dolly's Charitable Foundation The Imagination Library FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "DISCO-PLASTIQUE ~ DJ 2shy-shy + DJ melt w/U ALL VINYL",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "FANTASY + The SHOWA POP + TOKYO BEATNIKS DJ",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-08-30",
+      "headliner": "TARNATION + INDIANNA HALE + JOSIAH FLORES",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-08-30",
+      "headliner": "DIMENSIONS DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "DJ LOTTA NOTTA FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "TECHNO TUESDAY DJ GLASSJACK FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-02",
+      "headliner": "BFF.FM KARAOKE @ The Make Out Room FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "Twisted Teens Atwood Magazine",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "Sims Hardin",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "The Forty Drop Few Ethan Francis, Candra Edwards Elliot Kennedy Stone and Sue",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "Talent Moat TWISTED TEENS + FORTY DROP FEW + DJ FOODCOURT ~",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "DJ EARTH ANGEL FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "ABOUT LAST NIGHT: A One Night Stand Story Telling Series",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "BOOM! DJ 2shy-shy , DJ melt w/U",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "MEGA X + NEUTRALS + ADDED DIMENSIONS + SAD EYES KILL",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "DJs KID FROSTBITE & NOMMI",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "Clutch The Pearls HOLLYWOOD SQUARES",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "Celebrity Impersonations",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "CLUTCH the PEARLS: Drag Show Mira HOTTEST COOLEST",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "DIMENSIONS DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/4"
+    },
+    {
+      "date": "2026-09-08",
+      "headliner": "HAPPY ENDINGS Happy Endings: \u201cwhat do you do?\u201d @leeannpickrell2025 @virgietovar @definitely_not_lost @seenoelleact @shenanigan.specialist",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-08",
+      "headliner": "PARADISO DJ REBECCA + CARLA LYN + DJ RUMEROSA FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "DJ CHOPPED T\u00ed FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "LA DANSE ~ DJs TOM THUMP + WONWAY POSIBUL FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "Abuela's Pantry's INDIE-POP PROM DJ Space Abuela WTF Slumberland The KITCHENETTES",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "PILLOW TALK RED LIGHT SPECIAL ~ a VIRGO Dance Party ~ DJ YERSTROOLY + SABERTOOTHVAGINA FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "downy RIP ROOM Tickets on Eventbrite",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "VINYLISSIMO DJs Nino MSK & Lead Teddy",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "SOUL FINGER DJ Tonearm ~ FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s ~",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "AMELIA DAY MARK EITZEL",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "DIMENSIONS ~ DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "Jazz at the Make-Out Room Monday Make-Out",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "JAZZ at the MAKE OUT ROOM! ~ BRISTLE + TEJA GERKEN + ANIME ALIENS NO COVER",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "Anime Aliens Teja Gerken Bristle Randy McKean Cory Wright Murray Campbell Lisa Mezzacappa",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "TECHNO TUESDAY ~ DJ JEHNEE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "ONE LOUD DRAWING Jonah and Friends Far's - Tin Cans with Strings to You Paul S Flores Eventbrite presales",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "BFF.FM KARAOKE @ The Make Out Room FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "1001 Stevies presents Girl Cult Happy Hour",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "1001 Stevies GIRL CULT Happy Hour Fundraiser DJ Liquitex",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "TIMELESS REGGAE DANCEHALL DJs JAH YZER + KING I-VIER + TRUEVERSE ~ FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "Plastic Pancake Records The DOGS + The FREAK ACCIDENT + The IFIC",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "CITY BEAT DJs Tom Thump + Centipede (Mophono)",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "The MORNING LINE Russell Tillitt's RELEASE the SHARKS + eggcorn",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-20",
+      "headliner": "BRIAN NOYES + JEFF MOLLER + RICHARD TRIPPS",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-21",
+      "headliner": "THE SHOP REGULARS PLASTIC CANDLES CHILD STAR",
+      "source_url": "https://www.makeoutroom.com/events/previous/3"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "Eev Bekker Michael Zapruder Murder She Wrote FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "SAD BASTARD CLUB TOM HEYMAN ~ EEV BEKKER + MICHAEL ZAPRUDER ~ FREE!",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "TECHNO TUESDAY DJ AGROPOL",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-23",
+      "headliner": "DJ LEAD TEDDY FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "The SOUL CLINIC DJ Souldog FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "P L A Y E R \u2018S L A Y O V E R DJ YERSTROOLY CHADYLITIC CONVERTER EARTH ANGEL FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "Key Light Project presents: LET'S GET LONELY The \"You-Are-Not-Alone\" Variety Show BETH LISICK FRAYN MASTERS NIGHT SHUTTLE , MARC CAPELLE , WILL GUTZMAN",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "DISCO-PLASTIQUE DJ 2shy-shy + DJ melt w/U ~ ALL VINYL",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "SEAWEED SWAY WARM SPELL + COMPERSION Charlie Stellar Make-Out Room Jesse & Jessie",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "El SUPERRITMO! ~ DJ El Kool Kyle y DJ Roger M\u00e1s",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "DadCo + REWINDER",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "DIMENSIONS DJ 2NITE ~ FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "HOUSE/NOT HOUSE DJ HUFFY NO COVER",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-30",
+      "headliner": "CALiTALO DiSCO",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-30",
+      "headliner": "Make Out Room",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-30",
+      "headliner": "DIMENSIONS DJ 2NITE FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    },
+    {
+      "date": "2026-09-30",
+      "headliner": "CALITALO DISCO - DJ Nino Msk FREE",
+      "source_url": "https://www.makeoutroom.com/events/previous/2"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "sf-makeout",
+  "imported_by": "scripts/import-venues.js"
+}

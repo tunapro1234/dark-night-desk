@@ -1,0 +1,975 @@
+{
+  "id": "s2-stl-bluestrawberry",
+  "name": "Blue Strawberry",
+  "city": "St. Louis",
+  "capacity_band": "not published",
+  "calendar_source_url": "https://bluestrawberrystl.com/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "Mark West - Mr. Happy - Singer-Songwriter Hannah Wozniak opens",
+      "source_url": "https://web.archive.org/web/20260327053001id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-01",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260327053001id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "The Best of Al Green",
+      "source_url": "https://web.archive.org/web/20260327053001id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "As the Crowe Flies Plays Jerry-Grass - A Tribute to Jerry Garcia - Encore Performance",
+      "source_url": "https://web.archive.org/web/20260327053001id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "Phil's Karaoke - In The Lounge | 9:30pm-1am",
+      "source_url": "https://web.archive.org/web/20260327053001id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "Sweetie & The Toothaches - Sweetie's Birthday Dance Party!",
+      "source_url": "https://web.archive.org/web/20260327053001id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-07",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260327053001id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "Emanuel Harrold & Friends",
+      "source_url": "https://web.archive.org/web/20260327053001id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260327053001id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "Lola Kristine",
+      "source_url": "https://web.archive.org/web/20260327053001id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "Judith Owen - Featuring her New Orleans Callers",
+      "source_url": "https://web.archive.org/web/20260327053001id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "Lisa Kohler",
+      "source_url": "https://web.archive.org/web/20260327053001id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-12",
+      "headliner": "Rosemary Watts and Joe Dreyer with Scott Alberici - Swing Into Spring",
+      "source_url": "https://web.archive.org/web/20260411181836id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260411181836id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "Scott Moreau - My Life As The Man In Black",
+      "source_url": "https://web.archive.org/web/20260411181836id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260411181836id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "Jonathan Scales Fourchestra - Steel Pan Virtuoso",
+      "source_url": "https://web.archive.org/web/20260411181836id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "Kelly Howe is Linda Ronstadt in Just One Look - The Midnight Company",
+      "source_url": "https://web.archive.org/web/20260411181836id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "Phil's Karaoke - In The Lounge - 9:30pm-1am",
+      "source_url": "https://web.archive.org/web/20260411181836id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "Riley Mulherkar Quartet",
+      "source_url": "https://web.archive.org/web/20260411181836id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-19",
+      "headliner": "Beverly Brennan - Far Away Places",
+      "source_url": "https://web.archive.org/web/20260411181836id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "Bobby Rush - 3x Grammy-Winning Blues Legend",
+      "source_url": "https://web.archive.org/web/20260411181836id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "Bobby Rush - 3x Grammy-Winning Blues Legend",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "Rocky Mountain High Experience\u00ae - A John Denver Tribute Starring Rick Schuler",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "Rocky Mountain High Experience\u00ae - A John Denver Tribute Starring Rick Schuler",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "Rocky Mountain High Experience\u00ae - A John Denver Tribute Starring Rick Schuler",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "Rocky Mountain High Experience\u00ae - A John Denver Tribute Starring Rick Schuler",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "John Gallagher Jr. - A Tony-Winning Singer-Songwriter. Casual Male and Zach Jones & The Tricky Bits open.",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-29",
+      "headliner": "Feyza Eren and The Midwest Jazztette",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "Purple Nights: A Tribute to Prince & The Time - Featuring Keyboardist Mak Sevn, Current Member of The Time",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "Leann Schuering - I Want It All: Moms' Night Out",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "80s kids - A 1980s synthpop joyride",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "Sunday Standard Time with Tim Schall - with Joe Dreyer and Willem Von Hombracht",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-05",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "The Tom Schaefer Band",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "the \u00e4ffectations",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "Katie McGrath - Hope Floats: Songs of Optimism Amid This Mayhem",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "Mother's Day with Nicholas Brooks",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-12",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260420073921id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-13",
+      "headliner": "An Evening of Mary J. Blige",
+      "source_url": "https://web.archive.org/web/20260511210857id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-13",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260511210857id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "Gr\u00e1inne Hunt and Jules Stewart - Irish Folk Duo",
+      "source_url": "https://web.archive.org/web/20260511210857id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "An Evening with Cherise Louis-Mason",
+      "source_url": "https://web.archive.org/web/20260511210857id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "Phil's Karaoke - In The Lounge - 9:30pm-1am",
+      "source_url": "https://web.archive.org/web/20260511210857id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "Sargent Conservatory of Theatre Arts at Webster University - Senior Cabarets",
+      "source_url": "https://web.archive.org/web/20260511210857id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "The Howard Levy 4 - Grammy Award Winning Harmonica, Founding Member of Bela Fleck and The Flecktones",
+      "source_url": "https://web.archive.org/web/20260511210857id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "Brian Clarke - Voices In My Head - Bruce Springsteen, Paul Simon, Bob Dylan, Jimmy Webb, and Jackson Browne",
+      "source_url": "https://web.archive.org/web/20260511210857id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260517045524id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-20",
+      "headliner": "T.J. Muller and The St. Louis Rhythm Makers - With a Full Dance Floor",
+      "source_url": "https://web.archive.org/web/20260517045524id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-20",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260517045524id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "Kelly Howe is Linda Ronstadt in Just One Look - The Midnight Company",
+      "source_url": "https://web.archive.org/web/20260517045524id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "Tim Cunningham",
+      "source_url": "https://web.archive.org/web/20260517045524id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "Phil's Karaoke - In The Lounge - 9:30pm-1am",
+      "source_url": "https://web.archive.org/web/20260517045524id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "The Bean Tones - Vocal Jazz Quartet",
+      "source_url": "https://web.archive.org/web/20260517045524id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "Bob Case Celebrates Bob Dylan - Bob Dylan's 85th Birthday Celebration",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-26",
+      "headliner": "Heather Maloney",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "Amy Feder - Broadway On The Bima",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "Amy Feder - Broadway On The Bima",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "Patrick J. Mooney - Bein\u2019 Green: The Musical Worlds of Jim Henson",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "Phil's Karaoke - In The Lounge - 9:30pm-1am",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "Ivas John Band",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-05-31",
+      "headliner": "Clive Carroll - \u201cArguably the most accomplished fingerstylist in the world today.\u201d",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-02",
+      "headliner": "Carter Studios 2026 Senior Cabaret",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-03",
+      "headliner": "Mathis Picard - A \"RISING STAR\" JAZZ PIANIST",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-03",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "Tom McDermott - Top New Orleans Piano Player",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "Terri Langerak and Vesna Delevska - Terri and Vesna\u2019s 14th Annual Birthday Extravaganza! With Special Guests Kendrick Smith and Bernard Terry!",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "Patterson Performing Arts, Inc. Presents \"Breaking Type\"",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-07",
+      "headliner": "Mutlu",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-09",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260523132529id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "Dylan Triplett and Mathias Lattin - Two Emerging Blues Artists",
+      "source_url": "https://web.archive.org/web/20260608120810id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260608120810id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "The Edgar Allan Poe Experience",
+      "source_url": "https://web.archive.org/web/20260608120810id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "Ethan Jones and Katie Hubbard - The Music of James Taylor and Carole King",
+      "source_url": "https://web.archive.org/web/20260608120810id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "Phil's Karaoke - In The Lounge - 9:30pm-1am",
+      "source_url": "https://web.archive.org/web/20260608120810id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "Angela Shultz - Do Overs",
+      "source_url": "https://web.archive.org/web/20260608120810id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-14",
+      "headliner": "An Afternoon of Jill Scott and Anthony Hamilton",
+      "source_url": "https://web.archive.org/web/20260608120810id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-14",
+      "headliner": "Sunday Standard Time with Tim Schall - Celebrating 3 Years - Special Guest Nancy Kranzberg",
+      "source_url": "https://web.archive.org/web/20260608120810id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-16",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260608120810id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-17",
+      "headliner": "Lo Stone and All The Days",
+      "source_url": "https://web.archive.org/web/20260608120810id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-17",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "Kelly Howe is Linda Ronstadt in Just One Look - The Midnight Company",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-19",
+      "headliner": "Herb Ohta, Jr. and Bryan Tolentino - Hawaiian 'Ukulele All-Stars",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-19",
+      "headliner": "Phil's Karaoke - In The Lounge - 9:30pm-1am",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "The Bosman Twins - Father's Day Weekend",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "The Bosman Twins - Father's Day Weekend",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-22",
+      "headliner": "Katy Geraghty - Star of The MUNY's Hairspray",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-23",
+      "headliner": "Sirsy - A Little Band With A Big Sound",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-24",
+      "headliner": "Weary Ramblers: An Unforgettable Evening of Americana - Winners of the 2026 International Blues Challenge",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-24",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-25",
+      "headliner": "The Cody Sisters - Acoustic Folk and Bluegrass",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "Denise Thimes - Solstice",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "Phil's Karaoke - In The Lounge - 9:30pm-1am",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "Ari Axelrod - A Place For Us: A Celebration of Jewish Broadway",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "Ken Haller - Make Someone Happy",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-06-30",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-01",
+      "headliner": "Ariella & Nicolaas - A Love Story",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-02",
+      "headliner": "Neil Salsich, Shanna in a Dress and Shane Devine",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "The Best of The Temptations, The Drifters and The Stylistics",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "Glass Theory",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-08",
+      "headliner": "The Jacob Jolliff Band - Cutting-Edge Bluegrass",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-08",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-09",
+      "headliner": "Kara Grainger",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "Tim Cunningham",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "Richard Cortez - Sinatra With Style",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-14",
+      "headliner": "An Enchanted Evening with Paulo Szot - Tony Award Winner from this summer's South Pacific at The Muny and The Light in the Piazza at Opera Theatre of Saint Louis",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-15",
+      "headliner": "An Enchanted Evening with Paulo Szot - Tony Award Winner from this summer's South Pacific at The Muny and The Light in the Piazza at Opera Theatre of Saint Louis",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-15",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "Eric Johanson - Rising Star Blues Guitarist",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "Javier Mendoza and Enrique Chi - Convergence - Two Stories, One Room",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "Phil's Karaoke - In The Lounge - 9:30pm-1am",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "Aaron Krings Quartet - Straight Ahead Jazz",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "2 Pedros - An Evening of Yacht Rock",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-19",
+      "headliner": "The Best of Chaka Khan",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-19",
+      "headliner": "Kelly Howe is Linda Ronstadt in Just One Look - The Midnight Company",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-22",
+      "headliner": "Noah Guthrie - From America\u2019s Got Talent and Glee",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-22",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-23",
+      "headliner": "Rising Stars Cabaret - Hosted by Broadway's Taylor Louderman and Shelby Ringdahl",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "Jeremy Lieb - A Night With Friends",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "Royce Martin - Swagtime",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "The Best of Donny Hathaway",
+      "source_url": "https://web.archive.org/web/20260617061313id_/https://www.bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "David Giuntoli - Drinks with Frank and Me...Platinum Style",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "Holland St. James Entertainment Presents: SPOTLIGHT - Amy Holland Pennell Brings an Inspiring Evening of Music, Stories, and Broadway Talent",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-29",
+      "headliner": "Pat Byrne - Irish Singer-Songwriter With A Gritty Americana Sound",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "Terry Jones Rogers & Friends - Bill Murphy, David Torretta, Aaron Burlbaw and Chris Fabick",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "Derek Warfield & The Young Wolfe Tones - Trad Irish",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "Lisa Kohler",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-02",
+      "headliner": "Elizabeth Teeter - Star of The MUNY's Something Rotten! Special Guest Lara Teeter.",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-03",
+      "headliner": "Seo Linn - High-energy Irish Trad",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-04",
+      "headliner": "Nick Rashad Burroughs Live! - Star of The MUNY's Ain't Too Proud",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "Steph Strings - Breaking Out Big Time. 1st US Tour.",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "Mindy Smith - \"Her Songs Sound Like Little Miracles.\"",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "Tim Schall: The Troubadours - Singer-Songwriters of the 60s & 70s",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "Brian Clarke - Voices In My Head - Bruce Springsteen, Paul Simon, Bob Dylan, Jimmy Webb, and Jackson Browne",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "Christiana Miller - \"Such A Pretty Voice\"",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-11",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-12",
+      "headliner": "Basil Hand - See Ya Later, Alligator; Basil\u2019s Last Hooray in STL",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "Kenny Black, Joe Williams and Andrea Taylor's Leo Birthday Party",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "The Immersive '80s Experience - Performed by Darnell Harvey",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "Kelly Howe is Linda Ronstadt in Just One Look - The Midnight Company",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "Sarah Politte - A Vocal Jazz Debut",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "The Best of Stephanie Mills",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "Frail Talk - Presented by One Night Live - Yannon opens",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-17",
+      "headliner": "Conor Mallon - Irish Uilleann Piper and Whistle Player",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "George Murphy - \u201cThe Most Exciting Vocal Find in Ireland.\u201d",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-19",
+      "headliner": "Cail\u00edn\u00ed Lua - Ireland's Sweethearts",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-19",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "Billow Wood - Astonishing Irish Harmonies",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "Jimmy Keane and Pat Broaders - bohola - \"Irish Music's Newest Supergroup\" - The Irish Herald",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "Phil's Karaoke - In The Lounge - 9:30pm-1am",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "Beth Bombara and Sam Golden - Ladies Of The Canyon: The Music of Joni Mitchell and Beyond",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "The Best of Frankie Beverly & Maze",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "Jacob Tolliver - Piano Phenom",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-24",
+      "headliner": "An Evening with Matt Doyle - Tony Award-Winning Star of The MUNY's Something Rotten!",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-25",
+      "headliner": "An Evening with Matt Doyle - Tony Award-Winning Star of The MUNY's Something Rotten!",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-26",
+      "headliner": "Black Tulip Chorale - Cabaret Soir\u00e9e 2026",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-26",
+      "headliner": "Kendrick Smith's - Open Jam for Composers, Musicians and Vocalists",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "Mississippi Crossing Band - The Best of John Prine",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "Ms. Robbie One More Time - An Original Ikette & Founder of Sweetie Pie's",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "Wil Robinson - With Special Guest Jada Leigh",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-30",
+      "headliner": "Socks in the Frying Pan - Irish Trio from County Clare",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-08-31",
+      "headliner": "Colm Keegan with Brian McGrane - Irish Singer-Songwriter from Celtic Thunder",
+      "source_url": "https://web.archive.org/web/20260711165422id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-02",
+      "headliner": "Denise Thimes - Birthday Show!",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "Ally the Piper - World Famous Highland Piper",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "Tim Cunningham - Smooth Jazz",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "Rainbow Girls - \"Haunting Harmonies\"",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "The Best of The Temptations, The Drifters and The Stylistics",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "JD Simo and special guest Ghalia Volt",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-08",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "Ana Hollowood - Risky Revelry",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "Tom Bell - Solo Debut from St. Louis' Own",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "J. Chambers",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "Oliver, Lenihan, Davis Trio - The Age of Song and Virtuosity - Music from London, New York to Los Angeles",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "Brian Clarke - Voices In My Head - Bob Dylan, Paul Simon, Bruce Springsteen, Van Morrison and Jackson Browne",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "Kyra Gordon & Shanna in a Dress - Singer-Songwriter Sunday",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "Mark West - Career Waiter",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Kelly Howe is Linda Ronstadt in Just One Look - The Midnight Company",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "Jada Leigh - Debut From An Up-And-Coming St. Louis Vocalist",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Kate Kortum - Rising Star Jazz Vocalist \u2014 winner of this year\u2019s Sarah Vaughan International Vocal Competition",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-20",
+      "headliner": "Vickie Spencer - Other Than a Funeral",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "Mardra & Reggie Thomas",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "Davina and the Vagabonds",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "Davina and the Vagabonds",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "Arvell Keithley, Leslie Craig and Jim Manley - Wild, Cool & Swingin'",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "Singers Open Mic - With The Black & White Band",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    },
+    {
+      "date": "2026-09-30",
+      "headliner": "Front Porch - Barn-Burning Bluegrass",
+      "source_url": "https://web.archive.org/web/20260816071413id_/https://bluestrawberrystl.com/"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "stl-bluestrawberry",
+  "imported_by": "scripts/import-venues.js"
+}
