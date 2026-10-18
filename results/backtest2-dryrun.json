@@ -1,0 +1,5200 @@
+{
+  "kind": "dry-run",
+  "protocol": "BACKTEST-2.md (registered 14 Oct 2026) with Amendments 1-14 (no Amendment 13 variant switched on)",
+  "note": "No Qloo call. Pool candidates are distinct titles in each metro window before the headliner rule, so the real pools are smaller.",
+  "periods": {
+    "S1": {
+      "from": "2026-04-01",
+      "to": "2026-06-30"
+    },
+    "S2": {
+      "from": "2026-07-01",
+      "to": "2026-09-30"
+    }
+  },
+  "clusters": 20,
+  "test_rooms": 26,
+  "metros": [
+    "Amsterdam",
+    "Atlanta",
+    "Berlin",
+    "Boston",
+    "Bristol",
+    "Chicago",
+    "Cleveland",
+    "Copenhagen",
+    "Leeds",
+    "Manchester",
+    "Milwaukee",
+    "Montreal",
+    "Philadelphia",
+    "Raleigh",
+    "San Francisco",
+    "St. Louis",
+    "Toronto",
+    "Vancouver"
+  ],
+  "capped": {
+    "clusters": 26,
+    "test_rooms": 30
+  },
+  "placebo": {
+    "seed": 2,
+    "assignment": {
+      "ams-bitterzoet": "ber-privatclub",
+      "ams-cinetol-zaal": "bos-rockwell",
+      "ams-occii": "cle-musicbox-supperclub",
+      "atl-529": "cle-beachland-tavern",
+      "atl-earl": "cle-beachland-ballroom",
+      "ber-badehaus": "atl-529",
+      "ber-festsaal-saal": "chi-reggies-musicjoint",
+      "ber-privatclub": "chi-martyrs",
+      "ber-urbanspree": "chi-reggies-musicjoint",
+      "bos-armory-cafe": "cph-alice",
+      "bos-armory-hall": "ber-badehaus",
+      "bos-burren-back": "chi-greenmill",
+      "bos-burren-front": "ber-festsaal-saal",
+      "bos-passim": "cph-alice",
+      "bos-rockwell": "cle-musicbox-concerthall",
+      "brs-louisiana": "ams-occii",
+      "chi-greenmill": "bos-armory-hall",
+      "chi-martyrs": "bos-burren-back",
+      "chi-reggies-comedyshack": "bos-armory-hall",
+      "chi-reggies-musicjoint": "brs-louisiana",
+      "chi-reggies-rockclub": "ams-bitterzoet",
+      "cle-beachland-ballroom": "chi-reggies-rockclub",
+      "cle-beachland-tavern": "ams-cinetol-zaal",
+      "cle-musicbox-concerthall": "bos-armory-cafe",
+      "cle-musicbox-supperclub": "atl-earl",
+      "cph-alice": "bos-burren-front"
+    },
+    "candidates": {
+      "ams-bitterzoet": [
+        "ber-privatclub",
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub"
+      ],
+      "ams-cinetol-zaal": [
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ber-privatclub",
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern"
+      ],
+      "ams-occii": [
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ber-privatclub",
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana"
+      ],
+      "atl-529": [
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall",
+        "ber-badehaus"
+      ],
+      "atl-earl": [
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall",
+        "ber-badehaus",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub"
+      ],
+      "ber-badehaus": [
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall"
+      ],
+      "ber-festsaal-saal": [
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front"
+      ],
+      "ber-privatclub": [
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet"
+      ],
+      "ber-urbanspree": [
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front"
+      ],
+      "bos-armory-cafe": [
+        "cph-alice",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "chi-martyrs",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "cle-musicbox-concerthall"
+      ],
+      "bos-armory-hall": [
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "cle-musicbox-concerthall",
+        "cph-alice",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "chi-martyrs",
+        "chi-greenmill",
+        "chi-reggies-comedyshack"
+      ],
+      "bos-burren-back": [
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "cle-musicbox-concerthall",
+        "cph-alice",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "chi-martyrs"
+      ],
+      "bos-burren-front": [
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "chi-martyrs",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "cle-musicbox-concerthall",
+        "cph-alice"
+      ],
+      "bos-passim": [
+        "cph-alice",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "chi-martyrs",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "cle-musicbox-concerthall"
+      ],
+      "bos-rockwell": [
+        "cle-musicbox-concerthall",
+        "cph-alice",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "chi-martyrs",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal"
+      ],
+      "brs-louisiana": [
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint"
+      ],
+      "chi-greenmill": [
+        "bos-armory-hall",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "bos-burren-back"
+      ],
+      "chi-martyrs": [
+        "bos-burren-back",
+        "bos-armory-hall",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "ams-bitterzoet",
+        "ber-privatclub"
+      ],
+      "chi-reggies-comedyshack": [
+        "bos-armory-hall",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "bos-burren-back"
+      ],
+      "chi-reggies-musicjoint": [
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "bos-burren-back",
+        "bos-armory-hall",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree"
+      ],
+      "chi-reggies-rockclub": [
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "bos-burren-back",
+        "bos-armory-hall",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom"
+      ],
+      "cle-beachland-ballroom": [
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall",
+        "ber-badehaus",
+        "atl-529",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "atl-earl"
+      ],
+      "cle-beachland-tavern": [
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "atl-earl",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall",
+        "ber-badehaus",
+        "atl-529"
+      ],
+      "cle-musicbox-concerthall": [
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "atl-earl",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall",
+        "ber-badehaus",
+        "atl-529",
+        "ams-cinetol-zaal",
+        "bos-rockwell"
+      ],
+      "cle-musicbox-supperclub": [
+        "atl-earl",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall",
+        "ber-badehaus",
+        "atl-529",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "bos-armory-cafe",
+        "bos-passim",
+        "cph-alice",
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii"
+      ],
+      "cph-alice": [
+        "bos-burren-front",
+        "ber-festsaal-saal",
+        "ber-urbanspree",
+        "chi-reggies-musicjoint",
+        "brs-louisiana",
+        "ams-occii",
+        "cle-musicbox-supperclub",
+        "atl-earl",
+        "cle-beachland-ballroom",
+        "chi-reggies-rockclub",
+        "ams-bitterzoet",
+        "ber-privatclub",
+        "chi-martyrs",
+        "bos-burren-back",
+        "chi-greenmill",
+        "chi-reggies-comedyshack",
+        "bos-armory-hall",
+        "ber-badehaus",
+        "atl-529",
+        "cle-beachland-tavern",
+        "ams-cinetol-zaal",
+        "bos-rockwell",
+        "cle-musicbox-concerthall",
+        "bos-armory-cafe",
+        "bos-passim"
+      ]
+    }
+  },
+  "rooms": [
+    {
+      "venue_id": "ams-bitterzoet",
+      "role": "test",
+      "capped": false,
+      "cluster": "ams-bitterzoet",
+      "metro": "Amsterdam",
+      "size": "unknown",
+      "rows": {
+        "S1": 106,
+        "S2": 62
+      },
+      "coverage": {
+        "S1": 102,
+        "S2": 60
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 4,
+        "S2": 2
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ams-cinetol-etage",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ams-cinetol",
+      "metro": "Amsterdam",
+      "size": "small",
+      "rows": {
+        "S1": 5,
+        "S2": 0
+      },
+      "coverage": {
+        "S1": 2,
+        "S2": 0
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 3,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ams-cinetol-house",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ams-cinetol",
+      "metro": "Amsterdam",
+      "size": "unknown",
+      "rows": {
+        "S1": 6,
+        "S2": 1
+      },
+      "coverage": {
+        "S1": 3,
+        "S2": 0
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 3,
+        "S2": 1
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ams-cinetol-zaal",
+      "role": "test",
+      "capped": false,
+      "cluster": "ams-cinetol",
+      "metro": "Amsterdam",
+      "size": "small",
+      "rows": {
+        "S1": 74,
+        "S2": 57
+      },
+      "coverage": {
+        "S1": 74,
+        "S2": 57
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ams-occii",
+      "role": "test",
+      "capped": false,
+      "cluster": "ams-occii",
+      "metro": "Amsterdam",
+      "size": "small",
+      "rows": {
+        "S1": 46,
+        "S2": 27
+      },
+      "coverage": {
+        "S1": 43,
+        "S2": 26
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 3,
+        "S2": 1
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ams-tolhuistuin-club",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ams-tolhuistuin",
+      "metro": "Amsterdam",
+      "size": "unknown",
+      "rows": {
+        "S1": 18,
+        "S2": 5
+      },
+      "coverage": {
+        "S1": 18,
+        "S2": 5
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ams-tolhuistuin-galerij",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ams-tolhuistuin",
+      "metro": "Amsterdam",
+      "size": "unknown",
+      "rows": {
+        "S1": 0,
+        "S2": 2
+      },
+      "coverage": {
+        "S1": 0,
+        "S2": 2
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ams-tolhuistuin-house",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ams-tolhuistuin",
+      "metro": "Amsterdam",
+      "size": "unknown",
+      "rows": {
+        "S1": 88,
+        "S2": 45
+      },
+      "coverage": {
+        "S1": 87,
+        "S2": 45
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 1,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 1
+    },
+    {
+      "venue_id": "ams-tolhuistuin-ijzaal",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ams-tolhuistuin",
+      "metro": "Amsterdam",
+      "size": "unknown",
+      "rows": {
+        "S1": 34,
+        "S2": 12
+      },
+      "coverage": {
+        "S1": 34,
+        "S2": 12
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ams-tolhuistuin-jagerstudio",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ams-tolhuistuin",
+      "metro": "Amsterdam",
+      "size": "unknown",
+      "rows": {
+        "S1": 5,
+        "S2": 0
+      },
+      "coverage": {
+        "S1": 5,
+        "S2": 0
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ams-tolhuistuin-tuin",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ams-tolhuistuin",
+      "metro": "Amsterdam",
+      "size": "unknown",
+      "rows": {
+        "S1": 14,
+        "S2": 30
+      },
+      "coverage": {
+        "S1": 14,
+        "S2": 26
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 4
+      },
+      "performer_field": 0,
+      "same_night_same_title": 1
+    },
+    {
+      "venue_id": "ams-tolhuistuin-tuinhuis",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ams-tolhuistuin",
+      "metro": "Amsterdam",
+      "size": "unknown",
+      "rows": {
+        "S1": 14,
+        "S2": 3
+      },
+      "coverage": {
+        "S1": 14,
+        "S2": 3
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ams-tolhuistuin-zonzij",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ams-tolhuistuin",
+      "metro": "Amsterdam",
+      "size": "unknown",
+      "rows": {
+        "S1": 8,
+        "S2": 7
+      },
+      "coverage": {
+        "S1": 8,
+        "S2": 7
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "atl-529",
+      "role": "test",
+      "capped": false,
+      "cluster": "atl-529",
+      "metro": "Atlanta",
+      "size": "unknown",
+      "rows": {
+        "S1": 70,
+        "S2": 77
+      },
+      "coverage": {
+        "S1": 66,
+        "S2": 72
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 3,
+        "S2": 1
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 4
+      },
+      "performer_field": 117,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "atl-centerstage-house",
+      "role": "pool",
+      "capped": false,
+      "cluster": "rival-entertainment",
+      "metro": "Atlanta",
+      "size": "unknown",
+      "rows": {
+        "S1": 1,
+        "S2": 1
+      },
+      "coverage": {
+        "S1": 0,
+        "S2": 0
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 1,
+        "S2": 1
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 1,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "atl-centerstage-loft",
+      "role": "pool",
+      "capped": false,
+      "cluster": "rival-entertainment",
+      "metro": "Atlanta",
+      "size": "small",
+      "rows": {
+        "S1": 12,
+        "S2": 4
+      },
+      "coverage": {
+        "S1": 12,
+        "S2": 3
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 1
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 10,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "atl-centerstage-theater",
+      "role": "pool",
+      "capped": false,
+      "cluster": "rival-entertainment",
+      "metro": "Atlanta",
+      "size": "large",
+      "rows": {
+        "S1": 15,
+        "S2": 10
+      },
+      "coverage": {
+        "S1": 15,
+        "S2": 10
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 19,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "atl-centerstage-vinyl",
+      "role": "pool",
+      "capped": false,
+      "cluster": "rival-entertainment",
+      "metro": "Atlanta",
+      "size": "small",
+      "rows": {
+        "S1": 15,
+        "S2": 15
+      },
+      "coverage": {
+        "S1": 15,
+        "S2": 15
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 23,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "atl-earl",
+      "role": "test",
+      "capped": false,
+      "cluster": "atl-earl",
+      "metro": "Atlanta",
+      "size": "unknown",
+      "rows": {
+        "S1": 58,
+        "S2": 44
+      },
+      "coverage": {
+        "S1": 57,
+        "S2": 44
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 1,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 102,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ber-badehaus",
+      "role": "test",
+      "capped": false,
+      "cluster": "ber-badehaus",
+      "metro": "Berlin",
+      "size": "small",
+      "rows": {
+        "S1": 105,
+        "S2": 39
+      },
+      "coverage": {
+        "S1": 89,
+        "S2": 33
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 3,
+        "S2": 1
+      },
+      "off_site": {
+        "S1": 1,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 13,
+        "S2": 5
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ber-festsaal-biergarten",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ber-festsaal",
+      "metro": "Berlin",
+      "size": "unknown",
+      "rows": {
+        "S1": 2,
+        "S2": 8
+      },
+      "coverage": {
+        "S1": 2,
+        "S2": 8
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ber-festsaal-gewaechshaus",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ber-festsaal",
+      "metro": "Berlin",
+      "size": "unknown",
+      "rows": {
+        "S1": 0,
+        "S2": 0
+      },
+      "coverage": {
+        "S1": 0,
+        "S2": 0
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ber-festsaal-house",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ber-festsaal",
+      "metro": "Berlin",
+      "size": "unknown",
+      "rows": {
+        "S1": 9,
+        "S2": 3
+      },
+      "coverage": {
+        "S1": 6,
+        "S2": 1
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 1,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 2,
+        "S2": 2
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ber-festsaal-kaminzimmer",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ber-festsaal",
+      "metro": "Berlin",
+      "size": "unknown",
+      "rows": {
+        "S1": 0,
+        "S2": 0
+      },
+      "coverage": {
+        "S1": 0,
+        "S2": 0
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ber-festsaal-ostfluegel",
+      "role": "pool",
+      "capped": false,
+      "cluster": "ber-festsaal",
+      "metro": "Berlin",
+      "size": "unknown",
+      "rows": {
+        "S1": 0,
+        "S2": 0
+      },
+      "coverage": {
+        "S1": 0,
+        "S2": 0
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ber-festsaal-saal",
+      "role": "test",
+      "capped": false,
+      "cluster": "ber-festsaal",
+      "metro": "Berlin",
+      "size": "large",
+      "rows": {
+        "S1": 35,
+        "S2": 25
+      },
+      "coverage": {
+        "S1": 30,
+        "S2": 21
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 4,
+        "S2": 1
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 3
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ber-privatclub",
+      "role": "test",
+      "capped": false,
+      "cluster": "ber-privatclub",
+      "metro": "Berlin",
+      "size": "unknown",
+      "rows": {
+        "S1": 87,
+        "S2": 48
+      },
+      "coverage": {
+        "S1": 81,
+        "S2": 42
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 6,
+        "S2": 6
+      },
+      "off_site": {
+        "S1": 1,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "ber-urbanspree",
+      "role": "test",
+      "capped": false,
+      "cluster": "ber-urbanspree",
+      "metro": "Berlin",
+      "size": "unknown",
+      "rows": {
+        "S1": 38,
+        "S2": 28
+      },
+      "coverage": {
+        "S1": 36,
+        "S2": 27
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 2,
+        "S2": 1
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "bos-armory-b5",
+      "role": "pool",
+      "capped": false,
+      "cluster": "bos-armory",
+      "metro": "Boston",
+      "size": "unknown",
+      "rows": {
+        "S1": 2,
+        "S2": 0
+      },
+      "coverage": {
+        "S1": 0,
+        "S2": 0
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 2,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "bos-armory-cafe",
+      "role": "test",
+      "capped": false,
+      "cluster": "bos-armory",
+      "metro": "Boston",
+      "size": "small",
+      "rows": {
+        "S1": 62,
+        "S2": 62
+      },
+      "coverage": {
+        "S1": 53,
+        "S2": 49
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 1
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 9,
+        "S2": 12
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "bos-armory-hall",
+      "role": "test",
+      "capped": false,
+      "cluster": "bos-armory",
+      "metro": "Boston",
+      "size": "small",
+      "rows": {
+        "S1": 56,
+        "S2": 51
+      },
+      "coverage": {
+        "S1": 54,
+        "S2": 47
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 1,
+        "S2": 2
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 2
+      },
+      "performer_field": 0,
+      "same_night_same_title": 4
+    },
+    {
+      "venue_id": "bos-armory-house",
+      "role": "pool",
+      "capped": false,
+      "cluster": "bos-armory",
+      "metro": "Boston",
+      "size": "unknown",
+      "rows": {
+        "S1": 2,
+        "S2": 2
+      },
+      "coverage": {
+        "S1": 0,
+        "S2": 1
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 1
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 2,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "bos-burren-back",
+      "role": "test",
+      "capped": false,
+      "cluster": "bos-burren",
+      "metro": "Boston",
+      "size": "unknown",
+      "rows": {
+        "S1": 163,
+        "S2": 143
+      },
+      "coverage": {
+        "S1": 135,
+        "S2": 114
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 1,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 27,
+        "S2": 29
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "bos-burren-front",
+      "role": "test",
+      "capped": false,
+      "cluster": "bos-burren",
+      "metro": "Boston",
+      "size": "unknown",
+      "rows": {
+        "S1": 131,
+        "S2": 112
+      },
+      "coverage": {
+        "S1": 131,
+        "S2": 112
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "bos-passim",
+      "role": "test",
+      "capped": false,
+      "cluster": "bos-passim",
+      "metro": "Boston",
+      "size": "unknown",
+      "rows": {
+        "S1": 95,
+        "S2": 100
+      },
+      "coverage": {
+        "S1": 81,
+        "S2": 87
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 4,
+        "S2": 7
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 10,
+        "S2": 6
+      },
+      "performer_field": 0,
+      "same_night_same_title": 7
+    },
+    {
+      "venue_id": "bos-rockwell",
+      "role": "test",
+      "capped": false,
+      "cluster": "bos-rockwell",
+      "metro": "Boston",
+      "size": "small",
+      "rows": {
+        "S1": 148,
+        "S2": 89
+      },
+      "coverage": {
+        "S1": 121,
+        "S2": 75
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 3,
+        "S2": 3
+      },
+      "off_site": {
+        "S1": 21,
+        "S2": 4
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 3,
+        "S2": 7
+      },
+      "performer_field": 0,
+      "same_night_same_title": 2
+    },
+    {
+      "venue_id": "brs-louisiana",
+      "role": "test",
+      "capped": false,
+      "cluster": "brs-louisiana",
+      "metro": "Bristol",
+      "size": "small",
+      "rows": {
+        "S1": 85,
+        "S2": 68
+      },
+      "coverage": {
+        "S1": 85,
+        "S2": 68
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "brs-trinity-den",
+      "role": "pool",
+      "capped": false,
+      "cluster": "brs-trinity",
+      "metro": "Bristol",
+      "size": "small",
+      "rows": {
+        "S1": 3,
+        "S2": 3
+      },
+      "coverage": {
+        "S1": 3,
+        "S2": 3
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "brs-trinity-fyfe",
+      "role": "pool",
+      "capped": false,
+      "cluster": "brs-trinity",
+      "metro": "Bristol",
+      "size": "small",
+      "rows": {
+        "S1": 2,
+        "S2": 2
+      },
+      "coverage": {
+        "S1": 2,
+        "S2": 0
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 2
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "brs-trinity-garden",
+      "role": "pool",
+      "capped": false,
+      "cluster": "brs-trinity",
+      "metro": "Bristol",
+      "size": "unknown",
+      "rows": {
+        "S1": 0,
+        "S2": 1
+      },
+      "coverage": {
+        "S1": 0,
+        "S2": 1
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "brs-trinity-house",
+      "role": "pool",
+      "capped": false,
+      "cluster": "brs-trinity",
+      "metro": "Bristol",
+      "size": "unknown",
+      "rows": {
+        "S1": 53,
+        "S2": 39
+      },
+      "coverage": {
+        "S1": 49,
+        "S2": 34
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 2,
+        "S2": 1
+      },
+      "off_site": {
+        "S1": 1,
+        "S2": 4
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "brs-trinity-mainhall",
+      "role": "pool",
+      "capped": false,
+      "cluster": "brs-trinity",
+      "metro": "Bristol",
+      "size": "small",
+      "rows": {
+        "S1": 0,
+        "S2": 0
+      },
+      "coverage": {
+        "S1": 0,
+        "S2": 0
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "chi-greenmill",
+      "role": "test",
+      "capped": false,
+      "cluster": "chi-greenmill",
+      "metro": "Chicago",
+      "size": "unknown",
+      "rows": {
+        "S1": 136,
+        "S2": 159
+      },
+      "coverage": {
+        "S1": 135,
+        "S2": 157
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 1
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 1
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 1
+    },
+    {
+      "venue_id": "chi-martyrs",
+      "role": "test",
+      "capped": false,
+      "cluster": "chi-martyrs",
+      "metro": "Chicago",
+      "size": "unknown",
+      "rows": {
+        "S1": 45,
+        "S2": 39
+      },
+      "coverage": {
+        "S1": 45,
+        "S2": 39
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 84,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "chi-oldtown-house",
+      "role": "pool",
+      "capped": false,
+      "cluster": "chi-oldtown",
+      "metro": "Chicago",
+      "size": "unknown",
+      "rows": {
+        "S1": 11,
+        "S2": 1
+      },
+      "coverage": {
+        "S1": 4,
+        "S2": 1
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 2,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 5,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "chi-oldtown-maurer",
+      "role": "pool",
+      "capped": false,
+      "cluster": "chi-oldtown",
+      "metro": "Chicago",
+      "size": "small",
+      "rows": {
+        "S1": 37,
+        "S2": 18
+      },
+      "coverage": {
+        "S1": 33,
+        "S2": 18
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 4,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 3
+    },
+    {
+      "venue_id": "chi-oldtown-szold",
+      "role": "pool",
+      "capped": false,
+      "cluster": "chi-oldtown",
+      "metro": "Chicago",
+      "size": "small",
+      "rows": {
+        "S1": 20,
+        "S2": 3
+      },
+      "coverage": {
+        "S1": 20,
+        "S2": 3
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "chi-reggies-comedyshack",
+      "role": "test",
+      "capped": false,
+      "cluster": "chi-reggies",
+      "metro": "Chicago",
+      "size": "small",
+      "rows": {
+        "S1": 55,
+        "S2": 37
+      },
+      "coverage": {
+        "S1": 42,
+        "S2": 27
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 13,
+        "S2": 10
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "chi-reggies-musicjoint",
+      "role": "test",
+      "capped": false,
+      "cluster": "chi-reggies",
+      "metro": "Chicago",
+      "size": "small",
+      "rows": {
+        "S1": 117,
+        "S2": 99
+      },
+      "coverage": {
+        "S1": 105,
+        "S2": 87
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 12,
+        "S2": 12
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "chi-reggies-rockclub",
+      "role": "test",
+      "capped": false,
+      "cluster": "chi-reggies",
+      "metro": "Chicago",
+      "size": "small",
+      "rows": {
+        "S1": 51,
+        "S2": 38
+      },
+      "coverage": {
+        "S1": 51,
+        "S2": 38
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 1
+    },
+    {
+      "venue_id": "chi-reggies-roofdeck",
+      "role": "pool",
+      "capped": false,
+      "cluster": "chi-reggies",
+      "metro": "Chicago",
+      "size": "small",
+      "rows": {
+        "S1": 19,
+        "S2": 54
+      },
+      "coverage": {
+        "S1": 6,
+        "S2": 5
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 1,
+        "S2": 36
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 12,
+        "S2": 13
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cle-beachland-ballroom",
+      "role": "test",
+      "capped": false,
+      "cluster": "cle-beachland",
+      "metro": "Cleveland",
+      "size": "small",
+      "rows": {
+        "S1": 49,
+        "S2": 39
+      },
+      "coverage": {
+        "S1": 49,
+        "S2": 38
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 1
+      },
+      "performer_field": 81,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cle-beachland-house",
+      "role": "pool",
+      "capped": false,
+      "cluster": "cle-beachland",
+      "metro": "Cleveland",
+      "size": "unknown",
+      "rows": {
+        "S1": 2,
+        "S2": 2
+      },
+      "coverage": {
+        "S1": 0,
+        "S2": 0
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 2,
+        "S2": 2
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 4,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cle-beachland-tavern",
+      "role": "test",
+      "capped": false,
+      "cluster": "cle-beachland",
+      "metro": "Cleveland",
+      "size": "small",
+      "rows": {
+        "S1": 77,
+        "S2": 41
+      },
+      "coverage": {
+        "S1": 76,
+        "S2": 41
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 1,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 112,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cle-beachland-thiswayout",
+      "role": "pool",
+      "capped": false,
+      "cluster": "cle-beachland",
+      "metro": "Cleveland",
+      "size": "unknown",
+      "rows": {
+        "S1": 6,
+        "S2": 4
+      },
+      "coverage": {
+        "S1": 6,
+        "S2": 4
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 10,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cle-musicbox-concerthall",
+      "role": "test",
+      "capped": false,
+      "cluster": "cle-musicbox",
+      "metro": "Cleveland",
+      "size": "unknown",
+      "rows": {
+        "S1": 34,
+        "S2": 34
+      },
+      "coverage": {
+        "S1": 34,
+        "S2": 34
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cle-musicbox-supperclub",
+      "role": "test",
+      "capped": false,
+      "cluster": "cle-musicbox",
+      "metro": "Cleveland",
+      "size": "unknown",
+      "rows": {
+        "S1": 40,
+        "S2": 26
+      },
+      "coverage": {
+        "S1": 39,
+        "S2": 26
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cph-alice",
+      "role": "test",
+      "capped": false,
+      "cluster": "cph-alice",
+      "metro": "Copenhagen",
+      "size": "unknown",
+      "rows": {
+        "S1": 46,
+        "S2": 34
+      },
+      "coverage": {
+        "S1": 43,
+        "S2": 30
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 2,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 1,
+        "S2": 4
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cph-amagerbio-beta",
+      "role": "pool",
+      "capped": false,
+      "cluster": "odd-productions",
+      "metro": "Copenhagen",
+      "size": "small",
+      "rows": {
+        "S1": 25,
+        "S2": 9
+      },
+      "coverage": {
+        "S1": 25,
+        "S2": 8
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 1
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cph-amagerbio-bio",
+      "role": "pool",
+      "capped": false,
+      "cluster": "odd-productions",
+      "metro": "Copenhagen",
+      "size": "large",
+      "rows": {
+        "S1": 24,
+        "S2": 10
+      },
+      "coverage": {
+        "S1": 23,
+        "S2": 10
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 1,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cph-amagerbio-house",
+      "role": "pool",
+      "capped": false,
+      "cluster": "odd-productions",
+      "metro": "Copenhagen",
+      "size": "unknown",
+      "rows": {
+        "S1": 1,
+        "S2": 2
+      },
+      "coverage": {
+        "S1": 1,
+        "S2": 2
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cph-loppen",
+      "role": "pool",
+      "capped": true,
+      "cluster": "cph-loppen",
+      "metro": "Copenhagen",
+      "size": "small",
+      "rows": {
+        "S1": 37,
+        "S2": 21
+      },
+      "coverage": {
+        "S1": 34,
+        "S2": 21
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 2,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cph-pumpehuset",
+      "role": "pool",
+      "capped": true,
+      "cluster": "cph-pumpehuset",
+      "metro": "Copenhagen",
+      "size": "small",
+      "rows": {
+        "S1": 96,
+        "S2": 103
+      },
+      "coverage": {
+        "S1": 92,
+        "S2": 99
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 3,
+        "S2": 3
+      },
+      "off_site": {
+        "S1": 1,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 1
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cph-vega-house",
+      "role": "pool",
+      "capped": false,
+      "cluster": "cph-vega",
+      "metro": "Copenhagen",
+      "size": "unknown",
+      "rows": {
+        "S1": 3,
+        "S2": 1
+      },
+      "coverage": {
+        "S1": 3,
+        "S2": 0
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 1
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 1
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cph-vega-ideal",
+      "role": "pool",
+      "capped": false,
+      "cluster": "cph-vega",
+      "metro": "Copenhagen",
+      "size": "unknown",
+      "rows": {
+        "S1": 19,
+        "S2": 8
+      },
+      "coverage": {
+        "S1": 18,
+        "S2": 7
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 1
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cph-vega-lab",
+      "role": "pool",
+      "capped": false,
+      "cluster": "cph-vega",
+      "metro": "Copenhagen",
+      "size": "unknown",
+      "rows": {
+        "S1": 0,
+        "S2": 4
+      },
+      "coverage": {
+        "S1": 0,
+        "S2": 4
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cph-vega-lille",
+      "role": "pool",
+      "capped": false,
+      "cluster": "cph-vega",
+      "metro": "Copenhagen",
+      "size": "unknown",
+      "rows": {
+        "S1": 24,
+        "S2": 11
+      },
+      "coverage": {
+        "S1": 22,
+        "S2": 11
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 2,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "cph-vega-store",
+      "role": "pool",
+      "capped": false,
+      "cluster": "cph-vega",
+      "metro": "Copenhagen",
+      "size": "unknown",
+      "rows": {
+        "S1": 35,
+        "S2": 18
+      },
+      "coverage": {
+        "S1": 35,
+        "S2": 16
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 2
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "lds-brudenell",
+      "role": "pool",
+      "capped": true,
+      "cluster": "lds-brudenell",
+      "metro": "Leeds",
+      "size": "unknown",
+      "rows": {
+        "S1": 124,
+        "S2": 77
+      },
+      "coverage": {
+        "S1": 93,
+        "S2": 66
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 4,
+        "S2": 1
+      },
+      "off_site": {
+        "S1": 27,
+        "S2": 11
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 1
+    },
+    {
+      "venue_id": "lds-wardrobe",
+      "role": "pool",
+      "capped": true,
+      "cluster": "lds-futuresound",
+      "metro": "Leeds",
+      "size": "small",
+      "rows": {
+        "S1": 55,
+        "S2": 45
+      },
+      "coverage": {
+        "S1": 49,
+        "S2": 40
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 3,
+        "S2": 4
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 3,
+        "S2": 1
+      },
+      "performer_field": 0,
+      "same_night_same_title": 1
+    },
+    {
+      "venue_id": "man-castle",
+      "role": "pool",
+      "capped": true,
+      "cluster": "man-castle",
+      "metro": "Manchester",
+      "size": "small",
+      "rows": {
+        "S1": 47,
+        "S2": 28
+      },
+      "coverage": {
+        "S1": 45,
+        "S2": 28
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 1,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 1
+    },
+    {
+      "venue_id": "man-nightday",
+      "role": "pool",
+      "capped": true,
+      "cluster": "man-nightday",
+      "metro": "Manchester",
+      "size": "unknown",
+      "rows": {
+        "S1": 54,
+        "S2": 48
+      },
+      "coverage": {
+        "S1": 54,
+        "S2": 48
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "man-yes-bar",
+      "role": "pool",
+      "capped": false,
+      "cluster": "man-nowwave",
+      "metro": "Manchester",
+      "size": "unknown",
+      "rows": {
+        "S1": 0,
+        "S2": 1
+      },
+      "coverage": {
+        "S1": 0,
+        "S2": 1
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "man-yes-basement",
+      "role": "pool",
+      "capped": true,
+      "cluster": "man-nowwave",
+      "metro": "Manchester",
+      "size": "unknown",
+      "rows": {
+        "S1": 56,
+        "S2": 37
+      },
+      "coverage": {
+        "S1": 56,
+        "S2": 37
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "man-yes-house",
+      "role": "pool",
+      "capped": false,
+      "cluster": "man-nowwave",
+      "metro": "Manchester",
+      "size": "unknown",
+      "rows": {
+        "S1": 1,
+        "S2": 2
+      },
+      "coverage": {
+        "S1": 1,
+        "S2": 2
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "man-yes-pinkroom",
+      "role": "pool",
+      "capped": true,
+      "cluster": "man-nowwave",
+      "metro": "Manchester",
+      "size": "unknown",
+      "rows": {
+        "S1": 64,
+        "S2": 30
+      },
+      "coverage": {
+        "S1": 64,
+        "S2": 30
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 1
+    },
+    {
+      "venue_id": "man-yes-roofterrace",
+      "role": "pool",
+      "capped": false,
+      "cluster": "man-nowwave",
+      "metro": "Manchester",
+      "size": "unknown",
+      "rows": {
+        "S1": 12,
+        "S2": 7
+      },
+      "coverage": {
+        "S1": 12,
+        "S2": 7
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "mke-cactus",
+      "role": "pool",
+      "capped": true,
+      "cluster": "mke-cactus",
+      "metro": "Milwaukee",
+      "size": "unknown",
+      "rows": {
+        "S1": 159,
+        "S2": 139
+      },
+      "coverage": {
+        "S1": 138,
+        "S2": 124
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 2,
+        "S2": 2
+      },
+      "off_site": {
+        "S1": 6,
+        "S2": 2
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 13,
+        "S2": 11
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "mke-linnemans",
+      "role": "pool",
+      "capped": true,
+      "cluster": "mke-linnemans",
+      "metro": "Milwaukee",
+      "size": "unknown",
+      "rows": {
+        "S1": 57,
+        "S2": 56
+      },
+      "coverage": {
+        "S1": 57,
+        "S2": 56
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "mke-pabst",
+      "role": "pool",
+      "capped": true,
+      "cluster": "mke-ptg",
+      "metro": "Milwaukee",
+      "size": "large",
+      "rows": {
+        "S1": 123,
+        "S2": 96
+      },
+      "coverage": {
+        "S1": 21,
+        "S2": 22
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 8,
+        "S2": 6
+      },
+      "off_site": {
+        "S1": 100,
+        "S2": 72
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 2
+    },
+    {
+      "venue_id": "mtl-ministere",
+      "role": "pool",
+      "capped": true,
+      "cluster": "mtl-ministere",
+      "metro": "Montreal",
+      "size": "unknown",
+      "rows": {
+        "S1": 42,
+        "S2": 22
+      },
+      "coverage": {
+        "S1": 41,
+        "S2": 22
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 1,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 59,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "mtl-turbohaus",
+      "role": "pool",
+      "capped": true,
+      "cluster": "mtl-turbohaus",
+      "metro": "Montreal",
+      "size": "unknown",
+      "rows": {
+        "S1": 107,
+        "S2": 101
+      },
+      "coverage": {
+        "S1": 106,
+        "S2": 101
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 0
+      },
+      "performer_field": 208,
+      "same_night_same_title": 1
+    },
+    {
+      "venue_id": "phl-milkboy",
+      "role": "pool",
+      "capped": true,
+      "cluster": "rising-sun-presents",
+      "metro": "Philadelphia",
+      "size": "small",
+      "rows": {
+        "S1": 67,
+        "S2": 70
+      },
+      "coverage": {
+        "S1": 64,
+        "S2": 70
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 2,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 1,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "phl-philamoca",
+      "role": "pool",
+      "capped": true,
+      "cluster": "phl-philamoca",
+      "metro": "Philadelphia",
+      "size": "unknown",
+      "rows": {
+        "S1": 74,
+        "S2": 80
+      },
+      "coverage": {
+        "S1": 72,
+        "S2": 78
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 1,
+        "S2": 1
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 1
+      },
+      "performer_field": 0,
+      "same_night_same_title": 1
+    },
+    {
+      "venue_id": "ral-kings",
+      "role": "pool",
+      "capped": true,
+      "cluster": "ral-kings",
+      "metro": "Raleigh",
+      "size": "unknown",
+      "rows": {
+        "S1": 64,
+        "S2": 56
+      },
+      "coverage": {
+        "S1": 59,
+        "S2": 54
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 4,
+        "S2": 1
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 1
+      },
+      "performer_field": 0,
+      "same_night_same_title": 1
+    },
+    {
+      "venue_id": "ral-pourhouse",
+      "role": "pool",
+      "capped": true,
+      "cluster": "ral-pourhouse",
+      "metro": "Raleigh",
+      "size": "unknown",
+      "rows": {
+        "S1": 78,
+        "S2": 51
+      },
+      "coverage": {
+        "S1": 78,
+        "S2": 50
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 1
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 127,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "sf-bottom",
+      "role": "pool",
+      "capped": true,
+      "cluster": "sf-bottom",
+      "metro": "San Francisco",
+      "size": "small",
+      "rows": {
+        "S1": 86,
+        "S2": 77
+      },
+      "coverage": {
+        "S1": 84,
+        "S2": 76
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 1,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 1
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "sf-makeout",
+      "role": "pool",
+      "capped": true,
+      "cluster": "sf-makeout",
+      "metro": "San Francisco",
+      "size": "unknown",
+      "rows": {
+        "S1": 173,
+        "S2": 184
+      },
+      "coverage": {
+        "S1": 165,
+        "S2": 175
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 3
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 8,
+        "S2": 6
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "sf-yoshis",
+      "role": "pool",
+      "capped": true,
+      "cluster": "sf-yoshis",
+      "metro": "San Francisco",
+      "size": "small",
+      "rows": {
+        "S1": 83,
+        "S2": 79
+      },
+      "coverage": {
+        "S1": 82,
+        "S2": 78
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 1
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "stl-bluestrawberry",
+      "role": "pool",
+      "capped": true,
+      "cluster": "stl-bluestrawberry",
+      "metro": "St. Louis",
+      "size": "unknown",
+      "rows": {
+        "S1": 101,
+        "S2": 96
+      },
+      "coverage": {
+        "S1": 83,
+        "S2": 86
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 18,
+        "S2": 10
+      },
+      "performer_field": 0,
+      "same_night_same_title": 2
+    },
+    {
+      "venue_id": "stl-offbroadway",
+      "role": "pool",
+      "capped": true,
+      "cluster": "stl-offbroadway",
+      "metro": "St. Louis",
+      "size": "unknown",
+      "rows": {
+        "S1": 26,
+        "S2": 28
+      },
+      "coverage": {
+        "S1": 26,
+        "S2": 28
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 45,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "tor-horseshoe",
+      "role": "pool",
+      "capped": true,
+      "cluster": "tor-horseshoe",
+      "metro": "Toronto",
+      "size": "unknown",
+      "rows": {
+        "S1": 80,
+        "S2": 67
+      },
+      "coverage": {
+        "S1": 80,
+        "S2": 67
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 87,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "tor-tranzac-house",
+      "role": "pool",
+      "capped": false,
+      "cluster": "tor-tranzac",
+      "metro": "Toronto",
+      "size": "unknown",
+      "rows": {
+        "S1": 17,
+        "S2": 9
+      },
+      "coverage": {
+        "S1": 15,
+        "S2": 7
+      },
+      "meets_coverage": false,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 2,
+        "S2": 2
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "tor-tranzac-livingroom",
+      "role": "pool",
+      "capped": true,
+      "cluster": "tor-tranzac",
+      "metro": "Toronto",
+      "size": "unknown",
+      "rows": {
+        "S1": 56,
+        "S2": 64
+      },
+      "coverage": {
+        "S1": 47,
+        "S2": 57
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 9,
+        "S2": 7
+      },
+      "performer_field": 0,
+      "same_night_same_title": 1
+    },
+    {
+      "venue_id": "tor-tranzac-mainhall",
+      "role": "pool",
+      "capped": true,
+      "cluster": "tor-tranzac",
+      "metro": "Toronto",
+      "size": "unknown",
+      "rows": {
+        "S1": 31,
+        "S2": 30
+      },
+      "coverage": {
+        "S1": 31,
+        "S2": 26
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 4
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "tor-tranzac-southerncross",
+      "role": "pool",
+      "capped": true,
+      "cluster": "tor-tranzac",
+      "metro": "Toronto",
+      "size": "unknown",
+      "rows": {
+        "S1": 195,
+        "S2": 252
+      },
+      "coverage": {
+        "S1": 194,
+        "S2": 252
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 1,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "tor-tranzac-zinelibrary",
+      "role": "pool",
+      "capped": true,
+      "cluster": "tor-tranzac",
+      "metro": "Toronto",
+      "size": "unknown",
+      "rows": {
+        "S1": 25,
+        "S2": 26
+      },
+      "coverage": {
+        "S1": 25,
+        "S2": 26
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "van-pearl",
+      "role": "pool",
+      "capped": true,
+      "cluster": "modo-live",
+      "metro": "Vancouver",
+      "size": "unknown",
+      "rows": {
+        "S1": 80,
+        "S2": 67
+      },
+      "coverage": {
+        "S1": 77,
+        "S2": 65
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 3,
+        "S2": 2
+      },
+      "performer_field": 0,
+      "same_night_same_title": 1
+    },
+    {
+      "venue_id": "van-rickshaw",
+      "role": "pool",
+      "capped": true,
+      "cluster": "van-rickshaw",
+      "metro": "Vancouver",
+      "size": "unknown",
+      "rows": {
+        "S1": 55,
+        "S2": 33
+      },
+      "coverage": {
+        "S1": 40,
+        "S2": 29
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "off_site": {
+        "S1": 15,
+        "S2": 4
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 0,
+        "S2": 0
+      },
+      "performer_field": 0,
+      "same_night_same_title": 0
+    },
+    {
+      "venue_id": "van-rio",
+      "role": "pool",
+      "capped": true,
+      "cluster": "van-rio",
+      "metro": "Vancouver",
+      "size": "small",
+      "rows": {
+        "S1": 212,
+        "S2": 226
+      },
+      "coverage": {
+        "S1": 202,
+        "S2": 217
+      },
+      "meets_coverage": true,
+      "canceled": {
+        "S1": 0,
+        "S2": 2
+      },
+      "off_site": {
+        "S1": 0,
+        "S2": 0
+      },
+      "untitled": {
+        "S1": 0,
+        "S2": 0
+      },
+      "with_non_music_word": {
+        "S1": 10,
+        "S2": 7
+      },
+      "performer_field": 0,
+      "same_night_same_title": 20
+    }
+  ],
+  "coverage_problems": [],
+  "test_rows_S2": 1578,
+  "test_rows_S2_live": 1539,
+  "test_rooms_below_coverage": [],
+  "window_days": 21,
+  "window_rule": "the show's Monday-to-Sunday week, the week before and the week after, cut at the archive end (2026-09-30)",
+  "pool_candidates_by_window": [
+    {
+      "metro": "Amsterdam",
+      "from": "2026-06-22",
+      "to": "2026-07-12",
+      "cut": false,
+      "candidates": 67,
+      "test_shows": 11
+    },
+    {
+      "metro": "Amsterdam",
+      "from": "2026-06-29",
+      "to": "2026-07-19",
+      "cut": false,
+      "candidates": 58,
+      "test_shows": 14
+    },
+    {
+      "metro": "Amsterdam",
+      "from": "2026-07-06",
+      "to": "2026-07-26",
+      "cut": false,
+      "candidates": 49,
+      "test_shows": 10
+    },
+    {
+      "metro": "Amsterdam",
+      "from": "2026-07-13",
+      "to": "2026-08-02",
+      "cut": false,
+      "candidates": 49,
+      "test_shows": 6
+    },
+    {
+      "metro": "Amsterdam",
+      "from": "2026-07-20",
+      "to": "2026-08-09",
+      "cut": false,
+      "candidates": 45,
+      "test_shows": 9
+    },
+    {
+      "metro": "Amsterdam",
+      "from": "2026-07-27",
+      "to": "2026-08-16",
+      "cut": false,
+      "candidates": 36,
+      "test_shows": 3
+    },
+    {
+      "metro": "Amsterdam",
+      "from": "2026-08-03",
+      "to": "2026-08-23",
+      "cut": false,
+      "candidates": 25,
+      "test_shows": 2
+    },
+    {
+      "metro": "Amsterdam",
+      "from": "2026-08-10",
+      "to": "2026-08-30",
+      "cut": false,
+      "candidates": 32,
+      "test_shows": 4
+    },
+    {
+      "metro": "Amsterdam",
+      "from": "2026-08-17",
+      "to": "2026-09-06",
+      "cut": false,
+      "candidates": 47,
+      "test_shows": 10
+    },
+    {
+      "metro": "Amsterdam",
+      "from": "2026-08-24",
+      "to": "2026-09-13",
+      "cut": false,
+      "candidates": 61,
+      "test_shows": 16
+    },
+    {
+      "metro": "Amsterdam",
+      "from": "2026-08-31",
+      "to": "2026-09-20",
+      "cut": false,
+      "candidates": 67,
+      "test_shows": 18
+    },
+    {
+      "metro": "Amsterdam",
+      "from": "2026-09-07",
+      "to": "2026-09-27",
+      "cut": false,
+      "candidates": 70,
+      "test_shows": 17
+    },
+    {
+      "metro": "Amsterdam",
+      "from": "2026-09-14",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 57,
+      "test_shows": 18
+    },
+    {
+      "metro": "Amsterdam",
+      "from": "2026-09-21",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 31,
+      "test_shows": 5
+    },
+    {
+      "metro": "Atlanta",
+      "from": "2026-06-22",
+      "to": "2026-07-12",
+      "cut": false,
+      "candidates": 18,
+      "test_shows": 4
+    },
+    {
+      "metro": "Atlanta",
+      "from": "2026-06-29",
+      "to": "2026-07-19",
+      "cut": false,
+      "candidates": 20,
+      "test_shows": 5
+    },
+    {
+      "metro": "Atlanta",
+      "from": "2026-07-06",
+      "to": "2026-07-26",
+      "cut": false,
+      "candidates": 23,
+      "test_shows": 4
+    },
+    {
+      "metro": "Atlanta",
+      "from": "2026-07-13",
+      "to": "2026-08-02",
+      "cut": false,
+      "candidates": 28,
+      "test_shows": 6
+    },
+    {
+      "metro": "Atlanta",
+      "from": "2026-07-20",
+      "to": "2026-08-09",
+      "cut": false,
+      "candidates": 31,
+      "test_shows": 11
+    },
+    {
+      "metro": "Atlanta",
+      "from": "2026-07-27",
+      "to": "2026-08-16",
+      "cut": false,
+      "candidates": 37,
+      "test_shows": 11
+    },
+    {
+      "metro": "Atlanta",
+      "from": "2026-08-03",
+      "to": "2026-08-23",
+      "cut": false,
+      "candidates": 39,
+      "test_shows": 12
+    },
+    {
+      "metro": "Atlanta",
+      "from": "2026-08-10",
+      "to": "2026-08-30",
+      "cut": false,
+      "candidates": 40,
+      "test_shows": 11
+    },
+    {
+      "metro": "Atlanta",
+      "from": "2026-08-17",
+      "to": "2026-09-06",
+      "cut": false,
+      "candidates": 36,
+      "test_shows": 8
+    },
+    {
+      "metro": "Atlanta",
+      "from": "2026-08-24",
+      "to": "2026-09-13",
+      "cut": false,
+      "candidates": 32,
+      "test_shows": 10
+    },
+    {
+      "metro": "Atlanta",
+      "from": "2026-08-31",
+      "to": "2026-09-20",
+      "cut": false,
+      "candidates": 34,
+      "test_shows": 9
+    },
+    {
+      "metro": "Atlanta",
+      "from": "2026-09-07",
+      "to": "2026-09-27",
+      "cut": false,
+      "candidates": 39,
+      "test_shows": 12
+    },
+    {
+      "metro": "Atlanta",
+      "from": "2026-09-14",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 36,
+      "test_shows": 14
+    },
+    {
+      "metro": "Atlanta",
+      "from": "2026-09-21",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 22,
+      "test_shows": 3
+    },
+    {
+      "metro": "Berlin",
+      "from": "2026-06-22",
+      "to": "2026-07-12",
+      "cut": false,
+      "candidates": 30,
+      "test_shows": 10
+    },
+    {
+      "metro": "Berlin",
+      "from": "2026-06-29",
+      "to": "2026-07-19",
+      "cut": false,
+      "candidates": 28,
+      "test_shows": 8
+    },
+    {
+      "metro": "Berlin",
+      "from": "2026-07-06",
+      "to": "2026-07-26",
+      "cut": false,
+      "candidates": 22,
+      "test_shows": 7
+    },
+    {
+      "metro": "Berlin",
+      "from": "2026-07-13",
+      "to": "2026-08-02",
+      "cut": false,
+      "candidates": 19,
+      "test_shows": 5
+    },
+    {
+      "metro": "Berlin",
+      "from": "2026-07-20",
+      "to": "2026-08-09",
+      "cut": false,
+      "candidates": 18,
+      "test_shows": 6
+    },
+    {
+      "metro": "Berlin",
+      "from": "2026-07-27",
+      "to": "2026-08-16",
+      "cut": false,
+      "candidates": 18,
+      "test_shows": 5
+    },
+    {
+      "metro": "Berlin",
+      "from": "2026-08-03",
+      "to": "2026-08-23",
+      "cut": false,
+      "candidates": 19,
+      "test_shows": 5
+    },
+    {
+      "metro": "Berlin",
+      "from": "2026-08-10",
+      "to": "2026-08-30",
+      "cut": false,
+      "candidates": 22,
+      "test_shows": 8
+    },
+    {
+      "metro": "Berlin",
+      "from": "2026-08-17",
+      "to": "2026-09-06",
+      "cut": false,
+      "candidates": 28,
+      "test_shows": 7
+    },
+    {
+      "metro": "Berlin",
+      "from": "2026-08-24",
+      "to": "2026-09-13",
+      "cut": false,
+      "candidates": 35,
+      "test_shows": 11
+    },
+    {
+      "metro": "Berlin",
+      "from": "2026-08-31",
+      "to": "2026-09-20",
+      "cut": false,
+      "candidates": 39,
+      "test_shows": 14
+    },
+    {
+      "metro": "Berlin",
+      "from": "2026-09-07",
+      "to": "2026-09-27",
+      "cut": false,
+      "candidates": 51,
+      "test_shows": 13
+    },
+    {
+      "metro": "Berlin",
+      "from": "2026-09-14",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 41,
+      "test_shows": 23
+    },
+    {
+      "metro": "Berlin",
+      "from": "2026-09-21",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 28,
+      "test_shows": 6
+    },
+    {
+      "metro": "Boston",
+      "from": "2026-06-22",
+      "to": "2026-07-12",
+      "cut": false,
+      "candidates": 83,
+      "test_shows": 21
+    },
+    {
+      "metro": "Boston",
+      "from": "2026-06-29",
+      "to": "2026-07-19",
+      "cut": false,
+      "candidates": 88,
+      "test_shows": 48
+    },
+    {
+      "metro": "Boston",
+      "from": "2026-07-06",
+      "to": "2026-07-26",
+      "cut": false,
+      "candidates": 93,
+      "test_shows": 40
+    },
+    {
+      "metro": "Boston",
+      "from": "2026-07-13",
+      "to": "2026-08-02",
+      "cut": false,
+      "candidates": 91,
+      "test_shows": 40
+    },
+    {
+      "metro": "Boston",
+      "from": "2026-07-20",
+      "to": "2026-08-09",
+      "cut": false,
+      "candidates": 87,
+      "test_shows": 40
+    },
+    {
+      "metro": "Boston",
+      "from": "2026-07-27",
+      "to": "2026-08-16",
+      "cut": false,
+      "candidates": 85,
+      "test_shows": 41
+    },
+    {
+      "metro": "Boston",
+      "from": "2026-08-03",
+      "to": "2026-08-23",
+      "cut": false,
+      "candidates": 83,
+      "test_shows": 37
+    },
+    {
+      "metro": "Boston",
+      "from": "2026-08-10",
+      "to": "2026-08-30",
+      "cut": false,
+      "candidates": 87,
+      "test_shows": 39
+    },
+    {
+      "metro": "Boston",
+      "from": "2026-08-17",
+      "to": "2026-09-06",
+      "cut": false,
+      "candidates": 84,
+      "test_shows": 41
+    },
+    {
+      "metro": "Boston",
+      "from": "2026-08-24",
+      "to": "2026-09-13",
+      "cut": false,
+      "candidates": 91,
+      "test_shows": 35
+    },
+    {
+      "metro": "Boston",
+      "from": "2026-08-31",
+      "to": "2026-09-20",
+      "cut": false,
+      "candidates": 95,
+      "test_shows": 46
+    },
+    {
+      "metro": "Boston",
+      "from": "2026-09-07",
+      "to": "2026-09-27",
+      "cut": false,
+      "candidates": 110,
+      "test_shows": 47
+    },
+    {
+      "metro": "Boston",
+      "from": "2026-09-14",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 85,
+      "test_shows": 48
+    },
+    {
+      "metro": "Boston",
+      "from": "2026-09-21",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 55,
+      "test_shows": 17
+    },
+    {
+      "metro": "Bristol",
+      "from": "2026-06-22",
+      "to": "2026-07-12",
+      "cut": false,
+      "candidates": 27,
+      "test_shows": 4
+    },
+    {
+      "metro": "Bristol",
+      "from": "2026-06-29",
+      "to": "2026-07-19",
+      "cut": false,
+      "candidates": 27,
+      "test_shows": 6
+    },
+    {
+      "metro": "Bristol",
+      "from": "2026-07-06",
+      "to": "2026-07-26",
+      "cut": false,
+      "candidates": 24,
+      "test_shows": 6
+    },
+    {
+      "metro": "Bristol",
+      "from": "2026-07-13",
+      "to": "2026-08-02",
+      "cut": false,
+      "candidates": 20,
+      "test_shows": 4
+    },
+    {
+      "metro": "Bristol",
+      "from": "2026-07-20",
+      "to": "2026-08-09",
+      "cut": false,
+      "candidates": 19,
+      "test_shows": 4
+    },
+    {
+      "metro": "Bristol",
+      "from": "2026-07-27",
+      "to": "2026-08-16",
+      "cut": false,
+      "candidates": 18,
+      "test_shows": 4
+    },
+    {
+      "metro": "Bristol",
+      "from": "2026-08-03",
+      "to": "2026-08-23",
+      "cut": false,
+      "candidates": 19,
+      "test_shows": 4
+    },
+    {
+      "metro": "Bristol",
+      "from": "2026-08-10",
+      "to": "2026-08-30",
+      "cut": false,
+      "candidates": 18,
+      "test_shows": 6
+    },
+    {
+      "metro": "Bristol",
+      "from": "2026-08-17",
+      "to": "2026-09-06",
+      "cut": false,
+      "candidates": 19,
+      "test_shows": 5
+    },
+    {
+      "metro": "Bristol",
+      "from": "2026-08-24",
+      "to": "2026-09-13",
+      "cut": false,
+      "candidates": 22,
+      "test_shows": 4
+    },
+    {
+      "metro": "Bristol",
+      "from": "2026-08-31",
+      "to": "2026-09-20",
+      "cut": false,
+      "candidates": 29,
+      "test_shows": 6
+    },
+    {
+      "metro": "Bristol",
+      "from": "2026-09-07",
+      "to": "2026-09-27",
+      "cut": false,
+      "candidates": 33,
+      "test_shows": 6
+    },
+    {
+      "metro": "Bristol",
+      "from": "2026-09-14",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 29,
+      "test_shows": 6
+    },
+    {
+      "metro": "Bristol",
+      "from": "2026-09-21",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 17,
+      "test_shows": 3
+    },
+    {
+      "metro": "Chicago",
+      "from": "2026-06-22",
+      "to": "2026-07-12",
+      "cut": false,
+      "candidates": 57,
+      "test_shows": 14
+    },
+    {
+      "metro": "Chicago",
+      "from": "2026-06-29",
+      "to": "2026-07-19",
+      "cut": false,
+      "candidates": 57,
+      "test_shows": 26
+    },
+    {
+      "metro": "Chicago",
+      "from": "2026-07-06",
+      "to": "2026-07-26",
+      "cut": false,
+      "candidates": 66,
+      "test_shows": 33
+    },
+    {
+      "metro": "Chicago",
+      "from": "2026-07-13",
+      "to": "2026-08-02",
+      "cut": false,
+      "candidates": 69,
+      "test_shows": 32
+    },
+    {
+      "metro": "Chicago",
+      "from": "2026-07-20",
+      "to": "2026-08-09",
+      "cut": false,
+      "candidates": 65,
+      "test_shows": 31
+    },
+    {
+      "metro": "Chicago",
+      "from": "2026-07-27",
+      "to": "2026-08-16",
+      "cut": false,
+      "candidates": 61,
+      "test_shows": 31
+    },
+    {
+      "metro": "Chicago",
+      "from": "2026-08-03",
+      "to": "2026-08-23",
+      "cut": false,
+      "candidates": 58,
+      "test_shows": 30
+    },
+    {
+      "metro": "Chicago",
+      "from": "2026-08-10",
+      "to": "2026-08-30",
+      "cut": false,
+      "candidates": 60,
+      "test_shows": 27
+    },
+    {
+      "metro": "Chicago",
+      "from": "2026-08-17",
+      "to": "2026-09-06",
+      "cut": false,
+      "candidates": 57,
+      "test_shows": 31
+    },
+    {
+      "metro": "Chicago",
+      "from": "2026-08-24",
+      "to": "2026-09-13",
+      "cut": false,
+      "candidates": 56,
+      "test_shows": 25
+    },
+    {
+      "metro": "Chicago",
+      "from": "2026-08-31",
+      "to": "2026-09-20",
+      "cut": false,
+      "candidates": 60,
+      "test_shows": 25
+    },
+    {
+      "metro": "Chicago",
+      "from": "2026-09-07",
+      "to": "2026-09-27",
+      "cut": false,
+      "candidates": 64,
+      "test_shows": 32
+    },
+    {
+      "metro": "Chicago",
+      "from": "2026-09-14",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 55,
+      "test_shows": 25
+    },
+    {
+      "metro": "Chicago",
+      "from": "2026-09-21",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 33,
+      "test_shows": 8
+    },
+    {
+      "metro": "Cleveland",
+      "from": "2026-06-22",
+      "to": "2026-07-12",
+      "cut": false,
+      "candidates": 42,
+      "test_shows": 10
+    },
+    {
+      "metro": "Cleveland",
+      "from": "2026-06-29",
+      "to": "2026-07-19",
+      "cut": false,
+      "candidates": 36,
+      "test_shows": 13
+    },
+    {
+      "metro": "Cleveland",
+      "from": "2026-07-06",
+      "to": "2026-07-26",
+      "cut": false,
+      "candidates": 36,
+      "test_shows": 12
+    },
+    {
+      "metro": "Cleveland",
+      "from": "2026-07-13",
+      "to": "2026-08-02",
+      "cut": false,
+      "candidates": 34,
+      "test_shows": 11
+    },
+    {
+      "metro": "Cleveland",
+      "from": "2026-07-20",
+      "to": "2026-08-09",
+      "cut": false,
+      "candidates": 28,
+      "test_shows": 11
+    },
+    {
+      "metro": "Cleveland",
+      "from": "2026-07-27",
+      "to": "2026-08-16",
+      "cut": false,
+      "candidates": 27,
+      "test_shows": 6
+    },
+    {
+      "metro": "Cleveland",
+      "from": "2026-08-03",
+      "to": "2026-08-23",
+      "cut": false,
+      "candidates": 24,
+      "test_shows": 12
+    },
+    {
+      "metro": "Cleveland",
+      "from": "2026-08-10",
+      "to": "2026-08-30",
+      "cut": false,
+      "candidates": 27,
+      "test_shows": 8
+    },
+    {
+      "metro": "Cleveland",
+      "from": "2026-08-17",
+      "to": "2026-09-06",
+      "cut": false,
+      "candidates": 26,
+      "test_shows": 9
+    },
+    {
+      "metro": "Cleveland",
+      "from": "2026-08-24",
+      "to": "2026-09-13",
+      "cut": false,
+      "candidates": 28,
+      "test_shows": 8
+    },
+    {
+      "metro": "Cleveland",
+      "from": "2026-08-31",
+      "to": "2026-09-20",
+      "cut": false,
+      "candidates": 28,
+      "test_shows": 10
+    },
+    {
+      "metro": "Cleveland",
+      "from": "2026-09-07",
+      "to": "2026-09-27",
+      "cut": false,
+      "candidates": 36,
+      "test_shows": 10
+    },
+    {
+      "metro": "Cleveland",
+      "from": "2026-09-14",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 29,
+      "test_shows": 16
+    },
+    {
+      "metro": "Cleveland",
+      "from": "2026-09-21",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 20,
+      "test_shows": 4
+    },
+    {
+      "metro": "Copenhagen",
+      "from": "2026-06-22",
+      "to": "2026-07-12",
+      "cut": false,
+      "candidates": 32,
+      "test_shows": 1
+    },
+    {
+      "metro": "Copenhagen",
+      "from": "2026-06-29",
+      "to": "2026-07-19",
+      "cut": false,
+      "candidates": 31,
+      "test_shows": 6
+    },
+    {
+      "metro": "Copenhagen",
+      "from": "2026-08-17",
+      "to": "2026-09-06",
+      "cut": false,
+      "candidates": 53,
+      "test_shows": 2
+    },
+    {
+      "metro": "Copenhagen",
+      "from": "2026-08-24",
+      "to": "2026-09-13",
+      "cut": false,
+      "candidates": 76,
+      "test_shows": 3
+    },
+    {
+      "metro": "Copenhagen",
+      "from": "2026-08-31",
+      "to": "2026-09-20",
+      "cut": false,
+      "candidates": 83,
+      "test_shows": 7
+    },
+    {
+      "metro": "Copenhagen",
+      "from": "2026-09-07",
+      "to": "2026-09-27",
+      "cut": false,
+      "candidates": 75,
+      "test_shows": 4
+    },
+    {
+      "metro": "Copenhagen",
+      "from": "2026-09-14",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 44,
+      "test_shows": 4
+    },
+    {
+      "metro": "Copenhagen",
+      "from": "2026-09-21",
+      "to": "2026-09-30",
+      "cut": true,
+      "candidates": 20,
+      "test_shows": 3
+    }
+  ],
+  "windows_cut": 16,
+  "windows_below_min_pool_before_resolution": 0,
+  "min_pool": 10,
+  "check_sample_rows": 931,
+  "house_bookers": {
+    "rule": "Amendment 14: a company that presents more than half of a room's counted S1 and S2 shows is its house booker and must be its listed operator",
+    "rooms": [
+      {
+        "venue_id": "ams-tolhuistuin-club",
+        "share": 0.957,
+        "matches_operator": true
+      },
+      {
+        "venue_id": "ams-tolhuistuin-house",
+        "share": 0.902,
+        "matches_operator": true
+      },
+      {
+        "venue_id": "ams-tolhuistuin-tuinhuis",
+        "share": 0.588,
+        "matches_operator": true
+      },
+      {
+        "venue_id": "atl-529",
+        "share": 1,
+        "matches_operator": true
+      },
+      {
+        "venue_id": "atl-centerstage-loft",
+        "share": 0.533,
+        "matches_operator": true
+      },
+      {
+        "venue_id": "atl-centerstage-theater",
+        "share": 0.52,
+        "matches_operator": true
+      },
+      {
+        "venue_id": "atl-centerstage-vinyl",
+        "share": 0.767,
+        "matches_operator": true
+      },
+      {
+        "venue_id": "atl-earl",
+        "share": 0.891,
+        "matches_operator": true
+      },
+      {
+        "venue_id": "cph-pumpehuset",
+        "share": 1,
+        "matches_operator": true
+      }
+    ],
+    "not_operator": []
+  },
+  "literal_reading": {
+    "status": "counted",
+    "clusters_listed": 46,
+    "rooms_with_presenters": 69,
+    "merged": [
+      {
+        "cluster": "ams-bitterzoet",
+        "listed_clusters": [
+          "ams-bitterzoet",
+          "ber-festsaal",
+          "ber-privatclub",
+          "ber-urbanspree"
+        ],
+        "rooms": [
+          "ams-bitterzoet",
+          "ber-festsaal-biergarten",
+          "ber-festsaal-gewaechshaus",
+          "ber-festsaal-house",
+          "ber-festsaal-kaminzimmer",
+          "ber-festsaal-ostfluegel",
+          "ber-festsaal-saal",
+          "ber-privatclub",
+          "ber-urbanspree"
+        ],
+        "shared_presenters": 9
+      },
+      {
+        "cluster": "mke-cactus",
+        "listed_clusters": [
+          "mke-cactus",
+          "rising-sun-presents",
+          "stl-bluestrawberry"
+        ],
+        "rooms": [
+          "mke-cactus",
+          "phl-milkboy",
+          "stl-bluestrawberry"
+        ],
+        "shared_presenters": 1
+      },
+      {
+        "cluster": "sf-bottom",
+        "listed_clusters": [
+          "sf-bottom",
+          "sf-makeout"
+        ],
+        "rooms": [
+          "sf-bottom",
+          "sf-makeout"
+        ],
+        "shared_presenters": 1
+      }
+    ],
+    "dropped_s1": [
+      "atl-centerstage-house",
+      "atl-centerstage-loft",
+      "atl-centerstage-theater",
+      "atl-centerstage-vinyl",
+      "atl-earl",
+      "bos-armory-b5",
+      "bos-armory-cafe",
+      "bos-armory-hall",
+      "bos-armory-house",
+      "brs-louisiana",
+      "brs-trinity-den",
+      "brs-trinity-fyfe",
+      "brs-trinity-garden",
+      "brs-trinity-house",
+      "brs-trinity-mainhall",
+      "chi-reggies-comedyshack",
+      "chi-reggies-musicjoint",
+      "chi-reggies-rockclub",
+      "chi-reggies-roofdeck",
+      "cph-pumpehuset",
+      "lds-brudenell",
+      "man-castle",
+      "mtl-ministere",
+      "van-rickshaw",
+      "van-rio"
+    ],
+    "dropped_s5": [
+      "atl-529",
+      "lds-wardrobe",
+      "mtl-turbohaus",
+      "van-pearl"
+    ],
+    "clusters": 20,
+    "capped": {
+      "clusters": 6,
+      "test_rooms": 10
+    },
+    "note": "Amendment 14: the literal reading of Amendment 1 (every company named as presenting a counted S1 or S2 show is an operator of the room). Descriptive only, beside the main result; never part of the claim."
+  }
+}
