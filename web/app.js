@@ -198,9 +198,12 @@ function renderCalendar(cal) {
   if (first) first.tabIndex = 0;
   if (qlooOff()) {
     showCalendarNotice(
-      'Qloo: not connected. This server has no Qloo key, so it ranks no acts. ' +
-        'You can read the calendar, but picking a night will not show a list.',
+      'Qloo: not connected. This server has no Qloo key, so it ranks no acts and shows no shortlist. ' +
+        'What still works: the calendar and its dark nights for every room, and the back-test button at the top.',
     );
+    $('night-empty-text').textContent =
+      "Choose one of the dark squares above. With Qloo connected, the Desk reads this room's past shows and lines up five acts " +
+      'who played the city this season. Without it, picking a night tells you why there is no list.';
   }
 }
 
