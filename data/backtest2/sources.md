@@ -106,6 +106,14 @@ was made. Show lists are compiled later and get their own section below.
   Kings and The Pour House. From 17-18 Oct also used for Center Stage, Martyrs', Old Town School of Folk Music, Reggies Chicago,
   Beachland Ballroom & Tavern, Music Box Supper Club and Amager Bio & BETA, and in part for Green Mill.
 
+## Second pass (19 Oct 2026)
+- Sample: the 931 lines listed in `results/backtest2-check-sample.json` (a random 10% of rows, seed 3, as BACKTEST-2 "Data handling" says). Each row was checked against the saved copy it was compiled from (no network), field by field: date, start, title, performers, canceled, drop_reason and presented_by. A flag from the first checker was re-read by a second one before it was kept.
+- Result, in `checked_by` (`second-pass-2026-10-19:ok`, or `mismatch(<fields>)`): 925 ok, 6 mismatches. The rows are left as compiled, so the run uses the data the pass measured. The six: Bitterzoet 4 Aug 2026 (start is the doors time, 19:30; the page gives the main act at 20:30); Urban Spree 25 Apr 2026 (canceled: the page says the show is postponed); Beachland Ballroom 28 Jul 2026 (presented_by: the page names Grog Shop as presenter); Make-Out Room 9 Aug and 17 Sep 2026 (title and start: each row is a description paragraph of a show that has its own row, so it is an extra row); Tranzac Living Room 28 May 2026 (presented_by: three of the four names are partners, not presenters).
+- No other row was touched by the pass; every other field reads back unchanged.
+
+## Names withheld (19 Oct 2026)
+- BACKTEST-2 records only performers' billing names. Eight more titles named private persons (memorials, birthdays, a retirement, a private booking); the name is now "[name withheld]" in each, as in the 529 rows. Where the source URL's path carried a private name (Bitterzoet 5 Apr, Rickshaw 4 Apr, Tranzac Main Hall 23 Sep, and Tranzac Main Hall 28 Sep, whose title "private Memorial" names no one), the path's last part is "[slug withheld]". No date, room or count changed. Two of the eight rows are in the second-pass sample and were checked before the name was withheld.
+
 ## Venues in `venues.csv`
 ### Bitterzoet (`ams-bitterzoet`, Amsterdam)
 - Source: Own WordPress site. sitemap.xml lists 1,015 /event/<slug>/ pages, and each page prints the show date in its header line. The /agenda/ page lists only coming shows (about one week, about 9 rows; each row gives date, start time and price), so S1 was read from web.archive.org copies of it. The WP REST /wp-json/wp/v2/event and /event/feed carry only the post publish date, not the show date; REST was used to pick S2 pages, never to date them.
