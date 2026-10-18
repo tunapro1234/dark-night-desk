@@ -5,7 +5,7 @@ import { nightsFor } from '../calendar/nights.js';
 import { listedUntil, venueSummary } from '../calendar/venues.js';
 import { ablate } from '../rank/ablate.js';
 import { alsoLoves, neutralSignal } from '../rank/lift.js';
-import { buildPool, buildSignal, normalizeName } from '../rank/pool.js';
+import { buildPool, buildSignal, normalizeName, splitHeadliner } from '../rank/pool.js';
 import { SHORTLIST_SIZE, contributions, rankPool, topN } from '../rank/rank.js';
 
 export const TOOL_NAMES = Object.freeze(['read_calendar', 'resolve_entities', 'build_pool', 'rank_pool', 'explain', 'ablate', 'also_loves', 'draft_offer']);
@@ -17,6 +17,9 @@ const SMALL_ROOM_MAX = 1000;
 // Popularity ceiling for rooms up to SMALL_ROOM_MAX: a 300-cap room does not get an arena headliner. This is a product
 // choice only: the back-test (BACKTEST.md, "Fixed choices") applies no popularity limit and tunes nothing.
 export const SMALL_ROOM_POPULARITY_MAX = 0.9;
+// A signal of fewer resolved past headliners than the acts on the card is "thin": the live agent may say so instead of
+// ranking. A product choice (the shortlist size), not a tuned or measured number.
+export const THIN_SIGNAL_BELOW = SHORTLIST_SIZE;
 
 const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -48,6 +51,34 @@ export function whySentence(act, contributors, { voice = 'your' } = {}) {
   if (a && b) return `${crowd} came for ${a} and ${b}. ${act} sits right between them.`;
   if (a) return `${crowd} came for ${a}. ${act} draws on the same taste.`;
   return voice === 'our' ? `${act} ranks high against our room's past program.` : `${act} ranks high against this room's past program.`;
+}
+
+const TYPE_PLURAL = { movie: 'films', place: 'places', brand: 'brands' };
+
+/** The also_loves row with the largest lift (lower end of the range first), or undefined. */
+export const strongestAlsoLoves = (rows = []) =>
+  [...rows].sort((a, b) => b.lift_range[0] - a.lift_range[0] || b.lift_range[1] - a.lift_range[1])[0];
+
+/**
+ * Scripted plan only: the card line, worded by what drove the pick in explain's output. One past show with more than
+ * half of the match gets a one-show line; two shows that together hold more than half get the A-and-B line; a match
+ * spread wider is said to be spread. `also` (the strongest also_loves row) adds one fact about the room's crowd.
+ * Names and categories come from tool outputs; the line carries no number.
+ * @param {string} act
+ * @param {{ name: string | null, share: number }[]} contributors most important first, as explain lists them
+ * @param {{ also?: { type: string, category: string } }} [opts]
+ */
+export function scriptedWhy(act, contributors, { also } = {}) {
+  const named = contributors.filter((c) => c.name);
+  const [a, b] = named;
+  let line;
+  if (!a) line = whySentence(act, []);
+  else if (!b) line = whySentence(act, [a]);
+  else if (a.share > 0.5) line = `Most of this match comes from one past show, ${a.name}. ${act} draws on the same taste.`;
+  else if (a.share + b.share > 0.5) line = whySentence(act, [a, b]);
+  else line = `No single past show drives this one; it is spread across your program, led by ${a.name} and ${b.name}.`;
+  if (also?.category) line += ` The same crowd also leans to ${also.category} ${TYPE_PLURAL[also.type] ?? 'picks'}, more than the city's average room.`;
+  return line;
 }
 
 /**
@@ -86,12 +117,83 @@ export function offerNote({ venue, day, act, contributors = [] }) {
  *   today?: string, emit?: (label: string) => void }} args `emit` receives the plain-English step labels.
  *   `today` (live product) anchors the pool to the last 90 days and leaves out acts already booked into town.
  */
-export function createSession({ qloo, venues, venue, date, today, emit = () => {} }) {
-  return { qloo, venues, venue, date, today, emit, log: [], calls: [], fallbacks: [], steps: [], state: {} };
+export function createSession({ qloo, venues, venue, date, today, answers = [], emit = () => {} }) {
+  return { qloo, venues, venue, date, today, answers, emit, log: [], calls: [], fallbacks: [], steps: [], state: {} };
 }
 
-/** Outputs only: the agent's own inputs never count as a source for its numbers or ids. */
-export const toolOutputs = (session) => session.log.map((x) => x.output);
+/** The room's past shows before the night, most recent first (the order buildSignal reads them in). */
+const pastShowsBefore = (venue, date) =>
+  (venue.past_shows ?? []).filter((x) => x.date < date).sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
+
+/**
+ * The booker's answers to "Which one played here?" applied to a buildSignal result. A picked candidate joins the signal
+ * in show order (most recent first); "none of these" (entity_id null) counts as not found. An id that is not one of
+ * that name's candidates is ignored, so an answer can only choose among what the taste-graph search returned.
+ * @param {Awaited<ReturnType<typeof buildSignal>>} r
+ * @param {{ name: string, entity_id: string | null }[]} answers
+ * @param {string[]} titles the room's past headliners, most recent first
+ * @param {number} [limit]
+ */
+export function applyAnswers(r, answers, titles, limit = SIGNAL_LIMIT) {
+  const byName = new Map((answers ?? []).map((a) => [normalizeName(a.name), a.entity_id ?? null]));
+  const answered = [];
+  const needsInput = [];
+  const picked = new Map();
+  const none = [];
+  for (const q of r.needs_input) {
+    const k = normalizeName(q.name);
+    const id = byName.get(k);
+    const c = q.candidates.find((x) => x.entity_id === id);
+    if (!byName.has(k) || (id !== null && !c)) {
+      needsInput.push(q);
+      continue;
+    }
+    answered.push({ name: q.name, entity_id: c?.entity_id ?? null, picked: c?.name ?? null });
+    if (c) picked.set(k, { entity_id: c.entity_id, name: c.name });
+    else none.push({ name: q.name, reason: 'booker_none' });
+  }
+  if (!answered.length) return { ...r, answered };
+  // A resolved artist has the same normalized name as its title (or the title's head), so the show order can be rebuilt.
+  const byArtist = new Map(r.signal.map((x) => [normalizeName(x.name), x]));
+  const signal = [];
+  const seen = new Set();
+  const add = (e) => {
+    if (e && !seen.has(e.entity_id)) {
+      seen.add(e.entity_id);
+      signal.push(e);
+    }
+  };
+  for (const t of titles) add(picked.get(normalizeName(t)) ?? byArtist.get(normalizeName(t)) ?? byArtist.get(normalizeName(splitHeadliner(t))));
+  r.signal.forEach(add);
+  return {
+    ...r,
+    signal: signal.slice(0, limit),
+    counts: { ...r.counts, resolved: r.counts.resolved + picked.size, needs_input: needsInput.length, unresolved: r.counts.unresolved + none.length, answered: answered.length },
+    needs_input: needsInput,
+    unresolved: [...r.unresolved, ...none],
+    answered,
+  };
+}
+
+/**
+ * "Which one played here?" for one ambiguous past headliner from resolve_entities (needs_input): up to 3 candidates
+ * from the taste-graph search and the dates the name played this room. Null when the name is not waiting for an answer.
+ */
+export function bookerQuestion(session, name) {
+  const q = (session.state.signal?.needs_input ?? []).find((x) => normalizeName(x.name) === normalizeName(name));
+  if (!q) return null;
+  const dates = pastShowsBefore(session.venue, session.date).filter((x) => normalizeName(x.headliner) === normalizeName(q.name)).map((x) => x.date);
+  return { name: q.name, candidates: q.candidates.slice(0, 3).map((c) => ({ entity_id: c.entity_id, name: c.name })), played_here: dates };
+}
+
+/**
+ * Outputs only: the agent's own inputs never count as a source for its numbers or ids. That includes the parts of an
+ * output that only echo the input back: an unknown tool's name, and the ids ablate ignored.
+ */
+export const toolOutputs = (session) =>
+  session.log
+    .filter((x) => x.output?.error?.code !== 'unknown_tool')
+    .map(({ tool, output }) => (tool === 'ablate' && output && 'ignored' in output ? { ...output, ignored: undefined } : output));
 
 function step(session, label) {
   session.steps.push(label);
@@ -127,10 +229,7 @@ class ToolError extends Error {
 const IMPL = {
   async read_calendar(s) {
     const night = nightsFor(s.venue, s.date, 1, { today: s.today, listedUntil: listedUntil(s.venue) }).nights[0];
-    const past = (s.venue.past_shows ?? [])
-      .filter((x) => x.date < s.date)
-      .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
-      .slice(0, SIGNAL_LIMIT);
+    const past = pastShowsBefore(s.venue, s.date).slice(0, SIGNAL_LIMIT);
     step(s, `Reading your last ${past.length} shows`);
     const out = {
       venue: venueSummary(s.venue),
@@ -146,9 +245,16 @@ const IMPL = {
   async resolve_entities(s) {
     await need(s, 'calendar');
     step(s, 'Looking those acts up in the taste graph');
-    const r = take(s, await buildSignal(s.qloo, s.venue, { before: s.date, limit: SIGNAL_LIMIT }));
+    const titles = pastShowsBefore(s.venue, s.date).map((x) => x.headliner);
+    const r = applyAnswers(take(s, await buildSignal(s.qloo, s.venue, { before: s.date, limit: SIGNAL_LIMIT })), s.answers, titles);
+    for (const a of r.answered) step(s, `Asked you: which ${a.name}?`);
     s.state.signal = r;
-    return { signal: r.signal, counts: r.counts, needs_input: r.needs_input, unresolved: r.unresolved.map((u) => u.name) };
+    const thin = r.signal.length < THIN_SIGNAL_BELOW;
+    return {
+      signal: r.signal, counts: r.counts, needs_input: r.needs_input, unresolved: r.unresolved.map((u) => u.name),
+      ...(r.answered.length ? { answered_by_booker: r.answered } : {}),
+      ...(thin ? { thin: { resolved: r.signal.length, below: THIN_SIGNAL_BELOW, note: 'fewer past headliners were found than acts on the card' } } : {}),
+    };
   },
 
   async build_pool(s) {
@@ -226,7 +332,9 @@ const IMPL = {
     const signal = await need(s, 'signal');
     const pool = await need(s, 'pool');
     const ranking = await need(s, 'ranking');
-    step(s, `Switching off ${remove.length} past show${remove.length === 1 ? '' : 's'}`);
+    // The step counts the past shows actually switched off, not what the caller sent (unknown ids are ignored).
+    const off = new Set((Array.isArray(remove) ? remove : []).filter((id) => signal.signal.some((x) => x.entity_id === id))).size;
+    step(s, `Switching off ${off} past show${off === 1 ? '' : 's'}`);
     const r = take(s, await ablate(s.qloo, {
       signalIds: signal.signal.map((x) => x.entity_id), poolIds: pool.pool, removeIds: remove, baseline: ranking.results, popularityMax: ranking.popularityMax,
     }));

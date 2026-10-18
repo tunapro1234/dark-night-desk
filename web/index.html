@@ -44,8 +44,8 @@
         <ul class="legend" aria-label="Legend">
           <li><span class="sq sq-dark" aria-hidden="true"></span> dark night: pick one</li>
           <li><span class="sq sq-booked" aria-hidden="true"></span> show announced</li>
-          <li><span class="sq sq-closed" aria-hidden="true"></span> closed that weekday</li>
-          <li><span class="sq sq-today" aria-hidden="true"></span> today: too late to plan, dark nights start tomorrow</li>
+          <li id="legend-closed"><span class="sq sq-closed" aria-hidden="true"></span> closed that weekday</li>
+          <li><span class="sq sq-today" aria-hidden="true"></span> today: too late to plan</li>
           <li id="legend-unlisted" hidden><span class="sq sq-unlisted" aria-hidden="true"></span> not read yet: past the last date the calendar was read for</li>
         </ul>
         <a class="chip" id="source-chip" href="#" target="_blank" rel="noopener" hidden></a>
@@ -64,6 +64,11 @@
         <div class="progress" id="progress" hidden>
           <h2 class="progress-title" id="progress-title">Working on it</h2>
           <ol class="steps" id="steps" aria-live="polite"></ol>
+          <div class="ask" id="ask" role="group" aria-labelledby="ask-title" hidden>
+            <h3 id="ask-title">Which one played here?</h3>
+            <p id="ask-text"></p>
+            <div class="ask-options" id="ask-options"></div>
+          </div>
         </div>
 
         <div class="fail" id="fail" role="alert" hidden>

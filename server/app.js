@@ -10,7 +10,7 @@ import { budgetPath, clientIp, createBudget } from './budget/budget.js';
 import { createQlooClient } from './qloo/client.js';
 import { cachePath, createQlooCache } from './qloo/cache.js';
 import { createAnthropic } from './agent/loop.js';
-import { PlanError, runAblate, runPlan } from './agent/plan.js';
+import { PlanError, findRecorded, listRecorded, replayRecorded, runAblate, runPlan } from './agent/plan.js';
 
 const CALENDAR_MAX_DAYS = 120;
 export const BACKTEST_FILE = path.join(REPO_ROOT, 'results', 'backtest-test.json');
@@ -111,24 +111,64 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
 
   const qlooMode = effectiveQlooMode(config);
   const QLOO_OFF = { code: 'qloo_not_connected', message: 'Qloo: not connected. Nothing is ranked without it.' };
+  // AGENT_MODE=scripted never plays a recorded run back.
+  const replays = config.agentMode !== 'scripted';
+
+  /** The saved live runs the page may open: plannable rooms only, nights that are still dark. */
+  async function openRecordings() {
+    if (!replays) return [];
+    const all = await venues();
+    const today = todayISO(now());
+    const out = [];
+    for (const run of await listRecorded(config.dataDir)) {
+      const venue = all.find((v) => v.id === run.venue_id);
+      if (!venue || !isPlannable(venue) || !isISODate(run.date)) continue;
+      if (nightsFor(venue, run.date, 1, { today, listedUntil: listedUntil(venue) }).nights[0].status !== 'dark') continue;
+      out.push(run);
+    }
+    return out;
+  }
+
+  // Recorded live runs, for the page's first screen. Reading one makes no Claude or Qloo call in any mode.
+  app.get('/api/recorded', async () => ({
+    runs: (await openRecordings()).map((run) => ({
+      venue_id: run.venue_id, date: run.date, recorded_at: run.saved_at, ...(run.result.thin_signal ? { thin: true } : {}),
+    })),
+  }));
+
+  app.get('/api/recorded/:venue_id/:date', async (req, reply) => {
+    const run = (await openRecordings()).find((x) => x.venue_id === req.params.venue_id && x.date === req.params.date);
+    if (!run) return reply.code(404).send({ error: 'no recorded run for this room and night' });
+    return replayRecorded(run);
+  });
 
   app.post('/api/plan', async (req, reply) => {
     const night = await nightFrom(req, reply);
     if (!night) return reply;
+    // `ask: true` (the page): the live agent may ask the booker one question; `answers` carries the booker's reply.
+    const { ask = false, answers = [] } = req.body ?? {};
+    const answerOk = (a) => a && typeof a.name === 'string' && a.name.length <= 300 && (a.entity_id === null || typeof a.entity_id === 'string');
+    if (typeof ask !== 'boolean' || !Array.isArray(answers) || answers.length > 10 || !answers.every(answerOk)) {
+      return reply.code(400).send({ error: 'ask must be true or false, and answers a list of at most 10 { name, entity_id } items' });
+    }
     reply.hijack();
     const res = reply.raw;
     res.writeHead(200, { 'content-type': 'text/event-stream; charset=utf-8', 'cache-control': 'no-cache', 'x-accel-buffering': 'no' });
     const send = (event, data) => res.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
     if (qlooMode === 'no-key') {
-      send('error', QLOO_OFF);
+      // No Qloo: nothing new is ranked, but a saved live run for this room and night is played back, labelled recorded.
+      const recorded = replays ? await findRecorded(config.dataDir, night.venue.id, night.date) : null;
+      if (recorded) send('result', replayRecorded(recorded, (label) => send('step', { label })));
+      else send('error', QLOO_OFF);
     } else {
       try {
         const result = await runPlan({
-          config, budget, qloo, qlooMode, ...night, now, anthropic,
+          config, budget, qloo, qlooMode, ...night, now, anthropic, ask,
+          answers: answers.map((a) => ({ name: a.name, entity_id: a.entity_id })),
           ip: clientIp({ socket: req.raw.socket, headers: req.headers }),
           emit: (label) => send('step', { label }),
         });
-        send('result', result);
+        send(result.question ? 'question' : 'result', result);
       } catch (err) {
         if (err instanceof PlanError) send('error', { code: err.code, message: err.message });
         else {

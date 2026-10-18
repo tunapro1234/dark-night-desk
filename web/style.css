@@ -124,6 +124,9 @@ main:focus { outline: none; }
 .empty h2, .progress h2, .fail h2 { margin: 0 0 6px; font-size: 1.25rem; }
 .empty p, .fail p { margin: 0 0 12px; color: var(--muted); }
 .fail { border-style: solid; border-color: var(--accent); }
+.ask { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); }
+.ask h3 { margin: 0 0 6px; }
+.ask-options { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 
 .steps { margin: 10px 0 0; padding: 0; list-style: none; }
 .steps li { position: relative; padding: 4px 0 4px 26px; }
@@ -146,6 +149,8 @@ main:focus { outline: none; }
 .act-1 .act-name { font-size: clamp(2rem, 6vw, 2.9rem); }
 .act-2 .act-name, .act-3 .act-name { font-size: clamp(1.5rem, 4.2vw, 2rem); }
 .act-why { max-width: 46ch; margin: 6px auto 0; color: var(--poster-muted); font-size: 0.95rem; }
+.act-played { max-width: 46ch; margin: 4px auto 0; color: var(--poster-muted); font-size: 0.85rem; }
+.act-check { max-width: 46ch; margin: 4px auto 0; color: var(--poster-muted); font-size: 0.85rem; font-style: italic; }
 .why-link { padding: 0 2px; border: 0; background: none; color: var(--gold); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; font-size: 0.9rem; }
 
 .also { margin-top: 18px; padding-top: 14px; border-top: 2px solid rgba(242, 193, 78, 0.5); text-align: left; }

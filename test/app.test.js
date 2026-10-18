@@ -193,6 +193,36 @@ test('rooms with a partial source listing are not offered; nights past listed_un
   }
 });
 
+test('recorded runs: listed for plannable rooms and nights still dark; one is read back as recorded with no Qloo or Claude call', async () => {
+  const dataDir = path.join(tmp, 'rec-list');
+  await mkdir(path.join(dataDir, 'recorded'), { recursive: true });
+  const run = (venue_id, date, saved_at = '2026-10-10T20:00:00.000Z') =>
+    writeFile(path.join(dataDir, 'recorded', `${venue_id}__${date}__${saved_at.replace(/[:.]/g, '-')}.json`),
+      JSON.stringify({ saved_at, venue_id, date, result: { mode: { agent: 'live', qloo: 'live' }, steps: ['Sizing to your room'], shortlist: [] } }));
+  await run('example-room', '2026-10-14'); // dark
+  await run('example-room', '2026-10-14', '2026-10-09T20:00:00.000Z'); // older run of the same night
+  await run('example-room', '2026-10-13'); // booked since
+  await run('example-room', '2026-10-07'); // past
+  await run('nope', '2026-10-14'); // unknown room
+  await writeFile(path.join(dataDir, 'recorded', 'broken.json'), '{');
+  const app = await buildApp(loadConfig({ DATA_DIR: dataDir, VENUES_DIR: 'test/fixtures/synthetic/venues' }), { now: () => FIXED_NOW });
+  assert.deepEqual((await app.inject('/api/recorded')).json(), { runs: [{ venue_id: 'example-room', date: '2026-10-14', recorded_at: '2026-10-10T20:00:00.000Z' }] });
+  const one = await app.inject('/api/recorded/example-room/2026-10-14');
+  assert.equal(one.statusCode, 200);
+  assert.deepEqual(one.json().mode, { agent: 'recorded', qloo: 'recorded', recorded_at: '2026-10-10T20:00:00.000Z' });
+  assert.deepEqual(one.json().steps, ['Sizing to your room']);
+  for (const url of ['/api/recorded/example-room/2026-10-13', '/api/recorded/example-room/2026-10-15', '/api/recorded/nope/2026-10-14']) {
+    assert.equal((await app.inject(url)).statusCode, 404, url);
+  }
+  await app.close();
+  const scripted = await buildApp(loadConfig({ DATA_DIR: dataDir, VENUES_DIR: 'test/fixtures/synthetic/venues', AGENT_MODE: 'scripted' }), { now: () => FIXED_NOW });
+  assert.deepEqual((await scripted.inject('/api/recorded')).json(), { runs: [] }, 'AGENT_MODE=scripted plays nothing back');
+  await scripted.close();
+  const none = await appWith({});
+  assert.deepEqual((await none.inject('/api/recorded')).json(), { runs: [] });
+  await none.close();
+});
+
 test('serves the static page at /', async () => {
   const app = await appWith({});
   const res = await app.inject('/');
@@ -210,7 +240,8 @@ test('serves the page script and stylesheet, with no outside scripts', async () 
   const js = await app.inject('/app.js');
   assert.equal(js.statusCode, 200);
   assert.match(js.headers['content-type'], /javascript/);
-  for (const label of ['Agent: live (Claude)', 'recorded run from', 'Agent: scripted plan (no LLM)', 'Qloo: live', 'Qloo: not connected']) {
+  for (const label of ['Agent: idle', 'Agent: idle (Qloo not connected)', 'Agent: live (Claude)', 'recorded run from', 'Agent: scripted plan (no LLM)',
+    'Qloo: live', 'Qloo: not connected', 'Qloo: recorded']) {
     assert.ok(js.body.includes(label), `app.js lacks the mode label "${label}"`);
   }
   const css = await app.inject('/style.css');

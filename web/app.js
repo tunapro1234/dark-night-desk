@@ -46,24 +46,31 @@ const fullDate = (iso) => {
 
 // ---------- mode labels (always on screen) ----------
 function agentLabel(agent, recordedAt) {
+  if (agent === 'idle') return 'Agent: idle';
+  if (agent === 'idle-no-qloo') return 'Agent: idle (Qloo not connected)';
+  if (agent === 'working') return 'Agent: planning';
   if (agent === 'live') return 'Agent: live (Claude)';
   if (agent === 'recorded') return recordedAt ? `Agent: recorded run from ${fullDate(recordedAt)}` : 'Agent: recorded run';
   if (agent === 'scripted') return 'Agent: scripted plan (no LLM)';
   return 'Agent: unknown';
 }
-function qlooLabel(qloo) {
+function qlooLabel(qloo, recordedAt) {
   if (qloo === 'live') return 'Qloo: live';
+  if (qloo === 'recorded') return recordedAt ? `Qloo: recorded ${fullDate(recordedAt)}` : 'Qloo: recorded';
   if (qloo === 'no-key') return 'Qloo: not connected';
   if (qloo === 'fixture') return 'Qloo: synthetic test data';
   return 'Qloo: unknown';
 }
 const AGENT_HINT = {
+  idle: 'No plan is running. Pick a dark night to start one.',
+  'idle-no-qloo': 'This server has no Qloo key, so no plan can run. Only nights with a recorded run can show a card.',
   live: 'Claude chooses the steps and writes the sentences. Every name and number is checked against the tool results.',
   recorded: 'A saved run of the live agent for this room and night, played back. No Claude call is made now.',
   scripted: 'A fixed sequence of the same steps, with no language model. Shown when no live or recorded run is available.',
 };
 const QLOO_HINT = {
   live: 'Rankings come from the Qloo taste graph.',
+  recorded: 'The Qloo results on this card were saved with the run on that date. No Qloo request is made now.',
   'no-key': 'This server has no Qloo key, so it ranks nothing.',
   fixture: 'Test mode: hand-written synthetic data, not real artists or Qloo results.',
 };
@@ -74,7 +81,7 @@ function setBadges(agent, qloo, recordedAt) {
   a.dataset.mode = agent ?? '';
   a.title = AGENT_HINT[agent] ?? '';
   const q = $('badge-qloo');
-  q.textContent = qlooLabel(qloo);
+  q.textContent = qlooLabel(qloo, recordedAt);
   q.dataset.mode = qloo ?? '';
   q.title = QLOO_HINT[qloo] ?? '';
 }
@@ -94,6 +101,13 @@ const FALLBACK_WORDS = {
 };
 const isAgentFallback = (f) => f && (f.step === 'agent' || f.step === 'agent mode');
 
+// Before a night is picked (or when nothing can run) the agent badge says idle; a mode label appears only on a result.
+// With Qloo off, a room with no recorded run can show no card at all.
+function idleBadges(noPlanCanRun = qlooOff() && !state.recorded.some((x) => x.venue_id === state.venueId)) {
+  if (!state.health) return;
+  setBadges(noPlanCanRun ? 'idle-no-qloo' : 'idle', state.health.qloo);
+}
+
 // ---------- state ----------
 const state = {
   health: null,
@@ -106,8 +120,12 @@ const state = {
   planAbort: null,
   ablateSeq: 0,
   whyOpener: null,
+  recorded: [],
+  // The booker's answers to the agent's "Which one played here?" for the night being planned.
+  answers: [],
 };
 const qlooOff = () => state.health?.qloo === 'no-key';
+const recordedRun = (venueId, date) => state.recorded.find((x) => x.venue_id === venueId && x.date === date) ?? null;
 
 async function getJSON(url) {
   const res = await fetch(url, { headers: { accept: 'application/json' } });
@@ -159,6 +177,7 @@ function renderCalendar(cal) {
   $('dark-sub').textContent =
     n === 0 ? 'every open night on this public calendar already has a show announced' : 'open nights with no show announced on the public calendar';
   $('legend-unlisted').hidden = !cal.nights.some((x) => x.status === 'unlisted');
+  $('legend-closed').hidden = !cal.nights.some((x) => x.status === 'closed');
 
   const chip = $('source-chip');
   if (cal.source?.url) {
@@ -196,7 +215,16 @@ function renderCalendar(cal) {
   strip.replaceChildren(...items);
   const first = strip.querySelector('.sq-dark');
   if (first) first.tabIndex = 0;
-  if (qlooOff()) {
+  if (qlooOff() && state.recorded.length) {
+    const nights = state.recorded.map((x) => `${state.venues.find((v) => v.id === x.venue_id)?.name ?? x.venue_id} ${shortDay(x.date)}`);
+    showCalendarNotice(
+      'Qloo: not connected. This server has no Qloo key, so it ranks nothing new. ' +
+        `Nights with a recorded live run play that run back, labelled recorded: ${nights.join('; ')}. Every other night shows no list. ` +
+        'What still works: the calendar and its dark nights for every room, and the back-test button at the top.',
+    );
+    $('night-empty-text').textContent =
+      'Choose one of the dark squares above. A night with a recorded run shows that run; any other night tells you why there is no list.';
+  } else if (qlooOff()) {
     showCalendarNotice(
       'Qloo: not connected. This server has no Qloo key, so it ranks no acts and shows no shortlist. ' +
         'What still works: the calendar and its dark nights for every room, and the back-test button at the top.',
@@ -238,6 +266,7 @@ function markPicked(date) {
 // ---------- night panel states ----------
 function show(which) {
   for (const id of ['night-empty', 'progress', 'fail', 'poster']) $(id).hidden = id !== which;
+  $('ask').hidden = true;
 }
 
 function resetNight() {
@@ -248,6 +277,7 @@ function resetNight() {
   state.off.clear();
   closeWhy(false);
   show('night-empty');
+  idleBadges();
 }
 
 function showFail(title, text, canRetry = true) {
@@ -263,14 +293,16 @@ function addStep(label) {
   list.append(h('li', { class: 'now' }, label));
 }
 
-async function pickNight(date) {
+async function pickNight(date, answers = []) {
   state.planAbort?.abort();
   closeWhy(false);
   state.date = date;
+  state.answers = answers;
   state.result = null;
   state.off.clear();
   markPicked(date);
-  if (qlooOff()) {
+  if (qlooOff() && !recordedRun(state.venueId, date)) {
+    idleBadges(true);
     showFail(
       `${shortDay(date)} stays open for now`,
       'Qloo: not connected. Without the Qloo taste graph the Desk has no honest way to rank acts, so it shows no list instead of a made-up one.',
@@ -281,12 +313,14 @@ async function pickNight(date) {
   $('progress-title').textContent = `Planning ${shortDay(date)}`;
   $('steps').replaceChildren();
   show('progress');
+  setBadges('working', state.health?.qloo);
   const ctrl = new AbortController();
   state.planAbort = ctrl;
   try {
-    await streamPlan({ venue_id: state.venueId, date }, ctrl.signal);
+    await streamPlan({ venue_id: state.venueId, date, ask: true, answers }, ctrl.signal);
   } catch (err) {
     if (ctrl.signal.aborted) return;
+    idleBadges();
     showFail('The plan stopped', `${err.message || 'The connection dropped'}. Try again in a moment.`);
   }
 }
@@ -329,6 +363,7 @@ async function streamPlan(body, signal) {
       if (signal.aborted) return;
       if (event === 'step') addStep(payload.label ?? '');
       else if (event === 'result') return renderResult(payload);
+      else if (event === 'question') return renderQuestion(payload);
       else if (event === 'error') return planError(payload);
     }
   }
@@ -338,21 +373,82 @@ async function streamPlan(body, signal) {
 function planError(err) {
   if (err.code === 'qloo_not_connected') {
     state.health = { ...(state.health ?? {}), qloo: 'no-key' };
-    setBadges(state.health.agent, 'no-key');
+    idleBadges(true);
     showFail('Qloo: not connected', 'Without the Qloo taste graph the Desk ranks nothing, so there is no list for this night.', false);
     return;
   }
+  idleBadges();
   showFail('No plan for this night', err.message || 'Something went wrong while planning.');
+}
+
+// ---------- the agent's question to the booker ----------
+const listDays = (dates) => {
+  const days = dates.map(monthDay);
+  return days.length < 2 ? days.join('') : `${days.slice(0, -1).join(', ')} and ${days.at(-1)}`;
+};
+
+/** The live agent stopped to ask which artist an ambiguous past headliner was; the answer reruns the plan with it. */
+function renderQuestion(q) {
+  setBadges(q.mode?.agent, q.mode?.qloo);
+  for (const li of $('steps').children) li.className = 'done';
+  const { name, candidates = [], played_here: dates = [] } = q.question ?? {};
+  $('ask-text').textContent =
+    `"${name}" played here${dates.length ? ` on ${listDays(dates)}` : ''}. The taste graph has no exact match for that name, ` +
+    'and the Desk does not guess. Which artist was it?';
+  const answer = (entityId) => pickNight(state.date, [...state.answers, { name, entity_id: entityId }]);
+  $('ask-options').replaceChildren(
+    ...candidates.slice(0, 3).map((c) => h('button', { type: 'button', class: 'btn ask-option', onclick: () => answer(c.entity_id) }, c.name ?? c.entity_id)),
+    h('button', { type: 'button', class: 'btn ask-option', onclick: () => answer(null) }, 'None of these'),
+  );
+  show('progress');
+  $('ask').hidden = false;
 }
 
 // ---------- poster card ----------
 const TYPE_WORDS = { movie: 'Films', place: 'Places', brand: 'Brands' };
 const fmtLift = (n) => (Math.round(n * 100) / 100).toFixed(2);
 
-function renderResult(r) {
+/** build_pool's record of where and when an act played the city, grouped by room: "Played Room A, Jul 15 and Aug 12". */
+function playedLine(played) {
+  const byRoom = new Map();
+  for (const p of played ?? []) {
+    const room = p.venue ?? p.venue_id;
+    if (!byRoom.has(room)) byRoom.set(room, []);
+    byRoom.get(room).push(monthDay(p.date));
+  }
+  if (!byRoom.size) return null;
+  const and = (xs) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`);
+  return `Played ${[...byRoom].map(([room, days]) => `${room}, ${and(days)}`).join('; ')}`;
+}
+
+/** The ablate check the agent ran on a pick, from the ablate output: did the act stay in the top 5 without that show? */
+function checkLine(act) {
+  const c = act.check;
+  if (!c) return null;
+  const names = c.removed.map((x) => x.name ?? x.entity_id);
+  const without = names.length === 1
+    ? `${names[0]}, the past show this match draws on most`
+    : `${names.join(' and ')} (with the past show this match draws on most)`;
+  return c.in_top
+    ? `Checked without ${without}: ${act.name} still ranks ${c.rank_without} of ${c.of}.`
+    : `Checked without ${without}: ${act.name} drops out of the top ${c.of}, so this pick rests on that show.`;
+}
+
+function renderResult(r, { focus = true } = {}) {
   state.result = r;
   setBadges(r.mode?.agent, r.mode?.qloo, r.mode?.recorded_at);
   for (const li of $('steps').children) li.className = 'done';
+  if (r.thin_signal) {
+    // The agent chose not to rank: too few of this room's past headliners were found to rank against.
+    const t = r.thin_signal;
+    showFail(
+      `${shortDay(r.night.date)}: too little to rank on`,
+      `Only ${t.found} of this room's past headliners ${t.found === 1 ? 'was' : 'were'} found in the taste graph (from ${t.shows} past shows), ` +
+        `so the Desk shows no ranking. ${t.why}`,
+      false,
+    );
+    return;
+  }
 
   $('poster-venue').textContent = r.venue ? `${r.venue.name} \u00b7 ${r.venue.locality || r.venue.city}` : '';
   $('poster-date').textContent = posterDay(r.night.date);
@@ -360,6 +456,8 @@ function renderResult(r) {
   const lineup = (r.shortlist ?? []).map((act) =>
     h('li', { class: `act act-${act.rank}` },
       h('span', { class: 'act-name' }, act.name ?? 'Unnamed act'),
+      playedLine(act.played) ? h('p', { class: 'act-played' }, playedLine(act.played)) : null,
+      checkLine(act) ? h('p', { class: 'act-check' }, checkLine(act)) : null,
       h('p', { class: 'act-why' }, act.why,
         ' ',
         h('button', {
@@ -399,7 +497,7 @@ function renderResult(r) {
   note.textContent = fb.length ? `Ran as the ${fb.at(-1).used} because ${FALLBACK_WORDS[fb.at(-1).reason] ?? fb.at(-1).reason}.` : '';
 
   show('poster');
-  $('poster').focus?.();
+  if (focus) $('poster').focus?.();
 }
 
 // ---------- offer note ----------
@@ -450,6 +548,9 @@ async function copyOffer() {
 }
 
 // ---------- why? panel ----------
+// A positive share that rounds to 0 is shown as "<1%", never as "0%".
+const sharePct = (share) => (share > 0 && Math.round(share * 100) === 0 ? '<1%' : `${Math.round(share * 100)}%`);
+
 function contributionBars(contribs) {
   const rows = contribs.slice(0, 8);
   const rowH = 36;
@@ -457,7 +558,7 @@ function contributionBars(contribs) {
   const max = Math.max(...rows.map((c) => c.share), 0.0001);
   rows.forEach((c, i) => {
     const y = i * rowH;
-    const pct = `${Math.round(c.share * 100)}%`;
+    const pct = sharePct(c.share);
     svg.append(
       s('text', { x: 0, y: y + 13, class: 'bar-label' }, c.name ?? c.entity_id),
       s('text', { x: 320, y: y + 13, class: 'bar-value', 'text-anchor': 'end' }, pct),
@@ -465,7 +566,7 @@ function contributionBars(contribs) {
       s('rect', { x: 0, y: y + 19, width: Math.max(2, (c.share / max) * 320), height: 9, rx: 2, class: 'bar-fill' }),
     );
   });
-  const list = h('ul', { class: 'sr-only' }, rows.map((c) => h('li', {}, `${c.name}: ${Math.round(c.share * 100)}%`)));
+  const list = h('ul', { class: 'sr-only' }, rows.map((c) => h('li', {}, `${c.name}: ${sharePct(c.share)}`)));
   return [svg, list];
 }
 
@@ -533,6 +634,9 @@ function renderPool(r) {
     const c = r.signal.counts ?? {};
     out.push(h('p', {}, `This room's crowd is read from its own past program: ${c.shows ?? '?'} shows, ${r.signal.size} acts found in the taste graph.`));
   }
+  // On a replay the answer was given by whoever planned the night when the run was recorded, not by this viewer.
+  const told = r.mode?.agent === 'recorded' ? 'When this run was recorded, the Desk was told' : 'You told the Desk';
+  for (const a of r.answers ?? []) out.push(h('p', {}, `${told} which artist "${a.name}" was: ${a.picked ?? 'none of the matches'}.`));
   out.push(h('p', { class: 'hint' }, 'Sizing uses a popularity cap: a rough stand-in for draw; we have no ticket data.'));
   if (r.llm) out.push(h('p', { class: 'hint' }, `Claude: ${r.llm.model}, ${r.llm.turns} turns.`));
   $('why-pool').replaceChildren(...out);
@@ -566,7 +670,11 @@ function openWhy(entityId, opener, focusRow) {
   renderChips(r);
   renderAlsoEvidence(r, focusRow);
   renderPool(r);
-  $('why-calls').replaceChildren(callsTable(r.calls));
+  $('why-calls').replaceChildren(
+    ...(r.mode?.agent === 'recorded'
+      ? [h('p', { class: 'hint' }, `Recorded ${r.mode.recorded_at ? fullDate(r.mode.recorded_at) : ''}: these requests were made when the run was saved; none is sent now.`)]
+      : []),
+    callsTable(r.calls));
   const left = (r.fallbacks ?? []).filter((f) => !isAgentFallback(f));
   $('why-left').hidden = !left.length;
   $('why-left-list').replaceChildren(...left.map((f) => h('li', {}, `${f.step}: ${f.reason} (${f.used})`)));
@@ -598,6 +706,11 @@ async function toggleShow(id) {
     return;
   }
   const seq = ++state.ablateSeq;
+  if (qlooOff()) {
+    out.textContent = 'Switching a show off ranks the pool again through Qloo, which is not connected on this server. The card above is the recorded run.';
+    list.replaceChildren();
+    return;
+  }
   out.textContent = 'Ranking again without those shows';
   try {
     const res = await fetch('/api/ablate', {
@@ -609,7 +722,10 @@ async function toggleShow(id) {
     if (seq !== state.ablateSeq) return;
     if (!res.ok) throw new Error(body.error || `the server answered ${res.status}`);
     const before = new Set((state.result.shortlist ?? []).map((a) => a.entity_id));
-    out.textContent = `${body.changed} of ${body.of} changed`;
+    const rec = state.result.mode?.agent === 'recorded' ? state.result.mode : null;
+    // On a recorded card the re-rank is made now, not from the recording, and says so.
+    out.textContent = `${body.changed} of ${body.of} changed` +
+      (rec ? ` in a ranking made now; the card above is the recorded run${rec.recorded_at ? ` from ${fullDate(rec.recorded_at)}` : ''}` : '');
     list.replaceChildren(
       ...(body.shortlist ?? []).map((a) =>
         h('li', { class: before.has(a.entity_id) ? '' : 'new' }, a.name ?? a.entity_id, before.has(a.entity_id) ? '' : h('span', { class: 'tag' }, 'new'))),
@@ -680,7 +796,7 @@ const RANKER_WORDS = {
 // ---------- start ----------
 async function start() {
   $('strip').addEventListener('keydown', onStripKey);
-  $('retry').addEventListener('click', () => state.date && pickNight(state.date));
+  $('retry').addEventListener('click', () => state.date && pickNight(state.date, state.answers));
   $('draft-offer').addEventListener('click', () => openOffer());
   $('offer-act').addEventListener('change', (e) => fillOffer(e.currentTarget.value));
   $('offer-copy').addEventListener('click', copyOffer);
@@ -694,7 +810,8 @@ async function start() {
 
   try {
     state.health = await getJSON('/api/health');
-    setBadges(state.health.agent, state.health.qloo);
+    state.recorded = (await getJSON('/api/recorded').catch(() => ({}))).runs ?? [];
+    idleBadges();
   } catch {
     setBadges(null, null);
     $('badge-agent').textContent = 'Agent: server not reachable';
@@ -719,9 +836,27 @@ async function start() {
   }
   select.replaceChildren(...venues.map((v) => h('option', { value: v.id }, v.name)));
   select.disabled = venues.length < 2;
-  const first = venues.find((v) => v.id === DEFAULT_VENUE) ?? venues[0];
+  // A recorded live run for a listed room opens on first load, with no click (the default room's first, if it has one).
+  const runs = state.recorded.filter((x) => !x.thin && venues.some((v) => v.id === x.venue_id));
+  const run = runs.find((x) => x.venue_id === DEFAULT_VENUE) ?? runs[0];
+  const first = venues.find((v) => v.id === (run?.venue_id ?? DEFAULT_VENUE)) ?? venues[0];
   select.value = first.id;
   await loadCalendar(first.id);
+  if (run && state.calendar && state.venueId === run.venue_id && !state.date) await openRecorded(run);
+}
+
+/** Show a recorded run as the night's card (GET, so no Claude or Qloo call is made in any mode). */
+async function openRecorded(run) {
+  state.date = run.date;
+  markPicked(run.date);
+  try {
+    const r = await getJSON(`/api/recorded/${encodeURIComponent(run.venue_id)}/${encodeURIComponent(run.date)}`);
+    if (state.venueId !== run.venue_id || state.date !== run.date || state.result) return;
+    $('steps').replaceChildren(...(r.steps ?? []).map((label) => h('li', { class: 'done' }, label)));
+    renderResult(r, { focus: false });
+  } catch {
+    if (state.venueId === run.venue_id && state.date === run.date && !state.result) resetNight();
+  }
 }
 
 start();

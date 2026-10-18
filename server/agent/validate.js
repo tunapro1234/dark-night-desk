@@ -48,6 +48,42 @@ function textsOf(output) {
   return out;
 }
 
+/** One error per number in the output's text (or a top-level numeric field) that no tool output carries. */
+function unsourcedNumbers(output, toolOutputs) {
+  const errors = [];
+  const numbers = collectNumbers(toolOutputs);
+  const sourced = (n) => [...numbers].some((m) => close(m, n));
+  for (const { at, text } of textsOf(output)) {
+    for (const raw of numbersIn(text)) {
+      const pct = raw.endsWith('%');
+      const n = Number(raw.replace('%', ''));
+      if (sourced(n) || (pct && sourced(n / 100))) continue;
+      errors.push(`${at}: the number "${raw}" does not come from any tool output`);
+    }
+  }
+  for (const [k, v] of Object.entries(output)) {
+    if (k !== 'shortlist' && typeof v === 'number' && !sourced(v)) errors.push(`${k}: the number ${v} does not come from any tool output`);
+  }
+  return errors;
+}
+
+/**
+ * The thin-signal answer (report_thin_signal): allowed only when resolve_entities ran and found fewer past headliners
+ * than `thinBelow`; its sentences follow the same number rule as a plan.
+ * @param {{ why?: string }} output
+ * @param {unknown[]} toolOutputs
+ * @param {{ signalSize?: number, thinBelow: number }} opts `signalSize` is undefined before resolve_entities ran
+ */
+export function validateThinSignal(output, toolOutputs, { signalSize, thinBelow }) {
+  if (!output || typeof output !== 'object') return { ok: false, errors: ['output is not an object'] };
+  const errors = [];
+  if (signalSize === undefined) errors.push('call resolve_entities first: a thin signal is read from its output');
+  else if (signalSize >= thinBelow) errors.push(`the signal is not thin: ${signalSize} past headliners were found; rank them and call submit_plan`);
+  if (typeof output.why !== 'string' || !output.why.trim()) errors.push('why must be one or two sentences to the booker');
+  errors.push(...unsourcedNumbers(output, toolOutputs));
+  return { ok: errors.length === 0, errors };
+}
+
 /**
  * @param {{ shortlist?: { entity_id: string, why?: string }[], offer_note?: { subject?: string, body?: string }, [k: string]: unknown }} output
  * @param {unknown[]} toolOutputs the JSON each tool returned in this session (outputs only, never the agent's own inputs)
@@ -77,19 +113,7 @@ export function validateAgentOutput(output, toolOutputs, { shortlistSize, allowe
     errors.push(`shortlist must have exactly ${shortlistSize} acts (got ${shortlist.length})`);
   }
 
-  const numbers = collectNumbers(toolOutputs);
-  const sourced = (n) => [...numbers].some((m) => close(m, n));
-  for (const { at, text } of textsOf(output)) {
-    for (const raw of numbersIn(text)) {
-      const pct = raw.endsWith('%');
-      const n = Number(raw.replace('%', ''));
-      if (sourced(n) || (pct && sourced(n / 100))) continue;
-      errors.push(`${at}: the number "${raw}" does not come from any tool output`);
-    }
-  }
-  for (const [k, v] of Object.entries(output)) {
-    if (k !== 'shortlist' && typeof v === 'number' && !sourced(v)) errors.push(`${k}: the number ${v} does not come from any tool output`);
-  }
+  errors.push(...unsourcedNumbers(output, toolOutputs));
 
   const note = output.offer_note;
   if (note !== undefined) {

@@ -12,6 +12,25 @@ export const shortlistSizeFor = (session) => Math.min(SHORTLIST_SIZE, rankedIds(
 const callShape = (c) => ({ endpoint: c.endpoint, params_masked: c.params_masked, ms: c.ms, cache: c.cache });
 
 /**
+ * The ablate checks the agent ran, per act: an act gets a check when the past show that carries most of its match (the
+ * first of its contributions) was switched off. Taken from the ablate output only; the latest check wins.
+ * @returns {Map<string, { removed: { entity_id: string, name: string | null }[], in_top: boolean, rank_without: number | null, of: number }>}
+ */
+function ablateChecks(session, contributionsOf) {
+  const out = new Map();
+  for (const { tool, output } of session.log) {
+    if (tool !== 'ablate' || !output || output.error || !output.removed?.length) continue;
+    const removed = new Set(output.removed.map((x) => x.entity_id));
+    for (const [id, contribs] of contributionsOf) {
+      if (!contribs[0] || !removed.has(contribs[0].entity_id)) continue;
+      const still = output.shortlist.find((x) => x.entity_id === id);
+      out.set(id, { removed: output.removed, in_top: Boolean(still), rank_without: still?.rank ?? null, of: output.of });
+    }
+  }
+  return out;
+}
+
+/**
  * @param {ReturnType<import('./tools.js').createSession>} session
  * @param {{ shortlist: { entity_id: string, why?: string }[], also_loves?: { type: string, category: string }[],
  *   offer_note?: { entity_id?: string, subject?: string, body?: string } }} final
@@ -21,7 +40,12 @@ const callShape = (c) => ({ endpoint: c.endpoint, params_masked: c.params_masked
 export function assembleResult(session, final, mode, extra = {}) {
   const ranking = new Map((session.state.ranking?.results ?? []).map((x) => [x.entity_id, x]));
   const explained = session.state.explained ?? {};
-  const shortlist = final.shortlist.map((item, i) => {
+  // build_pool's own record of where and when each act played the city (the reason it is in the pool).
+  const inPool = new Map((session.state.pool?.pool ?? []).map((p) => [p.entity_id, p.played ?? []]));
+  const roomName = new Map((session.venues ?? []).map((v) => [v.id, v.name]));
+  const items = final.shortlist ?? [];
+  const checks = ablateChecks(session, items.map((item) => [item.entity_id, explained[item.entity_id]?.contributions ?? []]));
+  const shortlist = items.map((item, i) => {
     const r = ranking.get(item.entity_id);
     const ex = explained[item.entity_id];
     return {
@@ -30,7 +54,9 @@ export function assembleResult(session, final, mode, extra = {}) {
       rank: i + 1,
       pool_rank: r?.rank ?? null,
       why: item.why || ex?.suggested_why || '',
+      played: (inPool.get(item.entity_id) ?? []).map((p) => ({ venue_id: p.venue_id, venue: roomName.get(p.venue_id) ?? null, date: p.date })),
       evidence: { contributions: ex?.contributions ?? [], method: ex?.method ?? 'leave-one-out' },
+      ...(checks.has(item.entity_id) ? { check: checks.get(item.entity_id) } : {}),
     };
   });
 
@@ -56,6 +82,7 @@ export function assembleResult(session, final, mode, extra = {}) {
   }).filter(Boolean);
 
   const pool = session.state.pool;
+  const signal = session.state.signal;
   return {
     mode,
     venue: calendar?.venue ?? null,
@@ -65,7 +92,10 @@ export function assembleResult(session, final, mode, extra = {}) {
     offer_note,
     offer_notes,
     pool: pool ? { city: pool.city, window: pool.window, rooms: pool.rooms, counts: pool.counts, method: session.state.ranking?.method } : null,
-    signal: session.state.signal ? { size: session.state.signal.signal.length, counts: session.state.signal.counts } : null,
+    signal: signal ? { size: signal.signal.length, counts: signal.counts } : null,
+    ...(signal?.answered?.length ? { answers: signal.answered } : {}),
+    // The agent's thin-signal answer: no shortlist; the counts come from resolve_entities, the sentence from the agent.
+    ...(final.thin_signal ? { thin_signal: { found: signal?.signal.length ?? 0, shows: signal?.counts.shows ?? 0, why: final.thin_signal.why } } : {}),
     steps: [...session.steps],
     calls: session.calls.map(callShape),
     fallbacks: [...session.fallbacks],
