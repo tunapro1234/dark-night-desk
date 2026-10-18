@@ -1,4 +1,6 @@
-# Back-test source notes (compiled by haiku-worker)
+# Back-test source notes (compiled by an AI worker agent)
+
+The `compiled_by` value in `shows.csv` is `ai-worker`; it was renamed on 19 Oct 2026 from a label that named the model. No other field and no row changed.
 
 Scope: public pages only, for the pre-registered back-test in `BACKTEST.md`. Nothing here is a ranking result. No Qloo or LLM call was made.
 Dates in the CSV are local show dates as printed. All fetch times are UTC.
