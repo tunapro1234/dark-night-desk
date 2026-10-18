@@ -1,0 +1,1095 @@
+{
+  "id": "s2-chi-reggies-musicjoint",
+  "name": "Music Joint (Reggies Chicago)",
+  "city": "Chicago",
+  "capacity_band": "up to 110",
+  "calendar_source_url": "https://www.reggieslive.com/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-02",
+      "headliner": "White Sox Opening Day Bash",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "Vanda",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "Zakhoury",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "Zach Mama",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "Fluffy",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-06",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260406172139id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-07",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260406172139id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-07",
+      "headliner": "Tipsy Tuesday w/ Mr. Blotto",
+      "source_url": "https://web.archive.org/web/20260406172139id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "Tejon Street Corner Thieves",
+      "source_url": "https://web.archive.org/web/20260406172139id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "McLuhan",
+      "source_url": "https://web.archive.org/web/20260406172139id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "Friendship Commanders",
+      "source_url": "https://web.archive.org/web/20260406172139id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "Ramblewood w/ Mikey Harms",
+      "source_url": "https://web.archive.org/web/20260406172139id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-12",
+      "headliner": "High Desert Queen",
+      "source_url": "https://web.archive.org/web/20260406172139id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-13",
+      "headliner": "Matt Miller",
+      "source_url": "https://web.archive.org/web/20260406172139id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260414180711id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "Tipsy Tuesday w/ Mr. Blotto",
+      "source_url": "https://web.archive.org/web/20260414180711id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "One With The Riverbed",
+      "source_url": "https://web.archive.org/web/20260414180711id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "Dead Pink Radio",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "Echo Pilot",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "Temptress",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-19",
+      "headliner": "The Hooten Hallers",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-20",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "Tipsy Tuesday w/ Mr. Blotto",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "Realms Of Death",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "Plastico",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "Matt Keen & His Band",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "The Handsome Devilz (tribute to The Cure)",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "Mr. Underhill",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-27",
+      "headliner": "Jazz Club Experience 2026",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-27",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "Tipsy Tuesday w/ Mr. Blotto",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-29",
+      "headliner": "Necroticgorebeast",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "\u201cJIM RYAN\u2019S CLASSIC ALBUMS NIGHT\u201d",
+      "source_url": "https://web.archive.org/web/20260417005408id_/https://reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "Legions of Metal Fest 2026",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "The Feds",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "Legions of Metal Fest 2026",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "Legions Of Metal: End Of Fest After Party Free Show",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "Sunday Night Live: Javy Iman + Translee",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-04",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-05",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-05",
+      "headliner": "Tipsy Tuesday w/ Mr. Blotto",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "Curse Mackey",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "Geddy Trezak Band",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "Black Eyed Vermillion",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "Go Hang",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "To Violently Vomit",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-11",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-12",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-12",
+      "headliner": "Tipsy Tuesday w/ Mr. Blotto",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-13",
+      "headliner": "Front Porch",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "Stop the Presses",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "Crosstown Classic Party",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "Davy Knowles",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "Dark Lord Day Bus Shuttle",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "Crosstown Classic Party",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "Ossuary",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "Crosstown Classic Party",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "Reggies Annual Crawfish Boil",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "Bellends",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-18",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "Tipsy Tuesday w/ Mr. Blotto",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-20",
+      "headliner": "Final Gasp",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "Leon Lewis-Nicol",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "Uncle Sexy and Friends",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "The Bishop\u2019s Daredevil Stunt Club",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "Johnny Kilroy",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-25",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-26",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "Ryan Chrys & The Rough Cuts",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "\u201cJIM RYAN\u2019S CLASSIC ALBUMS NIGHT\u201d",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "Land Of Linkin",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "Gozu",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-31",
+      "headliner": "Oxygen Destroyer",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-01",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-02",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-02",
+      "headliner": "Unholy Altar",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-03",
+      "headliner": "David Anthony Marshall",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "Chicago Blues Fest Pre-Party",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "Smiley Tillmon Band (Free Sidewalk Show)",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "12th Annual Bluesfest AfterParty with Chicago Blues SuperSession \u2013 Shack",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "Brother John Kattke (Free Sidewalk Show)",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "Derek Caruso & John Chorney (Free Sidewalk Show)",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "Stephen Hull Band",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-07",
+      "headliner": "Dave Weld & The Imperial Flames + Dave Herrero",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-07",
+      "headliner": "Smiley Tillmon Band (Free Sidewalk Show)",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-07",
+      "headliner": "12th Annual Bluesfest AfterParty End Of Fest ProJam",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-08",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-09",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-09",
+      "headliner": "Ape Vermin",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "Brady Matteson",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "Pleasantries",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "Harlem Hayfield",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "Wraith",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-14",
+      "headliner": "Fallen Condition",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-15",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-16",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-16",
+      "headliner": "Gottlieb",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-17",
+      "headliner": "Moe\u2019s N Co",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "King Falcon + Cinema Stereo",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-19",
+      "headliner": "Parker Barrow",
+      "source_url": "https://www.reggieslive.com/show/parker-barrow-2/"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "CHICAGO AIR GUITAR COMPETITION",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "Sunday Night Live: Soultribe",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-22",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-23",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-23",
+      "headliner": "Chris Trani",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-24",
+      "headliner": "UltraBomb",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-25",
+      "headliner": "\u201cJIM RYAN\u2019S CLASSIC ALBUMS NIGHT\u201d",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "Radkey",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "School Of Rock Chicago",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "Shadow Of Jupiter",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "Dead Pink Radio",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-29",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-30",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-30",
+      "headliner": "Janky Limo",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-01",
+      "headliner": "RIGID",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-02",
+      "headliner": "Goetia",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-03",
+      "headliner": "Total Chaos",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-06",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-07",
+      "headliner": "Beat The Meatles",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-08",
+      "headliner": "Varsity Dropout",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-09",
+      "headliner": "Dead Freddie",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "Hippies & Cowboys",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "Felicity",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-12",
+      "headliner": "Kontusion",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-13",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-14",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-14",
+      "headliner": "Beat The Meatles",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-15",
+      "headliner": "37 Houses",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "Dreamline",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "Rundown",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "deFrance",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "Open Mic Comedy",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "Jack Jones",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-19",
+      "headliner": "Low Water Bridge",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-20",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "Beat The Meatles",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-22",
+      "headliner": "Maiden Chicago",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-22",
+      "headliner": "Barry & the Fountains",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-23",
+      "headliner": "Bastian Steven",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "Junius",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "Paralysis",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "JC and the Reup Band",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-27",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "Beat The Meatles",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-29",
+      "headliner": "Lord Buffalo",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "\u201cJIM RYAN\u2019S CLASSIC ALBUMS NIGHT\u201d",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "Basement Collective",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "To Violently Vomit",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-08-02",
+      "headliner": "Hickoids",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-08-03",
+      "headliner": "Hall Of The Elders",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-08-04",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-08-04",
+      "headliner": "Zoofunkyou",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-08-05",
+      "headliner": "Gelatinous Cube And The Ambiguous Wrecks",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "Westhead",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "Cancerslug",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-08-10",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-11",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-11",
+      "headliner": "Zoofunkyou",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "Yes Ma\u2019am + Lightnin\u2019 Luke",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "Mutilation Barbecue",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "Darksoft",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "Plain Suite",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-17",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "Zoofunkyou",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-19",
+      "headliner": "Raspberry Pie",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "Unvirgin Mary",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "The Murder Junkies",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "Book Of Wyrms",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "Tongan Death Grip",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-24",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-25",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-25",
+      "headliner": "Zoofunkyou",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-26",
+      "headliner": "Clovers Daughter",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "\u201cJIM RYAN\u2019S CLASSIC ALBUMS NIGHT\u201d",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "NewClearFusion",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "Rose And The Thorns",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-30",
+      "headliner": "School Of Rock Chicago",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-30",
+      "headliner": "Handsome Jack",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-31",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "Dead Pink Radio",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "Silver Abuse",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "Psython",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "Sababa 5",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "October Noir",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-07",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-08",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-09-08",
+      "headliner": "Reggies 19th Anniversary Bash",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "Added Color",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "And I, You",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "Condition Critical",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "Joey Harkum",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-14",
+      "headliner": "DIRTY SOUND MAGNET",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "Dead Pink Radio",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "Tipsy Tuesday w/ Mr. Blotto",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "Kat and the Hurricane",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Slap Bunt",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "Castle",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Rigometrics",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-20",
+      "headliner": "Slug Nudger",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-21",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "Tipsy Tuesday w/ Mr. Blotto",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "Left Lane Cruiser",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "The Inspector Cluzo",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-09-28",
+      "headliner": "Zack\u2019s Open Mic",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "South Loop Stand Up",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "Tipsy Tuesday w/ Mr. Blotto",
+      "source_url": "https://web.archive.org/web/20260712180958id_/https://www.reggieslive.com/venue/music-joint/"
+    },
+    {
+      "date": "2026-09-30",
+      "headliner": "Dr. Goldfoot & The Bikini Machine",
+      "source_url": "https://web.archive.org/web/20260930211424id_/https://www.reggieslive.com/"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "chi-reggies-musicjoint",
+  "imported_by": "scripts/import-venues.js"
+}

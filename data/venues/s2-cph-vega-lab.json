@@ -1,0 +1,35 @@
+{
+  "id": "s2-cph-vega-lab",
+  "name": "VEGA LAB (VEGA)",
+  "city": "Copenhagen",
+  "capacity_band": "not published",
+  "calendar_source_url": "https://vega.dk/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-09-18",
+      "headliner": "Intimate Immensity",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Intimate Immensity",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-21",
+      "headliner": "Intimate Immensity",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "Intimate Immensity",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "cph-vega-lab",
+  "imported_by": "scripts/import-venues.js"
+}

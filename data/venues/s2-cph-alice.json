@@ -1,0 +1,557 @@
+{
+  "id": "s2-cph-alice",
+  "name": "ALICE",
+  "city": "Copenhagen",
+  "capacity_band": "not published",
+  "calendar_source_url": "https://alicecph.com/",
+  "read_at": "2026-10-19T00:55:15+02:00",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-10-20",
+      "headliner": "Ava Rocha",
+      "source_url": "https://alicecph.com/event/ava-rocha-br/"
+    },
+    {
+      "date": "2026-10-22",
+      "headliner": "weed420",
+      "source_url": "https://alicecph.com/event/weed420-ve/"
+    },
+    {
+      "date": "2026-10-23",
+      "headliner": "Kiss Facility",
+      "source_url": "https://alicecph.com/event/kiss-facility-fr/"
+    },
+    {
+      "date": "2026-10-24",
+      "headliner": "Sami Galbi",
+      "source_url": "https://alicecph.com/event/sami-galbi-ch-ma/"
+    },
+    {
+      "date": "2026-10-25",
+      "headliner": "Elin Brimheim Heinesen",
+      "source_url": "https://alicecph.com/event/kvoeldseta-med-elin-brimheim-heinesen-fo/"
+    },
+    {
+      "date": "2026-10-26",
+      "headliner": "Frente Cumbiero",
+      "source_url": "https://alicecph.com/event/frente-cumbiero-co/"
+    },
+    {
+      "date": "2026-10-27",
+      "headliner": "Imarhan",
+      "source_url": "https://alicecph.com/event/imarhan-dz/"
+    },
+    {
+      "date": "2026-10-28",
+      "headliner": "Guy Davis",
+      "source_url": "https://alicecph.com/event/guy-davis-us/"
+    },
+    {
+      "date": "2026-10-29",
+      "headliner": "Lido Pimienta",
+      "source_url": "https://alicecph.com/event/lido-pimienta-ca-co/"
+    },
+    {
+      "date": "2026-10-31",
+      "headliner": "Songhoy Blues",
+      "source_url": "https://alicecph.com/event/songhoy-blues-ml/"
+    },
+    {
+      "date": "2026-11-01",
+      "headliner": "BaBa ZuLa",
+      "source_url": "https://alicecph.com/event/baba-zula-tr-2/"
+    },
+    {
+      "date": "2026-11-02",
+      "headliner": "Yerai Cort\u00e9s",
+      "source_url": "https://alicecph.com/event/yerai-cortes-es/"
+    },
+    {
+      "date": "2026-11-03",
+      "headliner": "Yerai Cort\u00e9s",
+      "source_url": "https://alicecph.com/event/yerai-cortes-es-ekstra/"
+    },
+    {
+      "date": "2026-11-04",
+      "headliner": "L\u00edvia Mattos",
+      "source_url": "https://alicecph.com/event/livia-mattos-br/"
+    },
+    {
+      "date": "2026-11-05",
+      "headliner": "Mazaher",
+      "source_url": "https://alicecph.com/event/mazaher-eg/"
+    },
+    {
+      "date": "2026-11-06",
+      "headliner": "A.CHAL",
+      "source_url": "https://alicecph.com/event/a-chal-pe/"
+    },
+    {
+      "date": "2026-11-07",
+      "headliner": "PAYDAR",
+      "source_url": "https://alicecph.com/event/paydar-ir-dk-heyvan-ep-release-naghib-shanbehzadeh-live-ir-fr/"
+    },
+    {
+      "date": "2026-11-10",
+      "headliner": "aja monet",
+      "source_url": "https://alicecph.com/event/aja-monet-us/"
+    },
+    {
+      "date": "2026-11-11",
+      "headliner": "Moor Mother",
+      "source_url": "https://alicecph.com/event/moor-mother-us-2/"
+    },
+    {
+      "date": "2026-11-13",
+      "headliner": "Katarina Barruk",
+      "source_url": "https://alicecph.com/event/katarina-barruk-sa/"
+    },
+    {
+      "date": "2026-11-14",
+      "headliner": "Ana Roxanne",
+      "source_url": "https://alicecph.com/event/ana-roxanne-us-hasfeldt-dk/"
+    },
+    {
+      "date": "2026-11-15",
+      "headliner": "Nubiyan Twist",
+      "source_url": "https://alicecph.com/event/nubiyan-twist-uk-3/"
+    },
+    {
+      "date": "2026-11-19",
+      "headliner": "Aunty Rayzor",
+      "source_url": "https://alicecph.com/event/aunty-rayzor-ng/"
+    },
+    {
+      "date": "2026-11-20",
+      "headliner": "La T\u00e8ne",
+      "source_url": "https://alicecph.com/event/la-tene-fr-ch/"
+    },
+    {
+      "date": "2026-11-21",
+      "headliner": "Bby Eco",
+      "source_url": "https://alicecph.com/event/360-evening-bby-eco-nl-jazz-lambaux-fr-h4rdcrushx-fr/"
+    },
+    {
+      "date": "2026-11-22",
+      "headliner": "Samida",
+      "source_url": "https://alicecph.com/event/samida-tr-go/"
+    },
+    {
+      "date": "2026-11-27",
+      "headliner": "Landless",
+      "source_url": "https://alicecph.com/event/landless-ie/"
+    },
+    {
+      "date": "2026-11-28",
+      "headliner": "Amelie Duchow",
+      "source_url": "https://alicecph.com/event/raster-30-years-anniversary-amelie-duchow-de-byetone-de-xuri-john-clewort-dk-gabor-lazar-hu/"
+    },
+    {
+      "date": "2026-11-29",
+      "headliner": "SADA Band",
+      "source_url": "https://alicecph.com/event/sada-band-a-journey-through-arabic-sufi-music-sy-ps-jo/"
+    },
+    {
+      "date": "2026-12-02",
+      "headliner": "Turnovermoth",
+      "source_url": "https://alicecph.com/event/alice-tunes-in-turnovermoth-dk-no-mylder-dk-antonia-dix-dk-libertiner-dk/"
+    },
+    {
+      "date": "2026-12-05",
+      "headliner": "Trio Terrea",
+      "source_url": "https://alicecph.com/event/trio-terrea-au-ir-koelster-x-akela-dk/"
+    },
+    {
+      "date": "2026-12-09",
+      "headliner": "Shabjdeed & Al Nather",
+      "source_url": "https://alicecph.com/event/shabjdeed-al-nather-ps/"
+    },
+    {
+      "date": "2027-02-26",
+      "headliner": "Total Hip Replacement & Anyankofo",
+      "source_url": "https://alicecph.com/event/total-hip-replacement-anyankofo-dk-gh/"
+    },
+    {
+      "date": "2027-02-27",
+      "headliner": "Dengue Dengue Dengue",
+      "source_url": "https://alicecph.com/event/dengue-dengue-dengue-pe/"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "ALICE TUNES IN: gab_i (DK) + Rasmus Weirup (DK) + Folker (DK) + Miabella (DK)",
+      "source_url": "https://alicecph.com/event/alice-tunes-in-gab_i-nl-rasmus-weirup-dk-folker-dk-miabella-dk/"
+    },
+    {
+      "date": "2026-04-07",
+      "headliner": "Park Jiha (KR)",
+      "source_url": "https://alicecph.com/event/park-jiha-kr/"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "Mayssa Jallad (LB)",
+      "source_url": "https://alicecph.com/event/mayssa-jallad-trio-lb/"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "Juana Molina (AR)",
+      "source_url": "https://alicecph.com/event/juana-molina-ar-2/"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "DJ Travella (TZ) + Yaqub (SO/DK)",
+      "source_url": "https://alicecph.com/event/dj-travella-tz/"
+    },
+    {
+      "date": "2026-04-12",
+      "headliner": "Crack Cloud (CA)",
+      "source_url": "https://alicecph.com/event/crack-cloud-ca/"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "ABADIR & Nicol\u00f2 Cervello: Kitbashing (EG/IT)",
+      "source_url": "https://alicecph.com/event/abadir-nicolo-cervello-kitbashing-eg-it/"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "Maria Arnal (ES) + Karen Juhl (DK)",
+      "source_url": "https://alicecph.com/event/maria-arnal-es/"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "Sara Persico (IT) + SANAM (LB)",
+      "source_url": "https://alicecph.com/event/sara-persico-it/"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "Maggie Nicols (SCT) + Saltmother (DK)",
+      "source_url": "https://alicecph.com/event/maggie-nicols-sct-saltmother-dk/"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "Det Blev Handgem\u00e4ng (SE)",
+      "source_url": "https://alicecph.com/event/det-blev-handgemang-se/"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "DakhaBrakha (UA)",
+      "source_url": "https://alicecph.com/event/dakhabrakha-ua/"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "Maja Kj\u00e6r si Orkester (DK) + Fliid/McKenzie (DK/NO/AUS)",
+      "source_url": "https://alicecph.com/event/maja-kjaer-si-orkester-dk-fliid-mckenzie-dk-no-aus/"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "Ida Urd & Ingri H\u00f8yland (DK/NO)",
+      "source_url": "https://alicecph.com/event/ida-urd-ingri-hoeyland-dk-no/"
+    },
+    {
+      "date": "2026-04-29",
+      "headliner": "Rebe (ES) + Osy Cotton",
+      "source_url": "https://alicecph.com/event/rebe-es-osy-cotton/"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "Cole Pulice (US)",
+      "source_url": "https://alicecph.com/event/cole-pulice-us/"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "Acid Mothers Temple (JP) + V\u00cdZ (HU)",
+      "source_url": "https://alicecph.com/event/acid-mothers-temple-jp-viz-hu/"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "Otim Alpha & Leo PaLayeng (UG)",
+      "source_url": "https://alicecph.com/event/otim-alpha-leo-palayang-ug/"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "Jeong Lim Yang (KR/US)",
+      "source_url": "https://alicecph.com/event/jeong-lim-yang-kr-us/"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "DJ Diaki (ML)",
+      "source_url": "https://alicecph.com/event/dj-diaki-ml/"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "Athelas Sinfonietta x ALICE: Electric Contemporary #2",
+      "source_url": "https://alicecph.com/event/athelas-sinfionetta-x-alice-electric-contemporary-2/"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "Alpha Maid (UK)",
+      "source_url": "https://alicecph.com/event/alpha-maid-uk/"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "Lua de Santana (BR/ES) + suziethecockroach (BR)",
+      "source_url": "https://alicecph.com/event/lua-de-santana-es-br/"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "Lucrecia Dalt (CO)",
+      "source_url": "https://alicecph.com/event/lucrecia-dalt-co-2/"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "The Dwarfs of East Agouza (EG)",
+      "source_url": "https://alicecph.com/event/the-dwarfs-of-east-agouza-eg/"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "Z\u00e9 Ibarra (BR) + Leonor Arnaut (PT)",
+      "source_url": "https://alicecph.com/event/ze-ibarra-br/"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "Gidiki (GR)",
+      "source_url": "https://alicecph.com/event/gidiki-gr/"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "\u00c1ngeles Toledano (ES)",
+      "source_url": "https://alicecph.com/event/angeles-toledano-es/"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "BCUC (ZA)",
+      "source_url": "https://alicecph.com/event/bcuc-za-2/"
+    },
+    {
+      "date": "2026-05-31",
+      "headliner": "L\u2019arann\u00e0 (ES)",
+      "source_url": "https://alicecph.com/event/laranna-es/"
+    },
+    {
+      "date": "2026-06-02",
+      "headliner": "ALICE TUNES IN: AK Cinder x 1aurenrossetti (DK/SE) + SoundOkapi (DK) + olufappelhansen (DK) + Cortes x E.W.E. (DK/INT)",
+      "source_url": "https://alicecph.com/event/alice-tunes-in-ak-cinder-x-1aurenrossetti-dk-se-soundokapi-dk-olufappelhansen-dk-cortes-x-e-w-e-dk-int/"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "Orkesta Mendoza (US) \u2013 SKOLEKONCERT",
+      "source_url": "https://alicecph.com/event/orkesta-mendoza-us-skolekoncert/"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "Orkesta Mendoza (US)",
+      "source_url": "https://alicecph.com/event/orkesta-mendoza-us/"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "Juana Aguirre (AR) + juni (IT)",
+      "source_url": "https://alicecph.com/event/juana-aguirre-ar-juni-it/"
+    },
+    {
+      "date": "2026-06-07",
+      "headliner": "R\u0259hman M\u0259mm\u0259dli (AZ)",
+      "source_url": "https://alicecph.com/event/r%c9%99hman-m%c9%99mm%c9%99dli-az/"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "KLANG Festival 2026 \u2013 Wassermann/Anker/Parkins: KLINGGGG",
+      "source_url": "https://alicecph.com/event/klang-festival-2026-wassermann-anker-parkins-klingggg/"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "KLANG Festival 2026 \u2013 Jena Jang: Necrocore \u2013 Somatic Noise",
+      "source_url": "https://alicecph.com/event/klang-festival-2026-jena-jang-necrocore-somatic-noise/"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "KLANG Festival 2026 \u2013 NyKlang: Per N\u00f8rg\u00e5rd in memoriam",
+      "source_url": "https://alicecph.com/event/klang-festival-2026-nyklang-per-noergaard-in-memoriam/"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "KLANG Festival 2026 \u2013 p.e.r.s.o.n.a.l.c.l.u.t.t.e.r.: Closer to the Edge",
+      "source_url": "https://alicecph.com/event/klang-festival-2026-p-e-r-s-o-n-a-l-c-l-u-t-t-e-r-closer-to-the-edge/"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "KLANG Festival 2026 \u2013 Lauren Sarah Hayes: The Accusations That Are Confessions",
+      "source_url": "https://alicecph.com/event/klang-festival-2026-lauren-sarah-hayes-the-accusations-that-are-confessions/"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "KLANG Festival 2026 \u2013 Rhea Dally: K\u00c6R LIGHED",
+      "source_url": "https://alicecph.com/event/klang-festival-2026-rhea-dally-kaer-lighed/"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "KLANG Festival 2026 \u2013 Copenhagen Contemporary String Quartet: Unstrung",
+      "source_url": "https://alicecph.com/event/klang-festival-2026-copenhagen-contemporary-string-quartet-unstrung/"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "SPOILR x \u00d8yunn (NO/DK)",
+      "source_url": "https://alicecph.com/event/spoilr-x-oeyunn/"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "Anja Jacobsen: Variations (DK) + Mija Milovic & Ned Ferm (DK/US)",
+      "source_url": "https://alicecph.com/event/anja-jacobsen-variations/"
+    },
+    {
+      "date": "2026-07-06",
+      "headliner": "Nana Benz du Togo (TG) + Anelis Assump\u00e7\u00e3o (BR)",
+      "source_url": "https://alicecph.com/event/nana-benz-du-togo-tg/"
+    },
+    {
+      "date": "2026-07-07",
+      "headliner": "The Bad Plus \u2013 Farewell Tour 2026 (US)",
+      "source_url": "https://alicecph.com/event/the-bad-plus-farewell-tour-2026-us/"
+    },
+    {
+      "date": "2026-07-08",
+      "headliner": "\u00d8KSE (DK/SE/HT/US)",
+      "source_url": "https://alicecph.com/event/oekse-int/"
+    },
+    {
+      "date": "2026-07-09",
+      "headliner": "ADG7 (KR)",
+      "source_url": "https://alicecph.com/event/adg7-kr-2/"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "S\u00d8STRE: Lis Wessberg, Kathrine Windfeld, Michala \u00d8stergaard-Nielsen, Ida Hvid & Cecilie Strange (DK)",
+      "source_url": "https://alicecph.com/event/soestre-lis-wessberg-kathrine-windfeld-michala-oestergaard-nielsen-ida-hvid-lotte-anker/"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "Bobo & Behaja (FR/MG)",
+      "source_url": "https://alicecph.com/event/bobo-behaja-fr-mg/"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "Opening Concert: Roda de Santo (BR/PT) + DJ Carla Schack (BR/DK)",
+      "source_url": "https://alicecph.com/event/roda-de-santo-pt/"
+    },
+    {
+      "date": "2026-08-30",
+      "headliner": "St\u00f8ttearrangement for B\u00f8rnehuset i Pal\u00e6stina",
+      "source_url": "https://alicecph.com/event/stoettearrangement-for-boernehuset-i-palaestina/"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "Cinna Peyghamy (FR/IR)",
+      "source_url": "https://alicecph.com/event/cinna-peyghamy-fr-ir/"
+    },
+    {
+      "date": "2026-09-02",
+      "headliner": "ALICE TUNES IN: Danske Kvalmer (DK) + Terence Dougherty (NO) + Orestis Marantos (GR) + Sofia Cardich (AR)",
+      "source_url": "https://alicecph.com/event/alice-tunes-in-danske-kvalmer-dk-terence-dougherty-no-orestis-marantos-gr-sofia-cardich-ar-3/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "A\u00efta Mon Amour (MA) + 3Phaz (EG)",
+      "source_url": "https://alicecph.com/event/aita-mon-amour-ma/"
+    },
+    {
+      "date": "2026-09-08",
+      "headliner": "OKI (JP)",
+      "source_url": "https://alicecph.com/event/oki-jp/"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "OKI (JP) \u2013 SKOLEKONCERT",
+      "source_url": "https://alicecph.com/event/oki-jp-skolekoncert/"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "Ilan Amores (AR)",
+      "source_url": "https://alicecph.com/event/ilan-amores-ar/"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "Mike Sheridan (DK)",
+      "source_url": "https://alicecph.com/event/mike-sheridan/"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "NYX (UK)",
+      "source_url": "https://alicecph.com/event/nyx-uk/"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "Tara Clerkin Trio (UK) + plainhead (DE)",
+      "source_url": "https://alicecph.com/event/tara-clerkin-trio-uk-plainhead-de/"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "Ange Halliwell (FR)",
+      "source_url": "https://alicecph.com/event/ange-halliwell-fr/"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "Bruno Berle (BR)",
+      "source_url": "https://alicecph.com/event/bruno-berle-br-2/"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Katokye (UG)",
+      "source_url": "https://alicecph.com/event/katokye-ug/"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "Daniel Sommer / Arve Henriksen / Johannes Lundberg: Sounds & Sequences (DK/NO/SE) + Eric Chenaux (CA)",
+      "source_url": "https://alicecph.com/event/daniel-sommer-arve-henriksen-johannes-lundberg-sounds-sequences-dk-fi-se-eric-chenaux-ca/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Safety Trance (VE) + Heva Vaupel",
+      "source_url": "https://alicecph.com/event/safety-trance-ve/"
+    },
+    {
+      "date": "2026-09-23",
+      "headliner": "Sara Curruchich (GT)",
+      "source_url": "https://alicecph.com/event/sara-curruchich-gt/"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "Sara Curruchich (GT) \u2013 SKOLEKONCERT",
+      "source_url": "https://alicecph.com/event/sara-curruchich-gt-skolekoncert/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "Grito Exclamac!\u00f3n (MX) + GR\u00d3A (IS)",
+      "source_url": "https://alicecph.com/event/grito-exclamacon-mx-groa-is/"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "Circle (FI) + Janne Westerlund (FI)",
+      "source_url": "https://alicecph.com/event/circle-fi/"
+    },
+    {
+      "date": "2026-09-28",
+      "headliner": "Cantes Malditos (ES)",
+      "source_url": "https://alicecph.com/event/cantes-malditos-es/"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "Turning Tables",
+      "source_url": "https://alicecph.com/event/turning-tables/"
+    },
+    {
+      "date": "2026-09-30",
+      "headliner": "Laryssa Kim (IT/CG) + Amirtha Kidambi & Angel Deradoorian (US)",
+      "source_url": "https://alicecph.com/event/laryssa-kim-it-cg/"
+    },
+    {
+      "date": "2026-10-18",
+      "headliner": "Lagos Thugs",
+      "source_url": "https://alicecph.com/event/lagos-thugs-ng/"
+    }
+  ],
+  "listing_complete": true,
+  "listed_until": "2027-02-27",
+  "study2_venue_id": "cph-alice",
+  "imported_by": "scripts/import-venues.js"
+}

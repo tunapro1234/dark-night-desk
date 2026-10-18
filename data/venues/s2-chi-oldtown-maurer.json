@@ -1,0 +1,462 @@
+{
+  "id": "s2-chi-oldtown-maurer",
+  "name": "Maurer Hall (Old Town School of Folk Music)",
+  "city": "Chicago",
+  "capacity_band": "up to 430",
+  "calendar_source_url": "https://www.oldtownschool.org/concerts/",
+  "read_at": "2026-10-18T22:56:05Z",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-10-21",
+      "headliner": "Furious Desire",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-10-23",
+      "headliner": "Judy Collins",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-10-24",
+      "headliner": "Judy Collins",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-10-25",
+      "headliner": "Spooky Sing-Along",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-10-25",
+      "headliner": "Judy Collins",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-10-28",
+      "headliner": "D\u00eda de los Muertos (Day of the Dead)",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-10-31",
+      "headliner": "Marshall Crenshaw",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-11-03",
+      "headliner": "Margaret Glaspy",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-11-04",
+      "headliner": "Lizzy & the Triggermen",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-11-07",
+      "headliner": "Lucinda Williams",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-11-08",
+      "headliner": "Lucinda Williams",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-11-10",
+      "headliner": "Lucinda Williams",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-11-11",
+      "headliner": "Lucinda Williams",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-11-13",
+      "headliner": "Liana Flores",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-11-14",
+      "headliner": "Twin Peaks: A Conversation With The Stars",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-11-18",
+      "headliner": "Benmont Tench",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-11-21",
+      "headliner": "WHY?",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-11-22",
+      "headliner": "Cracker",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-11-25",
+      "headliner": "Rickie Lee Jones",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-11-28",
+      "headliner": "Mariachi Herencia de M\u00e9xico",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-11-29",
+      "headliner": "Mariachi Herencia de M\u00e9xico",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-12-02",
+      "headliner": "Parranda Gaitera",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-12-03",
+      "headliner": "Over the Rhine",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-12-04",
+      "headliner": "Bedouine",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-12-05",
+      "headliner": "Irish Christmas in America",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-12-06",
+      "headliner": "The Nut Tapper",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-12-10",
+      "headliner": "Songs of Good Cheer",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-12-11",
+      "headliner": "Songs of Good Cheer",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-12-12",
+      "headliner": "Songs of Good Cheer",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-12-13",
+      "headliner": "Songs of Good Cheer",
+      "source_url": "https://www.oldtownschool.org/concerts/"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "Glen Hansard",
+      "source_url": "https://web.archive.org/web/20260411233658id_/https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-04-07",
+      "headliner": "Skullcrusher",
+      "source_url": "https://web.archive.org/web/20260411233658id_/https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "Charlie Mej\u00edas",
+      "source_url": "https://web.archive.org/web/20260411233658id_/https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "David Wilcox",
+      "source_url": "https://web.archive.org/web/20260608175014id_/https://www.oldtownschool.org/concerts/2026/04-10-2026-david-wilcox/"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "Loudon Wainwright / Chris Smither",
+      "source_url": "https://web.archive.org/web/20260411233658id_/https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "Loudon Wainwright III / Chris Smither",
+      "source_url": "https://web.archive.org/web/20260411233658id_/https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-04-12",
+      "headliner": "Carrie Newcomer",
+      "source_url": "https://web.archive.org/web/20260411233658id_/https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "Haley Heynderickx & Max Garc\u00eda Conover",
+      "source_url": "https://web.archive.org/web/20260613024349id_/https://www.oldtownschool.org/concerts/2026/04-15-2026-haley-heynderickx-and-max-garcia-conover/"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "Haley Heynderickx & Max Garc\u00eda Conover",
+      "source_url": "https://web.archive.org/web/20260613024349id_/https://www.oldtownschool.org/concerts/2026/04-15-2026-haley-heynderickx-and-max-garcia-conover/"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "Las Damas del Bolero",
+      "source_url": "https://web.archive.org/web/20260414112132id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "Katie: The Strongest of the Strong",
+      "source_url": "https://web.archive.org/web/20260411233658id_/https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "The Wailers",
+      "source_url": "https://web.archive.org/web/20260414112132id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "James McMurtry",
+      "source_url": "https://web.archive.org/web/20260414112132id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-04-29",
+      "headliner": "Kehsin's Sextet presents Tribute to Tom Jobim",
+      "source_url": "https://web.archive.org/web/20260427174232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "Vision in the Rhythm",
+      "source_url": "https://web.archive.org/web/20260427174232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "Steep Canyon Rangers",
+      "source_url": "https://web.archive.org/web/20260427174232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-05-13",
+      "headliner": "Mehrnam Rastegari",
+      "source_url": "https://web.archive.org/web/20260427174232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-05-20",
+      "headliner": "Onda Sur",
+      "source_url": "https://web.archive.org/web/20260427174232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "Tuvergen Band",
+      "source_url": "https://web.archive.org/web/20260523232113id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "Andy Hull (of Manchester Orchestra)",
+      "source_url": "https://web.archive.org/web/20260523232113id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "Andy Hull (of Manchester Orchestra)",
+      "source_url": "https://web.archive.org/web/20260523232113id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-06-03",
+      "headliner": "Sabir Khan",
+      "source_url": "https://web.archive.org/web/20260523232113id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "John Moreland / Joe Pug",
+      "source_url": "https://web.archive.org/web/20260523232113id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "Dave Eggers: Contrapposto",
+      "source_url": "https://web.archive.org/web/20260613022226id_/https://www.oldtownschool.org/concerts/2026/06-10-2026-dave-eggers-contrapposto/"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "Kelly Willis & Radney Foster",
+      "source_url": "https://web.archive.org/web/20260523232113id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "Billy Eichner",
+      "source_url": "https://web.archive.org/web/20260613030232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-06-17",
+      "headliner": "Tukkiman",
+      "source_url": "https://web.archive.org/web/20260613030232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "National Tap Day",
+      "source_url": "https://web.archive.org/web/20260613030232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-06-24",
+      "headliner": "Vagando",
+      "source_url": "https://web.archive.org/web/20260613030232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "The Sullivan Sisters",
+      "source_url": "https://web.archive.org/web/20260613032345id_/https://www.oldtownschool.org/concerts/2026/06-26-2026-the-sullivan-sisters/"
+    },
+    {
+      "date": "2026-07-09",
+      "headliner": "Dehd",
+      "source_url": "https://web.archive.org/web/20260613030232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-07-13",
+      "headliner": "Nick Lowe & Los Straitjackets",
+      "source_url": "https://web.archive.org/web/20260613030232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "DakhaBrakha",
+      "source_url": "https://web.archive.org/web/20260722191640id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-07-27",
+      "headliner": "Billie Marten",
+      "source_url": "https://web.archive.org/web/20260722191640id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "John Doe & Exene Cervenka",
+      "source_url": "https://web.archive.org/web/20260722191640id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "Jake Xerxes Fussell",
+      "source_url": "https://web.archive.org/web/20260722191640id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "Deep Sea Diver (solo) / Hand Habits",
+      "source_url": "https://web.archive.org/web/20260722191640id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-08-30",
+      "headliner": "Asleep at the Wheel",
+      "source_url": "https://web.archive.org/web/20260722191640id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "Madeleine Peyroux",
+      "source_url": "https://web.archive.org/web/20260722191640id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "Bettye LaVette",
+      "source_url": "https://web.archive.org/web/20260722191640id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-09-14",
+      "headliner": "Susanna Hoffs",
+      "source_url": "https://web.archive.org/web/20260722191640id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "Bolokada Conde",
+      "source_url": "https://web.archive.org/web/20260917011429id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-09-20",
+      "headliner": "Alejandro Escovedo",
+      "source_url": "https://web.archive.org/web/20260920023130id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "John Pizzarelli",
+      "source_url": "https://web.archive.org/web/20260920023130id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-09-23",
+      "headliner": "Gadan",
+      "source_url": "https://web.archive.org/web/20260920023130id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "Beth Orton",
+      "source_url": "https://web.archive.org/web/20260920023130id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "Lambchop",
+      "source_url": "https://web.archive.org/web/20260920023130id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-09-30",
+      "headliner": "Ballak\u00e9 Sissoko and Piers Faccini / Minyo Crusaders",
+      "source_url": "https://web.archive.org/web/20260920023130id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-10-01",
+      "headliner": "Vieux Farka Tour\u00e9",
+      "source_url": "https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-10-02",
+      "headliner": "Fruition",
+      "source_url": "https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-10-03",
+      "headliner": "The Dream Syndicate",
+      "source_url": "https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-10-04",
+      "headliner": "The Bad Plus",
+      "source_url": "https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-10-08",
+      "headliner": "The Making of \u201cHow Lucky Can One Man Get?\u201d",
+      "source_url": "https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-10-09",
+      "headliner": "Rufus Wainwright",
+      "source_url": "https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-10-10",
+      "headliner": "John Prine 80th Birthday Celebration",
+      "source_url": "https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-10-10",
+      "headliner": "Rufus Wainwright",
+      "source_url": "https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-10-12",
+      "headliner": "Indigenous Peoples' Day",
+      "source_url": "https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-10-14",
+      "headliner": "The Bolero Project",
+      "source_url": "https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "Water Tower with John C. Reilly",
+      "source_url": "https://www.oldtownschool.org/calendar/"
+    }
+  ],
+  "listing_complete": true,
+  "listed_until": "2026-12-13",
+  "study2_venue_id": "chi-oldtown-maurer",
+  "imported_by": "scripts/import-venues.js"
+}

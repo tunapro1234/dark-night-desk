@@ -1,0 +1,30 @@
+{
+  "id": "s2-cph-amagerbio-house",
+  "name": "Amager Bio & BETA",
+  "city": "Copenhagen",
+  "capacity_band": "not published",
+  "calendar_source_url": "https://ab-b.dk/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-05-22",
+      "headliner": "RUSK x BETA #3",
+      "source_url": "https://web.archive.org/web/20260515230102id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "Copenhagen Metal Fest \u2013 dag 1",
+      "source_url": "https://web.archive.org/web/20260827075706id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Copenhagen Metal Fest \u2013 dag 2",
+      "source_url": "https://web.archive.org/web/20260827075706id_/https://ab-b.dk/"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "cph-amagerbio-house",
+  "imported_by": "scripts/import-venues.js"
+}

@@ -1,0 +1,1475 @@
+{
+  "id": "s2-chi-greenmill",
+  "name": "Green Mill",
+  "city": "Chicago",
+  "capacity_band": "not published",
+  "calendar_source_url": "https://greenmilljazz.com/calendar/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "(8pm - midnight)  KYLE SWAN QUARTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "(8pm - midnight) KYLE SWAN QUARTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-05",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-06",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-07",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "(8pm - midnight) RECESSION SEVEN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "(8pm - midnight) TRIBUTE TO GEORGE FREEMAN featuring BERNARD \"PRETTY\" PURDIE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "(8pm - midnight) TRIBUTE TO GEORGE FREEMAN featuring BERNARD \"PRETTY\" PURDIE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-12",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-13",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "(8pm - midnight) DAN TRUDELL'S GROOVY GREASY ORGAN BAND",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "(8pm - midnight) DAN TRUDELL'S GROOVY GREASY ORGAN BAND",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-19",
+      "headliner": "(3pm - 5pm) UPTOWN POETRY SLAM",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-19",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-20",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "(8pm - midnight) KURT ELLING QUINTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "(8pm - midnight) KURT ELLING QUINTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "(4pm - 6pm) CHICAGO JAZZ COMPOSERS COLLECTIVE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-27",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-29",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=4&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "(5pm - 7:30pm) CHRIS FOREMAN",
+      "source_url": "https://web.archive.org/web/20260513012942id_/https://greenmilljazz.com/calendar/"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "(8pm - midnight) PILC MOUTIN HOENIG",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "(8pm - midnight) PILC MOUTIN HOENIG",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "(4pm - 6pm) NEW MUSIC CONCERT",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-04",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-05",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "(5pm - 7:30pm) CHRIS FOREMAN",
+      "source_url": "https://web.archive.org/web/20260513012942id_/https://greenmilljazz.com/calendar/"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "(8pm - midnight) KARRIN ALLYSON QUARTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "(8pm - midnight) KARRIN ALLYSON QUARTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-11",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-12",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-13",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "(5pm - 7:30pm) CHRIS FOREMAN",
+      "source_url": "https://web.archive.org/web/20260513012942id_/https://greenmilljazz.com/calendar/"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "(8pm - midnight) CHRISTIAN DILLINGHAM CD RELEASE PARTY",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "(8pm - midnight) CHRISTIAN DILLINGHAM CD RELEASE PARTY",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "(3pm - 5pm) UPTOWN POETRY SLAM",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-18",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-20",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "(5pm - 7:30pm) CHRIS FOREMAN",
+      "source_url": "https://web.archive.org/web/20260513012942id_/https://greenmilljazz.com/calendar/"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "(8pm - midnight) PAUL MARINARO QUINTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "(8pm - midnight) PAUL MARINARO QUINTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "(4pm - 6pm) CHICAGO JAZZ COMPOSERS COLLECTIVE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-25",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-26",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "(5pm - 7:30pm) CHRIS FOREMAN",
+      "source_url": "https://web.archive.org/web/20260513012942id_/https://greenmilljazz.com/calendar/"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "(8pm - midnight) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "(8pm - midnight) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-05-31",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=5&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-01",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-02",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-03",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "(5pm - 7:30pm) CHRIS FOREMAN",
+      "source_url": "https://web.archive.org/web/20260513012942id_/https://greenmilljazz.com/calendar/"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "(8pm - midnight) LA TOSCA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "(8pm - midnight) LA TOSCA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-07",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-08",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-09",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "(8pm - midnight) ALYSSA ALLGOOD QUINTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "(8pm - midnight) ALYSSA ALLGOOD QUINTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-14",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-15",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-16",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-17",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "(1 a.m.) GREEN MILL JAZZ JAM with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-19",
+      "headliner": "(8pm - midnight) SABERTOOTH QUARTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-19",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "(8pm - midnight) JEFF HAMILTON TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "(3pm - 5pm) UPTOWN POETRY SLAM",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-22",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-23",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-24",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-25",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-25",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "(8pm - midnight) JOEL PATERSON QUARTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "(8pm - midnight) JOEL PATERSON QUARTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "(4PM - 6PM) CHICAGO JAZZ COMPOSERS COLLECTIVE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-29",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-06-30",
+      "headliner": "(all day) CLOSED FOR A PRIVATE PARTY",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=6&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-01",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-02",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-02",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-03",
+      "headliner": "(8pm - midnight) PETRA'S RECESSION SEVEN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-03",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-04",
+      "headliner": "(8pm - midnight) PETRA'S RECESSION SEVEN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-04",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-06",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-07",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-08",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-09",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-09",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "(8pm - midnight) WARREN VACHE / RUSS PHILLIPS QUINTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "(8pm - midnight) WARREN VACHE / RUSS PHILLIPS QUINTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-12",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-13",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-14",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-15",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "8pm - midnight) ERIC SCHNEIDER QUINTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "8pm - midnight) ERIC SCHNEIDER QUINTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-19",
+      "headliner": "(3pm - 5pm) UPTOWN POETRY SLAM",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-19",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-20",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-22",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-23",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-23",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "(8pm - midnight) MARQUES CARROLL QUINTET RECORD RELEASE PARTY",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "(8pm - midnight) MARQUES CARROLL QUINTET RECORD RELEASE PARTY",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "(4pm - 6pm) CHICAGO JAZZ COMPOSERS COLLECTIVE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-27",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-29",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "(8pm - midnight) KEN VANDERMARK presents THE FIELD KITCHEN UPTOWN ORCHESTRA & POETS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=7&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "(8pm - midnight) KEN VANDERMARK presents THE FIELD KITCHEN UPTOWN ORCHESTRA & POETS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-02",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-03",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-04",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-05",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "(5pm - 7:15 pm) Chris Foreman",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "(8pm - midnight) SABERTOOTH",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "(8pm - midnight) SABERTOOTH",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-10",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-11",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-12",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "(5pm - 7:15 pm) Chris Foreman",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "(8pm - midnight) TROY ROBERTS QUARTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "(8pm - midnight) TROY ROBERTS QUARTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "(3pm - 5pm) UPTOWN POETRY SLAM",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-17",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-19",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "(5pm - 7:15 pm) Chris Foreman",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "(8pm - midnight) CLARK SOMMERS SEXTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "(8pm - midnight) CLARK SOMMERS SEXTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "(4pm - 6pm) CHICAGO JAZZ COMPOSERS COLLECTIVE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-24",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-25",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-26",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "(5pm - 7:15 pm) Chris Foreman",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "(8pm - midnight) BEN SIDRAN QUARTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "(spm - midnight) BEN SIDRAN QUARTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-30",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-08-31",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=8&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-02",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "(5pm - 7:15 pm) Chris Foreman",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "(8pm - midnight) JUAN PASTOR'S CHINCHANO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "(8pm - midnight) JUAN PASTOR'S CHINCHANO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-07",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-08",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "(5pm - 7:15 pm) Chris Foreman",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "(8pm - midnight) MIKE JONES TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "(8pm - midnight) MIKE JONES TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-14",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "(5pm - 7:15 pm) Chris Foreman",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "(8pm - midnight) GYPSY JAZZ FESTIVAL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "(8pm - midnight) GYPSY JAZZ FESTIVAL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-20",
+      "headliner": "(3pm - 5pm) UPTOWN POETRY SLAM",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-20",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-21",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-23",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "(5pm - 7pm) ANDY BROWN",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "(8pm - midnight) ALAN GRESIK'S SWING ORCHESTRA",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "(5pm - 7:15 pm) Chris Foreman",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "(8pm - midnight) JEFF NEWELL'S NEW TRAD OCTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "(1 am - 3:30 am) GREEN MILL JAM SESSION with MARQUIS HILL",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "(3pm - 5pm) PAPER MACHETE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "(8pm - midnight) JEFF NEWELL'S NEW TRAD OCTET",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "(1 am - 4 am) RIGHTEOUS ROOSTER ORGAN TRIO",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "(4pm - 6pm) CHICAGO JAZZ COMPOSERS COLLECTIVE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "(8pm - 12am) SOUL MESSAGE",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-28",
+      "headliner": "(8pm - 12 am) JOEL PATERSON & FRIENDS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "(8pm - midnight) CHICAGO CELLAR BOYS",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    },
+    {
+      "date": "2026-09-30",
+      "headliner": "(8pm - midnight) ALFONSO PONTICELLI",
+      "source_url": "https://greenmilljazz.com/calendar/?ajaxCalendar=1&mo=9&yr=2026&full=1"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "chi-greenmill",
+  "imported_by": "scripts/import-venues.js"
+}

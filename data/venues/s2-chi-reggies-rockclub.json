@@ -1,0 +1,450 @@
+{
+  "id": "s2-chi-reggies-rockclub",
+  "name": "Rock Club (Reggies Chicago)",
+  "city": "Chicago",
+  "capacity_band": "up to 350",
+  "calendar_source_url": "https://www.reggieslive.com/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-02",
+      "headliner": "Teenage Bottlerocket",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "Hirax",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-05",
+      "headliner": "Die Krupps",
+      "source_url": "https://web.archive.org/web/20260301225533id_/https://reggieslive.com/"
+    },
+    {
+      "date": "2026-04-06",
+      "headliner": "Subhumans",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-07",
+      "headliner": "Sheer Terror",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "Thekidszn",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "Raven",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "Carly Cosgrove",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "The Flowers of Romance Revisited",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "Soul Blind",
+      "source_url": "https://web.archive.org/web/20260415153056id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "Snuffed on Sight",
+      "source_url": "https://web.archive.org/web/20260415153056id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "Exhorder",
+      "source_url": "https://web.archive.org/web/20260415153056id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-04-19",
+      "headliner": "UADA",
+      "source_url": "https://web.archive.org/web/20260415153056id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-04-20",
+      "headliner": "Dopethrone",
+      "source_url": "https://web.archive.org/web/20260415153056id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "Stick Men",
+      "source_url": "https://web.archive.org/web/20260415153056id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "juno + Cybertrash + 4cf",
+      "source_url": "https://web.archive.org/web/20260415153056id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "Dead Meadow",
+      "source_url": "https://web.archive.org/web/20260415153056id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "Slomosa",
+      "source_url": "https://web.archive.org/web/20260415153056id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "Master Boot Record",
+      "source_url": "https://web.archive.org/web/20260415153056id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "Legions of Metal Fest 2026",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "Legions of Metal Fest 2026",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-04",
+      "headliner": "SOR Chicago featuring Frank Zummo of Sum 41",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "Boogarins",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "EMELINE",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "1876",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "Negative Approach",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "The Casualties",
+      "source_url": "https://web.archive.org/web/20260515233943id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "Spiritworld",
+      "source_url": "https://web.archive.org/web/20260515233943id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "Oranssi Pazuzu",
+      "source_url": "https://www.reggieslive.com/show/oranssi-pazuzu-2/"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "Witch Vomit",
+      "source_url": "https://web.archive.org/web/20260515233943id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "Tom Kenny & The Hi-Seas",
+      "source_url": "https://web.archive.org/web/20260515233943id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "The Brokes",
+      "source_url": "https://web.archive.org/web/20260515233943id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "D.R.I.",
+      "source_url": "https://web.archive.org/web/20260515233943id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "Stygian Bough",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "Hot Stove Jimmy",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "Artfinix Studios Recitals",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-03",
+      "headliner": "Leo Middea",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "Alejandro Aranda",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "Steely Dane",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "Pok\u00e8mon Pop-Punk Night",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-07",
+      "headliner": "Witch Club Satan",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "Kenny Mason",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "Worm",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-14",
+      "headliner": "Artikal Sound System",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-17",
+      "headliner": "Leftover Crack",
+      "source_url": "https://www.reggieslive.com/show/leftover-crack-3/"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "Chiddy Bang",
+      "source_url": "https://web.archive.org/web/20260515233943id_/https://www.reggieslive.com/venue/rock-club/"
+    },
+    {
+      "date": "2026-06-22",
+      "headliner": "Brian Fallon & The Painkillers",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-25",
+      "headliner": "Horace Grant and Urban Grind TV Birthday Bash",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "CATCH 22",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "School Of Rock Chicago",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-30",
+      "headliner": "Nemophila",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-09",
+      "headliner": "Novulent",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "SK\u00c1LD",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-13",
+      "headliner": "Conan",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "Riley!",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "DILLINGER FOUR",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "Pancakes and Booze Art Show",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "$ummer of Greed",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "Nektar",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-28",
+      "headliner": "Lynae Vanee",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-29",
+      "headliner": "Bit Brigade",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "Julia Wolf Official Lollapalooza AfterShow",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "Loathe Official Lollapalooza AfterShow",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "Destin Conrad Official Lollapalooza AfterShow",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-02",
+      "headliner": "The Cybertronic Spree",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "Bug Hunter + The Narcissist Cookbook (co-headline)",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "Savage Hands + Of Virtue",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-11",
+      "headliner": "Six Feet Under",
+      "source_url": "https://www.reggieslive.com/show/six-feet-under-2/"
+    },
+    {
+      "date": "2026-08-12",
+      "headliner": "Jiemei",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "\u201c[name withheld] AND [name withheld]\u2019S ROCK N ROLL RETIREMENT BASH\u201d",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "The Impossibles",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "Jayo",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "3 Inches of Blood",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "3 Inches of Blood",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-30",
+      "headliner": "School Of Rock Chicago",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "Larry And His Flask",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "Dogs With Hats",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "The Obsessed",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "Volumes",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "All Shall Perish",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Black Flag",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "Mariachi El Bronx",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Show Me The Body",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-21",
+      "headliner": "Kaya",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-23",
+      "headliner": "YHWH Nailgun",
+      "source_url": "https://www.reggieslive.com/show/yhwh-nailgun/"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "Greenleaf",
+      "source_url": "https://www.reggieslive.com/show/greenleaf/"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "Vader",
+      "source_url": "https://www.reggieslive.com/show/vader-6/"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "chi-reggies-rockclub",
+  "imported_by": "scripts/import-venues.js"
+}

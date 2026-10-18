@@ -1,0 +1,40 @@
+{
+  "id": "s2-chi-oldtown-house",
+  "name": "Old Town School of Folk Music",
+  "city": "Chicago",
+  "capacity_band": "not published",
+  "calendar_source_url": "https://www.oldtownschool.org/concerts/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-24",
+      "headliner": "FT-Jammin with the Beat Box",
+      "source_url": "https://web.archive.org/web/20260411233658id_/https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "Wimee's Words Live",
+      "source_url": "https://web.archive.org/web/20260411233658id_/https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "Windy City Ramblers",
+      "source_url": "https://web.archive.org/web/20260411233658id_/https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "Jammin' with the Boombox : History of Hip Hop",
+      "source_url": "https://web.archive.org/web/20260411233658id_/https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "Fretboard Summit 2026 - 3-day All Access",
+      "source_url": "https://web.archive.org/web/20260722191640id_/https://www.oldtownschool.org/concerts/"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "chi-oldtown-house",
+  "imported_by": "scripts/import-venues.js"
+}

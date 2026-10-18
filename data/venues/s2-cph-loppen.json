@@ -1,0 +1,577 @@
+{
+  "id": "s2-cph-loppen",
+  "name": "Loppen",
+  "city": "Copenhagen",
+  "capacity_band": "up to 400",
+  "calendar_source_url": "https://loppen.dk/kalender",
+  "read_at": "2026-10-19T00:55:15+02:00",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-10-19",
+      "headliner": "SPAIN",
+      "source_url": "https://loppen.dk/kalender/spain-2"
+    },
+    {
+      "date": "2026-10-21",
+      "headliner": "LIPS GLUED",
+      "source_url": "https://loppen.dk/kalender/lips-glued-release"
+    },
+    {
+      "date": "2026-10-23",
+      "headliner": "DAVE EAST",
+      "source_url": "https://loppen.dk/kalender/dave-east"
+    },
+    {
+      "date": "2026-10-24",
+      "headliner": "BROR GUNNAR JANSSON & THE ESCAPISM",
+      "source_url": "https://loppen.dk/kalender/bror-gunnar"
+    },
+    {
+      "date": "2026-10-25",
+      "headliner": "ULRIKA SPACEK",
+      "source_url": "https://loppen.dk/kalender/ulrika-spacek-0"
+    },
+    {
+      "date": "2026-10-29",
+      "headliner": "DEMERSAL",
+      "source_url": "https://loppen.dk/kalender/demersal-salver"
+    },
+    {
+      "date": "2026-10-30",
+      "headliner": "MIAW",
+      "source_url": "https://loppen.dk/kalender/miaw"
+    },
+    {
+      "date": "2026-10-31",
+      "headliner": "CEVIL",
+      "source_url": "https://loppen.dk/kalender/cevil"
+    },
+    {
+      "date": "2026-11-03",
+      "headliner": "GRAVA",
+      "source_url": "https://loppen.dk/kalender/grava-morpholith"
+    },
+    {
+      "date": "2026-11-04",
+      "headliner": "HORSE LORDS",
+      "source_url": "https://loppen.dk/kalender/horse-lords"
+    },
+    {
+      "date": "2026-11-05",
+      "headliner": "POLITE",
+      "source_url": "https://loppen.dk/kalender/polite"
+    },
+    {
+      "date": "2026-11-06",
+      "headliner": "CENTERET MED VENNER 3",
+      "source_url": "https://loppen.dk/kalender/centeret-med-venner-3"
+    },
+    {
+      "date": "2026-11-07",
+      "headliner": "FAT DOG",
+      "source_url": "https://loppen.dk/kalender/fat-dog"
+    },
+    {
+      "date": "2026-11-08",
+      "headliner": "BIG SLEEP",
+      "source_url": "https://loppen.dk/kalender/big-sleep"
+    },
+    {
+      "date": "2026-11-10",
+      "headliner": "SPK",
+      "source_url": "https://loppen.dk/kalender/spk"
+    },
+    {
+      "date": "2026-11-11",
+      "headliner": "FEEBLE LITTLE HORSE",
+      "source_url": "https://loppen.dk/kalender/feeble-little-horse"
+    },
+    {
+      "date": "2026-11-14",
+      "headliner": "ADULT DVD",
+      "source_url": "https://loppen.dk/kalender/adult-dvd"
+    },
+    {
+      "date": "2026-11-19",
+      "headliner": "ROOMER",
+      "source_url": "https://loppen.dk/kalender/yvonnes-roomer"
+    },
+    {
+      "date": "2026-11-20",
+      "headliner": "GLAIVE",
+      "source_url": "https://loppen.dk/kalender/glaive"
+    },
+    {
+      "date": "2026-11-21",
+      "headliner": "CABAL",
+      "source_url": "https://loppen.dk/kalender/cabal-employed-serve"
+    },
+    {
+      "date": "2026-11-24",
+      "headliner": "DAVID EUGENE EDWARDS",
+      "source_url": "https://loppen.dk/kalender/david-eugene-edwards"
+    },
+    {
+      "date": "2026-11-25",
+      "headliner": "TRAMHAUS",
+      "source_url": "https://loppen.dk/kalender/tramhaus"
+    },
+    {
+      "date": "2026-11-26",
+      "headliner": "SCIMITAR",
+      "source_url": "https://loppen.dk/kalender/scimitar-gabestok"
+    },
+    {
+      "date": "2026-11-27",
+      "headliner": "RKDIA",
+      "source_url": "https://loppen.dk/kalender/rkadia-dio-egr-tonnam"
+    },
+    {
+      "date": "2026-11-28",
+      "headliner": "GURRIERS",
+      "source_url": "https://loppen.dk/kalender/gurriers"
+    },
+    {
+      "date": "2026-12-03",
+      "headliner": "JOE & THE SHITBOYS",
+      "source_url": "https://loppen.dk/kalender/joe-shitboys-0"
+    },
+    {
+      "date": "2026-12-04",
+      "headliner": "OFFERNAT",
+      "source_url": "https://loppen.dk/kalender/tungsind-offernat-heksproces"
+    },
+    {
+      "date": "2026-12-05",
+      "headliner": "LES BIG BYRD",
+      "source_url": "https://loppen.dk/kalender/les-big-byrd"
+    },
+    {
+      "date": "2026-12-06",
+      "headliner": "Q MARSDEN",
+      "source_url": "https://loppen.dk/kalender/q-marsden"
+    },
+    {
+      "date": "2026-12-10",
+      "headliner": "S\u00d8REN MICHELSEN & TOUREN",
+      "source_url": "https://loppen.dk/kalender/s\u00f8ren-michelsen-touren"
+    },
+    {
+      "date": "2026-12-13",
+      "headliner": "BURNIN RED IVANHOE",
+      "source_url": "https://loppen.dk/kalender/julefredskoncert-2026"
+    },
+    {
+      "date": "2026-12-17",
+      "headliner": "H. SELF",
+      "source_url": "https://loppen.dk/kalender/h-self"
+    },
+    {
+      "date": "2026-12-18",
+      "headliner": "FARMANDS FEDE JULEFEST",
+      "source_url": "https://loppen.dk/kalender/farmand"
+    },
+    {
+      "date": "2026-12-19",
+      "headliner": "HELT OFF",
+      "source_url": "https://loppen.dk/kalender/helt-0"
+    },
+    {
+      "date": "2027-01-27",
+      "headliner": "GILLA BAND",
+      "source_url": "https://loppen.dk/kalender/gilla-band-0"
+    },
+    {
+      "date": "2027-01-30",
+      "headliner": "TOO MANY ZOOZ",
+      "source_url": "https://loppen.dk/kalender/too-many-zooz"
+    },
+    {
+      "date": "2027-02-05",
+      "headliner": "PRIMITIVE RING",
+      "source_url": "https://loppen.dk/kalender/primitive-ring"
+    },
+    {
+      "date": "2027-02-06",
+      "headliner": "AFSKUM",
+      "source_url": "https://loppen.dk/kalender/afskum-0"
+    },
+    {
+      "date": "2027-02-12",
+      "headliner": "THE LEGENDARY PINK DOTS",
+      "source_url": "https://loppen.dk/kalender/legendary-pink-dots"
+    },
+    {
+      "date": "2027-02-13",
+      "headliner": "JOHNNY HEFTY & J\u00d8DEN",
+      "source_url": "https://loppen.dk/kalender/jonny-hefty-j\u00f8den"
+    },
+    {
+      "date": "2027-02-26",
+      "headliner": "DEA MATRONA",
+      "source_url": "https://loppen.dk/kalender/dea-matrona"
+    },
+    {
+      "date": "2027-02-27",
+      "headliner": "ULTIMATE EMO PARTY",
+      "source_url": "https://loppen.dk/kalender/ultimateemoparty"
+    },
+    {
+      "date": "2027-03-05",
+      "headliner": "THE KVB",
+      "source_url": "https://loppen.dk/kalender/blaze-festival"
+    },
+    {
+      "date": "2027-03-20",
+      "headliner": "THREE FOR SILVER",
+      "source_url": "https://loppen.dk/kalender/three-silver-0"
+    },
+    {
+      "date": "2027-03-31",
+      "headliner": "DE STAAT",
+      "source_url": "https://loppen.dk/kalender/de-staat"
+    },
+    {
+      "date": "2027-04-03",
+      "headliner": "MOTORPSYCHO",
+      "source_url": "https://loppen.dk/kalender/motorpsycho-0"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "20_14 RESORT / FELICITY J LORD / YDEGIRL (DJ)",
+      "source_url": "https://loppen.dk/kalender/2014-resort"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "THREE FOR SILVER (US)",
+      "source_url": "https://loppen.dk/kalender/three-silver"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "SCALA / UNDER THE ELMS",
+      "source_url": "https://loppen.dk/kalender/scala"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "THE CHAINS / DUCK SOUP / GOOD NIGHT BABYLON / CRY TOUGH SOUND / LADY KAY + VINNY",
+      "source_url": "https://loppen.dk/kalender/chains"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "FRIGJORT PRESENTS / NIHILOXICA (UG) / N.E. GIRL (DJ)",
+      "source_url": "https://loppen.dk/kalender/nihiloxica-frigjort"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "DR. JOHN COOPER CLARKE (UK) / MIKE GARRY (UK)",
+      "source_url": "https://loppen.dk/kalender/john-cooper-clarke"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "CHROME! + SKOMAGER / TRISMONEYY + DANJOO & KAAWN",
+      "source_url": "https://loppen.dk/kalender/chrome-skomager"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "JUST MUSTARD (IE) / THE ALTERED HOURS (IE)",
+      "source_url": "https://loppen.dk/kalender/just-mustard"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "MATT ELLIOT (UK) / 'DRINKING SONGS LIVE 20 YEARS ON\u2019",
+      "source_url": "https://loppen.dk/kalender/matt-elliott"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "THE TWILIGHT SAD (SCT) / FOR MARCY (UK)",
+      "source_url": "https://loppen.dk/kalender/twilight-sad"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "DJ HARAM (US) / TEHRAN (SE/IR)",
+      "source_url": "https://loppen.dk/kalender/dj-haram"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "FAZE (CA) / MORAL END (DK/INT) / DECADE (DK/INT)",
+      "source_url": "https://loppen.dk/kalender/faze"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "B\u00c6NCH / FRANK DISCO",
+      "source_url": "https://loppen.dk/kalender/b%C3%A6nch"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "HEJ LEIF PR\u00c6SENTERER / DANS(K) HELE NATTEN 3 - ARBEJDERNES INTERNATIONALE KAMPNAT / SOLIDARISK DANSEMUSIK - FARVET BLINKLYS / CHRISTIANIAS MANDEKOR / KRAGEKORET",
+      "source_url": "https://loppen.dk/kalender/dansk-hele-natten-3"
+    },
+    {
+      "date": "2026-05-05",
+      "headliner": "L.A. WITCH (US) / SSSIV (US/DK)",
+      "source_url": "https://loppen.dk/kalender/la-witch"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "A COLOSSAL WEEKEND WARM UP / BRUIT \u2264 (FR) / A BURIAL AT SEA // NEWHVN (UK/IE)",
+      "source_url": "https://loppen.dk/kalender/acw-warm"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "FRIGJORT PRESENTS / EVIG FERIE (NO) / VALGTEMIG",
+      "source_url": "https://loppen.dk/kalender/frigjort-evig-ferie"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "THE LONG RYDERS (US)",
+      "source_url": "https://loppen.dk/kalender/long-ryders-0"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "RELEASE PARTY / SUPERCAPRA / POPTONES",
+      "source_url": "https://loppen.dk/kalender/supercapra"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "FLORRY / FYR",
+      "source_url": "https://loppen.dk/kalender/florry"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "LOPPEN\u00b4S 53RD BIRTHDAY BASH - FREE ENTRY! / LUCID GRAVE / POST SOFTCORE / ABSENCE OF PURPOSE / CRONE / DECADE / DJ QUEEN DANCEALOT",
+      "source_url": "https://loppen.dk/kalender/loppens-53rd-birthday-bash-free-entry"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "THE BOOJUMS (CA)",
+      "source_url": "https://loppen.dk/kalender/boojums"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "D/TROIT",
+      "source_url": "https://loppen.dk/kalender/dtroit-1"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "K\u00c6RLIGHEDS GENERATOREN / KOMMER TID, KOMMER K.G. / JYSK HAUS MAFIA & TADOH + SURPRISE OPVARMNING",
+      "source_url": "https://loppen.dk/kalender/kg1"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "[FLYTTET FRA AMAGER BIO] / M.O.P. (US)",
+      "source_url": "https://loppen.dk/kalender/mop"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "V\u00cd\u00cdK (DK/NO)",
+      "source_url": "https://loppen.dk/kalender/viik"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "CHILDRENN / HELLMAN",
+      "source_url": "https://loppen.dk/kalender/childrenn-2"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "JOHN 5 (US) / SOUTH OF SALEM (UK)",
+      "source_url": "https://loppen.dk/kalender/john-5"
+    },
+    {
+      "date": "2026-06-03",
+      "headliner": "NORA BROWN (US) / SOLEDAD (US/DK)",
+      "source_url": "https://loppen.dk/kalender/norah-brown"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "THE HARD-ONS WITH JERRY A. (AUS) / GUITAR WOLF (JP)",
+      "source_url": "https://loppen.dk/kalender/hard-ons"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "EL\u00c4KEL\u00c4ISET (FI)",
+      "source_url": "https://loppen.dk/kalender/el%C3%A4kel%C3%A4iset"
+    },
+    {
+      "date": "2026-06-08",
+      "headliner": "BASEMENT (UK) / GLARE (US)",
+      "source_url": "https://loppen.dk/kalender/basement"
+    },
+    {
+      "date": "2026-06-09",
+      "headliner": "BRIDGE CITY SINNERS (US) / JOHANNA ROSE & THE DREAMBOATS",
+      "source_url": "https://loppen.dk/kalender/bridge-city-sinners"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "THE SMITH STREET BAND (AU) / FIGHT ME IRL.",
+      "source_url": "https://loppen.dk/kalender/smith-street-band"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "FLEA MARKET",
+      "source_url": "https://loppen.dk/kalender/fleamarket"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "CPH JAZZ FESTIVAL / BOZENGA / JAKE GREEN",
+      "source_url": "https://loppen.dk/kalender/bozenga"
+    },
+    {
+      "date": "2026-07-12",
+      "headliner": "CPH JAZZ FESTIVAL / NAUSIA / SVIN",
+      "source_url": "https://loppen.dk/kalender/nausia-x-svin"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "FRIGJORT FESTIVAL 2026 - TORSDAG / HVADCRU / VENE / THON BLOODY GLEN / POST SOFTCORE / JOSEPHINE / THA CURBKICKAZ",
+      "source_url": "https://loppen.dk/kalender/frigjort-festival-torsdag"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "FRIGJORT FESTIVAL 2026 - FREDAG / GR\u00d3A / DAS BEAT / HEATHE",
+      "source_url": "https://loppen.dk/kalender/frigjort-festival-fredag"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "FRIGJORT FESTIVAL 2026 - L\u00d8RDAG / PILLOW / MASIV / TAN / SHXCXCHCXSH",
+      "source_url": "https://loppen.dk/kalender/frigjort-festival-l%C3%B8rdag"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "COFFINS (JP) / DEAD VOID (DK/UK)",
+      "source_url": "https://loppen.dk/kalender/coffins-dead-void"
+    },
+    {
+      "date": "2026-08-17",
+      "headliner": "CURRENT JOYS (US) / FANTASY OF A BROKEN HEART (US)",
+      "source_url": "https://loppen.dk/kalender/current-joys"
+    },
+    {
+      "date": "2026-08-26",
+      "headliner": "AUTOMATIC (US) / DREAMSTRUCK",
+      "source_url": "https://loppen.dk/kalender/automatic"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "RELEASE PARTY / OG DU LYSER / BBYBITES (DJ) / JOSIE AMADONNA",
+      "source_url": "https://loppen.dk/kalender/og-du-lyser"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "KING PARROT (AUS) / PUSTULANT FLESH / JAKOBE",
+      "source_url": "https://loppen.dk/kalender/king-parrot"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "ORA COGAN (CA) / ELAINE MALONE (IE)",
+      "source_url": "https://loppen.dk/kalender/ora-cogan"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "DATE CAMP / NINA AND ALFRED",
+      "source_url": "https://loppen.dk/kalender/date-camp"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "THE DEPTHS WE EXPLORED / BLOOD ORANGE MOON",
+      "source_url": "https://loppen.dk/kalender/depths-we-explored"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "MAUSTETYT\u00d6T (FI)",
+      "source_url": "https://loppen.dk/kalender/maustetytot-1"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "OBS. - NY DATO! / CORY HANSON (US) / COLE BERLINER (US)",
+      "source_url": "https://loppen.dk/kalender/cory-hanson"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "SEBASTIAN WOLFF / DJ MIDNIGHT COWBOY",
+      "source_url": "https://loppen.dk/kalender/sebastian-wolff"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "LORD FINESSE (US)",
+      "source_url": "https://loppen.dk/kalender/lord-finesse"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "DICE (AU) / THE VELVET CLUB (AU)",
+      "source_url": "https://loppen.dk/kalender/dice"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "LEO MIDDEA (BR)",
+      "source_url": "https://loppen.dk/kalender/leo-middea"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "20_14 RESORT / CITIES AVIV (US) / SOLI CITY (DJ)",
+      "source_url": "https://loppen.dk/kalender/cities-aviv-2014"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "'TURNING TORSO' - RELEASE / TENDER YOUTH / ALISS SEEN",
+      "source_url": "https://loppen.dk/kalender/tender-youth"
+    },
+    {
+      "date": "2026-10-02",
+      "headliner": "MELLEMBLOND",
+      "source_url": "https://loppen.dk/kalender/mellemblond-2026"
+    },
+    {
+      "date": "2026-10-03",
+      "headliner": "SPACESTATION",
+      "source_url": "https://loppen.dk/kalender/spacestation"
+    },
+    {
+      "date": "2026-10-06",
+      "headliner": "THE MAGIC NUMBERS",
+      "source_url": "https://loppen.dk/kalender/magic-numbers"
+    },
+    {
+      "date": "2026-10-08",
+      "headliner": "SUNRAKER",
+      "source_url": "https://loppen.dk/kalender/sunraker"
+    },
+    {
+      "date": "2026-10-10",
+      "headliner": "DRINK THE SEA",
+      "source_url": "https://loppen.dk/kalender/drink-sea"
+    },
+    {
+      "date": "2026-10-11",
+      "headliner": "B MOVIE: LUST & SOUND IN WEST BERLIN 1979-1989",
+      "source_url": "https://loppen.dk/kalender/b-movie-night"
+    },
+    {
+      "date": "2026-10-15",
+      "headliner": "FIREBREATHER",
+      "source_url": "https://loppen.dk/kalender/firebreather-dying-hydra"
+    },
+    {
+      "date": "2026-10-16",
+      "headliner": "ZAHN",
+      "source_url": "https://loppen.dk/kalender/zahn"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "ST. DIGUE",
+      "source_url": "https://loppen.dk/kalender/st-digue-release"
+    },
+    {
+      "date": "2026-10-18",
+      "headliner": "SAULTS",
+      "source_url": "https://loppen.dk/kalender/saults"
+    }
+  ],
+  "listing_complete": true,
+  "listed_until": "2027-04-03",
+  "study2_venue_id": "cph-loppen",
+  "imported_by": "scripts/import-venues.js"
+}

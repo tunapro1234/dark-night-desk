@@ -1,0 +1,180 @@
+{
+  "id": "s2-cph-amagerbio-bio",
+  "name": "Amager Bio (Amager Bio & BETA)",
+  "city": "Copenhagen",
+  "capacity_band": "up to 1250",
+  "calendar_source_url": "https://ab-b.dk/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "Tom Meighan",
+      "source_url": "https://web.archive.org/web/20260308080135id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "Hypocrisy",
+      "source_url": "https://web.archive.org/web/20260308080135id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "Saturnus + Grusom + Endarken + Blodm\u00e5ne",
+      "source_url": "https://web.archive.org/web/20260308080135id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "dEUS",
+      "source_url": "https://web.archive.org/web/20260308080135id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "Karnivool",
+      "source_url": "https://web.archive.org/web/20260412095110id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "SKYND",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "Iotunn",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "Francis Rossi",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "Amber Mark",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "Randall King",
+      "source_url": "https://web.archive.org/web/20260308080135id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "Danser med Drenge",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "Smash Into Pieces",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-11",
+      "headliner": "The Sword",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-18",
+      "headliner": "Steve Hackett",
+      "source_url": "https://web.archive.org/web/20260515230102id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "16 Horsepower",
+      "source_url": "https://web.archive.org/web/20260515230102id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "Xzibit",
+      "source_url": "https://web.archive.org/web/20260515230102id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "Emergenza Festival KBH #2 Finale + DK-Finale 2026",
+      "source_url": "https://web.archive.org/web/20260523235610id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-06-08",
+      "headliner": "Syng med Mads Langer, Jung, Pauline og Patina",
+      "source_url": "https://web.archive.org/web/20260523235610id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "Extremely Rotten Death Fest \u2013 dag 1",
+      "source_url": "https://web.archive.org/web/20260523235610id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "Extremely Rotten Death Fest \u2013 dag 2",
+      "source_url": "https://web.archive.org/web/20260523235610id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "Redman",
+      "source_url": "https://web.archive.org/web/20260615003355id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "John Hiatt",
+      "source_url": "https://web.archive.org/web/20260623193401id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "The Warning",
+      "source_url": "https://web.archive.org/web/20260623193401id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-08-25",
+      "headliner": "Deafheaven",
+      "source_url": "https://web.archive.org/web/20260822235718id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "Gzuz",
+      "source_url": "https://web.archive.org/web/20260827075706id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "Nordic Elite Wrestling IV",
+      "source_url": "https://web.archive.org/web/20260827075706id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "Syd",
+      "source_url": "https://web.archive.org/web/20260623193401id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "Kaya Br\u00fcel synger Jomfru Ane Band",
+      "source_url": "https://web.archive.org/web/20260827075706id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "USO",
+      "source_url": "https://web.archive.org/web/20260623193401id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "Mega Ball \u2013 Mads Hansens Kapel 10 \u00e5rs jubil\u00e6umsbal",
+      "source_url": "https://web.archive.org/web/20260827075706id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "Sam Morril",
+      "source_url": "https://web.archive.org/web/20260827075706id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-22",
+      "headliner": "Holly Humberstone",
+      "source_url": "https://web.archive.org/web/20260920093023id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "Red Warszawa",
+      "source_url": "https://web.archive.org/web/20260920093023id_/https://ab-b.dk/"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "cph-amagerbio-bio",
+  "imported_by": "scripts/import-venues.js"
+}

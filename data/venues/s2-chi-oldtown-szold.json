@@ -1,0 +1,130 @@
+{
+  "id": "s2-chi-oldtown-szold",
+  "name": "Szold Hall (Old Town School of Folk Music)",
+  "city": "Chicago",
+  "capacity_band": "up to 170",
+  "calendar_source_url": "https://www.oldtownschool.org/concerts/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "Apollo's Fire with Jeannette Sorrell present",
+      "source_url": "https://web.archive.org/web/20260613022150id_/https://www.oldtownschool.org/concerts/2026/04-01-2026-wmw-apollos-fire/"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "Jane Siberry",
+      "source_url": "https://web.archive.org/web/20260411233658id_/https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "Nidia G\u00f3ngora",
+      "source_url": "https://web.archive.org/web/20260414112132id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "Black History Future Folk Symposium",
+      "source_url": "https://web.archive.org/web/20260414112132id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "The Claudettes",
+      "source_url": "https://web.archive.org/web/20260427174232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "Garnet Rogers",
+      "source_url": "https://web.archive.org/web/20260427174232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "Hannah Frances",
+      "source_url": "https://web.archive.org/web/20260427174232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-05-13",
+      "headliner": "Joe Pernice",
+      "source_url": "https://web.archive.org/web/20260427174232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "Sons of the Never Wrong",
+      "source_url": "https://web.archive.org/web/20260427174232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "Peter Mulvey & Jenna Nicholls",
+      "source_url": "https://web.archive.org/web/20260523232113id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "The Working Songwriter Forum",
+      "source_url": "https://web.archive.org/web/20260613025247id_/https://www.oldtownschool.org/concerts/2026/06-05-2026-the-working-songwriter-forum/"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "David Ramirez / Rachel Baiman",
+      "source_url": "https://web.archive.org/web/20260613034342id_/https://www.oldtownschool.org/concerts/2026/06-05-2026-david-ramirez/"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "The Working Songwriter Forum",
+      "source_url": "https://web.archive.org/web/20260613025247id_/https://www.oldtownschool.org/concerts/2026/06-05-2026-the-working-songwriter-forum/"
+    },
+    {
+      "date": "2026-06-07",
+      "headliner": "The Working Songwriter Forum",
+      "source_url": "https://web.archive.org/web/20260613025247id_/https://www.oldtownschool.org/concerts/2026/06-05-2026-the-working-songwriter-forum/"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "Tierra Roja",
+      "source_url": "https://web.archive.org/web/20260523232113id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "Darrell Scott",
+      "source_url": "https://web.archive.org/web/20260613030232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "Michael J. Miles and Jill Kaeding",
+      "source_url": "https://web.archive.org/web/20260613030232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-06-19",
+      "headliner": "Juneteenth Celebration",
+      "source_url": "https://web.archive.org/web/20260613030232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "Tracy Bonham",
+      "source_url": "https://web.archive.org/web/20260613030232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "Joel Styzens: Relax Your Ears",
+      "source_url": "https://web.archive.org/web/20260613030232id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "Josh Rouse",
+      "source_url": "https://web.archive.org/web/20260722191640id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "anaiis",
+      "source_url": "https://web.archive.org/web/20260920023130id_/https://www.oldtownschool.org/concerts/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "Donna Herula",
+      "source_url": "https://web.archive.org/web/20260920023130id_/https://www.oldtownschool.org/concerts/"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "chi-oldtown-szold",
+  "imported_by": "scripts/import-venues.js"
+}

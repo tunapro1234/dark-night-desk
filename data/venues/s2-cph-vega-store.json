@@ -1,0 +1,270 @@
+{
+  "id": "s2-cph-vega-store",
+  "name": "Store VEGA (VEGA)",
+  "city": "Copenhagen",
+  "capacity_band": "not published",
+  "calendar_source_url": "https://vega.dk/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "Bl\u00e6st",
+      "source_url": "https://web.archive.org/web/20260318165640/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "Bl\u00e6st - ekstrakoncert",
+      "source_url": "https://web.archive.org/web/20260318165640/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-05",
+      "headliner": "Poppy",
+      "source_url": "https://web.archive.org/web/20260405112513/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "Dry Cleaning",
+      "source_url": "https://web.archive.org/web/20260405112513/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "CHAT Records",
+      "source_url": "https://web.archive.org/web/20260405112513/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "Machine Head",
+      "source_url": "https://web.archive.org/web/20260405112513/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-12",
+      "headliner": "Tucker Wetmore",
+      "source_url": "https://web.archive.org/web/20260405112513/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "Ninja Sex Party x TWRP",
+      "source_url": "https://web.archive.org/web/20260405112513/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "HAEVN",
+      "source_url": "https://web.archive.org/web/20260405112513/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "Branco",
+      "source_url": "https://web.archive.org/web/20260405112513/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "Omar Souleyman",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "Figurines",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "The Savage Rose",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "BAEST",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "Hans Philip",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-27",
+      "headliner": "Hans Philip",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-28",
+      "headliner": "Hans Philip",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-29",
+      "headliner": "Hans Philip",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "Ulige Numre - 2nd extra concert",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "Sofia Isella",
+      "source_url": "https://web.archive.org/web/20260512074504/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "Sort Sol",
+      "source_url": "https://web.archive.org/web/20260512074504/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "LANY",
+      "source_url": "https://web.archive.org/web/20260512074504/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "Tabloid",
+      "source_url": "https://web.archive.org/web/20260512074504/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "Joey Valence & Brae",
+      "source_url": "https://web.archive.org/web/20260523205329/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "Iceage - p\u00e5 gulvet i VEGA",
+      "source_url": "https://web.archive.org/web/20260523205329/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "Vendredi Sur Mer",
+      "source_url": "https://web.archive.org/web/20260523205329/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "Chance Pe\u00f1a",
+      "source_url": "https://web.archive.org/web/20260523205329/https://vega.dk/"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "Garbage",
+      "source_url": "https://web.archive.org/web/20260531222001/https://vega.dk/"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "Tower Of Power",
+      "source_url": "https://web.archive.org/web/20260531222001/https://vega.dk/"
+    },
+    {
+      "date": "2026-06-16",
+      "headliner": "Men I Trust",
+      "source_url": "https://web.archive.org/web/20260610172550/https://vega.dk/"
+    },
+    {
+      "date": "2026-06-17",
+      "headliner": "Aldous Harding",
+      "source_url": "https://web.archive.org/web/20260610172550/https://vega.dk/"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "Tom Misch",
+      "source_url": "https://web.archive.org/web/20260610172550/https://vega.dk/"
+    },
+    {
+      "date": "2026-06-19",
+      "headliner": "sunn O)))",
+      "source_url": "https://web.archive.org/web/20260610172550/https://vega.dk/"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "Tricky",
+      "source_url": "https://web.archive.org/web/20260610172550/https://vega.dk/"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "fakemink",
+      "source_url": "https://web.archive.org/web/20260610172550/https://vega.dk/"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "Dropkick Murphys",
+      "source_url": "https://web.archive.org/web/20260627154933/https://vega.dk/en"
+    },
+    {
+      "date": "2026-08-12",
+      "headliner": "bbno$",
+      "source_url": "https://web.archive.org/web/20260811151455/https://vega.dk/en"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "Kurt Vile & The Violators",
+      "source_url": "https://web.archive.org/web/20260816110012/https://vega.dk/"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "The Whitest Boy Alive",
+      "source_url": "https://web.archive.org/web/20260816110012/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-02",
+      "headliner": "Love Shop",
+      "source_url": "https://web.archive.org/web/20260816110012/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "Hess Is More: Apollonian Circles",
+      "source_url": "https://web.archive.org/web/20260816110012/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "Hess Is More: Apollonian Circles - Ekstrakoncert",
+      "source_url": "https://web.archive.org/web/20260905122035/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-07",
+      "headliner": "Yebba",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-08",
+      "headliner": "Yebba - Ekstrakoncert",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "Mille",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "Mille - Ekstrakoncert",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "NOAH",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "Sm\u00f8gm\u00e6nd",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "Ella Mai",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "Kayak",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Current 93",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "cph-vega-store",
+  "imported_by": "scripts/import-venues.js"
+}

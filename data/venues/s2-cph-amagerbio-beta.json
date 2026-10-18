@@ -1,0 +1,180 @@
+{
+  "id": "s2-cph-amagerbio-beta",
+  "name": "Beta (Amager Bio & BETA)",
+  "city": "Copenhagen",
+  "capacity_band": "up to 200",
+  "calendar_source_url": "https://ab-b.dk/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-11",
+      "headliner": "Turf",
+      "source_url": "https://web.archive.org/web/20260308080135id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-04-13",
+      "headliner": "Sick Thoughts",
+      "source_url": "https://web.archive.org/web/20260412095110id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "Yellow Eyes",
+      "source_url": "https://web.archive.org/web/20260412095110id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "Metalized Tour: Defacing God + Maceration + Shadowspawn",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "Physical Graffiti \u2013 Led Zeppelin Tribute",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "Vastum",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "Grade 2",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-05",
+      "headliner": "Charlie Parr",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "Nebula",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "RUSK x BETA #1",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "Mariel Buckley",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "Cemetery Skyline",
+      "source_url": "https://web.archive.org/web/20260416013429id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "RUSK X BETA #2",
+      "source_url": "https://web.archive.org/web/20260515230102id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "Fancy Lee",
+      "source_url": "https://web.archive.org/web/20260515230102id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-20",
+      "headliner": "Ster\u00f6id",
+      "source_url": "https://web.archive.org/web/20260515230102id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "Rodrigo Gallardo + Tremor",
+      "source_url": "https://web.archive.org/web/20260523235610id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "Heave Blood & Die",
+      "source_url": "https://web.archive.org/web/20260523235610id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "Prewn",
+      "source_url": "https://web.archive.org/web/20260523235610id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "Grumpynators + Strawberry Slaughterhouse",
+      "source_url": "https://web.archive.org/web/20260523235610id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-06-08",
+      "headliner": "Cro-Mags",
+      "source_url": "https://web.archive.org/web/20260523235610id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-06-09",
+      "headliner": "Coti",
+      "source_url": "https://web.archive.org/web/20260523235610id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "Death Lens",
+      "source_url": "https://web.archive.org/web/20260523235610id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "Extremely Rotten Death Fest \u2013 Warm up",
+      "source_url": "https://web.archive.org/web/20260523235610id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-06-15",
+      "headliner": "Home Front",
+      "source_url": "https://web.archive.org/web/20260615003355id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "Youth Code",
+      "source_url": "https://web.archive.org/web/20260615003355id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "Party Cannon",
+      "source_url": "https://web.archive.org/web/20260623193401id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "Dysgnostic + Chaotian",
+      "source_url": "https://web.archive.org/web/20260623193401id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "Ryan Davis & The Roadhouse Band",
+      "source_url": "https://web.archive.org/web/20260827075706id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-08",
+      "headliner": "B\u00e9ton Arm\u00e9",
+      "source_url": "https://web.archive.org/web/20260827075706id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "Sigh",
+      "source_url": "https://web.archive.org/web/20260827075706id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Copenhagen Metal Fest \u2013 Temadag",
+      "source_url": "https://web.archive.org/web/20260827075706id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "Dark Thoughts",
+      "source_url": "https://web.archive.org/web/20260920093023id_/https://ab-b.dk/"
+    },
+    {
+      "date": "2026-09-26",
+      "headliner": "Son Of A Pixel",
+      "source_url": "https://web.archive.org/web/20260920093023id_/https://ab-b.dk/"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "cph-amagerbio-beta",
+  "imported_by": "scripts/import-venues.js"
+}

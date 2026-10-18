@@ -1,0 +1,975 @@
+{
+  "id": "s2-cph-pumpehuset",
+  "name": "Pumpehuset",
+  "city": "Copenhagen",
+  "capacity_band": "up to 600",
+  "calendar_source_url": "https://pumpehuset.dk/koncerter/",
+  "read_at": "2026-10-17",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "Mariano Mellino",
+      "source_url": "https://pumpehuset.dk/koncerter/mariano-mellino/"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "Del Water Gap",
+      "source_url": "https://pumpehuset.dk/koncerter/del-water-gap/"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "DJ Habibeats",
+      "source_url": "https://pumpehuset.dk/koncerter/dj-habibeats/"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "La Malafamera",
+      "source_url": "https://pumpehuset.dk/koncerter/la-malafamera-22/"
+    },
+    {
+      "date": "2026-04-05",
+      "headliner": "Seaworld - 10 year anniversary",
+      "source_url": "https://pumpehuset.dk/koncerter/seaworld-10-year-anniversary/"
+    },
+    {
+      "date": "2026-04-08",
+      "headliner": "Kofi Stone",
+      "source_url": "https://pumpehuset.dk/koncerter/kofi-stone/"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "Hellripper",
+      "source_url": "https://pumpehuset.dk/koncerter/hellripper/"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "GUSTO",
+      "source_url": "https://pumpehuset.dk/koncerter/gusto/"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "Extremely Rotten Death Metal Vol. 30",
+      "source_url": "https://pumpehuset.dk/koncerter/extremely-rotten-death-metal-vol-30/"
+    },
+    {
+      "date": "2026-04-12",
+      "headliner": "Solence",
+      "source_url": "https://pumpehuset.dk/koncerter/solence/"
+    },
+    {
+      "date": "2026-04-13",
+      "headliner": "Sophia Stel",
+      "source_url": "https://pumpehuset.dk/koncerter/sophia-stel/"
+    },
+    {
+      "date": "2026-04-14",
+      "headliner": "Witch Fever",
+      "source_url": "https://pumpehuset.dk/koncerter/witch-fever/"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "Pete & Bas",
+      "source_url": "https://pumpehuset.dk/koncerter/pete-bas/"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "Karoline Funder",
+      "source_url": "https://pumpehuset.dk/koncerter/karoline-funder/"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "Johnny Deluxe",
+      "source_url": "https://pumpehuset.dk/koncerter/johnny-deluxe-3/"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "Franglish",
+      "source_url": "https://pumpehuset.dk/koncerter/franglish/"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "Byhaven: Arto + Jungle Julia w. friends",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-arto/"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "Infected Rain x Butcher Babies",
+      "source_url": "https://pumpehuset.dk/koncerter/infected-rain-x-butcher-babies/"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "Byhaven: Urban Breakout presents: marius + KARLA + Gandy",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-urban-breakout-presents-marius-karla/"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "Byhaven: Sounds Good x Alldayer - Spring sessions",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-sounds-good-x-alldayer-spring-sessions/"
+    },
+    {
+      "date": "2026-04-29",
+      "headliner": "Byhaven: Kosmo + heyviktor + Nora Blume",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-kosmo-heyviktor-nora-blume/"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "Byhaven: Tender Youth + Carnival Souls",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-tender-youth-carnival-souls/"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "Aries",
+      "source_url": "https://pumpehuset.dk/koncerter/aries-3/"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "Byhaven: 10 years of Prime: Cold Culture + bleak.",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-10-years-of-prime-cold-culture-bleak/"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "Heated Rivalry Club Night",
+      "source_url": "https://pumpehuset.dk/koncerter/heated-rivalry-club-night/"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "Byhaven: Extremely Rotten Death Metal Vol. 31",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-extremely-rotten-death-metal-vol-31/"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "Byhaven: IKIGAI Sundays present Eliott Litrowski + Nat + Lowfek",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-ikigai-sundays-presents-eliott-litrowski-nat-lowfek/"
+    },
+    {
+      "date": "2026-05-05",
+      "headliner": "Byhaven: Lips Glued + sophie-lou",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-lips-glued-sophie-lou/"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "Byhaven: willum + Lina Agger",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-willum-bobbyfrl/"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "Plini",
+      "source_url": "https://pumpehuset.dk/koncerter/plini-3/"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "Byhaven: star embassy + Blush",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-star-embassy-blush/"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "wicky - ekstrakoncert",
+      "source_url": "https://pumpehuset.dk/koncerter/wicky-ekstrakoncert/"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "Byhaven: neeva + Sara Vita",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-neeva-sara-vita/"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "wicky",
+      "source_url": "https://pumpehuset.dk/koncerter/wicky/"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "Byhaven: METRO-LINE takeover",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-metro-line-takeover/"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "La Malafamera",
+      "source_url": "https://pumpehuset.dk/koncerter/la-malafamera-23/"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "Byhaven: Radio Panini takeover",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-radio-panini-takeover/"
+    },
+    {
+      "date": "2026-05-11",
+      "headliner": "Byhaven: In Inkra + Gaslight",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-in-inkra-gaslight/"
+    },
+    {
+      "date": "2026-05-12",
+      "headliner": "Byhaven: Niah Steiner + Agnes Hartwich",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-niah-steiner-agnes-hartwich/"
+    },
+    {
+      "date": "2026-05-13",
+      "headliner": "Byhaven: Ibyen Prisen 2026",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-ibyen-prisen-2026-2/"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "Byhaven: Holdo + Caroline K\u00f6nig",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-holdo/"
+    },
+    {
+      "date": "2026-05-14",
+      "headliner": "Barrington Levy",
+      "source_url": "https://pumpehuset.dk/koncerter/barrington-levy/"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "Byhaven: Aland Z + Karlitas Way",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-aland-z-karlitas-way/"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "The BIG Eurovision Drag Show",
+      "source_url": "https://pumpehuset.dk/koncerter/the-big-eurovision-drag-show/"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "Byhaven: Night Journeys presents",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-night-journeys-presents/"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "BODYSLAM Wrestling - The Gentle Art of Making Enemies",
+      "source_url": "https://pumpehuset.dk/koncerter/bodyslam-wrestling-the-gentle-art-of-making-enemies/"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "Byhaven: Love.Rave Opening Season - Birthday Edition",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-love-rave-opening-season-birthday-edition/"
+    },
+    {
+      "date": "2026-05-18",
+      "headliner": "Byhaven: FIVE FOOT ONE Records presents: Vene + Meant",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-five-foot-one-records-presents-vene-meant/"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "Byhaven: Thoughtfool + Carry Me",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-thoughtfool-carry-me/"
+    },
+    {
+      "date": "2026-05-20",
+      "headliner": "Byhaven: Royalties presents",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-royalties-presents/"
+    },
+    {
+      "date": "2026-05-21",
+      "headliner": "Byhaven: Luanna Elise + Polly",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-luanna-elise-polly/"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "Byhaven: Melodi Ghazal + Tiffi M (SE)",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-melodi-ghazal-tiffi-m-se/"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "KASABLANCA LIVE 360\u00b0 XP",
+      "source_url": "https://pumpehuset.dk/koncerter/kasablanca-live-360-xp/"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "Byhaven: USERS Releasefest + Golvad Gr\u00e4vling (SE)",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-users-releasefest-golvad-gravling-se/"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "DYKE IN",
+      "source_url": "https://pumpehuset.dk/koncerter/dyke-in/"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "Group Therapy XXL @ Den Anden Side & Pumpehuset",
+      "source_url": "https://pumpehuset.dk/koncerter/group-therapy-xxl-den-anden-side-pumpehuset/"
+    },
+    {
+      "date": "2026-05-25",
+      "headliner": "Byhaven: Hul presents Royal Hinus + FYR",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-hul-presents/"
+    },
+    {
+      "date": "2026-05-25",
+      "headliner": "Phosphorescent",
+      "source_url": "https://pumpehuset.dk/koncerter/phosphorescent-2/"
+    },
+    {
+      "date": "2026-05-26",
+      "headliner": "Byhaven: SALVER + BITTER",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-salver-bitter/"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "Byhaven: Yowlandi (DE) + Lisha",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-yowlandi-de-lisha/"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "La Mosca Ts\u00e9 - Ts\u00e9",
+      "source_url": "https://pumpehuset.dk/koncerter/la-mosca/"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "Byhaven: mikey + Minais B",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-mikey-minais-b/"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "Byhaven: Baile House spring party",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-baile-house-spring-party/"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "Heated Rivalry Club Night",
+      "source_url": "https://pumpehuset.dk/koncerter/heated-rivalry-club-night-3/"
+    },
+    {
+      "date": "2026-05-30",
+      "headliner": "Byhaven: UPLAND 54 takeover",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-upland-54-takeover/"
+    },
+    {
+      "date": "2026-05-31",
+      "headliner": "Byhaven: Zeitgeist: Under the sun",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-zeitgeist-takeover/"
+    },
+    {
+      "date": "2026-06-02",
+      "headliner": "Byhaven: Luca Stereo + thermann",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-luca-stereo-thermann/"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "Byhaven: New Money + MITE",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-inertials-mite/"
+    },
+    {
+      "date": "2026-06-05",
+      "headliner": "Byhaven: Boy With Apple (SE) + Young Couple",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-boy-with-apple-se-young-couple/"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "Byhaven: Gade BMX CPH Street Jam 2026",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-gade-bmx-cph-street-jam-2026/"
+    },
+    {
+      "date": "2026-06-08",
+      "headliner": "Byhaven: RoFH Records 5 \u00e5rs jubil\u00e6um",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-rofh-records-5-aars-jubilaeum/"
+    },
+    {
+      "date": "2026-06-09",
+      "headliner": "Byhaven: let's go mgmt presents: Swash + Why Sun",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-swash-why-sun/"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "Byhaven: Candidates of Ebba + SEOULL",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-candidates-of-ebba-seoull/"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "Byhaven: Karl Blanchez + Louis H\u00f8gh + CORNER",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-karl-blanchez-louis-hoegh-corner/"
+    },
+    {
+      "date": "2026-06-12",
+      "headliner": "Byhaven: Born Into the 90's: A Tribute to Phase 5",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-born-into-the-90s-supreme-x-soul-explosion/"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "Byhaven: Mainstream International Pride",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-mainstream-international-pride/"
+    },
+    {
+      "date": "2026-06-13",
+      "headliner": "ParisLatino",
+      "source_url": "https://pumpehuset.dk/koncerter/parislatino/"
+    },
+    {
+      "date": "2026-06-14",
+      "headliner": "Byhaven: (Con)Doctors: DJ Void + Gronk + DJ 2Late",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-condoctors-dj-void-gronk-dj2-late/"
+    },
+    {
+      "date": "2026-06-15",
+      "headliner": "Byhaven: Laura Vejlby + R\u00f8verdatter",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-laura-vejlby-roeverdatter/"
+    },
+    {
+      "date": "2026-06-16",
+      "headliner": "Byhaven: Hasfeldt + Alto Aria",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-hasfeldt-alto-aria/"
+    },
+    {
+      "date": "2026-06-17",
+      "headliner": "Byhaven: Bands of Tomorrow Musikbingo",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-bands-of-tomorrow-musikbingo/"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "Byhaven: Av, Min Guldtand Afterparty",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-av-min-guldtand-afterparty/"
+    },
+    {
+      "date": "2026-06-18",
+      "headliner": "Lamin",
+      "source_url": "https://pumpehuset.dk/koncerter/lamin/"
+    },
+    {
+      "date": "2026-06-19",
+      "headliner": "Byhaven: L8 presents: BJ\u00d8RN + Valde p\u00e5 Mars + MAISHA",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-l8-presents-bjoern-valde-paa-mars-maisha/"
+    },
+    {
+      "date": "2026-06-20",
+      "headliner": "Byhaven: MASTER OF EURODANCE PART 4",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-masters-of-eurodance/"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "Byhaven: Love.Rave",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-love-rave-14/"
+    },
+    {
+      "date": "2026-06-23",
+      "headliner": "Byhaven: Merry + Kamille Molano",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-merry-kamille-molano/"
+    },
+    {
+      "date": "2026-06-24",
+      "headliner": "Byhaven: due. + Havtorn",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-due-havtorn/"
+    },
+    {
+      "date": "2026-06-25",
+      "headliner": "Byhaven: 100barz presents: chrome! + Skomager + Danjoo + Damnd",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-100barz-presents-chrome-skomager-danjoo/"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "Byhaven: Dagmars Bodegas Havefest",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-dagmars-bodegas-havefest/"
+    },
+    {
+      "date": "2026-06-27",
+      "headliner": "Byhaven: Techno In The Garden 2026 - Andrea Martini & Friends",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-techno-in-the-garden-2026-andrea-martini-friends/"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "Byhaven: PERREO SOCIAL CLUB",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-perreo-social-club/"
+    },
+    {
+      "date": "2026-07-01",
+      "headliner": "Byhaven: District South",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-district-south/"
+    },
+    {
+      "date": "2026-07-02",
+      "headliner": "Byhaven: The Gathering x Hemerescopium x Paradansu takeover",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-the-gathering-x-hemerescopium-x-paradansu-takeover/"
+    },
+    {
+      "date": "2026-07-03",
+      "headliner": "Copenhagen Jazz Festival: Salt Fat Acid Jazz + Odqin Ensemble",
+      "source_url": "https://pumpehuset.dk/koncerter/copenhagen-jazz-festival-salt-fat-acid-jazz-odqin-ensemble/"
+    },
+    {
+      "date": "2026-07-04",
+      "headliner": "Copenhagen Jazz Festival: Sunb\u00f6rn goes club club + B\u00f8ttern / Filancia / W\u00f8hlk",
+      "source_url": "https://pumpehuset.dk/koncerter/copenhagen-jazz-festival-sunborn/"
+    },
+    {
+      "date": "2026-07-04",
+      "headliner": "Sina Bathaie",
+      "source_url": "https://pumpehuset.dk/koncerter/sina-bathaie-2/"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "Copenhagen Jazz Festival: ALAWARI + Man Henry",
+      "source_url": "https://pumpehuset.dk/koncerter/copenhagen-jazz-festival-alawari-man-henry/"
+    },
+    {
+      "date": "2026-07-06",
+      "headliner": "Copenhagen Jazz Festival: katharsis presents: Dudde + jjjacob",
+      "source_url": "https://pumpehuset.dk/koncerter/copenhagen-jazz-festival-katharsis-presents-dudde-jjjacob/"
+    },
+    {
+      "date": "2026-07-07",
+      "headliner": "Copenhagen Jazz Festival: Emil F & Frederik Valentin + Merely",
+      "source_url": "https://pumpehuset.dk/koncerter/copenhagen-jazz-festival-emil-f-frederik-valentin-merely/"
+    },
+    {
+      "date": "2026-07-07",
+      "headliner": "Bandalos Chinos",
+      "source_url": "https://pumpehuset.dk/koncerter/bandalos-chinos/"
+    },
+    {
+      "date": "2026-07-08",
+      "headliner": "Copenhagen Jazz Festival: Hul presents: Swimming Pool + Psychobillyjazz 3",
+      "source_url": "https://pumpehuset.dk/koncerter/copenhagen-jazz-festival-hul-presents-swimming-pool-psychobillyjazz-3/"
+    },
+    {
+      "date": "2026-07-09",
+      "headliner": "Copenhagen Jazz Festival: hands on fire + CHIRONS ROOM",
+      "source_url": "https://pumpehuset.dk/koncerter/copenhagen-jazz-festival-hands-of-fire-chironsroom/"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "Copenhagen Jazz Festival: Tjiquita presents Latin Angel Social Club",
+      "source_url": "https://pumpehuset.dk/koncerter/copenhagen-jazz-festival-tjiquita-presents-latin-angel-social-club/"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "Copenhagen Jazz Festival: Den Stenede Rille & venner: Byhavens Plademarked pt. 2 + Allen Anjeh",
+      "source_url": "https://pumpehuset.dk/koncerter/copenhagen-jazz-festival-den-stenede-rille-venner-byhavens-plademarked-pt-2-allen-anjeh/"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "Copenhagen Jazz Festival final party: Eliel Lazo feat. Myra Washington",
+      "source_url": "https://pumpehuset.dk/koncerter/copenhagen-jazz-festival-final-party-eliel-lazo-feat-myra-washington/"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "Elena Rose",
+      "source_url": "https://pumpehuset.dk/koncerter/elena-rose/"
+    },
+    {
+      "date": "2026-07-14",
+      "headliner": "Byhaven: Out of Office presents: Farmand + Om Forladelse",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-farmand-om-forladelse/"
+    },
+    {
+      "date": "2026-07-15",
+      "headliner": "Byhaven: Swedish selections: Bellvie + Deya Disa + Hund Begraven",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-swedish-selections-bellvie-se-deya-disa-se/"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "Byhaven: ALISS SEEN + NIGHTMARIES",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-aliss-seen-nightmaries/"
+    },
+    {
+      "date": "2026-07-17",
+      "headliner": "Byhaven: We Outside CPH - Music Bingo & Summer Jams",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-we-outside-cph-music-bingo-summer-jams/"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "Byhaven: Meeting of Styles 2026",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-meeting-of-styles-2026/"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "Biohazard",
+      "source_url": "https://pumpehuset.dk/koncerter/biohazard/"
+    },
+    {
+      "date": "2026-07-19",
+      "headliner": "Byhaven: Sounds Good x Alldayer",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-sounds-good-x-alldayer/"
+    },
+    {
+      "date": "2026-07-20",
+      "headliner": "Byhaven: S.O.S takeover: Dr\u00f8mmer Om + Caroline Beck + Victor Illas",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-s-o-s-takeover-droemmer-om-caroline-beck-victor-illas/"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "Byhaven: Musti (NO) + Balloh & Ajay7",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-musti-balloh-ajay7/"
+    },
+    {
+      "date": "2026-07-21",
+      "headliner": "Arch Enemy",
+      "source_url": "https://pumpehuset.dk/koncerter/arch-enemy/"
+    },
+    {
+      "date": "2026-07-22",
+      "headliner": "Byhaven: Legends of Dwarg",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-legends-of-dwarg/"
+    },
+    {
+      "date": "2026-07-23",
+      "headliner": "Byhaven: NATKAT + BIMS + DJ Whut! + B FROM E",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-natkat-bims-dj-whut-b-from-e/"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "Byhaven: Loui Henderson + Rosa P\u00e5 M\u00e5nen",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-loui-henderson-rosa-paa-maanen/"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "Byhaven: 2016 4ever<3",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-2016-4ever/"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "Byhaven: Love.Rave",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-love-rave-15/"
+    },
+    {
+      "date": "2026-07-29",
+      "headliner": "Byhaven: O Days Warm Up",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-o-days-warm-up-2/"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "Byhaven: KLIKEN + DJ Malthe Fryd",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-kliken-dj-malthe-fryd/"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "Metal Church / Armored Saint",
+      "source_url": "https://pumpehuset.dk/koncerter/metal-church-armored-saint/"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "Byhaven: Extremely Rotten Death Metal Vol. 32",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-extremely-rotten-death-metal-vol-32/"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "Castle Rat",
+      "source_url": "https://pumpehuset.dk/koncerter/castle-rat/"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "Byhaven: Afrohagen",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-afrohagen-2/"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "The Haunted",
+      "source_url": "https://pumpehuset.dk/koncerter/the-haunted/"
+    },
+    {
+      "date": "2026-08-02",
+      "headliner": "Byhaven: Fruit-telle @ Byhaven",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-fruit-telle-byhaven/"
+    },
+    {
+      "date": "2026-08-03",
+      "headliner": "Byhaven: Tosomhed + eftergl\u00f8d",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-tosomhed-eftergloed/"
+    },
+    {
+      "date": "2026-08-04",
+      "headliner": "Byhaven: GL\u00d8D presents: Saliou+ Freja Malou",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-gloed-presents-saliou-freja-malou/"
+    },
+    {
+      "date": "2026-08-05",
+      "headliner": "Byhaven: johan.sylvest + Liges\u00e5 Forvirret",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-johan-sylvest-ligesaa-forvirret/"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "Byhaven: Petrola 80 presents: Heddah + Timmyia + Lyra Valenza + Deb Foam (live)",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-petrola-80-presents-heddah-timmyia-lyra-valenza-deb-foam-live/"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "Byhaven: Ida Just + Fri\u00f0a Saiya",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-ida-just-frida-saiya/"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "Byhaven: Club Supreme X Born Into the 90's",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-club-supreme-x-born-into-the-90s/"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "Byhaven: IKIGAI Sundays present Ricardo Roessel + T\u00e9a + NEC (AR)",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-ikigai-sundays-present-ricardo-roessel-tea-nec-ar/"
+    },
+    {
+      "date": "2026-08-11",
+      "headliner": "Byhaven: SLEM pr\u00e6senterer: Heavy Yoga + Pink Plague",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-slem-praesenterer-heavy-yoga-pink-plague/"
+    },
+    {
+      "date": "2026-08-12",
+      "headliner": "Byhaven: V\u00e6gtl\u00f8s + GRAVA",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-vaegtloes-grava/"
+    },
+    {
+      "date": "2026-08-12",
+      "headliner": "The Ghost Inside",
+      "source_url": "https://pumpehuset.dk/koncerter/the-ghost-inside/"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "Byhaven: BIG WETT (AUS) + Josie Amadonna",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-big-wett-aus-josie-amadonna/"
+    },
+    {
+      "date": "2026-08-13",
+      "headliner": "FLINTA PRIDE",
+      "source_url": "https://pumpehuset.dk/koncerter/flinta-pride/"
+    },
+    {
+      "date": "2026-08-14",
+      "headliner": "Byhaven: Farveblind Inc. Office Party [Dress code: Business NOT Casual]",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-farveblind-inc-office-party-dress-code-business-not-casual/"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "Byhaven: Mainstream Pride 2026",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-mainstream-pride-2026/"
+    },
+    {
+      "date": "2026-08-15",
+      "headliner": "GAGxDAS: PRIDE at Pumpehuset",
+      "source_url": "https://pumpehuset.dk/koncerter/gagxdas-pride-at-pumpehuset/"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "Byhaven: Radio Panini takeover - Pride Edition",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-radio-panini-takeover-pride-edition/"
+    },
+    {
+      "date": "2026-08-17",
+      "headliner": "Byhaven: FRYD + SOLOW",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-fryd/"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "Byhaven: BASKE + Absalon Rieper",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-baske-absalon-rieper/"
+    },
+    {
+      "date": "2026-08-18",
+      "headliner": "SPEED",
+      "source_url": "https://pumpehuset.dk/koncerter/speed/"
+    },
+    {
+      "date": "2026-08-19",
+      "headliner": "Byhaven: topgunnshat presents: OneDay",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-topgunnshat-presents-oneday/"
+    },
+    {
+      "date": "2026-08-20",
+      "headliner": "Byhaven: tusind.tanker + e.r.a.s.e.r.h.e.ad",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-tusind-tanker-e-r-a-s-e-r-h-e-ad/"
+    },
+    {
+      "date": "2026-08-21",
+      "headliner": "Byhaven: CRINGE x MY LITTLE PARTY",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-cringe-x-my-little-party/"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "Byhaven: Shady Nasty (AU) + Skt. DeLarge",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-shady-nasty-au/"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "BODYSLAM Wrestling 11th Anniversary Show",
+      "source_url": "https://pumpehuset.dk/koncerter/bodyslam-11th-anniversary-show/"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "Byhaven: Love.Rave",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-love-rave-16/"
+    },
+    {
+      "date": "2026-08-24",
+      "headliner": "Byhaven: iomfro (duo) + Albert B",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-iomfro-albert-b/"
+    },
+    {
+      "date": "2026-08-25",
+      "headliner": "Byhaven: ABDOS presents SUMMER SMASH",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-abdos-presents-summer-smash/"
+    },
+    {
+      "date": "2026-08-26",
+      "headliner": "Byhaven: Emma Lunding + Marianna Winter",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-emma-lunding-marianna-winter/"
+    },
+    {
+      "date": "2026-08-27",
+      "headliner": "Byhaven: movement shaped like a heart presents: crushing + ASTA + Astrid Friberg",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-movement-shaped-like-a-heart-presents-crushing-asta-astrid-friberg/"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "Byhaven: Anything Everything Sensommerfest",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-anything-everything-sensommerfest-2/"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "Shrek Rave",
+      "source_url": "https://pumpehuset.dk/koncerter/shrek-rave/"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "Byhaven: Dagmars Bodegas H\u00f8stfest",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-dagmars-bodegas-hoestfest/"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "Shrek Rave - ekstrashow",
+      "source_url": "https://pumpehuset.dk/koncerter/shrek-rave-ekstrashow/"
+    },
+    {
+      "date": "2026-08-30",
+      "headliner": "Byhaven: 240 Months of Riotvan: Peter Invasion (DE) + Kasper Bj\u00f8rke + Sexy Lazer",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-240-months-of-riotvan-peter-invasion-de-kasper-bjoerke-sexy-lazer/"
+    },
+    {
+      "date": "2026-08-31",
+      "headliner": "Byhaven: Juno + MONSUN",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-juno-monsun/"
+    },
+    {
+      "date": "2026-09-01",
+      "headliner": "Byhaven: Sonicfest",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-sonicfest-2/"
+    },
+    {
+      "date": "2026-09-02",
+      "headliner": "Byhaven: Isam B",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-isam-b/"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "Byhaven: DJ Anform + DJ Pestijens",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-dj-anform-dj-pestijens/"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "Kill-Town Death Fest XI",
+      "source_url": "https://pumpehuset.dk/koncerter/kill-town-death-fest-xi/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "Byhaven: Savage + DJ AXe & DJ Skull Crisher",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-savage-seraphic-entombment-dj-axe-dj-skull-crisher/"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "Kill-Town Death Fest XI",
+      "source_url": "https://pumpehuset.dk/koncerter/kill-town-death-fest-xi-2/"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "Byhaven: Death Pulsation + Filth + DJ Avoid + DJ Pestijens",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-death-pulsation-filth-dj-avoid-dj-pestijens/"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "Kill-Town Death Fest XI",
+      "source_url": "https://pumpehuset.dk/koncerter/kill-town-death-fest-xi-3/"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "Byhaven: Perishing + Dead Void + DJ Unapologetic Neckslasher",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-perishing-dead-void-dj-unapologetic-neckslasher/"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "Kill-Town Death Fest XI",
+      "source_url": "https://pumpehuset.dk/koncerter/kill-town-death-fest-xi-4/"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "Byhaven: Inventory + Pelts",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-inventory-pelts/"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "Byhaven: John Moods (DE) + GENTS (DJ s\u00e6t)",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-john-moods-de/"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "Lack albumrelease",
+      "source_url": "https://pumpehuset.dk/koncerter/lack-albumrelease/"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "Byhaven: Standart + Green Tea Bitches",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-standart/"
+    },
+    {
+      "date": "2026-09-11",
+      "headliner": "La Malafamera",
+      "source_url": "https://pumpehuset.dk/koncerter/la-malafamera-24/"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "Byhaven: Afro Sundown Fest",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-afro-sundown-fest/"
+    },
+    {
+      "date": "2026-09-12",
+      "headliner": "The EPIC Drag Show",
+      "source_url": "https://pumpehuset.dk/koncerter/the-epic-drag-show-4/"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "Byhaven: Love.Rave",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-love-rave-17/"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "WITCHZ",
+      "source_url": "https://pumpehuset.dk/koncerter/witchz/"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Byhaven: Out of Office presents: \u00c6del Fetich + Slyngel",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-out-of-office-presents-aedel-fetich-slyngel/"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Klumben & Raske Penge",
+      "source_url": "https://pumpehuset.dk/koncerter/klumben-raske-penge-3/"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "Byhaven: GRIME TIME",
+      "source_url": "https://pumpehuset.dk/koncerter/byhaven-grime-time/"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "Herra Hnetusmj\u00f6r & Kristmundur Axel",
+      "source_url": "https://pumpehuset.dk/koncerter/herra-hnetusmjor-kristmundur-axel/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "MPH 360\u00b0 XP + GUESTS",
+      "source_url": "https://pumpehuset.dk/koncerter/mph-360-xp-guests/"
+    },
+    {
+      "date": "2026-09-24",
+      "headliner": "Myrath",
+      "source_url": "https://pumpehuset.dk/koncerter/myrath/"
+    },
+    {
+      "date": "2026-09-25",
+      "headliner": "Origin Of Trance - 30 Years of ETNICA Celebration",
+      "source_url": "https://pumpehuset.dk/koncerter/origin-of-trance-30-years-of-etnica-celebration/"
+    },
+    {
+      "date": "2026-09-29",
+      "headliner": "WU LYF",
+      "source_url": "https://pumpehuset.dk/koncerter/wu-lyf/"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "cph-pumpehuset",
+  "imported_by": "scripts/import-venues.js"
+}

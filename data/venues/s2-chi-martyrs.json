@@ -1,0 +1,657 @@
+{
+  "id": "s2-chi-martyrs",
+  "name": "Martyrs'",
+  "city": "Chicago",
+  "capacity_band": "not published",
+  "calendar_source_url": "https://martyrslive.com/calendar",
+  "read_at": "2026-10-18T22:56:05Z",
+  "closed_weekdays": [],
+  "shows": [
+    {
+      "date": "2026-10-18",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-10-18",
+      "headliner": "No Bother",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-10-21",
+      "headliner": "Louder Than A Mom",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-10-22",
+      "headliner": "The Unknown Pleasures - The Music of Joy Division",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-10-23",
+      "headliner": "\u2018Twas The Week Before Halloween Ball: A Benefit Show for Illinois Coalition for Immigrant and Refugee Rights (ICIRR) and BUILD, Inc. ft.",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-10-24",
+      "headliner": "GreenTTea & The Tempos",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-10-25",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-10-25",
+      "headliner": "An Intimate Evening with Pamela Des Barres, Author \"I'm With The Band\"",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-10-28",
+      "headliner": "Lexi Jayde",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-10-29",
+      "headliner": "Pebbles Inc",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-10-30",
+      "headliner": "Street Pony",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-01",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-04",
+      "headliner": "Beat The Meatles (2 Sets!)",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-05",
+      "headliner": "Start Making Sense - A Tribute to Talking Heads",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-06",
+      "headliner": "Start Making Sense - A Tribute to Talking Heads",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-07",
+      "headliner": "Start Making Sense - A Tribute to Talking Heads",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-08",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-11",
+      "headliner": "An Evening With... Kate Nash (General Admission Standing Room Only Ticket)",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-12",
+      "headliner": "Second Hand News - Fleetwood Mac Tribute (2 Sets!)",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-13",
+      "headliner": "Second Hand News - Fleetwood Mac Tribute (2 Sets!)",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-14",
+      "headliner": "Second Hand News - Fleetwood Mac Tribute (2 Sets!)",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-15",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-15",
+      "headliner": "No Bother",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-19",
+      "headliner": "Mistrophia",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-20",
+      "headliner": "The Reverend Peyton\u2019s Big Damn Band",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-22",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-11-29",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-12-02",
+      "headliner": "Beat The Meatles (2 Sets!)",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-12-06",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-12-08",
+      "headliner": "DC & The Love",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-12-10",
+      "headliner": "An Evening with Peach Jam - Allman Brothers Tribute (2 Sets!)",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-12-12",
+      "headliner": "14th Annual Krampus Fest",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-12-13",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-12-18",
+      "headliner": "The Local Honeys",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-12-19",
+      "headliner": "14th Annual Mobetta Holiday Jam!",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-12-20",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-12-20",
+      "headliner": "No Bother",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-12-26",
+      "headliner": "Shoe Fest Holiday Jam!",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-12-27",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-12-30",
+      "headliner": "PriMary - The Cure Tribute",
+      "source_url": "https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2027-01-03",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://martyrslive.com/calendar"
+    }
+  ],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "Beat The Meatles (2 Sets!)",
+      "source_url": "https://web.archive.org/web/20260323172214id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-02",
+      "headliner": "Bronwyn Keith-Hynes",
+      "source_url": "https://web.archive.org/web/20260323172214id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "Chicago Farmer & The Fieldnotes",
+      "source_url": "https://web.archive.org/web/20260323172214id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "Chicago Farmer & The Fieldnotes",
+      "source_url": "https://web.archive.org/web/20260323172214id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-05",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260323172214id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "An Evening with Peach Jam - Allman Brothers Tribute (2 Sets!)",
+      "source_url": "https://web.archive.org/web/20260323172214id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "Desperado: The Music of Linda Ronstadt, The Eagles, & Friends",
+      "source_url": "https://web.archive.org/web/20260323172214id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "Sicard Hollow",
+      "source_url": "https://web.archive.org/web/20260323172214id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-12",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260323172214id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-17",
+      "headliner": "The Grateful String Band Plays Grateful Dead (2 Sets!)",
+      "source_url": "https://web.archive.org/web/20260323172214id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "What Fools!? (These Mortals Be) by Liam Ghul & Dutcho",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-19",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-19",
+      "headliner": "No Bother",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "Zuhal Olcay",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "giverupper",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "Squeaky Feet",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "Tributosaurus becomes... Buffalo Springfield AND The Byrds",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-01",
+      "headliner": "Mucca Pazza International Tuba Day Celebration!",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "Q Brothers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-02",
+      "headliner": "Sam Shackleton",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-03",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-06",
+      "headliner": "Beat The Meatles (2 Sets!)",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-07",
+      "headliner": "Micah Preite",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-08",
+      "headliner": "Second Hand News - Fleetwood Mac Tribute (2 Sets!)",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-09",
+      "headliner": "Second Hand News - Fleetwood Mac Tribute (2 Sets!)",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-17",
+      "headliner": "Charlie Otto",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-20",
+      "headliner": "65 North Pickers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "The Handsome Devilz - A Tribute to The Smiths / Morrissey",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "Lydia Cash",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-24",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "Mee-ow",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "Clay Street Unit",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-29",
+      "headliner": "buffchick",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-31",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-05-31",
+      "headliner": "Sqwerv",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-06-07",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-06-08",
+      "headliner": "Speaking of....Sex",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-06-14",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-06-21",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-06-25",
+      "headliner": "East Nash Grass",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-06-26",
+      "headliner": "TAZ - Brandon Niederauer",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-07-02",
+      "headliner": "Grassfed Collective",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-07-05",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-07-10",
+      "headliner": "Rebirth Brass Band (2 Sets!)",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-07-11",
+      "headliner": "Rebirth Brass Band (2 Sets!)",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-07-12",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260418200929id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-07-16",
+      "headliner": "Trash Kickers",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-07-19",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-07-19",
+      "headliner": "No Bother",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-07-24",
+      "headliner": "Big Hair Big Trouble",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-07-25",
+      "headliner": "CHEER-ACCIDENT",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "An Evening with 40,000 Headmen",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-07-30",
+      "headliner": "The Rolling Clones",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-07-31",
+      "headliner": "Terrapin Flyer - Days Between - A Celebration of Life of Jerry Garcia",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-08-01",
+      "headliner": "Terrapin Flyer - Days Between - A Celebration of Life of Jerry Garcia",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-08-02",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-08-05",
+      "headliner": "Beat The Meatles (2 Sets!)",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-08-06",
+      "headliner": "Terrapin Flyer - Days Between - A Celebration of Life of Jerry Garcia",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-08-07",
+      "headliner": "Terrapin Flyer - Days Between - A Celebration of Life of Jerry Garcia",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-08-08",
+      "headliner": "5th Annual Chucky Ar La Fest!",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "Terrapin Flyer - Days Between - A Celebration of Life of Jerry Garcia",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-08-16",
+      "headliner": "No Bother",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-08-22",
+      "headliner": "Pebbles Inc",
+      "source_url": "https://martyrslive.com/rss.xml"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-08-29",
+      "headliner": "Meg and The Wheelers",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-08-30",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-09-02",
+      "headliner": "Beat The Meatles (2 Sets!)",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-09-04",
+      "headliner": "Slaughterhouse 32",
+      "source_url": "https://martyrslive.com/rss.xml"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-09-10",
+      "headliner": "CC & The Madman: Fall of '86 (2 Sets!)",
+      "source_url": "https://martyrslive.com/rss.xml"
+    },
+    {
+      "date": "2026-09-13",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-09-15",
+      "headliner": "Tony Rogers & Friends - The Significant Birthday Show",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "Andy Irvine",
+      "source_url": "https://martyrslive.com/rss.xml"
+    },
+    {
+      "date": "2026-09-20",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-09-20",
+      "headliner": "No Bother",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-09-23",
+      "headliner": "John Coltrane's 100th Birthday with",
+      "source_url": "https://martyrslive.com/rss.xml"
+    },
+    {
+      "date": "2026-09-27",
+      "headliner": "The Hoyle Brothers",
+      "source_url": "https://web.archive.org/web/20260714183313id_/https://martyrslive.com/calendar"
+    },
+    {
+      "date": "2026-10-08",
+      "headliner": "Goran Ivanovic & Fareed Haque",
+      "source_url": "https://martyrslive.com/rss.xml"
+    },
+    {
+      "date": "2026-10-10",
+      "headliner": "Yes I Guess They Oughta Name a Drink After You: The Old Town Sch",
+      "source_url": "https://www.oldtownschool.org/calendar/"
+    },
+    {
+      "date": "2026-10-16",
+      "headliner": "Todd Snider Get Together",
+      "source_url": "https://martyrslive.com/calendar"
+    }
+  ],
+  "listing_complete": true,
+  "listed_until": "2027-01-03",
+  "study2_venue_id": "chi-martyrs",
+  "imported_by": "scripts/import-venues.js"
+}

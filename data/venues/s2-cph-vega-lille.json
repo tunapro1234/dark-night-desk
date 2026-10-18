@@ -1,0 +1,180 @@
+{
+  "id": "s2-cph-vega-lille",
+  "name": "Lille VEGA (VEGA)",
+  "city": "Copenhagen",
+  "capacity_band": "not published",
+  "calendar_source_url": "https://vega.dk/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-01",
+      "headliner": "Sumac",
+      "source_url": "https://web.archive.org/web/20260318165640/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-03",
+      "headliner": "1914 + KATLA",
+      "source_url": "https://web.archive.org/web/20260403111742/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-04",
+      "headliner": "Jaleesa",
+      "source_url": "https://web.archive.org/web/20260403111742/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "milo",
+      "source_url": "https://web.archive.org/web/20260405112513/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-10",
+      "headliner": "Persecutor + K\u014dya",
+      "source_url": "https://web.archive.org/web/20260405112513/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-11",
+      "headliner": "Bongeziwe Mabandla",
+      "source_url": "https://web.archive.org/web/20260405112513/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-15",
+      "headliner": "Melody's Echo Chamber",
+      "source_url": "https://web.archive.org/web/20260405112513/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "Ashes of Billy",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-19",
+      "headliner": "toe",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-20",
+      "headliner": "Balu Brigada",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-21",
+      "headliner": "Jamie Woon",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-22",
+      "headliner": "Tide Lines",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "Odd Palace + Daze of June",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "Kvadrillers",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-26",
+      "headliner": "Full of Hell",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "N\u00f8x",
+      "source_url": "https://web.archive.org/web/20260512074504/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "Nordstr\u00f8m",
+      "source_url": "https://web.archive.org/web/20260523205329/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "Soppgirobygget",
+      "source_url": "https://web.archive.org/web/20260523205329/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-31",
+      "headliner": "Phantogram",
+      "source_url": "https://web.archive.org/web/20260531222001/https://vega.dk/"
+    },
+    {
+      "date": "2026-06-04",
+      "headliner": "John Vincent III",
+      "source_url": "https://web.archive.org/web/20260512074504/https://vega.dk/"
+    },
+    {
+      "date": "2026-06-10",
+      "headliner": "Sugar",
+      "source_url": "https://web.archive.org/web/20260610172550/https://vega.dk/"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "The Dandy Warhols",
+      "source_url": "https://web.archive.org/web/20260610172550/https://vega.dk/"
+    },
+    {
+      "date": "2026-08-17",
+      "headliner": "Soulfly",
+      "source_url": "https://web.archive.org/web/20260816110012/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-02",
+      "headliner": "Mclusky",
+      "source_url": "https://web.archive.org/web/20260816110012/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-03",
+      "headliner": "Hilal Kaya",
+      "source_url": "https://web.archive.org/web/20260816110012/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "VEGA NATKLUB",
+      "source_url": "https://web.archive.org/web/20260905122035/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-06",
+      "headliner": "SheCanPlay",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "Fear Factory",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-14",
+      "headliner": "Br\u00edet",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-16",
+      "headliner": "New Constellations",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "GB",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Drake Milligan",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-21",
+      "headliner": "The Lemon Twigs",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "cph-vega-lille",
+  "imported_by": "scripts/import-venues.js"
+}

@@ -1,0 +1,195 @@
+{
+  "id": "s2-chi-reggies-roofdeck",
+  "name": "Trainwreck Rooftop Deck (Reggies Chicago)",
+  "city": "Chicago",
+  "capacity_band": "up to 100",
+  "calendar_source_url": "https://www.reggieslive.com/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-06",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-13",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260318123652id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-20",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260414180711id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-04-27",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260414180711id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-04",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-10",
+      "headliner": "Free Sox Sundays",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-11",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260501173729id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-18",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-25",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260515224501id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-05-31",
+      "headliner": "Free Sox Sundays",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-01",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-06",
+      "headliner": "Tony Mac fest. Matt McQuaid (Vocals)",
+      "source_url": "https://web.archive.org/web/20260527052331id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-11",
+      "headliner": "Jimmy Eat World Ticket Giveaway: Sponsored by Athletic Brewing Co.",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-14",
+      "headliner": "Free Sox Sundays",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-15",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-22",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-28",
+      "headliner": "Free Sox Sundays",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-06-29",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-06",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260609051825id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-12",
+      "headliner": "Free Sox Sundays",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-13",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-18",
+      "headliner": "Saturday Night Bingo! Return Of The King",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-20",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-26",
+      "headliner": "Free Sox Sundays",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-07-27",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-03",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-09",
+      "headliner": "Free Sox Sundays",
+      "source_url": "https://web.archive.org/web/20260712180426id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-10",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-17",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260811020630id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-23",
+      "headliner": "Free Sox Sundays",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-24",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-08-31",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-07",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-14",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Gary Camaro",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    },
+    {
+      "date": "2026-09-21",
+      "headliner": "Monday Night Bingo!",
+      "source_url": "https://web.archive.org/web/20260822035647id_/https://www.reggieslive.com/"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "chi-reggies-roofdeck",
+  "imported_by": "scripts/import-venues.js"
+}

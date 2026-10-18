@@ -1,0 +1,145 @@
+{
+  "id": "s2-cph-vega-ideal",
+  "name": "Ideal Bar (VEGA)",
+  "city": "Copenhagen",
+  "capacity_band": "not published",
+  "calendar_source_url": "https://vega.dk/",
+  "read_at": "2026-10-18",
+  "closed_weekdays": [],
+  "shows": [],
+  "past_shows": [
+    {
+      "date": "2026-04-02",
+      "headliner": "Flammen",
+      "source_url": "https://web.archive.org/web/20260318165640/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-09",
+      "headliner": "Kasino",
+      "source_url": "https://web.archive.org/web/20260405112513/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-16",
+      "headliner": "Spawner",
+      "source_url": "https://web.archive.org/web/20260405112513/https://vega.dk/"
+    },
+    {
+      "date": "2026-04-18",
+      "headliner": "Purelink",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-23",
+      "headliner": "FVN",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-24",
+      "headliner": "Girl Scout",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-25",
+      "headliner": "\u00d3l\u00f6f Arnalds",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-29",
+      "headliner": "Chris Burton",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-04-30",
+      "headliner": "hvem",
+      "source_url": "https://web.archive.org/web/20260417183045/https://vega.dk/en"
+    },
+    {
+      "date": "2026-05-13",
+      "headliner": "Weatherday",
+      "source_url": "https://web.archive.org/web/20260512074504/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-15",
+      "headliner": "Farveblind Releaseparty",
+      "source_url": "https://web.archive.org/web/20260512074504/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-16",
+      "headliner": "moondoggy",
+      "source_url": "https://web.archive.org/web/20260512074504/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-19",
+      "headliner": "Sword II + Rocket",
+      "source_url": "https://web.archive.org/web/20260512074504/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-22",
+      "headliner": "Au/Ra",
+      "source_url": "https://web.archive.org/web/20260512074504/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-23",
+      "headliner": "Not A Lead Singer Karaoke",
+      "source_url": "https://web.archive.org/web/20260523205329/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-26",
+      "headliner": "duendita",
+      "source_url": "https://web.archive.org/web/20260523205329/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-27",
+      "headliner": "Worldpeace DMT + The Femcels",
+      "source_url": "https://web.archive.org/web/20260523205329/https://vega.dk/"
+    },
+    {
+      "date": "2026-05-28",
+      "headliner": "Lea Romea",
+      "source_url": "https://web.archive.org/web/20260523205329/https://vega.dk/"
+    },
+    {
+      "date": "2026-06-01",
+      "headliner": "Syracus\u00e6",
+      "source_url": "https://web.archive.org/web/20260531222001/https://vega.dk/"
+    },
+    {
+      "date": "2026-08-28",
+      "headliner": "CRIPFEST",
+      "source_url": "https://web.archive.org/web/20260816110012/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-05",
+      "headliner": "L8 Takeover",
+      "source_url": "https://web.archive.org/web/20260905122035/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-08",
+      "headliner": "Francis of Delirium",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-09",
+      "headliner": "Chuck Ragan",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-17",
+      "headliner": "Chinese American Bear",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-18",
+      "headliner": "GANS",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    },
+    {
+      "date": "2026-09-19",
+      "headliner": "Mulaa Joans",
+      "source_url": "https://web.archive.org/web/20260906135059/https://vega.dk/"
+    }
+  ],
+  "listing_complete": false,
+  "study2_venue_id": "cph-vega-ideal",
+  "imported_by": "scripts/import-venues.js"
+}
