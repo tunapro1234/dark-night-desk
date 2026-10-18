@@ -169,12 +169,14 @@ const started = (lines) => lines.map((l) => /step \d (\w+): start/.exec(l)?.[1])
 // ---------- units ----------
 test('options: defaults, limits and the steps that cannot be redone', () => {
   const a = parseKeyhourArgs([]);
-  assert.equal(a.plans, 4);
+  assert.equal(a.plans, null); // resolved once the rooms are loaded: 2 per plannable room, at most 20
+  assert.equal(a.planUsdCap, null);
+  assert.equal(parseKeyhourArgs(['--plans', '20']).plans, 20);
   assert.equal(a.maxQlooCalls, 20000);
   assert.equal(parseKeyhourArgs(['--restrict', 'take500']).restrict, 'take500');
   assert.throws(() => parseKeyhourArgs(['--restrict', 'all']), /--restrict/);
   assert.throws(() => parseKeyhourArgs(['--redo', 'study1']), /cannot be redone/);
-  assert.throws(() => parseKeyhourArgs(['--plans', '11']), /--plans/);
+  assert.throws(() => parseKeyhourArgs(['--plans', '21']), /--plans/);
   assert.throws(() => parseKeyhourArgs(['--seed', '3']), /unknown option/);
   assert.deepEqual(STEPS, ['key_check', 'keyday', 'study1', 'study2', 'live_plans']);
 });

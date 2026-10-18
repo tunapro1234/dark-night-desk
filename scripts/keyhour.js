@@ -31,8 +31,10 @@
 //   --restrict filter|take500                   set the pool restriction by hand, only when the key-day test left it open
 //                                               (recorded as "manual"); a value that differs from the key-day decision is refused
 //   --studies-without-claude                    run the studies with no Claude key (L is then reported as "not run")
-//   --plans <n>                                 live plans in step 5 (default 4, at most 10; 0 skips the step)
-//   --plan-usd-cap <usd>                        Claude spend allowed in step 5 (default 0.30)
+//   --plans <n>                                 live plans in step 5 (default 2 per plannable room, at most 20; 0 skips
+//                                               the step)
+//   --plan-usd-cap <usd>                        Claude spend allowed in step 5 (default: the worst-case cost of the
+//                                               plans asked for, at least 0.30)
 //   --max-qloo-calls <n>                        Qloo requests allowed over all invocations of this DATA_DIR, counted in the
 //                                               checkpoint (default 20000; the upper bounds of all steps add up to about 11000)
 //   --step-cap-factor <x>                       each step may send x times its estimated upper bound (default 1.5)
@@ -77,7 +79,8 @@ export const STUDY2_LAST_START_DAY = '2026-10-26';
 // KARAR.md "Istek basi Claude maliyeti" (estimate of 14 Oct, not a measurement): typical and worst plan, alert threshold.
 export const KARAR_PLAN_USD = Object.freeze({ typical: 0.007, worst: 0.045, alert_above: 0.02 });
 const STEP_TIMEOUT_MIN = { key_check: 2, keyday: 20, study1: 60, study2: 180, live_plans: 30 };
-const MAX_PLANS = 10;
+const MAX_PLANS = 20;
+const PLANS_PER_ROOM = 2; // the page should open every plannable room on a recorded card; two nights each
 const PLAN_CALLS = 250; // Qloo requests one live plan may send (tools, leave-one-out, also-loves), an upper bound
 // Paths whose committed state the studies depend on (BACKTEST-2.md: the log records the commit and the data hashes).
 const FROZEN_PATHS = [
@@ -95,7 +98,7 @@ const readJson = (file) => JSON.parse(readFileSync(file, 'utf8'));
 export function parseKeyhourArgs(argv) {
   const out = {
     dryRun: false, data1: path.join(REPO_ROOT, 'data', 'backtest'), data2: path.join(REPO_ROOT, 'data', 'backtest2'), out: path.join(REPO_ROOT, 'results'),
-    keydayVenues: null, keydayPlacebo: null, restrict: null, studiesWithoutClaude: false, plans: 4, planUsdCap: 0.3, maxQlooCalls: 20_000,
+    keydayVenues: null, keydayPlacebo: null, restrict: null, studiesWithoutClaude: false, plans: null, planUsdCap: null, maxQlooCalls: 20_000,
     stepCapFactor: 1.5, requestTimeoutMs: 20_000, stepTimeoutMin: null, redo: [],
   };
   for (let i = 0; i < argv.length; i++) {
@@ -412,6 +415,8 @@ async function loadInputs(args, config, deps) {
   } catch (err) {
     problem('live_plans', `venues: ${err.message}`);
   }
+  args.plans ??= Math.min(MAX_PLANS, PLANS_PER_ROOM * (inputs.rooms?.length ?? 0));
+  args.planUsdCap ??= Math.max(0.3, Math.ceil(args.plans * KARAR_PLAN_USD.worst * 100 - 1e-9) / 100);
 
   const rel = (p) => path.relative(REPO_ROOT, p);
   const paths = [...FROZEN_PATHS, rel(args.data1), rel(args.data2), rel(path.join(args.out, 'backtest2-check-sample.json'))].filter((p) => p && !p.startsWith('..'));
@@ -773,7 +778,7 @@ function dryRunReport(ctx) {
   else lines.push(`3 study1      ${state('study1')}: data not loaded`);
   if (est2) lines.push(`4 study2      ${state('study2')}: ${est2.rows} rows, searches ${est2.searches_min}-${est2.searches_max}, rankings <= ${est2.rankings_max} + literal reading <= ${est2.literal_rankings_max}, total <= ${est2.total_max}; check sample ${inputs.sample2?.ok ? 'recorded' : 'NOT recorded'} (${inputs.sample2?.checked ?? 0}/${inputs.sample2?.rows ?? '?'}); last start day ${STUDY2_LAST_START_DAY} TSI, today ${tsiDay(deps.now())}`);
   else lines.push(`4 study2      ${state('study2')}: data not loaded`);
-  lines.push(`5 live_plans  ${state('live_plans')}: ${claude ? `${args.plans} plan(s), cap ${args.planUsdCap} USD, up to ${PLAN_CALLS * args.plans} Qloo requests` : 'skipped without a Claude key'}; rooms ${(inputs.rooms ?? []).map((v) => v.id).join(', ') || '-'}`);
+  lines.push(`5 live_plans  ${state('live_plans')}: ${claude ? `${args.plans} plan(s), cap ${args.planUsdCap} USD, up to ${PLAN_CALLS * args.plans} Qloo requests` : `skipped without a Claude key (with one: ${args.plans} plan(s), cap ${args.planUsdCap} USD)`}; rooms ${(inputs.rooms ?? []).map((v) => v.id).join(', ') || '-'}`);
   lines.push(`6 summary     ${path.join(config.dataDir, 'keyhour', 'summary.json')}`);
   const upper = 1 + (kdLookups ?? 0) + 30 + (est1?.total_max ?? 0) + (est2?.total_max ?? 0) + (claude ? PLAN_CALLS * args.plans : 0);
   lines.push(`Qloo allowance: ${args.maxQlooCalls} requests over all invocations (--max-qloo-calls), ${ck.qloo_sent_total ?? 0} sent so far; upper bound of the pending plan about ${upper}`);
