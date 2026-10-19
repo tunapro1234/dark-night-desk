@@ -162,18 +162,20 @@ test('page: the card names the rooms its pool came from; unnamed rooms are count
   assert.equal(page.$('poster-pool').hidden, false);
   assert.equal(page.$('poster-pool').textContent, 'Acts from the calendars of Other Hall', 'build_pool: the other room in Exampleville');
   assert.equal(page.$('poster-mode').textContent, 'Fixed steps, no AI writing \u00b7 synthetic test data', 'the card itself says it is not a live plan');
+  assert.equal(page.$('poster-fit').hidden, false, 'a 250-500 room is ranked under a popularity ceiling, so the card says it was sized');
   assert.deepEqual(page.errors, []);
   await app.close();
 
   // A recorded run whose pool also drew on a room this server no longer lists: the page names what it knows and counts the rest.
   const { darkInWeek } = await week();
   const dataDir = path.join(tmp, 'var-pool-gone');
-  await writeRecording(dataDir, darkInWeek[0], { edit: (r) => ({ ...r, pool: { ...r.pool, rooms: [...r.pool.rooms, 'a-room-no-longer-listed'] } }) });
+  await writeRecording(dataDir, darkInWeek[0], { edit: (r) => ({ ...r, pool: { ...r.pool, rooms: [...r.pool.rooms, 'a-room-no-longer-listed'], popularity_max: null } }) });
   const app2 = await noKeyApp(dataDir);
   const page2 = runPage(app2);
   await until(() => !page2.$('poster').hidden, 'the recorded card');
   assert.equal(page2.$('poster-pool').textContent, 'Acts from the calendars of Other Hall and 1 more room');
   assert.match(page2.$('poster-mode').textContent, /^Recorded run from /, 'a recorded card scrolled into view alone still says it is recorded');
+  assert.equal(page2.$('poster-fit').hidden, true, 'no popularity ceiling was sent, so the card does not claim it was sized');
   assert.deepEqual(page2.errors, []);
   await app2.close();
 });

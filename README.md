@@ -99,11 +99,12 @@ Each venue is one JSON file in `VENUES_DIR` (schema checked by `server/calendar/
 }
 ```
 
-`data/venues/` (the default `VENUES_DIR`) holds the demo market: the 15 rooms listed on First Avenue's calendar (the Minneapolis market, all filed under city "Minneapolis", which is the pool key; Turf Club also carries `locality: "Saint Paul"`, which the page and the offer note show), read on 11 Oct 2026
+`data/venues/` (the default `VENUES_DIR`) holds the demo market: the 15 rooms listed on First Avenue's calendar (the Minneapolis market, all filed under city "Minneapolis", which is the pool key; Turf Club also carries `locality: "Saint Paul"`, which the page and the offer note show), read on 19 Oct 2026
 from First Avenue's public calendar pages (GET only, a few requests at least 2.5 seconds apart). Each file keeps the next 60 days
 as `shows` and the last 90 days as `past_shows`; postponed shows were skipped (`scripts/refresh-venues.js` rebuilds them, see Calendar refresh). Titles are kept as the calendar printed them (letters outside ASCII are
 stored as JSON `\uXXXX` escapes, so the files are plain ASCII and parse to the same text). The
-page opens on Turf Club (the room in its first-screen line) when it is present, otherwise on the first venue.
+page opens on Turf Club's first recorded run when it has one, otherwise on the first recorded run of another listed room,
+otherwise on Turf Club (the room in its first-screen line) when it is present, otherwise on the first venue.
 
 `closed_weekdays` uses 0 = Sunday. `shows` is the upcoming program read from the public calendar, `past_shows` is the room's own past
 program (the only source for "this room's crowd"). `test/fixtures/synthetic/venues/example-room.json` is a hand-written test venue

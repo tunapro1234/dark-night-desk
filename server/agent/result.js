@@ -91,7 +91,8 @@ export function assembleResult(session, final, mode, extra = {}) {
     also_loves: picked,
     offer_note,
     offer_notes,
-    pool: pool ? { city: pool.city, window: pool.window, rooms: pool.rooms, counts: pool.counts, method: session.state.ranking?.method } : null,
+    pool: pool ? { city: pool.city, window: pool.window, rooms: pool.rooms, counts: pool.counts, method: session.state.ranking?.method,
+      popularity_max: session.state.ranking?.popularityMax ?? null } : null,
     signal: signal ? { size: signal.signal.length, counts: signal.counts } : null,
     ...(signal?.answered?.length ? { answers: signal.answered } : {}),
     // The agent's thin-signal answer: no shortlist; the counts come from resolve_entities, the sentence from the agent.

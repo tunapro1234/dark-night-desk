@@ -641,6 +641,8 @@ function renderResult(r, { focus = true } = {}) {
   const pool = poolLine(r);
   $('poster-pool').textContent = pool;
   $('poster-pool').hidden = !pool;
+  // Only a ranking that sent a popularity ceiling was sized to the room.
+  $('poster-fit').hidden = r.pool?.popularity_max == null;
 
   const lineup = (r.shortlist ?? []).map((act) =>
     h('li', { class: `act act-${act.rank}` },
