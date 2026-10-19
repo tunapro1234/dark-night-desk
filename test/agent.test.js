@@ -329,6 +329,29 @@ test('ablate: switching off the top contributor re-ranks; nothing removed change
   await app.close();
 });
 
+test('crowd and ablate: per-IP daily limit, a count per route, 429 past it; the plan count is not touched', async () => {
+  const budget = createBudget({ dailyCap: 2, totalCap: 30, ipLimit: 2, prices: { inPerMTok: 2, outPerMTok: 10 } });
+  const { app } = await appWith({ AGENT_MODE: 'scripted' }, { budget });
+  const cal = (await app.inject(`/api/venues/example-room/calendar?from=${FROM}&days=60`)).json();
+  const booked = cal.nights.find((x) => x.status === 'booked').date;
+  const night = cal.nights.find((x) => x.status === 'dark').date;
+  const crowd = (headers = {}) => app.inject({ url: `/api/venues/example-room/crowd?date=${booked}`, headers });
+  const ablate = (headers = {}) => app.inject({ method: 'POST', url: '/api/ablate', payload: { venue_id: 'example-room', date: night, remove: [] }, headers });
+  // A refused input is not counted.
+  assert.equal((await app.inject('/api/venues/example-room/crowd?date=2026-13-01')).statusCode, 400);
+  for (const call of [crowd, ablate]) {
+    assert.equal((await call()).statusCode, 200);
+    assert.equal((await call()).statusCode, 200);
+    const over = await call();
+    assert.equal(over.statusCode, 429);
+    assert.equal(over.json().code, 'ip_daily_limit');
+    assert.match(over.json().error, /00:00 UTC/);
+    assert.equal((await call({ 'x-forwarded-for': '203.0.113.7' })).statusCode, 200, 'another address has its own count');
+  }
+  assert.deepEqual(budget.checkIp('127.0.0.1'), { ok: true, count: 1 }, 'the plan route\'s count for this address is still empty');
+  await app.close();
+});
+
 // ---- live loop with a stand-in SDK (no real Claude call) ----
 
 const usage = { input_tokens: 1000, output_tokens: 200 };

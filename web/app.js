@@ -51,7 +51,7 @@ function agentLabel(agent, recordedAt) {
   if (agent === 'working') return 'Agent: planning';
   if (agent === 'live') return 'Agent: live (Claude)';
   if (agent === 'recorded') return recordedAt ? `Agent: recorded run from ${fullDate(recordedAt)}` : 'Agent: recorded run';
-  if (agent === 'scripted') return 'Agent: scripted plan (no LLM)';
+  if (agent === 'scripted') return 'Agent: fixed steps, no AI writing';
   return 'Agent: unknown';
 }
 function qlooLabel(qloo, recordedAt) {
@@ -148,9 +148,14 @@ function showCalendarNotice(text) {
   n.hidden = !text;
 }
 
-// The room picked on first load when the server has it; otherwise the first venue in the list.
-const DEFAULT_VENUE = 'fa-fine-line';
+// The room picked on first load when the server has it (the room in the first-screen #scene line); otherwise the first venue.
+const DEFAULT_VENUE = 'fa-turf-club';
 const WINDOW_NIGHTS = 60;
+// The room's size after its city: nothing when the venue publishes none (or it is unknown), and no "about" before "up to ...".
+const sizeLine = (band) => {
+  if (!band || band === 'not published' || band === 'unknown') return '';
+  return ` \u00b7 room for ${/^up to /.test(band) ? '' : 'about '}${band}`;
+};
 
 async function loadCalendar(venueId) {
   state.venueId = venueId;
@@ -161,7 +166,7 @@ async function loadCalendar(venueId) {
   $('source-chip').hidden = true;
   showCalendarNotice('');
   const v = state.venues.find((x) => x.id === venueId);
-  $('venue-meta').textContent = v ? `${v.locality || v.city} \u00b7 room for about ${v.capacity_band}` : '';
+  $('venue-meta').textContent = v ? `${v.locality || v.city}${sizeLine(v.capacity_band)}` : '';
   try {
     // Today plus the next 60 nights: today is shown (too late to plan), the 60 nights from tomorrow are the window.
     const cal = await getJSON(`/api/venues/${encodeURIComponent(venueId)}/calendar?days=${WINDOW_NIGHTS + 1}`);
@@ -241,12 +246,12 @@ function renderCalendar(cal) {
   const first = strip.querySelector('.sq-dark') ?? strip.querySelector('.sq-pick');
   if (first) first.tabIndex = 0;
   if (qlooOff() && state.recorded.length) {
-    const nights = state.recorded.map((x) => `${state.venues.find((v) => v.id === x.venue_id)?.name ?? x.venue_id} ${shortDay(x.date)}`);
-    showCalendarNotice(
-      'Qloo: not connected. This server has no Qloo key, so it ranks nothing new. ' +
-        `Nights with a recorded live run play that run back, labelled recorded: ${nights.join('; ')}. Every other night shows no list. ` +
-        'What still works: the calendar and its dark nights for every room, and the back-test button at the top.',
-    );
+    // One line, so a phone still sees the strip and the card below it: only this room's nights (the picker names the room;
+    // the key hour records two nights in every room). "for" the night, since the badge's "from" is the day it was saved.
+    const here = state.recorded.filter((x) => x.venue_id === (cal.venue?.id ?? state.venueId)).map((x) => x.date).sort().map(shortDay);
+    showCalendarNotice(here.length
+      ? `Recorded run${here.length === 1 ? '' : 's'} for ${here.join(', ')}; other nights need Qloo.`
+      : 'No recorded run for this room; its nights need Qloo.');
     $('night-empty-text').textContent =
       'Choose one of the dark squares above. A night with a recorded run shows that run; any other night tells you why there is no list.';
   } else if (qlooOff()) {
@@ -970,6 +975,8 @@ async function openRecorded(run) {
     if (state.venueId !== run.venue_id || state.date !== run.date || state.result) return;
     $('steps').replaceChildren(...(r.steps ?? []).map((label) => h('li', { class: 'done' }, label)));
     renderResult(r, { focus: false });
+    // On a phone the card sits below the strip; bring it into view without moving focus.
+    if (!$('poster').hidden) reveal('poster');
   } catch {
     if (state.venueId === run.venue_id && state.date === run.date && !state.result) resetNight();
   }

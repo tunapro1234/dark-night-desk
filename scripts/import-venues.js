@@ -8,6 +8,7 @@
 //         "listed_until": "2026-12-31",                  last date the page was read for
 //         "complete": true,                              the caller says the listing holds every public show up to listed_until
 //         "closed_weekdays": [],                         optional, 0 = Sunday ... 6 = Saturday
+//         "locality": "Oakland",                         optional, where the room is when it differs from its metro
 //         "shows": [{ "date": "YYYY-MM-DD", "headliner": "...", "source_url": "https://..." }] }
 // Output, per listed room: <out>/s2-<venue_id>.json with shows from (b) dated on or after read_at, past_shows from (a) plus
 // the rows of (b) dated before read_at, and listing_complete true only when "complete" is exactly true. Per metro of a
@@ -16,7 +17,8 @@
 //
 // Usage: node scripts/import-venues.js [--data-dir data/backtest2] [--out data/venues] [--write] <listing.json> ...
 // Without --write it only prints what it would write. Nothing is fetched: this script reads local files only.
-// A run checks every file before it writes any. A file it replaces is kept as <file>.old (loadVenues reads only *.json).
+// A run checks every file before it writes any. A file it replaces is kept as <file>.old (loadVenues reads only *.json),
+// and its locality carries over when the listing gives none.
 // Exit codes: 0 done, 1 usage or input error.
 import { readdir, readFile, rename, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -108,6 +110,7 @@ export function checkListing(listing, where = 'listing') {
   if (!isISODate(listing.listed_until)) bad('listed_until must be a YYYY-MM-DD date');
   if (listing.listed_until < readDay) bad('listed_until is before read_at');
   if (listing.complete !== undefined && typeof listing.complete !== 'boolean') bad('complete, when present, must be true or false');
+  if (listing.locality !== undefined && !isText(listing.locality)) bad('locality, when present, must be a non-empty string');
   if (!Array.isArray(listing.shows)) bad('shows must be an array');
   listing.shows.forEach((s, i) => {
     const at = `shows[${i}]`;
@@ -149,10 +152,12 @@ export function buildImport(data, listings) {
     listedIds.add(l.venue_id);
   }
 
-  const base = (v) => ({
+  // city is the metro (the pool key); a listed locality is what the page prints instead.
+  const base = (v, locality) => ({
     id: fileId(v.venue_id),
     name: displayName(v),
     city: v.metro,
+    ...(isText(locality) ? { locality: locality.trim() } : {}),
     capacity_band: capacityBand(v),
   });
 
@@ -162,7 +167,7 @@ export function buildImport(data, listings) {
     const listedPast = l.shows.filter((s) => s.date < l.read_day);
     const upcoming = merged(l.shows.filter((s) => s.date >= l.read_day));
     const doc = {
-      ...base(v),
+      ...base(v, l.locality),
       calendar_source_url: l.calendar_source_url,
       read_at: l.read_at,
       closed_weekdays: Array.isArray(l.closed_weekdays) ? [...l.closed_weekdays] : [],
@@ -227,9 +232,17 @@ async function readJsonDir(dir) {
   return out;
 }
 
+/** The new document, with the old file's locality when it has none of its own (kept in place, after city). */
+function withKeptLocality(doc, prev) {
+  if (doc.locality || !isText(prev?.locality)) return doc;
+  const { id, name, city, ...rest } = doc;
+  return { id, name, city, locality: prev.locality, ...rest };
+}
+
 /**
  * Decide what to write. A neighbour never replaces a file that is offered for planning (a room imported with its listing
- * earlier). An id already used by another file name is an error, so loadVenues never sees a duplicate.
+ * earlier). An id already used by another file name is an error, so loadVenues never sees a duplicate. A file's locality
+ * is kept when the new document has none (a listing without "locality" does not drop one set earlier).
  */
 export async function planWrites(outDir, { plannable, neighbours }) {
   const existing = await readJsonDir(outDir);
@@ -238,8 +251,9 @@ export async function planWrites(outDir, { plannable, neighbours }) {
   const writes = [];
   const kept = [];
   for (const [role, docs] of [['plannable', plannable], ['neighbour', neighbours]]) {
-    for (const doc of docs) {
-      const name = `${doc.id}.json`;
+    for (const built of docs) {
+      const name = `${built.id}.json`;
+      const doc = withKeptLocality(built, existing.get(name));
       const owner = idOwner.get(doc.id);
       if (owner && owner !== name) throw new ImportError(`id ${doc.id} is already used by ${owner}`);
       const prev = existing.get(name);

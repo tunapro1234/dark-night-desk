@@ -249,6 +249,10 @@ code.params { display: block; white-space: pre-wrap; overflow-wrap: anywhere; }
 /* ---------- small screens: one column ---------- */
 @media (max-width: 640px) {
   .top { padding: 14px 16px 10px; }
+  /* On a phone the 181-of-549 line is cut to one line (ellipsis), so the calendar starts higher. The brand block may shrink
+     below that line's width; without it the unwrapped line widens the page instead of ending in an ellipsis. */
+  .brand { min-width: 0; }
+  .problem { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   /* The three mode badges stay on one row; long labels wrap inside their badge in smaller type. */
   .badges { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; width: 100%; }
   .badge { display: block; height: 100%; padding: 3px 6px; border-radius: 8px; font-size: 0.7rem; line-height: 1.25;

@@ -111,6 +111,12 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
 
   const qlooMode = effectiveQlooMode(config);
   const QLOO_OFF = { code: 'qloo_not_connected', message: 'Qloo: not connected. Nothing is ranked without it.' };
+
+  // The other routes that call Qloo get the plan route's per-IP daily limit (IP_DAILY_LIMIT, the same ledger), each with
+  // its own count, so reading crowds never uses up the plan allowance. The ledger counts a salted hash of the string it is
+  // given; the route name in front makes a separate count, which no client address can collide with.
+  const IP_LIMITED = { error: "this address has used today's requests; the limit resets at 00:00 UTC", code: 'ip_daily_limit' };
+  const ipAllowed = (req, route) => budget.checkIp(`${route} ${clientIp({ socket: req.raw.socket, headers: req.headers })}`).ok;
   // AGENT_MODE=scripted never plays a recorded run back.
   const replays = config.agentMode !== 'scripted';
 
@@ -196,6 +202,7 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
       return reply.code(409).send({ error: `${date} is not a booked or dark night still to come on ${venue.name}'s calendar (${date <= today ? 'today or past' : status})` });
     }
     if (qlooMode === 'no-key') return reply.code(409).send({ error: QLOO_OFF.message, code: QLOO_OFF.code });
+    if (!ipAllowed(req, 'crowd')) return reply.code(429).send(IP_LIMITED);
     try {
       return { mode: { qloo: qlooMode }, ...(await runCrowd({ qloo, venues: all, venue, date, today })) };
     } catch (err) {
@@ -212,6 +219,7 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
       return reply.code(400).send({ error: 'remove must be a list of at most 40 entity ids' });
     }
     if (qlooMode === 'no-key') return reply.code(409).send({ error: QLOO_OFF.message, code: QLOO_OFF.code });
+    if (!ipAllowed(req, 'ablate')) return reply.code(429).send(IP_LIMITED);
     try {
       return await runAblate({ qloo, ...night, remove });
     } catch (err) {

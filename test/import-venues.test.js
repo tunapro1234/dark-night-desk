@@ -118,6 +118,16 @@ test('listing_complete is true only when the caller says so', () => {
   assert.throws(() => buildImport(data(), [{ ...LISTING, complete: 'yes' }]), /complete, when present/);
 });
 
+test('locality: an optional listing field, printed instead of the metro; city stays the metro', () => {
+  const p = buildImport(data(), [{ ...LISTING, locality: ' Synthetic Town ' }]).plannable[0];
+  assert.equal(p.city, 'Exampleville');
+  assert.equal(p.locality, 'Synthetic Town');
+  assert.deepEqual(Object.keys(p).slice(0, 4), ['id', 'name', 'city', 'locality']);
+  assert.ok(!('locality' in buildImport(data(), [LISTING]).plannable[0]));
+  assert.throws(() => buildImport(data(), [{ ...LISTING, locality: ' ' }]), /locality, when present/);
+  assert.throws(() => buildImport(data(), [{ ...LISTING, locality: 7 }]), /locality, when present/);
+});
+
 test('two listed rooms of one metro: neither becomes the other one\'s neighbour', () => {
   const second = { ...LISTING, venue_id: 'hall-b', complete: false, shows: [] };
   const { plannable, neighbours } = buildImport(data(), [LISTING, second]);
@@ -174,6 +184,18 @@ test('CLI: dry run writes nothing; --write writes files loadVenues accepts and k
   assert.equal(JSON.parse(await readFile(path.join(outDir, 's2-hall-b.json'), 'utf8')).listing_complete, true);
   assert.equal(JSON.parse(await readFile(path.join(outDir, 's2-hall-b.json.old'), 'utf8')).listing_complete, false);
   assert.ok(!(await readdir(outDir)).some((n) => n.endsWith('.tmp')));
+
+  // A locality set in the file survives a re-import whose listing has none; a listed locality replaces it.
+  const roomFile = path.join(outDir, 's2-room-a.json');
+  await writeFile(roomFile, JSON.stringify({ ...JSON.parse(await readFile(roomFile, 'utf8')), locality: 'Synthetic Town' }));
+  assert.equal(await main(['--data-dir', dataDir, '--out', outDir, '--write', listingFile], io), 0);
+  const again = JSON.parse(await readFile(roomFile, 'utf8'));
+  assert.equal(again.locality, 'Synthetic Town');
+  assert.equal(again.city, 'Exampleville');
+  await writeFile(listingFile, JSON.stringify({ ...LISTING, locality: 'Synthetic Village' }));
+  assert.equal(await main(['--data-dir', dataDir, '--out', outDir, '--write', listingFile], io), 0);
+  assert.equal(JSON.parse(await readFile(roomFile, 'utf8')).locality, 'Synthetic Village');
+  assert.ok((await loadVenues(outDir, { onSkip: () => {} })).some((v) => v.id === 's2-room-a' && v.locality === 'Synthetic Village'));
 
   // Usage errors exit 1 with a message.
   assert.equal(await main(['--out', outDir], io), 1);

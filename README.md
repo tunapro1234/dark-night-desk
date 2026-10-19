@@ -44,7 +44,7 @@ All settings are environment variables read in `server/config.js`:
 | `CLAUDE_MODEL` | `claude-haiku-5-5` | |
 | `AGENT_MODE` | `auto` | `auto`, `live`, `recorded` or `scripted` |
 | `DAILY_USD_CAP` / `MONTHLY_USD_CAP` / `TOTAL_USD_CAP` | `2` / `12` / `30` | Claude spend caps (UTC day, UTC calendar month, all time) |
-| `IP_DAILY_LIMIT` | `20` | plan requests per IP per day |
+| `IP_DAILY_LIMIT` | `20` | requests per IP per day, counted apart for plans, crowd reads and ablate checks |
 | `CLAUDE_PRICE_IN_PER_MTOK` / `CLAUDE_PRICE_OUT_PER_MTOK` | `0.1` / `0.5` | USD per million tokens, for the spend counter (Haiku 5.5) |
 | `CLAUDE_LONG_PRICE_IN_PER_MTOK` / `CLAUDE_LONG_PRICE_OUT_PER_MTOK` | `0.5` / `2.5` | the same for a prompt over `CLAUDE_LONG_PROMPT_TOKENS` (`100000`) |
 
@@ -77,7 +77,8 @@ journalctl -u dark-night-desk -f
   `ReadWritePaths` names only `DATA_DIR` (`./var` by default: Qloo cache, spend ledger, recorded runs). If the environment file
   sets another `DATA_DIR`, change `ReadWritePaths` to match.
 - The daily, monthly and total Claude caps (`DAILY_USD_CAP`, `MONTHLY_USD_CAP`, `TOTAL_USD_CAP`) and `IP_DAILY_LIMIT` hold on the public server too: when one
-  is reached the page keeps working with a recorded run or the scripted plan, and says so.
+  is reached the page keeps working with a recorded run or the scripted plan, and says so. Past `IP_DAILY_LIMIT` a crowd read
+  or an ablate check is refused (429) and the page prints why.
 
 ## Venues and dark nights
 
@@ -97,7 +98,7 @@ Each venue is one JSON file in `VENUES_DIR` (schema checked by `server/calendar/
 from First Avenue's public calendar pages (GET only, a few requests at least 2.5 seconds apart). Each file keeps the next 60 days
 as `shows` and the last 90 days as `past_shows`; postponed shows were skipped (`scripts/refresh-venues.js` rebuilds them, see Calendar refresh). Titles are kept as the calendar printed them (letters outside ASCII are
 stored as JSON `\uXXXX` escapes, so the files are plain ASCII and parse to the same text). The
-page opens on Fine Line when it is present, otherwise on the first venue.
+page opens on Turf Club (the room in its first-screen line) when it is present, otherwise on the first venue.
 
 `closed_weekdays` uses 0 = Sunday. `shows` is the upcoming program read from the public calendar, `past_shows` is the room's own past
 program (the only source for "this room's crowd"). `test/fixtures/synthetic/venues/example-room.json` is a hand-written test venue
@@ -202,7 +203,7 @@ QLOO_API_KEY=... node scripts/keyday.js data/dev/room-a.json data/dev/room-b.jso
   - `live`: Claude (`CLAUDE_MODEL`) runs the tool loop (`loop.js`, at most 8 turns) and answers through a `submit_plan` tool.
     Needs a key, room in the spend caps and in the IP limit. Each successful live run is saved to `DATA_DIR/recorded/`.
   - `recorded`: replays the saved live run for the same room and night, labelled with its date.
-  - `scripted`: the same tools in a fixed order, text from templates, no LLM. Labelled "scripted plan (no LLM)".
+  - `scripted`: the same tools in a fixed order, text from templates, no LLM. Labelled "fixed steps, no AI writing".
 - **Validator** (`validate.js`): every shortlisted `entity_id` must come from a tool output (and from the ranked pool), and every
   number in the text must appear in a tool output. The offer note keeps "Guarantee: ___" blank and has no money, ticket or
   manager wording. A rejected answer gets one more try with the errors; a second rejection ends in the scripted plan, with the
@@ -223,7 +224,9 @@ QLOO_API_KEY=... node scripts/keyday.js data/dev/room-a.json data/dev/room-b.jso
 - When the day's spend (UTC day) reaches `DAILY_USD_CAP`, the month's (UTC calendar month) reaches `MONTHLY_USD_CAP`, the total
   reaches `TOTAL_USD_CAP`, or the day is past `ANTHROPIC_KEY_LAST_DAY`, no live call is made: the agent
   falls back to a recorded run, or to the scripted plan when none exists. `/api/health` shows the ledger.
-- Each plan request counts against its IP; past `IP_DAILY_LIMIT` per UTC day the same fallback applies. `X-Forwarded-For` is read
+- Each plan request counts against its IP; past `IP_DAILY_LIMIT` per UTC day the same fallback applies. `GET /api/venues/:id/crowd`
+  and `POST /api/ablate` also call Qloo: each has its own count per IP under the same limit, and past it answers 429
+  (`ip_daily_limit`). `X-Forwarded-For` is read
   only when the connection comes from loopback (nginx on the same host). The ledger keeps a salted hash of the address, for the current day only.
 
 ## Back-test (`server/backtest/`, `scripts/backtest.js`)
@@ -263,7 +266,7 @@ added the same day and Amendment 3 on 14 Oct, all before any Qloo call. The copy
 
 Plain HTML, CSS and browser JavaScript, served by the same server. No framework, no build step, no outside scripts or fonts.
 
-- **First screen:** Fine Line, or the first venue. One big line ("N dark nights in the next 60 days": the nights from tomorrow up to
+- **First screen:** Turf Club, or the first venue. One big line ("N dark nights in the next 60 days": the nights from tomorrow up to
   `listed_until`, so the count can drop below 60 late in the week; later nights show as "not read yet"),
   the strip of today plus those 60 nights (`?days=61`; dark nights are the dark squares, arrow keys move between them; today is
   tagged "today" where the month label would sit and cannot be picked),
@@ -276,7 +279,7 @@ Plain HTML, CSS and browser JavaScript, served by the same server. No framework,
 - **why?** opens the evidence panel: contribution bars (explainability or leave-one-out), past-show chips that re-rank through
   `/api/ablate` ("2 of 5 changed"), the also-loves measurement, the pool, and every Qloo request with the key left out, its time
   and cache hit or miss. Shares and other technical terms appear only here.
-- **Mode badges** are always on screen: "Agent: live (Claude)", "Agent: recorded run from <date>", "Agent: scripted plan (no LLM)",
+- **Mode badges** are always on screen: "Agent: live (Claude)", "Agent: recorded run from <date>", "Agent: fixed steps, no AI writing",
   and "Qloo: live" or "Qloo: not connected". Without a Qloo key the page shows the calendar and an explanation, never a list.
   In test mode (`QLOO_MODE=fixture`) the badge reads "Qloo: synthetic test data". On a phone the three badges share one row in
   smaller type, each label wrapping inside its badge.

@@ -7,7 +7,8 @@ import { existsSync, readFileSync } from 'node:fs';
 import { mkdtemp, mkdir, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { EXIT, STEPS, assertNoQlooContent, checkSampleState, createFetchGuard, decideRestrict, parseKeyhourArgs, runKeyhour } from '../scripts/keyhour.js';
+import { EXIT, PLAN_FROM, STEPS, assertNoQlooContent, checkSampleState, createFetchGuard, decideRestrict, parseKeyhourArgs, planNights, runKeyhour } from '../scripts/keyhour.js';
+import { listRecorded } from '../server/agent/plan.js';
 import { LOCK_NAME } from '../scripts/backtest.js';
 import { main2 } from '../scripts/backtest2.js';
 import { loadStudy2Data } from '../server/backtest/study2-data.js';
@@ -179,6 +180,52 @@ test('options: defaults, limits and the steps that cannot be redone', () => {
   assert.throws(() => parseKeyhourArgs(['--plans', '21']), /--plans/);
   assert.throws(() => parseKeyhourArgs(['--seed', '3']), /unknown option/);
   assert.deepEqual(STEPS, ['key_check', 'keyday', 'study1', 'study2', 'live_plans']);
+  assert.equal(a.planFrom, '2026-11-18');
+  assert.equal(PLAN_FROM, '2026-11-18');
+  assert.equal(parseKeyhourArgs(['--plan-from', '2026-12-01']).planFrom, '2026-12-01');
+  for (const bad of ['2026-11-31', '17 Nov 2026', '2026-1-17', '']) assert.throws(() => parseKeyhourArgs(['--plan-from', bad]), /--plan-from must be a YYYY-MM-DD date/, bad);
+  assert.throws(() => parseKeyhourArgs(['--plan-from']), /--plan-from needs a value/);
+});
+
+test('plan nights: dark nights on or after the cutoff up to listed_until; otherwise the latest earlier ones', () => {
+  // Synthetic room: closed on Mondays (1), one show on the cutoff night itself.
+  const room = (extra = {}) => ({ id: 'synthetic-room', closed_weekdays: [1], shows: [{ date: '2026-11-18', headliner: 'Synthetic Act 1', source_url: 'https://example.org/1' }], ...extra });
+  const today = '2026-10-25';
+
+  const r = planNights(room({ listed_until: '2026-11-30' }), { today, planFrom: '2026-11-17' });
+  assert.equal(r.fallback, false);
+  assert.equal(r.dates[0], '2026-11-17');
+  assert.ok(!r.dates.includes('2026-11-18'), 'a booked night is not dark');
+  assert.ok(!r.dates.includes('2026-11-23'), 'a closing day is not dark');
+  assert.ok(r.dates.every((d) => d >= '2026-11-17' && d <= '2026-11-30'), r.dates.join(' '));
+  assert.deepEqual(r.dates, [...r.dates].sort(), 'earliest first');
+  assert.equal(r.dates.at(-1), '2026-11-29');
+
+  // No listed_until: the 60 nights from the cutoff on.
+  const open = planNights(room(), { today, planFrom: '2026-11-17' });
+  assert.equal(open.fallback, false);
+  assert.equal(open.dates.at(-1), '2027-01-15');
+  assert.ok(open.dates.every((d) => d >= '2026-11-17'));
+
+  // listed_until before the cutoff: the latest dark nights before listed_until, still after today, latest first.
+  const fb = planNights(room({ listed_until: '2026-11-10' }), { today, planFrom: '2026-11-17' });
+  assert.equal(fb.fallback, true);
+  assert.equal(fb.dates[0], '2026-11-10');
+  assert.ok(!fb.dates.includes('2026-11-09'), 'a closing day is not dark');
+  assert.deepEqual(fb.dates, [...fb.dates].sort().reverse(), 'latest first');
+  assert.ok(fb.dates.every((d) => d > today && d <= '2026-11-10'), fb.dates.join(' '));
+  assert.equal(fb.dates.at(-1), '2026-10-27', 'tomorrow (26 Oct) is a closing day');
+
+  // Every night from the cutoff to listed_until is booked or closed: the fallback stops the day before the cutoff.
+  const full = planNights(room({ listed_until: '2026-11-18', shows: [{ date: '2026-11-17', headliner: 'Synthetic Act 2', source_url: 'https://example.org/2' }, { date: '2026-11-18', headliner: 'Synthetic Act 3', source_url: 'https://example.org/3' }] }), { today, planFrom: '2026-11-17' });
+  assert.equal(full.fallback, true);
+  assert.equal(full.dates[0], '2026-11-15');
+
+  // A cutoff already past starts tomorrow; a room with nothing dark at all gets no night.
+  const late = planNights(room(), { today: '2026-11-20', planFrom: '2026-11-17' });
+  assert.equal(late.fallback, false);
+  assert.equal(late.dates[0], '2026-11-21');
+  assert.deepEqual(planNights(room({ closed_weekdays: [0, 1, 2, 3, 4, 5, 6] }), { today, planFrom: '2026-11-17' }), { dates: [], fallback: true });
 });
 
 test('guard: counts, step cap, stop on the first 429, other hosts blocked, loopback allowed', async () => {
@@ -266,6 +313,7 @@ test('dry run: no request; plan, estimates and gates; a missing second pass bloc
   assert.match(ok.text, /3 study1 +pending: searches \d+-\d+, rankings <= \d+/);
   assert.match(ok.text, /check sample recorded/);
   assert.match(ok.text, /QLOO_API_KEY is not set/);
+  assert.match(ok.text, /5 live_plans +pending: .*; nights on or after 2026-11-18 \(--plan-from\)$/m);
   assert.ok(!existsSync(path.join(w.dataDir, 'keyhour', 'checkpoint.json')), 'a dry run writes no checkpoint');
 
   const bad = await world({ checked: false, secondPass: false });
@@ -273,6 +321,14 @@ test('dry run: no request; plan, estimates and gates; a missing second pass bloc
   assert.equal(r.code, EXIT.USAGE);
   assert.match(r.text, /blocks study2: the 10% second pass is not recorded/);
   assert.match(r.text, /blocks study1: .*sources\.md does not record the 10% second pass/);
+
+  const badDate = await keyhour(w, { argv: ['--dry-run', '--plan-from', '2026-11-31'], env: { DATA_DIR: w.dataDir, VENUES_DIR } });
+  assert.equal(badDate.code, EXIT.USAGE);
+  assert.match(badDate.text, /--plan-from must be a YYYY-MM-DD date/);
+  // A cutoff that has passed is shown with the night the plans really start from (tomorrow; NOW is 11 Oct).
+  const passed = await keyhour(w, { argv: ['--dry-run', '--plan-from', '2026-10-01'], env: { DATA_DIR: w.dataDir, VENUES_DIR } });
+  assert.equal(passed.code, EXIT.OK, passed.text);
+  assert.match(passed.text, /nights on or after 2026-10-01 \(--plan-from; passed, so from 2026-10-12\)$/m);
 });
 
 test('full run in order: key, GO, Study 1, Study 2, live plans skipped without a Claude key; summary holds no Qloo content', async () => {
@@ -316,6 +372,12 @@ test('full run in order: key, GO, Study 1, Study 2, live plans skipped without a
   assert.deepEqual(started(live.lines), ['live_plans']);
   const lp = readOut(w, 'summary.json').steps.live_plans;
   assert.equal(lp.status, 'done');
+  // Recorded nights start at the cutoff, so their cards are still on the page through judging (2-16 Nov).
+  assert.equal(lp.plan_from, PLAN_FROM);
+  assert.deepEqual(lp.rooms_before_plan_from, []);
+  const recorded = await listRecorded(w.dataDir);
+  assert.equal(recorded.length, lp.live);
+  assert.ok(recorded.every((run) => run.date >= PLAN_FROM), recorded.map((run) => run.date).join(' '));
   // Round robin over the two synthetic rooms; a plan that ends in an error (the synthetic fixtures leave one room's pool
   // empty on some nights) is counted, and the turn it used stays in the total.
   assert.equal(lp.plans_attempted, 3);

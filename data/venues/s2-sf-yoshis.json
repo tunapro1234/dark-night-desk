@@ -2,6 +2,7 @@
   "id": "s2-sf-yoshis",
   "name": "Yoshi's",
   "city": "San Francisco",
+  "locality": "Oakland",
   "capacity_band": "up to 310",
   "calendar_source_url": "https://yoshis.com/",
   "read_at": "2026-10-18T23:22:24Z",

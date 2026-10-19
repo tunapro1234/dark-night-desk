@@ -226,11 +226,12 @@ test('page: the scripted plan renders from the HTTP route: steps, poster, why?, 
   assert.equal(page.$('badge-qloo').textContent, 'Qloo: synthetic test data');
   assert.equal(page.$('calendar-notice').hidden, true);
   assert.equal(page.$('legend-closed').hidden, false, 'Example Room is closed on Mondays');
+  assert.equal(page.$('venue-meta').textContent, 'Exampleville \u00b7 room for about 250-500');
 
   page.$('strip').querySelector('.sq-dark').click();
   await until(() => !page.$('poster').hidden || !page.$('fail').hidden, 'the poster');
   assert.ok(visible(page, 'poster'), `fail panel: ${page.$('fail-text').textContent}`);
-  assert.equal(page.$('badge-agent').textContent, 'Agent: scripted plan (no LLM)');
+  assert.equal(page.$('badge-agent').textContent, 'Agent: fixed steps, no AI writing');
   const steps = page.$('steps').children;
   assert.equal(steps.length, STEPS.length);
   for (const [i, li] of steps.entries()) {
@@ -290,7 +291,7 @@ test('page without a Qloo key: says why there is no list and what still works; n
   await until(() => page.$('strip').querySelectorAll('.sq-dark').length > 0, 'the calendar');
   await until(() => page.$('badge-backtest').textContent !== 'Back-test: checking', 'the back-test badge');
   assert.equal(page.$('badge-qloo').textContent, 'Qloo: not connected');
-  assert.equal(page.$('badge-agent').textContent, 'Agent: idle (Qloo not connected)', 'no "scripted plan" label when no plan can run');
+  assert.equal(page.$('badge-agent').textContent, 'Agent: idle (Qloo not connected)', 'no "fixed steps" label when no plan can run');
   assert.match(page.$('dark-count').textContent, /^\d+ dark nights in the next \d+ days$/);
   const notice = page.$('calendar-notice');
   assert.equal(notice.hidden, false);
@@ -338,7 +339,10 @@ test('page without a Qloo key but with a recorded run: that night opens on first
 
   const app = await noKeyApp({ dataDir, venuesDir });
   const page = runPage(app);
+  const scrolled = [];
+  page.$('poster').scrollIntoView = (opts) => scrolled.push(opts);
   await until(() => !page.$('poster').hidden, 'the recorded card, with no click');
+  assert.equal(scrolled.length, 1, 'on a phone the card is brought into view below the strip');
   assert.equal(page.$('badge-agent').textContent, 'Agent: recorded run from Oct 10, 2026');
   assert.equal(page.$('badge-qloo').textContent, 'Qloo: recorded Oct 10, 2026');
   assert.equal(page.$('lineup').children.length, made.shortlist.length);
@@ -346,7 +350,7 @@ test('page without a Qloo key but with a recorded run: that night opens on first
   assert.ok(page.requests.includes(`GET /api/recorded/example-room/${night}`));
   assert.ok(!page.requests.some((r) => r.startsWith('POST')), 'first load reads the recording; it asks for no plan');
   assert.equal(page.$('legend-closed').hidden, true, 'no closed weekday at this room');
-  assert.match(page.$('calendar-notice').textContent, /Nights with a recorded live run play that run back, labelled recorded: Example Room [A-Z][a-z]{2} [A-Z][a-z]{2} \d+\. Every other night shows no list\./);
+  assert.match(page.$('calendar-notice').textContent, /^Recorded run for [A-Z][a-z]{2} [A-Z][a-z]{2} \d+; other nights need Qloo\.$/);
 
   // why?: the requests were made when the run was saved; switching a show off needs Qloo and sends nothing.
   page.$('lineup').querySelector('.why-link').click();
@@ -378,6 +382,27 @@ test('page without a Qloo key but with a recorded run: that night opens on first
   await until(() => page.$('strip').querySelectorAll('.sq-dark').length > 0, 'the other room');
   assert.equal(page.$('badge-agent').textContent, 'Agent: idle (Qloo not connected)');
   assert.equal(page.$('badge-qloo').textContent, 'Qloo: not connected');
+  assert.equal(page.$('calendar-notice').textContent, 'No recorded run for this room; its nights need Qloo.', "the notice names only this room's runs");
+  assert.deepEqual(page.errors, []);
+  await app.close();
+});
+
+test('page: the room size line says nothing for "not published" and no "about" before "up to" (synthetic fixtures)', async () => {
+  const venuesDir = path.join(tmp, 'venues-size');
+  await mkdir(venuesDir, { recursive: true });
+  for (const [f, band] of [['example-room.json', 'up to 350'], ['other-hall.json', 'not published']]) {
+    const v = JSON.parse(await readFile(path.join(VENUES_DIR, f), 'utf8'));
+    v.capacity_band = band;
+    await writeFile(path.join(venuesDir, f), JSON.stringify(v));
+  }
+  const app = await noKeyApp({ venuesDir });
+  const page = runPage(app);
+  await until(() => page.$('strip').querySelectorAll('.sq-dark').length > 0, 'the calendar');
+  assert.equal(page.$('venue-meta').textContent, 'Exampleville \u00b7 room for up to 350');
+  const select = page.$('venue');
+  select.value = 'other-hall';
+  select.dispatch('change');
+  assert.equal(page.$('venue-meta').textContent, 'Exampleville');
   assert.deepEqual(page.errors, []);
   await app.close();
 });

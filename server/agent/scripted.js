@@ -1,5 +1,5 @@
 // Scripted plan (no LLM): calls the same tools in a fixed order and writes the text from templates.
-// Shown on screen as "Agent: scripted plan (no LLM)"; never presented as the agent.
+// Shown on screen as "Agent: fixed steps, no AI writing"; never presented as the agent.
 import { runTool, scriptedWhy, strongestAlsoLoves } from './tools.js';
 import { shortlistSizeFor } from './result.js';
 

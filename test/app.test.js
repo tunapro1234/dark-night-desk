@@ -240,7 +240,7 @@ test('serves the page script and stylesheet, with no outside scripts', async () 
   const js = await app.inject('/app.js');
   assert.equal(js.statusCode, 200);
   assert.match(js.headers['content-type'], /javascript/);
-  for (const label of ['Agent: idle', 'Agent: idle (Qloo not connected)', 'Agent: live (Claude)', 'recorded run from', 'Agent: scripted plan (no LLM)',
+  for (const label of ['Agent: idle', 'Agent: idle (Qloo not connected)', 'Agent: live (Claude)', 'recorded run from', 'Agent: fixed steps, no AI writing',
     'Qloo: live', 'Qloo: not connected', 'Qloo: recorded']) {
     assert.ok(js.body.includes(label), `app.js lacks the mode label "${label}"`);
   }

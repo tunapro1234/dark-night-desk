@@ -12,6 +12,9 @@
 //                 with the 10% second pass recorded (checked_by on every check-sample row) and the inputs committed
 //   5 live_plans  only with a Claude key: a few live agent plans on the demo rooms; cost per plan from the spend ledger,
 //                 compared with KARAR.md's estimate. Without a key this step is skipped and runs on a later rerun.
+//                 The nights are each room's dark nights on or after --plan-from (default 18 Nov 2026: night status is
+//                 computed by UTC date, so a 17 Nov night would drop off on the US evening of 16 Nov, the last day of
+//                 judging), so the recorded cards stay on the page through judging; see planNights.
 //   6 summary     DATA_DIR/keyhour/summary.json: counts and pass/fail only
 //
 // Ranker L (Claude only) runs inside the studies only if a Claude key is set when they start (BACKTEST.md). A study runs
@@ -33,6 +36,8 @@
 //   --studies-without-claude                    run the studies with no Claude key (L is then reported as "not run")
 //   --plans <n>                                 live plans in step 5 (default 2 per plannable room, at most 20; 0 skips
 //                                               the step)
+//   --plan-from <YYYY-MM-DD>                    first night step 5 plans for (default 2026-11-18); a room with no dark
+//                                               night from then up to its listed_until gets its latest earlier ones
 //   --plan-usd-cap <usd>                        Claude spend allowed in step 5 (default: the worst-case cost of the
 //                                               plans asked for, at least 0.30)
 //   --max-qloo-calls <n>                        Qloo requests allowed over all invocations of this DATA_DIR, counted in the
@@ -55,8 +60,8 @@ import { createQlooClient, entitiesOf, tagsOf } from '../server/qloo/client.js';
 import { budgetPath, createBudget } from '../server/budget/budget.js';
 import { createAnthropic } from '../server/agent/loop.js';
 import { PlanError, findRecorded, runPlan } from '../server/agent/plan.js';
-import { isPlannable, listedUntil, loadVenues } from '../server/calendar/venues.js';
-import { addDays, nightsFor, todayISO } from '../server/calendar/nights.js';
+import { isISODate, isPlannable, listedUntil, loadVenues } from '../server/calendar/venues.js';
+import { MAX_DAYS, addDays, nightsFor, todayISO } from '../server/calendar/nights.js';
 import { S2, loadBacktestData, periodOf, weekOf } from '../server/backtest/data.js';
 import { splitAtSeparator } from '../server/backtest/headliner.js';
 import { RESTRICTIONS } from '../server/backtest/rankers.js';
@@ -82,6 +87,11 @@ const STEP_TIMEOUT_MIN = { key_check: 2, keyday: 20, study1: 60, study2: 180, li
 const MAX_PLANS = 20;
 const PLANS_PER_ROOM = 2; // the page should open every plannable room on a recorded card; two nights each
 const PLAN_CALLS = 250; // Qloo requests one live plan may send (tools, leave-one-out, also-loves), an upper bound
+// The page shows a recorded run only while its night is ahead and still dark (server/app.js openRecordings). Judging runs
+// 2-16 Nov 2026 and night status uses the UTC date, so live plans record nights from 18 Nov: a 17 Nov night would
+// leave the page at 17 Nov 00:00 UTC, still 16 Nov in the US.
+export const PLAN_FROM = '2026-11-18';
+const PLAN_HORIZON_DAYS = 60; // nights looked at from the cutoff on when a room's file has no listed_until
 // Paths whose committed state the studies depend on (BACKTEST-2.md: the log records the commit and the data hashes).
 const FROZEN_PATHS = [
   'BACKTEST.md', 'BACKTEST-2.md', 'package.json', 'package-lock.json', 'server', 'scripts/backtest.js', 'scripts/backtest2.js',
@@ -98,7 +108,7 @@ const readJson = (file) => JSON.parse(readFileSync(file, 'utf8'));
 export function parseKeyhourArgs(argv) {
   const out = {
     dryRun: false, data1: path.join(REPO_ROOT, 'data', 'backtest'), data2: path.join(REPO_ROOT, 'data', 'backtest2'), out: path.join(REPO_ROOT, 'results'),
-    keydayVenues: null, keydayPlacebo: null, restrict: null, studiesWithoutClaude: false, plans: null, planUsdCap: null, maxQlooCalls: 20_000,
+    keydayVenues: null, keydayPlacebo: null, restrict: null, studiesWithoutClaude: false, plans: null, planFrom: PLAN_FROM, planUsdCap: null, maxQlooCalls: 20_000,
     stepCapFactor: 1.5, requestTimeoutMs: 20_000, stepTimeoutMin: null, redo: [],
   };
   for (let i = 0; i < argv.length; i++) {
@@ -121,7 +131,10 @@ export function parseKeyhourArgs(argv) {
     else if (a === '--restrict') out.restrict = val();
     else if (a === '--studies-without-claude') out.studiesWithoutClaude = true;
     else if (a === '--plans') out.plans = num(val(), { integer: true, min: 0, max: MAX_PLANS });
-    else if (a === '--plan-usd-cap') out.planUsdCap = num(val(), { min: 0.01, max: 2 });
+    else if (a === '--plan-from') {
+      out.planFrom = val();
+      if (!isISODate(out.planFrom)) throw new Error(`--plan-from must be a YYYY-MM-DD date, got "${out.planFrom}"`);
+    } else if (a === '--plan-usd-cap') out.planUsdCap = num(val(), { min: 0.01, max: 2 });
     else if (a === '--max-qloo-calls') out.maxQlooCalls = num(val(), { integer: true, min: 1, max: 200_000 });
     else if (a === '--step-cap-factor') out.stepCapFactor = num(val(), { min: 1, max: 10 });
     else if (a === '--request-timeout-ms') out.requestTimeoutMs = num(val(), { integer: true, min: 1000, max: 120_000 });
@@ -458,7 +471,7 @@ function buildSummary(ck, guard, { now, qlooMode, claude }) {
       keyday: pick(s.keyday, ['status', 'decision', 'go', 'probes_ok', 'probes_sent', 'name_lookups', 'error_probes', 'restrict', 'restrict_basis', 'filter_check', 'rooms_source', 'rooms', 'placebo']),
       study1: pick(s.study1, ['status', 'exit_code', 'reason', 'restrict', 'label', 'result_status', 'claim_used', 'rooms', 'shows', 'l_status', 'qloo_calls', 'qloo_cache_hits', 'stopped_log']),
       study2: pick(s.study2, ['status', 'exit_code', 'reason', 'restrict', 'label', 'result_status', 'claim_used', 'clusters', 'rooms', 'shows', 'l_status', 'literal_status', 'qloo_calls', 'qloo_cache_hits', 'stopped_log']),
-      live_plans: pick(s.live_plans, ['status', 'reason', 'plans_wanted', 'plans_attempted', 'live', 'fallback', 'fallback_reasons', 'errors', 'usd_total', 'usd_per_live_plan', 'usd_max', 'turns_mean', 'karar_estimate_usd', 'above_karar_alert', 'within_karar_worst']),
+      live_plans: pick(s.live_plans, ['status', 'reason', 'plan_from', 'rooms_before_plan_from', 'plans_wanted', 'plans_attempted', 'live', 'fallback', 'fallback_reasons', 'errors', 'usd_total', 'usd_per_live_plan', 'usd_max', 'turns_mean', 'karar_estimate_usd', 'above_karar_alert', 'within_karar_worst']),
     },
     qloo_this_invocation: {
       sent: guard.state.qloo_sent, by_status: guard.state.by_status, network_errors: guard.state.network_errors,
@@ -573,7 +586,7 @@ async function stepKeyday(ctx) {
     return {
       status: 'no_go', ...fields, code: EXIT.NO_GO,
       message: `NO-GO (base insights ${fields.go.base_insights}, closed pool ${fields.go.closed_pool}, evidence ${fields.go.evidence}; ${errorProbes} probes ended in an error). ` +
-        'KARAR.md: switch to Anchor-lite and send lh-hack an urgent report. The studies did not run. If the cause was a passing error, rerun with --redo keyday.',
+        'KARAR.md: switch to Anchor-lite and send the team an urgent report. The studies did not run. If the cause was a passing error, rerun with --redo keyday.',
     };
   }
   return { status: 'done', ...fields, message: `GO: ${fields.probes_ok}/30 probes ok, ${sent} sent, ${fields.name_lookups} name lookups; pool restriction ${decided.restrict ?? 'not decided'} (${decided.basis})` };
@@ -658,7 +671,7 @@ async function runStudy(ctx, which) {
     const r = studyResult(resultFile);
     // The literal reading (BACKTEST-2.md Amendment 14) runs after the main result in the same run and cannot be run again.
     const lost = !one && r.literal_status === 'stopped'
-      ? ' WARNING: the literal reading (Amendment 14) stopped part-way and cannot be rerun (the lock stays); report it as stopped and tell lh-hack.'
+      ? ' WARNING: the literal reading (Amendment 14) stopped part-way and cannot be rerun (the lock stays); report it as stopped and tell the team.'
       : '';
     return { status: 'done', restrict: gate.restrict, ...r, message: `${which} done.${lost}` };
   }
@@ -679,6 +692,32 @@ async function runStudy(ctx, which) {
   return { status: 'refused', exit_code: exit, code: EXIT.USAGE, message: `${which}: the run script refused (exit ${exit}); see the lines above` };
 }
 
+const spanDays = (from, to) => Math.round((Date.parse(`${to}T00:00:00Z`) - Date.parse(`${from}T00:00:00Z`)) / 86_400_000) + 1;
+
+/**
+ * The dark nights step 5 may record for one room, in the order it uses them: the nights on or after `planFrom` (tomorrow if
+ * that is later) up to the room's listed_until, earliest first. A room with none of those falls back to its dark nights from
+ * tomorrow to the day before the cutoff (and up to listed_until), latest first, so its card stays on the page as long as it can.
+ * @param {object} venue
+ * @param {{ today: string, planFrom: string }} opts
+ * @returns {{ dates: string[], fallback: boolean }}
+ */
+export function planNights(venue, { today, planFrom }) {
+  const until = listedUntil(venue);
+  const tomorrow = addDays(today, 1);
+  const dark = (from, to, { latest = false } = {}) => {
+    if (to < from) return [];
+    const days = Math.min(MAX_DAYS, spanDays(from, to));
+    const start = latest ? addDays(to, 1 - days) : from;
+    return nightsFor(venue, start, days, { today, listedUntil: until }).nights.filter((n) => n.status === 'dark').map((n) => n.date);
+  };
+  const from = planFrom > tomorrow ? planFrom : tomorrow;
+  const after = dark(from, until ?? addDays(from, PLAN_HORIZON_DAYS - 1));
+  if (after.length) return { dates: after, fallback: false };
+  const before = addDays(from, -1);
+  return { dates: dark(tomorrow, until && until < before ? until : before, { latest: true }).reverse(), fallback: true };
+}
+
 async function stepLivePlans(ctx) {
   const { config, guard, args, inputs, deps, claude } = ctx;
   if (!claude) return { status: 'skipped_no_claude_key', reason: 'no Claude key', message: 'no Claude key: live plans skipped. Rerun when the key is set; only this step will run.' };
@@ -693,15 +732,17 @@ async function stepLivePlans(ctx) {
   const qloo = createQlooClient({ apiKey: config.qloo.apiKey, baseUrl: config.qloo.baseUrl, mode: config.qloo.mode, cache, fetchImpl: guard.fetch, timeoutMs: args.requestTimeoutMs });
   const anthropic = deps.anthropic ?? (() => createAnthropic(config.anthropic.apiKey));
   const planConfig = { ...config, agentMode: 'live' };
-  const stats = { plans_wanted: args.plans, plans_attempted: 0, live: 0, fallback: 0, fallback_reasons: {}, errors: {}, usd_live: [], turns: [] };
+  const stats = { plans_wanted: args.plans, plans_attempted: 0, live: 0, fallback: 0, fallback_reasons: {}, errors: {}, usd_live: [], turns: [], rooms_before_plan_from: [] };
   let stop = null;
   try {
-    // One dark night per room in turn (first from tomorrow on), skipping nights that already have a recorded run.
+    // One dark night per room in turn (planNights: from --plan-from on, else the latest before it), skipping nights that
+    // already have a recorded run.
     const nightsBy = new Map();
     for (const venue of inputs.rooms) {
-      const dark = nightsFor(venue, addDays(today, 1), 60, { today, listedUntil: listedUntil(venue) }).nights.filter((n) => n.status === 'dark').map((n) => n.date);
+      const { dates, fallback } = planNights(venue, { today, planFrom: args.planFrom });
+      if (fallback) stats.rooms_before_plan_from.push(venue.id);
       const fresh = [];
-      for (const d of dark) if (!(await findRecorded(config.dataDir, venue.id, d))) fresh.push(d);
+      for (const d of dates) if (!(await findRecorded(config.dataDir, venue.id, d))) fresh.push(d);
       nightsBy.set(venue.id, fresh);
     }
     const picks = [];
@@ -745,6 +786,7 @@ async function stepLivePlans(ctx) {
   const total = round(stats.usd_live.reduce((t, x) => t + x, 0) + (stats.fallback_usd ?? 0));
   const mean = stats.usd_live.length ? round(stats.usd_live.reduce((t, x) => t + x, 0) / stats.usd_live.length) : null;
   const fields = {
+    plan_from: args.planFrom, rooms_before_plan_from: stats.rooms_before_plan_from,
     plans_wanted: stats.plans_wanted, plans_attempted: stats.plans_attempted, live: stats.live, fallback: stats.fallback, fallback_reasons: stats.fallback_reasons,
     errors: stats.errors, usd_total: total, usd_per_live_plan: mean, usd_max: stats.usd_live.length ? Math.max(...stats.usd_live) : null,
     turns_mean: stats.turns.length ? round(stats.turns.reduce((t, x) => t + x, 0) / stats.turns.length, 2) : null,
@@ -752,7 +794,7 @@ async function stepLivePlans(ctx) {
     within_karar_worst: stats.usd_live.length ? Math.max(...stats.usd_live) <= KARAR_PLAN_USD.worst : null,
   };
   if (stop && STOP_EXIT[stop]) return { status: 'stopped', reason: stop, ...fields, code: STOP_EXIT[stop], message: `live plans stopped (${stop}) after ${stats.plans_attempted} plans` };
-  const note = fields.above_karar_alert ? ` Mean is above ${KARAR_PLAN_USD.alert_above} USD: write to lh-hack (KARAR.md).` : '';
+  const note = fields.above_karar_alert ? ` Mean is above ${KARAR_PLAN_USD.alert_above} USD: write to the team (KARAR.md).` : '';
   return {
     status: 'done', reason: stop ?? undefined, ...fields,
     message: `live plans: ${stats.live} live of ${stats.plans_attempted}, ${total} USD in all, ${mean ?? '-'} USD per live plan (KARAR estimate ${KARAR_PLAN_USD.typical}, worst ${KARAR_PLAN_USD.worst})${stop ? `; stopped early (${stop})` : ''}.${note}`,
@@ -778,7 +820,10 @@ function dryRunReport(ctx) {
   else lines.push(`3 study1      ${state('study1')}: data not loaded`);
   if (est2) lines.push(`4 study2      ${state('study2')}: ${est2.rows} rows, searches ${est2.searches_min}-${est2.searches_max}, rankings <= ${est2.rankings_max} + literal reading <= ${est2.literal_rankings_max}, total <= ${est2.total_max}; check sample ${inputs.sample2?.ok ? 'recorded' : 'NOT recorded'} (${inputs.sample2?.checked ?? 0}/${inputs.sample2?.rows ?? '?'}); last start day ${STUDY2_LAST_START_DAY} TSI, today ${tsiDay(deps.now())}`);
   else lines.push(`4 study2      ${state('study2')}: data not loaded`);
-  lines.push(`5 live_plans  ${state('live_plans')}: ${claude ? `${args.plans} plan(s), cap ${args.planUsdCap} USD, up to ${PLAN_CALLS * args.plans} Qloo requests` : `skipped without a Claude key (with one: ${args.plans} plan(s), cap ${args.planUsdCap} USD)`}; rooms ${(inputs.rooms ?? []).map((v) => v.id).join(', ') || '-'}`);
+  const today = todayISO(deps.now());
+  const early = (inputs.rooms ?? []).filter((v) => planNights(v, { today, planFrom: args.planFrom }).fallback).map((v) => v.id);
+  lines.push(`5 live_plans  ${state('live_plans')}: ${claude ? `${args.plans} plan(s), cap ${args.planUsdCap} USD, up to ${PLAN_CALLS * args.plans} Qloo requests` : `skipped without a Claude key (with one: ${args.plans} plan(s), cap ${args.planUsdCap} USD)`}; rooms ${(inputs.rooms ?? []).map((v) => v.id).join(', ') || '-'}; ` +
+    `nights on or after ${args.planFrom} (--plan-from${args.planFrom <= today ? `; passed, so from ${addDays(today, 1)}` : ''})${early.length ? `, latest earlier dark nights for ${early.join(', ')} (none from then to listed_until)` : ''}`);
   lines.push(`6 summary     ${path.join(config.dataDir, 'keyhour', 'summary.json')}`);
   const upper = 1 + (kdLookups ?? 0) + 30 + (est1?.total_max ?? 0) + (est2?.total_max ?? 0) + (claude ? PLAN_CALLS * args.plans : 0);
   lines.push(`Qloo allowance: ${args.maxQlooCalls} requests over all invocations (--max-qloo-calls), ${ck.qloo_sent_total ?? 0} sent so far; upper bound of the pending plan about ${upper}`);
