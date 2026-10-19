@@ -30,6 +30,7 @@ test('defaults match the documented contract', () => {
   assert.equal(c.anthropic.longPromptTokens, 100_000);
   assert.equal(c.anthropic.keyLastDay, undefined);
   assert.equal(c.agentMode, 'auto');
+  assert.equal(c.outbound, 'on');
   assert.deepEqual(c.budget, { dailyUsdCap: 2, totalUsdCap: 30, monthlyUsdCap: 12, ipDailyLimit: 20 });
 });
 
@@ -89,6 +90,25 @@ test('rejects non-loopback hosts and malformed numbers, listing every problem', 
   assert.match(problems.join('\n'), /IP_DAILY_LIMIT/);
   assert.match(problems.join('\n'), /AGENT_MODE/);
   assert.match(problemsFor({ PORT: '70000' }).join('\n'), /PORT/);
+});
+
+test('OUTBOUND=off refuses every key and AGENT_MODE=live, without echoing the key', () => {
+  const off = loadConfig({ OUTBOUND: 'off', AGENT_MODE: 'recorded' });
+  assert.equal(off.outbound, 'off');
+  assert.equal(effectiveAgentMode(off, { hasRecordedRuns: true }), 'recorded');
+  assert.equal(effectiveAgentMode(loadConfig({ OUTBOUND: 'off' })), 'scripted');
+  for (const name of ['QLOO_API_KEY', 'ANTHROPIC_API_KEY', 'ANTHROPIC_API_KEY_FILE']) {
+    const problems = problemsFor({ OUTBOUND: 'off', [name]: 'k-secret-789' });
+    assert.deepEqual(problems, [`${name} must not be set when OUTBOUND=off`]);
+  }
+  // A key file is refused even when it cannot be read: the setting alone is the mistake.
+  assert.equal(problemsFor({ OUTBOUND: 'off', ANTHROPIC_API_KEY_FILE: '/nonexistent/key' }).length, 1);
+  assert.match(problemsFor({ OUTBOUND: 'off', AGENT_MODE: 'live' }).join('\n'), /AGENT_MODE=live/);
+  assert.match(problemsFor({ OUTBOUND: 'no' }).join('\n'), /OUTBOUND must be/);
+  // Blank values count as unset, as for every other setting.
+  assert.equal(loadConfig({ OUTBOUND: 'off', QLOO_API_KEY: ' ' }).qloo.apiKey, undefined);
+  // On by default: keys and live mode keep working.
+  assert.equal(loadConfig({ QLOO_API_KEY: 'k', AGENT_MODE: 'live' }).outbound, 'on');
 });
 
 test('error messages never echo API keys', () => {

@@ -118,6 +118,13 @@ button.sq-booked[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--fg); }
   font-size: 0.85rem; text-decoration: none; }
 .chip:hover { border-color: var(--fg); }
 
+.week-copy { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 12px; }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+.btn:disabled:hover { border-color: var(--line); }
+.week-text { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--fg);
+  font: 0.9rem/1.45 var(--font); resize: vertical; }
+.week-text[hidden] { display: none; }
+
 .notice { margin: 16px 0 0; padding: 12px 14px; border-left: 4px solid var(--accent); background: var(--panel); }
 
 /* ---------- night / poster ---------- */
@@ -150,6 +157,7 @@ button.sq-booked[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--fg); }
 .poster:focus-visible { outline: 3px solid var(--gold); }
 .poster-venue { margin: 0; color: var(--poster-muted); font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; }
 .poster-date { margin: 6px 0 18px; font: 800 clamp(2.2rem, 7vw, 3.6rem)/1 var(--poster-font); letter-spacing: 0.04em; color: var(--gold); }
+.poster-pool { max-width: 46ch; margin: -8px auto 14px; color: var(--poster-muted); font-size: 0.85rem; }
 .lineup { margin: 0; padding: 0; list-style: none; }
 .act { padding: 10px 0; border-top: 1px solid rgba(243, 234, 216, 0.16); }
 .act-name { display: block; font: 800 1.35rem/1.05 var(--poster-font); text-transform: uppercase; letter-spacing: 0.02em; overflow-wrap: anywhere; }

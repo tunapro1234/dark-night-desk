@@ -59,10 +59,33 @@ const TYPE_PLURAL = { movie: 'films', place: 'places', brand: 'brands' };
 export const strongestAlsoLoves = (rows = []) =>
   [...rows].sort((a, b) => b.lift_range[0] - a.lift_range[0] || b.lift_range[1] - a.lift_range[1])[0];
 
+// Scripted card lines, a few plain wordings per case. Each says only what explain's shares carry: which past shows
+// lead the match and whether one, two or many of them drive it.
+const ONE_SHOW_LINES = [
+  (act, a) => `Most of this match comes from one past show, ${a}. ${act} draws on the same taste.`,
+  (act, a) => `${act} leans on one past show above the rest: ${a}.`,
+  (act, a) => `One past show drives most of this pick: ${a}. ${act} follows that taste.`,
+];
+const TWO_SHOW_LINES = [
+  (act, a, b) => whySentence(act, [{ name: a }, { name: b }]),
+  (act, a, b) => `${a} and ${b} carry most of this match. ${act} draws on both.`,
+  (act, a, b) => `${act} comes mostly out of two past shows in your program: ${a} and ${b}.`,
+  (act, a, b) => `${act} points back to your nights with ${a} and ${b}.`,
+];
+const SPREAD_LINES = [
+  (act, a, b) => `No single past show drives this one; it is spread across your program, led by ${a} and ${b}.`,
+  (act, a, b) => `${act} fits your program as a whole rather than one past show; ${a} and ${b} lead the list.`,
+  (act, a, b) => `This match is spread across your past shows. ${a} and ${b} count most, but neither carries it alone.`,
+];
+
+/** The same act always gets the same wording: a string hash of its name, no randomness. */
+const pickLine = (lines, act) => lines[[...String(act)].reduce((h, ch) => (h * 31 + ch.codePointAt(0)) >>> 0, 7) % lines.length];
+
 /**
  * Scripted plan only: the card line, worded by what drove the pick in explain's output. One past show with more than
- * half of the match gets a one-show line; two shows that together hold more than half get the A-and-B line; a match
- * spread wider is said to be spread. `also` (the strongest also_loves row) adds one fact about the room's crowd.
+ * half of the match gets a one-show line; two shows that together hold more than half get an A-and-B line; a match
+ * spread wider is said to be spread. Within each case the wording is picked by a hash of the act's name, so a card of
+ * five acts does not read five times the same. `also` (the strongest also_loves row) adds one fact about the room's crowd.
  * Names and categories come from tool outputs; the line carries no number.
  * @param {string} act
  * @param {{ name: string | null, share: number }[]} contributors most important first, as explain lists them
@@ -74,10 +97,10 @@ export function scriptedWhy(act, contributors, { also } = {}) {
   let line;
   if (!a) line = whySentence(act, []);
   else if (!b) line = whySentence(act, [a]);
-  else if (a.share > 0.5) line = `Most of this match comes from one past show, ${a.name}. ${act} draws on the same taste.`;
-  else if (a.share + b.share > 0.5) line = whySentence(act, [a, b]);
-  else line = `No single past show drives this one; it is spread across your program, led by ${a.name} and ${b.name}.`;
-  if (also?.category) line += ` The same crowd also leans to ${also.category} ${TYPE_PLURAL[also.type] ?? 'picks'}, more than the city's average room.`;
+  else if (a.share > 0.5) line = pickLine(ONE_SHOW_LINES, act)(act, a.name);
+  else if (a.share + b.share > 0.5) line = pickLine(TWO_SHOW_LINES, act)(act, a.name, b.name);
+  else line = pickLine(SPREAD_LINES, act)(act, a.name, b.name);
+  if (also?.category) line += ` This room's crowd also leans to ${also.category} ${TYPE_PLURAL[also.type] ?? 'picks'}, more than the city's average room.`;
   return line;
 }
 

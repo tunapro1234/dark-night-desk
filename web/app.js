@@ -125,6 +125,10 @@ const state = {
   answers: [],
   // Bumped on every booked-night pick, so a slow crowd answer for an earlier pick is dropped.
   crowdSeq: 0,
+  // Cards shown in this visit, by cardKey(room, night): the latest plan result for that night (live, scripted or replayed).
+  cards: new Map(),
+  // Recorded runs read in this visit, by cardKey(room, night): the GET's promise, and its result once it came back.
+  recordedReads: new Map(),
 };
 const qlooOff = () => state.health?.qloo === 'no-key';
 const recordedRun = (venueId, date) => state.recorded.find((x) => x.venue_id === venueId && x.date === date) ?? null;
@@ -133,6 +137,26 @@ const recordedCard = (venueId, date) => {
   const run = recordedRun(venueId, date);
   return run && !run.thin ? run : null;
 };
+
+const cardKey = (venueId, date) => `${venueId}|${date}`;
+
+/** GET one recorded run (no Claude or Qloo call in any mode), read at most once per visit; a failed read can be tried again. */
+function readRecorded(venueId, date) {
+  const key = cardKey(venueId, date);
+  let entry = state.recordedReads.get(key);
+  if (!entry) {
+    entry = { result: null };
+    entry.promise = getJSON(`/api/recorded/${encodeURIComponent(venueId)}/${encodeURIComponent(date)}`).then(
+      (r) => (entry.result = r),
+      (err) => {
+        state.recordedReads.delete(key);
+        throw err;
+      },
+    );
+    state.recordedReads.set(key, entry);
+  }
+  return entry.promise;
+}
 
 async function getJSON(url) {
   const res = await fetch(url, { headers: { accept: 'application/json' } });
@@ -165,6 +189,9 @@ async function loadCalendar(venueId) {
   $('strip').replaceChildren();
   $('source-chip').hidden = true;
   showCalendarNotice('');
+  $('copy-week-status').textContent = '';
+  $('week-text').hidden = true;
+  updateCopyWeek();
   const v = state.venues.find((x) => x.id === venueId);
   $('venue-meta').textContent = v ? `${v.locality || v.city}${sizeLine(v.capacity_band)}` : '';
   try {
@@ -245,6 +272,12 @@ function renderCalendar(cal) {
   strip.replaceChildren(...items);
   const first = strip.querySelector('.sq-dark') ?? strip.querySelector('.sq-pick');
   if (first) first.tabIndex = 0;
+  // The week's recorded runs are read now, so "Copy this week" has their cards in hand and the click makes no request.
+  const venueId = cal.venue?.id ?? state.venueId;
+  for (const night of weekNights()) {
+    if (night.status === 'dark' && recordedCard(venueId, night.date)) readRecorded(venueId, night.date).then(updateCopyWeek, () => {});
+  }
+  updateCopyWeek();
   if (qlooOff() && state.recorded.length) {
     // One line, so a phone still sees the strip and the card below it: only this room's nights (the picker names the room;
     // the key hour records two nights in every room). "for" the night, since the badge's "from" is the day it was saved.
@@ -280,6 +313,63 @@ function onStripKey(e) {
   buttons[i].tabIndex = -1;
   buttons[j].tabIndex = 0;
   buttons[j].focus();
+}
+
+// ---------- "Copy this week" ----------
+const WEEK_NIGHTS = 7;
+/** The next 7 nights after today on the strip. */
+const weekNights = () => (state.calendar?.nights ?? []).filter((x) => !x.today && x.status !== 'past').slice(0, WEEK_NIGHTS);
+
+/** The week's dark nights that have a card in hand: a plan shown in this visit, else a recorded run already read. */
+function weekCards() {
+  return weekNights().filter((night) => night.status === 'dark').map((night) => {
+    const key = cardKey(state.venueId, night.date);
+    const r = state.cards.get(key) ?? (recordedCard(state.venueId, night.date) ? state.recordedReads.get(key)?.result : null);
+    return r && !r.thin_signal && r.shortlist?.length ? { date: night.date, r } : null;
+  }).filter(Boolean);
+}
+
+function updateCopyWeek() {
+  const b = $('copy-week');
+  const n = weekCards().length;
+  b.disabled = !n;
+  b.title = n ? `Copy the card${n === 1 ? '' : 's'} for ${n} of the next ${WEEK_NIGHTS} nights as plain text` : `No card yet for the next ${WEEK_NIGHTS} nights`;
+}
+
+/** Plain text per night: the date, the acts in order, the first pick's reason line, the mode badges' text. */
+function weekText(cards) {
+  const v = state.venues.find((x) => x.id === state.venueId);
+  const nights = weekNights();
+  const head = `${v?.name ?? 'This room'}: ${cards.length} night${cards.length === 1 ? '' : 's'} with a card, ${monthDay(nights[0].date)} to ${monthDay(nights.at(-1).date)}`;
+  const blocks = cards.map(({ date, r }) => {
+    const top = r.shortlist[0];
+    return [
+      shortDay(date),
+      ...r.shortlist.map((a) => `${a.rank}. ${a.name ?? 'Unnamed act'}`),
+      top.why ? `Why ${top.name ?? 'the first pick'}: ${top.why}` : null,
+      `${agentLabel(r.mode?.agent, r.mode?.recorded_at)} \u00b7 ${qlooLabel(r.mode?.qloo, r.mode?.recorded_at)}`,
+    ].filter(Boolean).join('\n');
+  });
+  return [head, ...blocks].join('\n\n');
+}
+
+/** Copies the week's cards; no request is made. Without clipboard access the text is shown selected instead. */
+async function copyWeek() {
+  const cards = weekCards();
+  if (!cards.length) return;
+  const text = weekText(cards);
+  const box = $('week-text');
+  box.hidden = true;
+  try {
+    await navigator.clipboard.writeText(text);
+    $('copy-week-status').textContent = `Copied ${cards.length} night${cards.length === 1 ? '' : 's'}. Paste it anywhere.`;
+  } catch {
+    box.value = text;
+    box.hidden = false;
+    box.focus();
+    box.select();
+    $('copy-week-status').textContent = 'Select all and copy with your keyboard.';
+  }
 }
 
 function markPicked(date) {
@@ -475,8 +565,30 @@ function playedLine(played) {
     byRoom.get(room).push(monthDay(p.date));
   }
   if (!byRoom.size) return null;
-  const and = (xs) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`);
-  return `Played ${[...byRoom].map(([room, days]) => `${room}, ${and(days)}`).join('; ')}`;
+  return `Played ${[...byRoom].map(([room, days]) => `${room}, ${andList(days)}`).join('; ')}`;
+}
+const andList = (xs) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`);
+
+/**
+ * The rooms whose calendars fed this night's pool (build_pool's `pool.rooms`: the other rooms in the city). Rooms a pick
+ * played come first; names come from the picks' plays and the venue list, at most four, the rest counted.
+ */
+function poolLine(r) {
+  const ids = r.pool?.rooms ?? [];
+  if (!ids.length) return '';
+  const names = new Map(state.venues.map((v) => [v.id, v.name]));
+  const playedAt = new Set();
+  for (const act of r.shortlist ?? []) {
+    for (const p of act.played ?? []) {
+      playedAt.add(p.venue_id);
+      if (p.venue) names.set(p.venue_id, p.venue);
+    }
+  }
+  const named = [...ids.filter((id) => playedAt.has(id)), ...ids.filter((id) => !playedAt.has(id))].filter((id) => names.has(id)).slice(0, 4);
+  const rest = ids.length - named.length;
+  const parts = named.map((id) => names.get(id));
+  if (rest) parts.push(`${rest} ${named.length ? 'more' : 'other'} room${rest === 1 ? '' : 's'}`);
+  return `Acts from the calendars of ${andList(parts)}`;
 }
 
 /** The ablate check the agent ran on a pick, from the ablate output: did the act stay in the top 5 without that show? */
@@ -494,6 +606,11 @@ function checkLine(act) {
 
 function renderResult(r, { focus = true } = {}) {
   state.result = r;
+  // The latest answer for a night wins: a thin-signal answer drops the card shown earlier for that night.
+  const key = cardKey(r.venue?.id ?? state.venueId, r.night.date);
+  if (r.shortlist?.length && !r.thin_signal) state.cards.set(key, r);
+  else state.cards.delete(key);
+  updateCopyWeek();
   setBadges(r.mode?.agent, r.mode?.qloo, r.mode?.recorded_at);
   for (const li of $('steps').children) li.className = 'done';
   if (r.thin_signal) {
@@ -510,6 +627,9 @@ function renderResult(r, { focus = true } = {}) {
 
   $('poster-venue').textContent = r.venue ? `${r.venue.name} \u00b7 ${r.venue.locality || r.venue.city}` : '';
   $('poster-date').textContent = posterDay(r.night.date);
+  const pool = poolLine(r);
+  $('poster-pool').textContent = pool;
+  $('poster-pool').hidden = !pool;
 
   const lineup = (r.shortlist ?? []).map((act) =>
     h('li', { class: `act act-${act.rank}` },
@@ -585,7 +705,7 @@ async function pickBooked(night) {
     }
     $('crowd-note').textContent = 'Reading the recorded run';
     try {
-      const r = await getJSON(`/api/recorded/${encodeURIComponent(run.venue_id)}/${encodeURIComponent(run.date)}`);
+      const r = await readRecorded(run.venue_id, run.date);
       if (!current()) return;
       renderCrowd(r.also_loves ?? []);
       const synthetic = r.mode?.qloo === 'fixture' ? ' (synthetic test data)' : '';
@@ -921,6 +1041,7 @@ async function start() {
   $('draft-offer').addEventListener('click', () => openOffer());
   $('offer-act').addEventListener('change', (e) => fillOffer(e.currentTarget.value));
   $('offer-copy').addEventListener('click', copyOffer);
+  $('copy-week').addEventListener('click', copyWeek);
   $('why-night').addEventListener('click', (e) => openWhy(state.result?.shortlist?.[0]?.entity_id ?? null, e.currentTarget));
   $('why-close').addEventListener('click', () => closeWhy());
   $('why').addEventListener('keydown', (e) => e.key === 'Escape' && closeWhy());
@@ -971,7 +1092,7 @@ async function openRecorded(run) {
   state.date = run.date;
   markPicked(run.date);
   try {
-    const r = await getJSON(`/api/recorded/${encodeURIComponent(run.venue_id)}/${encodeURIComponent(run.date)}`);
+    const r = await readRecorded(run.venue_id, run.date);
     if (state.venueId !== run.venue_id || state.date !== run.date || state.result) return;
     $('steps').replaceChildren(...(r.steps ?? []).map((label) => h('li', { class: 'done' }, label)));
     renderResult(r, { focus: false });

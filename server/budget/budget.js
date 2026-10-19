@@ -1,4 +1,5 @@
-// Claude spend ledger and per-IP daily plan limit (SQLite via node:sqlite). Day boundaries are UTC.
+// Claude spend ledger and per-IP daily request limit for plans, crowd reads and ablate checks (SQLite via node:sqlite).
+// Day boundaries are UTC.
 // Cost comes from the `usage` block of each SDK response, never from an estimate. When a cap is reached the
 // agent stops making live calls and falls back to a recorded run (or the scripted plan when none exists).
 // IP addresses are not stored: the ledger keeps a salted hash, and only for the current UTC day.
@@ -115,7 +116,10 @@ export function createBudget({ dbPath = ':memory:', dailyCap, totalCap, monthlyC
       insertSpend.run(at, dayOf(at), usd, t.input, t.output, t.cache_write, t.cache_read);
       return { usd };
     },
-    /** Count one plan request from `ip` today; ok while the count is within the daily limit. */
+    /**
+     * Count one request from `ip` today; ok while the count is within the daily limit. Plans pass the bare address;
+     * crowd reads and ablate checks put their route name in front of it, so each of the three gets its own count.
+     */
     checkIp(ip) {
       const day = dayOf(now());
       pruneHits.run(day);

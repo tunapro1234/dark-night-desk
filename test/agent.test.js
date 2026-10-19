@@ -111,25 +111,51 @@ test('why sentence and room sizing', () => {
 
 test('scripted reason line: worded by what drove the pick, names only, no number', () => {
   const c = (name, share) => ({ entity_id: name, name, share });
-  assert.equal(scriptedWhy('X', [c('A', 0.6), c('B', 0.3), c('C', 0.1)]), 'Most of this match comes from one past show, A. X draws on the same taste.');
-  assert.equal(scriptedWhy('X', [c('A', 0.4), c('B', 0.3), c('C', 0.3)]), 'Your crowd came for A and B. X sits right between them.');
-  assert.equal(scriptedWhy('X', [c('A', 0.3), c('B', 0.2), c('C', 0.2), c('D', 0.3)]),
+  // One past show with more than half of the match; two that together hold more than half; a match spread wider.
+  assert.equal(scriptedWhy('Y', [c('A', 0.6), c('B', 0.3), c('C', 0.1)]), 'Most of this match comes from one past show, A. Y draws on the same taste.');
+  assert.equal(scriptedWhy('W', [c('A', 0.4), c('B', 0.3), c('C', 0.3)]), 'Your crowd came for A and B. W sits right between them.');
+  assert.equal(scriptedWhy('Y', [c('A', 0.3), c('B', 0.2), c('C', 0.2), c('D', 0.3)]),
     'No single past show drives this one; it is spread across your program, led by A and B.');
   assert.equal(scriptedWhy('X', [c('A', 1)]), 'Your crowd came for A. X draws on the same taste.');
   assert.equal(scriptedWhy('X', [{ entity_id: 'n', name: null, share: 1 }]), "X ranks high against this room's past program.");
   // Exactly half is not "most of this match".
-  assert.match(scriptedWhy('X', [c('A', 0.5), c('B', 0.5)]), /^Your crowd came for A and B\./);
+  assert.match(scriptedWhy('W', [c('A', 0.5), c('B', 0.5)]), /^Your crowd came for A and B\./);
   const also = strongestAlsoLoves([
     { type: 'brand', category: 'Brand Cat', lift_range: [0.05, 0.2] },
     { type: 'movie', category: 'Film Cat', lift_range: [0.05, 0.3] },
     { type: 'place', category: 'Place Cat', lift_range: [0.01, 0.9] },
   ]);
   assert.equal(also.category, 'Film Cat', 'largest lower end first, then the upper end');
-  assert.equal(scriptedWhy('X', [c('A', 0.4), c('B', 0.3)], { also }),
-    "Your crowd came for A and B. X sits right between them. The same crowd also leans to Film Cat films, more than the city's average room.");
+  assert.equal(scriptedWhy('W', [c('A', 0.4), c('B', 0.3)], { also }),
+    "Your crowd came for A and B. W sits right between them. This room's crowd also leans to Film Cat films, more than the city's average room.");
   assert.equal(strongestAlsoLoves([]), undefined);
   for (const line of [scriptedWhy('X', [c('A', 0.6), c('B', 0.4)], { also }), scriptedWhy('X', [c('A', 0.2), c('B', 0.2), c('C', 0.6)])]) {
     assert.doesNotMatch(line, /\d/);
+  }
+});
+
+test('scripted reason line: the wording varies by act, the same act always reads the same, facts stay the same', () => {
+  const c = (name, share) => ({ entity_id: name, name, share });
+  assert.equal(scriptedWhy('X', [c('A', 0.6), c('B', 0.3)]), 'One past show drives most of this pick: A. X follows that taste.');
+  assert.equal(scriptedWhy('Z', [c('A', 0.6), c('B', 0.3)]), 'Z leans on one past show above the rest: A.');
+  assert.equal(scriptedWhy('X', [c('A', 0.4), c('B', 0.3)]), 'A and B carry most of this match. X draws on both.');
+  assert.equal(scriptedWhy('Y', [c('A', 0.4), c('B', 0.3)]), 'Y comes mostly out of two past shows in your program: A and B.');
+  assert.equal(scriptedWhy('Z', [c('A', 0.4), c('B', 0.3)]), 'Z points back to your nights with A and B.');
+  assert.equal(scriptedWhy('X', [c('A', 0.2), c('B', 0.2)]), 'This match is spread across your past shows. A and B count most, but neither carries it alone.');
+  assert.equal(scriptedWhy('Z', [c('A', 0.2), c('B', 0.2)]), 'Z fits your program as a whole rather than one past show; A and B lead the list.');
+  const cases = { one: [c('Alpha', 0.6), c('Beta', 0.3)], two: [c('Alpha', 0.4), c('Beta', 0.3)], spread: [c('Alpha', 0.2), c('Beta', 0.2), c('Gamma', 0.2)] };
+  for (const [kind, contribs] of Object.entries(cases)) {
+    const acts = Array.from({ length: 5 }, (_, i) => `Synthetic Act ${i + 1}`);
+    const lines = acts.map((act) => scriptedWhy(act, contribs));
+    assert.ok(new Set(lines.map((l, i) => l.replaceAll(acts[i], 'X'))).size >= 3, `${kind}: five acts get at least three wordings`);
+    for (const [i, line] of lines.entries()) {
+      assert.equal(line, scriptedWhy(acts[i], contribs), 'deterministic');
+      assert.ok(line.includes(acts[i]) || kind === 'spread', `${kind}: names the act`);
+      assert.ok(line.includes('Alpha'), 'names the leading past show');
+      if (kind !== 'one') assert.ok(line.includes('Beta'), 'names the second past show');
+      if (kind === 'one') assert.doesNotMatch(line, /Beta/, 'a one-show line names one show');
+      assert.doesNotMatch(line.replaceAll(acts[i], ''), /\d|fan|demand|ticket|sold|%/i, 'no number and nothing the data does not carry');
+    }
   }
 });
 
@@ -187,12 +213,12 @@ test('plan (scripted): SSE steps, five acts with reasons and evidence, note to t
   for (const [i, x] of r.shortlist.entries()) {
     assert.equal(x.why, scriptedWhy(x.name, x.evidence.contributions, { also: i === 0 ? strongest : undefined }));
   }
-  assert.ok(r.shortlist[0].why.endsWith(`The same crowd also leans to ${strongest.category} ${{ movie: 'films', place: 'places', brand: 'brands' }[strongest.type]}, more than the city's average room.`));
+  assert.ok(r.shortlist[0].why.endsWith(`This room's crowd also leans to ${strongest.category} ${{ movie: 'films', place: 'places', brand: 'brands' }[strongest.type]}, more than the city's average room.`));
   assert.ok(r.shortlist.slice(1).every((x) => !/also leans to/.test(x.why)));
   assert.ok(new Set(r.shortlist.map((x) => x.why.split(',')[0].split(' ').slice(0, 3).join(' '))).size > 1, 'not every line reads the same');
   for (const x of r.shortlist) {
     assert.match(x.entity_id, /^synthetic-artist-/);
-    assert.match(x.why, /^(Your crowd came for|Most of this match comes from one past show|No single past show drives this one)/);
+    assert.ok(x.why.includes(x.evidence.contributions.find((c) => c.name)?.name ?? x.name), 'names the past show that leads the match');
     // build_pool's fact: where and when the act played the city, inside the pool window, never at this room.
     assert.ok(x.played.length >= 1);
     for (const p of x.played) {

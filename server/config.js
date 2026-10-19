@@ -9,6 +9,9 @@ export const QLOO_HACKATHON_URL = 'https://hackathon.api.qloo.com';
 const LOOPBACK_HOSTS = new Set(['127.0.0.1', '::1', 'localhost']);
 const QLOO_MODES = new Set(['live', 'fixture']);
 const AGENT_MODES = new Set(['auto', 'live', 'recorded', 'scripted']);
+const OUTBOUND_MODES = new Set(['on', 'off']);
+// With OUTBOUND=off none of these may be set: the server never holds a key, so neither client can reach its API.
+const OUTBOUND_KEYS = ['QLOO_API_KEY', 'ANTHROPIC_API_KEY', 'ANTHROPIC_API_KEY_FILE'];
 
 // Claude Haiku 5.5 list price, USD per million tokens (Anthropic pricing table, Oct 2026). Prompts over 100K tokens
 // are billed at the long-context rate.
@@ -81,6 +84,14 @@ export function loadConfig(env = process.env) {
       anthropicKey = undefined;
     }
   }
+  // OUTBOUND=off is the keyless public page: a key or AGENT_MODE=live is refused rather than ignored, so a key added to
+  // the environment later stops the server instead of quietly turning live calls on.
+  const outbound = str('OUTBOUND', 'on');
+  if (!OUTBOUND_MODES.has(outbound)) problems.push(`OUTBOUND must be "on" or "off" (got "${outbound}")`);
+  else if (outbound === 'off') {
+    for (const name of OUTBOUND_KEYS) if (str(name, undefined) !== undefined) problems.push(`${name} must not be set when OUTBOUND=off`);
+    if (agentMode === 'live') problems.push('AGENT_MODE=live is not allowed when OUTBOUND=off');
+  }
   const keyLastDay = str('ANTHROPIC_KEY_LAST_DAY', undefined);
   if (keyLastDay !== undefined && !ISO_DAY.test(keyLastDay)) problems.push(`ANTHROPIC_KEY_LAST_DAY must be YYYY-MM-DD (got "${keyLastDay}")`);
 
@@ -106,6 +117,7 @@ export function loadConfig(env = process.env) {
       longPromptTokens: num('CLAUDE_LONG_PROMPT_TOKENS', DEFAULT_LONG_PROMPT_TOKENS, { integer: true, min: 1 }),
     },
     agentMode,
+    outbound,
     budget: {
       dailyUsdCap: num('DAILY_USD_CAP', 2),
       totalUsdCap: num('TOTAL_USD_CAP', 30),

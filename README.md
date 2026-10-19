@@ -43,6 +43,7 @@ All settings are environment variables read in `server/config.js`:
 | `ANTHROPIC_KEY_LAST_DAY` | none | `YYYY-MM-DD` (UTC); after this day no live Claude call is made |
 | `CLAUDE_MODEL` | `claude-haiku-5-5` | |
 | `AGENT_MODE` | `auto` | `auto`, `live`, `recorded` or `scripted` |
+| `OUTBOUND` | `on` | `off` refuses to start when `QLOO_API_KEY`, `ANTHROPIC_API_KEY` or `ANTHROPIC_API_KEY_FILE` is set, or `AGENT_MODE` is `live` |
 | `DAILY_USD_CAP` / `MONTHLY_USD_CAP` / `TOTAL_USD_CAP` | `2` / `12` / `30` | Claude spend caps (UTC day, UTC calendar month, all time) |
 | `IP_DAILY_LIMIT` | `20` | requests per IP per day, counted apart for plans, crowd reads and ablate checks |
 | `CLAUDE_PRICE_IN_PER_MTOK` / `CLAUDE_PRICE_OUT_PER_MTOK` | `0.1` / `0.5` | USD per million tokens, for the spend counter (Haiku 5.5) |
@@ -50,8 +51,8 @@ All settings are environment variables read in `server/config.js`:
 
 The server refuses to start on an invalid setting and prints what is wrong.
 
-`GET /api/health` reports the modes, the spend ledger, `version` (from `package.json`) and `uptime` (whole seconds since the
-process started).
+`GET /api/health` reports the modes, `outbound` (`on` or `off`), the spend ledger, `version` (from `package.json`) and `uptime`
+(whole seconds since the process started).
 
 ## Deploy (systemd)
 
@@ -79,6 +80,10 @@ journalctl -u dark-night-desk -f
 - The daily, monthly and total Claude caps (`DAILY_USD_CAP`, `MONTHLY_USD_CAP`, `TOTAL_USD_CAP`) and `IP_DAILY_LIMIT` hold on the public server too: when one
   is reached the page keeps working with a recorded run or the scripted plan, and says so. Past `IP_DAILY_LIMIT` a crowd read
   or an ablate check is refused (429) and the page prints why.
+- **A keyless public page:** set `OUTBOUND=off` (and `AGENT_MODE=recorded`) in the unit or the environment file. With no key the
+  server sends no request to Qloo or Anthropic; `OUTBOUND=off` makes that a startup check, so a key added later stops the
+  server with a config error instead of turning live calls on. `/api/health` then shows `"outbound": "off"`. It covers the
+  two keyed APIs only: the calendar refresh unit reads the same environment file and still reads the venue's public calendar.
 
 ## Venues and dark nights
 
@@ -270,8 +275,11 @@ Plain HTML, CSS and browser JavaScript, served by the same server. No framework,
   `listed_until`, so the count can drop below 60 late in the week; later nights show as "not read yet"),
   the strip of today plus those 60 nights (`?days=61`; dark nights are the dark squares, arrow keys move between them; today is
   tagged "today" where the month label would sit and cannot be picked),
-  and a chip linking the venue's public calendar with its read date.
-- **A dark night:** the agent's steps stream in, then the poster card: the date (`THU NOV 12`), five acts, one sentence each,
+  a chip linking the venue's public calendar with its read date, and "Copy this week": plain text (date, acts in order, the first
+  reason line, the mode badges) for the next 7 nights that already have a card in this visit or a recorded run, with no request
+  on the click; disabled when there is none.
+- **A dark night:** the agent's steps stream in, then the poster card: the date (`THU NOV 12`), one small line naming the rooms
+  whose calendars the pool came from, five acts, one sentence each,
   and the "This room's crowd also loves" row in plain words (category, "shows up more here than at the city's average room",
   source). The lift numbers are only in the why? panel.
 - **Draft offer** opens the note with "Not sent. Copy it to your own email." on top and a Copy button. Nothing is sent. The

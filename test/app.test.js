@@ -21,8 +21,17 @@ test('health without keys: Qloo not connected, scripted agent, default caps', as
   assert.equal(body.ok, true);
   assert.equal(body.qloo, 'no-key');
   assert.equal(body.agent, 'scripted');
+  assert.equal(body.outbound, 'on');
   assert.deepEqual(body.budget, { day_usd: 0, total_usd: 0, day_cap: 2, total_cap: 30, month_usd: 0, month_cap: 12 });
   assert.equal(typeof body.version, 'string');
+  await app.close();
+});
+
+test('health reports OUTBOUND=off', async () => {
+  const app = await appWith({ OUTBOUND: 'off' });
+  const body = (await app.inject('/api/health')).json();
+  assert.equal(body.outbound, 'off');
+  assert.equal(body.qloo, 'no-key');
   await app.close();
 });
 

@@ -244,7 +244,7 @@ test('page: the scripted plan renders from the HTTP route: steps, poster, why?, 
   assert.equal(lineup.length, 5);
   // Under each act: build_pool's fact (where and when it played the city), then the reason line.
   for (const li of lineup) {
-    assert.match(li.textContent, /^Synthetic Act \d+Played Other Hall, [A-Z][a-z]{2} \d+.*(Your crowd came for|Most of this match comes from one past show|No single past show).+why\? draft offer$/);
+    assert.match(li.textContent, /^Synthetic Act \d+Played Other Hall, [A-Z][a-z]{2} \d+.*(past show|your program|Your crowd came for|your nights with|carry most of this match).+why\? draft offer$/);
   }
   assert.ok(page.$('also-list').children.length >= 1);
   assert.equal(page.$('draft-offer').hidden, false);
