@@ -1100,6 +1100,20 @@ async function start() {
 }
 
 /** Show a recorded run as the night's card (GET, so no Claude or Qloo call is made in any mode). */
+/**
+ * Bring a recorded first-load card into view without moving focus. On a phone the card sits far below the strip, so its
+ * top goes to the top of the screen (it carries its own "Recorded run" line). On a wide screen scroll only so far that
+ * the mode badges stay on screen, which is usually enough to show the card's top under them.
+ */
+function revealRecorded() {
+  if (matchMedia('(max-width: 640px)').matches) return reveal('poster');
+  const card = $('poster').getBoundingClientRect?.();
+  const badges = $('badge-agent').getBoundingClientRect?.();
+  if (!card || !badges) return;
+  const by = Math.min(card.top - innerHeight * 0.5, badges.top - 8);
+  if (by > 0) scrollBy?.({ top: by, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+}
+
 async function openRecorded(run) {
   state.date = run.date;
   markPicked(run.date);
@@ -1108,9 +1122,7 @@ async function openRecorded(run) {
     if (state.venueId !== run.venue_id || state.date !== run.date || state.result) return;
     $('steps').replaceChildren(...(r.steps ?? []).map((label) => h('li', { class: 'done' }, label)));
     renderResult(r, { focus: false });
-    // On a phone the card sits below the strip; bring it into view without moving focus. Not on a wide screen, where
-    // scrolling would hide the badges and the notice above the card.
-    if (!$('poster').hidden && matchMedia('(max-width: 640px)').matches) reveal('poster');
+    if (!$('poster').hidden) revealRecorded();
   } catch {
     if (state.venueId === run.venue_id && state.date === run.date && !state.result) resetNight();
   }
