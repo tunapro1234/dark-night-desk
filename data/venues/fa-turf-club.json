@@ -2,31 +2,15 @@
   "id": "fa-turf-club",
   "name": "Turf Club",
   "city": "Minneapolis",
-  "locality": "Saint Paul",
   "capacity_band": "200-400",
   "calendar_source_url": "https://first-avenue.com/shows/",
-  "read_at": "2026-10-11T18:54:39Z",
+  "read_at": "2026-10-19T01:47:27Z",
   "closed_weekdays": [],
   "shows": [
     {
-      "date": "2026-10-12",
-      "headliner": "Acid Mothers Temple",
-      "source_url": "https://first-avenue.com/event/2026-10-acid-mothers-temple/"
-    },
-    {
-      "date": "2026-10-14",
-      "headliner": "SLIFT",
-      "source_url": "https://first-avenue.com/event/2026-10-slift/"
-    },
-    {
-      "date": "2026-10-16",
-      "headliner": "Arcwelder",
-      "source_url": "https://first-avenue.com/event/2026-10-arcwelder/"
-    },
-    {
-      "date": "2026-10-17",
-      "headliner": "The Lowest Pair",
-      "source_url": "https://first-avenue.com/event/2026-10-the-lowest-pair/"
+      "date": "2026-10-19",
+      "headliner": "Hippo Campus",
+      "source_url": "https://first-avenue.com/event/2026-10-hippo-campus/"
     },
     {
       "date": "2026-10-20",
@@ -149,6 +133,11 @@
       "source_url": "https://first-avenue.com/event/2026-11-worlds-forgotten-boys/"
     },
     {
+      "date": "2026-11-28",
+      "headliner": "A Tribute to the Replacements ft. The Melismatics",
+      "source_url": "https://first-avenue.com/event/2026-11-replacements-tribute/"
+    },
+    {
       "date": "2026-12-02",
       "headliner": "ABOUT MY FRIEND",
       "source_url": "https://first-avenue.com/event/2026-12-about-my-friend/"
@@ -162,39 +151,24 @@
       "date": "2026-12-10",
       "headliner": "The Steel Wheels",
       "source_url": "https://first-avenue.com/event/2026-12-the-steel-wheels/"
+    },
+    {
+      "date": "2026-12-11",
+      "headliner": "Temples",
+      "source_url": "https://first-avenue.com/event/2026-12-temples/"
+    },
+    {
+      "date": "2026-12-12",
+      "headliner": "Church of Cash",
+      "source_url": "https://first-avenue.com/event/2026-12-church-of-cash/"
+    },
+    {
+      "date": "2026-12-13",
+      "headliner": "The Reverend Peyton\u2019s Big Damn Band",
+      "source_url": "https://first-avenue.com/event/2026-12-reverend-peytons-big-damn-band/"
     }
   ],
   "past_shows": [
-    {
-      "date": "2026-07-15",
-      "headliner": "Pearl & the Oysters",
-      "source_url": "https://first-avenue.com/event/2026-07-pearl-and-the-oysters/"
-    },
-    {
-      "date": "2026-07-16",
-      "headliner": "New Fashioned Honky Tonk",
-      "source_url": "https://first-avenue.com/event/2026-07-new-fashioned-honky-tonk/"
-    },
-    {
-      "date": "2026-07-17",
-      "headliner": "Man Man",
-      "source_url": "https://first-avenue.com/event/2026-07-man-man/"
-    },
-    {
-      "date": "2026-07-17",
-      "headliner": "Minnesota Yacht Club Official Afterparty ft. The Black Keys Record Hang",
-      "source_url": "https://first-avenue.com/event/2026-07-mn-yacht-club-afterparty/"
-    },
-    {
-      "date": "2026-07-18",
-      "headliner": "Drivin N Cryin",
-      "source_url": "https://first-avenue.com/event/2026-07-drivin-n-cryin/"
-    },
-    {
-      "date": "2026-07-19",
-      "headliner": "Billy Allen + The Pollies",
-      "source_url": "https://first-avenue.com/event/2026-07-billy-allen-the-pollies/"
-    },
     {
       "date": "2026-07-22",
       "headliner": "mc chris",
@@ -464,8 +438,29 @@
       "date": "2026-10-10",
       "headliner": "Roger Clyne & The Peacemakers",
       "source_url": "https://first-avenue.com/event/2026-10-roger-clyne-the-peacemakers/"
+    },
+    {
+      "date": "2026-10-12",
+      "headliner": "Acid Mothers Temple",
+      "source_url": "https://first-avenue.com/event/2026-10-acid-mothers-temple/"
+    },
+    {
+      "date": "2026-10-14",
+      "headliner": "SLIFT",
+      "source_url": "https://first-avenue.com/event/2026-10-slift/"
+    },
+    {
+      "date": "2026-10-16",
+      "headliner": "Arcwelder",
+      "source_url": "https://first-avenue.com/event/2026-10-arcwelder/"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "The Lowest Pair",
+      "source_url": "https://first-avenue.com/event/2026-10-the-lowest-pair/"
     }
   ],
+  "locality": "Saint Paul",
   "listing_complete": true,
-  "listed_until": "2026-12-10"
+  "listed_until": "2026-12-18"
 }

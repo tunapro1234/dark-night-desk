@@ -4,34 +4,9 @@
   "city": "Minneapolis",
   "capacity_band": "1000-2000",
   "calendar_source_url": "https://first-avenue.com/shows/",
-  "read_at": "2026-10-11T18:54:39Z",
+  "read_at": "2026-10-19T01:47:27Z",
   "closed_weekdays": [],
   "shows": [
-    {
-      "date": "2026-10-14",
-      "headliner": "Paris Paloma",
-      "source_url": "https://first-avenue.com/event/2026-10-paris-paloma/"
-    },
-    {
-      "date": "2026-10-15",
-      "headliner": "Zack Fox ( DJ Set )",
-      "source_url": "https://first-avenue.com/event/2026-10-zack-fox-dj-set/"
-    },
-    {
-      "date": "2026-10-16",
-      "headliner": "Judah & the Lion",
-      "source_url": "https://first-avenue.com/event/2026-10-judah-and-the-lion/"
-    },
-    {
-      "date": "2026-10-17",
-      "headliner": "Da\u00f0i Freyr",
-      "source_url": "https://first-avenue.com/event/2026-10-dadi-freyr/"
-    },
-    {
-      "date": "2026-10-18",
-      "headliner": "Medium Build",
-      "source_url": "https://first-avenue.com/event/2026-10-medium-build/"
-    },
     {
       "date": "2026-10-21",
       "headliner": "Juvenile",
@@ -51,6 +26,11 @@
       "date": "2026-10-24",
       "headliner": "Sylvan Esso",
       "source_url": "https://first-avenue.com/event/2026-10-sylvan-esso-sat/"
+    },
+    {
+      "date": "2026-10-25",
+      "headliner": "Afford Your Life \u23e4 Live! at First Avenue",
+      "source_url": "https://first-avenue.com/event/2026-10-afford-your-life/"
     },
     {
       "date": "2026-10-26",
@@ -211,29 +191,24 @@
       "date": "2026-12-05",
       "headliner": "Pert Near Sandstone",
       "source_url": "https://first-avenue.com/event/2026-12-pert-near-sandstone/"
+    },
+    {
+      "date": "2026-12-11",
+      "headliner": "Emo Nite",
+      "source_url": "https://first-avenue.com/event/2026-12-emo-nite/"
+    },
+    {
+      "date": "2026-12-12",
+      "headliner": "Earlybirds Club",
+      "source_url": "https://first-avenue.com/event/2026-12-earlybirds-club-90s-vs-00s/"
+    },
+    {
+      "date": "2026-12-18",
+      "headliner": "Viva Knievel",
+      "source_url": "https://first-avenue.com/event/2026-12-viva-knievel/"
     }
   ],
   "past_shows": [
-    {
-      "date": "2026-07-14",
-      "headliner": "Juvenile",
-      "source_url": "https://first-avenue.com/event/2026-07-juvenile/"
-    },
-    {
-      "date": "2026-07-17",
-      "headliner": "Miss Jackson If You\u2019re Nasty \u23e4 Janet Jackson Dance Night",
-      "source_url": "https://first-avenue.com/event/2026-07-miss-jackson-if-youre-nasty-janet-jackson-dance-night/"
-    },
-    {
-      "date": "2026-07-18",
-      "headliner": "Club XCX",
-      "source_url": "https://first-avenue.com/event/2026-07-club-xcx/"
-    },
-    {
-      "date": "2026-07-20",
-      "headliner": "The Many Over The Money Rally with Bernie Sanders and Peggy Flanagan",
-      "source_url": "https://first-avenue.com/event/2026-07-bernie-sanders-peggy-flanagan-rally/"
-    },
     {
       "date": "2026-07-22",
       "headliner": "Lucero",
@@ -448,8 +423,33 @@
       "date": "2026-10-10",
       "headliner": "Waylon Wyatt",
       "source_url": "https://first-avenue.com/event/2026-10-waylon-wyatt/"
+    },
+    {
+      "date": "2026-10-14",
+      "headliner": "Paris Paloma",
+      "source_url": "https://first-avenue.com/event/2026-10-paris-paloma/"
+    },
+    {
+      "date": "2026-10-15",
+      "headliner": "Zack Fox ( DJ Set )",
+      "source_url": "https://first-avenue.com/event/2026-10-zack-fox-dj-set/"
+    },
+    {
+      "date": "2026-10-16",
+      "headliner": "Judah & the Lion",
+      "source_url": "https://first-avenue.com/event/2026-10-judah-and-the-lion/"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "Da\u00f0i Freyr",
+      "source_url": "https://first-avenue.com/event/2026-10-dadi-freyr/"
+    },
+    {
+      "date": "2026-10-18",
+      "headliner": "Medium Build",
+      "source_url": "https://first-avenue.com/event/2026-10-medium-build/"
     }
   ],
   "listing_complete": true,
-  "listed_until": "2026-12-10"
+  "listed_until": "2026-12-18"
 }

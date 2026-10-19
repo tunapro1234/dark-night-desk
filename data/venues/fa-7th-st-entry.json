@@ -4,49 +4,9 @@
   "city": "Minneapolis",
   "capacity_band": "200-400",
   "calendar_source_url": "https://first-avenue.com/shows/",
-  "read_at": "2026-10-11T18:54:39Z",
+  "read_at": "2026-10-19T01:47:27Z",
   "closed_weekdays": [],
   "shows": [
-    {
-      "date": "2026-10-11",
-      "headliner": "Karina Rykman",
-      "source_url": "https://first-avenue.com/event/2026-10-karina-rykman/"
-    },
-    {
-      "date": "2026-10-13",
-      "headliner": "Silly Goose",
-      "source_url": "https://first-avenue.com/event/2026-10-silly-goose/"
-    },
-    {
-      "date": "2026-10-14",
-      "headliner": "First to Eleven",
-      "source_url": "https://first-avenue.com/event/2026-10-first-to-eleven/"
-    },
-    {
-      "date": "2026-10-15",
-      "headliner": "Emily Bjorke",
-      "source_url": "https://first-avenue.com/event/2026-10-emily-bjorke/"
-    },
-    {
-      "date": "2026-10-16",
-      "headliner": "Telescreens",
-      "source_url": "https://first-avenue.com/event/2026-10-telescreens/"
-    },
-    {
-      "date": "2026-10-17",
-      "headliner": "Sophie Truax",
-      "source_url": "https://first-avenue.com/event/2026-10-sophie-truax/"
-    },
-    {
-      "date": "2026-10-17",
-      "headliner": "Interlay",
-      "source_url": "https://first-avenue.com/event/2026-10-interlay/"
-    },
-    {
-      "date": "2026-10-18",
-      "headliner": "WILL DEMPSEY",
-      "source_url": "https://first-avenue.com/event/2026-10-will-dempsey/"
-    },
     {
       "date": "2026-10-19",
       "headliner": "RAV",
@@ -56,6 +16,11 @@
       "date": "2026-10-20",
       "headliner": "Hillhaven",
       "source_url": "https://first-avenue.com/event/2026-10-hillhaven/"
+    },
+    {
+      "date": "2026-10-21",
+      "headliner": "The Jack Wharff Band",
+      "source_url": "https://first-avenue.com/event/2026-10-the-jack-wharff-band/"
     },
     {
       "date": "2026-10-22",
@@ -256,44 +221,39 @@
       "date": "2026-12-09",
       "headliner": "Chris Simpson (of Mineral)",
       "source_url": "https://first-avenue.com/event/2026-12-chris-simpson-of-mineral/"
+    },
+    {
+      "date": "2026-12-10",
+      "headliner": "North Innsbruck",
+      "source_url": "https://first-avenue.com/event/2026-12-north-innsbruck/"
+    },
+    {
+      "date": "2026-12-11",
+      "headliner": "Late Night Thoughts",
+      "source_url": "https://first-avenue.com/event/2026-12-late-night-thoughts/"
+    },
+    {
+      "date": "2026-12-12",
+      "headliner": "Jon Sullivan Band and Modern Joey",
+      "source_url": "https://first-avenue.com/event/2026-12-jon-sullivan-band-and-modern-joey/"
+    },
+    {
+      "date": "2026-12-13",
+      "headliner": "SosMula",
+      "source_url": "https://first-avenue.com/event/2026-12-sosmula/"
+    },
+    {
+      "date": "2026-12-17",
+      "headliner": "Linus, Halfway Down, Cheap Bouquet, and Portside Dive",
+      "source_url": "https://first-avenue.com/event/2026-12-linus-halfway-down-cheap-bouquet-and-portside-dive/"
+    },
+    {
+      "date": "2026-12-18",
+      "headliner": "About to Run (Phish Tribute)",
+      "source_url": "https://first-avenue.com/event/2026-12-happy-boognish-holidays/"
     }
   ],
   "past_shows": [
-    {
-      "date": "2026-07-13",
-      "headliner": "Wells Ferrari",
-      "source_url": "https://first-avenue.com/event/2026-07-wells-ferrari/"
-    },
-    {
-      "date": "2026-07-15",
-      "headliner": "The Body",
-      "source_url": "https://first-avenue.com/event/2026-07-the-body/"
-    },
-    {
-      "date": "2026-07-16",
-      "headliner": "Wax and DJ Hoppa",
-      "source_url": "https://first-avenue.com/event/2026-07-wax-and-dj-hoppa/"
-    },
-    {
-      "date": "2026-07-17",
-      "headliner": "ford. ( Live )",
-      "source_url": "https://first-avenue.com/event/2026-07-ford-live/"
-    },
-    {
-      "date": "2026-07-18",
-      "headliner": "Cas Haley",
-      "source_url": "https://first-avenue.com/event/2026-07-cas-haley/"
-    },
-    {
-      "date": "2026-07-19",
-      "headliner": "Mike Love ( solo )",
-      "source_url": "https://first-avenue.com/event/2026-07-mike-love-solo/"
-    },
-    {
-      "date": "2026-07-20",
-      "headliner": "Kevian Kraemer",
-      "source_url": "https://first-avenue.com/event/2026-07-kevian-kraemer/"
-    },
     {
       "date": "2026-07-21",
       "headliner": "Alex Lahey ( Solo )",
@@ -628,8 +588,48 @@
       "date": "2026-10-10",
       "headliner": "Robert Ellis",
       "source_url": "https://first-avenue.com/event/2026-10-robert-ellis/"
+    },
+    {
+      "date": "2026-10-11",
+      "headliner": "Karina Rykman",
+      "source_url": "https://first-avenue.com/event/2026-10-karina-rykman/"
+    },
+    {
+      "date": "2026-10-13",
+      "headliner": "Silly Goose",
+      "source_url": "https://first-avenue.com/event/2026-10-silly-goose/"
+    },
+    {
+      "date": "2026-10-14",
+      "headliner": "First to Eleven",
+      "source_url": "https://first-avenue.com/event/2026-10-first-to-eleven/"
+    },
+    {
+      "date": "2026-10-15",
+      "headliner": "Emily Bjorke",
+      "source_url": "https://first-avenue.com/event/2026-10-emily-bjorke/"
+    },
+    {
+      "date": "2026-10-16",
+      "headliner": "Telescreens",
+      "source_url": "https://first-avenue.com/event/2026-10-telescreens/"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "Sophie Truax",
+      "source_url": "https://first-avenue.com/event/2026-10-sophie-truax/"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "Interlay",
+      "source_url": "https://first-avenue.com/event/2026-10-interlay/"
+    },
+    {
+      "date": "2026-10-18",
+      "headliner": "WILL DEMPSEY",
+      "source_url": "https://first-avenue.com/event/2026-10-will-dempsey/"
     }
   ],
   "listing_complete": true,
-  "listed_until": "2026-12-10"
+  "listed_until": "2026-12-18"
 }

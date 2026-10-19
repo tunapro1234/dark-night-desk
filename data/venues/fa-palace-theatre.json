@@ -4,24 +4,9 @@
   "city": "Minneapolis",
   "capacity_band": "unknown",
   "calendar_source_url": "https://first-avenue.com/shows/",
-  "read_at": "2026-10-11T18:54:39Z",
+  "read_at": "2026-10-19T01:47:27Z",
   "closed_weekdays": [],
   "shows": [
-    {
-      "date": "2026-10-11",
-      "headliner": "MUNA",
-      "source_url": "https://first-avenue.com/event/2026-10-muna/"
-    },
-    {
-      "date": "2026-10-17",
-      "headliner": "Big Head Todd and the Monsters",
-      "source_url": "https://first-avenue.com/event/2026-10-big-head-todd-and-the-monsters/"
-    },
-    {
-      "date": "2026-10-18",
-      "headliner": "Lenny Pearce",
-      "source_url": "https://first-avenue.com/event/2026-10-lenny-pearce/"
-    },
     {
       "date": "2026-10-22",
       "headliner": "Sammy Rae & The Friends",
@@ -118,8 +103,23 @@
       "date": "2026-10-10",
       "headliner": "Snail Mail and Soccer Mommy",
       "source_url": "https://first-avenue.com/event/2026-10-snail-mail-and-soccer-mommy/"
+    },
+    {
+      "date": "2026-10-11",
+      "headliner": "MUNA",
+      "source_url": "https://first-avenue.com/event/2026-10-muna/"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "Big Head Todd and the Monsters",
+      "source_url": "https://first-avenue.com/event/2026-10-big-head-todd-and-the-monsters/"
+    },
+    {
+      "date": "2026-10-18",
+      "headliner": "Lenny Pearce",
+      "source_url": "https://first-avenue.com/event/2026-10-lenny-pearce/"
     }
   ],
   "listing_complete": false,
-  "listed_until": "2026-12-10"
+  "listed_until": "2026-12-18"
 }

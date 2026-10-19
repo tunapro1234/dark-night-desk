@@ -4,7 +4,7 @@
   "city": "Minneapolis",
   "capacity_band": "unknown",
   "calendar_source_url": "https://first-avenue.com/shows/",
-  "read_at": "2026-10-11T18:54:39Z",
+  "read_at": "2026-10-19T01:47:27Z",
   "closed_weekdays": [],
   "shows": [],
   "past_shows": [
@@ -30,5 +30,5 @@
     }
   ],
   "listing_complete": false,
-  "listed_until": "2026-12-10"
+  "listed_until": "2026-12-18"
 }

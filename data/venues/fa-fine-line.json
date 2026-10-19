@@ -4,44 +4,9 @@
   "city": "Minneapolis",
   "capacity_band": "400-700",
   "calendar_source_url": "https://first-avenue.com/shows/",
-  "read_at": "2026-10-11T18:54:39Z",
+  "read_at": "2026-10-19T01:47:27Z",
   "closed_weekdays": [],
   "shows": [
-    {
-      "date": "2026-10-11",
-      "headliner": "Sawyer Hill",
-      "source_url": "https://first-avenue.com/event/2026-10-sawyer-hill/"
-    },
-    {
-      "date": "2026-10-12",
-      "headliner": "Holywatr",
-      "source_url": "https://first-avenue.com/event/2026-10-holywatr/"
-    },
-    {
-      "date": "2026-10-14",
-      "headliner": "Armand Hammer",
-      "source_url": "https://first-avenue.com/event/2026-10-armand-hammer/"
-    },
-    {
-      "date": "2026-10-15",
-      "headliner": "Friko",
-      "source_url": "https://first-avenue.com/event/2026-10-friko/"
-    },
-    {
-      "date": "2026-10-16",
-      "headliner": "heavens to betsy",
-      "source_url": "https://first-avenue.com/event/2026-10-heavens-to-betsy/"
-    },
-    {
-      "date": "2026-10-17",
-      "headliner": "Blake Whiten",
-      "source_url": "https://first-avenue.com/event/2026-10-blake-whiten/"
-    },
-    {
-      "date": "2026-10-18",
-      "headliner": "Kidd G",
-      "source_url": "https://first-avenue.com/event/2026-10-kidd-g/"
-    },
     {
       "date": "2026-10-19",
       "headliner": "The Army, The Navy",
@@ -51,11 +16,6 @@
       "date": "2026-10-20",
       "headliner": "Twin Cities Jewish Film Festival presents Noga",
       "source_url": "https://first-avenue.com/event/2026-10-twin-cities-jewish-film-festival-noga/"
-    },
-    {
-      "date": "2026-10-21",
-      "headliner": "The Jack Wharff Band",
-      "source_url": "https://first-avenue.com/event/2026-10-the-jack-wharff-band/"
     },
     {
       "date": "2026-10-22",
@@ -216,29 +176,19 @@
       "date": "2026-12-10",
       "headliner": "Amtrac",
       "source_url": "https://first-avenue.com/event/2026-12-amtrac/"
+    },
+    {
+      "date": "2026-12-11",
+      "headliner": "Broadway Rave",
+      "source_url": "https://first-avenue.com/event/2026-12-broadway-rave/"
+    },
+    {
+      "date": "2026-12-12",
+      "headliner": "bugsy",
+      "source_url": "https://first-avenue.com/event/2026-12-bugsy/"
     }
   ],
   "past_shows": [
-    {
-      "date": "2026-07-15",
-      "headliner": "Nick Lowe and Los Straitjackets",
-      "source_url": "https://first-avenue.com/event/2026-07-nick-lowe-los-straitjackets/"
-    },
-    {
-      "date": "2026-07-16",
-      "headliner": "Wavves",
-      "source_url": "https://first-avenue.com/event/2026-07-wavves/"
-    },
-    {
-      "date": "2026-07-17",
-      "headliner": "RaveQuest",
-      "source_url": "https://first-avenue.com/event/2026-07-ravequest/"
-    },
-    {
-      "date": "2026-07-18",
-      "headliner": "SOS: The Recession Pop Party",
-      "source_url": "https://first-avenue.com/event/2026-07-sos-the-recession-pop-party/"
-    },
     {
       "date": "2026-07-24",
       "headliner": "One Direction Night",
@@ -493,8 +443,43 @@
       "date": "2026-10-10",
       "headliner": "It's A 2000s Party",
       "source_url": "https://first-avenue.com/event/2026-10-its-a-2000s-party-minneapolis/"
+    },
+    {
+      "date": "2026-10-11",
+      "headliner": "Sawyer Hill",
+      "source_url": "https://first-avenue.com/event/2026-10-sawyer-hill/"
+    },
+    {
+      "date": "2026-10-12",
+      "headliner": "Holywatr",
+      "source_url": "https://first-avenue.com/event/2026-10-holywatr/"
+    },
+    {
+      "date": "2026-10-14",
+      "headliner": "Armand Hammer",
+      "source_url": "https://first-avenue.com/event/2026-10-armand-hammer/"
+    },
+    {
+      "date": "2026-10-15",
+      "headliner": "Friko",
+      "source_url": "https://first-avenue.com/event/2026-10-friko/"
+    },
+    {
+      "date": "2026-10-16",
+      "headliner": "heavens to betsy",
+      "source_url": "https://first-avenue.com/event/2026-10-heavens-to-betsy/"
+    },
+    {
+      "date": "2026-10-17",
+      "headliner": "Blake Whiten",
+      "source_url": "https://first-avenue.com/event/2026-10-blake-whiten/"
+    },
+    {
+      "date": "2026-10-18",
+      "headliner": "Kidd G",
+      "source_url": "https://first-avenue.com/event/2026-10-kidd-g/"
     }
   ],
   "listing_complete": true,
-  "listed_until": "2026-12-10"
+  "listed_until": "2026-12-18"
 }

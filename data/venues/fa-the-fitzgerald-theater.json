@@ -4,19 +4,9 @@
   "city": "Minneapolis",
   "capacity_band": "unknown",
   "calendar_source_url": "https://first-avenue.com/shows/",
-  "read_at": "2026-10-11T18:54:39Z",
+  "read_at": "2026-10-19T01:47:27Z",
   "closed_weekdays": [],
   "shows": [
-    {
-      "date": "2026-10-16",
-      "headliner": "The Bob Weir Celebration \u23e4 The Big Wu performs Bob Weir & The Grateful Dead",
-      "source_url": "https://first-avenue.com/event/2026-10-bob-weir-celebration-the-big-wu/"
-    },
-    {
-      "date": "2026-10-18",
-      "headliner": "OFF BOOK \u23e4 THE IMPROVISED MUSICAL",
-      "source_url": "https://first-avenue.com/event/2026-10-off-book-the-improvised-musical/"
-    },
     {
       "date": "2026-10-21",
       "headliner": "The Moth Twin Cities GrandSLAM Championship",
@@ -106,14 +96,39 @@
       "date": "2026-12-08",
       "headliner": "The 47th Annual John Lennon Tribute ft. Curtiss A with a little help from his friends",
       "source_url": "https://first-avenue.com/event/2026-12-john-lennon-tribute/"
+    },
+    {
+      "date": "2026-12-11",
+      "headliner": "Dusty Slay",
+      "source_url": "https://first-avenue.com/event/2026-12-dusty-slay/"
+    },
+    {
+      "date": "2026-12-11",
+      "headliner": "Dusty Slay",
+      "source_url": "https://first-avenue.com/event/2026-12-dusty-slay-late/"
+    },
+    {
+      "date": "2026-12-12",
+      "headliner": "Metropolitan Ballet presents Nutcracker",
+      "source_url": "https://first-avenue.com/event/2026-12-nutcracker-sat-matinee/"
+    },
+    {
+      "date": "2026-12-12",
+      "headliner": "Metropolitan Ballet presents Nutcracker",
+      "source_url": "https://first-avenue.com/event/2026-12-nutcracker-sat-evening/"
+    },
+    {
+      "date": "2026-12-13",
+      "headliner": "Metropolitan Ballet presents Nutcracker",
+      "source_url": "https://first-avenue.com/event/2026-12-nutcracker-sun-matinee/"
+    },
+    {
+      "date": "2026-12-14",
+      "headliner": "Kristin Key",
+      "source_url": "https://first-avenue.com/event/2026-12-kristin-key/"
     }
   ],
   "past_shows": [
-    {
-      "date": "2026-07-19",
-      "headliner": "Killer Queen \u2013 A Tribute to Queen",
-      "source_url": "https://first-avenue.com/event/2026-07-killer-queen/"
-    },
     {
       "date": "2026-07-24",
       "headliner": "The Many Over The Money Rally with Elizabeth Warren and Peggy Flanagan",
@@ -188,8 +203,18 @@
       "date": "2026-10-08",
       "headliner": "ZOSO \u2014 The Ultimate LED ZEPPELIN Experience",
       "source_url": "https://first-avenue.com/event/2026-10-zoso/"
+    },
+    {
+      "date": "2026-10-16",
+      "headliner": "The Bob Weir Celebration \u23e4 The Big Wu performs Bob Weir & The Grateful Dead",
+      "source_url": "https://first-avenue.com/event/2026-10-bob-weir-celebration-the-big-wu/"
+    },
+    {
+      "date": "2026-10-18",
+      "headliner": "OFF BOOK \u23e4 THE IMPROVISED MUSICAL",
+      "source_url": "https://first-avenue.com/event/2026-10-off-book-the-improvised-musical/"
     }
   ],
   "listing_complete": false,
-  "listed_until": "2026-12-10"
+  "listed_until": "2026-12-18"
 }
