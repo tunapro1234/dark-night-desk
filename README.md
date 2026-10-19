@@ -288,9 +288,11 @@ Plain HTML, CSS and browser JavaScript, served by the same server. No framework,
   `/api/ablate` ("2 of 5 changed"), the also-loves measurement, the pool, and every Qloo request with the key left out, its time
   and cache hit or miss. Shares and other technical terms appear only here.
 - **Mode badges** are always on screen: "Agent: live (Claude)", "Agent: recorded run from <date>", "Agent: fixed steps, no AI writing",
-  and "Qloo: live" or "Qloo: not connected". Without a Qloo key the page shows the calendar and an explanation, never a list.
+  and "Qloo: live" or "Qloo: not connected". Without a Qloo key the page replays the recorded run of a night that has one,
+  labelled with its date; other nights show the calendar and an explanation, never a list.
   In test mode (`QLOO_MODE=fixture`) the badge reads "Qloo: synthetic test data". On a phone the three badges share one row in
-  smaller type, each label wrapping inside its badge.
+  smaller type, each label wrapping inside its badge. A card that is not a live plan also says so itself, in a line under the
+  room name ("Recorded run from <date>", "Fixed steps, no AI writing"), so it reads right when it is scrolled into view alone.
 - **Back-test badge** reads `GET /api/backtest`: "Back-test: not run yet" until `results/backtest-test.json` exists,
   then "Back-tested on N rooms" with the label and intervals behind it.
 

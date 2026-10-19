@@ -161,6 +161,7 @@ test('page: the card names the rooms its pool came from; unnamed rooms are count
   await until(() => !page.$('poster').hidden, 'the scripted card');
   assert.equal(page.$('poster-pool').hidden, false);
   assert.equal(page.$('poster-pool').textContent, 'Acts from the calendars of Other Hall', 'build_pool: the other room in Exampleville');
+  assert.equal(page.$('poster-mode').textContent, 'Fixed steps, no AI writing \u00b7 synthetic test data', 'the card itself says it is not a live plan');
   assert.deepEqual(page.errors, []);
   await app.close();
 
@@ -172,6 +173,7 @@ test('page: the card names the rooms its pool came from; unnamed rooms are count
   const page2 = runPage(app2);
   await until(() => !page2.$('poster').hidden, 'the recorded card');
   assert.equal(page2.$('poster-pool').textContent, 'Acts from the calendars of Other Hall and 1 more room');
+  assert.match(page2.$('poster-mode').textContent, /^Recorded run from /, 'a recorded card scrolled into view alone still says it is recorded');
   assert.deepEqual(page2.errors, []);
   await app2.close();
 });

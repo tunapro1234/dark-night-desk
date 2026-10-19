@@ -157,6 +157,7 @@ button.sq-booked[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--fg); }
 .poster:focus-visible { outline: 3px solid var(--gold); }
 .poster-venue { margin: 0; color: var(--poster-muted); font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; }
 .poster-date { margin: 6px 0 18px; font: 800 clamp(2.2rem, 7vw, 3.6rem)/1 var(--poster-font); letter-spacing: 0.04em; color: var(--gold); }
+.poster-mode { margin: -4px 0 6px; color: var(--poster-muted); font-size: 0.8rem; text-transform: none; letter-spacing: 0; }
 .poster-pool { max-width: 46ch; margin: -8px auto 14px; color: var(--poster-muted); font-size: 0.85rem; }
 .lineup { margin: 0; padding: 0; list-style: none; }
 .act { padding: 10px 0; border-top: 1px solid rgba(243, 234, 216, 0.16); }

@@ -54,6 +54,14 @@ function agentLabel(agent, recordedAt) {
   if (agent === 'scripted') return 'Agent: fixed steps, no AI writing';
   return 'Agent: unknown';
 }
+/** The card's own mode line, so a card seen alone still says when it is not a live plan. Empty for a live plan on live Qloo. */
+function posterMode(mode) {
+  if (!mode) return '';
+  const parts = mode.agent === 'live' ? [] : [agentLabel(mode.agent, mode.recorded_at).replace(/^Agent: /, '')];
+  if (mode.qloo === 'fixture') parts.push('synthetic test data');
+  const line = parts.join(' \u00b7 ');
+  return line && line[0].toUpperCase() + line.slice(1);
+}
 function qlooLabel(qloo, recordedAt) {
   if (qloo === 'live') return 'Qloo: live';
   if (qloo === 'recorded') return recordedAt ? `Qloo: recorded ${fullDate(recordedAt)}` : 'Qloo: recorded';
@@ -627,6 +635,9 @@ function renderResult(r, { focus = true } = {}) {
 
   $('poster-venue').textContent = r.venue ? `${r.venue.name} \u00b7 ${r.venue.locality || r.venue.city}` : '';
   $('poster-date').textContent = posterDay(r.night.date);
+  const modeLine = posterMode(r.mode);
+  $('poster-mode').textContent = modeLine;
+  $('poster-mode').hidden = !modeLine;
   const pool = poolLine(r);
   $('poster-pool').textContent = pool;
   $('poster-pool').hidden = !pool;
@@ -665,7 +676,8 @@ function renderResult(r, { focus = true } = {}) {
   note.textContent = fb.length ? `Ran as the ${fb.at(-1).used} because ${FALLBACK_WORDS[fb.at(-1).reason] ?? fb.at(-1).reason}.` : '';
 
   show('poster');
-  if (focus) $('poster').focus?.();
+  // Focus without the browser's own scroll (it can leave the card's date above the screen), then bring the card's top in view.
+  if (focus) { $('poster').focus?.({ preventScroll: true }); reveal('poster'); }
 }
 
 // ---------- a booked night: this room's crowd, no plan ----------
@@ -1096,8 +1108,9 @@ async function openRecorded(run) {
     if (state.venueId !== run.venue_id || state.date !== run.date || state.result) return;
     $('steps').replaceChildren(...(r.steps ?? []).map((label) => h('li', { class: 'done' }, label)));
     renderResult(r, { focus: false });
-    // On a phone the card sits below the strip; bring it into view without moving focus.
-    if (!$('poster').hidden) reveal('poster');
+    // On a phone the card sits below the strip; bring it into view without moving focus. Not on a wide screen, where
+    // scrolling would hide the badges and the notice above the card.
+    if (!$('poster').hidden && matchMedia('(max-width: 640px)').matches) reveal('poster');
   } catch {
     if (state.venueId === run.venue_id && state.date === run.date && !state.result) resetNight();
   }
