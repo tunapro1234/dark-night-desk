@@ -1104,15 +1104,15 @@ async function start() {
 /** Show a recorded run as the night's card (GET, so no Claude or Qloo call is made in any mode). */
 /**
  * Bring a recorded first-load card into view without moving focus. On a phone the card sits far below the strip, so its
- * top goes to the top of the screen (it carries its own "Recorded run" line). On a wide screen scroll only so far that
- * the mode badges stay on screen, which is usually enough to show the card's top under them.
+ * top goes to the top of the screen (it carries its own "Recorded run" line). On a wide screen scroll so far that the
+ * first act's name is on screen too, but never past the card's top, which carries the "Recorded run" line.
  */
 function revealRecorded() {
   if (matchMedia('(max-width: 640px)').matches) return reveal('poster');
   const card = $('poster').getBoundingClientRect?.();
-  const badges = $('badge-agent').getBoundingClientRect?.();
-  if (!card || !badges) return;
-  const by = Math.min(card.top - innerHeight * 0.5, badges.top - 8);
+  const act = $('lineup').querySelector('.act-name')?.getBoundingClientRect?.();
+  if (!card || !act) return;
+  const by = Math.min(act.bottom + 24 - innerHeight, card.top - 8);
   if (by > 0) scrollBy?.({ top: by, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 }
 
