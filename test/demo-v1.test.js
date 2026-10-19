@@ -545,3 +545,282 @@ test('page, recorded run that carries a booker answer: the replay says the answe
   assert.deepEqual(page.errors, []);
   await app.close();
 });
+
+// ---------- code pass 3: the first-screen scene, brands first, a booked night's crowd, recorded marks ----------
+
+test('page: the first screen opens on the Turf Club scene, then the 181-of-549 line; both recounted from the repo data', async () => {
+  const { parseCsv } = await import('../server/backtest/data.js');
+  const { addDays } = await import('../server/calendar/nights.js');
+  const { nothingListed, FROM, TO } = await import('../scripts/nothing-listed.js');
+  const rows = parseCsv(await readFile(new URL('../data/backtest/shows.csv', import.meta.url), 'utf8'));
+  const room = parseCsv(await readFile(new URL('../data/backtest/venues.csv', import.meta.url), 'utf8')).find((r) => r.venue_id === 'fa-turf-club');
+  const listed = new Set(rows.filter((r) => r.venue_id === 'fa-turf-club' && String(r.canceled) !== '1').map((r) => r.date));
+  const wd = (d) => new Date(`${d}T00:00:00Z`).getUTCDay();
+  // The longest run of Tuesdays in a row with nothing listed, in the counted window.
+  let best = null;
+  let cur = null;
+  for (let d = FROM; d <= TO; d = addDays(d, 1)) {
+    if (wd(d) !== 2) continue;
+    if (listed.has(d)) cur = null;
+    else {
+      cur = cur ? { ...cur, n: cur.n + 1, to: d } : { n: 1, from: d, to: d };
+      if (!best || cur.n > best.n) best = cur;
+    }
+  }
+  // "Those eight weeks": Monday of the first Tuesday's week to Sunday of the last one's (a Sunday-first week gives the same
+  // Fridays and Saturdays). Counting only from the first Tuesday to the last would leave the last week's weekend out.
+  const weekend = [];
+  for (let d = addDays(best.from, -1); d <= addDays(best.to, 5); d = addDays(d, 1)) if (wd(d) === 5 || wd(d) === 6) weekend.push(d);
+  assert.equal(weekend.length, 2 * best.n, 'two weekend nights per week');
+  const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const long = (iso) => `${MONTHS[Number(iso.slice(5, 7)) - 1]} ${Number(iso.slice(8, 10))}`;
+  const WORDS = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve'];
+  const scene =
+    `${room.name}, ${room.city}, holds ${room.capacity}. ${WORDS[best.n]} Tuesdays in a row, ${long(best.from)} to ${long(best.to)}, ${best.to.slice(0, 4)}, ` +
+    `nothing was listed on its public calendar. In those ${WORDS[best.n].toLowerCase()} weeks, ${weekend.filter((d) => listed.has(d)).length} of ${weekend.length} Fridays and Saturdays had a show.`;
+  const sceneAt = PAGE_HTML.indexOf(`<p class="scene" id="scene">${scene}</p>`);
+  assert.ok(sceneAt > 0, `index.html should carry: ${scene}`);
+  const n = nothingListed(rows);
+  const problem = `<p class="problem">At three Twin Cities club rooms, ${n.nothing_listed} of ${n.nights} nights from April to September 2026 had no show listed; ${n.mon_to_wed} of those were Monday to Wednesday.</p>`;
+  const problemAt = PAGE_HTML.indexOf(problem);
+  assert.ok(problemAt > sceneAt, 'the 181-of-549 line comes second');
+  // The venue file agrees: same place, a band that holds the quoted capacity.
+  const venue = JSON.parse(await readFile(new URL('../data/venues/fa-turf-club.json', import.meta.url), 'utf8'));
+  assert.equal(venue.locality, room.city);
+  const [lo, hi] = venue.capacity_band.split('-').map(Number);
+  assert.ok(lo <= Number(room.capacity) && Number(room.capacity) <= hi);
+});
+
+/** A saved run for `night` made from the synthetic scripted plan; `thin` marks it as a thin-signal answer. */
+async function writeRecording(dataDir, venuesDir, { night, thin = false, savedAt = '2026-10-10T20:00:00.000Z', name = 'x' }) {
+  const maker = await fixtureApp(venuesDir);
+  const made = parseSse((await maker.inject({ method: 'POST', url: '/api/plan', payload: { venue_id: 'example-room', date: night } })).body).at(-1).data;
+  await maker.close();
+  await mkdir(path.join(dataDir, 'recorded'), { recursive: true });
+  const result = thin ? { ...made, shortlist: [], thin_signal: { found: 2, shows: 9, why: 'Too few.' } } : made;
+  await writeFile(path.join(dataDir, 'recorded', `example-room__${night}__${name}.json`), JSON.stringify({ saved_at: savedAt, venue_id: 'example-room', date: night, result }));
+  return made;
+}
+const bookedNights = async (app) => (await app.inject('/api/venues/example-room/calendar?days=61')).json().nights.filter((x) => x.status === 'booked' && !x.today);
+const BRAND_LABEL = "Brand categories to pitch for this room's crowd";
+
+test('crowd route: the also-loves rows for a booked night with no plan and no Claude call; without Qloo nothing is sent', async () => {
+  const config = loadConfig({ NODE_ENV: 'test', QLOO_MODE: 'fixture', ANTHROPIC_API_KEY: 'k', DATA_DIR: path.join(tmp, `var-${++n}`), VENUES_DIR });
+  const budget = createBudget({ dailyCap: 2, totalCap: 30, ipLimit: 20, prices: { inPerMTok: 2, outPerMTok: 10 } });
+  const app = await buildApp(config, { budget, now: TEST_NOW, anthropic: () => assert.fail('the crowd route must not call Claude') });
+  const cal = (await app.inject('/api/venues/example-room/calendar?days=61')).json();
+  const booked = cal.nights.find((x) => x.status === 'booked' && !x.today).date;
+  const res = await app.inject(`/api/venues/example-room/crowd?date=${booked}`);
+  assert.equal(res.statusCode, 200);
+  const body = res.json();
+  assert.deepEqual(body.mode, { qloo: 'fixture' });
+  assert.equal(body.venue.name, 'Example Room');
+  assert.equal(body.night.date, booked);
+  assert.ok(body.also_loves.some((r) => r.type === 'brand'), 'the synthetic room has a brand row');
+  for (const row of body.also_loves) assert.ok(TYPE_OK.has(row.type) && row.category && row.lift_range.length === 2 && row.evidence.calls.length === 2);
+  assert.ok(body.calls.length > 0 && body.calls.every((c) => c.endpoint && c.params_masked && !('sent' in c)));
+  // The same rows a plan on a dark night of the same room shows (the crowd is read from the same past shows).
+  const dark = cal.nights.find((x) => x.status === 'dark').date;
+  const scripted = await fixtureApp();
+  const plan = parseSse((await scripted.inject({ method: 'POST', url: '/api/plan', payload: { venue_id: 'example-room', date: dark } })).body).at(-1).data;
+  await scripted.close();
+  const shape = (rows) => rows.map(({ type, category, lift_range }) => ({ type, category, lift_range }));
+  assert.deepEqual(shape(body.also_loves), shape(plan.also_loves));
+  assert.equal(budget.snapshot().day_usd, 0);
+
+  const today = cal.nights.find((x) => x.today).date;
+  const closed = cal.nights.find((x) => x.status === 'closed').date;
+  for (const [url, code] of [
+    ['/api/venues/example-room/crowd', 400],
+    ['/api/venues/example-room/crowd?date=2026-13-01', 400],
+    [`/api/venues/nowhere/crowd?date=${booked}`, 404],
+    ['/api/venues/example-room/crowd?date=2026-10-01', 409],
+    [`/api/venues/example-room/crowd?date=${today}`, 409],
+    [`/api/venues/example-room/crowd?date=${closed}`, 409],
+  ]) assert.equal((await app.inject(url)).statusCode, code, url);
+  await app.close();
+
+  // No Qloo key: 409 qloo_not_connected, and the Qloo client is never touched.
+  const touched = [];
+  const qloo = new Proxy({}, { get: (_t, k) => (touched.push(String(k)), () => assert.fail(`Qloo ${String(k)} called`)) });
+  const off = await buildApp(loadConfig({ DATA_DIR: path.join(tmp, `var-${++n}`), VENUES_DIR }), { now: TEST_NOW, qloo });
+  const r = await off.inject(`/api/venues/example-room/crowd?date=${booked}`);
+  assert.equal(r.statusCode, 409);
+  assert.equal(r.json().code, 'qloo_not_connected');
+  assert.deepEqual(touched.filter((k) => k !== 'then'), []);
+  await off.close();
+});
+
+test('page: the brands row leads "also loves" with its pitch label and source; a booked night shows the same rows without a plan', async () => {
+  const app = await fixtureApp();
+  const page = runPage(app);
+  await until(() => page.$('strip').querySelectorAll('.sq-dark').length > 0, 'the calendar');
+  page.$('strip').querySelector('.sq-dark').click();
+  await until(() => !page.$('poster').hidden || !page.$('fail').hidden, 'the poster');
+  const items = page.$('also-list').children;
+  assert.ok(items.length >= 2, 'the synthetic plan has a place row and a brand row');
+  assert.equal(items[0].querySelector('.also-type').textContent, BRAND_LABEL);
+  assert.match(items[0].textContent, new RegExp(`^${BRAND_LABEL} Synthetic Brand Category \\d+: shows up more here than at the city's average room source$`));
+  assert.equal(items[0].querySelector('.also-source').textContent, 'source');
+  assert.ok(items.slice(1).every((li) => li.querySelector('.also-type').textContent !== BRAND_LABEL), 'the other rows stay, after it');
+  assert.equal(items[1].querySelector('.also-type').textContent, 'Places');
+  // Its source opens why? on the brand row's measurement, listed first there too.
+  items[0].querySelector('.also-source').click();
+  assert.equal(page.$('why').hidden, false);
+  const ev = page.$('why-also-body').children;
+  assert.match(ev[0].textContent, /^Brands: Synthetic Brand Category \d+ · lift /);
+  assert.ok(ev[0].classList.contains('focus'));
+  page.$('why-close').click();
+
+  const posts = page.requests.filter((r) => r.startsWith('POST')).length;
+  const booked = page.$('strip').querySelectorAll('.sq-booked');
+  assert.ok(booked.length > 0 && booked.every((b) => b.tagName === 'BUTTON'));
+  assert.match(booked[0].getAttribute('aria-label'), /^[A-Z][a-z]{2} [A-Z][a-z]{2} \d+, show announced: .+\. Show this room's crowd$/);
+  booked[0].click();
+  await until(() => !page.$('crowd-also').hidden || /could not/.test(page.$('crowd-note').textContent), 'the crowd rows');
+  assert.ok(visible(page), 'no plan panel is open');
+  assert.equal(page.$('crowd').hidden, false);
+  assert.equal(page.$('poster').hidden, true);
+  assert.equal(booked[0].getAttribute('aria-pressed'), 'true');
+  assert.match(page.$('crowd-title').textContent, /^[A-Z][a-z]{2} [A-Z][a-z]{2} \d+: .+$/);
+  assert.equal(page.$('crowd-venue').textContent, 'Example Room · Exampleville');
+  const crowd = page.$('crowd-list').children;
+  assert.equal(crowd.length, items.length);
+  assert.deepEqual(crowd.map((li) => li.querySelector('.also-cat').textContent), items.map((li) => li.querySelector('.also-cat').textContent), 'the same rows as the card');
+  assert.equal(crowd[0].querySelector('.also-type').textContent, BRAND_LABEL);
+  assert.equal(crowd[0].querySelector('.also-src').tagName, 'DETAILS');
+  assert.match(crowd[0].querySelector('.also-src').textContent, /^sourceBrands: Synthetic Brand Category \d+/);
+  assert.match(page.$('crowd-note').textContent, /^Qloo: synthetic test data\. \d+ requests, \d+ from cache; no Claude call\.$/);
+  assert.equal(page.$('badge-agent').textContent, 'Agent: idle');
+  assert.equal(page.requests.filter((r) => r.startsWith('POST')).length, posts, 'no plan started');
+  assert.ok(page.requests.includes(`GET /api/venues/example-room/crowd?date=${booked[0].dataset.date}`));
+
+  // A dark night afterwards plans as before and hides the crowd panel.
+  page.$('strip').querySelector('.sq-dark').click();
+  await until(() => !page.$('poster').hidden, 'the poster again');
+  assert.equal(page.$('crowd').hidden, true);
+  assert.equal(booked[0].getAttribute('aria-pressed'), 'false');
+  assert.deepEqual(page.errors, []);
+  await app.close();
+});
+
+test('page without a Qloo key: a booked night says "Qloo: not connected" and sends nothing; with a recording, its rows, labelled', async () => {
+  const app = await noKeyApp();
+  const page = runPage(app);
+  await until(() => page.$('strip').querySelectorAll('.sq-booked').length > 0, 'the calendar');
+  assert.equal(page.$('legend-recorded').hidden, true, 'no recorded run, no recorded legend');
+  const before = page.requests.length;
+  page.$('strip').querySelector('.sq-booked').click();
+  assert.equal(page.$('crowd').hidden, false);
+  assert.equal(page.$('crowd-also').hidden, true);
+  assert.equal(page.$('crowd-note').textContent,
+    'Qloo: not connected. These rows come from the Qloo taste graph, so this server has none to show for this room and sends no request.');
+  await new Promise((r) => setTimeout(r, 30));
+  assert.equal(page.requests.length, before, 'no request at all');
+  assert.equal(page.$('badge-agent').textContent, 'Agent: idle (Qloo not connected)');
+  assert.deepEqual(page.errors, []);
+  await app.close();
+
+  // A room with a recorded run (synthetic scripted plan, kept labelled synthetic) and a thin one on another night.
+  const venuesDir = path.join(tmp, 'venues-crowd-rec');
+  await mkdir(venuesDir, { recursive: true });
+  for (const f of ['example-room.json', 'other-hall.json']) await writeFile(path.join(venuesDir, f), await readFile(path.join(VENUES_DIR, f)));
+  const darks = (await (async () => { const a = await fixtureApp(venuesDir); const x = (await a.inject('/api/venues/example-room/calendar?days=61')).json(); await a.close(); return x; })())
+    .nights.filter((x) => x.status === 'dark').map((x) => x.date);
+  const dataDir = path.join(tmp, 'var-crowd-rec');
+  const made = await writeRecording(dataDir, venuesDir, { night: darks[1] });
+  await writeRecording(dataDir, venuesDir, { night: darks[2], thin: true, name: 'thin' });
+  const app2 = await noKeyApp({ dataDir, venuesDir });
+  const page2 = runPage(app2);
+  await until(() => !page2.$('poster').hidden, 'the recorded card');
+  // Recorded mark: the card night only (the thin run opens no card), and its legend item.
+  const marked = page2.$('strip').querySelectorAll('.sq-rec');
+  assert.deepEqual(marked.map((b) => b.dataset.date), [darks[1]]);
+  assert.match(marked[0].getAttribute('aria-label'), /, dark night, recorded run$/);
+  assert.equal(marked[0].querySelectorAll('.r').length, 1);
+  assert.equal(page2.$('legend-recorded').hidden, false);
+  assert.equal(page2.$('legend-recorded-text').textContent, 'recorded run: opens a saved card, no Qloo needed');
+  assert.ok(page2.$('strip').querySelectorAll('.sq-dark').filter((b) => b.dataset.date !== darks[1]).every((b) => !/recorded/.test(b.getAttribute('aria-label'))));
+
+  const posts = page2.requests.filter((r) => r.startsWith('POST')).length;
+  page2.$('strip').querySelector('.sq-booked').click();
+  await until(() => !page2.$('crowd-also').hidden || /could not/.test(page2.$('crowd-note').textContent), 'the recorded crowd rows');
+  const crowd = page2.$('crowd-list').children;
+  assert.deepEqual(crowd.map((li) => li.querySelector('.also-cat').textContent),
+    [...made.also_loves.filter((r) => r.type === 'brand'), ...made.also_loves.filter((r) => r.type !== 'brand')].map((r) => r.category));
+  assert.equal(crowd[0].querySelector('.also-type').textContent, BRAND_LABEL);
+  assert.match(page2.$('crowd-note').textContent,
+    /^Qloo: not connected\. These rows come from the recorded run for [A-Z][a-z]{2} [A-Z][a-z]{2} \d+, saved Oct 10, 2026 \(synthetic test data\); no Qloo request is made now\.$/);
+  assert.ok(!page2.requests.some((r) => r.includes('/crowd')), 'the crowd route is not asked without Qloo');
+  assert.equal(page2.requests.filter((r) => r.startsWith('POST')).length, posts);
+  assert.deepEqual(page2.errors, []);
+  await app2.close();
+});
+
+test('page with Qloo connected: a recorded night carries the mark, and the legend does not promise a saved card', async () => {
+  const dataDir = path.join(tmp, 'var-mark-fixture');
+  const maker = await fixtureApp();
+  const night = (await maker.inject('/api/venues/example-room/calendar?days=61')).json().nights.filter((x) => x.status === 'dark')[3].date;
+  await maker.close();
+  await writeRecording(dataDir, VENUES_DIR, { night });
+  const config = loadConfig({ NODE_ENV: 'test', QLOO_MODE: 'fixture', DATA_DIR: dataDir, VENUES_DIR });
+  const app = await buildApp(config, { budget: createBudget({ dailyCap: 2, totalCap: 30, ipLimit: 20, prices: { inPerMTok: 2, outPerMTok: 10 } }), now: TEST_NOW });
+  const page = runPage(app);
+  await until(() => !page.$('poster').hidden, 'the recorded card');
+  assert.deepEqual(page.$('strip').querySelectorAll('.sq-rec').map((b) => b.dataset.date), [night]);
+  assert.equal(page.$('legend-recorded').hidden, false);
+  assert.equal(page.$('legend-recorded-text').textContent, 'a recorded run is saved for this night');
+  assert.deepEqual(page.errors, []);
+  await app.close();
+});
+
+test('page: a booked night only points at crowd rows that are on screen, and the legend offers the crowd only where one can show', async () => {
+  // No Qloo key and no recording: nothing can be shown, so neither the legend nor the panel text promises rows.
+  const app = await noKeyApp();
+  const page = runPage(app);
+  await until(() => page.$('strip').querySelectorAll('.sq-booked').length > 0, 'the calendar');
+  assert.equal(page.$('legend-booked-text').textContent, 'show announced');
+  page.$('strip').querySelector('.sq-booked').click();
+  assert.equal(page.$('crowd-also').hidden, true);
+  assert.equal(page.$('crowd-text').textContent, 'A show is announced, so there is nothing to plan for this night; no plan is started.');
+  assert.doesNotMatch(page.$('crowd-text').textContent, /below/i);
+  assert.deepEqual(page.errors, []);
+  await app.close();
+
+  // Qloo connected: the legend offers the crowd, and the "below" sentence comes with the rows.
+  const app2 = await fixtureApp();
+  const page2 = runPage(app2);
+  await until(() => page2.$('strip').querySelectorAll('.sq-booked').length > 0, 'the calendar');
+  assert.equal(page2.$('legend-booked-text').textContent, "show announced: pick one to see this room's crowd");
+  page2.$('strip').querySelector('.sq-booked').click();
+  await until(() => !page2.$('crowd-also').hidden || /could not/.test(page2.$('crowd-note').textContent), 'the crowd rows');
+  assert.equal(page2.$('crowd-also').hidden, false);
+  assert.match(page2.$('crowd-text').textContent, /Below is what this room's crowd also loves/);
+  assert.deepEqual(page2.errors, []);
+  await app2.close();
+});
+
+test('page: a booked night is spoken as offering the crowd only where the legend offers it, and its panel is scrolled into view', async () => {
+  // No Qloo key, no recording: the legend says "show announced", so the button's label does not promise the crowd either.
+  const app = await noKeyApp();
+  const page = runPage(app);
+  await until(() => page.$('strip').querySelectorAll('.sq-booked').length > 0, 'the calendar');
+  const b = page.$('strip').querySelector('.sq-booked');
+  assert.match(b.getAttribute('aria-label'), /^[A-Z][a-z]{2} [A-Z][a-z]{2} \d+, show announced: .+$/);
+  assert.doesNotMatch(b.getAttribute('aria-label'), /crowd/);
+  const scrolled = [];
+  page.$('crowd').scrollIntoView = (opts) => scrolled.push(opts);
+  b.click();
+  assert.equal(page.$('crowd').hidden, false);
+  assert.deepEqual(scrolled.map((o) => o.block), ['nearest'], 'the panel is brought into view once (it sits under the strip on a phone)');
+  assert.deepEqual(page.errors, []);
+  await app.close();
+
+  // Qloo connected: the legend and the label both offer the crowd.
+  const app2 = await fixtureApp();
+  const page2 = runPage(app2);
+  await until(() => page2.$('strip').querySelectorAll('.sq-booked').length > 0, 'the calendar');
+  assert.equal(page2.$('legend-booked-text').textContent, "show announced: pick one to see this room's crowd");
+  assert.ok(page2.$('strip').querySelectorAll('.sq-booked').every((x) => /\. Show this room's crowd$/.test(x.getAttribute('aria-label'))));
+  await app2.close();
+});

@@ -61,6 +61,7 @@ button, select, input, textarea { font: inherit; color: inherit; }
   max-width: 1160px; margin: 0 auto; padding: 18px 24px 12px; border-bottom: 1px solid var(--line); }
 .brand h1 { margin: 0; font: 800 1.6rem/1.1 var(--poster-font); letter-spacing: 0.01em; text-transform: uppercase; }
 .tagline { margin: 2px 0 0; color: var(--muted); }
+.scene { margin: 8px 0 0; max-width: 62ch; color: var(--fg); font-size: 1.02rem; font-weight: 600; line-height: 1.4; }
 .problem { margin: 6px 0 0; max-width: 62ch; color: var(--muted); font-size: 0.9rem; }
 .badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .badge { display: inline-block; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel);
@@ -93,6 +94,12 @@ main:focus { outline: none; }
 .sq-dark:hover { box-shadow: 0 0 0 2px var(--gold); }
 .sq-dark[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--gold); }
 .sq-booked { background: var(--booked); color: var(--fg); }
+button.sq-booked { cursor: pointer; }
+button.sq-booked:hover { box-shadow: 0 0 0 2px var(--muted); }
+button.sq-booked[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--fg); }
+/* A dark night with a saved recorded run: a small gold dot in the corner. */
+.sq-rec .r { position: absolute; top: 3px; right: 3px; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+.legend .sq-rec .r { top: 3px; right: 3px; width: 6px; height: 6px; }
 .sq-closed { background: repeating-linear-gradient(135deg, transparent 0 4px, var(--line) 4px 5px), var(--closed);
   color: var(--muted); border-color: var(--line); }
 /* Today and earlier nights are too late to plan: shown, never clickable. */
@@ -159,6 +166,16 @@ main:focus { outline: none; }
 .also li { padding: 3px 0; }
 .also-type { display: inline-block; min-width: 4.5em; color: var(--poster-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
 .also-cat { font-weight: 700; }
+.also-brand { padding-bottom: 6px; }
+.also-type.also-pitch { display: block; min-width: 0; color: var(--gold); font-weight: 700; }
+.also-src { display: inline; }
+.also-src > summary { display: inline; color: var(--gold); text-decoration: underline; text-underline-offset: 3px; font-size: 0.9rem; }
+.also-src[open] { display: block; margin-top: 4px; }
+.crowd { padding: 22px 22px 18px; border: 1px solid var(--poster-rim); border-radius: 12px; background: var(--poster-bg); color: var(--poster-fg);
+  --muted: var(--poster-muted); --line: rgba(243, 234, 216, 0.22); --fg: var(--poster-fg); --ok: #86efac; }
+.crowd h2 { margin: 4px 0 6px; font: 800 clamp(1.5rem, 4.5vw, 2.2rem)/1.05 var(--poster-font); letter-spacing: 0.02em; color: var(--gold); overflow-wrap: anywhere; }
+.crowd-text { margin: 0; color: var(--poster-muted); font-size: 0.95rem; }
+.crowd .hint { margin: 12px 0 0; }
 .also-lift, .also-none { color: var(--poster-muted); font-size: 0.92rem; }
 .fit { margin: 14px 0 0; color: var(--poster-muted); font-size: 0.82rem; text-align: left; }
 .poster-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 18px; }

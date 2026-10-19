@@ -126,6 +126,24 @@ export async function runPlan({ config, budget, qloo, qlooMode, venues, venue, d
 }
 
 /**
+ * "This room's crowd also loves" for a room, without a plan: the also_loves tool alone (it reads the room's past shows
+ * before `date` and the city's other rooms, the same Qloo searches and insights a plan makes). No LLM involved.
+ * @returns {Promise<{ venue: object | null, night: { date: string }, also_loves: object[], calls: object[], fallbacks: object[] }>}
+ */
+export async function runCrowd({ qloo, venues, venue, date, today }) {
+  const session = createSession({ qloo, venues, venue, date, today });
+  const out = await runTool(session, 'also_loves');
+  if (out.error) throw new PlanError(out.error.code, out.error.message);
+  return {
+    venue: session.state.calendar?.venue ?? null,
+    night: { date },
+    also_loves: session.state.alsoLoves ?? [],
+    calls: session.calls.map(({ endpoint, params_masked, ms, cache }) => ({ endpoint, params_masked, ms, cache })),
+    fallbacks: [...session.fallbacks],
+  };
+}
+
+/**
  * Switch off past shows for one room and night, re-rank, and compare with the full top 5. No LLM involved.
  * @returns {Promise<{ shortlist: object[], changed: number, of: number, removed: object[], ignored: string[], method: string,
  *   calls: object[], error?: object }>}

@@ -123,9 +123,16 @@ const state = {
   recorded: [],
   // The booker's answers to the agent's "Which one played here?" for the night being planned.
   answers: [],
+  // Bumped on every booked-night pick, so a slow crowd answer for an earlier pick is dropped.
+  crowdSeq: 0,
 };
 const qlooOff = () => state.health?.qloo === 'no-key';
 const recordedRun = (venueId, date) => state.recorded.find((x) => x.venue_id === venueId && x.date === date) ?? null;
+// A recorded run that opens on a card (a thin run opens on "too little to rank on" instead).
+const recordedCard = (venueId, date) => {
+  const run = recordedRun(venueId, date);
+  return run && !run.thin ? run : null;
+};
 
 async function getJSON(url) {
   const res = await fetch(url, { headers: { accept: 'application/json' } });
@@ -178,6 +185,13 @@ function renderCalendar(cal) {
     n === 0 ? 'every open night on this public calendar already has a show announced' : 'open nights with no show announced on the public calendar';
   $('legend-unlisted').hidden = !cal.nights.some((x) => x.status === 'unlisted');
   $('legend-closed').hidden = !cal.nights.some((x) => x.status === 'closed');
+  const recordedNights = cal.nights.filter((x) => x.status === 'dark' && recordedCard(cal.venue?.id ?? state.venueId, x.date));
+  $('legend-recorded').hidden = !recordedNights.length;
+  // With Qloo off, a recorded night is the only kind that opens on a card; with Qloo on, a plan may run live instead.
+  $('legend-recorded-text').textContent = qlooOff() ? 'recorded run: opens a saved card, no Qloo needed' : 'a recorded run is saved for this night';
+  // A booked night shows the room's crowd from Qloo, or with Qloo off from a recorded run of this room; else it has none to show.
+  const crowdShown = !qlooOff() || state.recorded.some((x) => x.venue_id === (cal.venue?.id ?? state.venueId) && !x.thin);
+  $('legend-booked-text').textContent = crowdShown ? "show announced: pick one to see this room's crowd" : 'show announced';
 
   const chip = $('source-chip');
   if (cal.source?.url) {
@@ -195,10 +209,21 @@ function renderCalendar(cal) {
     const month = showMonth ? h('span', { class: 'm', 'aria-hidden': 'true' }, MONTHS[d.getUTCMonth()]) : null;
     const todayTag = night.today ? h('span', { class: 't', 'aria-hidden': 'true' }, 'today') : null;
     if (night.status === 'dark') {
+      const rec = recordedCard(state.venueId, night.date);
       return h('li', {},
         h('button', {
-          type: 'button', class: 'sq sq-dark', 'data-date': night.date, tabindex: '-1', 'aria-pressed': 'false',
-          'aria-label': `${shortDay(night.date)}, dark night`, onclick: () => pickNight(night.date),
+          type: 'button', class: `sq sq-dark sq-pick${rec ? ' sq-rec' : ''}`, 'data-date': night.date, tabindex: '-1', 'aria-pressed': 'false',
+          'aria-label': `${shortDay(night.date)}, dark night${rec ? ', recorded run' : ''}`, onclick: () => pickNight(night.date),
+        }, month, label, rec ? h('span', { class: 'r', 'aria-hidden': 'true' }) : null));
+    }
+    if (night.status === 'booked' && !night.today) {
+      // A booked night has nothing to plan; picking it shows this room's crowd rows without starting a plan.
+      const said = `${shortDay(night.date)}, show announced: ${night.show?.headliner ?? 'a show'}`;
+      return h('li', {},
+        h('button', {
+          type: 'button', class: 'sq sq-booked sq-pick', 'data-date': night.date, tabindex: '-1', 'aria-pressed': 'false', title: said,
+          // The spoken label promises the crowd only where the legend does (crowdShown).
+          'aria-label': crowdShown ? `${said}. Show this room's crowd` : said, onclick: () => pickBooked(night),
         }, month, label));
     }
     const what = {
@@ -213,7 +238,7 @@ function renderCalendar(cal) {
       h('span', { class: `sq sq-${night.status}${night.today ? ' sq-is-today' : ''}`, role: 'img', title: said, 'aria-label': said }, month, todayTag, label));
   });
   strip.replaceChildren(...items);
-  const first = strip.querySelector('.sq-dark');
+  const first = strip.querySelector('.sq-dark') ?? strip.querySelector('.sq-pick');
   if (first) first.tabIndex = 0;
   if (qlooOff() && state.recorded.length) {
     const nights = state.recorded.map((x) => `${state.venues.find((v) => v.id === x.venue_id)?.name ?? x.venue_id} ${shortDay(x.date)}`);
@@ -235,9 +260,9 @@ function renderCalendar(cal) {
   }
 }
 
-// Arrow keys move between dark nights; only one of them is in the tab order at a time.
+// Arrow keys move between the nights that can be picked (dark and booked); only one of them is in the tab order at a time.
 function onStripKey(e) {
-  const buttons = [...$('strip').querySelectorAll('.sq-dark')];
+  const buttons = [...$('strip').querySelectorAll('.sq-pick')];
   const i = buttons.indexOf(document.activeElement);
   if (i < 0) return;
   let j = i;
@@ -253,11 +278,11 @@ function onStripKey(e) {
 }
 
 function markPicked(date) {
-  for (const b of $('strip').querySelectorAll('.sq-dark')) {
+  for (const b of $('strip').querySelectorAll('.sq-pick')) {
     const on = b.dataset.date === date;
     b.setAttribute('aria-pressed', String(on));
     if (on) {
-      for (const o of $('strip').querySelectorAll('.sq-dark')) o.tabIndex = -1;
+      for (const o of $('strip').querySelectorAll('.sq-pick')) o.tabIndex = -1;
       b.tabIndex = 0;
     }
   }
@@ -265,11 +290,12 @@ function markPicked(date) {
 
 // ---------- night panel states ----------
 function show(which) {
-  for (const id of ['night-empty', 'progress', 'fail', 'poster']) $(id).hidden = id !== which;
+  for (const id of ['night-empty', 'progress', 'fail', 'poster', 'crowd']) $(id).hidden = id !== which;
   $('ask').hidden = true;
 }
 
 function resetNight() {
+  state.crowdSeq++;
   state.planAbort?.abort();
   state.planAbort = null;
   state.date = null;
@@ -293,7 +319,13 @@ function addStep(label) {
   list.append(h('li', { class: 'now' }, label));
 }
 
+/** On a phone the night panel sits below the strip, out of view after a tap; focus stays on the night (arrow keys). */
+function reveal(id) {
+  $(id).scrollIntoView?.({ block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+}
+
 async function pickNight(date, answers = []) {
+  state.crowdSeq++;
   state.planAbort?.abort();
   closeWhy(false);
   state.date = date;
@@ -308,11 +340,13 @@ async function pickNight(date, answers = []) {
       'Qloo: not connected. Without the Qloo taste graph the Desk has no honest way to rank acts, so it shows no list instead of a made-up one.',
       false,
     );
+    reveal('fail');
     return;
   }
   $('progress-title').textContent = `Planning ${shortDay(date)}`;
   $('steps').replaceChildren();
   show('progress');
+  reveal('progress');
   setBadges('working', state.health?.qloo);
   const ctrl = new AbortController();
   state.planAbort = ctrl;
@@ -406,6 +440,25 @@ function renderQuestion(q) {
 
 // ---------- poster card ----------
 const TYPE_WORDS = { movie: 'Films', place: 'Places', brand: 'Brands' };
+// The brands row leads: it is the line a booker takes to a sponsor or an after-show partner.
+const BRAND_LABEL = "Brand categories to pitch for this room's crowd";
+
+/** also_loves rows, brands first, the others in the order they came; `i` stays the row's index in the result. */
+const alsoOrder = (rows) => [...rows.entries()].sort(([i, a], [j, b]) => (a.type === 'brand' ? 0 : 1) - (b.type === 'brand' ? 0 : 1) || i - j);
+
+/** The "This room's crowd also loves" list items; `source(row, i)` builds each row's source chip. */
+function alsoItems(rows, source) {
+  if (!rows.length) return [h('li', { class: 'also-none' }, "Nothing stands out against the city's average room for this crowd.")];
+  return alsoOrder(rows).map(([i, row]) =>
+    h('li', { class: row.type === 'brand' ? 'also-brand' : null },
+      h('span', { class: row.type === 'brand' ? 'also-type also-pitch' : 'also-type' }, row.type === 'brand' ? BRAND_LABEL : TYPE_WORDS[row.type] ?? row.type),
+      ' ',
+      h('span', { class: 'also-cat' }, row.category),
+      h('span', { class: 'also-lift' }, ": shows up more here than at the city's average room"),
+      ' ',
+      source(row, i),
+    ));
+}
 const fmtLift = (n) => (Math.round(n * 100) / 100).toFixed(2);
 
 /** build_pool's record of where and when an act played the city, grouped by room: "Played Room A, Jul 15 and Aug 12". */
@@ -474,20 +527,10 @@ function renderResult(r, { focus = true } = {}) {
   if (!lineup.length) lineup.push(h('li', { class: 'act' }, h('p', { class: 'act-why' }, 'No act in this pool fits this room.')));
   $('lineup').replaceChildren(...lineup);
 
-  const also = r.also_loves ?? [];
   $('also').hidden = false;
   $('also-list').replaceChildren(
-    ...(also.length
-      ? also.map((row, i) =>
-          h('li', {},
-            h('span', { class: 'also-type' }, TYPE_WORDS[row.type] ?? row.type),
-            ' ',
-            h('span', { class: 'also-cat' }, row.category),
-            h('span', { class: 'also-lift' }, ": shows up more here than at the city's average room"),
-            ' ',
-            h('button', { type: 'button', class: 'why-link', onclick: (e) => openWhy(null, e.currentTarget, `also-${i}`) }, 'source'),
-          ))
-      : [h('li', { class: 'also-none' }, "Nothing stands out against the city's average room for this crowd.")]),
+    ...alsoItems(r.also_loves ?? [], (row, i) =>
+      h('button', { type: 'button', class: 'why-link also-source', onclick: (e) => openWhy(null, e.currentTarget, `also-${i}`) }, 'source')),
   );
 
   $('draft-offer').hidden = !offerNotes(r).length;
@@ -498,6 +541,78 @@ function renderResult(r, { focus = true } = {}) {
 
   show('poster');
   if (focus) $('poster').focus?.();
+}
+
+// ---------- a booked night: this room's crowd, no plan ----------
+/**
+ * A booked night has nothing to plan. Picking it shows the room's "also loves" rows: from the Qloo taste graph when
+ * Qloo is connected (no Claude call), else from the room's recorded run if it has one (no request to Qloo), else the
+ * plain "Qloo: not connected" with nothing sent.
+ */
+async function pickBooked(night) {
+  state.planAbort?.abort();
+  state.planAbort = null;
+  closeWhy(false);
+  state.date = null;
+  state.result = null;
+  state.answers = [];
+  state.off.clear();
+  markPicked(night.date);
+  idleBadges();
+  const seq = ++state.crowdSeq;
+  const venueId = state.venueId;
+  const v = state.venues.find((x) => x.id === venueId);
+  const current = () => seq === state.crowdSeq && venueId === state.venueId;
+  $('crowd-venue').textContent = v ? `${v.name} \u00b7 ${v.locality || v.city}` : '';
+  $('crowd-title').textContent = `${shortDay(night.date)}: ${night.show?.headliner ?? 'show announced'}`;
+  // The second sentence is added only once rows are on screen (renderCrowd), so it never points at an empty panel.
+  $('crowd-text').textContent = CROWD_BOOKED;
+  $('crowd-also').hidden = true;
+  $('crowd-list').replaceChildren();
+  show('crowd');
+  reveal('crowd');
+
+  if (qlooOff()) {
+    const run = state.recorded.find((x) => x.venue_id === venueId && !x.thin);
+    if (!run) {
+      $('crowd-note').textContent = 'Qloo: not connected. These rows come from the Qloo taste graph, so this server has none to show for this room and sends no request.';
+      return;
+    }
+    $('crowd-note').textContent = 'Reading the recorded run';
+    try {
+      const r = await getJSON(`/api/recorded/${encodeURIComponent(run.venue_id)}/${encodeURIComponent(run.date)}`);
+      if (!current()) return;
+      renderCrowd(r.also_loves ?? []);
+      const synthetic = r.mode?.qloo === 'fixture' ? ' (synthetic test data)' : '';
+      $('crowd-note').textContent =
+        `Qloo: not connected. These rows come from the recorded run for ${shortDay(run.date)}, saved ${fullDate(run.recorded_at)}${synthetic}; no Qloo request is made now.`;
+    } catch (err) {
+      if (current()) $('crowd-note').textContent = `Qloo: not connected, and the recorded run could not be read: ${err.message}.`;
+    }
+    return;
+  }
+
+  $('crowd-note').textContent = "Reading this room's crowd";
+  try {
+    const r = await getJSON(`/api/venues/${encodeURIComponent(venueId)}/crowd?date=${encodeURIComponent(night.date)}`);
+    if (!current()) return;
+    renderCrowd(r.also_loves ?? []);
+    const calls = r.calls ?? [];
+    const hits = calls.filter((c) => c.cache === 'hit').length;
+    $('crowd-note').textContent = `${qlooLabel(r.mode?.qloo)}. ${calls.length} requests, ${hits} from cache; no Claude call.`;
+  } catch (err) {
+    if (current()) $('crowd-note').textContent = `This room's crowd could not be read: ${err.message}.`;
+  }
+}
+
+const CROWD_BOOKED = 'A show is announced, so there is nothing to plan for this night; no plan is started.';
+function renderCrowd(rows) {
+  $('crowd-text').textContent =
+    "A show is announced, so there is nothing to plan for this night. Below is what this room's crowd also loves, read from the room's past shows; no plan is started.";
+  $('crowd-also').hidden = false;
+  $('crowd-list').replaceChildren(
+    ...alsoItems(rows, (row) => h('details', { class: 'also-src' }, h('summary', {}, 'source'), alsoEvidence(row))),
+  );
 }
 
 // ---------- offer note ----------
@@ -601,22 +716,23 @@ function callsTable(calls) {
         h('tbody', {}, rows))));
 }
 
+/** How one also_loves row was measured: the two shares at each depth and the Qloo requests behind it. */
+function alsoEvidence(row, { id, focus = false } = {}) {
+  const ev = row.evidence ?? {};
+  const pct = (x) => `${Math.round(x * 100)}%`;
+  const depths = ev.depths ?? [];
+  const lines = depths.map((d, k) => `top ${d}: ${pct(ev.room_share?.[k] ?? 0)} for this room vs ${pct(ev.city_share?.[k] ?? 0)} for the city's average room`);
+  return h('div', { class: `also-ev${focus ? ' focus' : ''}`, id },
+    h('p', {}, h('strong', {}, `${TYPE_WORDS[row.type] ?? row.type}: ${row.category}`), ` \u00b7 lift ${fmtLift(row.lift_range[0])} to ${fmtLift(row.lift_range[1])}`),
+    h('p', { class: 'hint' }, `${ev.measure ?? ''}. Signal: ${ev.signal_sizes?.room ?? '?'} acts from this room, ${ev.signal_sizes?.city ?? '?'} from the city's rooms.`),
+    h('ul', {}, lines.map((l) => h('li', {}, l))),
+    callsTable(ev.calls));
+}
+
 function renderAlsoEvidence(r, focusRow) {
   const rows = r.also_loves ?? [];
   $('why-also').hidden = !rows.length;
-  $('why-also-body').replaceChildren(
-    ...rows.map((row, i) => {
-      const ev = row.evidence ?? {};
-      const pct = (x) => `${Math.round(x * 100)}%`;
-      const depths = ev.depths ?? [];
-      const lines = depths.map((d, k) => `top ${d}: ${pct(ev.room_share?.[k] ?? 0)} for this room vs ${pct(ev.city_share?.[k] ?? 0)} for the city's average room`);
-      return h('div', { class: `also-ev${focusRow === `also-${i}` ? ' focus' : ''}`, id: `also-${i}` },
-        h('p', {}, h('strong', {}, `${TYPE_WORDS[row.type] ?? row.type}: ${row.category}`), ` \u00b7 lift ${fmtLift(row.lift_range[0])} to ${fmtLift(row.lift_range[1])}`),
-        h('p', { class: 'hint' }, `${ev.measure ?? ''}. Signal: ${ev.signal_sizes?.room ?? '?'} acts from this room, ${ev.signal_sizes?.city ?? '?'} from the city's rooms.`),
-        h('ul', {}, lines.map((l) => h('li', {}, l))),
-        callsTable(ev.calls));
-    }),
-  );
+  $('why-also-body').replaceChildren(...alsoOrder(rows).map(([i, row]) => alsoEvidence(row, { id: `also-${i}`, focus: focusRow === `also-${i}` })));
 }
 
 function renderPool(r) {

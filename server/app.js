@@ -10,7 +10,7 @@ import { budgetPath, clientIp, createBudget } from './budget/budget.js';
 import { createQlooClient } from './qloo/client.js';
 import { cachePath, createQlooCache } from './qloo/cache.js';
 import { createAnthropic } from './agent/loop.js';
-import { PlanError, findRecorded, listRecorded, replayRecorded, runAblate, runPlan } from './agent/plan.js';
+import { PlanError, findRecorded, listRecorded, replayRecorded, runAblate, runCrowd, runPlan } from './agent/plan.js';
 
 const CALENDAR_MAX_DAYS = 120;
 export const BACKTEST_FILE = path.join(REPO_ROOT, 'results', 'backtest-test.json');
@@ -179,6 +179,29 @@ export async function buildApp(config, { logger = false, now = Date.now, budget,
     }
     res.end();
     return reply;
+  });
+
+  // "This room's crowd also loves" for a room, from a booked (or dark) night on the strip, without starting a plan.
+  // No Claude call in any mode; without a Qloo key nothing is sent and the answer is qloo_not_connected.
+  app.get('/api/venues/:id/crowd', async (req, reply) => {
+    const date = req.query.date;
+    if (!isISODate(date)) return reply.code(400).send({ error: 'date must be a YYYY-MM-DD date' });
+    const all = await venues();
+    const venue = all.find((v) => v.id === req.params.id);
+    if (!venue) return reply.code(404).send({ error: 'unknown venue' });
+    if (!isPlannable(venue)) return reply.code(404).send({ error: NOT_PLANNABLE });
+    const today = todayISO(now());
+    const status = nightsFor(venue, date, 1, { today, listedUntil: listedUntil(venue) }).nights[0].status;
+    if (date <= today || (status !== 'booked' && status !== 'dark')) {
+      return reply.code(409).send({ error: `${date} is not a booked or dark night still to come on ${venue.name}'s calendar (${date <= today ? 'today or past' : status})` });
+    }
+    if (qlooMode === 'no-key') return reply.code(409).send({ error: QLOO_OFF.message, code: QLOO_OFF.code });
+    try {
+      return { mode: { qloo: qlooMode }, ...(await runCrowd({ qloo, venues: all, venue, date, today })) };
+    } catch (err) {
+      if (err instanceof PlanError) return reply.code(502).send({ error: err.message, code: err.code });
+      throw err;
+    }
   });
 
   app.post('/api/ablate', async (req, reply) => {

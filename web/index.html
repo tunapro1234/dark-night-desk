@@ -16,6 +16,12 @@
     <div class="brand">
       <h1>Dark Night Desk</h1>
       <p class="tagline">fill the nights your venue sits empty</p>
+      <!-- Scene: data/backtest/shows.csv, room fa-turf-club, canceled rows left out (the rule of scripts/nothing-listed.js).
+           Tuesdays with nothing listed: Jun 30, Jul 7, 14, 21, 28, Aug 4, 11, 18 2026 (the longest run, 1 Apr to 30 Sep); Jun 23
+           and Aug 25 had shows. Fridays and Saturdays in those eight weeks (Mon Jun 29 to Sun Aug 23; Jul 3 to Aug 22): 16, all listed but Sat Jul 4. Capacity 350:
+           data/backtest/venues.csv and sources.md, quoting First Avenue ("the 350-capacity Turf Club"). Second line:
+           node scripts/nothing-listed.js. test/demo-v1.test.js recounts both from the data. -->
+      <p class="scene" id="scene">Turf Club, Saint Paul, holds 350. Eight Tuesdays in a row, June 30 to August 18, 2026, nothing was listed on its public calendar. In those eight weeks, 15 of 16 Fridays and Saturdays had a show.</p>
       <p class="problem">At three Twin Cities club rooms, 181 of 549 nights from April to September 2026 had no show listed; 123 of those were Monday to Wednesday.</p>
     </div>
     <ul class="badges" aria-label="How this page is running">
@@ -43,7 +49,8 @@
       <div class="strip-foot">
         <ul class="legend" aria-label="Legend">
           <li><span class="sq sq-dark" aria-hidden="true"></span> dark night: pick one</li>
-          <li><span class="sq sq-booked" aria-hidden="true"></span> show announced</li>
+          <li id="legend-recorded" hidden><span class="sq sq-dark sq-rec" aria-hidden="true"><span class="r"></span></span> <span id="legend-recorded-text">recorded run: opens a saved card</span></li>
+          <li><span class="sq sq-booked" aria-hidden="true"></span> <span id="legend-booked-text">show announced: pick one to see this room's crowd</span></li>
           <li id="legend-closed"><span class="sq sq-closed" aria-hidden="true"></span> closed that weekday</li>
           <li><span class="sq sq-today" aria-hidden="true"></span> today: too late to plan</li>
           <li id="legend-unlisted" hidden><span class="sq sq-unlisted" aria-hidden="true"></span> not read yet: past the last date the calendar was read for</li>
@@ -70,6 +77,17 @@
             <div class="ask-options" id="ask-options"></div>
           </div>
         </div>
+
+        <section class="crowd" id="crowd" hidden aria-labelledby="crowd-title">
+          <p class="poster-venue" id="crowd-venue"></p>
+          <h2 id="crowd-title"></h2>
+          <p class="crowd-text" id="crowd-text"></p>
+          <div class="also" id="crowd-also" hidden>
+            <h3>This room's crowd also loves</h3>
+            <ul id="crowd-list"></ul>
+          </div>
+          <p class="hint" id="crowd-note"></p>
+        </section>
 
         <div class="fail" id="fail" role="alert" hidden>
           <h2 id="fail-title">That did not work</h2>
